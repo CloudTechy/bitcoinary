@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title> Bitcoinary Finance ltd</title>
+    <title> Bitcoinage Finance ltd</title>
 
-    <meta name="description" content=" Bitcoinary Finance is a community of dedicated investors that wants to make a steady extra income. we deal extensively on Bitcoin">
-    <meta name="keywords" content=" Bitcoinary Finance, Shares, Finance, Bitcoin, Investment">
-    <meta name="author" content=" Bitcoinary Finance ICT Team">
+    <meta name="description" content=" Bitcoinage Finance is a community of dedicated investors that wants to make a steady extra income. we deal extensively on Bitcoin">
+    <meta name="keywords" content=" Bitcoinage Finance, Shares, Finance, Bitcoin, Investment">
+    <meta name="author" content=" Bitcoinage Finance ICT Team">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Fonts -->

@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="copyrights text-center">
-            <p style="text-transform: uppercase;">© {{fullYear}}  Bitcoinary Finance Limited. All Rights Reserved.</p>
+            <p style="text-transform: uppercase;">© {{fullYear}}  Bitcoinage Finance Limited. All Rights Reserved.</p>
         </div>
     </footer>
 </template>
