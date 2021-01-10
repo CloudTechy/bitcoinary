@@ -156,7 +156,7 @@
                                         </li>
                                     </ul>
                                     <div class="accept-terms text-center">
-                                        <label class="small">Completing your registration you agree with Terms of  Bitcoinage Finance Limited</label>
+                                        <label class="small">Completing your registration you agree with Terms of  Bitcoinary Finance Limited</label>
                                     </div>
                                     <div class="buttons-set text-center">
                                         <button ref="signup" type="submit" class="btn btn-default">Sign Up</button>

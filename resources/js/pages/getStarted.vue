@@ -3,7 +3,7 @@
         <div class="row page-title m-3 p-2">
             <div class="col-12 col-lg-8 container">
                 <h1>Get Started</h1>
-                <p>To start your investment journey in  Bitcoinage Finance Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal.</p>
+                <p>To start your investment journey in  Bitcoinary Finance Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal.</p>
             </div>
         </div>
         <!--start main container-->
@@ -19,7 +19,7 @@
                                 </li>
                                 <li>
                                     <h3><span>Step 2: </span>Creating Deposit</h3>
-                                    <p>In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in  Bitcoinage Finance Limited just click on ‘Make a deposit‘ link. </p>
+                                    <p>In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in  Bitcoinary Finance Limited just click on ‘Make a deposit‘ link. </p>
                                 </li>
                                 <li>
                                     <h3><span>Step 3: </span>Wait for the deposit transfer</h3>
@@ -31,7 +31,7 @@
                                 </li>
                                 <li>
                                     <h3><span>Step 5: </span>Profit Withdrawal</h3>
-                                    <p>All the investment plans in  Bitcoinage Finance Limited comes with bit by bit accruals each day your account reads. Once profit is deposited in your account wallet, you may be able to withdraw it. The minimum withdrawal amount is 1 USD. Feel free at any time to withdraw &amp; enjoy your ROI! </p>
+                                    <p>All the investment plans in  Bitcoinary Finance Limited comes with bit by bit accruals each day your account reads. Once profit is deposited in your account wallet, you may be able to withdraw it. The minimum withdrawal amount is 1 USD. Feel free at any time to withdraw &amp; enjoy your ROI! </p>
                                 </li>
                             </ul>
                         </div>

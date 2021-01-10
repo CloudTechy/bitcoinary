@@ -17,7 +17,7 @@
                                 <li style="padding-left:0;">
                                     <h2 class="get-in">Get In Touch</h2>
                                 </li>
-                                <li><img style=" margin-top:5px;" :src="$root.basepath + '/img/support-mail.png'"><a href="info@bitcoinagefinance.com">info@bitcoinagefinance.com</a><br><a href="info@bitcoinagefinance.com"></a>
+                                <li><img style=" margin-top:5px;" :src="$root.basepath + '/img/support-mail.png'"><a href="info@Bitcoinaryfinance.com">info@Bitcoinaryfinance.com</a><br><a href="info@Bitcoinaryfinance.com"></a>
                                 </li>
                             </ul>
                             <form class="support-form col-12 col-lg-7 m-1 text-center" method="post" name="mainform" @submit.prevent="submitForm">
