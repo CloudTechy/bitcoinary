@@ -6,29 +6,39 @@
                 <p> Bitcoinary Finance assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume- Bitcoins.</p>
             </div>
         </div> -->
-        <section class="main-container" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'"
->
+        <section class="main-container" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
             <div class="main">
                 <div class="container">
-                    <div class="wrapper" >
+                    <div class="wrapper">
                         <div class="row company">
                             <div class=" col p-3 partners-container">
                                 <h2 class="company-title">Our Company</h2>
-                                <p class="m-0"> Bitcoinary Finance assures you of making the maximum profit. Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume - Bitcoins.</p> <br><br>
-                                <p class="m-0"> Bitcoinary Finance started in 2005 as a Financial Advisory Firm and recently in 2017 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading.<br><br> We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the  Bitcoinary Finance team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. <br><br>The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors.<router-link to="/about" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</router-link>
+                                <p class="m-0"> Bitcoinary finance is an innovating company diversified in several Investment methods
+                                    Our company is a big investor in real estate,oil and gas,gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of most popular Crypto currency by volume-Bitcoins. Such Investment methods is free from capital loss and returns supposed profits.</p> <br><br>
+                                <p class="m-0">
+                                    Bitcoinary Finance started in 2005 as a Financial Advisory Firm and recently in 2018 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading.<br><br> We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bitcoinary Finance team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. <br><br>The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors.
+                                    <a href="?a=about" class="btn btn-outline-warning section-home__btn textsite">
+                                        Learn more
+                                    </a>
+                                    <!--   <router-link to="/about" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</router-link> -->
                                 </p>
-                                <div class="services mt-3">
+                                <div class="row company  mt-3">
+                                    <div class=" col p-3 partners-container">
+                                        <h2 class="company-title">Our Features</h2>
+                                    </div>
+                                </div>
+                                <div class="services">
                                     <ul class="row">
+                                        <li class="col text-center">
+                                            <div class="inner-s"><img :src="$root.basepath + '/img/key-2.png'" class="centered-img">
+                                                <h4>Team</h4>
+                                                <p>We are a well-coordinated team that takes responsibility for fulfilling the contract. You could not find a better place.</p>
+                                            </div>
+                                        </li>
                                         <li class="col text-center">
                                             <div class="inner-s"><img :src="$root.basepath + '/img/key-1.png'" class="centered-img">
                                                 <h4>High growth &amp; substantial returns</h4>
                                                 <p> Bitcoinary Finance Limited is guided by an excellent team to ensure lofty yields &amp; steady profits in the long run.</p>
-                                            </div>
-                                        </li>
-                                        <li class="col text-center">
-                                            <div class="inner-s"><img :src="$root.basepath + '/img/key-2.png'" class="centered-img">
-                                                <h4>Outstanding 14% affiliate commission</h4>
-                                                <p>Earn splendid five level affiliate commission by referring others. Make us popular &amp; we will make you rich!</p>
                                             </div>
                                         </li>
                                         <li class="col text-center">
@@ -51,7 +61,7 @@
                                                 Eligibility: A New User Can Only Use This Plan Twice.
                                                 No Referral Commission.
                                                 <div class="mb-5 text-center">
-                                                    <router-link  style="width: 100%" to="/user/dashboard/deposit" class="btn btn-inverse">Make Investment</router-link>
+                                                    <router-link style="width: 100%" to="/user/dashboard/deposit" class="btn btn-inverse">Make Investment</router-link>
                                                 </div>
                                             </p>
                                         </div>
@@ -63,8 +73,8 @@
                                                 30 Days minimum turnover.
                                                 Eligibility: Open.
                                                 5% One time Referral Commission.
-                                               <div class="mb-5 text-center">
-                                                    <router-link  style="width: 100%" to="/user/dashboard/deposit" class="btn btn-inverse">Make Investment</router-link>
+                                                <div class="mb-5 text-center">
+                                                    <router-link style="width: 100%" to="/user/dashboard/deposit" class="btn btn-inverse">Make Investment</router-link>
                                                 </div>
                                             </p>
                                         </div>
@@ -76,8 +86,8 @@
                                                 30 Days turnover.
                                                 Eligibility: Open.
                                                 10% Referral Commission to the 5th chain.
-                                               <div class="mb-5 text-center">
-                                                    <router-link  style="width: 100%" to="/user/dashboard/deposit" class="btn btn-inverse">Make Investment</router-link>
+                                                <div class="mb-5 text-center">
+                                                    <router-link style="width: 100%" to="/user/dashboard/deposit" class="btn btn-inverse">Make Investment</router-link>
                                                 </div>
                                             </p>
                                         </div>
@@ -90,16 +100,15 @@
                                                 Eligibility: Open.
                                                 10% Referral Commission to the 10th chain.
                                                 <div class="mb-5 text-center">
-                                                    <router-link  style="width: 100%" to="/user/dashboard/deposit" class="btn btn-inverse">Make Investment</router-link>
+                                                    <router-link style="width: 100%" to="/user/dashboard/deposit" class="btn btn-inverse">Make Investment</router-link>
                                                 </div>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                
                                 <div class="ml-0 m-0 p-0 mt-5 pt-5 get-started">
                                     <h1 class="company-title">How To Get Started</h1>
-                                    <p class="col p-0 mb-4 inv-intro text-center">To start your investment journey in  Bitcoinary Finance Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal. </p><br>
+                                    <p class="col p-0 mb-4 inv-intro text-center">To start your investment journey in Bitcoinary Finance Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal. </p><br>
                                     <ul>
                                         <li>
                                             <h3><span>Step 1: </span>Account Registration</h3>
@@ -107,7 +116,7 @@
                                         </li>
                                         <li>
                                             <h3><span>Step 2: </span>Creating Deposit</h3>
-                                            <p>In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in  Bitcoinary Finance Limited just click on ‘Make a deposit‘ link. </p>
+                                            <p>In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in Bitcoinary Finance Limited just click on ‘Make a deposit‘ link. </p>
                                         </li>
                                         <li>
                                             <h3><span>Step 3: </span>Wait for the deposit transfer</h3>
@@ -118,9 +127,9 @@
                                 </div>
                                 <div class="m-1 mt-4 pt-5 m-0 p-0 partners-container">
                                     <h1 class="company-title">Our Affiliate Program</h1>
-                                    <p>If you want passive earning of substantial sums refer quickly to all about  Bitcoinary Finance Limited &amp; gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you.<router-link to="/partners" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</router-link>
+                                    <p>If you want passive earning of substantial sums refer quickly to all about Bitcoinary Finance Limited &amp; gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you.<router-link to="/partners" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</router-link>
                                     </p>
-                                    <h5 class="slogan text-center">Enjoy exceptional upto 14% five levels deep affiliate system structure in  Bitcoinary Finance Limited.</h5>
+                                    <h5 class="slogan text-center">Enjoy exceptional upto 14% five levels deep affiliate system structure in Bitcoinary Finance Limited.</h5>
                                     <div class="partners-img clearfix"><img :src="$root.basepath + '/img/percentages.png'"> <img :src="$root.basepath + '/img/partners.png'"></div>
                                 </div>
                                 <div class="page-heading m-0 p-0 mt-4 pt-4  partners-container ">
@@ -207,7 +216,7 @@
     </div>
 </template>
 <script>
-export default {
+    export default {
     data() {
         return {
             success: false,
@@ -229,3 +238,22 @@ export default {
 }
 
 </script>
+<style type="text/css">
+.section-home__btn {
+    border-color: #f8b782;
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-transform: uppercase;
+    padding: 5px 12px !important;
+}
+
+.section-home__btn:hover {
+    background-color: #e25e5a !important;
+    border-color: #f8b782;
+}
+
+.section-home__btn:active {
+    background-color: #e25e5a !important;
+    border-color: #f8b782;
+}
+
+</style>

@@ -17,24 +17,28 @@
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
   <!-- Styles -->
+
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-   <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" type="image/x-icon">
+  <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/themefisher-fonts.css') }}">
 
 
+<!--Start of Tawk.to Script-->
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
-s1.src='https://embed.tawk.to/5feb97a6df060f156a91e054/1eqo4gpf7';
+s1.src='https://embed.tawk.to/6003289aa9a34e36b96d215a/1es65d7sq';
 s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
+<!--End of Tawk.to Script-->
 <!--End of Tawk.to Script-->
 
 <!--End of Tawk.to Script-->
