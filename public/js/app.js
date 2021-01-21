@@ -5841,17 +5841,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -5879,6 +5868,31 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6594,6 +6608,1070 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -15125,25 +16203,6 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "\n._text_1nv7e_24[data-v-61a7c374] {\r\n    font-family: Sailec-Regular, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;\r\n    font-size: 14px;\r\n    font-weight: 400;\r\n    line-height: 1.6;\r\n    margin: 0\n}\r\n\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Menu.vue?vue&type=style&index=0&lang=css&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Menu.vue?vue&type=style&index=0&lang=css& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.router-link-exact-active  {\r\n    background: linear-gradient(to right, #e25e5a 0%, #e25e5a 0%, #f8b982 100%, #f8b982 100%, #f8b982 100%) !important;\r\n    color: #1a1a1a !important;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -48816,36 +49875,6 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Menu.vue?vue&type=style&index=0&lang=css&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Menu.vue?vue&type=style&index=0&lang=css& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Menu.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Menu.vue?vue&type=style&index=0&lang=css&");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Home.vue?vue&type=style&index=0&lang=css&":
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Home.vue?vue&type=style&index=0&lang=css& ***!
@@ -54572,109 +55601,57 @@ var render = function() {
   return _c(
     "footer",
     {
-      staticStyle: {
-        width: "inherit",
-        overflow: "hidden",
-        "box-sizing": "border-box"
-      }
+      staticClass: "footer bg_img",
+      attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-7.jpg" }
     },
     [
-      _c(
-        "div",
-        { staticClass: "footer-top", staticStyle: { position: "relative" } },
-        [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "text-center justify-content-center container m-auto p-sm-4 p-3 row"
-            },
-            [
-              _c("span", { staticClass: "bitcoin-logo" }, [
-                _c("img", {
-                  attrs: { src: _vm.$root.basepath + "/img/bitcoin.png" }
-                })
-              ]),
+      _c("div", { staticClass: "footer__top" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row justify-content-center" }, [
+            _c("div", { staticClass: "col-lg-12 text-center" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "footer-logo",
+                  staticStyle: { "max-height": "200px" },
+                  attrs: { href: "#0" }
+                },
+                [
+                  _c("img", {
+                    attrs: {
+                      src: _vm.$root.basepath + "/images/bg/bg-10.jpg",
+                      alt: "image"
+                    }
+                  })
+                ]
+              ),
               _vm._v(" "),
-              _c("ul", { staticClass: "footer-menu" }, [
-                _c(
-                  "li",
-                  [_c("router-link", { attrs: { to: "/" } }, [_vm._v("Home")])],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c("router-link", { attrs: { to: "/about" } }, [
-                      _vm._v("About Us")
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c("router-link", { attrs: { to: "/dataCenter" } }, [
-                      _vm._v("Data Center")
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c("router-link", { attrs: { to: "/faq" } }, [
-                      _vm._v("Faq")
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm._m(1),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c("router-link", { attrs: { to: "/News" } }, [
-                      _vm._v("News")
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c("router-link", { attrs: { to: "/Support" } }, [
-                      _vm._v("Support")
-                    ])
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "footer-logo" }, [
-                _c("img", {
-                  attrs: { src: _vm.$root.basepath + "/img/footer-logo.png" }
-                })
-              ])
-            ]
-          )
-        ]
-      ),
+              _vm._m(0)
+            ])
+          ])
+        ])
+      ]),
       _vm._v(" "),
-      _c("div", { staticClass: "copyrights text-center" }, [
-        _c("p", { staticStyle: { "text-transform": "uppercase" } }, [
-          _vm._v(
-            "© " +
-              _vm._s(_vm.fullYear) +
-              "  Bitcoinary Finance Limited. All Rights Reserved."
-          )
+      _c("div", { staticClass: "footer__bottom" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-6 text-md-right text-center" }, [
+              _c(
+                "p",
+                [
+                  _vm._v("© " + _vm._s(_vm.fullYear)),
+                  _c(
+                    "router-link",
+                    { staticClass: "base--color", attrs: { to: "/" } },
+                    [_vm._v("   Bitcoinary Mint. All Rights Reserved.")]
+                  )
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(1)
+          ])
         ])
       ])
     ]
@@ -54686,37 +55663,21 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "div",
+      "ul",
       {
-        staticClass: "alert m-auto alert-primary alert-dismissible fade show",
-        staticStyle: {
-          "max-width": "100%",
-          position: "fixed",
-          bottom: "2px",
-          left: "2px",
-          right: "2px"
-        },
-        attrs: { role: "alert" }
+        staticClass:
+          "footer-short-menu d-flex flex-wrap justify-content-center mt-4"
       },
       [
-        _c("p", { staticClass: "_text_1nv7e_24 text-center" }, [
-          _vm._v(
-            "\n                       We use cookies to provide our services and for analytics and marketing, \n                       By continuing to browse our website, you agree to our use of cookies.\n                   "
-          )
+        _c("li", [_c("a", { attrs: { href: "#0" } }, [_vm._v("Home")])]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#0" } }, [_vm._v("Privacy & Policy")])
         ]),
         _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "close",
-            attrs: {
-              type: "button",
-              "data-dismiss": "alert",
-              "aria-label": "Close"
-            }
-          },
-          [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("OK")])]
-        )
+        _c("li", [
+          _c("a", { attrs: { href: "#0" } }, [_vm._v("Terms & Conditions")])
+        ])
       ]
     )
   },
@@ -54724,10 +55685,75 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "https://t.me/bfinofficial" } }, [
-        _vm._v("Channel link")
-      ])
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c(
+        "ul",
+        {
+          staticClass:
+            "social-link-list d-flex flex-wrap justify-content-md-end justify-content-center"
+        },
+        [
+          _c("li", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "#0",
+                  "data-toggle": "tooltip",
+                  "data-placement": "top",
+                  title: "facebook"
+                }
+              },
+              [_c("i", { staticClass: "lab la-facebook-f" })]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "#0",
+                  "data-toggle": "tooltip",
+                  "data-placement": "top",
+                  title: "twitter"
+                }
+              },
+              [_c("i", { staticClass: "lab la-twitter" })]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "#0",
+                  "data-toggle": "tooltip",
+                  "data-placement": "top",
+                  title: "pinterest"
+                }
+              },
+              [_c("i", { staticClass: "lab la-pinterest-p" })]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "#0",
+                  "data-toggle": "tooltip",
+                  "data-placement": "top",
+                  title: "pinterest"
+                }
+              },
+              [_c("i", { staticClass: "lab la-pinterest-in" })]
+            )
+          ])
+        ]
+      )
     ])
   }
 ]
@@ -54752,254 +55778,187 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "header",
-    [
-      _c("div", { staticClass: "header-container p-2 m-0" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
+  return _c("header", { staticClass: "header" }, [
+    _c("div", { staticClass: "header__bottom" }, [
+      _c("div", { staticClass: "container" }, [
+        _c(
+          "nav",
+          { staticClass: "navbar navbar-expand-xl p-0 align-items-center" },
+          [
             _c(
-              "div",
-              { staticClass: "logo p-2 p-lg-1 mb-lg-0 mb-2" },
+              "a",
+              {
+                staticClass: "site-logo site-title",
+                attrs: { href: "index.html" }
+              },
               [
-                _c(
-                  "router-link",
-                  {
-                    staticStyle: { background: "none !important" },
-                    attrs: { to: "/home" }
-                  },
-                  [
-                    _c("img", {
-                      staticClass: "main-logo",
-                      attrs: { src: _vm.$root.basepath + "/img/logo.png" }
-                    }),
-                    _c("img", {
-                      staticClass: "hover-logo",
-                      attrs: { src: _vm.$root.basepath + "/img/logo-hover.png" }
-                    })
-                  ]
-                )
-              ],
-              1
+                _c("img", {
+                  attrs: {
+                    src: _vm.$root.basepath + "/images/logo.png",
+                    alt: "site-logo"
+                  }
+                })
+              ]
             ),
             _vm._v(" "),
-            _c("div", { staticClass: " p-2 pb-0 pt-0 pt-lg-0 m-auto " }, [
-              _c("div", { staticClass: "btc-price" }, [
-                _c("div", { staticClass: "price " }, [
-                  _c("span", { staticClass: "btc-spin" }, [
-                    _c("img", {
-                      attrs: { src: _vm.$root.basepath + "/img/btc-small.png" }
-                    })
-                  ]),
-                  _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "collapse navbar-collapse",
+                attrs: { id: "navbarSupportedContent" }
+              },
+              [
+                _c("ul", { staticClass: "navbar-nav main-menu m-auto" }, [
                   _c(
-                    "span",
-                    { staticClass: "label", staticStyle: { color: "#fff" } },
-                    [_vm._v("BTC Price")]
+                    "li",
+                    [
+                      _c("router-link", { attrs: { to: "/" } }, [
+                        _vm._v("Home")
+                      ])
+                    ],
+                    1
                   ),
                   _vm._v(" "),
-                  _c("span", { staticClass: "figure" }, [
-                    _vm._v("$"),
-                    _c("span", { staticClass: "btc-usd" }, [
-                      _c(
-                        "span",
-                        {
-                          staticClass: "price",
-                          staticStyle: {
-                            "margin-top": "-21px",
-                            "margin-left": "-39px"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            _vm._s(_vm.$root.normalNumeral(_vm.$root.rate))
-                          )
-                        ]
-                      )
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "server-time" }, [
-                _c("div", { staticClass: "time pl-lg-3 pl-0" }, [
                   _c(
-                    "span",
-                    { staticClass: "label", staticStyle: { color: "#fff" } },
-                    [_vm._v("Server Time")]
+                    "li",
+                    [
+                      _c("router-link", { attrs: { to: "/about" } }, [
+                        _vm._v("About")
+                      ])
+                    ],
+                    1
                   ),
                   _vm._v(" "),
-                  _c("span", { staticClass: "figure" }, [
-                    _c("span", { attrs: { id: "clock" } }, [
-                      _vm._v(_vm._s(_vm.$root.time))
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _vm.$auth.check(1)
-              ? _c(
-                  "ul",
-                  {
-                    staticClass:
-                      "user-menu p-0  pt-lg-0 pt-3 pl-lg-2  m-auto clearfix"
-                  },
-                  _vm._l(_vm.routes.user, function(route, key) {
-                    return _c(
-                      "li",
-                      { key: route.path, staticClass: "nav-item" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            key: key,
-                            staticClass: "btn btn-default",
-                            attrs: { to: { name: route.path } }
-                          },
-                          [_vm._v(_vm._s(route.name))]
-                        )
-                      ],
-                      1
-                    )
-                  }),
-                  0
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.$auth.check(2)
-              ? _c(
-                  "ul",
-                  {
-                    staticClass:
-                      "user-menu p-0  pt-lg-0 pt-3 pl-lg-2  m-auto clearfix"
-                  },
-                  _vm._l(_vm.routes.user, function(route, key) {
-                    return _c(
-                      "li",
-                      { key: route.path, staticClass: "nav-item" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            key: key,
-                            staticClass: "btn btn-default",
-                            attrs: { to: { name: route.path } }
-                          },
-                          [_vm._v(_vm._s(route.name))]
-                        )
-                      ],
-                      1
-                    )
-                  }),
-                  0
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            !_vm.$auth.check()
-              ? _c(
-                  "ul",
-                  {
-                    staticClass:
-                      "user-menu p-0  pt-lg-0 pt-3 pl-lg-2  m-auto clearfix"
-                  },
-                  _vm._l(_vm.routes.unlogged, function(route, key) {
-                    return _c(
-                      "li",
-                      { key: route.path, staticClass: "nav-item" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            key: key,
-                            staticClass: "btn btn-default",
-                            attrs: { to: { name: route.path } }
-                          },
-                          [_vm._v(_vm._s(route.name))]
-                        )
-                      ],
-                      1
-                    )
-                  }),
-                  0
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.$auth.check()
-              ? _c(
-                  "ul",
-                  {
-                    staticClass:
-                      "user-menu p-0  pt-lg-0 pt-3 pl-md-3  m-auto clearfix"
-                  },
-                  [
-                    _c("li", { staticClass: "nav-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "btn btn-default",
-                          attrs: { href: "#" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.$auth.logout()
-                            }
-                          }
-                        },
-                        [_vm._v("Logout")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _vm.$auth.user().isAdmin
-                      ? _c(
-                          "li",
-                          { staticClass: "nav-item" },
-                          [
-                            _vm.$route.path != "/admin/dashboard" &&
-                            _vm.$auth.user().isEmailVerified
-                              ? _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "btn btn-default",
-                                    attrs: { to: "/admin/dashboard" }
-                                  },
-                                  [_vm._v("Account")]
-                                )
-                              : _vm._e()
-                          ],
-                          1
-                        )
-                      : _c(
-                          "li",
-                          { staticClass: "nav-item" },
-                          [
-                            _vm.$route.path != "/user/dashboard" &&
-                            _vm.$auth.user().isEmailVerified
-                              ? _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "btn btn-default",
-                                    attrs: { to: "/user/dashboard" }
-                                  },
-                                  [_vm._v("Account")]
-                                )
-                              : _vm._e()
-                          ],
-                          1
-                        )
-                  ]
-                )
-              : _vm._e()
+                  _c(
+                    "li",
+                    [
+                      _c("router-link", { attrs: { to: "/register" } }, [
+                        _vm._v("Get Started")
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    [
+                      _c("router-link", { attrs: { to: "/investmentPlans" } }, [
+                        _vm._v("Investment plans")
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    [
+                      _c("router-link", { attrs: { to: "/partners" } }, [
+                        _vm._v("Partners")
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    [
+                      _c("router-link", { attrs: { to: "/faq" } }, [
+                        _vm._v("Faq")
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    [
+                      _c("router-link", { attrs: { to: "/news" } }, [
+                        _vm._v("Blog")
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    [
+                      _c("router-link", { attrs: { to: "/support" } }, [
+                        _vm._v("Support")
+                      ])
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._m(2)
+              ]
+            )
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "account-menu mobile-acc-menu" }, [
+      _c("li", { staticClass: "icon" }, [
+        _c("a", { attrs: { href: "login.html" } }, [
+          _c("i", { staticClass: "las la-user" })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarSupportedContent",
+          "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "false",
+          "aria-label": "Toggle navigation"
+        }
+      },
+      [_c("span", { staticClass: "menu-toggle" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "nav-right" }, [
+      _c("ul", { staticClass: "account-menu ml-3" }, [
+        _c("li", { staticClass: "icon" }, [
+          _c("a", { attrs: { href: "login.html" } }, [
+            _c("i", { staticClass: "las la-user" })
           ])
         ])
       ]),
       _vm._v(" "),
-      _c("Menu")
-    ],
-    1
-  )
-}
-var staticRenderFns = []
+      _c("select", { staticClass: "select d-inline-block w-auto ml-xl-3" }, [
+        _c("option", [_vm._v("Eng")]),
+        _vm._v(" "),
+        _c("option", [_vm._v("Ban")]),
+        _vm._v(" "),
+        _c("option", [_vm._v("Hin")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -55949,7 +56908,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", { staticClass: "w-note m-2 p-3" }, [
         _vm._v(
-          "Thank you for your interest in joining our program, you are now close to becoming an official member of  Bitcoinary Finance "
+          "Thank you for your interest in joining our program, you are now close to becoming an official member of  Bitcoinary Mint "
         )
       ]),
       _vm._v(" "),
@@ -56072,7 +57031,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", { staticClass: "w-note p-2 m-2" }, [
         _vm._v(
-          "Thank you for joining our program, you are now official member of  Bitcoinary Finance "
+          "Thank you for joining our program, you are now official member of  Bitcoinary Mint "
         )
       ]),
       _vm._v(" "),
@@ -56176,7 +57135,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("p", [
                       _vm._v(
-                        " Bitcoinary Finance Limited‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on."
+                        " Bitcoinary Mint Limited‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on."
                       )
                     ])
                   ]),
@@ -56532,515 +57491,1525 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "section",
-      {
-        staticClass: "main-container",
-        style:
-          "background:url(" +
-          _vm.$root.basepath +
-          "/img/home.png) no-repeat 0 0;"
-      },
-      [
-        _c("div", { staticClass: "main" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "wrapper" }, [
-              _c("div", { staticClass: "row company" }, [
-                _c("div", { staticClass: " col p-3 partners-container" }, [
-                  _c("h2", { staticClass: "company-title" }, [
-                    _vm._v("Our Company")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "m-0" }, [
-                    _vm._v(
-                      " Bitcoinary finance is an innovating company diversified in several Investment methods\n                                Our company is a big investor in real estate,oil and gas,gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of most popular Crypto currency by volume-Bitcoins. Such Investment methods is free from capital loss and returns supposed profits."
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("br"),
-                  _c("br"),
-                  _vm._v(" "),
-                  _vm._m(0),
-                  _vm._v(" "),
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "services" }, [
-                    _c("ul", { staticClass: "row" }, [
-                      _c("li", { staticClass: "col text-center" }, [
-                        _c("div", { staticClass: "inner-s" }, [
-                          _c("img", {
-                            staticClass: "centered-img",
-                            attrs: {
-                              src: _vm.$root.basepath + "/img/key-2.png"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("h4", [_vm._v("Team")]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "We are a well-coordinated team that takes responsibility for fulfilling the contract. You could not find a better place."
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "col text-center" }, [
-                        _c("div", { staticClass: "inner-s" }, [
-                          _c("img", {
-                            staticClass: "centered-img",
-                            attrs: {
-                              src: _vm.$root.basepath + "/img/key-1.png"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("h4", [
-                            _vm._v("High growth & substantial returns")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              " Bitcoinary Finance Limited is guided by an excellent team to ensure lofty yields & steady profits in the long run."
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "col text-center" }, [
-                        _c("div", { staticClass: "inner-s" }, [
-                          _c("img", {
-                            staticClass: "centered-img",
-                            attrs: {
-                              src: _vm.$root.basepath + "/img/key-4.png"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("h4", [_vm._v("Registered Company")]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              " Bitcoinary Finance is fully registered in United States."
-                            )
-                          ])
-                        ])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
+    _c("body", [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _vm._m(2),
+      _vm._v(" "),
+      _c("div", { staticClass: "page-wrapper" }, [
+        _c(
+          "section",
+          {
+            staticClass: "hero bg_img",
+            attrs: {
+              "data-background": _vm.$root.basepath + "/images/bg/hero.jpg"
+            }
+          },
+          [_vm._m(3)]
+        ),
+        _vm._v(" "),
+        _vm._m(4),
+        _vm._v(" "),
+        _c(
+          "section",
+          {
+            staticClass: "about-section pt-120 pb-120 bg_img",
+            attrs: {
+              "data-background": _vm.$root.basepath + "/images/bg/bg-2.jpg"
+            }
+          },
+          [
+            _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-lg-6 offset-lg-6" }, [
                   _c(
                     "div",
-                    { staticClass: " m-0 p-0 mt-4 pt-4  partners-container" },
+                    { staticClass: "about-content" },
                     [
-                      _c("h2", { staticClass: "company-title" }, [
-                        _vm._v("Our Investment Plans")
-                      ]),
+                      _vm._m(5),
                       _vm._v(" "),
-                      _c(
-                        "p",
-                        { staticClass: "col p-0 mb-4 inv-intro text-center" },
-                        [
-                          _vm._v(
-                            " Bitcoinary Finance offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. "
-                          )
-                        ]
-                      ),
-                      _c("br"),
+                      _vm._m(6),
                       _vm._v(" "),
-                      _c("div", { staticClass: "row p-2" }, [
-                        _c("div", { staticClass: "col-lg-3 col-sm-6 col-12" }, [
-                          _vm._m(2),
-                          _c(
-                            "div",
-                            { staticClass: "mb-5 text-center" },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  staticClass: "btn btn-inverse",
-                                  staticStyle: { width: "100%" },
-                                  attrs: { to: "/user/dashboard/deposit" }
-                                },
-                                [_vm._v("Make Investment")]
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("p")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-lg-3 col-sm-6 col-12" }, [
-                          _vm._m(3),
-                          _c(
-                            "div",
-                            { staticClass: "mb-5 text-center" },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  staticClass: "btn btn-inverse",
-                                  staticStyle: { width: "100%" },
-                                  attrs: { to: "/user/dashboard/deposit" }
-                                },
-                                [_vm._v("Make Investment")]
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("p")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-lg-3 col-sm-6 col-12" }, [
-                          _vm._m(4),
-                          _c(
-                            "div",
-                            { staticClass: "mb-5 text-center" },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  staticClass: "btn btn-inverse",
-                                  staticStyle: { width: "100%" },
-                                  attrs: { to: "/user/dashboard/deposit" }
-                                },
-                                [_vm._v("Make Investment")]
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("p")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-lg-3 col-sm-6 col-12" }, [
-                          _vm._m(5),
-                          _c(
-                            "div",
-                            { staticClass: "mb-5 text-center" },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  staticClass: "btn btn-inverse",
-                                  staticStyle: { width: "100%" },
-                                  attrs: { to: "/user/dashboard/deposit" }
-                                },
-                                [_vm._v("Make Investment")]
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("p")
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "ml-0 m-0 p-0 mt-5 pt-5 get-started" },
-                    [
-                      _c("h1", { staticClass: "company-title" }, [
-                        _vm._v("How To Get Started")
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        { staticClass: "col p-0 mb-4 inv-intro text-center" },
-                        [
-                          _vm._v(
-                            "To start your investment journey in Bitcoinary Finance Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal. "
-                          )
-                        ]
-                      ),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c("ul", [
-                        _c("li", [
-                          _vm._m(6),
-                          _vm._v(" "),
-                          _c(
-                            "p",
-                            [
-                              _vm._v(
-                                "Start by filling in required fields of the application form on the"
-                              ),
-                              _c(
-                                "router-link",
-                                {
-                                  staticClass: "btn btn-link",
-                                  staticStyle: {
-                                    display: "inline",
-                                    color: "rgb(183, 183, 183)",
-                                    "font-family": "Montserrat"
-                                  },
-                                  attrs: { to: "/register" }
-                                },
-                                [_vm._v("Register")]
-                              ),
-                              _vm._v(
-                                " page. Submit your registration. After that you will be able to log into your account and make your first investment."
-                              )
-                            ],
-                            1
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(7),
-                        _vm._v(" "),
-                        _c("li", [
-                          _vm._m(8),
-                          _vm._v(" "),
-                          _c(
-                            "p",
-                            [
-                              _vm._v(
-                                "Normally Bitcoin deposit is active after 3 confirmations. 3 confirmations from the Bitcoin network take approximately 30 minutes - 1 hour or maybe it can long which depends on bitcoin network. Once the Bitcoin deposit is confirmed it will show in your active deposit according to your subscription plan."
-                              ),
-                              _c(
-                                "router-link",
-                                {
-                                  staticClass: "btn btn-link",
-                                  staticStyle: {
-                                    display: "inline",
-                                    "line-height": "20px",
-                                    "font-size": "13px",
-                                    color: "rgb(183, 183, 183)",
-                                    "font-family": "Montserrat",
-                                    "text-transform": "uppercase"
-                                  },
-                                  attrs: { to: "/getstarted" }
-                                },
-                                [_vm._v("Read More")]
-                              )
-                            ],
-                            1
-                          )
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "m-1 mt-4 pt-5 m-0 p-0 partners-container" },
-                    [
-                      _c("h1", { staticClass: "company-title" }, [
-                        _vm._v("Our Affiliate Program")
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        [
-                          _vm._v(
-                            "If you want passive earning of substantial sums refer quickly to all about Bitcoinary Finance Limited & gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you."
-                          ),
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "btn btn-link",
-                              staticStyle: {
-                                display: "inline",
-                                "line-height": "20px",
-                                "font-size": "13px",
-                                color: "rgb(183, 183, 183)",
-                                "font-family": "Montserrat",
-                                "text-transform": "uppercase"
-                              },
-                              attrs: { to: "/partners" }
-                            },
-                            [_vm._v("Read More")]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("h5", { staticClass: "slogan text-center" }, [
+                      _c("p", { staticClass: "mt-4" }, [
                         _vm._v(
-                          "Enjoy exceptional upto 14% five levels deep affiliate system structure in Bitcoinary Finance Limited."
+                          "Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service, allowing us to automate and simplify the relations between the investors and\n                                    the trustees. We work towards increasing your profit margin by profitable investment strategies. We look forward to you being part of our community."
                         )
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "partners-img clearfix" }, [
-                        _c("img", {
-                          attrs: {
-                            src: _vm.$root.basepath + "/img/percentages.png"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("img", {
-                          attrs: {
-                            src: _vm.$root.basepath + "/img/partners.png"
-                          }
-                        })
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(9),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "data-map" }, [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: { src: _vm.$root.basepath + "/img/map.png" }
-                    }),
-                    _vm._v(" "),
-                    _vm._m(10),
-                    _vm._v(" "),
-                    _vm._m(11),
-                    _vm._v(" "),
-                    _vm._m(12),
-                    _vm._v(" "),
-                    _vm._m(13)
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "data-center-services" }, [
-                    _c("h2", { staticClass: "text-center" }, [
-                      _vm._v(
-                        "Highest standards on all data center facility aspects"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "column col dcs" }, [
-                        _c("img", {
-                          staticClass: "centered-img",
-                          attrs: { src: _vm.$root.basepath + "/img/dcs-1.png" }
-                        }),
-                        _vm._v(" "),
-                        _c("h4", [_vm._v("Highly available network")]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            " Bitcoinary Finance Limited‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on."
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "column col dcs" }, [
-                        _c("img", {
-                          staticClass: "centered-img",
-                          attrs: { src: _vm.$root.basepath + "/img/dcs-2.png" }
-                        }),
-                        _vm._v(" "),
-                        _c("h4", [_vm._v("Redundant electrical systems")]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "In our datacenters redundancy or duplication of critical electrical system components increases reliability of the system, usually in the form of a backup or fail-safe, or to improve actual system performance which supports mining constancy."
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "column col dcs" }, [
-                        _c("img", {
-                          staticClass: "centered-img",
-                          attrs: { src: _vm.$root.basepath + "/img/dcs-3.png" }
-                        }),
-                        _vm._v(" "),
-                        _c("h4", [_vm._v("High-end physical security")]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "We make sure the datacenters are safe with installation of surveillance cameras , biometric identification of staff & use of access cards. All these are necessary to secure our datacenters from intrusions & threats."
-                          )
-                        ])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "ml-0 m-0 p-0 mt-5 pt-5 get-started" },
-                    [
                       _c(
-                        "div",
-                        { staticClass: "row  support-wrapper clearfix" },
-                        [
-                          _c("div", { staticClass: "clear:both" }),
-                          _vm._v(" "),
-                          _c(
-                            "ul",
-                            {
-                              staticClass: "col-lg-4 col-12  support-contacts"
-                            },
-                            [
-                              _vm._m(14),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("img", {
-                                  staticStyle: { "margin-top": "5px" },
-                                  attrs: {
-                                    src:
-                                      _vm.$root.basepath +
-                                      "/img/support-mail.png"
-                                  }
-                                }),
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: {
-                                      href: "mailto:info@Bitcoinaryfinance.com"
-                                    }
-                                  },
-                                  [_vm._v("info@Bitcoinaryfinance.com/")]
-                                ),
-                                _c("br"),
-                                _c("a", {
-                                  attrs: {
-                                    href: "mailto:info@Bitcoinaryfinance.com"
-                                  }
-                                })
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "form",
-                            {
-                              staticClass:
-                                "support-form col-12 col-lg-7 m-1 text-center",
-                              attrs: { method: "post", name: "mainform" },
-                              on: {
-                                submit: function($event) {
-                                  $event.preventDefault()
-                                  return _vm.submitForm($event)
-                                }
-                              }
-                            },
-                            [
-                              _vm.success && !_vm.has_error
-                                ? _c(
-                                    "div",
-                                    { staticClass: "success-msg P-3 m-3" },
-                                    [
-                                      _vm.response != undefined
-                                        ? _c("p", [
-                                            _vm._v(_vm._s(_vm.response))
-                                          ])
-                                        : _vm._e()
-                                    ]
-                                  )
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _vm._m(15),
-                              _vm._v(" "),
-                              _vm._m(16)
-                            ]
-                          )
-                        ]
+                        "router-link",
+                        {
+                          staticClass: "cmn-btn mt-4",
+                          attrs: { to: "/about" }
+                        },
+                        [_vm._v("READ MORE")]
                       )
-                    ]
+                    ],
+                    1
                   )
                 ])
               ])
             ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("section", { staticClass: "pt-120 pb-120" }, [
+          _c("div", { staticClass: "container" }, [
+            _vm._m(7),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "row justify-content-center mb-none-30" },
+              [
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "package-card text-center bg_img",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/bg/bg-4.png"
+                      }
+                    },
+                    [
+                      _c(
+                        "h4",
+                        { staticClass: "package-card__title base--color mb-2" },
+                        [_vm._v("Slivesto")]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(8),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "package-card__range mt-5 base--color" },
+                        [_vm._v("$200")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "cmn-btn btn-md mt-4",
+                          attrs: { href: "#0" }
+                        },
+                        [_vm._v("Invest Now")]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "package-card text-center bg_img",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/bg/bg-4.png"
+                      }
+                    },
+                    [
+                      _c(
+                        "h4",
+                        { staticClass: "package-card__title base--color mb-2" },
+                        [_vm._v("Life Time")]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(9),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "package-card__range mt-5 base--color" },
+                        [_vm._v("$100 - $200")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "cmn-btn btn-md mt-4",
+                          attrs: { href: "#0" }
+                        },
+                        [_vm._v("Invest Now")]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "package-card text-center bg_img",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/bg/bg-4.png"
+                      }
+                    },
+                    [
+                      _c(
+                        "h4",
+                        { staticClass: "package-card__title base--color mb-2" },
+                        [_vm._v("Black Horse")]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(10),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "package-card__range mt-5 base--color" },
+                        [_vm._v("$500 - $5000")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "cmn-btn btn-md mt-4",
+                          attrs: { href: "#0" }
+                        },
+                        [_vm._v("Invest Now")]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "package-card text-center bg_img",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/bg/bg-4.png"
+                      }
+                    },
+                    [
+                      _c(
+                        "h4",
+                        { staticClass: "package-card__title base--color mb-2" },
+                        [_vm._v("Silver")]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(11),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "package-card__range mt-5 base--color" },
+                        [_vm._v("$500")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "cmn-btn btn-md mt-4",
+                          attrs: { href: "#0" }
+                        },
+                        [_vm._v("Invest Now")]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "package-card text-center bg_img",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/bg/bg-4.png"
+                      }
+                    },
+                    [
+                      _c(
+                        "h4",
+                        { staticClass: "package-card__title base--color mb-2" },
+                        [_vm._v("Elephant")]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(12),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "package-card__range mt-5 base--color" },
+                        [_vm._v("$500 - $700")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "cmn-btn btn-md mt-4",
+                          attrs: { href: "#0" }
+                        },
+                        [_vm._v("Invest Now")]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "package-card text-center bg_img",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/bg/bg-4.png"
+                      }
+                    },
+                    [
+                      _c(
+                        "h4",
+                        { staticClass: "package-card__title base--color mb-2" },
+                        [_vm._v("Cobra")]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(13),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "package-card__range mt-5 base--color" },
+                        [_vm._v("$1000")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "cmn-btn btn-md mt-4",
+                          attrs: { href: "#0" }
+                        },
+                        [_vm._v("Invest Now")]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "package-card text-center bg_img",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/bg/bg-4.png"
+                      }
+                    },
+                    [
+                      _c(
+                        "h4",
+                        { staticClass: "package-card__title base--color mb-2" },
+                        [_vm._v("Lion")]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(14),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "package-card__range mt-5 base--color" },
+                        [_vm._v("$100 - $500")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "cmn-btn btn-md mt-4",
+                          attrs: { href: "#0" }
+                        },
+                        [_vm._v("Invest Now")]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "package-card text-center bg_img",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/bg/bg-4.png"
+                      }
+                    },
+                    [
+                      _c(
+                        "h4",
+                        { staticClass: "package-card__title base--color mb-2" },
+                        [_vm._v("Tiger")]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(15),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "package-card__range mt-5 base--color" },
+                        [_vm._v("$100 - $500")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "cmn-btn btn-md mt-4",
+                          attrs: { href: "#0" }
+                        },
+                        [_vm._v("Invest Now")]
+                      )
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _vm._m(16)
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "section",
+          {
+            staticClass: "pt-120 pb-120 overlay--radial bg_img",
+            attrs: {
+              "data-background": _vm.$root.basepath + "/images/bg/bg-3.jpg"
+            }
+          },
+          [_vm._m(17)]
+        ),
+        _vm._v(" "),
+        _vm._m(18),
+        _vm._v(" "),
+        _c(
+          "section",
+          {
+            staticClass: "pt-120 pb-120 bg_img",
+            attrs: {
+              "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg"
+            }
+          },
+          [_vm._m(19)]
+        ),
+        _vm._v(" "),
+        _vm._m(20),
+        _vm._v(" "),
+        _c(
+          "section",
+          {
+            staticClass: "pt-120 pb-120 bg_img overlay--radial",
+            attrs: {
+              "data-background": _vm.$root.basepath + "/images/bg/bg-7.jpg"
+            }
+          },
+          [
+            _c("div", { staticClass: "container" }, [
+              _vm._m(21),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-lg-12" }, [
+                  _c("div", { staticClass: "testimonial-slider" }, [
+                    _c("div", { staticClass: "single-slide" }, [
+                      _c("div", { staticClass: "testimonial-card" }, [
+                        _vm._m(22),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "testimonial-card__client" }, [
+                          _c("div", { staticClass: "thumb" }, [
+                            _c("img", {
+                              attrs: {
+                                src:
+                                  _vm.$root.basepath +
+                                  "/images/testimonial/1.jpg",
+                                alt: "image"
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(23)
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "single-slide" }, [
+                      _c("div", { staticClass: "testimonial-card" }, [
+                        _vm._m(24),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "testimonial-card__client" }, [
+                          _c("div", { staticClass: "thumb" }, [
+                            _c("img", {
+                              attrs: {
+                                src:
+                                  _vm.$root.basepath +
+                                  "/images/testimonial/2.jpg",
+                                alt: "image"
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(25)
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "single-slide" }, [
+                      _c("div", { staticClass: "testimonial-card" }, [
+                        _vm._m(26),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "testimonial-card__client" }, [
+                          _c("div", { staticClass: "thumb" }, [
+                            _c("img", {
+                              attrs: {
+                                src:
+                                  _vm.$root.basepath +
+                                  "/images/testimonial/3.jpg",
+                                alt: "image"
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(27)
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "single-slide" }, [
+                      _c("div", { staticClass: "testimonial-card" }, [
+                        _vm._m(28),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "testimonial-card__client" }, [
+                          _c("div", { staticClass: "thumb" }, [
+                            _c("img", {
+                              attrs: {
+                                src:
+                                  _vm.$root.basepath +
+                                  "/images/testimonial/4.jpg",
+                                alt: "image"
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(29)
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "section",
+          {
+            staticClass: "pt-120 pb-120 bg_img",
+            attrs: {
+              "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg"
+            }
+          },
+          [
+            _c("div", { staticClass: "container" }, [
+              _vm._m(30),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "row justify-content-center mb-none-30" },
+                [
+                  _c(
+                    "div",
+                    { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" },
+                    [
+                      _c("div", { staticClass: "team-card" }, [
+                        _c("div", { staticClass: "team-card__thumb" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.$root.basepath + "/images/investor/1.jpg",
+                              alt: "image"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(31)
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" },
+                    [
+                      _c("div", { staticClass: "team-card" }, [
+                        _c("div", { staticClass: "team-card__thumb" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.$root.basepath + "/images/investor/2.jpg",
+                              alt: "image"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(32)
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" },
+                    [
+                      _c("div", { staticClass: "team-card" }, [
+                        _c("div", { staticClass: "team-card__thumb" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.$root.basepath + "/images/investor/3.jpg",
+                              alt: "image"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(33)
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" },
+                    [
+                      _c("div", { staticClass: "team-card" }, [
+                        _c("div", { staticClass: "team-card__thumb" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.$root.basepath + "/images/investor/4.jpg",
+                              alt: "image"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(34)
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" },
+                    [
+                      _c("div", { staticClass: "team-card" }, [
+                        _c("div", { staticClass: "team-card__thumb" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.$root.basepath + "/images/investor/5.jpg",
+                              alt: "image"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(35)
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" },
+                    [
+                      _c("div", { staticClass: "team-card" }, [
+                        _c("div", { staticClass: "team-card__thumb" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.$root.basepath + "/images/investor/6.jpg",
+                              alt: "image"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(36)
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" },
+                    [
+                      _c("div", { staticClass: "team-card" }, [
+                        _c("div", { staticClass: "team-card__thumb" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.$root.basepath + "/images/investor/7.jpg",
+                              alt: "image"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(37)
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" },
+                    [
+                      _c("div", { staticClass: "team-card" }, [
+                        _c("div", { staticClass: "team-card__thumb" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.$root.basepath + "/images/investor/8.jpg",
+                              alt: "image"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(38)
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("section", { staticClass: "pt-120 pb-120" }, [
+          _c("div", { staticClass: "container" }, [
+            _vm._m(39),
+            _vm._v(" "),
+            _c("div", { staticClass: "row justify-content-center" }, [
+              _c("div", { staticClass: "col-lg-10" }, [
+                _vm._m(40),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-content mt-4",
+                    attrs: { id: "transactionTabContent" }
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "tab-pane fade show active",
+                        attrs: {
+                          id: "deposit",
+                          role: "tabpanel",
+                          "aria-labelledby": "deposit-tab"
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "table-responsive--sm" }, [
+                          _c("table", { staticClass: "table style--two" }, [
+                            _vm._m(41),
+                            _vm._v(" "),
+                            _c("tbody", [
+                              _c("tr", [
+                                _c("td", { attrs: { "data-label": "Name" } }, [
+                                  _c("div", { staticClass: "user" }, [
+                                    _c("div", { staticClass: "thumb" }, [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            _vm.$root.basepath +
+                                            "/images/investor/1.jpg",
+                                          alt: "image"
+                                        }
+                                      })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("fahaddevs")])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { attrs: { "data-label": "Date" } }, [
+                                  _vm._v("Nov 22, 2020")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Amount" } },
+                                  [_vm._v("$ 5000")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Gateway" } },
+                                  [_vm._v("Stripe Hosted")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("tr", [
+                                _c("td", { attrs: { "data-label": "Name" } }, [
+                                  _c("div", { staticClass: "user" }, [
+                                    _c("div", { staticClass: "thumb" }, [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            _vm.$root.basepath +
+                                            "/images/investor/2.jpg",
+                                          alt: "image"
+                                        }
+                                      })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Jon Tulsa")])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { attrs: { "data-label": "Date" } }, [
+                                  _vm._v("Dec 11, 2020")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Amount" } },
+                                  [_vm._v("$ 1000")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Gateway" } },
+                                  [_vm._v("Stripe Hosted")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("tr", [
+                                _c("td", { attrs: { "data-label": "Name" } }, [
+                                  _c("div", { staticClass: "user" }, [
+                                    _c("div", { staticClass: "thumb" }, [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            _vm.$root.basepath +
+                                            "/images/investor/3.jpg",
+                                          alt: "image"
+                                        }
+                                      })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Thomas Okeyson")])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { attrs: { "data-label": "Date" } }, [
+                                  _vm._v("Dec 12, 2020")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Amount" } },
+                                  [_vm._v("$ 10000")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Gateway" } },
+                                  [_vm._v("Stripe Storefront")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("tr", [
+                                _c("td", { attrs: { "data-label": "Name" } }, [
+                                  _c("div", { staticClass: "user" }, [
+                                    _c("div", { staticClass: "thumb" }, [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            _vm.$root.basepath +
+                                            "/images/investor/6.jpg",
+                                          alt: "image"
+                                        }
+                                      })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Thomas Okeyson")])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { attrs: { "data-label": "Date" } }, [
+                                  _vm._v("Dec 12, 2020")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Amount" } },
+                                  [_vm._v("$ 6500")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Gateway" } },
+                                  [_vm._v("Stripe Hosted")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("tr", [
+                                _c("td", { attrs: { "data-label": "Name" } }, [
+                                  _c("div", { staticClass: "user" }, [
+                                    _c("div", { staticClass: "thumb" }, [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            _vm.$root.basepath +
+                                            "/images/investor/7.jpg",
+                                          alt: "image"
+                                        }
+                                      })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Thomas Okeyson")])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { attrs: { "data-label": "Date" } }, [
+                                  _vm._v("Dec 12, 2020")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Amount" } },
+                                  [_vm._v("$ 6500")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Gateway" } },
+                                  [_vm._v("Stripe Hosted")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("tr", [
+                                _c("td", { attrs: { "data-label": "Name" } }, [
+                                  _c("div", { staticClass: "user" }, [
+                                    _c("div", { staticClass: "thumb" }, [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            _vm.$root.basepath +
+                                            "/images/investor/8.jpg",
+                                          alt: "image"
+                                        }
+                                      })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Thomas Okeyson")])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { attrs: { "data-label": "Date" } }, [
+                                  _vm._v("Dec 12, 2020")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Amount" } },
+                                  [_vm._v("$ 6500")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Gateway" } },
+                                  [_vm._v("Stripe Hosted")]
+                                )
+                              ])
+                            ])
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "tab-pane fade",
+                        attrs: {
+                          id: "withdraw",
+                          role: "tabpanel",
+                          "aria-labelledby": "withdraw-tab"
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "table-responsive--md" }, [
+                          _c("table", { staticClass: "table style--two" }, [
+                            _vm._m(42),
+                            _vm._v(" "),
+                            _c("tbody", [
+                              _c("tr", [
+                                _c("td", { attrs: { "data-label": "Name" } }, [
+                                  _c("div", { staticClass: "user" }, [
+                                    _c("div", { staticClass: "thumb" }, [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            _vm.$root.basepath +
+                                            "/images/investor/1.jpg",
+                                          alt: "image"
+                                        }
+                                      })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("fahaddevs")])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { attrs: { "data-label": "Date" } }, [
+                                  _vm._v("Nov 22, 2020")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Amount" } },
+                                  [_vm._v("$ 5000")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Gateway" } },
+                                  [_vm._v("Stripe Hosted")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("tr", [
+                                _c("td", { attrs: { "data-label": "Name" } }, [
+                                  _c("div", { staticClass: "user" }, [
+                                    _c("div", { staticClass: "thumb" }, [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            _vm.$root.basepath +
+                                            "/images/investor/2.jpg",
+                                          alt: "image"
+                                        }
+                                      })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Jon Tulsa")])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { attrs: { "data-label": "Date" } }, [
+                                  _vm._v("Dec 11, 2020")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Amount" } },
+                                  [_vm._v("$ 1000")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Gateway" } },
+                                  [_vm._v("Stripe Hosted")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("tr", [
+                                _c("td", { attrs: { "data-label": "Name" } }, [
+                                  _c("div", { staticClass: "user" }, [
+                                    _c("div", { staticClass: "thumb" }, [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            _vm.$root.basepath +
+                                            "/images/investor/3.jpg",
+                                          alt: "image"
+                                        }
+                                      })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Thomas Okeyson")])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { attrs: { "data-label": "Date" } }, [
+                                  _vm._v("Dec 12, 2020")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Amount" } },
+                                  [_vm._v("$ 10000")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Gateway" } },
+                                  [_vm._v("Stripe Storefront")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("tr", [
+                                _c("td", { attrs: { "data-label": "Name" } }, [
+                                  _c("div", { staticClass: "user" }, [
+                                    _c("div", { staticClass: "thumb" }, [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            _vm.$root.basepath +
+                                            "/images/investor/6.jpg",
+                                          alt: "image"
+                                        }
+                                      })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Thomas Okeyson")])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { attrs: { "data-label": "Date" } }, [
+                                  _vm._v("Dec 12, 2020")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Amount" } },
+                                  [_vm._v("$ 6500")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Gateway" } },
+                                  [_vm._v("Stripe Hosted")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("tr", [
+                                _c("td", { attrs: { "data-label": "Name" } }, [
+                                  _c("div", { staticClass: "user" }, [
+                                    _c("div", { staticClass: "thumb" }, [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            _vm.$root.basepath +
+                                            "/images/investor/7.jpg",
+                                          alt: "image"
+                                        }
+                                      })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Thomas Okeyson")])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { attrs: { "data-label": "Date" } }, [
+                                  _vm._v("Dec 12, 2020")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Amount" } },
+                                  [_vm._v("$ 6500")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Gateway" } },
+                                  [_vm._v("Stripe Hosted")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("tr", [
+                                _c("td", { attrs: { "data-label": "Name" } }, [
+                                  _c("div", { staticClass: "user" }, [
+                                    _c("div", { staticClass: "thumb" }, [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            _vm.$root.basepath +
+                                            "/images/investor/8.jpg",
+                                          alt: "image"
+                                        }
+                                      })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Thomas Okeyson")])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { attrs: { "data-label": "Date" } }, [
+                                  _vm._v("Dec 12, 2020")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Amount" } },
+                                  [_vm._v("$ 6500")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Gateway" } },
+                                  [_vm._v("Stripe Hosted")]
+                                )
+                              ])
+                            ])
+                          ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("section", { staticClass: "pt-120 pb-120 border-top-1" }, [
+          _c("div", { staticClass: "container" }, [
+            _vm._m(43),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "row justify-content-center mb-none-30" },
+              [
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" }, [
+                  _c("div", { staticClass: "investor-card border-radius--5" }, [
+                    _c("div", {
+                      staticClass:
+                        "investor-card__thumb bg_img background-position-y-top",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/investor/1.jpg"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(44)
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" }, [
+                  _c("div", { staticClass: "investor-card border-radius--5" }, [
+                    _c("div", {
+                      staticClass:
+                        "investor-card__thumb bg_img background-position-y-top",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/investor/2.jpg"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(45)
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" }, [
+                  _c("div", { staticClass: "investor-card border-radius--5" }, [
+                    _c("div", {
+                      staticClass:
+                        "investor-card__thumb bg_img background-position-y-top",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/investor/3.jpg"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(46)
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" }, [
+                  _c("div", { staticClass: "investor-card border-radius--5" }, [
+                    _c("div", {
+                      staticClass:
+                        "investor-card__thumb bg_img background-position-y-top",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/investor/4.jpg"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(47)
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" }, [
+                  _c("div", { staticClass: "investor-card border-radius--5" }, [
+                    _c("div", {
+                      staticClass:
+                        "investor-card__thumb bg_img background-position-y-top",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/investor/5.jpg"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(48)
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" }, [
+                  _c("div", { staticClass: "investor-card border-radius--5" }, [
+                    _c("div", {
+                      staticClass:
+                        "investor-card__thumb bg_img background-position-y-top",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/investor/6.jpg"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(49)
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" }, [
+                  _c("div", { staticClass: "investor-card border-radius--5" }, [
+                    _c("div", {
+                      staticClass:
+                        "investor-card__thumb bg_img background-position-y-top",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/investor/7.jpg"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(50)
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" }, [
+                  _c("div", { staticClass: "investor-card border-radius--5" }, [
+                    _c("div", {
+                      staticClass:
+                        "investor-card__thumb bg_img background-position-y-top",
+                      attrs: {
+                        "data-background":
+                          _vm.$root.basepath + "/images/investor/8.jpg"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(51)
+                  ])
+                ])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("section", { staticClass: "pb-120" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row justify-content-center" }, [
+              _c("div", { staticClass: "col-xl-8" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "cta-wrapper bg_img border-radius--10 text-center",
+                    attrs: {
+                      "data-background":
+                        _vm.$root.basepath + "/images/bg/bg-8.jpg"
+                    }
+                  },
+                  [
+                    _c("h2", { staticClass: "title mb-3" }, [
+                      _vm._v("Get Started Today With Us")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "This is a Revolutionary Money Making Platform! Invest for Future in Stable Platform and Make Fast Money. Not only we guarantee the fastest and the most exciting returns on your investments, but we also guarantee the security\n                                    of your investment."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "cmn-btn mt-4",
+                        attrs: { href: "registration.html" }
+                      },
+                      [_vm._v("Join Us")]
+                    )
+                  ]
+                )
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("section", { staticClass: "pb-120" }, [
+          _c("div", { staticClass: "container" }, [
+            _vm._m(52),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-lg-12" }, [
+                _c("div", { staticClass: "payment-slider" }, [
+                  _c("div", { staticClass: "single-slide" }, [
+                    _c("div", { staticClass: "brand-item" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.$root.basepath + "/images/brand/1.png",
+                          alt: "image"
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "single-slide" }, [
+                    _c("div", { staticClass: "brand-item" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.$root.basepath + "/images/brand/2.png",
+                          alt: "image"
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "single-slide" }, [
+                    _c("div", { staticClass: "brand-item" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.$root.basepath + "/images/brand/3.png",
+                          alt: "image"
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "single-slide" }, [
+                    _c("div", { staticClass: "brand-item" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.$root.basepath + "/images/brand/4.png",
+                          alt: "image"
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "single-slide" }, [
+                    _c("div", { staticClass: "brand-item" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.$root.basepath + "/images/brand/5.png",
+                          alt: "image"
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "single-slide" }, [
+                    _c("div", { staticClass: "brand-item" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.$root.basepath + "/images/brand/6.png",
+                          alt: "image"
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "single-slide" }, [
+                    _c("div", { staticClass: "brand-item" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.$root.basepath + "/images/brand/7.png",
+                          alt: "image"
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "single-slide" }, [
+                    _c("div", { staticClass: "brand-item" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.$root.basepath + "/images/brand/8.png",
+                          alt: "image"
+                        }
+                      })
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("section", { staticClass: "pt-120 pb-120 border-top-1" }, [
+          _c("div", { staticClass: "container" }, [
+            _vm._m(53),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "row justify-content-center mb-none-30" },
+              [
+                _c("div", { staticClass: "col-lg-4 col-md-6 mb-30" }, [
+                  _c("div", { staticClass: "blog-card" }, [
+                    _c("div", { staticClass: "blog-card__thumb" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.$root.basepath + "/images/blog/1.jpg",
+                          alt: "image"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(54)
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-lg-4 col-md-6 mb-30" }, [
+                  _c("div", { staticClass: "blog-card" }, [
+                    _c("div", { staticClass: "blog-card__thumb" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.$root.basepath + "/images/blog/2.jpg",
+                          alt: "image"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(55)
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-lg-4 col-md-6 mb-30" }, [
+                  _c("div", { staticClass: "blog-card" }, [
+                    _c("div", { staticClass: "blog-card__thumb" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.$root.basepath + "/images/blog/3.jpg",
+                          alt: "image"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(56)
+                  ])
+                ])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("section", { staticClass: "pb-120" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row justify-content-center" }, [
+              _c("div", { staticClass: "col-lg-10" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "subscribe-wrapper bg_img",
+                    attrs: {
+                      "data-background":
+                        _vm.$root.basepath + "/images/bg/bg-5.jpg"
+                    }
+                  },
+                  [_vm._m(57)]
+                )
+              ])
+            ])
           ])
         ])
-      ]
-    )
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -57048,41 +59017,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "m-0" }, [
-      _vm._v(
-        "\n                                Bitcoinary Finance started in 2005 as a Financial Advisory Firm and recently in 2018 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading."
-      ),
-      _c("br"),
-      _c("br"),
-      _vm._v(
-        " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bitcoinary Finance team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
-      ),
-      _c("br"),
-      _c("br"),
-      _vm._v(
-        "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors.\n                                "
-      ),
-      _c(
-        "a",
-        {
-          staticClass: "btn btn-outline-warning section-home__btn textsite",
-          attrs: { href: "?a=about" }
-        },
-        [
-          _vm._v(
-            "\n                                    Learn more\n                                "
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row company  mt-3" }, [
-      _c("div", { staticClass: " col p-3 partners-container" }, [
-        _c("h2", { staticClass: "company-title" }, [_vm._v("Our Features")])
+    return _c("div", { staticClass: "preloader" }, [
+      _c("div", { staticClass: "preloader-container" }, [
+        _c("span", { staticClass: "animated-preloader" })
       ])
     ])
   },
@@ -57090,77 +59027,1038 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "inv-intro p-0  mb-3 text-left  col" }, [
-      _c("span", { staticClass: "font-weight-bold" }, [
-        _vm._v("Bronze account features:")
-      ]),
-      _c("br"),
-      _vm._v(
-        "\n                                            Deposit: $20 - $150.\n                                            Up to 5% R.O.I in 72 Hours minimum.\n                                            Eligibility: A New User Can Only Use This Plan Twice.\n                                            No Referral Commission.\n                                            "
-      )
+    return _c("div", { staticClass: "scroll-to-top" }, [
+      _c("span", { staticClass: "scroll-icon" }, [
+        _c("i", {
+          staticClass: "fa fa-rocket",
+          attrs: { "aria-hidden": "true" }
+        })
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: " inv-intro p-0 mb-3 text-left  col" }, [
-      _c("span", { staticClass: "font-weight-bold" }, [
-        _vm._v("Silver account features:")
-      ]),
-      _c("br"),
-      _vm._v(
-        "\n                                            Deposit: $200 - $2,000.\n                                            Up to 20% R.O.I.\n                                            30 Days minimum turnover.\n                                            Eligibility: Open.\n                                            5% One time Referral Commission.\n                                            "
-      )
+    return _c("div", { staticClass: "full-wh" }, [
+      _c("div", { staticClass: "bg-animation" }, [
+        _c("div", { attrs: { id: "stars" } }),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "stars2" } }),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "stars3" } }),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "stars4" } })
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: " inv-intro p-0 mb-3 text-left  col" }, [
-      _c("span", { staticClass: "font-weight-bold" }, [
-        _vm._v("Gold account features:")
-      ]),
-      _c("br"),
-      _vm._v(
-        "\n                                            Deposit: $5,000 - $30,000.\n                                            Up to 40% R.O.I.\n                                            30 Days turnover.\n                                            Eligibility: Open.\n                                            10% Referral Commission to the 5th chain.\n                                            "
-      )
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-xl-5 col-lg-8" }, [
+          _c("div", { staticClass: "hero__content" }, [
+            _c("h2", { staticClass: "hero__title" }, [
+              _c("span", { staticClass: "text-white font-weight-normal" }, [
+                _vm._v("Invest for Future in Stable Platform")
+              ]),
+              _vm._v(" "),
+              _c("b", { staticClass: "base--color" }, [
+                _vm._v("and Make Fast Money")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-white f-size-18 mt-3" }, [
+              _vm._v(
+                "Invest in an Industry Leader, Professional, and Reliable Company. We provide you with the most necessary features that will make your experience better. Not only we guarantee the fastest and the most exciting returns on your\n                                    investments, but we also guarantee the security of your investment."
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "cmn-btn text-uppercase font-weight-600 mt-4",
+                attrs: { href: "#0" }
+              },
+              [_vm._v("Sign Up")]
+            )
+          ])
+        ])
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: " inv-intro p-0 mb-3 text-left  col" }, [
-      _c("span", { staticClass: "font-weight-bold" }, [
-        _vm._v("Platinum account features:")
-      ]),
-      _c("br"),
-      _vm._v(
-        "\n                                            Deposit: $60,000 - $200,000.\n                                            Upto 60%.\n                                            14 days turnover.\n                                            Eligibility: Open.\n                                            10% Referral Commission to the 10th chain.\n                                            "
-      )
+    return _c("div", { staticClass: "cureency-section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row mb-none-30" }, [
+          _c("div", { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" }, [
+            _c("div", { staticClass: "cureency-card text-center" }, [
+              _c("h6", { staticClass: "cureency-card__title text-white" }, [
+                _vm._v("BITCOIN PRICE")
+              ]),
+              _vm._v(" "),
+              _c(
+                "span",
+                {
+                  staticClass:
+                    "cureency-card__amount h-font-family font-weight-600 base--color"
+                },
+                [_vm._v("3150.00 USD")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" }, [
+            _c("div", { staticClass: "cureency-card text-center" }, [
+              _c("h6", { staticClass: "cureency-card__title text-white" }, [
+                _vm._v("BITCOIN PRICE")
+              ]),
+              _vm._v(" "),
+              _c(
+                "span",
+                {
+                  staticClass:
+                    "cureency-card__amount h-font-family font-weight-600 base--color"
+                },
+                [_vm._v("2850.00 EUR")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" }, [
+            _c("div", { staticClass: "cureency-card text-center" }, [
+              _c("h6", { staticClass: "cureency-card__title text-white" }, [
+                _vm._v("24 VOLUME")
+              ]),
+              _vm._v(" "),
+              _c(
+                "span",
+                {
+                  staticClass:
+                    "cureency-card__amount h-font-family font-weight-600 base--color"
+                },
+                [_vm._v("2,547.35 BTC")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" }, [
+            _c("div", { staticClass: "cureency-card text-center" }, [
+              _c("h6", { staticClass: "cureency-card__title text-white" }, [
+                _vm._v("ACTIVE TRADES")
+              ]),
+              _vm._v(" "),
+              _c(
+                "span",
+                {
+                  staticClass:
+                    "cureency-card__amount h-font-family font-weight-600 base--color"
+                },
+                [_vm._v("2,545,875")]
+              )
+            ])
+          ])
+        ])
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h3", [
-      _c("span", [_vm._v("Step 1: ")]),
-      _vm._v("Account Registration")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("h3", [_c("span", [_vm._v("Step 2: ")]), _vm._v("Creating Deposit")]),
+    return _c("h2", { staticClass: "section-title mb-3" }, [
+      _c("span", { staticClass: "font-weight-normal" }, [_vm._v("About")]),
       _vm._v(" "),
+      _c("b", { staticClass: "base--color" }, [_vm._v("Us")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _vm._v(
+        "Bitcoinary Mint is an innovating company diversified in several Investment methods."
+      ),
+      _c("br"),
+      _vm._v(
+        "\n                                    Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits."
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-lg-6 text-center" }, [
+        _c("div", { staticClass: "section-header" }, [
+          _c("h2", { staticClass: "section-title" }, [
+            _c("span", { staticClass: "font-weight-normal" }, [
+              _vm._v("Investment")
+            ]),
+            _vm._v(" "),
+            _c("b", { staticClass: "base--color" }, [_vm._v("Plans")])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "To make a solid investment, you have to know where you are investing. Find a plan which is best for you."
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "package-card__features mt-4" }, [
+      _c("li", [_vm._v("Return 6%")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Every Week")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("For 5 Week")]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v("Total 30% + "),
+        _c("span", { staticClass: "badge base--bg text-dark" }, [
+          _vm._v("Capital")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "package-card__features mt-4" }, [
+      _c("li", [_vm._v("Return 0.2%")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Every Day")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("For Lifetime")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Lifetime Earning")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "package-card__features mt-4" }, [
+      _c("li", [_vm._v("Return 5%")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Every Week")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("For 40 Week")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Total 200%")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "package-card__features mt-4" }, [
+      _c("li", [_vm._v("Return 5%")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Every Day")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("For 25 Day")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Total 125%")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "package-card__features mt-4" }, [
+      _c("li", [_vm._v("Return 1.1USD")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Every Day")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("For 50 Day")]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v("Total 55USD + "),
+        _c("span", { staticClass: "badge base--bg" }, [_vm._v("Capital")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "package-card__features mt-4" }, [
+      _c("li", [_vm._v("Return 10USD")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Every Hour")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("For 150 Hour")]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v("Total 1500USD + "),
+        _c("span", { staticClass: "badge base--bg" }, [_vm._v("Capital")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "package-card__features mt-4" }, [
+      _c("li", [_vm._v("Return 0.2%")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Every Day")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("For Lifetime")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Lifetime Earning")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "package-card__features mt-4" }, [
+      _c("li", [_vm._v("Return 0.2%")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Every Day")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("For Lifetime")]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Lifetime Earning")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row mt-50" }, [
+      _c("div", { staticClass: "col-lg-12 text-center" }, [
+        _c("a", { staticClass: "cmn-btn", attrs: { href: "#0" } }, [
+          _vm._v("View All Packages")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-lg-6 text-center" }, [
+          _c("div", { staticClass: "section-header" }, [
+            _c("h2", { staticClass: "section-title" }, [
+              _c("span", { staticClass: "font-weight-normal" }, [
+                _vm._v("Why Choose")
+              ]),
+              _vm._v(" "),
+              _c("b", { staticClass: "base--color" }, [_vm._v("Hyiplab")])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service."
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-center mb-none-30" }, [
+        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+          _c("div", { staticClass: "choose-card border-radius--5" }, [
+            _c("div", { staticClass: "choose-card__header mb-3" }, [
+              _c("div", { staticClass: "choose-card__icon" }, [
+                _c("i", { staticClass: "lar la-copy" })
+              ]),
+              _vm._v(" "),
+              _c("h4", { staticClass: "choose-card__title base--color" }, [
+                _vm._v("Legal Company")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Our company conducts absolutely legal activities in the legal field. We are certified to operate investment business, we are legal and safe."
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+          _c("div", { staticClass: "choose-card border-radius--5" }, [
+            _c("div", { staticClass: "choose-card__header mb-3" }, [
+              _c("div", { staticClass: "choose-card__icon" }, [
+                _c("i", { staticClass: "las la-lock" })
+              ]),
+              _vm._v(" "),
+              _c("h4", { staticClass: "choose-card__title base--color" }, [
+                _vm._v("High reliability")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "We are trusted by a huge number of people. We are working hard constantly to improve the level of our security system and minimize possible risks."
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+          _c("div", { staticClass: "choose-card border-radius--5" }, [
+            _c("div", { staticClass: "choose-card__header mb-3" }, [
+              _c("div", { staticClass: "choose-card__icon" }, [
+                _c("i", { staticClass: "las la-user-lock" })
+              ]),
+              _vm._v(" "),
+              _c("h4", { staticClass: "choose-card__title base--color" }, [
+                _vm._v("Anonymity")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Anonymity and using cryptocurrency as a payment instrument. In the era of electronic money – this is one of the most convenient ways of cooperation."
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+          _c("div", { staticClass: "choose-card border-radius--5" }, [
+            _c("div", { staticClass: "choose-card__header mb-3" }, [
+              _c("div", { staticClass: "choose-card__icon" }, [
+                _c("i", { staticClass: "las la-shipping-fast" })
+              ]),
+              _vm._v(" "),
+              _c("h4", { staticClass: "choose-card__title base--color" }, [
+                _vm._v("Quick Withdrawal")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Our all retreats are treated spontaneously once requested. There are high maximum limits. The minimum withdrawal amount is only $10."
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+          _c("div", { staticClass: "choose-card border-radius--5" }, [
+            _c("div", { staticClass: "choose-card__header mb-3" }, [
+              _c("div", { staticClass: "choose-card__icon" }, [
+                _c("i", { staticClass: "las la-users" })
+              ]),
+              _vm._v(" "),
+              _c("h4", { staticClass: "choose-card__title base--color" }, [
+                _vm._v("Referral Program")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "We are offering a certain level of referral income through our referral program. you can increase your income by simply refer a few people."
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+          _c("div", { staticClass: "choose-card border-radius--5" }, [
+            _c("div", { staticClass: "choose-card__header mb-3" }, [
+              _c("div", { staticClass: "choose-card__icon" }, [
+                _c("i", { staticClass: "las la-headset" })
+              ]),
+              _vm._v(" "),
+              _c("h4", { staticClass: "choose-card__title base--color" }, [
+                _vm._v("24/7 Support")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "We provide 24/7 customer support through e-mail and telegram. Our support representatives are periodically available to elucidate any difficulty.."
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+          _c("div", { staticClass: "choose-card border-radius--5" }, [
+            _c("div", { staticClass: "choose-card__header mb-3" }, [
+              _c("div", { staticClass: "choose-card__icon" }, [
+                _c("i", { staticClass: "las la-server" })
+              ]),
+              _vm._v(" "),
+              _c("h4", { staticClass: "choose-card__title base--color" }, [
+                _vm._v("Dedicated Server")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "We are using a dedicated server for the website which allows us exclusive use of the resources of the entire server."
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+          _c("div", { staticClass: "choose-card border-radius--5" }, [
+            _c("div", { staticClass: "choose-card__header mb-3" }, [
+              _c("div", { staticClass: "choose-card__icon" }, [
+                _c("i", { staticClass: "fab fa-expeditedssl" })
+              ]),
+              _vm._v(" "),
+              _c("h4", { staticClass: "choose-card__title base--color" }, [
+                _vm._v("SSL Secured")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Comodo Essential-SSL Security encryption confirms that the presented content is genuine and legitimate."
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+          _c("div", { staticClass: "choose-card border-radius--5" }, [
+            _c("div", { staticClass: "choose-card__header mb-3" }, [
+              _c("div", { staticClass: "choose-card__icon" }, [
+                _c("i", { staticClass: "las la-shield-alt" })
+              ]),
+              _vm._v(" "),
+              _c("h4", { staticClass: "choose-card__title base--color" }, [
+                _vm._v("DDOS Protection")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "We are using one of the most experienced, professional, and trusted DDoS Protection and mitigation provider."
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "pt-120 pb-120" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c("div", { staticClass: "section-header text-center" }, [
+              _c("h2", { staticClass: "section-title" }, [
+                _c("span", { staticClass: "font-weight-normal" }, [
+                  _vm._v("Profit")
+                ]),
+                _vm._v(" "),
+                _c("b", { staticClass: "base--color" }, [_vm._v("Calculator")])
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "You must know the calculation before investing in any plan, so you never make mistakes. Check the calculation and you will get as our calculator says."
+                )
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-xl-8" }, [
+            _c("div", { staticClass: "profit-calculator-wrapper" }, [
+              _c("form", { staticClass: "profit-calculator" }, [
+                _c("div", { staticClass: "row mb-none-30" }, [
+                  _c("div", { staticClass: "col-lg-6 mb-30" }, [
+                    _c("label", [_vm._v("Choose Plan")]),
+                    _vm._v(" "),
+                    _c("select", { staticClass: "base--bg" }, [
+                      _c("option", [_vm._v("Basic Package")]),
+                      _vm._v(" "),
+                      _c("option", [_vm._v("Standard Package")]),
+                      _vm._v(" "),
+                      _c("option", [_vm._v("Silver Package")]),
+                      _vm._v(" "),
+                      _c("option", [_vm._v("Premium Package")]),
+                      _vm._v(" "),
+                      _c("option", [_vm._v("Platinum Package")])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-6 mb-30" }, [
+                    _c("label", [_vm._v("Invest Amount")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control base--bg",
+                      attrs: {
+                        type: "text",
+                        name: "invest_amount",
+                        id: "invest_amount",
+                        placeholder: "0.00"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-12 mb-30" }, [
+                    _c("label", [_vm._v("Profit Amount")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control base--bg",
+                      attrs: {
+                        type: "text",
+                        name: "profit_amount",
+                        id: "profit_amount",
+                        placeholder: "0.00",
+                        disabled: ""
+                      }
+                    })
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-lg-6 text-center" }, [
+          _c("div", { staticClass: "section-header" }, [
+            _c("h2", { staticClass: "section-title" }, [
+              _c("span", { staticClass: "font-weight-normal" }, [
+                _vm._v("How")
+              ]),
+              _vm._v(" "),
+              _c("b", { staticClass: "base--color" }, [_vm._v("Hyiplab")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "font-weight-normal" }, [
+                _vm._v("Works")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Get involved in our tremendous platform and Invest. We will utilize your money and give you profit in your wallet automatically."
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-center mb-none-30" }, [
+        _c("div", { staticClass: "col-lg-4 col-md-6 work-item mb-30" }, [
+          _c("div", { staticClass: "work-card text-center" }, [
+            _c("div", { staticClass: "work-card__icon" }, [
+              _c("i", { staticClass: "las la-user base--color" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "step-number" }, [_vm._v("01")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "work-card__content" }, [
+              _c("h4", { staticClass: "base--color mb-3" }, [
+                _vm._v("Create Account")
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-4 col-md-6 work-item mb-30" }, [
+          _c("div", { staticClass: "work-card text-center" }, [
+            _c("div", { staticClass: "work-card__icon" }, [
+              _c("i", { staticClass: "las la-hand-holding-usd base--color" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "step-number" }, [_vm._v("02")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "work-card__content" }, [
+              _c("h4", { staticClass: "base--color mb-3" }, [
+                _vm._v("Invest To Plan")
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-4 col-md-6 work-item mb-30" }, [
+          _c("div", { staticClass: "work-card text-center" }, [
+            _c("div", { staticClass: "work-card__icon" }, [
+              _c("i", { staticClass: "las la-wallet base--color" }),
+              _vm._v(" "),
+              _c("span", { staticClass: "step-number" }, [_vm._v("03")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "work-card__content" }, [
+              _c("h4", { staticClass: "base--color mb-3" }, [
+                _vm._v("Get Profit")
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "pt-120 pb-120" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-lg-6 text-center" }, [
+            _c("div", { staticClass: "section-header" }, [
+              _c("h2", { staticClass: "section-title" }, [
+                _c("span", { staticClass: "font-weight-normal" }, [
+                  _vm._v("Frequently Asked")
+                ]),
+                _vm._v(" "),
+                _c("b", { staticClass: "base--color" }, [_vm._v("Questions")])
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "We answer some of your Frequently Asked Questions regarding our platform. If you have a query that is not answered here, Please contact us."
+                )
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-lg-8" }, [
+            _c(
+              "div",
+              {
+                staticClass: "accordion cmn-accordion",
+                attrs: { id: "accordionExample" }
+              },
+              [
+                _c("div", { staticClass: "card" }, [
+                  _c(
+                    "div",
+                    { staticClass: "card-header", attrs: { id: "headingOne" } },
+                    [
+                      _c("h2", { staticClass: "mb-0" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-link btn-block text-left",
+                            attrs: {
+                              type: "button",
+                              "data-toggle": "collapse",
+                              "data-target": "#collapseOne",
+                              "aria-expanded": "true",
+                              "aria-controls": "collapseOne"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "las la-question-circle" }),
+                            _vm._v(" "),
+                            _c("span", [
+                              _vm._v(
+                                "When can I deposit/withdraw from my Investment account?"
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "collapse show",
+                      attrs: {
+                        id: "collapseOne",
+                        "aria-labelledby": "headingOne",
+                        "data-parent": "#accordionExample"
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "card-body" }, [
+                        _vm._v(
+                          "\n                                            Deposit and withdrawal are available for at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. The available amount is shown in your dashboard on the main page of Investing platform. Deposit and withdrawal are\n                                            available for at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. The available amount is shown in your dashboard on the main page of Investing platform.\n                                        "
+                        )
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card" }, [
+                  _c(
+                    "div",
+                    { staticClass: "card-header", attrs: { id: "headingTwo" } },
+                    [
+                      _c("h2", { staticClass: "mb-0" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-link btn-block text-left collapsed",
+                            attrs: {
+                              type: "button",
+                              "data-toggle": "collapse",
+                              "data-target": "#collapseTwo",
+                              "aria-expanded": "false",
+                              "aria-controls": "collapseTwo"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "las la-question-circle" }),
+                            _vm._v(" "),
+                            _c("span", [
+                              _vm._v("How do I check my account balance?")
+                            ])
+                          ]
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "collapse",
+                      attrs: {
+                        id: "collapseTwo",
+                        "aria-labelledby": "headingTwo",
+                        "data-parent": "#accordionExample"
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "card-body" }, [
+                        _vm._v(
+                          "\n                                            You can see this anytime on your accounts dashboard. You can see this anytime on your accounts dashboard.\n                                        "
+                        )
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "card-header",
+                      attrs: { id: "headingThree" }
+                    },
+                    [
+                      _c("h2", { staticClass: "mb-0" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-link btn-block text-left collapsed",
+                            attrs: {
+                              type: "button",
+                              "data-toggle": "collapse",
+                              "data-target": "#collapseThree",
+                              "aria-expanded": "false",
+                              "aria-controls": "collapseThree"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "las la-question-circle" }),
+                            _vm._v(" "),
+                            _c("span", [
+                              _vm._v("I forgot my password, what should I do?")
+                            ])
+                          ]
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "collapse",
+                      attrs: {
+                        id: "collapseThree",
+                        "aria-labelledby": "headingThree",
+                        "data-parent": "#accordionExample"
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "card-body" }, [
+                        _vm._v(
+                          "\n                                            Visit the password reset page, type in your email address and click the `Reset` button. Visit the password reset page, type in your email address and click the `Reset` button.\n                                        "
+                        )
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "card-header",
+                      attrs: { id: "headingFour" }
+                    },
+                    [
+                      _c("h2", { staticClass: "mb-0" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-link btn-block text-left collapsed",
+                            attrs: {
+                              type: "button",
+                              "data-toggle": "collapse",
+                              "data-target": "#collapseFour",
+                              "aria-expanded": "false",
+                              "aria-controls": "collapseFour"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "las la-question-circle" }),
+                            _vm._v(" "),
+                            _c("span", [
+                              _vm._v(
+                                "How will I know that the withdrawal has been successful?"
+                              )
+                            ])
+                          ]
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "collapse",
+                      attrs: {
+                        id: "collapseFour",
+                        "aria-labelledby": "headingFour",
+                        "data-parent": "#accordionExample"
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "card-body" }, [
+                        _vm._v(
+                          "\n                                            You will get an automatic notification once we send the funds and you can always check your transactions or account balance. Your chosen payment system dictates how long it will take for the funds to reach you. You will get an automatic notification once\n                                            we send the funds and you can always check your transactions or account balance. Your chosen payment system dictates how long it will take for the funds to reach you.\n                                        "
+                        )
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "card-header",
+                      attrs: { id: "headingFive" }
+                    },
+                    [
+                      _c("h2", { staticClass: "mb-0" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-link btn-block text-left collapsed",
+                            attrs: {
+                              type: "button",
+                              "data-toggle": "collapse",
+                              "data-target": "#collapseFive",
+                              "aria-expanded": "false",
+                              "aria-controls": "collapseFive"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "las la-question-circle" }),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("How much can I withdraw?")])
+                          ]
+                        )
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "collapse",
+                      attrs: {
+                        id: "collapseFive",
+                        "aria-labelledby": "headingFive",
+                        "data-parent": "#accordionExample"
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "card-body" }, [
+                        _vm._v(
+                          "\n                                            You can withdraw the full amount of your account balance minus the funds that are used currently for supporting opened positions. You can withdraw the full amount of your account balance minus the funds that are used currently for supporting opened positions.\n                                        "
+                        )
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-lg-6 text-center" }, [
+        _c("div", { staticClass: "section-header" }, [
+          _c("h2", { staticClass: "section-title" }, [
+            _c("span", { staticClass: "font-weight-normal" }, [
+              _vm._v("What Users Say")
+            ]),
+            _vm._v(" "),
+            _c("b", { staticClass: "base--color" }, [_vm._v("About Us")])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse voluptatum eaque earum quos quia? Id aspernatur ratione, voluptas nulla rerum laudantium neque ipsam eaque"
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "testimonial-card__content" }, [
       _c("p", [
         _vm._v(
-          "In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in Bitcoinary Finance Limited just click on ‘Make a deposit‘ link. "
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus\n                                                obcaecati."
         )
       ])
     ])
@@ -57169,133 +60067,148 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h3", [
-      _c("span", [_vm._v("Step 3: ")]),
-      _vm._v("Wait for the deposit transfer")
+    return _c("div", { staticClass: "content" }, [
+      _c("h6", { staticClass: "name" }, [_vm._v("Fahaddevs")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "designation" }, [_vm._v("CEO of fahaddevs")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "ratings" }, [
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" })
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "page-heading m-0 p-0 mt-4 pt-4  partners-container " },
-      [
-        _c("h2", { staticClass: "company-title" }, [
-          _vm._v("Our Data Center Locations")
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "col p-0 mb-4 inv-intro text-center" }, [
-          _vm._v(
-            "Our powerful datacenters are the backbone of our profitable mining system of Bitcoins. Our business typically relies heavily upon these data centers, making it a focal point and critical asset for everyday mining operations."
-          )
-        ]),
-        _c("br")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "info one", staticStyle: { top: "50px", left: "400px" } },
-      [
-        _c("span", { staticClass: "map-marker" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "center-detail" }, [
-          _c("h5", { staticClass: "city" }, [_vm._v("Amsterdam")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "rates" })
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "info one", staticStyle: { top: "60px", left: "357px" } },
-      [
-        _c("span", { staticClass: "map-marker" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "center-detail" }, [
-          _c("h5", { staticClass: "city" }, [_vm._v("Iceland")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "rates" })
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "info one", staticStyle: { top: "60px", left: "134px" } },
-      [
-        _c("span", { staticClass: "map-marker" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "center-detail" }, [
-          _c("h5", { staticClass: "city" }, [_vm._v("Estonia")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "rates" })
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "info one",
-        staticStyle: { top: "210px", right: "169px" }
-      },
-      [
-        _c("span", { staticClass: "map-marker" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "center-detail" }, [
-          _c("h5", { staticClass: "city" }, [_vm._v("Singapore")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "rates" })
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticStyle: { "padding-left": "0" } }, [
-      _c("h2", { staticClass: "get-in" }, [_vm._v("Get In Touch")])
+    return _c("div", { staticClass: "testimonial-card__content" }, [
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus\n                                                obcaecati."
+        )
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "form-list" }, [
-      _c("li", [
-        _c("div", { staticClass: "input-box" }, [
-          _c("label", [_vm._v("Your Message")]),
+    return _c("div", { staticClass: "content" }, [
+      _c("h6", { staticClass: "name" }, [_vm._v("Alina")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "designation" }, [_vm._v("CTO of fahaddevs")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "ratings" }, [
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "testimonial-card__content" }, [
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus\n                                                obcaecati."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "content" }, [
+      _c("h6", { staticClass: "name" }, [_vm._v("Amir Khan")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "designation" }, [_vm._v("COO of fahaddevs")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "ratings" }, [
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "testimonial-card__content" }, [
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus\n                                                obcaecati."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "content" }, [
+      _c("h6", { staticClass: "name" }, [_vm._v("Zohir Khan")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "designation" }, [
+        _vm._v("Manager of fahaddevs")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "ratings" }, [
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" }),
+        _vm._v(" "),
+        _c("i", { staticClass: "las la-star" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-lg-6 text-center" }, [
+        _c("div", { staticClass: "section-header" }, [
+          _c("h2", { staticClass: "section-title" }, [
+            _c("span", { staticClass: "font-weight-normal" }, [
+              _vm._v("Our Expert")
+            ]),
+            _vm._v(" "),
+            _c("b", { staticClass: "base--color" }, [_vm._v("Team Members")])
+          ]),
           _vm._v(" "),
-          _c("textarea", {
-            staticClass: "form-control",
-            attrs: {
-              required: "",
-              minlength: "12",
-              name: "message",
-              placeholder: "Write your message here"
-            }
-          })
+          _c("p", [
+            _vm._v(
+              "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse voluptatum eaque earum quos quia? Id aspernatur ratione, voluptas nulla rerum laudantium neque ipsam eaque"
+            )
+          ])
         ])
       ])
     ])
@@ -57304,8 +60217,490 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "buttons-set text-center" }, [
-      _c("button", { staticClass: "btn btn-default" }, [_vm._v("Submit")])
+    return _c("div", { staticClass: "team-card__content" }, [
+      _c("h4", { staticClass: "name mb-1" }, [_vm._v("Fahad Bin Faiz")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "designation" }, [_vm._v("CEO")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "team-card__content" }, [
+      _c("h4", { staticClass: "name mb-1" }, [_vm._v("Danial K.")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "designation" }, [_vm._v("CTO")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "team-card__content" }, [
+      _c("h4", { staticClass: "name mb-1" }, [_vm._v("Lew Son")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "designation" }, [_vm._v("Marketing Head")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "team-card__content" }, [
+      _c("h4", { staticClass: "name mb-1" }, [_vm._v("Tend z Joe")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "designation" }, [_vm._v("Designer")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "team-card__content" }, [
+      _c("h4", { staticClass: "name mb-1" }, [_vm._v("Sam Joe")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "designation" }, [_vm._v("Developer")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "team-card__content" }, [
+      _c("h4", { staticClass: "name mb-1" }, [_vm._v("Alex Joe")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "designation" }, [_vm._v("UX Expert")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "team-card__content" }, [
+      _c("h4", { staticClass: "name mb-1" }, [_vm._v("Juna Sun")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "designation" }, [_vm._v("SEO Expert")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "team-card__content" }, [
+      _c("h4", { staticClass: "name mb-1" }, [_vm._v("Profed Laun")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "designation" }, [_vm._v("Manager")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-lg-6 text-center" }, [
+        _c("div", { staticClass: "section-header" }, [
+          _c("h2", { staticClass: "section-title" }, [
+            _c("span", { staticClass: "font-weight-normal" }, [
+              _vm._v("Our Latest")
+            ]),
+            _vm._v(" "),
+            _c("b", { staticClass: "base--color" }, [_vm._v("Transaction")])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Here is the log of the most recent transactions including withdraw and deposit made by our users."
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      {
+        staticClass: "nav nav-tabs custom--style-two justify-content-center",
+        attrs: { id: "transactionTab", role: "tablist" }
+      },
+      [
+        _c("li", { staticClass: "nav-item", attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link active",
+              attrs: {
+                id: "deposit-tab",
+                "data-toggle": "tab",
+                href: "#deposit",
+                role: "tab",
+                "aria-controls": "deposit",
+                "aria-selected": "true"
+              }
+            },
+            [_vm._v("Latest Deposit")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item", attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: {
+                id: "withdraw-tab",
+                "data-toggle": "tab",
+                href: "#withdraw",
+                role: "tab",
+                "aria-controls": "withdraw",
+                "aria-selected": "false"
+              }
+            },
+            [_vm._v("Latest Withdraw")]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Date")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Amount")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Gateway")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Date")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Amount")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Gateway")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-xl-6 col-lg-8 text-center" }, [
+        _c("div", { staticClass: "section-header" }, [
+          _c("h2", { staticClass: "section-title" }, [
+            _c("span", { staticClass: "font-weight-normal" }, [
+              _vm._v("Our Top")
+            ]),
+            _vm._v(" "),
+            _c("b", { staticClass: "base--color" }, [_vm._v("Investor")])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse voluptatum eaque earum quos quia? Id aspernatur ratione, voluptas nulla rerum laudantium neque ipsam eaque"
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "investor-card__content" }, [
+      _c("h6", { staticClass: "name" }, [_vm._v("Fahad Bin Faiz")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "amount f-size-14" }, [
+        _vm._v("Investment - $1,500,355")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "investor-card__content" }, [
+      _c("h6", { staticClass: "name" }, [_vm._v("Danial K")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "amount f-size-14" }, [
+        _vm._v("Investment - $1,500,355")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "investor-card__content" }, [
+      _c("h6", { staticClass: "name" }, [_vm._v("Lew Son")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "amount f-size-14" }, [
+        _vm._v("Investment - $1,500,355")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "investor-card__content" }, [
+      _c("h6", { staticClass: "name" }, [_vm._v("Tend z Joe")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "amount f-size-14" }, [
+        _vm._v("Investment - $1,500,355")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "investor-card__content" }, [
+      _c("h6", { staticClass: "name" }, [_vm._v("Sam Joe")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "amount f-size-14" }, [
+        _vm._v("Investment - $1,500,355")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "investor-card__content" }, [
+      _c("h6", { staticClass: "name" }, [_vm._v("Alex Joe")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "amount f-size-14" }, [
+        _vm._v("Investment - $1,500,355")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "investor-card__content" }, [
+      _c("h6", { staticClass: "name" }, [_vm._v("Juna Sun")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "amount f-size-14" }, [
+        _vm._v("Investment - $1,500,355")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "investor-card__content" }, [
+      _c("h6", { staticClass: "name" }, [_vm._v("Profed Laun")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "amount f-size-14" }, [
+        _vm._v("Investment - $1,500,355")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-lg-6 text-center" }, [
+        _c("div", { staticClass: "section-header" }, [
+          _c("h2", { staticClass: "section-title" }, [
+            _c("span", { staticClass: "font-weight-normal" }, [
+              _vm._v("Payment We")
+            ]),
+            _vm._v(" "),
+            _c("b", { staticClass: "base--color" }, [_vm._v("Accept")])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "We accept all major cryptocurrencies and fiat payment methods to make your investment process easier with our platform."
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-lg-6 text-center" }, [
+        _c("div", { staticClass: "section-header" }, [
+          _c("h2", { staticClass: "section-title" }, [
+            _c("span", { staticClass: "font-weight-normal" }, [
+              _vm._v("Our Latest")
+            ]),
+            _vm._v(" "),
+            _c("b", { staticClass: "base--color" }, [_vm._v("News")])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse voluptatum eaque earum quos quia Id aspernatur ratione, voluptas nulla rerum laudantium neque ipsam eaque"
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "blog-card__content" }, [
+      _c("h4", { staticClass: "blog-card__title mb-3" }, [
+        _c("a", { attrs: { href: "#0" } }, [
+          _vm._v(
+            "Laboriosam distinctio nisi debitis deleniti voluptatum corporis."
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "blog-card__meta d-flex flex-wrap mb-4" }, [
+        _c("li", [
+          _c("i", { staticClass: "las la-user" }),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "#0" } }, [_vm._v("fahaddevs")])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("i", { staticClass: "las la-calendar" }),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "#0" } }, [_vm._v("20 Nov, 2020")])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim."
+        )
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "cmn-btn btn-md mt-4", attrs: { href: "#0" } }, [
+        _vm._v("Read More")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "blog-card__content" }, [
+      _c("h4", { staticClass: "blog-card__title mb-3" }, [
+        _c("a", { attrs: { href: "#0" } }, [
+          _vm._v(
+            "Laboriosam distinctio nisi debitis deleniti voluptatum corporis."
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "blog-card__meta d-flex flex-wrap mb-4" }, [
+        _c("li", [
+          _c("i", { staticClass: "las la-user" }),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "#0" } }, [_vm._v("fahaddevs")])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("i", { staticClass: "las la-calendar" }),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "#0" } }, [_vm._v("20 Nov, 2020")])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim."
+        )
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "cmn-btn btn-md mt-4", attrs: { href: "#0" } }, [
+        _vm._v("Read More")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "blog-card__content" }, [
+      _c("h4", { staticClass: "blog-card__title mb-3" }, [
+        _c("a", { attrs: { href: "#0" } }, [
+          _vm._v(
+            "Laboriosam distinctio nisi debitis deleniti voluptatum corporis."
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "blog-card__meta d-flex flex-wrap mb-4" }, [
+        _c("li", [
+          _c("i", { staticClass: "las la-user" }),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "#0" } }, [_vm._v("fahaddevs")])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("i", { staticClass: "las la-calendar" }),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "#0" } }, [_vm._v("20 Nov, 2020")])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim."
+        )
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "cmn-btn btn-md mt-4", attrs: { href: "#0" } }, [
+        _vm._v("Read More")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row align-items-center" }, [
+      _c("div", { staticClass: "col-lg-5" }, [
+        _c("h2", { staticClass: "title" }, [_vm._v("Subscribe Our Newsletter")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-7 mt-lg-0 mt-4" }, [
+        _c("form", { staticClass: "subscribe-form" }, [
+          _c("input", {
+            staticClass: "form-control",
+            attrs: { type: "email", placeholder: "Email Address" }
+          }),
+          _vm._v(" "),
+          _c("button", { staticClass: "subscribe-btn" }, [
+            _c("i", { staticClass: "las la-envelope" })
+          ])
+        ])
+      ])
     ])
   }
 ]
@@ -57549,7 +60944,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", { staticClass: "w-note m-1" }, [
         _vm._v(
-          "Thank you for your interest in joining our program, you are now close to becoming an official member of  Bitcoinary Finance"
+          "Thank you for your interest in joining our program, you are now close to becoming an official member of  Bitcoinary Mint"
         )
       ]),
       _vm._v(" "),
@@ -58626,7 +62021,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "accept-terms text-center" }, [
       _c("label", { staticClass: "small" }, [
         _vm._v(
-          "Completing your registration you agree with Terms of  Bitcoinary Finance Limited"
+          "Completing your registration you agree with Terms of  Bitcoinary Mint Limited"
         )
       ])
     ])
@@ -62536,7 +65931,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "Please go through the Frequently asked questions. Following are the answers to most common questions that may arise in any investor’s mind to know Bitcoinary Finance Limited better. "
+            "Please go through the Frequently asked questions. Following are the answers to most common questions that may arise in any investor’s mind to know Bitcoinary Mint Limited better. "
           )
         ])
       ])
@@ -62584,7 +65979,7 @@ var staticRenderFns = [
                                     href: "#collapse1"
                                   }
                                 },
-                                [_vm._v("What is Bitcoinary Finance Limited? ")]
+                                [_vm._v("What is Bitcoinary Mint Limited? ")]
                               ),
                               _vm._v(" "),
                               _c(
@@ -62596,7 +65991,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Bitcoinary Finance is an expert trading company."
+                                      "Bitcoinary Mint is an expert trading company."
                                     )
                                   ])
                                 ]
@@ -62616,7 +66011,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "Is Bitcoinary Finance Limited available to public? "
+                                    "Is Bitcoinary Mint Limited available to public? "
                                   )
                                 ]
                               ),
@@ -62630,7 +66025,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Bitcoinary Finance Limited is open for public who are 18 and fulfill the legal age to take part in our program. "
+                                      "Bitcoinary Mint Limited is open for public who are 18 and fulfill the legal age to take part in our program. "
                                     )
                                   ])
                                 ]
@@ -62664,7 +66059,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Bitcoinary Finance (BFIN) is fully regulated by the Financial Industry Regulatory Authority. You can visit to vetrify https://brokercheck.finra.org/firm/summary/282643/"
+                                      "Bitcoinary Mint (BFIN) is fully regulated by the Financial Industry Regulatory Authority. You can visit to vetrify https://brokercheck.finra.org/firm/summary/282643/"
                                     )
                                   ])
                                 ]
@@ -62684,7 +66079,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "How Does Bitcoinary Finance Limited make profit? "
+                                    "How Does Bitcoinary Mint Limited make profit? "
                                   )
                                 ]
                               ),
@@ -62698,7 +66093,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Bitcoinary Finance has been consistent for the past two years, our unique alogrithm remains relevant, this the major secret why we win. "
+                                      "Bitcoinary Mint has been consistent for the past two years, our unique alogrithm remains relevant, this the major secret why we win. "
                                     )
                                   ])
                                 ]
@@ -62732,7 +66127,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Bitcoinary Finance Limited is a platform which is risk-free. However, to avoid unforeseen loss, the company continuously fills in its contingency fund. In the case of force majeure situations, Bitcoinary Finance Limited's investors can expect to receive money back except the profits they received earlier."
+                                      "Bitcoinary Mint Limited is a platform which is risk-free. However, to avoid unforeseen loss, the company continuously fills in its contingency fund. In the case of force majeure situations, Bitcoinary Mint Limited's investors can expect to receive money back except the profits they received earlier."
                                     )
                                   ])
                                 ]
@@ -62758,7 +66153,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "How can I start investing with Bitcoinary Finance Limited ? "
+                                    "How can I start investing with Bitcoinary Mint Limited ? "
                                   )
                                 ]
                               ),
@@ -62839,7 +66234,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "I wish to invest with Bitcoinary Finance Limited but I don't have any e-currency account. What should I do? "
+                                    "I wish to invest with Bitcoinary Mint Limited but I don't have any e-currency account. What should I do? "
                                   )
                                 ]
                               ),
@@ -62873,7 +66268,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "Can I have more than one account at Bitcoinary Finance ? "
+                                    "Can I have more than one account at Bitcoinary Mint ? "
                                   )
                                 ]
                               ),
@@ -62887,7 +66282,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "No, each member can have only one account in Bitcoinary Finance Ltd. Any attempt of fraud will result in permanent blocking of the account & the funds deposited in the account will be frozen. "
+                                      "No, each member can have only one account in Bitcoinary Mint Ltd. Any attempt of fraud will result in permanent blocking of the account & the funds deposited in the account will be frozen. "
                                     )
                                   ])
                                 ]
@@ -63147,7 +66542,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Just login to your Bitcoinary Finance Limited account and proceed with your withdrawal at the Withdraw section. "
+                                      "Just login to your Bitcoinary Mint Limited account and proceed with your withdrawal at the Withdraw section. "
                                     )
                                   ])
                                 ]
@@ -63275,7 +66670,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "Do you have a referral program in Bitcoinary Finance Limited? "
+                                    "Do you have a referral program in Bitcoinary Mint Limited? "
                                   )
                                 ]
                               ),
@@ -63289,7 +66684,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Yes we have a 5 level referral program in Bitcoinary Finance Limited. "
+                                      "Yes we have a 5 level referral program in Bitcoinary Mint Limited. "
                                     )
                                   ])
                                 ]
@@ -63309,7 +66704,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "What are the referral commissions in Bitcoinary Finance Limited? "
+                                    "What are the referral commissions in Bitcoinary Mint Limited? "
                                   )
                                 ]
                               ),
@@ -63343,7 +66738,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "Do I need to have active investment in order to participate in Bitcoinary Finance Limited's referral program ? "
+                                    "Do I need to have active investment in order to participate in Bitcoinary Mint Limited's referral program ? "
                                   )
                                 ]
                               ),
@@ -63507,7 +66902,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "To start your investment journey in  Bitcoinary Finance Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal."
+            "To start your investment journey in  Bitcoinary Mint Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal."
           )
         ])
       ])
@@ -63531,7 +66926,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in  Bitcoinary Finance Limited just click on ‘Make a deposit‘ link. "
+          "In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in  Bitcoinary Mint Limited just click on ‘Make a deposit‘ link. "
         )
       ])
     ])
@@ -63576,7 +66971,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "All the investment plans in  Bitcoinary Finance Limited comes with bit by bit accruals each day your account reads. Once profit is deposited in your account wallet, you may be able to withdraw it. The minimum withdrawal amount is 1 USD. Feel free at any time to withdraw & enjoy your ROI! "
+          "All the investment plans in  Bitcoinary Mint Limited comes with bit by bit accruals each day your account reads. Once profit is deposited in your account wallet, you may be able to withdraw it. The minimum withdrawal amount is 1 USD. Feel free at any time to withdraw & enjoy your ROI! "
         )
       ])
     ])
@@ -63967,71 +67362,55 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "section",
-      {
-        staticClass: "main-container",
-        style:
-          "background:url(" +
-          _vm.$root.basepath +
-          "/img/home.png) no-repeat 0 0;"
-      },
-      [
-        _c("div", { staticClass: "main" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "wrapper" }, [
-              _c("div", { staticClass: "row company" }, [
-                _c("div", { staticClass: "p-2 partners-container" }, [
-                  _c("h2", { staticClass: "text-center" }, [
-                    _vm._v("Partner Incentive System Structure")
-                  ]),
-                  _vm._v(" "),
-                  _c("h5", { staticClass: "slogan text-center" }, [
-                    _vm._v(
-                      "Enjoy exceptional upto 14% five levels deep affiliate system structure in  Bitcoinary Finance Limited."
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "partners-img clearfix" }, [
-                    _c("img", {
-                      attrs: {
-                        src: _vm.$root.basepath + "/img/percentages.png"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("img", {
-                      attrs: { src: _vm.$root.basepath + "/img/partners.png" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "std" })
-                ])
-              ])
-            ])
+  return _c(
+    "section",
+    {
+      staticClass: "bg_img pt-120 pb-120 border-top-1",
+      attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg" }
+    },
+    [
+      _c("div", { staticClass: "container" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("div", { staticClass: "blog-details-wrapper" }, [
+            _c("div", { staticClass: "blog-details__thumb" }, [
+              _c("img", {
+                attrs: {
+                  src: _vm.$root.basepath + "/images/blog/1.jpg",
+                  alt: "image"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _vm._m(1)
           ])
         ])
-      ]
-    )
-  ])
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row page-title m-3 p-2" }, [
-      _c("div", { staticClass: "col-12 col-lg-8 container" }, [
-        _c("h1", [_vm._v("Affiliate Program")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "If you want passive earning of substantial sums refer quickly to all about  Bitcoinary Finance Limited & gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you."
-          )
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-lg-6 text-center" }, [
+        _c("div", { staticClass: "section-header" }, [
+          _c("h2", { staticClass: "section-title" }, [
+            _c("span", { staticClass: "font-weight-normal" }, [
+              _vm._v("Our Affiliate ")
+            ]),
+            _vm._v(" "),
+            _c("b", { staticClass: "base--color" }, [_vm._v("Program")])
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "blog-details__content" }, [
+            _vm._v(
+              "\n                        Enjoy exceptional upto 15% two levels affiliate system structure in Bitcoinary Mint Limited.\n                    "
+            )
+          ])
         ])
       ])
     ])
@@ -64040,33 +67419,41 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "p-2 text-justify" }, [
-      _vm._v(
-        "If you want to earn more money or do not have enough to invest in  Bitcoinary Finance Limited, use your referral link for the invitation and the registration of new members."
-      ),
-      _c("br"),
-      _c("br"),
-      _vm._v("  It is located in your account as a direct link."),
-      _c("br"),
-      _c("br"),
-      _vm._v(
-        "   You can attract any number of new investors, the more you active referrals, the more earnings you have! When you refer your family, friends and other community members to  Bitcoinary Finance Limited, you are entitled to up to 14% on every deposit made by your downline. "
-      ),
-      _c("br"),
-      _c("br"),
-      _vm._v(
-        "  You do not need to have an active deposit before you can earn from our investment program. "
-      ),
-      _c("br"),
-      _c("br"),
-      _vm._v(
-        "  For first level, you will receive 9% affiliate commission, for second level you will receive 3% affiliate commission, for third level you will get 1% affiliate commission and for fourth & fifth level you will get 0.5% affiliate commission each."
-      ),
-      _c("br"),
-      _c("br"),
-      _vm._v(
-        "   This multi-tier affiliate program will ensure multiple sources of passive income for you without even depositing in our investment program. "
-      )
+    return _c("div", { staticClass: "blog-details__content" }, [
+      _c("h4", { staticClass: "blog-details__title" }, [
+        _vm._v("Partner Incentive System Structure")
+      ]),
+      _vm._v(" "),
+      _c("p", {}, [
+        _vm._v(
+          "Bitcoinary Mint has derived a means to support our clients who do not have enough to subscribe for an investment plan through our affiliate program."
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(" This is located in your account user dashboard as your "),
+        _c("span", { staticClass: "base--color" }, [_vm._v("affiliate link.")])
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "You can attract any number of new investors, the more your active referrals, the more earnings you have. You are entitled to 15% on every deposit made by your downline.\n                    "
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          " You do not need to have an active deposit before you can earn from our investment program. "
+        ),
+        _c("br"),
+        _vm._v(
+          " For first level, you will receive 10% affiliate commission and for second level you will receive 5% affiliate commission."
+        ),
+        _c("br"),
+        _vm._v(
+          "This multi-tier affiliate program will ensure multiple sources of passive income for you.\n                    "
+        )
+      ])
     ])
   }
 ]
@@ -83282,6 +86669,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 vue__WEBPACK_IMPORTED_MODULE_2___default.a.use(v_clipboard__WEBPACK_IMPORTED_MODULE_14___default.a);
 vue__WEBPACK_IMPORTED_MODULE_2___default.a.use(_fortawesome_fontawesome_free__WEBPACK_IMPORTED_MODULE_13___default.a); // Set Vue globally
 
@@ -84178,9 +87566,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Menu_vue_vue_type_template_id_7fa2c4ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Menu.vue?vue&type=template&id=7fa2c4ca& */ "./resources/js/components/Menu.vue?vue&type=template&id=7fa2c4ca&");
 /* harmony import */ var _Menu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Menu.vue?vue&type=script&lang=js& */ "./resources/js/components/Menu.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _Menu_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Menu.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/Menu.vue?vue&type=style&index=0&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -84188,7 +87574,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _Menu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Menu_vue_vue_type_template_id_7fa2c4ca___WEBPACK_IMPORTED_MODULE_0__["render"],
   _Menu_vue_vue_type_template_id_7fa2c4ca___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -84217,22 +87603,6 @@ component.options.__file = "resources/js/components/Menu.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Menu.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Menu.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/Menu.vue?vue&type=style&index=0&lang=css&":
-/*!***************************************************************************!*\
-  !*** ./resources/js/components/Menu.vue?vue&type=style&index=0&lang=css& ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Menu.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Menu.vue?vue&type=style&index=0&lang=css&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -86870,15 +90240,11 @@ var routes = [{
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  scrollBehavior: function scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition;
-    } else {
-      return {
-        x: 0,
-        y: 100
-      };
-    }
+  scrollBehavior: function scrollBehavior(to, from, savedPosition) {// if (savedPosition) {
+    //     return savedPosition
+    // } else {
+    //     return { x: 0, y: 100 }
+    // }
   },
   beforeEach: function beforeEach(to, from, next) {
     if (to.meta.AdminAuth) {

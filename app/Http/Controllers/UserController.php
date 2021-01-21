@@ -6,9 +6,11 @@ use App\Helper;
 use App\Http\Requests\ValidateUserRequest;
 use App\Http\Resources\UserResource;
 use App\User;
+use App\Package;
 use Illuminate\Http\Request;
 use \DB;
 use \Exception;
+use App\Http\Controllers\PackageUserController;
 
 class UserController extends Controller {
 	/**
@@ -140,5 +142,11 @@ class UserController extends Controller {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);
 		}
+	}
+
+	public function userSubscription(User $user, Package $package){
+		$subscriptionController = new PackageUserController();
+		$result = $subscriptionController->store(new Request(['user_id' => $user->id, 'package_id' => $package->id]));
+		return $result;
 	}
 }

@@ -21,7 +21,7 @@ class PackageController extends Controller {
 			$page = request()->query('page', 1);
 			$pageSize = request()->query('pageSize', 10000000);
 			$data = Package::filter(request()->all())
-				->orderBy('deposit', 'asc')
+				->orderBy('name', 'asc')
 				->paginate($pageSize);
 			$total = $data->total();
 			$data = PackageResource::collection($data);
@@ -96,12 +96,13 @@ class PackageController extends Controller {
 	public function update(Request $request, Package $package) {
 		DB::beginTransaction();
 		$validated = $request->validate([
-			'portfolio_id' => 'numeric|exists:portfolios,id',
-			'interest_rate' => 'numeric',
-			'deposit' => 'numeric',
-			'duration' => 'numeric',
-			'name' => 'string|min:2|max:255|multiple_unique:' . Package::class . ',name,portfolio_id',
-			'referral_commission' => 'numeric',
+			'min_deposit' => 'numeric',
+			'max_deposit' => 'numeric',
+			'roi' => 'numeric',
+			'turnover' => 'numeric',
+			'name' => 'string|min:2|max:255|unique:' . Package::class . ',name',
+			'first_level_ref_commission' => 'numeric',
+			'second_level_ref_commission' => 'numeric',
 		]);
 		try {
 			$data = $package->update($validated);

@@ -15,10 +15,11 @@ class CreatePackageUsersTable extends Migration {
 			$table->bigIncrements('id');
 			$table->bigInteger('package_id')->unsigned()->index();
 			$table->bigInteger('user_id')->unsigned()->index();
-			$table->decimal('account', 60, 2)->default(0);
+			$table->decimal('amount', 60, 2)->default(0);
 			$table->timestamp('expiration')->nullable();
 			$table->boolean('active')->default(true);
 			$table->boolean('referral')->nullable();
+			$table->string('pop')->nullable();
 			$table->bigInteger('transaction_id')->unsigned()->index();
 
 			$table->timestamps();

@@ -15,13 +15,13 @@ class CreatePackagesTable extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('portfolio_id')->unsigned()->index();
-            $table->string('name');
-            $table->integer('interest_rate');
-            $table->integer('deposit');
-            $table->integer('duration');
-            $table->integer('referral_commission')->default(0);
-            $table->unique(['portfolio_id', 'name']);
+            $table->string('name')->unique();
+            $table->integer('roi');
+            $table->bigInteger('min_deposit')->unsigned();
+            $table->bigInteger('max_deposit')->unsigned();
+            $table->integer('turnover');
+            $table->integer('first_level_ref_commission')->default(0);
+            $table->integer('second_level_ref_commission')->default(0); 
 
             $table->timestamps();
 

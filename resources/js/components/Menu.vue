@@ -53,9 +53,5 @@
 
 </script>
 <style type="text/css">
-.router-link-exact-active  {
-    background: linear-gradient(to right, #e25e5a 0%, #e25e5a 0%, #f8b982 100%, #f8b982 100%, #f8b982 100%) !important;
-    color: #1a1a1a !important;
-}
 
 </style>

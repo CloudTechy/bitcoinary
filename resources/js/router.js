@@ -284,11 +284,11 @@ const routes = [{
 ]
 const router = new VueRouter({
     scrollBehavior(to, from, savedPosition) {
-        if (savedPosition) {
-            return savedPosition
-        } else {
-            return { x: 0, y: 100 }
-        }
+        // if (savedPosition) {
+        //     return savedPosition
+        // } else {
+        //     return { x: 0, y: 100 }
+        // }
     },
     beforeEach(to, from, next) {
         if (to.meta.AdminAuth) {

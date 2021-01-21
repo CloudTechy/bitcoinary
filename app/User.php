@@ -123,7 +123,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 		$this->notify(new \App\Notifications\MailResetPasswordNotification($token));
 	}
 	public function packages() {
-		return $this->belongsToMany(Package::class)->withPivot('id', 'transaction_id', 'referral', 'account', 'expiration', 'active')->as('subscription')->withTimestamps();
+		return $this->belongsToMany(Package::class)->withPivot('id', 'transaction_id', 'referral', 'amount', 'expiration','pop', 'active')->as('subscription')->withTimestamps();
 
 	}
 	public function withdrawDuration() {

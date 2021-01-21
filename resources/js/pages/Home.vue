@@ -1,218 +1,1282 @@
 <template>
     <div>
-        <!-- <div class="row page-title m-3 p-2">
-            <div class="col-12 col-lg-8 container">
-                <h1></h1>
-                <p> Bitcoinary Finance assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume- Bitcoins.</p>
+
+        <body>
+            <div class="preloader">
+                <div class="preloader-container">
+                    <span class="animated-preloader"></span>
+                </div>
             </div>
-        </div> -->
-        <section class="main-container" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
-            <div class="main">
-                <div class="container">
-                    <div class="wrapper">
-                        <div class="row company">
-                            <div class=" col p-3 partners-container">
-                                <h2 class="company-title">Our Company</h2>
-                                <p class="m-0"> Bitcoinary finance is an innovating company diversified in several Investment methods
-                                    Our company is a big investor in real estate,oil and gas,gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of most popular Crypto currency by volume-Bitcoins. Such Investment methods is free from capital loss and returns supposed profits.</p> <br><br>
-                                <p class="m-0">
-                                    Bitcoinary Finance started in 2005 as a Financial Advisory Firm and recently in 2018 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading.<br><br> We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bitcoinary Finance team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. <br><br>The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors.
-                                    <a href="?a=about" class="btn btn-outline-warning section-home__btn textsite">
-                                        Learn more
-                                    </a>
-                                    <!--   <router-link to="/about" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</router-link> -->
-                                </p>
-                                <div class="row company  mt-3">
-                                    <div class=" col p-3 partners-container">
-                                        <h2 class="company-title">Our Features</h2>
-                                    </div>
+            <!-- scroll-to-top start -->
+            <div class="scroll-to-top">
+                <span class="scroll-icon">
+                    <i class="fa fa-rocket" aria-hidden="true"></i>
+                </span>
+            </div>
+            <!-- scroll-to-top end -->
+            <div class="full-wh">
+                <!-- STAR ANIMATION -->
+                <div class="bg-animation">
+                    <div id='stars'></div>
+                    <div id='stars2'></div>
+                    <div id='stars3'></div>
+                    <div id='stars4'></div>
+                </div>
+                <!-- / STAR ANIMATION -->
+            </div>
+            <div class="page-wrapper">
+                <section class="hero bg_img" :data-background="$root.basepath + '/images/bg/hero.jpg'">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-8">
+                                <div class="hero__content">
+                                    <h2 class="hero__title"><span class="text-white font-weight-normal">Invest for Future in Stable Platform</span> <b class="base--color">and Make Fast Money</b></h2>
+                                    <p class="text-white f-size-18 mt-3">Invest in an Industry Leader, Professional, and Reliable Company. We provide you with the most necessary features that will make your experience better. Not only we guarantee the fastest and the most exciting returns on your
+                                        investments, but we also guarantee the security of your investment.</p>
+                                    <a href="#0" class="cmn-btn text-uppercase font-weight-600 mt-4">Sign Up</a>
                                 </div>
-                                <div class="services">
-                                    <ul class="row">
-                                        <li class="col text-center">
-                                            <div class="inner-s"><img :src="$root.basepath + '/img/key-2.png'" class="centered-img">
-                                                <h4>Team</h4>
-                                                <p>We are a well-coordinated team that takes responsibility for fulfilling the contract. You could not find a better place.</p>
-                                            </div>
-                                        </li>
-                                        <li class="col text-center">
-                                            <div class="inner-s"><img :src="$root.basepath + '/img/key-1.png'" class="centered-img">
-                                                <h4>High growth &amp; substantial returns</h4>
-                                                <p> Bitcoinary Finance Limited is guided by an excellent team to ensure lofty yields &amp; steady profits in the long run.</p>
-                                            </div>
-                                        </li>
-                                        <li class="col text-center">
-                                            <div class="inner-s"><img :src="$root.basepath + '/img/key-4.png'" class="centered-img">
-                                                <h4>Registered Company</h4>
-                                                <p> Bitcoinary Finance is fully registered in United States.</p>
-                                            </div>
-                                        </li>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- hero end -->
+                <!-- cureency section start -->
+                <div class="cureency-section">
+                    <div class="container">
+                        <div class="row mb-none-30">
+                            <div class="col-lg-3 col-sm-6 cureency-item mb-30">
+                                <div class="cureency-card text-center">
+                                    <h6 class="cureency-card__title text-white">BITCOIN PRICE</h6>
+                                    <span class="cureency-card__amount h-font-family font-weight-600 base--color">3150.00 USD</span>
+                                </div>
+                                <!-- cureency-card end -->
+                            </div>
+                            <!-- cureency-item end -->
+                            <div class="col-lg-3 col-sm-6 cureency-item mb-30">
+                                <div class="cureency-card text-center">
+                                    <h6 class="cureency-card__title text-white">BITCOIN PRICE</h6>
+                                    <span class="cureency-card__amount h-font-family font-weight-600 base--color">2850.00 EUR</span>
+                                </div>
+                                <!-- cureency-card end -->
+                            </div>
+                            <!-- cureency-item end -->
+                            <div class="col-lg-3 col-sm-6 cureency-item mb-30">
+                                <div class="cureency-card text-center">
+                                    <h6 class="cureency-card__title text-white">24 VOLUME</h6>
+                                    <span class="cureency-card__amount h-font-family font-weight-600 base--color">2,547.35 BTC</span>
+                                </div>
+                                <!-- cureency-card end -->
+                            </div>
+                            <!-- cureency-item end -->
+                            <div class="col-lg-3 col-sm-6 cureency-item mb-30">
+                                <div class="cureency-card text-center">
+                                    <h6 class="cureency-card__title text-white">ACTIVE TRADES</h6>
+                                    <span class="cureency-card__amount h-font-family font-weight-600 base--color">2,545,875</span>
+                                </div>
+                                <!-- cureency-card end -->
+                            </div>
+                            <!-- cureency-item end -->
+                        </div>
+                    </div>
+                </div>
+                <!-- cureency section end  -->
+                <!-- about section start -->
+                <section class="about-section pt-120 pb-120 bg_img" :data-background="$root.basepath + '/images/bg/bg-2.jpg'">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 offset-lg-6">
+                                <div class="about-content">
+                                    <h2 class="section-title mb-3"><span class="font-weight-normal">About</span> <b class="base--color">Us</b></h2>
+                                    <p>Bitcoinary Mint is an innovating company diversified in several Investment methods.<br>
+                                        Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits.</p>
+                                    <p class="mt-4">Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service, allowing us to automate and simplify the relations between the investors and
+                                        the trustees. We work towards increasing your profit margin by profitable investment strategies. We look forward to you being part of our community.</p>
+                                    <router-link class="cmn-btn mt-4" to="/about">READ MORE</router-link>
+                                </div>
+                                <!-- about-content end -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- about section end -->
+                <!-- package section start -->
+                <section class="pt-120 pb-120">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <div class="section-header">
+                                    <h2 class="section-title"><span class="font-weight-normal">Investment</span> <b class="base--color">Plans</b></h2>
+                                    <p>To make a solid investment, you have to know where you are investing. Find a plan which is best for you.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row end -->
+                        <div class="row justify-content-center mb-none-30">
+                            <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
+                                <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
+                                    <h4 class="package-card__title base--color mb-2">Slivesto</h4>
+                                    <ul class="package-card__features mt-4">
+                                        <li>Return 6%</li>
+                                        <li>Every Week</li>
+                                        <li>For 5 Week</li>
+                                        <li>Total 30% + <span class="badge base--bg text-dark">Capital</span></li>
                                     </ul>
+                                    <div class="package-card__range mt-5 base--color">$200</div>
+                                    <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
                                 </div>
-                                <div class=" m-0 p-0 mt-4 pt-4  partners-container">
-                                    <h2 class="company-title">Our Investment Plans</h2>
-                                    <p class="col p-0 mb-4 inv-intro text-center"> Bitcoinary Finance offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. </p><br>
-                                    <div class="row p-2">
-                                        <div class="col-lg-3 col-sm-6 col-12">
-                                            <p class="inv-intro p-0  mb-3 text-left  col">
-                                                <span class="font-weight-bold">Bronze account features:</span><br>
-                                                Deposit: $20 - $150.
-                                                Up to 5% R.O.I in 72 Hours minimum.
-                                                Eligibility: A New User Can Only Use This Plan Twice.
-                                                No Referral Commission.
-                                                <div class="mb-5 text-center">
-                                                    <router-link style="width: 100%" to="/user/dashboard/deposit" class="btn btn-inverse">Make Investment</router-link>
-                                                </div>
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6 col-12">
-                                            <p class=" inv-intro p-0 mb-3 text-left  col">
-                                                <span class="font-weight-bold">Silver account features:</span><br>
-                                                Deposit: $200 - $2,000.
-                                                Up to 20% R.O.I.
-                                                30 Days minimum turnover.
-                                                Eligibility: Open.
-                                                5% One time Referral Commission.
-                                                <div class="mb-5 text-center">
-                                                    <router-link style="width: 100%" to="/user/dashboard/deposit" class="btn btn-inverse">Make Investment</router-link>
-                                                </div>
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6 col-12">
-                                            <p class=" inv-intro p-0 mb-3 text-left  col">
-                                                <span class="font-weight-bold">Gold account features:</span><br>
-                                                Deposit: $5,000 - $30,000.
-                                                Up to 40% R.O.I.
-                                                30 Days turnover.
-                                                Eligibility: Open.
-                                                10% Referral Commission to the 5th chain.
-                                                <div class="mb-5 text-center">
-                                                    <router-link style="width: 100%" to="/user/dashboard/deposit" class="btn btn-inverse">Make Investment</router-link>
-                                                </div>
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6 col-12">
-                                            <p class=" inv-intro p-0 mb-3 text-left  col">
-                                                <span class="font-weight-bold">Platinum account features:</span><br>
-                                                Deposit: $60,000 - $200,000.
-                                                Upto 60%.
-                                                14 days turnover.
-                                                Eligibility: Open.
-                                                10% Referral Commission to the 10th chain.
-                                                <div class="mb-5 text-center">
-                                                    <router-link style="width: 100%" to="/user/dashboard/deposit" class="btn btn-inverse">Make Investment</router-link>
-                                                </div>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ml-0 m-0 p-0 mt-5 pt-5 get-started">
-                                    <h1 class="company-title">How To Get Started</h1>
-                                    <p class="col p-0 mb-4 inv-intro text-center">To start your investment journey in Bitcoinary Finance Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal. </p><br>
-                                    <ul>
-                                        <li>
-                                            <h3><span>Step 1: </span>Account Registration</h3>
-                                            <p>Start by filling in required fields of the application form on the<router-link to="/register" class="btn btn-link" style="display: inline; color: rgb(183, 183, 183); font-family: Montserrat; ">Register</router-link> page. Submit your registration. After that you will be able to log into your account and make your first investment.</p>
-                                        </li>
-                                        <li>
-                                            <h3><span>Step 2: </span>Creating Deposit</h3>
-                                            <p>In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in Bitcoinary Finance Limited just click on ‘Make a deposit‘ link. </p>
-                                        </li>
-                                        <li>
-                                            <h3><span>Step 3: </span>Wait for the deposit transfer</h3>
-                                            <p>Normally Bitcoin deposit is active after 3 confirmations. 3 confirmations from the Bitcoin network take approximately 30 minutes - 1 hour or maybe it can long which depends on bitcoin network. Once the Bitcoin deposit is confirmed it will show in your active deposit according to your subscription plan.<router-link to="/getstarted" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</router-link>
-                                            </p>
-                                        </li>
+                                <!-- package-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
+                                <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
+                                    <h4 class="package-card__title base--color mb-2">Life Time</h4>
+                                    <ul class="package-card__features mt-4">
+                                        <li>Return 0.2%</li>
+                                        <li>Every Day</li>
+                                        <li>For Lifetime</li>
+                                        <li>Lifetime Earning</li>
                                     </ul>
+                                    <div class="package-card__range mt-5 base--color">$100 - $200</div>
+                                    <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
                                 </div>
-                                <div class="m-1 mt-4 pt-5 m-0 p-0 partners-container">
-                                    <h1 class="company-title">Our Affiliate Program</h1>
-                                    <p>If you want passive earning of substantial sums refer quickly to all about Bitcoinary Finance Limited &amp; gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you.<router-link to="/partners" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</router-link>
-                                    </p>
-                                    <h5 class="slogan text-center">Enjoy exceptional upto 14% five levels deep affiliate system structure in Bitcoinary Finance Limited.</h5>
-                                    <div class="partners-img clearfix"><img :src="$root.basepath + '/img/percentages.png'"> <img :src="$root.basepath + '/img/partners.png'"></div>
+                                <!-- package-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
+                                <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
+                                    <h4 class="package-card__title base--color mb-2">Black Horse</h4>
+                                    <ul class="package-card__features mt-4">
+                                        <li>Return 5%</li>
+                                        <li>Every Week</li>
+                                        <li>For 40 Week</li>
+                                        <li>Total 200%</li>
+                                    </ul>
+                                    <div class="package-card__range mt-5 base--color">$500 - $5000</div>
+                                    <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
                                 </div>
-                                <div class="page-heading m-0 p-0 mt-4 pt-4  partners-container ">
-                                    <h2 class="company-title">Our Data Center Locations</h2>
-                                    <p class="col p-0 mb-4 inv-intro text-center">Our powerful datacenters are the backbone of our profitable mining system of Bitcoins. Our business typically relies heavily upon these data centers, making it a focal point and critical asset for everyday mining operations.</p><br>
+                                <!-- package-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
+                                <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
+                                    <h4 class="package-card__title base--color mb-2">Silver</h4>
+                                    <ul class="package-card__features mt-4">
+                                        <li>Return 5%</li>
+                                        <li>Every Day</li>
+                                        <li>For 25 Day</li>
+                                        <li>Total 125%</li>
+                                    </ul>
+                                    <div class="package-card__range mt-5 base--color">$500</div>
+                                    <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
                                 </div>
-                                <div class="data-map"><img :src="$root.basepath + '/img/map.png'" class="img-responsive">
-                                    <div class="info one" style="top: 50px; left: 400px;"><span class="map-marker"></span>
-                                        <div class="center-detail">
-                                            <h5 class="city">Amsterdam</h5>
-                                            <div class="rates"></div>
-                                        </div>
-                                    </div>
-                                    <div class="info one" style="top: 60px; left: 357px;"><span class="map-marker"></span>
-                                        <div class="center-detail">
-                                            <h5 class="city">Iceland</h5>
-                                            <div class="rates"></div>
-                                        </div>
-                                    </div>
-                                    <div class="info one" style="top: 60px; left: 134px;"><span class="map-marker"></span>
-                                        <div class="center-detail">
-                                            <h5 class="city">Estonia</h5>
-                                            <div class="rates"></div>
-                                        </div>
-                                    </div>
-                                    <div class="info one" style="top: 210px; right: 169px;"><span class="map-marker"></span>
-                                        <div class="center-detail">
-                                            <h5 class="city">Singapore</h5>
-                                            <div class="rates"></div>
-                                        </div>
-                                    </div>
+                                <!-- package-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
+                                <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
+                                    <h4 class="package-card__title base--color mb-2">Elephant</h4>
+                                    <ul class="package-card__features mt-4">
+                                        <li>Return 1.1USD</li>
+                                        <li>Every Day</li>
+                                        <li>For 50 Day</li>
+                                        <li>Total 55USD + <span class="badge base--bg">Capital</span></li>
+                                    </ul>
+                                    <div class="package-card__range mt-5 base--color">$500 - $700</div>
+                                    <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
                                 </div>
-                                <div class="data-center-services">
-                                    <h2 class="text-center">Highest standards on all data center facility aspects</h2>
-                                    <div class="row">
-                                        <div class="column col dcs"><img :src="$root.basepath + '/img/dcs-1.png'" class="centered-img">
-                                            <h4>Highly available network</h4>
-                                            <p> Bitcoinary Finance Limited‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on.</p>
-                                        </div>
-                                        <div class="column col dcs"><img :src="$root.basepath + '/img/dcs-2.png'" class="centered-img">
-                                            <h4>Redundant electrical systems</h4>
-                                            <p>In our datacenters redundancy or duplication of critical electrical system components increases reliability of the system, usually in the form of a backup or fail-safe, or to improve actual system performance which supports mining constancy.</p>
-                                        </div>
-                                        <div class="column col dcs"><img :src="$root.basepath + '/img/dcs-3.png'" class="centered-img">
-                                            <h4>High-end physical security</h4>
-                                            <p>We make sure the datacenters are safe with installation of surveillance cameras , biometric identification of staff &amp; use of access cards. All these are necessary to secure our datacenters from intrusions &amp; threats.</p>
-                                        </div>
-                                    </div>
+                                <!-- package-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
+                                <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
+                                    <h4 class="package-card__title base--color mb-2">Cobra</h4>
+                                    <ul class="package-card__features mt-4">
+                                        <li>Return 10USD</li>
+                                        <li>Every Hour</li>
+                                        <li>For 150 Hour</li>
+                                        <li>Total 1500USD + <span class="badge base--bg">Capital</span></li>
+                                    </ul>
+                                    <div class="package-card__range mt-5 base--color">$1000</div>
+                                    <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
                                 </div>
-                                <div class="ml-0 m-0 p-0 mt-5 pt-5 get-started">
-                                    <div class="row  support-wrapper clearfix">
-                                        <div class="clear:both"></div>
-                                        <ul class="col-lg-4 col-12  support-contacts">
-                                            <li style="padding-left:0;">
-                                                <h2 class="get-in">Get In Touch</h2>
-                                            </li>
-                                            <li><img style=" margin-top:5px;" :src="$root.basepath + '/img/support-mail.png'"><a href="mailto:info@Bitcoinaryfinance.com">info@Bitcoinaryfinance.com/</a><br><a href="mailto:info@Bitcoinaryfinance.com"></a>
-                                            </li>
-                                        </ul>
-                                        <form class="support-form col-12 col-lg-7 m-1 text-center" method="post" name="mainform" @submit.prevent="submitForm">
-                                            <div class="success-msg P-3 m-3" v-if="success && !has_error">
-                                                <p v-if="response != undefined">{{response}}</p>
+                                <!-- package-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
+                                <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
+                                    <h4 class="package-card__title base--color mb-2">Lion</h4>
+                                    <ul class="package-card__features mt-4">
+                                        <li>Return 0.2%</li>
+                                        <li>Every Day</li>
+                                        <li>For Lifetime</li>
+                                        <li>Lifetime Earning</li>
+                                    </ul>
+                                    <div class="package-card__range mt-5 base--color">$100 - $500</div>
+                                    <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
+                                </div>
+                                <!-- package-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
+                                <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
+                                    <h4 class="package-card__title base--color mb-2">Tiger</h4>
+                                    <ul class="package-card__features mt-4">
+                                        <li>Return 0.2%</li>
+                                        <li>Every Day</li>
+                                        <li>For Lifetime</li>
+                                        <li>Lifetime Earning</li>
+                                    </ul>
+                                    <div class="package-card__range mt-5 base--color">$100 - $500</div>
+                                    <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
+                                </div>
+                                <!-- package-card end -->
+                            </div>
+                        </div>
+                        <!-- row end -->
+                        <div class="row mt-50">
+                            <div class="col-lg-12 text-center">
+                                <a href="#0" class="cmn-btn">View All Packages</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- package section end  -->
+                <!-- choose us section start -->
+                <section class="pt-120 pb-120 overlay--radial bg_img" :data-background="$root.basepath + '/images/bg/bg-3.jpg'">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <div class="section-header">
+                                    <h2 class="section-title"><span class="font-weight-normal">Why Choose</span> <b class="base--color">Hyiplab</b></h2>
+                                    <p>Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row end -->
+                        <div class="row justify-content-center mb-none-30">
+                            <div class="col-xl-4 col-md-6 mb-30">
+                                <div class="choose-card border-radius--5">
+                                    <div class="choose-card__header mb-3">
+                                        <div class="choose-card__icon">
+                                            <i class="lar la-copy"></i>
+                                        </div>
+                                        <h4 class="choose-card__title base--color">Legal Company</h4>
+                                    </div>
+                                    <p>Our company conducts absolutely legal activities in the legal field. We are certified to operate investment business, we are legal and safe.</p>
+                                </div>
+                                <!-- choose-card end -->
+                            </div>
+                            <div class="col-xl-4 col-md-6 mb-30">
+                                <div class="choose-card border-radius--5">
+                                    <div class="choose-card__header mb-3">
+                                        <div class="choose-card__icon">
+                                            <i class="las la-lock"></i>
+                                        </div>
+                                        <h4 class="choose-card__title base--color">High reliability</h4>
+                                    </div>
+                                    <p>We are trusted by a huge number of people. We are working hard constantly to improve the level of our security system and minimize possible risks.</p>
+                                </div>
+                                <!-- choose-card end -->
+                            </div>
+                            <div class="col-xl-4 col-md-6 mb-30">
+                                <div class="choose-card border-radius--5">
+                                    <div class="choose-card__header mb-3">
+                                        <div class="choose-card__icon">
+                                            <i class="las la-user-lock"></i>
+                                        </div>
+                                        <h4 class="choose-card__title base--color">Anonymity</h4>
+                                    </div>
+                                    <p>Anonymity and using cryptocurrency as a payment instrument. In the era of electronic money – this is one of the most convenient ways of cooperation.</p>
+                                </div>
+                                <!-- choose-card end -->
+                            </div>
+                            <div class="col-xl-4 col-md-6 mb-30">
+                                <div class="choose-card border-radius--5">
+                                    <div class="choose-card__header mb-3">
+                                        <div class="choose-card__icon">
+                                            <i class="las la-shipping-fast"></i>
+                                        </div>
+                                        <h4 class="choose-card__title base--color">Quick Withdrawal</h4>
+                                    </div>
+                                    <p>Our all retreats are treated spontaneously once requested. There are high maximum limits. The minimum withdrawal amount is only $10.</p>
+                                </div>
+                                <!-- choose-card end -->
+                            </div>
+                            <div class="col-xl-4 col-md-6 mb-30">
+                                <div class="choose-card border-radius--5">
+                                    <div class="choose-card__header mb-3">
+                                        <div class="choose-card__icon">
+                                            <i class="las la-users"></i>
+                                        </div>
+                                        <h4 class="choose-card__title base--color">Referral Program</h4>
+                                    </div>
+                                    <p>We are offering a certain level of referral income through our referral program. you can increase your income by simply refer a few people.</p>
+                                </div>
+                                <!-- choose-card end -->
+                            </div>
+                            <div class="col-xl-4 col-md-6 mb-30">
+                                <div class="choose-card border-radius--5">
+                                    <div class="choose-card__header mb-3">
+                                        <div class="choose-card__icon">
+                                            <i class="las la-headset"></i>
+                                        </div>
+                                        <h4 class="choose-card__title base--color">24/7 Support</h4>
+                                    </div>
+                                    <p>We provide 24/7 customer support through e-mail and telegram. Our support representatives are periodically available to elucidate any difficulty..</p>
+                                </div>
+                                <!-- choose-card end -->
+                            </div>
+                            <div class="col-xl-4 col-md-6 mb-30">
+                                <div class="choose-card border-radius--5">
+                                    <div class="choose-card__header mb-3">
+                                        <div class="choose-card__icon">
+                                            <i class="las la-server"></i>
+                                        </div>
+                                        <h4 class="choose-card__title base--color">Dedicated Server</h4>
+                                    </div>
+                                    <p>We are using a dedicated server for the website which allows us exclusive use of the resources of the entire server.</p>
+                                </div>
+                                <!-- choose-card end -->
+                            </div>
+                            <div class="col-xl-4 col-md-6 mb-30">
+                                <div class="choose-card border-radius--5">
+                                    <div class="choose-card__header mb-3">
+                                        <div class="choose-card__icon">
+                                            <i class="fab fa-expeditedssl"></i>
+                                        </div>
+                                        <h4 class="choose-card__title base--color">SSL Secured</h4>
+                                    </div>
+                                    <p>Comodo Essential-SSL Security encryption confirms that the presented content is genuine and legitimate.</p>
+                                </div>
+                                <!-- choose-card end -->
+                            </div>
+                            <div class="col-xl-4 col-md-6 mb-30">
+                                <div class="choose-card border-radius--5">
+                                    <div class="choose-card__header mb-3">
+                                        <div class="choose-card__icon">
+                                            <i class="las la-shield-alt"></i>
+                                        </div>
+                                        <h4 class="choose-card__title base--color">DDOS Protection</h4>
+                                    </div>
+                                    <p>We are using one of the most experienced, professional, and trusted DDoS Protection and mitigation provider.</p>
+                                </div>
+                                <!-- choose-card end -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- choose us section end  -->
+                <!-- profit calculator section start -->
+                <section class="pt-120 pb-120">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="section-header text-center">
+                                    <h2 class="section-title"><span class="font-weight-normal">Profit</span> <b class="base--color">Calculator</b></h2>
+                                    <p>You must know the calculation before investing in any plan, so you never make mistakes. Check the calculation and you will get as our calculator says.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-xl-8">
+                                <div class="profit-calculator-wrapper">
+                                    <form class="profit-calculator">
+                                        <div class="row mb-none-30">
+                                            <div class="col-lg-6 mb-30">
+                                                <label>Choose Plan</label>
+                                                <select class="base--bg">
+                                                    <option>Basic Package</option>
+                                                    <option>Standard Package</option>
+                                                    <option>Silver Package</option>
+                                                    <option>Premium Package</option>
+                                                    <option>Platinum Package</option>
+                                                </select>
                                             </div>
-                                            <ul class="form-list">
-                                                <li>
-                                                    <div class="input-box">
-                                                        <label>Your Message</label>
-                                                        <textarea required="" minlength="12" name="message" class="form-control" placeholder="Write your message here"> </textarea>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <div class="buttons-set text-center">
-                                                <button class="btn btn-default">Submit</button>
+                                            <div class="col-lg-6 mb-30">
+                                                <label>Invest Amount</label>
+                                                <input type="text" name="invest_amount" id="invest_amount" placeholder="0.00" class="form-control base--bg">
                                             </div>
-                                        </form>
+                                            <div class="col-lg-12 mb-30">
+                                                <label>Profit Amount</label>
+                                                <input type="text" name="profit_amount" id="profit_amount" placeholder="0.00" class="form-control base--bg" disabled>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- profit calculator section end -->
+                <!-- how work section start -->
+                <section class="pt-120 pb-120 bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <div class="section-header">
+                                    <h2 class="section-title"><span class="font-weight-normal">How</span> <b class="base--color">Hyiplab</b> <span class="font-weight-normal">Works</span></h2>
+                                    <p>Get involved in our tremendous platform and Invest. We will utilize your money and give you profit in your wallet automatically.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row end -->
+                        <div class="row justify-content-center mb-none-30">
+                            <div class="col-lg-4 col-md-6 work-item mb-30">
+                                <div class="work-card text-center">
+                                    <div class="work-card__icon">
+                                        <i class="las la-user base--color"></i>
+                                        <span class="step-number">01</span>
+                                    </div>
+                                    <div class="work-card__content">
+                                        <h4 class="base--color mb-3">Create Account</h4>
+                                    </div>
+                                </div>
+                                <!-- work-card end -->
+                            </div>
+                            <div class="col-lg-4 col-md-6 work-item mb-30">
+                                <div class="work-card text-center">
+                                    <div class="work-card__icon">
+                                        <i class="las la-hand-holding-usd base--color"></i>
+                                        <span class="step-number">02</span>
+                                    </div>
+                                    <div class="work-card__content">
+                                        <h4 class="base--color mb-3">Invest To Plan</h4>
+                                    </div>
+                                </div>
+                                <!-- work-card end -->
+                            </div>
+                            <div class="col-lg-4 col-md-6 work-item mb-30">
+                                <div class="work-card text-center">
+                                    <div class="work-card__icon">
+                                        <i class="las la-wallet base--color"></i>
+                                        <span class="step-number">03</span>
+                                    </div>
+                                    <div class="work-card__content">
+                                        <h4 class="base--color mb-3">Get Profit</h4>
+                                    </div>
+                                </div>
+                                <!-- work-card end -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- how work section end  -->
+                <!-- faq section start -->
+                <section class="pt-120 pb-120">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <div class="section-header">
+                                    <h2 class="section-title"><span class="font-weight-normal">Frequently Asked</span> <b class="base--color">Questions</b></h2>
+                                    <p>We answer some of your Frequently Asked Questions regarding our platform. If you have a query that is not answered here, Please contact us.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row end -->
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="accordion cmn-accordion" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <i class="las la-question-circle"></i>
+                                                    <span>When can I deposit/withdraw from my Investment account?</span>
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                Deposit and withdrawal are available for at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. The available amount is shown in your dashboard on the main page of Investing platform. Deposit and withdrawal are
+                                                available for at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. The available amount is shown in your dashboard on the main page of Investing platform.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    <i class="las la-question-circle"></i>
+                                                    <span>How do I check my account balance?</span>
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                You can see this anytime on your accounts dashboard. You can see this anytime on your accounts dashboard.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    <i class="las la-question-circle"></i>
+                                                    <span>I forgot my password, what should I do?</span>
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                Visit the password reset page, type in your email address and click the `Reset` button. Visit the password reset page, type in your email address and click the `Reset` button.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingFour">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                    <i class="las la-question-circle"></i>
+                                                    <span>How will I know that the withdrawal has been successful?</span>
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                You will get an automatic notification once we send the funds and you can always check your transactions or account balance. Your chosen payment system dictates how long it will take for the funds to reach you. You will get an automatic notification once
+                                                we send the funds and you can always check your transactions or account balance. Your chosen payment system dictates how long it will take for the funds to reach you.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingFive">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                    <i class="las la-question-circle"></i>
+                                                    <span>How much can I withdraw?</span>
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                You can withdraw the full amount of your account balance minus the funds that are used currently for supporting opened positions. You can withdraw the full amount of your account balance minus the funds that are used currently for supporting opened positions.
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
+                <!-- faq section end -->
+                <!-- testimonial section start -->
+                <section class="pt-120 pb-120 bg_img overlay--radial" :data-background="$root.basepath + '/images/bg/bg-7.jpg'">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <div class="section-header">
+                                    <h2 class="section-title"><span class="font-weight-normal">What Users Say</span> <b class="base--color">About Us</b></h2>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse voluptatum eaque earum quos quia? Id aspernatur ratione, voluptas nulla rerum laudantium neque ipsam eaque</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row end -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="testimonial-slider">
+                                    <div class="single-slide">
+                                        <div class="testimonial-card">
+                                            <div class="testimonial-card__content">
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus
+                                                    obcaecati.</p>
+                                            </div>
+                                            <div class="testimonial-card__client">
+                                                <div class="thumb">
+                                                    <img :src="$root.basepath + '/images/testimonial/1.jpg'" alt="image">
+                                                </div>
+                                                <div class="content">
+                                                    <h6 class="name">Fahaddevs</h6>
+                                                    <span class="designation">CEO of fahaddevs</span>
+                                                    <div class="ratings">
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- testimonial-card end -->
+                                    </div>
+                                    <!-- single-slide end -->
+                                    <div class="single-slide">
+                                        <div class="testimonial-card">
+                                            <div class="testimonial-card__content">
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus
+                                                    obcaecati.</p>
+                                            </div>
+                                            <div class="testimonial-card__client">
+                                                <div class="thumb">
+                                                    <img :src="$root.basepath + '/images/testimonial/2.jpg'" alt="image">
+                                                </div>
+                                                <div class="content">
+                                                    <h6 class="name">Alina</h6>
+                                                    <span class="designation">CTO of fahaddevs</span>
+                                                    <div class="ratings">
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- testimonial-card end -->
+                                    </div>
+                                    <!-- single-slide end -->
+                                    <div class="single-slide">
+                                        <div class="testimonial-card">
+                                            <div class="testimonial-card__content">
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus
+                                                    obcaecati.</p>
+                                            </div>
+                                            <div class="testimonial-card__client">
+                                                <div class="thumb">
+                                                    <img :src="$root.basepath + '/images/testimonial/3.jpg'" alt="image">
+                                                </div>
+                                                <div class="content">
+                                                    <h6 class="name">Amir Khan</h6>
+                                                    <span class="designation">COO of fahaddevs</span>
+                                                    <div class="ratings">
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- testimonial-card end -->
+                                    </div>
+                                    <!-- single-slide end -->
+                                    <div class="single-slide">
+                                        <div class="testimonial-card">
+                                            <div class="testimonial-card__content">
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus
+                                                    obcaecati.</p>
+                                            </div>
+                                            <div class="testimonial-card__client">
+                                                <div class="thumb">
+                                                    <img :src="$root.basepath + '/images/testimonial/4.jpg'" alt="image">
+                                                </div>
+                                                <div class="content">
+                                                    <h6 class="name">Zohir Khan</h6>
+                                                    <span class="designation">Manager of fahaddevs</span>
+                                                    <div class="ratings">
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                        <i class="las la-star"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- testimonial-card end -->
+                                    </div>
+                                    <!-- single-slide end -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row end -->
+                    </div>
+                </section>
+                <!-- testimonial section end -->
+                <!-- team section start -->
+                <section class="pt-120 pb-120 bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <div class="section-header">
+                                    <h2 class="section-title"><span class="font-weight-normal">Our Expert</span> <b class="base--color">Team Members</b></h2>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse voluptatum eaque earum quos quia? Id aspernatur ratione, voluptas nulla rerum laudantium neque ipsam eaque</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row end -->
+                        <div class="row justify-content-center mb-none-30">
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="team-card">
+                                    <div class="team-card__thumb">
+                                        <img :src="$root.basepath + '/images/investor/1.jpg'" alt="image">
+                                    </div>
+                                    <div class="team-card__content">
+                                        <h4 class="name mb-1">Fahad Bin Faiz</h4>
+                                        <span class="designation">CEO</span>
+                                    </div>
+                                </div>
+                                <!-- team-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="team-card">
+                                    <div class="team-card__thumb">
+                                        <img :src="$root.basepath + '/images/investor/2.jpg'" alt="image">
+                                    </div>
+                                    <div class="team-card__content">
+                                        <h4 class="name mb-1">Danial K.</h4>
+                                        <span class="designation">CTO</span>
+                                    </div>
+                                </div>
+                                <!-- team-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="team-card">
+                                    <div class="team-card__thumb">
+                                        <img :src="$root.basepath + '/images/investor/3.jpg'" alt="image">
+                                    </div>
+                                    <div class="team-card__content">
+                                        <h4 class="name mb-1">Lew Son</h4>
+                                        <span class="designation">Marketing Head</span>
+                                    </div>
+                                </div>
+                                <!-- team-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="team-card">
+                                    <div class="team-card__thumb">
+                                        <img :src="$root.basepath + '/images/investor/4.jpg'" alt="image">
+                                    </div>
+                                    <div class="team-card__content">
+                                        <h4 class="name mb-1">Tend z Joe</h4>
+                                        <span class="designation">Designer</span>
+                                    </div>
+                                </div>
+                                <!-- team-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="team-card">
+                                    <div class="team-card__thumb">
+                                        <img :src="$root.basepath + '/images/investor/5.jpg'" alt="image">
+                                    </div>
+                                    <div class="team-card__content">
+                                        <h4 class="name mb-1">Sam Joe</h4>
+                                        <span class="designation">Developer</span>
+                                    </div>
+                                </div>
+                                <!-- team-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="team-card">
+                                    <div class="team-card__thumb">
+                                        <img :src="$root.basepath + '/images/investor/6.jpg'" alt="image">
+                                    </div>
+                                    <div class="team-card__content">
+                                        <h4 class="name mb-1">Alex Joe</h4>
+                                        <span class="designation">UX Expert</span>
+                                    </div>
+                                </div>
+                                <!-- team-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="team-card">
+                                    <div class="team-card__thumb">
+                                        <img :src="$root.basepath + '/images/investor/7.jpg'" alt="image">
+                                    </div>
+                                    <div class="team-card__content">
+                                        <h4 class="name mb-1">Juna Sun</h4>
+                                        <span class="designation">SEO Expert</span>
+                                    </div>
+                                </div>
+                                <!-- team-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="team-card">
+                                    <div class="team-card__thumb">
+                                        <img :src="$root.basepath + '/images/investor/8.jpg'" alt="image">
+                                    </div>
+                                    <div class="team-card__content">
+                                        <h4 class="name mb-1">Profed Laun</h4>
+                                        <span class="designation">Manager</span>
+                                    </div>
+                                </div>
+                                <!-- team-card end -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- team section end -->
+                <!-- data section start -->
+                <section class="pt-120 pb-120">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <div class="section-header">
+                                    <h2 class="section-title"><span class="font-weight-normal">Our Latest</span> <b class="base--color">Transaction</b></h2>
+                                    <p>Here is the log of the most recent transactions including withdraw and deposit made by our users.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row end -->
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <ul class="nav nav-tabs custom--style-two justify-content-center" id="transactionTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" id="deposit-tab" data-toggle="tab" href="#deposit" role="tab" aria-controls="deposit" aria-selected="true">Latest Deposit</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" id="withdraw-tab" data-toggle="tab" href="#withdraw" role="tab" aria-controls="withdraw" aria-selected="false">Latest Withdraw</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content mt-4" id="transactionTabContent">
+                                    <div class="tab-pane fade show active" id="deposit" role="tabpanel" aria-labelledby="deposit-tab">
+                                        <div class="table-responsive--sm">
+                                            <table class="table style--two">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Date</th>
+                                                        <th>Amount</th>
+                                                        <th>Gateway</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td data-label="Name">
+                                                            <div class="user">
+                                                                <div class="thumb"><img :src="$root.basepath + '/images/investor/1.jpg'" alt="image"></div>
+                                                                <span>fahaddevs</span>
+                                                            </div>
+                                                        </td>
+                                                        <td data-label="Date">Nov 22, 2020</td>
+                                                        <td data-label="Amount">$ 5000</td>
+                                                        <td data-label="Gateway">Stripe Hosted</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td data-label="Name">
+                                                            <div class="user">
+                                                                <div class="thumb"><img :src="$root.basepath + '/images/investor/2.jpg'" alt="image"></div>
+                                                                <span>Jon Tulsa</span>
+                                                            </div>
+                                                        </td>
+                                                        <td data-label="Date">Dec 11, 2020</td>
+                                                        <td data-label="Amount">$ 1000</td>
+                                                        <td data-label="Gateway">Stripe Hosted</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td data-label="Name">
+                                                            <div class="user">
+                                                                <div class="thumb"><img :src="$root.basepath + '/images/investor/3.jpg'" alt="image"></div>
+                                                                <span>Thomas Okeyson</span>
+                                                            </div>
+                                                        </td>
+                                                        <td data-label="Date">Dec 12, 2020</td>
+                                                        <td data-label="Amount">$ 10000</td>
+                                                        <td data-label="Gateway">Stripe Storefront</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td data-label="Name">
+                                                            <div class="user">
+                                                                <div class="thumb"><img :src="$root.basepath + '/images/investor/6.jpg'" alt="image"></div>
+                                                                <span>Thomas Okeyson</span>
+                                                            </div>
+                                                        </td>
+                                                        <td data-label="Date">Dec 12, 2020</td>
+                                                        <td data-label="Amount">$ 6500</td>
+                                                        <td data-label="Gateway">Stripe Hosted</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td data-label="Name">
+                                                            <div class="user">
+                                                                <div class="thumb"><img :src="$root.basepath + '/images/investor/7.jpg'" alt="image"></div>
+                                                                <span>Thomas Okeyson</span>
+                                                            </div>
+                                                        </td>
+                                                        <td data-label="Date">Dec 12, 2020</td>
+                                                        <td data-label="Amount">$ 6500</td>
+                                                        <td data-label="Gateway">Stripe Hosted</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td data-label="Name">
+                                                            <div class="user">
+                                                                <div class="thumb"><img :src="$root.basepath + '/images/investor/8.jpg'" alt="image"></div>
+                                                                <span>Thomas Okeyson</span>
+                                                            </div>
+                                                        </td>
+                                                        <td data-label="Date">Dec 12, 2020</td>
+                                                        <td data-label="Amount">$ 6500</td>
+                                                        <td data-label="Gateway">Stripe Hosted</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="withdraw" role="tabpanel" aria-labelledby="withdraw-tab">
+                                        <div class="table-responsive--md">
+                                            <table class="table style--two">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Date</th>
+                                                        <th>Amount</th>
+                                                        <th>Gateway</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td data-label="Name">
+                                                            <div class="user">
+                                                                <div class="thumb"><img :src="$root.basepath + '/images/investor/1.jpg'" alt="image"></div>
+                                                                <span>fahaddevs</span>
+                                                            </div>
+                                                        </td>
+                                                        <td data-label="Date">Nov 22, 2020</td>
+                                                        <td data-label="Amount">$ 5000</td>
+                                                        <td data-label="Gateway">Stripe Hosted</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td data-label="Name">
+                                                            <div class="user">
+                                                                <div class="thumb"><img :src="$root.basepath + '/images/investor/2.jpg'" alt="image"></div>
+                                                                <span>Jon Tulsa</span>
+                                                            </div>
+                                                        </td>
+                                                        <td data-label="Date">Dec 11, 2020</td>
+                                                        <td data-label="Amount">$ 1000</td>
+                                                        <td data-label="Gateway">Stripe Hosted</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td data-label="Name">
+                                                            <div class="user">
+                                                                <div class="thumb"><img :src="$root.basepath + '/images/investor/3.jpg'" alt="image"></div>
+                                                                <span>Thomas Okeyson</span>
+                                                            </div>
+                                                        </td>
+                                                        <td data-label="Date">Dec 12, 2020</td>
+                                                        <td data-label="Amount">$ 10000</td>
+                                                        <td data-label="Gateway">Stripe Storefront</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td data-label="Name">
+                                                            <div class="user">
+                                                                <div class="thumb"><img :src="$root.basepath + '/images/investor/6.jpg'" alt="image"></div>
+                                                                <span>Thomas Okeyson</span>
+                                                            </div>
+                                                        </td>
+                                                        <td data-label="Date">Dec 12, 2020</td>
+                                                        <td data-label="Amount">$ 6500</td>
+                                                        <td data-label="Gateway">Stripe Hosted</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td data-label="Name">
+                                                            <div class="user">
+                                                                <div class="thumb"><img :src="$root.basepath + '/images/investor/7.jpg'" alt="image"></div>
+                                                                <span>Thomas Okeyson</span>
+                                                            </div>
+                                                        </td>
+                                                        <td data-label="Date">Dec 12, 2020</td>
+                                                        <td data-label="Amount">$ 6500</td>
+                                                        <td data-label="Gateway">Stripe Hosted</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td data-label="Name">
+                                                            <div class="user">
+                                                                <div class="thumb"><img :src="$root.basepath + '/images/investor/8.jpg'" alt="image"></div>
+                                                                <span>Thomas Okeyson</span>
+                                                            </div>
+                                                        </td>
+                                                        <td data-label="Date">Dec 12, 2020</td>
+                                                        <td data-label="Amount">$ 6500</td>
+                                                        <td data-label="Gateway">Stripe Hosted</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- tab-content end -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- data section end -->
+                <!-- top investor section start -->
+                <section class="pt-120 pb-120 border-top-1">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-6 col-lg-8 text-center">
+                                <div class="section-header">
+                                    <h2 class="section-title"><span class="font-weight-normal">Our Top</span> <b class="base--color">Investor</b></h2>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse voluptatum eaque earum quos quia? Id aspernatur ratione, voluptas nulla rerum laudantium neque ipsam eaque</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row end -->
+                        <div class="row justify-content-center mb-none-30">
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="investor-card border-radius--5">
+                                    <div class="investor-card__thumb bg_img background-position-y-top" :data-background="$root.basepath + '/images/investor/1.jpg'"></div>
+                                    <div class="investor-card__content">
+                                        <h6 class="name">Fahad Bin Faiz</h6>
+                                        <span class="amount f-size-14">Investment - $1,500,355</span>
+                                    </div>
+                                </div>
+                                <!-- investor-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="investor-card border-radius--5">
+                                    <div class="investor-card__thumb bg_img background-position-y-top" :data-background="$root.basepath + '/images/investor/2.jpg'"></div>
+                                    <div class="investor-card__content">
+                                        <h6 class="name">Danial K</h6>
+                                        <span class="amount f-size-14">Investment - $1,500,355</span>
+                                    </div>
+                                </div>
+                                <!-- investor-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="investor-card border-radius--5">
+                                    <div class="investor-card__thumb bg_img background-position-y-top" :data-background="$root.basepath + '/images/investor/3.jpg'"></div>
+                                    <div class="investor-card__content">
+                                        <h6 class="name">Lew Son</h6>
+                                        <span class="amount f-size-14">Investment - $1,500,355</span>
+                                    </div>
+                                </div>
+                                <!-- investor-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="investor-card border-radius--5">
+                                    <div class="investor-card__thumb bg_img background-position-y-top" :data-background="$root.basepath + '/images/investor/4.jpg'"></div>
+                                    <div class="investor-card__content">
+                                        <h6 class="name">Tend z Joe</h6>
+                                        <span class="amount f-size-14">Investment - $1,500,355</span>
+                                    </div>
+                                </div>
+                                <!-- investor-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="investor-card border-radius--5">
+                                    <div class="investor-card__thumb bg_img background-position-y-top" :data-background="$root.basepath + '/images/investor/5.jpg'"></div>
+                                    <div class="investor-card__content">
+                                        <h6 class="name">Sam Joe</h6>
+                                        <span class="amount f-size-14">Investment - $1,500,355</span>
+                                    </div>
+                                </div>
+                                <!-- investor-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="investor-card border-radius--5">
+                                    <div class="investor-card__thumb bg_img background-position-y-top" :data-background="$root.basepath + '/images/investor/6.jpg'"></div>
+                                    <div class="investor-card__content">
+                                        <h6 class="name">Alex Joe</h6>
+                                        <span class="amount f-size-14">Investment - $1,500,355</span>
+                                    </div>
+                                </div>
+                                <!-- investor-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="investor-card border-radius--5">
+                                    <div class="investor-card__thumb bg_img background-position-y-top" :data-background="$root.basepath + '/images/investor/7.jpg'"></div>
+                                    <div class="investor-card__content">
+                                        <h6 class="name">Juna Sun</h6>
+                                        <span class="amount f-size-14">Investment - $1,500,355</span>
+                                    </div>
+                                </div>
+                                <!-- investor-card end -->
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                                <div class="investor-card border-radius--5">
+                                    <div class="investor-card__thumb bg_img background-position-y-top" :data-background="$root.basepath + '/images/investor/8.jpg'"></div>
+                                    <div class="investor-card__content">
+                                        <h6 class="name">Profed Laun</h6>
+                                        <span class="amount f-size-14">Investment - $1,500,355</span>
+                                    </div>
+                                </div>
+                                <!-- investor-card end -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- top investor section end -->
+                <!-- cta section start -->
+                <section class="pb-120">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-8">
+                                <div class="cta-wrapper bg_img border-radius--10 text-center" :data-background="$root.basepath + '/images/bg/bg-8.jpg'">
+                                    <h2 class="title mb-3">Get Started Today With Us</h2>
+                                    <p>This is a Revolutionary Money Making Platform! Invest for Future in Stable Platform and Make Fast Money. Not only we guarantee the fastest and the most exciting returns on your investments, but we also guarantee the security
+                                        of your investment.</p>
+                                    <a href="registration.html" class="cmn-btn mt-4">Join Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- cta section end -->
+                <!-- payment brand section start -->
+                <section class="pb-120">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <div class="section-header">
+                                    <h2 class="section-title"><span class="font-weight-normal">Payment We</span> <b class="base--color">Accept</b></h2>
+                                    <p>We accept all major cryptocurrencies and fiat payment methods to make your investment process easier with our platform.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row end -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="payment-slider">
+                                    <div class="single-slide">
+                                        <div class="brand-item">
+                                            <img :src="$root.basepath + '/images/brand/1.png'" alt="image">
+                                        </div>
+                                        <!-- brand-item end -->
+                                    </div>
+                                    <div class="single-slide">
+                                        <div class="brand-item">
+                                            <img :src="$root.basepath + '/images/brand/2.png'" alt="image">
+                                        </div>
+                                        <!-- brand-item end -->
+                                    </div>
+                                    <div class="single-slide">
+                                        <div class="brand-item">
+                                            <img :src="$root.basepath + '/images/brand/3.png'" alt="image">
+                                        </div>
+                                        <!-- brand-item end -->
+                                    </div>
+                                    <div class="single-slide">
+                                        <div class="brand-item">
+                                            <img :src="$root.basepath + '/images/brand/4.png'" alt="image">
+                                        </div>
+                                        <!-- brand-item end -->
+                                    </div>
+                                    <div class="single-slide">
+                                        <div class="brand-item">
+                                            <img :src="$root.basepath + '/images/brand/5.png'" alt="image">
+                                        </div>
+                                        <!-- brand-item end -->
+                                    </div>
+                                    <div class="single-slide">
+                                        <div class="brand-item">
+                                            <img :src="$root.basepath + '/images/brand/6.png'" alt="image">
+                                        </div>
+                                        <!-- brand-item end -->
+                                    </div>
+                                    <div class="single-slide">
+                                        <div class="brand-item">
+                                            <img :src="$root.basepath + '/images/brand/7.png'" alt="image">
+                                        </div>
+                                        <!-- brand-item end -->
+                                    </div>
+                                    <div class="single-slide">
+                                        <div class="brand-item">
+                                            <img :src="$root.basepath + '/images/brand/8.png'" alt="image">
+                                        </div>
+                                        <!-- brand-item end -->
+                                    </div>
+                                </div>
+                                <!-- payment-slider end -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- payment brand section end -->
+                <!-- blog section start -->
+                <section class="pt-120 pb-120 border-top-1">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 text-center">
+                                <div class="section-header">
+                                    <h2 class="section-title"><span class="font-weight-normal">Our Latest</span> <b class="base--color">News</b></h2>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse voluptatum eaque earum quos quia Id aspernatur ratione, voluptas nulla rerum laudantium neque ipsam eaque</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- row end -->
+                        <div class="row justify-content-center mb-none-30">
+                            <div class="col-lg-4 col-md-6 mb-30">
+                                <div class="blog-card">
+                                    <div class="blog-card__thumb">
+                                        <img :src="$root.basepath + '/images/blog/1.jpg'" alt="image">
+                                    </div>
+                                    <div class="blog-card__content">
+                                        <h4 class="blog-card__title mb-3"><a href="#0">Laboriosam distinctio nisi debitis deleniti voluptatum corporis.</a></h4>
+                                        <ul class="blog-card__meta d-flex flex-wrap mb-4">
+                                            <li>
+                                                <i class="las la-user"></i>
+                                                <a href="#0">fahaddevs</a>
+                                            </li>
+                                            <li>
+                                                <i class="las la-calendar"></i>
+                                                <a href="#0">20 Nov, 2020</a>
+                                            </li>
+                                        </ul>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.</p>
+                                        <a href="#0" class="cmn-btn btn-md mt-4">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-30">
+                                <div class="blog-card">
+                                    <div class="blog-card__thumb">
+                                        <img :src="$root.basepath + '/images/blog/2.jpg'" alt="image">
+                                    </div>
+                                    <div class="blog-card__content">
+                                        <h4 class="blog-card__title mb-3"><a href="#0">Laboriosam distinctio nisi debitis deleniti voluptatum corporis.</a></h4>
+                                        <ul class="blog-card__meta d-flex flex-wrap mb-4">
+                                            <li>
+                                                <i class="las la-user"></i>
+                                                <a href="#0">fahaddevs</a>
+                                            </li>
+                                            <li>
+                                                <i class="las la-calendar"></i>
+                                                <a href="#0">20 Nov, 2020</a>
+                                            </li>
+                                        </ul>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.</p>
+                                        <a href="#0" class="cmn-btn btn-md mt-4">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-30">
+                                <div class="blog-card">
+                                    <div class="blog-card__thumb">
+                                        <img :src="$root.basepath + '/images/blog/3.jpg'" alt="image">
+                                    </div>
+                                    <div class="blog-card__content">
+                                        <h4 class="blog-card__title mb-3"><a href="#0">Laboriosam distinctio nisi debitis deleniti voluptatum corporis.</a></h4>
+                                        <ul class="blog-card__meta d-flex flex-wrap mb-4">
+                                            <li>
+                                                <i class="las la-user"></i>
+                                                <a href="#0">fahaddevs</a>
+                                            </li>
+                                            <li>
+                                                <i class="las la-calendar"></i>
+                                                <a href="#0">20 Nov, 2020</a>
+                                            </li>
+                                        </ul>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.</p>
+                                        <a href="#0" class="cmn-btn btn-md mt-4">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- blog section end -->
+                <!-- subscribe section start -->
+                <section class="pb-120">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="subscribe-wrapper bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-5">
+                                            <h2 class="title">Subscribe Our Newsletter</h2>
+                                        </div>
+                                        <div class="col-lg-7 mt-lg-0 mt-4">
+                                            <form class="subscribe-form">
+                                                <input type="email" class="form-control" placeholder="Email Address">
+                                                <button class="subscribe-btn"><i class="las la-envelope"></i></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- subscribe-wrapper end -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- subscribe section end -->
             </div>
-        </section>
+        </body>
     </div>
 </template>
 <script>

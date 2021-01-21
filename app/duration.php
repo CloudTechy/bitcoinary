@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class duration extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['duration'];
+    protected $fillable = ['duration','description'];
+    public $primaryKey = "duration";
 
     public function scopeFilter($query, $filter) {
 
 		try {
 
-			$fields = ['duration'];
+			$fields = ['duration','description'];
 
 			return $query->where(
 				function ($query) use ($filter, $fields) {

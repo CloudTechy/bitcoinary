@@ -21,11 +21,14 @@ class ValidatePackageRequest extends FormRequest {
 	 */
 	public function rules() {
 		return [
-			'portfolio_id' => 'required|numeric|exists:portfolios,id',
-			'interest_rate' => 'required|numeric',
-			'deposit' => 'required|numeric',
-			'duration' => 'required|numeric',
-			'name' => 'required|string|min:2|max:255|unique:packages,name,portfolio_id',
+			
+			'name' => 'required|string|min:2|max:255|unique:packages,name',
+			'min_deposit' => 'required|numeric|min:50',
+			'max_deposit' => 'required|numeric|min:50',
+			'roi' => 'required|numeric',
+			'turnover' =>'required|numeric',
+			'first_level_ref_commission' =>'required|numeric',
+			'second_level_ref_commission' => 'required|numeric',
 		];
 	}
 }

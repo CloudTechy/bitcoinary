@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\BankDetail;
 use App\Helper;
 use Illuminate\Http\Request;
+use App\Http\Resources\BankDetailResource;
 use \DB;
 use \Exception;
 
@@ -25,8 +26,9 @@ class BankDetailController extends Controller {
 				->paginate($pageSize);
 
 			$total = $bankDetails->total();
+			$data = BankDetailResource::collection($bankDetails);
 
-			$data = Helper::buildData($bankDetails, $total);
+			$data = Helper::buildData($data, $total);
 
 		} catch (Exception $bug) {
 
@@ -53,11 +55,14 @@ class BankDetailController extends Controller {
 	public function store(Request $request) {
 		$validated = $request->validate([
 
-			"bank_id" => "required|max:50|numeric|exists:banks,id",
-			"acc_name" => "required|string|min:4",
-			"acc_number" => "required|numeric|min:10",
-			"user_id" => "required|numeric|min:1|exists:users,id",
+			"bank_id" => "required_unless:currency_type,crypto|numeric|exists:banks,id",
+			"acc_name" => "required_unless:currency_type,crypto|string",
+			"acc_number" => "required_unless:currency_type,crypto|numeric",
+			"user_id" => "required|numeric|exists:users,id",
 			'swift_code' => 'nullable|string',
+			'payment_method' => 'required|string|exists:payment_methods,name',
+			'currency_type' => 'required|string|exists:payment_methods,type',
+			'wallet' => 'required_unless:currency_type,fiat|string',
 
 		]);
 		DB::beginTransaction();
@@ -73,7 +78,7 @@ class BankDetailController extends Controller {
 			return $this->exception($bug, 'unknown error', 500);
 		}
 
-		return Helper::validRequest($bankdetail, 'BankDetail was sent successfully', 200);
+		return Helper::validRequest(new BankDetailResource($bankdetail), 'BankDetail was sent successfully', 200);
 
 	}
 
@@ -83,10 +88,10 @@ class BankDetailController extends Controller {
 	 * @param  \App\BankDetail  $bankDetail
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(BankDetail $bankDetail) {
+	public function show(BankDetail $bankdetail) {
 		try {
-
-			return Helper::validRequest($bankdetail, 'specified BankDetail was fetched successfully', 200);
+			
+			return Helper::validRequest(new BankDetailResource($bankdetail), 'specified BankDetail was fetched successfully', 200);
 
 		} catch (Exception $bug) {
 
@@ -111,12 +116,14 @@ class BankDetailController extends Controller {
 	 * @param  \App\BankDetail  $bankDetail
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, BankDetail $bankDetail) {
+	public function update(Request $request, BankDetail $bankdetail) {
 		$validated = $request->validate([
 			"bank" => "max:50|string",
 			"acc_name" => "string|min:4",
 			"acc_number" => "numeric|min:10",
 			"swift_code" => "string",
+			'payment_method' => 'string',
+			'wallet' => 'string',
 		]);
 		DB::beginTransaction();
 		try {
@@ -135,7 +142,7 @@ class BankDetailController extends Controller {
 	 * @param  \App\BankDetail  $bankDetail
 	 * @return \Illuminate\Http\Response
 	 */
-	public function destroy(BankDetail $bankDetail) {
+	public function destroy(BankDetail $bankdetail) {
 		DB::beginTransaction();
 		try {
 			$bankdetail = $bankdetail->delete();

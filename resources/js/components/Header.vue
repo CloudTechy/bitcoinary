@@ -1,56 +1,81 @@
 <template>
-    <header >
-        <div class="header-container p-2 m-0" >
+    <!-- header-section start  -->
+    <header class="header">
+        <div class="header__bottom">
             <div class="container">
-                <div class="row">
-                    <div class="logo p-2 p-lg-1 mb-lg-0 mb-2">
-                        <router-link style="background: none !important" to="/home"><img class="main-logo" :src="$root.basepath + '/img/logo.png'"><img class="hover-logo" :src="$root.basepath + '/img/logo-hover.png'"></router-link>
-                    </div>
-                    <div class=" p-2 pb-0 pt-0 pt-lg-0 m-auto ">
-                        <div class="btc-price">
-                            <div class="price ">
-                                <span class="btc-spin"><img :src="$root.basepath + '/img/btc-small.png'"></span>
-                                <span class="label" style="color: #fff;">BTC Price</span>
-                                <span class="figure">$<span class="btc-usd"><span class="price" style="margin-top: -21px;margin-left: -39px;">{{$root.normalNumeral($root.rate)}}</span></span></span>
-                            </div>
+                <nav class="navbar navbar-expand-xl p-0 align-items-center">
+                    <a class="site-logo site-title" href="index.html"><img :src="$root.basepath + '/images/logo.png'" alt="site-logo"></a>
+                    <ul class="account-menu mobile-acc-menu">
+                        <li class="icon">
+                            <a href="login.html"><i class="las la-user"></i></a>
+                        </li>
+                    </ul>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="menu-toggle"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav main-menu m-auto">
+                            <li>
+                                <router-link to="/">Home</router-link>
+                            </li>
+                            <li>
+                                <router-link to="/about">About</router-link>
+                            </li>
+                            <li>
+                                <router-link to="/register">Get Started</router-link>
+                            </li>
+                            <li>
+                                <router-link to="/investmentPlans">Investment plans</router-link>
+                            </li>
+                            <li>
+                                <router-link to="/partners">Partners</router-link>
+                            </li>
+                            <li>
+                                <router-link to="/faq">Faq</router-link>
+                            </li>
+                            <!-- <li>
+                                <a href="https://tawk.link/5be61a8a70ff5a5a3a717ba7/vc/5c0a5e54af5de8c7a62ef1f4/v/f6499c5fa1bda2dc59c0aaf0ca87fa79564509c1/BitcoinaryFinance">Company Certificate</a>
+                            </li> -->
+                            <li>
+                                <router-link to="/news">Blog</router-link>
+                            </li>
+                            <li>
+                                <router-link to="/support">Support</router-link>
+                            </li>
+                           <!--  <li> <a href="index.html">Home</a></li>
+                            <li> <a href="about.html">About Us</a></li>
+                            <li> <a href="plan.html">Plan</a></li>
+                            <li><a href="dashboard.html">Dashboard</a></li>
+                            <li class="menu_has_children"><a href="#0">Blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog.html">Blog Posts</a></li>
+                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu_has_children"><a href="#0">Page</a>
+                                <ul class="sub-menu">
+                                    <li><a href="error-404.html">Error - 404</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li> -->
+                        </ul>
+                        <div class="nav-right">
+                            <ul class="account-menu ml-3">
+                                <li class="icon">
+                                    <a href="login.html"><i class="las la-user"></i></a>
+                                </li>
+                            </ul>
+                            <select class="select d-inline-block w-auto ml-xl-3">
+                                <option>Eng</option>
+                                <option>Ban</option>
+                                <option>Hin</option>
+                            </select>
                         </div>
-                        <div class="server-time">
-                            <div class="time pl-lg-3 pl-0">
-                                <span class="label" style="color: #fff;">Server Time</span>
-                                <span class="figure"><span id="clock">{{$root.time}}</span></span>
-                            </div>
-                        </div>
                     </div>
-                    <ul class="user-menu p-0  pt-lg-0 pt-3 pl-lg-2  m-auto clearfix" v-if="$auth.check(1)">
-                        <li class="nav-item" v-for="(route, key) in routes.user" v-bind:key="route.path">
-                            <router-link :to="{ name : route.path }" :key="key" class="btn btn-default">{{route.name}}</router-link>
-                        </li>
-                    </ul>
-                    <ul class="user-menu p-0  pt-lg-0 pt-3 pl-lg-2  m-auto clearfix" v-if="$auth.check(2)">
-                        <li class="nav-item" v-for="(route, key) in routes.user" v-bind:key="route.path">
-                            <router-link :to="{ name : route.path }" :key="key" class="btn btn-default">{{route.name}}</router-link>
-                        </li>
-                    </ul>
-                    <ul class="user-menu p-0  pt-lg-0 pt-3 pl-lg-2  m-auto clearfix" v-if="!$auth.check()">
-                        <li class="nav-item" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
-                            <router-link :to="{ name : route.path }" :key="key" class="btn btn-default">{{route.name}}</router-link>
-                        </li>
-                    </ul>
-                    <ul class="user-menu p-0  pt-lg-0 pt-3 pl-md-3  m-auto clearfix" v-if="$auth.check()">
-                        <li class="nav-item">
-                            <a class="btn btn-default" href="#" @click.prevent="$auth.logout()">Logout</a>
-                        </li>
-                        <li v-if="$auth.user().isAdmin" class="nav-item">
-                            <router-link v-if="$route.path != '/admin/dashboard'  && $auth.user().isEmailVerified" to="/admin/dashboard" class="btn btn-default">Account</router-link>
-                        </li>
-                        <li v-else class="nav-item">
-                            <router-link v-if="$route.path != '/user/dashboard'  && $auth.user().isEmailVerified" to="/user/dashboard" class="btn btn-default">Account</router-link>
-                        </li>
-                    </ul>
-                </div>
+                </nav>
             </div>
         </div>
-        <Menu></Menu>
+        <!-- header__bottom end -->
     </header>
 </template>
 <script>
@@ -72,14 +97,14 @@ export default {
                     { name: 'Dashboard', path: 'admin.dashboard' }
                 ]
             },
-            rate : ''
+            rate: ''
         }
     },
     computed: {},
     // components: { Menu },
     methods: {
-       
-        
+
+
     }
 }
 

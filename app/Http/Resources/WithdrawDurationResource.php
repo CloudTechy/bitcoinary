@@ -14,8 +14,12 @@ class WithdrawDurationResource extends JsonResource
      */
     public function toArray($request)
     {
+        $user = $this->user;
         return [
-            'username' => empty($this->user) ? null :  $this->user->username,
+            'id' => $this->id,
+            'user_id' => empty($user) ? null :  $user->id,
+            'username' => empty($user) ? null :  $user->username,
+            'names' => empty($user) ? null :  $user->last_name . ' '  . $user->first_name,
             'days' => $this->duration,
             'expiration' => $this->expiration
         ];

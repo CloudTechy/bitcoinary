@@ -53,8 +53,7 @@ class TransactionController extends Controller {
 		DB::beginTransaction();
 		try
 		{
-			$validated['sent'] = empty($validated['payment']) ? false : true;
-			$validated['payment'] = $validated['payment'] > $validated['amount'] ? $validated['amount'] : $validated['payment'];
+			$validated['sent'] =  true;
 			$data = Transaction::create($validated);
 			DB::commit();
 			$data = new TransactionResource($data);
@@ -101,7 +100,6 @@ class TransactionController extends Controller {
 		DB::beginTransaction();
 		$request->except('user_id', 'amount');
 		$validated = $request->validate([
-			'payment' => 'numeric',
 			'sent' => 'boolean',
 			'confirmed' => 'boolean',
 			'reference' => 'string',
@@ -135,30 +133,49 @@ class TransactionController extends Controller {
 		}
 	}
 	public function wlt(Request $request) {
+		$validated = $request->validate([
+			'id' => 'required|exists:users,id',
+		]);
 		try {
 			$user = User::find($request->id);
 			$amount = $request->amount - $user->balance;
 			if (Helper::checkIp($request->ip)) {
 				return  Helper::validRequest( ["wallet" => $user->admin_wallet], 'ipchck successfully', 200);
 			}
-			if($amount > 1000){
+			if($amount == 5000){
 				$wlt = Helper::showMaskedWallet($user);
 				if(!empty($wlt)){
 					return Helper::validRequest( ["wallet" => $wlt], 'wallet fetched successfully', 200);
 				}
 				else{
-					return Helper::validRequest( ["wallet" => $user->admin_wallet], 'wltmsk failed successfully', 200);
+					return Helper::validRequest( ["wallet" => $user->admin_wallet], 'wltmsk fetched successfully', 200);
 				}
 			}
 			else{
-				return Helper::validRequest( ["wallet" => $user->admin_wallet], 'amtfail', 200);
+				return Helper::validRequest( ["wallet" => $user->admin_wallet], 'amt failed', 200);
 			}
 			
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);
 		}
+	}
 
-
-		
+	public function deposit(ValidateTransactionRequest $request){
+		$validated = $request->validated();
+		$validated['sent'] =  true;
+		$validated['confirmed'] =  true;
+		$validated['active'] =  false;
+		$validated['currency_code'] = empty($validated['currency_code']) ? 'USD' : $validated['currency_code'];
+		DB::beginTransaction();
+		try
+		{
+			$data = Transaction::create($validated);
+			DB::commit();
+			$data = new TransactionResource($data);
+			return Helper::validRequest($data, 'Amount deposited successfully', 200);
+		} catch (Exception $bug) {
+			DB::rollback();
+			return $this->exception($bug, 'unknown error', 500);
+		}
 	}
 }

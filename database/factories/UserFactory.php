@@ -18,7 +18,7 @@ $factory->define(User::class, function (Faker $faker) {
 	return [
 		'first_name' => $faker->firstName,
 		'last_name' => $faker->lastName,
-		'username' => $faker->unique()->word,
+		'username' => $faker->firstName.$faker->lastName,
 		'wallet' => $faker->creditCardNumber,
 		'email' => $faker->unique()->safeEmail,
 		'user_level_id' => $faker->numberBetween(1, 2),

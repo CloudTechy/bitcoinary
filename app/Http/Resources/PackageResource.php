@@ -14,13 +14,13 @@ class PackageResource extends JsonResource {
 	public function toArray($request) {
 		return [
 			'id' => $this->id,
-			'portfolio' => $this->portfolio->name,
-			'name' => '$' . $this->name . ' Plan',
-			'deposit' => $this->deposit,
-			'interest_rate' => $this->interest_rate,
-			'duration' => $this->duration,
-			'referral_commission' => $this->referral_commission,
-			//'users' => $this->users,
+			'name' => $this->name . ' Plan',
+			'min_deposit' => $this->min_deposit,
+			'max_deposit' => $this->max_deposit,
+			'roi' => $this->roi,
+			'turnover' => $this->turnover,
+			'first_level_ref_commission' => $this->first_level_ref_commission,
+			'second_level_ref_commission' => $this->second_level_ref_commission,
 		];
 	}
 }

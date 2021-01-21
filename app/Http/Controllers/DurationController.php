@@ -48,10 +48,12 @@ class DurationController extends Controller {
 	public function store(Request $request) {
 		$validated = $request->validate([
 			"duration" => "required|numeric",
+			"description" => "required|string",
 		]);
 		DB::beginTransaction();
 		try
 		{
+
 			$data = duration::create($validated);
 			DB::commit();
 			return Helper::validRequest($data, 'data was sent successfully', 200);

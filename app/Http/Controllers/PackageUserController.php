@@ -85,24 +85,24 @@ class PackageUserController extends Controller {
 			// if(PackageUser::where('user_id', $user->id)->where('active', true)->count() > 0){
 			// 	return Helper::invalidRequest(['This subscription is invalid'], 'Oops!!! There is an active subscription on this account', 400);
 			// }
-			if ($package->portfolio->name == 'bronze') {
-				$tries = PackageUser::where('package_id', $package->id)->where('user_id', $user->id)->where('active', true)->count();
-				if ($tries > 1) {
-					return Helper::invalidRequest(['This subscription is invalid'], 'you are no more eligible for this plan, you have exceeded the number of subscriptions for this plan', 400);
-				}
-			}
+			// if ($package->name == 'bronze') {
+			// 	$tries = PackageUser::where('package_id', $package->id)->where('user_id', $user->id)->where('active', true)->count();
+			// 	if ($tries > 1) {
+			// 		return Helper::invalidRequest(['This subscription is invalid'], 'you are no more eligible for this plan, you have exceeded the number of subscriptions for this plan', 400);
+			// 	}
+			// }
 
 
-			if ($user->balance >= $package->deposit) {
+			if ($user->balance >= $validated['amount']) {
+				$transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
 
-				$transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $package->deposit, 'payment' => $package->deposit, 'sent' => true, 'confirmed' => true]);
+				$withdrawal = $user->withdrawals()->create(['amount' => $validated['amount'], 'reference' => 'Bitcoinary Finance', 'processed' => true, 'confirmed' => true]);
 
-				$withdrawal = $user->withdrawals()->create(['amount' => $package->deposit, 'reference' => 'BFIN', 'processed' => true, 'confirmed' => true]);
-
-				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'account' => $package->deposit, 'active' => true, 'expiration' => Carbon::now()->addDays($package->duration)]);
+				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
 
 				$user->notify(new WithdrawalMade($withdrawal));
 				$user->notify(new PackageSubscribed($package));
+
 
 				DB::commit();
 
@@ -111,10 +111,6 @@ class PackageUserController extends Controller {
 				$subscription = new PackageUserResource($subscription);
 				return Helper::validRequest($subscription, 'subscription was successful', 200);
 			} else {
-
-				$payment = $package->deposit - $user->balance;
-
-
 				if ($request->hasFile('pop')) {
 
 		            if ($request->file('pop')->isValid()) {
@@ -126,15 +122,15 @@ class PackageUserController extends Controller {
 		                $pop = $file->getClientOriginalName();
 		            }
 		        }
-				$transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $package->deposit, 'payment' => $user->balance, 'pop' => $pop]);
+		        $transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $validated['amount'], 'pop' => $pop]);
 
-				$subscription = PackageUser::create(['transaction_id' => $transaction->id, 'user_id' => $user->id, 'package_id' => $package->id, 'account' => $package->deposit, 'active' => false]);
+				$subscription = PackageUser::create(['transaction_id' => $transaction->id, 'user_id' => $user->id, 'package_id' => $package->id, 'amount' => $validated['amount'], 'active' => false]);
 
-				if ($user->balance > 0) {
-					$withdrawal = $user->withdrawals()->create(['amount' => $user->balance, 'reference' => 'BFIN', 'processed' => true, 'confirmed' => true]);
+				// if ($user->balance > 0) {
+				// 	$withdrawal = $user->withdrawals()->create(['amount' => $user->balance, 'reference' => 'BFIN', 'processed' => true, 'confirmed' => true]);
 
-					$user->notify(new WithdrawalMade($withdrawal));
-				}
+				// 	$user->notify(new WithdrawalMade($withdrawal));
+				// }
 				$this->adminsNotificationRequest($subscription);
 				DB::commit();
 				
@@ -151,20 +147,25 @@ class PackageUserController extends Controller {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  \App\PackageUser  $packageUser
+	 * @param  \App\PackageUser  $packageuser
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(PackageUser $packageUser) {
-		//
+	public function show(PackageUser $packageuser) {
+		try {
+			$data = new PackageUserResource($packageuser);
+			return Helper::validRequest($data, 'specified data was fetched successfully', 200);
+		} catch (Exception $bug) {
+			return $this->exception($bug, 'unknown error', 500);
+		}
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  \App\PackageUser  $packageUser
+	 * @param  \App\PackageUser  $packageuser
 	 * @return \Illuminate\Http\Response
 	 */
-	public function edit(PackageUser $packageUser) {
+	public function edit(PackageUser $packageuser) {
 		//
 	}
 
@@ -172,53 +173,50 @@ class PackageUserController extends Controller {
 	 * Update the specified resource in storage.
 	 *
 	 * @param  \Illuminate\Http\Request  $request
-	 * @param  \App\PackageUser  $packageUser
+	 * @param  \App\PackageUser  $packageuser
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, PackageUser $packageUser) {
+	public function update(Request $request, PackageUser $packageuser) {
 		//
 	}
 
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  \App\PackageUser  $packageUser
+	 * @param  \App\PackageUser  $packageuser
 	 * @return \Illuminate\Http\Response
 	 */
-	public function destroy(PackageUser $packageUser) {
+	public function destroy(PackageUser $packageuser) {
 		//
 	}
 	
-	public function confirmSubscription(Transaction $transaction) {
+	public function confirmSubscription(PackageUser $packageuser) {
 		DB::beginTransaction();
 		try {
 			if(auth()->user()->user_level_id != 1){
 				return Helper::inValidRequest('User not Unauthorized to peform this operation.', 'Unauthorized Access!', 400);
 			}
 
-
-			$packageUser = PackageUser::where('transaction_id', $transaction->id)->first();
-
-			if($packageUser->active == true){
-				$packageUser->update(['expiration' => null , 'active' => false]);
-				$transaction->update(['confirmed' => false, 'payment' => $packageUser->account, 'sent' => false]);
+			if($packageuser->active == true){
+				$packageuser->update(['expiration' => null , 'active' => false]);
+				$packageuser->transaction->update(['confirmed' => false, 'sent' => false]);
 				DB::commit();
 				return Helper::validRequest(['success' => true], 'subscription deactivated successfully', 200);
 			}
 
-			// if(PackageUser::where('user_id', $packageUser->user->id)->where('active', true)->count() > 0){
+			// if(PackageUser::where('user_id', $packageuser->user->id)->where('active', true)->count() > 0){
 			// 	return Helper::invalidRequest(['This subscription is invalid'], 'Oops!!! Account has an active subscription.', 400);
 			// }
 
-			if (!$packageUser->active && empty($packageUser->expiration)) {
-				$duration = $packageUser->package->duration;
-				$packageUser->update(['expiration' => Carbon::now()->addDays($duration), 'active' => true]);
-				$transaction->update(['confirmed' => true, 'payment' => $packageUser->account, 'sent' => true]);
-				$packageUser->user->notify(new PackageSubscribed($packageUser->package));
+			if (!$packageuser->active && empty($packageuser->expiration)) {
+				$duration = $packageuser->package->turnover;
+				$packageuser->update(['expiration' => Carbon::now()->addDays($duration), 'active' => true]);
+				$packageuser->transaction->update(['confirmed' => true, 'sent' => true]);
+				$packageuser->user->notify(new PackageSubscribed($packageuser->package));
 				DB::commit();
-				$this->referralPayment($packageUser);
+				$this->referralPayment($packageuser);
 				
-				$data = new PackageUserResource($packageUser);
+				$data = new PackageUserResource($packageuser);
 				
 				return Helper::validRequest($data, 'subscription activated successfully', 200);
 			} else {
@@ -236,12 +234,21 @@ class PackageUserController extends Controller {
 		try {
 			$user = User::find($subscription->user_id);
 			$referrer = User::where('username', $user->referral)->first();
+			$upline = User::where('username', $referrer->referral)->first();
 			$referrer_count = PackageUser::where('user_id', $user->id)->where('referral', $referrer->id)->count();
-			$commission = $subscription->package->referral_commission / 100 * $subscription->package->deposit;
-			if ($commission > 0 && $referrer_count == 0 && $user->user_level_id != 1) {
-				$transaction = $referrer->transactions()->create(['reference' => 'BFIN commission', 'amount' => $commission, 'payment' => $commission, 'confirmed' => true, 'active' => false, 'sent' => true]);
-				$subscription->update(['referral' => $referrer->id]);
-				$transaction->user->notify(new TransactionMade($transaction));
+			$commission_first_level = $subscription->package->first_level_ref_commission / 100 * $subscription->amount;
+			$commission_second_level = $subscription->package->second_level_ref_commission / 100 * $subscription->amount;
+
+			if ($referrer && $user->user_level_id != 1) {
+				if ($commission_first_level > 0) {
+					$transaction = $referrer->transactions()->create(['reference' => 'BFIN first tier commission', 'amount' => $commission_first_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
+					$subscription->update(['referral' => $referrer->id]);	
+					$transaction->user->notify(new TransactionMade($transaction));
+				}
+				if ($upline && $commission_second_level > 0) {
+					$transaction = $referrer->transactions()->create(['reference' => 'BFIN second tier commission', 'amount' => $commission_second_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
+					$transaction->user->notify(new TransactionMade($transaction));
+				}
 				DB::commit();
 				return true;
 			}

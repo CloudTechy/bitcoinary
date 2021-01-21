@@ -23,9 +23,7 @@ class ValidateTransactionRequest extends FormRequest {
 		return [
 			'user_id' => 'required|numeric|exists:users,id',
 			'amount' => 'required|numeric',
-			'payment' => 'required|numeric',
 			'reference' => 'required|string',
-			'pop' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 		];
 	}
 }

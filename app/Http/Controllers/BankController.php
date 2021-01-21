@@ -21,7 +21,6 @@ class BankController extends Controller {
 			$pageSize = request()->query('pageSize', 10000000);
 
 			$banks = Bank::filter(request()->all())
-				->latest()
 				->paginate($pageSize);
 
 			$total = $banks->total();

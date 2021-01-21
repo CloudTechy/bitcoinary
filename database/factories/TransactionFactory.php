@@ -10,11 +10,12 @@ $factory->define(Transaction::class, function (Faker $faker) {
 	// if ($confirmed == true) {
 	// 	$sent = true;
 	// }
+	$user =  User::inRandomOrder()->first();
 	return [
-		'user_id' => function () {
-			return User::inRandomOrder()->first()->id;
-		},
+		'user_id' => $user->id,
+		'amount' => $faker->numberBetween($min = 50, $max = 200000),
 		'sent' => true,
 		'confirmed' => true,
+		'reference' => $user->username,
 	];
 });

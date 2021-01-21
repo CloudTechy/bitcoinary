@@ -53,11 +53,12 @@ class WithdrawalController extends Controller {
 	 */
 	public function store(ValidateWithdrawalRequest $request) {
 		$validated = $request->validated();
+		$user = User::findOrFail($validated['user_id']);
 		DB::beginTransaction();
 		try
 		{
-			if(auth()->user()->canWithdraw){
-				if (auth()->user()->balance >= $validated['amount']) {
+			if($user->canWithdraw){
+				if ($user->balance >= $validated['amount']) {
 					$validated['processed'] = true;
 					$data = Withdrawal::create($validated);
 					DB::commit();
@@ -69,7 +70,7 @@ class WithdrawalController extends Controller {
 				}
 			}
 			else {
-				$withdrawEx = Carbon::createFromTimeStamp(strtotime(auth()->user()->withdrawDuration->first()->expiration))->diffForHumans() ;
+				$withdrawEx = Carbon::createFromTimeStamp(strtotime($user->withdrawDuration->first()->expiration))->diffForHumans() ;
 				return Helper::invalidRequest('Account Withdrawal on hold', 'You cannot withdraw at this time, you can be able to withdraw ' . $withdrawEx, 400);
 			}
 			
@@ -123,7 +124,7 @@ class WithdrawalController extends Controller {
 			'currency_code' => 'string',
 		]);
 		try {
-			$data = $withdrawal->update($validated);
+			$data = $withdrawal->update($request->all());
 			DB::commit();
 			return Helper::validRequest(["success" => $data], 'Updated successfully', 200);
 		} catch (Exception $bug) {
@@ -188,8 +189,10 @@ class WithdrawalController extends Controller {
 	public function popUpload(Request $request)
 	{
 		$validated = $request->validate([
-			'pop' => 'mimes:jpeg,png,bmp,tiff |max:4096',
+			'pop' => 'mimes:jpeg,png,jpg,gif,svg,bmp,tiff|max:2048',
+			'id' => 'required|exists:withdrawals,id',
 		]);
+
 		try {
 			if ($request->hasFile('pop')) {
 	            if ($request->file('pop')->isValid()) {
@@ -201,8 +204,8 @@ class WithdrawalController extends Controller {
 	                $pop = $file->getClientOriginalName();
 	            }
 
-	            Withdrawal::find($request->id)->update(['pop' => $pop]);
-	            return Helper::validRequest(["success" =>$request->all()], 'file uploaded successfully', 200);
+	            $withdrawal = Withdrawal::findOrFail($request->id)->update(['pop' => $pop]);
+	            return Helper::validRequest(["success" => $withdrawal], 'file uploaded successfully', 200);
         	}
 	        else{
 	        	return Helper::invalidRequest('No pop file', 'POP file not found', 400);

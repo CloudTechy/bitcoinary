@@ -15,10 +15,14 @@ class CreateBankDetailsTable extends Migration
     {
         Schema::create('bank_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('bank_id')->unsigned()->index();
+            $table->string('wallet')->index()->nullable();
             $table->bigInteger('user_id')->unsigned()->index();
-            $table->bigInteger('acc_number');
-            $table->string('acc_name');
+            $table->string('payment_method')->index();
+            $table->string('currency_type')->index();
+            $table->string('currency')->nullable();
+            $table->bigInteger('bank_id')->unsigned()->index()->nullable();
+            $table->bigInteger('acc_number')->nullable();
+            $table->string('acc_name')->nullable();
             $table->string('swift_code')->nullable();
             $table->timestamps();
             $table->foreign('bank_id')->references('id')->on('banks');

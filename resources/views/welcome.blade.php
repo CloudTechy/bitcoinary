@@ -14,15 +14,24 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Fonts -->
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+<!--   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css"> -->
   <!-- Styles -->
 
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet"><!-- 
   <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-  <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/themefisher-fonts.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/main.css') }}"> -->
+  <link rel="shortcut icon" href="{{asset('image/favicon.jpg')}}" type="image/x-icon">
+  <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
+    <!-- line-awesome webfont -->
+    <link rel="stylesheet" href="{{asset('css/line-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/vendor/animate.min.css')}}">
+    <!-- slick slider css -->
+    <link rel="stylesheet" href="{{asset('css/vendor/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('css/vendor/dots.css')}}">
+    <!-- dashdoard main css -->
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+  <!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/themefisher-fonts.css') }}"> -->
 
 
 <!--Start of Tawk.to Script-->
@@ -50,17 +59,33 @@ s0.parentNode.insertBefore(s1,s0);
   <div id="app" style="width: 100vw; padding: 0px; margin: auto; overflow: hidden; box-sizing: border-box;">
     <index></index>
   </div>
-  <script src="{{ asset('js/jquery.js') }}" defer></script>
-  <script src="{{ asset('js/fancybox.js') }}" defer></script>
+  <script src="{{ asset('js/jquery.js') }}"></script>
+  <!-- <script src="{{ asset('js/fancybox.js') }}" defer></script>
   <script src="{{ asset('js/owl.carousel.min.js') }}" defer></script>
-  <script src="{{ asset('js/clipboard.min.js') }}" defer></script>
+  <script src="{{ asset('js/clipboard.min.js') }}" defer></script> -->
+      <!-- page-wrapper end -->
+    <!-- jQuery library -->
+ <!--    <script src="asset/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="asset/js/vendor/bootstrap.bundle.min.js"></script> -->
+    <!-- slick slider js -->
+<script src="{{ asset('js/app.js') }}" defer></script>
+    
+    <script src="{{asset('js/jquery-3.5.1.min.js.download')}}" defer></script>
+    <script src="{{ asset('js/k.js.download') }}" defer></script>
+    
+    <script src="{{asset('js/bootstrap.bundle.js.download')}}" defer></script>
+    <script src="{{asset('js/slick.min.js.download')}}" defer></script>
+    <script src="{{asset('js/wow.min.js.download')}}" defer></script>
+    <script src="{{asset('js/contact.js.download')}}" defer></script>
 
-  <script src="{{ asset('js/app.js') }}" defer></script>
-  <script src="{{ asset('js/objectdata.js') }}" defer></script>
+    <!-- <script src="{{asset('js/dashboard.js.download')}}" defer></script> -->
+
+  
+  <!-- <script src="{{ asset('js/objectdata.js') }}" defer></script> -->
   <script>
     if('serviceWorker' in navigator) {
       navigator.serviceWorker
-        .register('/sw.js')
+        // .register('/sw.js')
         .then(function() { console.log("Service Worker Registered"); });
     }
 </script>

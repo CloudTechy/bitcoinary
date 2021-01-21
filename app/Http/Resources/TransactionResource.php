@@ -2,8 +2,6 @@
 
 namespace App\Http\Resources;
 
-use App\Package;
-use App\PackageUser;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -17,17 +15,15 @@ class TransactionResource extends JsonResource {
 	 */
 	public function toArray($request) {
 		$user = User::find($this->user_id);
-		$packageUser = PackageUser::find($this->reference);
-		$package = $packageUser == null ? null : Package::find($packageUser->package_id);
 		return [
+			'id' => $this->id,
+			'user_id' => $user->id,
 			'username' => $user->username,
 			'owner' => $user->last_name . ' ' . $user->first_name,
 			'amount' => $this->amount,
-			'payment' => $this->payment,
 			'sent' => $this->sent,
 			'confirmed' => $this->confirmed,
 			'reference' => $this->reference,
-			'package' => $package == null ? null : '$' . $package->name . ' Plan',
 			'currency_code' => $this->currency_code,
 			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans(),
 			'created_at' => $this->created_at->format('Y-m-d H:i:s'),

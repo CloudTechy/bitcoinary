@@ -2,18 +2,21 @@
 
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
-use App\Package;
-use App\PackageUser;
-use Carbon\Carbon;
 use Faker\Generator as Faker;
+use App\Transaction;
+use App\Package;
+use Carbon\Carbon;
 
-$factory->define(PackageUser::class, function (Faker $faker) {
-	$package = Package::inRandomOrder()->first();
-	$current = Carbon::now();
+$factory->define(App\PackageUser::class, function (Faker $faker) {
+
+	$trx = Transaction::inRandomOrder()->first();
+	$amount = $trx->amount;
+	$package = Package::whereRaw('? >= min_deposit  and ? <= max_deposit',[$amount,$amount])->firstOrFail();
 	return [
-		// 'package_id' => $package->id,
-		// 'user_id' => $user->id,
-		// 'account' => $package->deposit,
-		// 'expiration' => $current->addDays($package->duration),
+		'transaction_id' => $trx->id, 
+		'package_id' => $package->id, 
+		'user_id' => $trx->user_id, 
+		'amount' => $amount, 
+		'expiration' => Carbon::now()->addDays($package->turnover),
 	];
 });

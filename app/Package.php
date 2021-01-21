@@ -5,21 +5,20 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Package extends Model {
-	public $timestamps = false;
-	protected $fillable = ['portfolio_id', 'name', 'interest_rate', 'deposit', 'duration', 'referral_commission'];
+	protected $fillable = ['name', 'roi', 'min_deposit', 'max_deposit', 'turnover', 'first_level_ref_commission', 'second_level_ref_commission'];
 
 	public function portfolio() {
 		return $this->belongsTo(Portfolio::class);
 	}
 	public function users() {
-		return $this->belongsToMany(User::class)->withPivot('id', 'transaction_id', 'referral', 'account', 'expiration', 'active')->as('subscription')->withTimestamps();
+		return $this->belongsToMany(User::class)->withPivot('id', 'pop', 'referral', 'transaction_id', 'amount', 'expiration', 'active')->as('subscription')->withTimestamps();
 
 	}
 
 	public function scopeFilter($query, $filter) {
 
 		try {
-			$fields = ['portfolio_id', 'name', 'interest_rate', 'deposit', 'duration', 'referral_commission'];
+			$fields = ['name', 'roi', 'min_deposit', 'max_deposit', 'turnover', 'first_level_ref_commission', 'second_level_ref_commission'];
 
 			return $query->where(
 				function ($query) use ($filter, $fields) {
