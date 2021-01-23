@@ -1,5 +1,5 @@
 <template>
-    <section :data-background="$root.basepath + '/images/bg/bg-5.jpg'" class="bg_img pt-120 pb-120 border-top-1">
+    <section :data-background="$root.basepath + '/images/bg/bg-8.jpg'" class="bg_img pt-120 pb-120 border-top-1">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center">

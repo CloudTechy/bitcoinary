@@ -56,6 +56,30 @@ s0.parentNode.insertBefore(s1,s0);
 
 <!--End of Tawk.to Script-->
 <body>
+   <div>
+        <div class="preloader">
+            <div class="preloader-container">
+                <span class="animated-preloader"></span>
+            </div>
+        </div>
+        <!-- scroll-to-top start -->
+        <div class="scroll-to-top">
+            <span class="scroll-icon">
+                <i class="fa fa-rocket" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- scroll-to-top end -->
+        <div class="full-wh">
+            <!-- STAR ANIMATION -->
+            <div class="bg-animation">
+                <div id='stars'></div>
+                <div id='stars2'></div>
+                <div id='stars3'></div>
+                <div id='stars4'></div>
+            </div>
+            <!-- / STAR ANIMATION -->
+        </div>
+    </div>
   <div id="app" style="width: 100vw; padding: 0px; margin: auto; overflow: hidden; box-sizing: border-box;">
     <index></index>
   </div>

@@ -16,31 +16,38 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav main-menu m-auto">
                             <li>
-                                <router-link to="/">Home</router-link>
+                                <!-- <router-link to="/">Home</router-link> -->
+                                <a href="/">Home</a>
                             </li>
                             <li>
-                                <router-link to="/about">About</router-link>
+                                <a href="/about">About</a>
+                                <!-- <router-link to="/about">About</router-link> -->
                             </li>
                             <li>
-                                <router-link to="/register">Get Started</router-link>
+                                <a href="/register">Get Started</a>
+                                <!-- <router-link to="/register">Get Started</router-link> -->
                             </li>
                             <li>
-                                <router-link to="/investmentPlans">Investment plans</router-link>
+                                <a href="/#packages">Investment plans</a>
+                                <!-- <router-link to="/investmentPlans">Investment plans</router-link> -->
                             </li>
                             <li>
-                                <router-link to="/partners">Partners</router-link>
+                                <a href="/partners">Partners</a>
+                                <!-- <router-link to="/partners">Partners</router-link> -->
                             </li>
-                            <li>
-                                <router-link to="/faq">Faq</router-link>
+                            <li><a href="/faq">FAQ</a>
+                                <!-- <router-link to="/faq">Faq</router-link> -->
                             </li>
                             <!-- <li>
                                 <a href="https://tawk.link/5be61a8a70ff5a5a3a717ba7/vc/5c0a5e54af5de8c7a62ef1f4/v/f6499c5fa1bda2dc59c0aaf0ca87fa79564509c1/BitcoinaryFinance">Company Certificate</a>
                             </li> -->
                             <li>
-                                <router-link to="/news">Blog</router-link>
+                                <a href="/news">Blog</a>
+                                <!-- <router-link to="/news">Blog</router-link> -->
                             </li>
                             <li>
-                                <router-link to="/support">Support</router-link>
+                                <a href="/support">Support</a>
+                                <!-- <router-link to="/support">Support</router-link> -->
                             </li>
                            <!--  <li> <a href="index.html">Home</a></li>
                             <li> <a href="about.html">About Us</a></li>

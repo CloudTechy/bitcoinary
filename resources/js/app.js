@@ -99,7 +99,8 @@ const app = new Vue({
     },
     created() {
         setInterval(this.timer, 1000)
-        setInterval(this.update, 2000)
+        setInterval(this.btcRate, 2000)
+        setInterval(this.btcVolume, 60000)
         // setInterval(this.refreshUser, 30000)
         // if (localStorage.rate) {
         //     this.rate = JSON.parse(localStorage.rate)
@@ -123,10 +124,6 @@ const app = new Vue({
                 showConfirmButton: false,
                 timer: 1500
             })
-        },
-        update(){
-            this.btcRate()
-            this.btcVolume() 
         },
         numeral(value) {
             if (typeof value == 'string') {
