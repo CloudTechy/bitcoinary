@@ -109,7 +109,7 @@ s0.parentNode.insertBefore(s1,s0);
   <script>
     if('serviceWorker' in navigator) {
       navigator.serviceWorker
-        // .register('/sw.js')
+        .register('/sw.js')
         .then(function() { console.log("Service Worker Registered"); });
     }
 </script>

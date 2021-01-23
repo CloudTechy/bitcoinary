@@ -210,7 +210,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
                         <div class="section-header">
-                            <h2 class="section-title"><span class="font-weight-normal">Why Choose</span> <b class="base--color">Hyiplab</b></h2>
+                            <h2 class="section-title"><span class="font-weight-normal">Why Choose</span> <b class="base--color">Bitcoinary Mint</b></h2>
                             <p>Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service.</p>
                         </div>
                     </div>
@@ -329,47 +329,8 @@
             </div>
         </section>
         <!-- choose us section end  -->
-        <!-- profit calculator section start -->
-        <section class="pt-120 pb-120">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="section-header text-center">
-                            <h2 class="section-title"><span class="font-weight-normal">Profit</span> <b class="base--color">Calculator</b></h2>
-                            <p>You must know the calculation before investing in any plan, so you never make mistakes. Check the calculation and you will get as our calculator says.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-xl-8">
-                        <div class="profit-calculator-wrapper">
-                            <form class="profit-calculator">
-                                <div class="row mb-none-30">
-                                    <div class="col-lg-6 mb-30">
-                                        <label>Choose Plan</label>
-                                        <select class="base--bg">
-                                            <option>Basic Package</option>
-                                            <option>Standard Package</option>
-                                            <option>Silver Package</option>
-                                            <option>Premium Package</option>
-                                            <option>Platinum Package</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-6 mb-30">
-                                        <label>Invest Amount</label>
-                                        <input type="text" name="invest_amount" id="invest_amount" placeholder="0.00" class="form-control base--bg">
-                                    </div>
-                                    <div class="col-lg-12 mb-30">
-                                        <label>Profit Amount</label>
-                                        <input type="text" name="profit_amount" id="profit_amount" placeholder="0.00" class="form-control base--bg" disabled>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- profit calculator section start --> 
+        <packageCalculator></packageCalculator>
         <!-- profit calculator section end -->
         <!-- how work section start -->
         <section class="pt-120 pb-120 bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
@@ -377,7 +338,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
                         <div class="section-header">
-                            <h2 class="section-title"><span class="font-weight-normal">How</span> <b class="base--color">Hyiplab</b> <span class="font-weight-normal">Works</span></h2>
+                            <h2 class="section-title"><span class="font-weight-normal">How</span> <b class="base--color">Bitcoinary Mint</b> <span class="font-weight-normal">Works</span></h2>
                             <p>Get involved in our tremendous platform and Invest. We will utilize your money and give you profit in your wallet automatically.</p>
                         </div>
                     </div>

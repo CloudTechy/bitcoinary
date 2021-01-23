@@ -89,6 +89,7 @@ const app = new Vue({
         mailUser : null,
         btc_volume: '-',
         active_trade: '-',
+        packages : [],
     },
     el: '#app',
     router,
@@ -111,6 +112,7 @@ const app = new Vue({
         this.btcRate()
         this.getIp()
         this.btcVolume()
+        this.getPackages();
 
     },
     methods: {
@@ -124,6 +126,15 @@ const app = new Vue({
                 showConfirmButton: false,
                 timer: 1500
             })
+        },
+        getPackages(){
+            this.$http.get("/auth/packages")
+                .then(response => {
+                    this.packages = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
         },
         numeral(value) {
             if (typeof value == 'string') {

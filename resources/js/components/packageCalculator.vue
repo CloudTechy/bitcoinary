@@ -1,0 +1,79 @@
+<template>
+	<section class="pt-120 pb-120">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section-header text-center">
+                            <h2 class="section-title"><span class="font-weight-normal">Profit</span> <b class="base--color">Calculator</b></h2>
+                            <p>You must know the calculation before investing in any plan, so you never make mistakes. Check the calculation and you will get as our calculator says.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-8">
+                        <div class="profit-calculator-wrapper">
+                            <form class="profit-calculator">
+                                <div class="row mb-none-30">
+                                    <div class="col-lg-6 mb-30">
+                                        <label>Choose Plan</label>
+                                        <select v-model="plan" class="base--bg">
+                                        	<option selected v-if = " $root.packages == '' ">Fetching Packages...</option>
+                                            <option :value="plan" v-for = "plan in $root.packages">{{plan.name}} Package</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 mb-30">
+                                        <label>Invest Amount</label>
+                                        <input type="text" v-model="invest_amount" name="invest_amount" :min="plan.min_deposit" :max="plan.max_deposit" id="invest_amount" class="form-control base--bg">
+                                        <p v-if = "plan.name" class="small">{{'min: $' + plan.min_deposit + ' - $' + plan.max_deposit}}</p>
+                                    </div>
+                                    <div class="col-lg-12 mb-30">
+                                        <label>Profit Amount</label>
+                                        <input v-model="profit_amount" type="number" name="profit_amount" id="profit_amount" class="form-control base--bg" disabled>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</template>
+<script>
+export default {
+    data() {
+        return {
+        	plan : {},
+        	invest_amount: "0.00",
+        }
+           
+    },
+    computed: {
+    	profit_amount(){
+    		if(parseInt(this.invest_amount) >= this.plan.min_deposit && parseInt(this.invest_amount) <= this.plan.max_deposit ){
+    			return this.$root.normalNumeral((parseInt(this.plan.roi) / 100) *  parseInt(this.invest_amount))
+    		}
+    		 
+    	}
+    },
+    created(){
+    	
+    },
+    // components: { Menu },
+    methods: {
+    	getPackages(){
+    		this.$http.get("/auth/packages")
+                .then(response => {
+                    this.packages = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+    	}
+
+    },
+
+}
+
+</script>
+<style>
+</style>
