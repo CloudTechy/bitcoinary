@@ -8,7 +8,7 @@
 	                    <li>Return {{plan.roi}}%</li>
 	                    <li>Every {{plan.turnover}}</li>
 	                    <li>For 6 Days</li>
-	                    <li>Total {{plan.roi * 6}}% + <span class="badge base--bg">Capital</span></li>
+	                    <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span></li>
 	                </ul>
                 </div>
                 <div v-if="plan.name == 'gold'">
@@ -16,7 +16,7 @@
 	                    <li>Return {{plan.roi}}%</li>
 	                    <li>Every {{plan.turnover}}</li>
 	                    <li>For 3x</li>
-	                    <li>Total {{plan.roi * 3}}% + <span class="badge base--bg">Capital</span></li>
+	                    <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span></li>
 	                </ul>
                 </div>
                 <div v-if="plan.name == 'premium'">
@@ -24,7 +24,7 @@
 	                    <li>Return {{plan.roi}}%</li>
 	                    <li>Every {{plan.turnover}}</li>
 	                    <li>For 2x</li>
-	                    <li>Total {{plan.roi * 2}}% + <span class="badge base--bg">Capital</span> </li>
+	                    <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span> </li>
 	                </ul>
                 </div>
 

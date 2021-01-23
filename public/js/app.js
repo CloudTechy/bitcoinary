@@ -56010,7 +56010,7 @@ var render = function() {
                     _c("li", [_vm._v("For 6 Days")]),
                     _vm._v(" "),
                     _c("li", [
-                      _vm._v("Total " + _vm._s(plan.roi * 6) + "% + "),
+                      _vm._v("Total " + _vm._s(plan.roi) + "% + "),
                       _c("span", { staticClass: "badge base--bg" }, [
                         _vm._v("Capital")
                       ])
@@ -56029,7 +56029,7 @@ var render = function() {
                     _c("li", [_vm._v("For 3x")]),
                     _vm._v(" "),
                     _c("li", [
-                      _vm._v("Total " + _vm._s(plan.roi * 3) + "% + "),
+                      _vm._v("Total " + _vm._s(plan.roi) + "% + "),
                       _c("span", { staticClass: "badge base--bg" }, [
                         _vm._v("Capital")
                       ])
@@ -56048,7 +56048,7 @@ var render = function() {
                     _c("li", [_vm._v("For 2x")]),
                     _vm._v(" "),
                     _c("li", [
-                      _vm._v("Total " + _vm._s(plan.roi * 2) + "% + "),
+                      _vm._v("Total " + _vm._s(plan.roi) + "% + "),
                       _c("span", { staticClass: "badge base--bg" }, [
                         _vm._v("Capital")
                       ])

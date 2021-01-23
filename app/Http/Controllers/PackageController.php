@@ -21,7 +21,7 @@ class PackageController extends Controller {
 			$page = request()->query('page', 1);
 			$pageSize = request()->query('pageSize', 10000000);
 			$data = Package::filter(request()->all())
-				->orderBy('name', 'asc')
+				->orderBy('created_at', 'asc')
 				->paginate($pageSize);
 			$total = $data->total();
 			$data = PackageResource::collection($data);
