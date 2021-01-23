@@ -47,7 +47,7 @@
                             <div class="col-lg-3 col-sm-6 cureency-item mb-30">
                                 <div class="cureency-card text-center">
                                     <h6 class="cureency-card__title text-white">BITCOIN PRICE</h6>
-                                    <span class="cureency-card__amount h-font-family font-weight-600 base--color">3150.00 USD</span>
+                                    <span class="cureency-card__amount h-font-family font-weight-600 base--color">{{$root.normalNumeral( $root.usd_btc_rate) }} USD</span>
                                 </div>
                                 <!-- cureency-card end -->
                             </div>
@@ -55,7 +55,7 @@
                             <div class="col-lg-3 col-sm-6 cureency-item mb-30">
                                 <div class="cureency-card text-center">
                                     <h6 class="cureency-card__title text-white">BITCOIN PRICE</h6>
-                                    <span class="cureency-card__amount h-font-family font-weight-600 base--color">2850.00 EUR</span>
+                                    <span class="cureency-card__amount h-font-family font-weight-600 base--color">{{$root.normalNumeral( $root.eur_btc_rate) }} EUR</span>
                                 </div>
                                 <!-- cureency-card end -->
                             </div>
@@ -63,7 +63,7 @@
                             <div class="col-lg-3 col-sm-6 cureency-item mb-30">
                                 <div class="cureency-card text-center">
                                     <h6 class="cureency-card__title text-white">24 VOLUME</h6>
-                                    <span class="cureency-card__amount h-font-family font-weight-600 base--color">2,547.35 BTC</span>
+                                    <span class="cureency-card__amount h-font-family font-weight-600 base--color">{{$root.normalNumeral( $root.btc_volume) }} BTC</span>
                                 </div>
                                 <!-- cureency-card end -->
                             </div>
@@ -71,7 +71,7 @@
                             <div class="col-lg-3 col-sm-6 cureency-item mb-30">
                                 <div class="cureency-card text-center">
                                     <h6 class="cureency-card__title text-white">ACTIVE TRADES</h6>
-                                    <span class="cureency-card__amount h-font-family font-weight-600 base--color">2,545,875</span>
+                                    <span class="cureency-card__amount h-font-family font-weight-600 base--color">{{ $root.normalNumeral( $root.active_trade) }}</span>
                                 </div>
                                 <!-- cureency-card end -->
                             </div>

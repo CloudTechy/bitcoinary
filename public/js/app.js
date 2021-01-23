@@ -56134,7 +56134,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "m-0  m-lg-2 p-lg-2  m-md-1 p-md-0" }, [
-      _c("a", { attrs: { href: "https://t.me/ Bitcoinary Finance" } }, [
+      _c("a", { attrs: { href: "https://t.me/ Bitcoinary Mint" } }, [
         _vm._v("Channel link")
       ])
     ])
@@ -56607,7 +56607,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-img-overlay" }, [
-      _c("h5", { staticClass: "card-title" }, [_vm._v(" Bitcoinary Finance")])
+      _c("h5", { staticClass: "card-title" }, [_vm._v(" Bitcoinary Mint")])
     ])
   }
 ]
@@ -56664,7 +56664,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("p", [
                           _vm._v(
-                            " Bitcoinary Finance Limited is guided by an excellent team to ensure lofty yields & steady profits in the long run."
+                            " Bitcoinary Mint Limited is guided by an excellent team to ensure lofty yields & steady profits in the long run."
                           )
                         ])
                       ])
@@ -56717,7 +56717,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("p", [
                           _vm._v(
-                            " Bitcoinary Finance is fully registered in United States."
+                            " Bitcoinary Mint is fully registered in United States."
                           )
                         ])
                       ])
@@ -56760,7 +56760,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            " Bitcoinary finance is an innovating company diversified in several Investment methods\n                Our company is a big investor in real estate,oil and gas,gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of most popular Crypto currency by volume-Bitcoins. Such Investment methods is free from capital loss and returns supposed profits.\n            "
+            " Bitcoinary Mint is an innovating company diversified in several Investment methods\n                Our company is a big investor in real estate,oil and gas,gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of most popular Crypto currency by volume-Bitcoins. Such Investment methods is free from capital loss and returns supposed profits.\n            "
           )
         ])
       ])
@@ -56778,17 +56778,17 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", {}, [
           _vm._v(
-            " \n                                Bitcoinary Finance started in 2005 as a Financial Advisory Firm and recently in 2018 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading."
+            " \n                                Bitcoinary Mint started in 2005 as a Financial Advisory Firm and recently in 2018 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading."
           ),
           _c("br"),
           _c("br"),
           _vm._v(
-            " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bitcoinary Finance team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
+            " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bitcoinary Mint team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
           ),
           _c("br"),
           _c("br"),
           _vm._v(
-            "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of Bitcoinary Finance Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. "
+            "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of Bitcoinary Mint Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. "
           ),
           _c("br"),
           _c("br"),
@@ -57510,7 +57510,127 @@ var render = function() {
           [_vm._m(3)]
         ),
         _vm._v(" "),
-        _vm._m(4),
+        _c("div", { staticClass: "cureency-section" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row mb-none-30" }, [
+              _c(
+                "div",
+                { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" },
+                [
+                  _c("div", { staticClass: "cureency-card text-center" }, [
+                    _c(
+                      "h6",
+                      { staticClass: "cureency-card__title text-white" },
+                      [_vm._v("BITCOIN PRICE")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      {
+                        staticClass:
+                          "cureency-card__amount h-font-family font-weight-600 base--color"
+                      },
+                      [
+                        _vm._v(
+                          _vm._s(
+                            _vm.$root.normalNumeral(_vm.$root.usd_btc_rate)
+                          ) + " USD"
+                        )
+                      ]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" },
+                [
+                  _c("div", { staticClass: "cureency-card text-center" }, [
+                    _c(
+                      "h6",
+                      { staticClass: "cureency-card__title text-white" },
+                      [_vm._v("BITCOIN PRICE")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      {
+                        staticClass:
+                          "cureency-card__amount h-font-family font-weight-600 base--color"
+                      },
+                      [
+                        _vm._v(
+                          _vm._s(
+                            _vm.$root.normalNumeral(_vm.$root.eur_btc_rate)
+                          ) + " EUR"
+                        )
+                      ]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" },
+                [
+                  _c("div", { staticClass: "cureency-card text-center" }, [
+                    _c(
+                      "h6",
+                      { staticClass: "cureency-card__title text-white" },
+                      [_vm._v("24 VOLUME")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      {
+                        staticClass:
+                          "cureency-card__amount h-font-family font-weight-600 base--color"
+                      },
+                      [
+                        _vm._v(
+                          _vm._s(
+                            _vm.$root.normalNumeral(_vm.$root.btc_volume)
+                          ) + " BTC"
+                        )
+                      ]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" },
+                [
+                  _c("div", { staticClass: "cureency-card text-center" }, [
+                    _c(
+                      "h6",
+                      { staticClass: "cureency-card__title text-white" },
+                      [_vm._v("ACTIVE TRADES")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      {
+                        staticClass:
+                          "cureency-card__amount h-font-family font-weight-600 base--color"
+                      },
+                      [
+                        _vm._v(
+                          _vm._s(
+                            _vm.$root.normalNumeral(_vm.$root.active_trade)
+                          )
+                        )
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ])
+          ])
+        ]),
         _vm._v(" "),
         _c(
           "section",
@@ -57528,9 +57648,9 @@ var render = function() {
                     "div",
                     { staticClass: "about-content" },
                     [
-                      _vm._m(5),
+                      _vm._m(4),
                       _vm._v(" "),
-                      _vm._m(6),
+                      _vm._m(5),
                       _vm._v(" "),
                       _c("p", { staticClass: "mt-4" }, [
                         _vm._v(
@@ -57557,7 +57677,7 @@ var render = function() {
         _vm._v(" "),
         _c("section", { staticClass: "pt-120 pb-120" }, [
           _c("div", { staticClass: "container" }, [
-            _vm._m(7),
+            _vm._m(6),
             _vm._v(" "),
             _c(
               "div",
@@ -57580,7 +57700,7 @@ var render = function() {
                         [_vm._v("Slivesto")]
                       ),
                       _vm._v(" "),
-                      _vm._m(8),
+                      _vm._m(7),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -57617,7 +57737,7 @@ var render = function() {
                         [_vm._v("Life Time")]
                       ),
                       _vm._v(" "),
-                      _vm._m(9),
+                      _vm._m(8),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -57654,7 +57774,7 @@ var render = function() {
                         [_vm._v("Black Horse")]
                       ),
                       _vm._v(" "),
-                      _vm._m(10),
+                      _vm._m(9),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -57691,7 +57811,7 @@ var render = function() {
                         [_vm._v("Silver")]
                       ),
                       _vm._v(" "),
-                      _vm._m(11),
+                      _vm._m(10),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -57728,7 +57848,7 @@ var render = function() {
                         [_vm._v("Elephant")]
                       ),
                       _vm._v(" "),
-                      _vm._m(12),
+                      _vm._m(11),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -57765,7 +57885,7 @@ var render = function() {
                         [_vm._v("Cobra")]
                       ),
                       _vm._v(" "),
-                      _vm._m(13),
+                      _vm._m(12),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -57802,7 +57922,7 @@ var render = function() {
                         [_vm._v("Lion")]
                       ),
                       _vm._v(" "),
-                      _vm._m(14),
+                      _vm._m(13),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -57839,7 +57959,7 @@ var render = function() {
                         [_vm._v("Tiger")]
                       ),
                       _vm._v(" "),
-                      _vm._m(15),
+                      _vm._m(14),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -57861,7 +57981,7 @@ var render = function() {
               ]
             ),
             _vm._v(" "),
-            _vm._m(16)
+            _vm._m(15)
           ])
         ]),
         _vm._v(" "),
@@ -57873,10 +57993,10 @@ var render = function() {
               "data-background": _vm.$root.basepath + "/images/bg/bg-3.jpg"
             }
           },
-          [_vm._m(17)]
+          [_vm._m(16)]
         ),
         _vm._v(" "),
-        _vm._m(18),
+        _vm._m(17),
         _vm._v(" "),
         _c(
           "section",
@@ -57886,10 +58006,10 @@ var render = function() {
               "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg"
             }
           },
-          [_vm._m(19)]
+          [_vm._m(18)]
         ),
         _vm._v(" "),
-        _vm._m(20),
+        _vm._m(19),
         _vm._v(" "),
         _c(
           "section",
@@ -57901,14 +58021,14 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "container" }, [
-              _vm._m(21),
+              _vm._m(20),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-lg-12" }, [
                   _c("div", { staticClass: "testimonial-slider" }, [
                     _c("div", { staticClass: "single-slide" }, [
                       _c("div", { staticClass: "testimonial-card" }, [
-                        _vm._m(22),
+                        _vm._m(21),
                         _vm._v(" "),
                         _c("div", { staticClass: "testimonial-card__client" }, [
                           _c("div", { staticClass: "thumb" }, [
@@ -57922,14 +58042,14 @@ var render = function() {
                             })
                           ]),
                           _vm._v(" "),
-                          _vm._m(23)
+                          _vm._m(22)
                         ])
                       ])
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "single-slide" }, [
                       _c("div", { staticClass: "testimonial-card" }, [
-                        _vm._m(24),
+                        _vm._m(23),
                         _vm._v(" "),
                         _c("div", { staticClass: "testimonial-card__client" }, [
                           _c("div", { staticClass: "thumb" }, [
@@ -57943,14 +58063,14 @@ var render = function() {
                             })
                           ]),
                           _vm._v(" "),
-                          _vm._m(25)
+                          _vm._m(24)
                         ])
                       ])
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "single-slide" }, [
                       _c("div", { staticClass: "testimonial-card" }, [
-                        _vm._m(26),
+                        _vm._m(25),
                         _vm._v(" "),
                         _c("div", { staticClass: "testimonial-card__client" }, [
                           _c("div", { staticClass: "thumb" }, [
@@ -57964,14 +58084,14 @@ var render = function() {
                             })
                           ]),
                           _vm._v(" "),
-                          _vm._m(27)
+                          _vm._m(26)
                         ])
                       ])
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "single-slide" }, [
                       _c("div", { staticClass: "testimonial-card" }, [
-                        _vm._m(28),
+                        _vm._m(27),
                         _vm._v(" "),
                         _c("div", { staticClass: "testimonial-card__client" }, [
                           _c("div", { staticClass: "thumb" }, [
@@ -57985,7 +58105,7 @@ var render = function() {
                             })
                           ]),
                           _vm._v(" "),
-                          _vm._m(29)
+                          _vm._m(28)
                         ])
                       ])
                     ])
@@ -58006,7 +58126,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "container" }, [
-              _vm._m(30),
+              _vm._m(29),
               _vm._v(" "),
               _c(
                 "div",
@@ -58027,7 +58147,7 @@ var render = function() {
                           })
                         ]),
                         _vm._v(" "),
-                        _vm._m(31)
+                        _vm._m(30)
                       ])
                     ]
                   ),
@@ -58047,7 +58167,7 @@ var render = function() {
                           })
                         ]),
                         _vm._v(" "),
-                        _vm._m(32)
+                        _vm._m(31)
                       ])
                     ]
                   ),
@@ -58067,7 +58187,7 @@ var render = function() {
                           })
                         ]),
                         _vm._v(" "),
-                        _vm._m(33)
+                        _vm._m(32)
                       ])
                     ]
                   ),
@@ -58087,7 +58207,7 @@ var render = function() {
                           })
                         ]),
                         _vm._v(" "),
-                        _vm._m(34)
+                        _vm._m(33)
                       ])
                     ]
                   ),
@@ -58107,7 +58227,7 @@ var render = function() {
                           })
                         ]),
                         _vm._v(" "),
-                        _vm._m(35)
+                        _vm._m(34)
                       ])
                     ]
                   ),
@@ -58127,7 +58247,7 @@ var render = function() {
                           })
                         ]),
                         _vm._v(" "),
-                        _vm._m(36)
+                        _vm._m(35)
                       ])
                     ]
                   ),
@@ -58147,7 +58267,7 @@ var render = function() {
                           })
                         ]),
                         _vm._v(" "),
-                        _vm._m(37)
+                        _vm._m(36)
                       ])
                     ]
                   ),
@@ -58167,7 +58287,7 @@ var render = function() {
                           })
                         ]),
                         _vm._v(" "),
-                        _vm._m(38)
+                        _vm._m(37)
                       ])
                     ]
                   )
@@ -58179,11 +58299,11 @@ var render = function() {
         _vm._v(" "),
         _c("section", { staticClass: "pt-120 pb-120" }, [
           _c("div", { staticClass: "container" }, [
-            _vm._m(39),
+            _vm._m(38),
             _vm._v(" "),
             _c("div", { staticClass: "row justify-content-center" }, [
               _c("div", { staticClass: "col-lg-10" }, [
-                _vm._m(40),
+                _vm._m(39),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -58205,7 +58325,7 @@ var render = function() {
                       [
                         _c("div", { staticClass: "table-responsive--sm" }, [
                           _c("table", { staticClass: "table style--two" }, [
-                            _vm._m(41),
+                            _vm._m(40),
                             _vm._v(" "),
                             _c("tbody", [
                               _c("tr", [
@@ -58436,7 +58556,7 @@ var render = function() {
                       [
                         _c("div", { staticClass: "table-responsive--md" }, [
                           _c("table", { staticClass: "table style--two" }, [
-                            _vm._m(42),
+                            _vm._m(41),
                             _vm._v(" "),
                             _c("tbody", [
                               _c("tr", [
@@ -58662,7 +58782,7 @@ var render = function() {
         _vm._v(" "),
         _c("section", { staticClass: "pt-120 pb-120 border-top-1" }, [
           _c("div", { staticClass: "container" }, [
-            _vm._m(43),
+            _vm._m(42),
             _vm._v(" "),
             _c(
               "div",
@@ -58679,7 +58799,7 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _vm._m(44)
+                    _vm._m(43)
                   ])
                 ]),
                 _vm._v(" "),
@@ -58694,7 +58814,7 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _vm._m(45)
+                    _vm._m(44)
                   ])
                 ]),
                 _vm._v(" "),
@@ -58709,7 +58829,7 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _vm._m(46)
+                    _vm._m(45)
                   ])
                 ]),
                 _vm._v(" "),
@@ -58724,7 +58844,7 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _vm._m(47)
+                    _vm._m(46)
                   ])
                 ]),
                 _vm._v(" "),
@@ -58739,7 +58859,7 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _vm._m(48)
+                    _vm._m(47)
                   ])
                 ]),
                 _vm._v(" "),
@@ -58754,7 +58874,7 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _vm._m(49)
+                    _vm._m(48)
                   ])
                 ]),
                 _vm._v(" "),
@@ -58769,7 +58889,7 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _vm._m(50)
+                    _vm._m(49)
                   ])
                 ]),
                 _vm._v(" "),
@@ -58784,7 +58904,7 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _vm._m(51)
+                    _vm._m(50)
                   ])
                 ])
               ]
@@ -58834,7 +58954,7 @@ var render = function() {
         _vm._v(" "),
         _c("section", { staticClass: "pb-120" }, [
           _c("div", { staticClass: "container" }, [
-            _vm._m(52),
+            _vm._m(51),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-lg-12" }, [
@@ -58934,7 +59054,7 @@ var render = function() {
         _vm._v(" "),
         _c("section", { staticClass: "pt-120 pb-120 border-top-1" }, [
           _c("div", { staticClass: "container" }, [
-            _vm._m(53),
+            _vm._m(52),
             _vm._v(" "),
             _c(
               "div",
@@ -58951,7 +59071,7 @@ var render = function() {
                       })
                     ]),
                     _vm._v(" "),
-                    _vm._m(54)
+                    _vm._m(53)
                   ])
                 ]),
                 _vm._v(" "),
@@ -58966,7 +59086,7 @@ var render = function() {
                       })
                     ]),
                     _vm._v(" "),
-                    _vm._m(55)
+                    _vm._m(54)
                   ])
                 ]),
                 _vm._v(" "),
@@ -58981,7 +59101,7 @@ var render = function() {
                       })
                     ]),
                     _vm._v(" "),
-                    _vm._m(56)
+                    _vm._m(55)
                   ])
                 ])
               ]
@@ -59002,7 +59122,7 @@ var render = function() {
                         _vm.$root.basepath + "/images/bg/bg-5.jpg"
                     }
                   },
-                  [_vm._m(57)]
+                  [_vm._m(56)]
                 )
               ])
             ])
@@ -59084,84 +59204,6 @@ var staticRenderFns = [
               },
               [_vm._v("Sign Up")]
             )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "cureency-section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row mb-none-30" }, [
-          _c("div", { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" }, [
-            _c("div", { staticClass: "cureency-card text-center" }, [
-              _c("h6", { staticClass: "cureency-card__title text-white" }, [
-                _vm._v("BITCOIN PRICE")
-              ]),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "cureency-card__amount h-font-family font-weight-600 base--color"
-                },
-                [_vm._v("3150.00 USD")]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" }, [
-            _c("div", { staticClass: "cureency-card text-center" }, [
-              _c("h6", { staticClass: "cureency-card__title text-white" }, [
-                _vm._v("BITCOIN PRICE")
-              ]),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "cureency-card__amount h-font-family font-weight-600 base--color"
-                },
-                [_vm._v("2850.00 EUR")]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" }, [
-            _c("div", { staticClass: "cureency-card text-center" }, [
-              _c("h6", { staticClass: "cureency-card__title text-white" }, [
-                _vm._v("24 VOLUME")
-              ]),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "cureency-card__amount h-font-family font-weight-600 base--color"
-                },
-                [_vm._v("2,547.35 BTC")]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" }, [
-            _c("div", { staticClass: "cureency-card text-center" }, [
-              _c("h6", { staticClass: "cureency-card__title text-white" }, [
-                _vm._v("ACTIVE TRADES")
-              ]),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "cureency-card__amount h-font-family font-weight-600 base--color"
-                },
-                [_vm._v("2,545,875")]
-              )
-            ])
           ])
         ])
       ])
@@ -67018,7 +67060,7 @@ var render = function() {
               _vm._v(" "),
               _c("p", { staticClass: "col mb-2 inv-intro text-center" }, [
                 _vm._v(
-                  " Bitcoinary Finance offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. "
+                  " Bitcoinary Mint offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. "
                 )
               ]),
               _c("br"),
@@ -67092,7 +67134,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            " Bitcoinary Finance Limited offers two attractive and profitable investment plans for our valuable investors. Our dedicated team has put in a lot of time & effort to present the best possible investment plans for you."
+            " Bitcoinary Mint Limited offers two attractive and profitable investment plans for our valuable investors. Our dedicated team has put in a lot of time & effort to present the best possible investment plans for you."
           )
         ])
       ])
@@ -67326,7 +67368,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "In the news section of  Bitcoinary Finance Limited we will report you all important information about the development of the project, the expansion of Bitcoin-farms, as well as various promotions, bonuses, incentives for investors and technical improvements to the site."
+            "In the news section of  Bitcoinary Mint Limited we will report you all important information about the development of the project, the expansion of Bitcoin-farms, as well as various promotions, bonuses, incentives for investors and technical improvements to the site."
           )
         ])
       ])
@@ -86727,12 +86769,15 @@ vue__WEBPACK_IMPORTED_MODULE_2___default.a.component('index', _Index__WEBPACK_IM
 var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
   data: {
     time: '',
-    rate: '',
+    usd_btc_rate: '-',
     user: '',
+    eur_btc_rate: '-',
     ip: '',
     uploadItem: null,
     viewItem: null,
-    mailUser: null
+    mailUser: null,
+    btc_volume: '-',
+    active_trade: '-'
   },
   el: '#app',
   router: _router__WEBPACK_IMPORTED_MODULE_8__["default"],
@@ -86753,18 +86798,17 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
   },
   created: function created() {
     setInterval(this.timer, 1000);
-    setInterval(this.refreshUser, 30000);
-
-    if (localStorage.rate) {
-      this.rate = JSON.parse(localStorage.rate);
-    }
-
-    if (localStorage.ip) {
-      this.ip = JSON.parse(localStorage.ip);
-    }
+    setInterval(this.update, 2000); // setInterval(this.refreshUser, 30000)
+    // if (localStorage.rate) {
+    //     this.rate = JSON.parse(localStorage.rate)
+    // }
+    // if (localStorage.ip) {
+    //     this.ip = JSON.parse(localStorage.ip)
+    // }
 
     this.btcRate();
     this.getIp();
+    this.btcVolume();
   },
   methods: {
     alert: function alert(type, title, message) {
@@ -86777,6 +86821,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
         showConfirmButton: false,
         timer: 1500
       });
+    },
+    update: function update() {
+      this.btcRate();
+      this.btcVolume();
     },
     numeral: function (_numeral) {
       function numeral(_x) {
@@ -86848,30 +86896,41 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       var _this = this;
 
       this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(function (response) {
-        _this.rate = response.data.bpi.USD.rate;
-        localStorage.rate = JSON.stringify(response.data.bpi.USD.rate);
+        _this.usd_btc_rate = response.data.bpi.USD.rate;
+        _this.eur_btc_rate = response.data.bpi.EUR.rate;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    btcVolume: function btcVolume() {
+      var _this2 = this;
+
+      this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT").then(function (response) {
+        var volume = response.data.volume;
+        _this2.btc_volume = parseInt(volume) / 3;
+        _this2.active_trade = volume; // console.log(response.data);
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     getIp: function getIp() {
-      var _this2 = this;
+      var _this3 = this;
 
       var form = new vform__WEBPACK_IMPORTED_MODULE_16__["Form"]();
       form.get("https://api.ipify.org?format=json").then(function (response) {
-        _this2.ip = response.data.ip;
+        _this3.ip = response.data.ip;
         localStorage.ip = JSON.stringify(response.data.ip);
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     refreshUser: function refreshUser() {
-      var _this3 = this;
+      var _this4 = this;
 
       this.$auth.fetch({
         params: {},
         success: function success(response) {
-          _this3.user = _this3.$auth.user();
+          _this4.user = _this4.$auth.user();
         },
         error: function error(_error) {
           console.log(_error.response.data);

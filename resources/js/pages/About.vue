@@ -3,7 +3,7 @@
         <div class="row page-title m-3 p-2">
             <div class="col-12 col-lg-8 container">
                 <h1>About Us</h1>
-                <p> Bitcoinary finance is an innovating company diversified in several Investment methods
+                <p> Bitcoinary Mint is an innovating company diversified in several Investment methods
                     Our company is a big investor in real estate,oil and gas,gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of most popular Crypto currency by volume-Bitcoins. Such Investment methods is free from capital loss and returns supposed profits.
                 </p>
             </div>
@@ -16,7 +16,7 @@
                             <div class="col-md-7 col-11 m-1 p-2 company-profile">
                                 <h2 class="company-title">Our Company</h2>
                                 <p class=""> 
-                                    Bitcoinary Finance started in 2005 as a Financial Advisory Firm and recently in 2018 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading.<br><br> We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bitcoinary Finance team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. <br><br>The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of Bitcoinary Finance Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. <br><br>We have put great efforts to provide our clients with a user-friendly profit making investment platform. Also, the developers are real technical mavericks, whose vision to create a unique investment system has become successful. Also, you can be sure of security since we ensure that no one will access your data without consent.<br>
+                                    Bitcoinary Mint started in 2005 as a Financial Advisory Firm and recently in 2018 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading.<br><br> We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bitcoinary Mint team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. <br><br>The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of Bitcoinary Mint Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. <br><br>We have put great efforts to provide our clients with a user-friendly profit making investment platform. Also, the developers are real technical mavericks, whose vision to create a unique investment system has become successful. Also, you can be sure of security since we ensure that no one will access your data without consent.<br>
                                 </p>
                             </div>
                             <div class="services">
@@ -25,7 +25,7 @@
                                         <div class="inner-s">
                                             <img class="centered-img" :src="$root.basepath + '/img/key-1.png'">
                                             <h4>High growth &amp; substantial returns</h4>
-                                            <p> Bitcoinary Finance Limited is guided by an excellent team to ensure lofty yields &amp; steady profits in the long run.</p>
+                                            <p> Bitcoinary Mint Limited is guided by an excellent team to ensure lofty yields &amp; steady profits in the long run.</p>
                                         </div>
                                     </li>
                                     <li class="col col-md-6 text-center">
@@ -46,7 +46,7 @@
                                         <div class="inner-s">
                                             <img class="centered-img" :src="$root.basepath + '/img/key-4.png'">
                                             <h4>Registered Company</h4>
-                                            <p> Bitcoinary Finance is fully registered in United States.</p>
+                                            <p> Bitcoinary Mint is fully registered in United States.</p>
                                         </div>
                                     </li>
                                 </ul>

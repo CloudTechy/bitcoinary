@@ -80,12 +80,15 @@ Vue.component('index', Index)
 const app = new Vue({
     data: {
         time: '',
-        rate: '',
+        usd_btc_rate: '-',
         user: '',
+        eur_btc_rate: '-',
         ip: '',
         uploadItem: null,
         viewItem: null,
         mailUser : null,
+        btc_volume: '-',
+        active_trade: '-',
     },
     el: '#app',
     router,
@@ -96,15 +99,17 @@ const app = new Vue({
     },
     created() {
         setInterval(this.timer, 1000)
-        setInterval(this.refreshUser, 30000)
-        if (localStorage.rate) {
-            this.rate = JSON.parse(localStorage.rate)
-        }
-        if (localStorage.ip) {
-            this.ip = JSON.parse(localStorage.ip)
-        }
+        setInterval(this.update, 2000)
+        // setInterval(this.refreshUser, 30000)
+        // if (localStorage.rate) {
+        //     this.rate = JSON.parse(localStorage.rate)
+        // }
+        // if (localStorage.ip) {
+        //     this.ip = JSON.parse(localStorage.ip)
+        // }
         this.btcRate()
         this.getIp()
+        this.btcVolume()
 
     },
     methods: {
@@ -118,6 +123,10 @@ const app = new Vue({
                 showConfirmButton: false,
                 timer: 1500
             })
+        },
+        update(){
+            this.btcRate()
+            this.btcVolume() 
         },
         numeral(value) {
             if (typeof value == 'string') {
@@ -169,8 +178,20 @@ const app = new Vue({
         btcRate() {
             this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json")
                 .then(response => {
-                     this.rate = response.data.bpi.USD.rate
-                    localStorage.rate = JSON.stringify(response.data.bpi.USD.rate)
+                     this.usd_btc_rate = response.data.bpi.USD.rate
+                     this.eur_btc_rate = response.data.bpi.EUR.rate
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+        },
+        btcVolume() {
+            this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT")
+                .then(response => {
+                    let volume = response.data.volume
+                    this.btc_volume = parseInt(volume) / 3
+                    this.active_trade = volume
+                     // console.log(response.data);
                 })
                 .catch(error => {
                     console.log(error.response)
