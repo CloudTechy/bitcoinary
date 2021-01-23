@@ -85,8 +85,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- row end -->
-                <div class="row justify-content-center mb-none-30">
+                
+                <!-- <div class="row justify-content-center mb-none-30">
                     <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
                         <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
                             <h4 class="package-card__title base--color mb-2">Slivesto</h4>
@@ -99,7 +99,7 @@
                             <div class="package-card__range mt-5 base--color">$200</div>
                             <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
                         </div>
-                        <!-- package-card end -->
+                       
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
                         <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
@@ -113,7 +113,7 @@
                             <div class="package-card__range mt-5 base--color">$100 - $200</div>
                             <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
                         </div>
-                        <!-- package-card end -->
+                       
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
                         <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
@@ -127,7 +127,7 @@
                             <div class="package-card__range mt-5 base--color">$500 - $5000</div>
                             <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
                         </div>
-                        <!-- package-card end -->
+                       
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
                         <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
@@ -141,7 +141,7 @@
                             <div class="package-card__range mt-5 base--color">$500</div>
                             <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
                         </div>
-                        <!-- package-card end -->
+                       
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
                         <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
@@ -155,7 +155,7 @@
                             <div class="package-card__range mt-5 base--color">$500 - $700</div>
                             <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
                         </div>
-                        <!-- package-card end -->
+                       
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
                         <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
@@ -169,7 +169,7 @@
                             <div class="package-card__range mt-5 base--color">$1000</div>
                             <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
                         </div>
-                        <!-- package-card end -->
+                       
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
                         <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
@@ -183,7 +183,7 @@
                             <div class="package-card__range mt-5 base--color">$100 - $500</div>
                             <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
                         </div>
-                        <!-- package-card end -->
+                       
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
                         <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
@@ -197,16 +197,10 @@
                             <div class="package-card__range mt-5 base--color">$100 - $500</div>
                             <a href="#0" class="cmn-btn btn-md mt-4">Invest Now</a>
                         </div>
-                        <!-- package-card end -->
+                        
                     </div>
-                </div>
+                </div> -->
                 <InvestmentPackage></InvestmentPackage>
-                <!-- row end -->
-                <div class="row mt-50">
-                    <div class="col-lg-12 text-center">
-                        <a href="#0" class="cmn-btn">View All Packages</a>
-                    </div>
-                </div>
             </div>
         </section>
         <!-- package section end  -->

@@ -6,7 +6,7 @@ use App\Duration;
 use Faker\Generator as Faker;
 
 $factory->define(Duration::class, function (Faker $faker) {
-	$duration = $faker->unique()->randomElement([1,2,3]);
+	$duration = $faker->unique()->randomElement([1,2,3,0]);
 	$description = "";
 	switch ($duration) {
 		case 1:
@@ -17,6 +17,9 @@ $factory->define(Duration::class, function (Faker $faker) {
 			break;
 		case 3:
 			$description =  '3 Days';
+			break;
+		case 0:
+			$description =  'Lifetime';
 			break;
 	}
 

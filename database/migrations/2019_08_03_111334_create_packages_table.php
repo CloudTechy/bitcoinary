@@ -19,7 +19,8 @@ class CreatePackagesTable extends Migration
             $table->integer('roi');
             $table->bigInteger('min_deposit')->unsigned();
             $table->bigInteger('max_deposit')->unsigned();
-            $table->integer('turnover');
+            $table->integer('turnover')->unsigned();
+            // $table->integer('termination')->unsigned();
             $table->integer('first_level_ref_commission')->default(0);
             $table->integer('second_level_ref_commission')->default(0); 
 

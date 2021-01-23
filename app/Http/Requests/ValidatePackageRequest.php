@@ -26,7 +26,7 @@ class ValidatePackageRequest extends FormRequest {
 			'min_deposit' => 'required|numeric|min:50',
 			'max_deposit' => 'required|numeric|min:50',
 			'roi' => 'required|numeric',
-			'turnover' =>'required|numeric',
+			'turnover' =>'required|numeric|exists:durations,duration',
 			'first_level_ref_commission' =>'required|numeric',
 			'second_level_ref_commission' => 'required|numeric',
 		];

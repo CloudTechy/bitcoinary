@@ -5499,7 +5499,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -5997,84 +5996,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -6766,12 +6687,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -56062,365 +55977,108 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row justify-content-center mb-none-30" }, [
-    _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-      _c(
-        "div",
-        {
-          staticClass: "package-card text-center bg_img",
-          attrs: {
-            "data-background": _vm.$root.basepath + "/images/bg/bg-4.png"
-          }
-        },
-        [
-          _c("h4", { staticClass: "package-card__title base--color mb-2" }, [
-            _vm._v("Slivesto")
-          ]),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "package-card__range mt-5 base--color" }, [
-            _vm._v("$200")
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "cmn-btn btn-md mt-4", attrs: { href: "#0" } },
-            [_vm._v("Invest Now")]
-          )
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-      _c(
-        "div",
-        {
-          staticClass: "package-card text-center bg_img",
-          attrs: {
-            "data-background": _vm.$root.basepath + "/images/bg/bg-4.png"
-          }
-        },
-        [
-          _c("h4", { staticClass: "package-card__title base--color mb-2" }, [
-            _vm._v("Life Time")
-          ]),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _c("div", { staticClass: "package-card__range mt-5 base--color" }, [
-            _vm._v("$100 - $200")
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "cmn-btn btn-md mt-4", attrs: { href: "#0" } },
-            [_vm._v("Invest Now")]
-          )
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-      _c(
-        "div",
-        {
-          staticClass: "package-card text-center bg_img",
-          attrs: {
-            "data-background": _vm.$root.basepath + "/images/bg/bg-4.png"
-          }
-        },
-        [
-          _c("h4", { staticClass: "package-card__title base--color mb-2" }, [
-            _vm._v("Black Horse")
-          ]),
-          _vm._v(" "),
-          _vm._m(2),
-          _vm._v(" "),
-          _c("div", { staticClass: "package-card__range mt-5 base--color" }, [
-            _vm._v("$500 - $5000")
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "cmn-btn btn-md mt-4", attrs: { href: "#0" } },
-            [_vm._v("Invest Now")]
-          )
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-      _c(
-        "div",
-        {
-          staticClass: "package-card text-center bg_img",
-          attrs: {
-            "data-background": _vm.$root.basepath + "/images/bg/bg-4.png"
-          }
-        },
-        [
-          _c("h4", { staticClass: "package-card__title base--color mb-2" }, [
-            _vm._v("Silver")
-          ]),
-          _vm._v(" "),
-          _vm._m(3),
-          _vm._v(" "),
-          _c("div", { staticClass: "package-card__range mt-5 base--color" }, [
-            _vm._v("$500")
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "cmn-btn btn-md mt-4", attrs: { href: "#0" } },
-            [_vm._v("Invest Now")]
-          )
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-      _c(
-        "div",
-        {
-          staticClass: "package-card text-center bg_img",
-          attrs: {
-            "data-background": _vm.$root.basepath + "/images/bg/bg-4.png"
-          }
-        },
-        [
-          _c("h4", { staticClass: "package-card__title base--color mb-2" }, [
-            _vm._v("Elephant")
-          ]),
-          _vm._v(" "),
-          _vm._m(4),
-          _vm._v(" "),
-          _c("div", { staticClass: "package-card__range mt-5 base--color" }, [
-            _vm._v("$500 - $700")
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "cmn-btn btn-md mt-4", attrs: { href: "#0" } },
-            [_vm._v("Invest Now")]
-          )
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-      _c(
-        "div",
-        {
-          staticClass: "package-card text-center bg_img",
-          attrs: {
-            "data-background": _vm.$root.basepath + "/images/bg/bg-4.png"
-          }
-        },
-        [
-          _c("h4", { staticClass: "package-card__title base--color mb-2" }, [
-            _vm._v("Cobra")
-          ]),
-          _vm._v(" "),
-          _vm._m(5),
-          _vm._v(" "),
-          _c("div", { staticClass: "package-card__range mt-5 base--color" }, [
-            _vm._v("$1000")
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "cmn-btn btn-md mt-4", attrs: { href: "#0" } },
-            [_vm._v("Invest Now")]
-          )
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-      _c(
-        "div",
-        {
-          staticClass: "package-card text-center bg_img",
-          attrs: {
-            "data-background": _vm.$root.basepath + "/images/bg/bg-4.png"
-          }
-        },
-        [
-          _c("h4", { staticClass: "package-card__title base--color mb-2" }, [
-            _vm._v("Lion")
-          ]),
-          _vm._v(" "),
-          _vm._m(6),
-          _vm._v(" "),
-          _c("div", { staticClass: "package-card__range mt-5 base--color" }, [
-            _vm._v("$100 - $500")
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "cmn-btn btn-md mt-4", attrs: { href: "#0" } },
-            [_vm._v("Invest Now")]
-          )
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-      _c(
-        "div",
-        {
-          staticClass: "package-card text-center bg_img",
-          attrs: {
-            "data-background": _vm.$root.basepath + "/images/bg/bg-4.png"
-          }
-        },
-        [
-          _c("h4", { staticClass: "package-card__title base--color mb-2" }, [
-            _vm._v("Tiger")
-          ]),
-          _vm._v(" "),
-          _vm._m(7),
-          _vm._v(" "),
-          _c("div", { staticClass: "package-card__range mt-5 base--color" }, [
-            _vm._v("$100 - $500")
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "cmn-btn btn-md mt-4", attrs: { href: "#0" } },
-            [_vm._v("Invest Now")]
-          )
-        ]
-      )
-    ])
-  ])
+  return _c(
+    "div",
+    { staticClass: "row justify-content-center mb-none-30" },
+    _vm._l(_vm.packages, function(plan) {
+      return _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
+        _c(
+          "div",
+          {
+            staticClass: "package-card text-center bg_img",
+            attrs: {
+              "data-background": _vm.$root.basepath + "/images/bg/bg-4.png"
+            }
+          },
+          [
+            _c(
+              "h4",
+              {
+                staticClass:
+                  "package-card__title base--color text-capitalize mb-2"
+              },
+              [_vm._v(_vm._s(plan.name))]
+            ),
+            _vm._v(" "),
+            plan.name == "bronze" || plan.name == "silver"
+              ? _c("div", [
+                  _c("ul", { staticClass: "package-card__features mt-4" }, [
+                    _c("li", [_vm._v("Return " + _vm._s(plan.roi) + "%")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Every " + _vm._s(plan.turnover))]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("For 6 Days")]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v("Total " + _vm._s(plan.roi * 6) + "% + "),
+                      _c("span", { staticClass: "badge base--bg" }, [
+                        _vm._v("Capital")
+                      ])
+                    ])
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            plan.name == "gold"
+              ? _c("div", [
+                  _c("ul", { staticClass: "package-card__features mt-4" }, [
+                    _c("li", [_vm._v("Return " + _vm._s(plan.roi) + "%")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Every " + _vm._s(plan.turnover))]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("For 3x")]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v("Total " + _vm._s(plan.roi * 3) + "% + "),
+                      _c("span", { staticClass: "badge base--bg" }, [
+                        _vm._v("Capital")
+                      ])
+                    ])
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            plan.name == "premium"
+              ? _c("div", [
+                  _c("ul", { staticClass: "package-card__features mt-4" }, [
+                    _c("li", [_vm._v("Return " + _vm._s(plan.roi) + "%")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Every " + _vm._s(plan.turnover))]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("For 2x")]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v("Total " + _vm._s(plan.roi * 2) + "% + "),
+                      _c("span", { staticClass: "badge base--bg" }, [
+                        _vm._v("Capital")
+                      ])
+                    ])
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("div", { staticClass: "package-card__range mt-5 base--color" }, [
+              _vm._v(
+                _vm._s("$" + plan.min_deposit + " - " + "$" + plan.max_deposit)
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "cmn-btn btn-md mt-4",
+                attrs: { href: "/dashboard/#deposit" }
+              },
+              [_vm._v("Invest Now")]
+            )
+          ]
+        )
+      ])
+    }),
+    0
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 6%")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Week")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For 5 Week")]),
-      _vm._v(" "),
-      _c("li", [
-        _vm._v("Total 30% + "),
-        _c("span", { staticClass: "badge base--bg text-dark" }, [
-          _vm._v("Capital")
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 0.2%")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Day")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For Lifetime")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Lifetime Earning")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 5%")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Week")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For 40 Week")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Total 200%")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 5%")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Day")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For 25 Day")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Total 125%")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 1.1USD")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Day")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For 50 Day")]),
-      _vm._v(" "),
-      _c("li", [
-        _vm._v("Total 55USD + "),
-        _c("span", { staticClass: "badge base--bg" }, [_vm._v("Capital")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 10USD")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Hour")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For 150 Hour")]),
-      _vm._v(" "),
-      _c("li", [
-        _vm._v("Total 1500USD + "),
-        _c("span", { staticClass: "badge base--bg" }, [_vm._v("Capital")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 0.2%")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Day")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For Lifetime")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Lifetime Earning")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 0.2%")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Day")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For Lifetime")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Lifetime Earning")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -58121,311 +57779,7 @@ var render = function() {
       _c(
         "div",
         { staticClass: "container" },
-        [
-          _vm._m(3),
-          _vm._v(" "),
-          _c("div", { staticClass: "row justify-content-center mb-none-30" }, [
-            _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "package-card text-center bg_img",
-                  attrs: {
-                    "data-background":
-                      _vm.$root.basepath + "/images/bg/bg-4.png"
-                  }
-                },
-                [
-                  _c(
-                    "h4",
-                    { staticClass: "package-card__title base--color mb-2" },
-                    [_vm._v("Slivesto")]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(4),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "package-card__range mt-5 base--color" },
-                    [_vm._v("$200")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "cmn-btn btn-md mt-4",
-                      attrs: { href: "#0" }
-                    },
-                    [_vm._v("Invest Now")]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "package-card text-center bg_img",
-                  attrs: {
-                    "data-background":
-                      _vm.$root.basepath + "/images/bg/bg-4.png"
-                  }
-                },
-                [
-                  _c(
-                    "h4",
-                    { staticClass: "package-card__title base--color mb-2" },
-                    [_vm._v("Life Time")]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(5),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "package-card__range mt-5 base--color" },
-                    [_vm._v("$100 - $200")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "cmn-btn btn-md mt-4",
-                      attrs: { href: "#0" }
-                    },
-                    [_vm._v("Invest Now")]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "package-card text-center bg_img",
-                  attrs: {
-                    "data-background":
-                      _vm.$root.basepath + "/images/bg/bg-4.png"
-                  }
-                },
-                [
-                  _c(
-                    "h4",
-                    { staticClass: "package-card__title base--color mb-2" },
-                    [_vm._v("Black Horse")]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(6),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "package-card__range mt-5 base--color" },
-                    [_vm._v("$500 - $5000")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "cmn-btn btn-md mt-4",
-                      attrs: { href: "#0" }
-                    },
-                    [_vm._v("Invest Now")]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "package-card text-center bg_img",
-                  attrs: {
-                    "data-background":
-                      _vm.$root.basepath + "/images/bg/bg-4.png"
-                  }
-                },
-                [
-                  _c(
-                    "h4",
-                    { staticClass: "package-card__title base--color mb-2" },
-                    [_vm._v("Silver")]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(7),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "package-card__range mt-5 base--color" },
-                    [_vm._v("$500")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "cmn-btn btn-md mt-4",
-                      attrs: { href: "#0" }
-                    },
-                    [_vm._v("Invest Now")]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "package-card text-center bg_img",
-                  attrs: {
-                    "data-background":
-                      _vm.$root.basepath + "/images/bg/bg-4.png"
-                  }
-                },
-                [
-                  _c(
-                    "h4",
-                    { staticClass: "package-card__title base--color mb-2" },
-                    [_vm._v("Elephant")]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(8),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "package-card__range mt-5 base--color" },
-                    [_vm._v("$500 - $700")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "cmn-btn btn-md mt-4",
-                      attrs: { href: "#0" }
-                    },
-                    [_vm._v("Invest Now")]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "package-card text-center bg_img",
-                  attrs: {
-                    "data-background":
-                      _vm.$root.basepath + "/images/bg/bg-4.png"
-                  }
-                },
-                [
-                  _c(
-                    "h4",
-                    { staticClass: "package-card__title base--color mb-2" },
-                    [_vm._v("Cobra")]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(9),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "package-card__range mt-5 base--color" },
-                    [_vm._v("$1000")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "cmn-btn btn-md mt-4",
-                      attrs: { href: "#0" }
-                    },
-                    [_vm._v("Invest Now")]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "package-card text-center bg_img",
-                  attrs: {
-                    "data-background":
-                      _vm.$root.basepath + "/images/bg/bg-4.png"
-                  }
-                },
-                [
-                  _c(
-                    "h4",
-                    { staticClass: "package-card__title base--color mb-2" },
-                    [_vm._v("Lion")]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(10),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "package-card__range mt-5 base--color" },
-                    [_vm._v("$100 - $500")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "cmn-btn btn-md mt-4",
-                      attrs: { href: "#0" }
-                    },
-                    [_vm._v("Invest Now")]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "package-card text-center bg_img",
-                  attrs: {
-                    "data-background":
-                      _vm.$root.basepath + "/images/bg/bg-4.png"
-                  }
-                },
-                [
-                  _c(
-                    "h4",
-                    { staticClass: "package-card__title base--color mb-2" },
-                    [_vm._v("Tiger")]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(11),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "package-card__range mt-5 base--color" },
-                    [_vm._v("$100 - $500")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "cmn-btn btn-md mt-4",
-                      attrs: { href: "#0" }
-                    },
-                    [_vm._v("Invest Now")]
-                  )
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("InvestmentPackage"),
-          _vm._v(" "),
-          _vm._m(12)
-        ],
+        [_vm._m(3), _vm._v(" "), _c("InvestmentPackage")],
         1
       )
     ]),
@@ -58436,10 +57790,10 @@ var render = function() {
         staticClass: "pt-120 pb-120 overlay--radial bg_img",
         attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-3.jpg" }
       },
-      [_vm._m(13)]
+      [_vm._m(4)]
     ),
     _vm._v(" "),
-    _vm._m(14),
+    _vm._m(5),
     _vm._v(" "),
     _c(
       "section",
@@ -58447,10 +57801,10 @@ var render = function() {
         staticClass: "pt-120 pb-120 bg_img",
         attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg" }
       },
-      [_vm._m(15)]
+      [_vm._m(6)]
     ),
     _vm._v(" "),
-    _vm._m(16),
+    _vm._m(7),
     _vm._v(" "),
     _c(
       "section",
@@ -58460,14 +57814,14 @@ var render = function() {
       },
       [
         _c("div", { staticClass: "container" }, [
-          _vm._m(17),
+          _vm._m(8),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-lg-12" }, [
               _c("div", { staticClass: "testimonial-slider" }, [
                 _c("div", { staticClass: "single-slide" }, [
                   _c("div", { staticClass: "testimonial-card" }, [
-                    _vm._m(18),
+                    _vm._m(9),
                     _vm._v(" "),
                     _c("div", { staticClass: "testimonial-card__client" }, [
                       _c("div", { staticClass: "thumb" }, [
@@ -58480,14 +57834,14 @@ var render = function() {
                         })
                       ]),
                       _vm._v(" "),
-                      _vm._m(19)
+                      _vm._m(10)
                     ])
                   ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "single-slide" }, [
                   _c("div", { staticClass: "testimonial-card" }, [
-                    _vm._m(20),
+                    _vm._m(11),
                     _vm._v(" "),
                     _c("div", { staticClass: "testimonial-card__client" }, [
                       _c("div", { staticClass: "thumb" }, [
@@ -58500,14 +57854,14 @@ var render = function() {
                         })
                       ]),
                       _vm._v(" "),
-                      _vm._m(21)
+                      _vm._m(12)
                     ])
                   ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "single-slide" }, [
                   _c("div", { staticClass: "testimonial-card" }, [
-                    _vm._m(22),
+                    _vm._m(13),
                     _vm._v(" "),
                     _c("div", { staticClass: "testimonial-card__client" }, [
                       _c("div", { staticClass: "thumb" }, [
@@ -58520,14 +57874,14 @@ var render = function() {
                         })
                       ]),
                       _vm._v(" "),
-                      _vm._m(23)
+                      _vm._m(14)
                     ])
                   ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "single-slide" }, [
                   _c("div", { staticClass: "testimonial-card" }, [
-                    _vm._m(24),
+                    _vm._m(15),
                     _vm._v(" "),
                     _c("div", { staticClass: "testimonial-card__client" }, [
                       _c("div", { staticClass: "thumb" }, [
@@ -58540,7 +57894,7 @@ var render = function() {
                         })
                       ]),
                       _vm._v(" "),
-                      _vm._m(25)
+                      _vm._m(16)
                     ])
                   ])
                 ])
@@ -58559,7 +57913,7 @@ var render = function() {
       },
       [
         _c("div", { staticClass: "container" }, [
-          _vm._m(26),
+          _vm._m(17),
           _vm._v(" "),
           _c("div", { staticClass: "row justify-content-center mb-none-30" }, [
             _c("div", { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" }, [
@@ -58573,7 +57927,7 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(27)
+                _vm._m(18)
               ])
             ]),
             _vm._v(" "),
@@ -58588,7 +57942,7 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(28)
+                _vm._m(19)
               ])
             ]),
             _vm._v(" "),
@@ -58603,7 +57957,7 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(29)
+                _vm._m(20)
               ])
             ]),
             _vm._v(" "),
@@ -58618,7 +57972,7 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(30)
+                _vm._m(21)
               ])
             ]),
             _vm._v(" "),
@@ -58633,7 +57987,7 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(31)
+                _vm._m(22)
               ])
             ]),
             _vm._v(" "),
@@ -58648,7 +58002,7 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(32)
+                _vm._m(23)
               ])
             ]),
             _vm._v(" "),
@@ -58663,7 +58017,7 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(33)
+                _vm._m(24)
               ])
             ]),
             _vm._v(" "),
@@ -58678,7 +58032,7 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(34)
+                _vm._m(25)
               ])
             ])
           ])
@@ -58688,11 +58042,11 @@ var render = function() {
     _vm._v(" "),
     _c("section", { staticClass: "pt-120 pb-120" }, [
       _c("div", { staticClass: "container" }, [
-        _vm._m(35),
+        _vm._m(26),
         _vm._v(" "),
         _c("div", { staticClass: "row justify-content-center" }, [
           _c("div", { staticClass: "col-lg-10" }, [
-            _vm._m(36),
+            _vm._m(27),
             _vm._v(" "),
             _c(
               "div",
@@ -58714,7 +58068,7 @@ var render = function() {
                   [
                     _c("div", { staticClass: "table-responsive--sm" }, [
                       _c("table", { staticClass: "table style--two" }, [
-                        _vm._m(37),
+                        _vm._m(28),
                         _vm._v(" "),
                         _c("tbody", [
                           _c("tr", [
@@ -58921,7 +58275,7 @@ var render = function() {
                   [
                     _c("div", { staticClass: "table-responsive--md" }, [
                       _c("table", { staticClass: "table style--two" }, [
-                        _vm._m(38),
+                        _vm._m(29),
                         _vm._v(" "),
                         _c("tbody", [
                           _c("tr", [
@@ -59123,7 +58477,7 @@ var render = function() {
     _vm._v(" "),
     _c("section", { staticClass: "pt-120 pb-120 border-top-1" }, [
       _c("div", { staticClass: "container" }, [
-        _vm._m(39),
+        _vm._m(30),
         _vm._v(" "),
         _c("div", { staticClass: "row justify-content-center mb-none-30" }, [
           _c("div", { staticClass: "col-xl-3 col-lg-4 col-sm-6 mb-30" }, [
@@ -59137,7 +58491,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(40)
+              _vm._m(31)
             ])
           ]),
           _vm._v(" "),
@@ -59152,7 +58506,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(41)
+              _vm._m(32)
             ])
           ]),
           _vm._v(" "),
@@ -59167,7 +58521,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(42)
+              _vm._m(33)
             ])
           ]),
           _vm._v(" "),
@@ -59182,7 +58536,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(43)
+              _vm._m(34)
             ])
           ]),
           _vm._v(" "),
@@ -59197,7 +58551,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(44)
+              _vm._m(35)
             ])
           ]),
           _vm._v(" "),
@@ -59212,7 +58566,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(45)
+              _vm._m(36)
             ])
           ]),
           _vm._v(" "),
@@ -59227,7 +58581,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(46)
+              _vm._m(37)
             ])
           ]),
           _vm._v(" "),
@@ -59242,7 +58596,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(47)
+              _vm._m(38)
             ])
           ])
         ])
@@ -59289,7 +58643,7 @@ var render = function() {
     _vm._v(" "),
     _c("section", { staticClass: "pb-120" }, [
       _c("div", { staticClass: "container" }, [
-        _vm._m(48),
+        _vm._m(39),
         _vm._v(" "),
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-lg-12" }, [
@@ -59389,7 +58743,7 @@ var render = function() {
     _vm._v(" "),
     _c("section", { staticClass: "pt-120 pb-120 border-top-1" }, [
       _c("div", { staticClass: "container" }, [
-        _vm._m(49),
+        _vm._m(40),
         _vm._v(" "),
         _c("div", { staticClass: "row justify-content-center mb-none-30" }, [
           _c("div", { staticClass: "col-lg-4 col-md-6 mb-30" }, [
@@ -59403,7 +58757,7 @@ var render = function() {
                 })
               ]),
               _vm._v(" "),
-              _vm._m(50)
+              _vm._m(41)
             ])
           ]),
           _vm._v(" "),
@@ -59418,7 +58772,7 @@ var render = function() {
                 })
               ]),
               _vm._v(" "),
-              _vm._m(51)
+              _vm._m(42)
             ])
           ]),
           _vm._v(" "),
@@ -59433,7 +58787,7 @@ var render = function() {
                 })
               ]),
               _vm._v(" "),
-              _vm._m(52)
+              _vm._m(43)
             ])
           ])
         ])
@@ -59452,7 +58806,7 @@ var render = function() {
                   "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg"
                 }
               },
-              [_vm._m(53)]
+              [_vm._m(44)]
             )
           ])
         ])
@@ -59542,141 +58896,6 @@ var staticRenderFns = [
               "To make a solid investment, you have to know where you are investing. Find a plan which is best for you."
             )
           ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 6%")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Week")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For 5 Week")]),
-      _vm._v(" "),
-      _c("li", [
-        _vm._v("Total 30% + "),
-        _c("span", { staticClass: "badge base--bg text-dark" }, [
-          _vm._v("Capital")
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 0.2%")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Day")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For Lifetime")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Lifetime Earning")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 5%")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Week")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For 40 Week")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Total 200%")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 5%")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Day")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For 25 Day")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Total 125%")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 1.1USD")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Day")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For 50 Day")]),
-      _vm._v(" "),
-      _c("li", [
-        _vm._v("Total 55USD + "),
-        _c("span", { staticClass: "badge base--bg" }, [_vm._v("Capital")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 10USD")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Hour")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For 150 Hour")]),
-      _vm._v(" "),
-      _c("li", [
-        _vm._v("Total 1500USD + "),
-        _c("span", { staticClass: "badge base--bg" }, [_vm._v("Capital")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 0.2%")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Day")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For Lifetime")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Lifetime Earning")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "package-card__features mt-4" }, [
-      _c("li", [_vm._v("Return 0.2%")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Every Day")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("For Lifetime")]),
-      _vm._v(" "),
-      _c("li", [_vm._v("Lifetime Earning")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-50" }, [
-      _c("div", { staticClass: "col-lg-12 text-center" }, [
-        _c("a", { staticClass: "cmn-btn", attrs: { href: "#0" } }, [
-          _vm._v("View All Packages")
         ])
       ])
     ])

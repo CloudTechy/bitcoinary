@@ -40,6 +40,7 @@ Route::prefix('v1')->group(function () {
 
 		// handle reset password form process
 		Route::post('reset/password', 'AuthController@callResetPassword');
+		Route::resource('packages', 'PackageController');
 
 
 		// Below mention routes are available only for the authenticated users.
@@ -62,7 +63,7 @@ Route::prefix('v1')->group(function () {
 			Route::delete('withdrawdurations/{withdraw_duration}', 'WithdrawDurationController@destroy');
 			Route::resource('withdrawdurations', 'WithdrawDurationController');
 			Route::resource('banks', 'BankController');
-			Route::resource('packages', 'PackageController');
+			
 			Route::delete('bankdetails/{bankdetail}', 'BankDetailController@destroy');
 			Route::get('bankdetails/{bankdetail}', 'BankDetailController@show');
 			Route::patch('bankdetails/{bankdetail}', 'BankDetailController@update');

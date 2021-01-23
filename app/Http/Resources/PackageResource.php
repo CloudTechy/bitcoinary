@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\duration;
 
 class PackageResource extends JsonResource {
 	/**
@@ -12,13 +13,14 @@ class PackageResource extends JsonResource {
 	 * @return array
 	 */
 	public function toArray($request) {
+		$duration = duration::findOrFail($this->turnover);
 		return [
 			'id' => $this->id,
-			'name' => $this->name . ' Plan',
+			'name' => $this->name,
 			'min_deposit' => $this->min_deposit,
 			'max_deposit' => $this->max_deposit,
 			'roi' => $this->roi,
-			'turnover' => $this->turnover,
+			'turnover' => $duration->description,
 			'first_level_ref_commission' => $this->first_level_ref_commission,
 			'second_level_ref_commission' => $this->second_level_ref_commission,
 		];

@@ -21,6 +21,7 @@ class CreateDurationsTable extends Migration
          Schema::table('withdraw_durations', function ($table) {
             $table->foreign('duration')->references('duration')->on('durations');
         });
+     
     }
 
     /**

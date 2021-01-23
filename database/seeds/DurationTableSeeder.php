@@ -11,6 +11,6 @@ class DurationTableSeeder extends Seeder
      */
     public function run()
     {
-    	factory(App\Duration::class, 3)->create();
+    	factory(App\Duration::class, 4)->create();
     }
 }

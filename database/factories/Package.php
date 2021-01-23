@@ -40,7 +40,7 @@ $factory->define(Package::class, function (Faker $faker) {
 		$plan['name'] = "Premium";
 		$plan['roi'] = 100;
 		$plan['min_deposit'] = 31000;
-		$plan['max_deposit'] = 18000000000000000000;
+		$plan['max_deposit'] = 200000;
 		$plan['turnover'] = 3;
 		$plan['first_level_ref_commission'] = 10;
 		$plan['second_level_ref_commission'] = 5;
