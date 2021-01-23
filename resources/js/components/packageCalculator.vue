@@ -23,12 +23,12 @@
                                     </div>
                                     <div class="col-lg-6 mb-30">
                                         <label>Invest Amount</label>
-                                        <input type="text" v-model="invest_amount" name="invest_amount" :min="plan.min_deposit" :max="plan.max_deposit" id="invest_amount" class="form-control base--bg">
+                                        <input type="text" v-model="invest_amount" name="invest_amount" placeholder="0" :min="plan.min_deposit" :max="plan.max_deposit" id="invest_amount" class="form-control base--bg">
                                         <p v-if = "plan.name" class="small">{{'min: $' + plan.min_deposit + ' - $' + plan.max_deposit}}</p>
                                     </div>
                                     <div class="col-lg-12 mb-30">
                                         <label>Profit Amount</label>
-                                        <input v-model="profit_amount" type="number" name="profit_amount" id="profit_amount" class="form-control base--bg" disabled>
+                                        <input v-model="profit_amount" type="text" name="profit_amount" id="profit_amount" class="form-control base--bg" disabled>
                                     </div>
                                 </div>
                             </form>
@@ -43,7 +43,7 @@ export default {
     data() {
         return {
         	plan : {},
-        	invest_amount: "0.00",
+        	invest_amount: '',
         }
            
     },
@@ -52,8 +52,8 @@ export default {
     		if(parseInt(this.invest_amount) >= this.plan.min_deposit && parseInt(this.invest_amount) <= this.plan.max_deposit ){
     			return this.$root.normalNumeral((parseInt(this.plan.roi) / 100) *  parseInt(this.invest_amount))
     		}
-    		 
-    	}
+    		else return 'input a valid amount for this plan'
+    		}
     },
     created(){
     	

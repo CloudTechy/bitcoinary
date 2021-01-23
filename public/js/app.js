@@ -6469,14 +6469,14 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       plan: {},
-      invest_amount: "0.00"
+      invest_amount: ''
     };
   },
   computed: {
     profit_amount: function profit_amount() {
       if (parseInt(this.invest_amount) >= this.plan.min_deposit && parseInt(this.invest_amount) <= this.plan.max_deposit) {
         return this.$root.normalNumeral(parseInt(this.plan.roi) / 100 * parseInt(this.invest_amount));
-      }
+      } else return 'input a valid amount for this plan';
     }
   },
   created: function created() {},
@@ -56890,6 +56890,7 @@ var render = function() {
                     attrs: {
                       type: "text",
                       name: "invest_amount",
+                      placeholder: "0",
                       min: _vm.plan.min_deposit,
                       max: _vm.plan.max_deposit,
                       id: "invest_amount"
@@ -56933,7 +56934,7 @@ var render = function() {
                     ],
                     staticClass: "form-control base--bg",
                     attrs: {
-                      type: "number",
+                      type: "text",
                       name: "profit_amount",
                       id: "profit_amount",
                       disabled: ""
