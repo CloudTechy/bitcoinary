@@ -431,7 +431,7 @@
         </section>
         <!-- how work section end  -->
         <!-- faq section start -->
-        <section class="pt-120 pb-120">
+        <section id = "faq" class="pt-120 pb-120">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">

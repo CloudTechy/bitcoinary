@@ -56007,7 +56007,7 @@ var staticRenderFns = [
             _c("a", { attrs: { href: "/partners" } }, [_vm._v("Partners")])
           ]),
           _vm._v(" "),
-          _c("li", [_c("a", { attrs: { href: "/faq" } }, [_vm._v("FAQ")])]),
+          _c("li", [_c("a", { attrs: { href: "/#faq" } }, [_vm._v("FAQ")])]),
           _vm._v(" "),
           _c("li", [_c("a", { attrs: { href: "/news" } }, [_vm._v("Blog")])]),
           _vm._v(" "),
@@ -60056,307 +60056,329 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "pt-120 pb-120" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row justify-content-center" }, [
-          _c("div", { staticClass: "col-lg-6 text-center" }, [
-            _c("div", { staticClass: "section-header" }, [
-              _c("h2", { staticClass: "section-title" }, [
-                _c("span", { staticClass: "font-weight-normal" }, [
-                  _vm._v("Frequently Asked")
+    return _c(
+      "section",
+      { staticClass: "pt-120 pb-120", attrs: { id: "faq" } },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row justify-content-center" }, [
+            _c("div", { staticClass: "col-lg-6 text-center" }, [
+              _c("div", { staticClass: "section-header" }, [
+                _c("h2", { staticClass: "section-title" }, [
+                  _c("span", { staticClass: "font-weight-normal" }, [
+                    _vm._v("Frequently Asked")
+                  ]),
+                  _vm._v(" "),
+                  _c("b", { staticClass: "base--color" }, [_vm._v("Questions")])
                 ]),
                 _vm._v(" "),
-                _c("b", { staticClass: "base--color" }, [_vm._v("Questions")])
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "We answer some of your Frequently Asked Questions regarding our platform. If you have a query that is not answered here, Please contact us."
-                )
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row justify-content-center" }, [
-          _c("div", { staticClass: "col-lg-8" }, [
-            _c(
-              "div",
-              {
-                staticClass: "accordion cmn-accordion",
-                attrs: { id: "accordionExample" }
-              },
-              [
-                _c("div", { staticClass: "card" }, [
-                  _c(
-                    "div",
-                    { staticClass: "card-header", attrs: { id: "headingOne" } },
-                    [
-                      _c("h2", { staticClass: "mb-0" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-link btn-block text-left",
-                            attrs: {
-                              type: "button",
-                              "data-toggle": "collapse",
-                              "data-target": "#collapseOne",
-                              "aria-expanded": "true",
-                              "aria-controls": "collapseOne"
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "las la-question-circle" }),
-                            _vm._v(" "),
-                            _c("span", [
-                              _vm._v(
-                                "When can I deposit/withdraw from my Investment account?"
-                              )
-                            ])
-                          ]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse show",
-                      attrs: {
-                        id: "collapseOne",
-                        "aria-labelledby": "headingOne",
-                        "data-parent": "#accordionExample"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "card-body" }, [
-                        _vm._v(
-                          "\n                                    Deposit and withdrawal are available for at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. The available amount is shown in your dashboard on the main page of Investing platform. Deposit and withdrawal are\n                                    available for at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. The available amount is shown in your dashboard on the main page of Investing platform.\n                                "
-                        )
-                      ])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card" }, [
-                  _c(
-                    "div",
-                    { staticClass: "card-header", attrs: { id: "headingTwo" } },
-                    [
-                      _c("h2", { staticClass: "mb-0" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-link btn-block text-left collapsed",
-                            attrs: {
-                              type: "button",
-                              "data-toggle": "collapse",
-                              "data-target": "#collapseTwo",
-                              "aria-expanded": "false",
-                              "aria-controls": "collapseTwo"
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "las la-question-circle" }),
-                            _vm._v(" "),
-                            _c("span", [
-                              _vm._v("How do I check my account balance?")
-                            ])
-                          ]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse",
-                      attrs: {
-                        id: "collapseTwo",
-                        "aria-labelledby": "headingTwo",
-                        "data-parent": "#accordionExample"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "card-body" }, [
-                        _vm._v(
-                          "\n                                    You can see this anytime on your accounts dashboard. You can see this anytime on your accounts dashboard.\n                                "
-                        )
-                      ])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "card-header",
-                      attrs: { id: "headingThree" }
-                    },
-                    [
-                      _c("h2", { staticClass: "mb-0" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-link btn-block text-left collapsed",
-                            attrs: {
-                              type: "button",
-                              "data-toggle": "collapse",
-                              "data-target": "#collapseThree",
-                              "aria-expanded": "false",
-                              "aria-controls": "collapseThree"
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "las la-question-circle" }),
-                            _vm._v(" "),
-                            _c("span", [
-                              _vm._v("I forgot my password, what should I do?")
-                            ])
-                          ]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse",
-                      attrs: {
-                        id: "collapseThree",
-                        "aria-labelledby": "headingThree",
-                        "data-parent": "#accordionExample"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "card-body" }, [
-                        _vm._v(
-                          "\n                                    Visit the password reset page, type in your email address and click the `Reset` button. Visit the password reset page, type in your email address and click the `Reset` button.\n                                "
-                        )
-                      ])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "card-header",
-                      attrs: { id: "headingFour" }
-                    },
-                    [
-                      _c("h2", { staticClass: "mb-0" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-link btn-block text-left collapsed",
-                            attrs: {
-                              type: "button",
-                              "data-toggle": "collapse",
-                              "data-target": "#collapseFour",
-                              "aria-expanded": "false",
-                              "aria-controls": "collapseFour"
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "las la-question-circle" }),
-                            _vm._v(" "),
-                            _c("span", [
-                              _vm._v(
-                                "How will I know that the withdrawal has been successful?"
-                              )
-                            ])
-                          ]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse",
-                      attrs: {
-                        id: "collapseFour",
-                        "aria-labelledby": "headingFour",
-                        "data-parent": "#accordionExample"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "card-body" }, [
-                        _vm._v(
-                          "\n                                    You will get an automatic notification once we send the funds and you can always check your transactions or account balance. Your chosen payment system dictates how long it will take for the funds to reach you. You will get an automatic notification once\n                                    we send the funds and you can always check your transactions or account balance. Your chosen payment system dictates how long it will take for the funds to reach you.\n                                "
-                        )
-                      ])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "card-header",
-                      attrs: { id: "headingFive" }
-                    },
-                    [
-                      _c("h2", { staticClass: "mb-0" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-link btn-block text-left collapsed",
-                            attrs: {
-                              type: "button",
-                              "data-toggle": "collapse",
-                              "data-target": "#collapseFive",
-                              "aria-expanded": "false",
-                              "aria-controls": "collapseFive"
-                            }
-                          },
-                          [
-                            _c("i", { staticClass: "las la-question-circle" }),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("How much can I withdraw?")])
-                          ]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse",
-                      attrs: {
-                        id: "collapseFive",
-                        "aria-labelledby": "headingFive",
-                        "data-parent": "#accordionExample"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "card-body" }, [
-                        _vm._v(
-                          "\n                                    You can withdraw the full amount of your account balance minus the funds that are used currently for supporting opened positions. You can withdraw the full amount of your account balance minus the funds that are used currently for supporting opened positions.\n                                "
-                        )
-                      ])
-                    ]
+                _c("p", [
+                  _vm._v(
+                    "We answer some of your Frequently Asked Questions regarding our platform. If you have a query that is not answered here, Please contact us."
                   )
                 ])
-              ]
-            )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row justify-content-center" }, [
+            _c("div", { staticClass: "col-lg-8" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "accordion cmn-accordion",
+                  attrs: { id: "accordionExample" }
+                },
+                [
+                  _c("div", { staticClass: "card" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "card-header",
+                        attrs: { id: "headingOne" }
+                      },
+                      [
+                        _c("h2", { staticClass: "mb-0" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-link btn-block text-left",
+                              attrs: {
+                                type: "button",
+                                "data-toggle": "collapse",
+                                "data-target": "#collapseOne",
+                                "aria-expanded": "true",
+                                "aria-controls": "collapseOne"
+                              }
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "las la-question-circle"
+                              }),
+                              _vm._v(" "),
+                              _c("span", [
+                                _vm._v(
+                                  "When can I deposit/withdraw from my Investment account?"
+                                )
+                              ])
+                            ]
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "collapse show",
+                        attrs: {
+                          id: "collapseOne",
+                          "aria-labelledby": "headingOne",
+                          "data-parent": "#accordionExample"
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "card-body" }, [
+                          _vm._v(
+                            "\n                                    Deposit and withdrawal are available for at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. The available amount is shown in your dashboard on the main page of Investing platform. Deposit and withdrawal are\n                                    available for at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. The available amount is shown in your dashboard on the main page of Investing platform.\n                                "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "card-header",
+                        attrs: { id: "headingTwo" }
+                      },
+                      [
+                        _c("h2", { staticClass: "mb-0" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-link btn-block text-left collapsed",
+                              attrs: {
+                                type: "button",
+                                "data-toggle": "collapse",
+                                "data-target": "#collapseTwo",
+                                "aria-expanded": "false",
+                                "aria-controls": "collapseTwo"
+                              }
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "las la-question-circle"
+                              }),
+                              _vm._v(" "),
+                              _c("span", [
+                                _vm._v("How do I check my account balance?")
+                              ])
+                            ]
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "collapse",
+                        attrs: {
+                          id: "collapseTwo",
+                          "aria-labelledby": "headingTwo",
+                          "data-parent": "#accordionExample"
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "card-body" }, [
+                          _vm._v(
+                            "\n                                    You can see this anytime on your accounts dashboard. You can see this anytime on your accounts dashboard.\n                                "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "card-header",
+                        attrs: { id: "headingThree" }
+                      },
+                      [
+                        _c("h2", { staticClass: "mb-0" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-link btn-block text-left collapsed",
+                              attrs: {
+                                type: "button",
+                                "data-toggle": "collapse",
+                                "data-target": "#collapseThree",
+                                "aria-expanded": "false",
+                                "aria-controls": "collapseThree"
+                              }
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "las la-question-circle"
+                              }),
+                              _vm._v(" "),
+                              _c("span", [
+                                _vm._v(
+                                  "I forgot my password, what should I do?"
+                                )
+                              ])
+                            ]
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "collapse",
+                        attrs: {
+                          id: "collapseThree",
+                          "aria-labelledby": "headingThree",
+                          "data-parent": "#accordionExample"
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "card-body" }, [
+                          _vm._v(
+                            "\n                                    Visit the password reset page, type in your email address and click the `Reset` button. Visit the password reset page, type in your email address and click the `Reset` button.\n                                "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "card-header",
+                        attrs: { id: "headingFour" }
+                      },
+                      [
+                        _c("h2", { staticClass: "mb-0" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-link btn-block text-left collapsed",
+                              attrs: {
+                                type: "button",
+                                "data-toggle": "collapse",
+                                "data-target": "#collapseFour",
+                                "aria-expanded": "false",
+                                "aria-controls": "collapseFour"
+                              }
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "las la-question-circle"
+                              }),
+                              _vm._v(" "),
+                              _c("span", [
+                                _vm._v(
+                                  "How will I know that the withdrawal has been successful?"
+                                )
+                              ])
+                            ]
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "collapse",
+                        attrs: {
+                          id: "collapseFour",
+                          "aria-labelledby": "headingFour",
+                          "data-parent": "#accordionExample"
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "card-body" }, [
+                          _vm._v(
+                            "\n                                    You will get an automatic notification once we send the funds and you can always check your transactions or account balance. Your chosen payment system dictates how long it will take for the funds to reach you. You will get an automatic notification once\n                                    we send the funds and you can always check your transactions or account balance. Your chosen payment system dictates how long it will take for the funds to reach you.\n                                "
+                          )
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "card-header",
+                        attrs: { id: "headingFive" }
+                      },
+                      [
+                        _c("h2", { staticClass: "mb-0" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-link btn-block text-left collapsed",
+                              attrs: {
+                                type: "button",
+                                "data-toggle": "collapse",
+                                "data-target": "#collapseFive",
+                                "aria-expanded": "false",
+                                "aria-controls": "collapseFive"
+                              }
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "las la-question-circle"
+                              }),
+                              _vm._v(" "),
+                              _c("span", [_vm._v("How much can I withdraw?")])
+                            ]
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "collapse",
+                        attrs: {
+                          id: "collapseFive",
+                          "aria-labelledby": "headingFive",
+                          "data-parent": "#accordionExample"
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "card-body" }, [
+                          _vm._v(
+                            "\n                                    You can withdraw the full amount of your account balance minus the funds that are used currently for supporting opened positions. You can withdraw the full amount of your account balance minus the funds that are used currently for supporting opened positions.\n                                "
+                          )
+                        ])
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ])
           ])
         ])
-      ])
-    ])
+      ]
+    )
   },
   function() {
     var _vm = this

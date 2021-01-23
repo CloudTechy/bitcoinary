@@ -35,7 +35,7 @@
                                 <a href="/partners">Partners</a>
                                 <!-- <router-link to="/partners">Partners</router-link> -->
                             </li>
-                            <li><a href="/faq">FAQ</a>
+                            <li><a href="/#faq">FAQ</a>
                                 <!-- <router-link to="/faq">Faq</router-link> -->
                             </li>
                             <!-- <li>
