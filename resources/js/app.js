@@ -90,6 +90,10 @@ const app = new Vue({
         btc_volume: '-',
         active_trade: '-',
         packages : [],
+        news : [],
+        investors : [],
+        testimonials : [],
+        teams : [],
     },
     el: '#app',
     router,
@@ -102,18 +106,15 @@ const app = new Vue({
         setInterval(this.timer, 1000)
         setInterval(this.btcRate, 2000)
         setInterval(this.btcVolume, 60000)
-        // setInterval(this.refreshUser, 30000)
-        // if (localStorage.rate) {
-        //     this.rate = JSON.parse(localStorage.rate)
-        // }
-        // if (localStorage.ip) {
-        //     this.ip = JSON.parse(localStorage.ip)
-        // }
+        setInterval(this.getUpdates, 300000)
         this.btcRate()
         this.getIp()
         this.btcVolume()
         this.getPackages();
-
+        this.getNews();
+        this.getTeams();
+        this.getInvestors();
+        this.getTestimonials();
     },
     methods: {
         alert(type, title, message) {
@@ -127,10 +128,55 @@ const app = new Vue({
                 timer: 1500
             })
         },
+        getUpdates(){
+            this.getPackages();
+            this.getNews();
+            this.getTeams();
+            this.getInvestors();
+            this.getTestimonials();
+        },
         getPackages(){
             this.$http.get("/auth/packages")
                 .then(response => {
                     this.packages = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+        },
+        getNews(){
+            this.$http.get("/auth/news")
+                .then(response => {
+                    this.news = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+        },
+        getTeams(){
+            this.$http.get("/auth/teams")
+                .then(response => {
+                    this.teams = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+        },
+        getInvestors(){
+            this.$http.get("/auth/investors")
+                .then(response => {
+                    this.investors = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+        },
+        getTestimonials(){
+            this.$http.get("/auth/testimonials")
+                .then(response => {
+                    this.testimonials = response.data.data.item
+                    var e = window.Slick;
+                    console.log(e.reinit())
                 })
                 .catch(error => {
                     console.log(error.response)

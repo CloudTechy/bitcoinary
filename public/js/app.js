@@ -7251,11 +7251,11 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   computed: {
     profit_amount: function profit_amount() {
       if (parseInt(this.invest_amount) >= this.plan.min_deposit && parseInt(this.invest_amount) <= this.plan.max_deposit) {
-        return this.$root.normalNumeral(parseInt(this.plan.roi) / 100 * parseInt(this.invest_amount));
+        return parseInt(this.plan.roi) / 100 * parseInt(this.invest_amount);
       } else if (this.plan.name == undefined || this.invest_amount == "") return '0.00';else return 'input a valid amount for this plan';
     },
     total_earning: function total_earning() {
-      return this.$root.normalNumeral(parseInt(this.profit_amount) + parseInt(this.invest_amount));
+      return this.$root.numeral(parseInt(this.profit_amount) + parseInt(this.invest_amount));
     }
   },
   created: function created() {},
@@ -7284,65 +7284,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -56004,7 +55945,8 @@ var staticRenderFns = [
                           _c(
                             "button",
                             {
-                              staticClass: "btn btn-link btn-block text-left",
+                              staticClass:
+                                "btn btn-link btn-block text-left collapsed",
                               attrs: {
                                 type: "button",
                                 "data-toggle": "collapse",
@@ -58906,83 +58848,63 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-lg-12" }, [
-            _c("div", { staticClass: "testimonial-slider" }, [
-              _c("div", { staticClass: "single-slide" }, [
-                _c("div", { staticClass: "testimonial-card" }, [
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "testimonial-card__client" }, [
-                    _c("div", { staticClass: "thumb" }, [
-                      _c("img", {
-                        attrs: {
-                          src: _vm.$root.basepath + "/images/testimonial/1.jpg",
-                          alt: "image"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _vm._m(2)
+            _c(
+              "div",
+              { staticClass: "testimonial-slider" },
+              [
+                _vm._m(1),
+                _vm._v(" "),
+                _vm._l(_vm.$root.testimonials, function(testimonial) {
+                  return _c("div", { staticClass: "single-slide" }, [
+                    _c("div", { staticClass: "testimonial-card" }, [
+                      _c("div", { staticClass: "testimonial-card__content" }, [
+                        _c("p", [_vm._v(_vm._s(testimonial.content))])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "testimonial-card__client" }, [
+                        _c("div", { staticClass: "thumb" }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                _vm.$root.basepath +
+                                "/images/testimonial/" +
+                                testimonial.image,
+                              alt: "image"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "content" }, [
+                          _c("h6", { staticClass: "name" }, [
+                            _vm._v(_vm._s(testimonial.name))
+                          ]),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "designation" }, [
+                            _vm._v(
+                              _vm._s(
+                                testimonial.designation +
+                                  " of " +
+                                  testimonial.company
+                              )
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "ratings" },
+                            _vm._l(testimonial.rating, function(n) {
+                              return _c("i", { staticClass: "las la-star" })
+                            }),
+                            0
+                          )
+                        ])
+                      ])
+                    ])
                   ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "single-slide" }, [
-                _c("div", { staticClass: "testimonial-card" }, [
-                  _vm._m(3),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "testimonial-card__client" }, [
-                    _c("div", { staticClass: "thumb" }, [
-                      _c("img", {
-                        attrs: {
-                          src: _vm.$root.basepath + "/images/testimonial/2.jpg",
-                          alt: "image"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _vm._m(4)
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "single-slide" }, [
-                _c("div", { staticClass: "testimonial-card" }, [
-                  _vm._m(5),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "testimonial-card__client" }, [
-                    _c("div", { staticClass: "thumb" }, [
-                      _c("img", {
-                        attrs: {
-                          src: _vm.$root.basepath + "/images/testimonial/3.jpg",
-                          alt: "image"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _vm._m(6)
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "single-slide" }, [
-                _c("div", { staticClass: "testimonial-card" }, [
-                  _vm._m(7),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "testimonial-card__client" }, [
-                    _c("div", { staticClass: "thumb" }, [
-                      _c("img", {
-                        attrs: {
-                          src: _vm.$root.basepath + "/images/testimonial/4.jpg",
-                          alt: "image"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _vm._m(8)
-                  ])
-                ])
-              ])
-            ])
+                })
+              ],
+              2
+            )
           ])
         ])
       ])
@@ -59007,7 +58929,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("p", [
             _vm._v(
-              "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse voluptatum eaque earum quos quia? Id aspernatur ratione, voluptas nulla rerum laudantium neque ipsam eaque"
+              "Bitcoinary Mint is a well performing company with many good reviews from our investors."
             )
           ])
         ])
@@ -59018,137 +58940,43 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "testimonial-card__content" }, [
-      _c("p", [
-        _vm._v(
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus\n                                            obcaecati."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content" }, [
-      _c("h6", { staticClass: "name" }, [_vm._v("Fahaddevs")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "designation" }, [_vm._v("CEO of fahaddevs")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "ratings" }, [
-        _c("i", { staticClass: "las la-star" }),
+    return _c("div", { staticClass: "single-slide" }, [
+      _c("div", { staticClass: "testimonial-card" }, [
+        _c("div", { staticClass: "testimonial-card__content" }, [
+          _c("p", [
+            _vm._v(
+              "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus obcaecati."
+            )
+          ])
+        ]),
         _vm._v(" "),
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "testimonial-card__content" }, [
-      _c("p", [
-        _vm._v(
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus\n                                            obcaecati."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content" }, [
-      _c("h6", { staticClass: "name" }, [_vm._v("Alina")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "designation" }, [_vm._v("CTO of fahaddevs")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "ratings" }, [
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "testimonial-card__content" }, [
-      _c("p", [
-        _vm._v(
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus\n                                            obcaecati."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content" }, [
-      _c("h6", { staticClass: "name" }, [_vm._v("Amir Khan")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "designation" }, [_vm._v("COO of fahaddevs")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "ratings" }, [
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "testimonial-card__content" }, [
-      _c("p", [
-        _vm._v(
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus\n                                            obcaecati."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content" }, [
-      _c("h6", { staticClass: "name" }, [_vm._v("Zohir Khan")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "designation" }, [
-        _vm._v("Manager of fahaddevs")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "ratings" }, [
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" }),
-        _vm._v(" "),
-        _c("i", { staticClass: "las la-star" })
+        _c("div", { staticClass: "testimonial-card__client" }, [
+          _c("div", { staticClass: "thumb" }, [
+            _c("img", {
+              attrs: { src: "assets/images/testimonial/1.jpg", alt: "image" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "content" }, [
+            _c("h6", { staticClass: "name" }, [_vm._v("Fahaddevs")]),
+            _vm._v(" "),
+            _c("span", { staticClass: "designation" }, [
+              _vm._v("CEO of fahaddevs")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "ratings" }, [
+              _c("i", { staticClass: "las la-star" }),
+              _vm._v(" "),
+              _c("i", { staticClass: "las la-star" }),
+              _vm._v(" "),
+              _c("i", { staticClass: "las la-star" }),
+              _vm._v(" "),
+              _c("i", { staticClass: "las la-star" }),
+              _vm._v(" "),
+              _c("i", { staticClass: "las la-star" })
+            ])
+          ])
+        ])
       ])
     ])
   }
@@ -86756,7 +86584,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     mailUser: null,
     btc_volume: '-',
     active_trade: '-',
-    packages: []
+    packages: [],
+    news: [],
+    investors: [],
+    testimonials: [],
+    teams: []
   },
   el: '#app',
   router: _router__WEBPACK_IMPORTED_MODULE_8__["default"],
@@ -86778,18 +86610,16 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
   created: function created() {
     setInterval(this.timer, 1000);
     setInterval(this.btcRate, 2000);
-    setInterval(this.btcVolume, 60000); // setInterval(this.refreshUser, 30000)
-    // if (localStorage.rate) {
-    //     this.rate = JSON.parse(localStorage.rate)
-    // }
-    // if (localStorage.ip) {
-    //     this.ip = JSON.parse(localStorage.ip)
-    // }
-
+    setInterval(this.btcVolume, 60000);
+    setInterval(this.getUpdates, 300000);
     this.btcRate();
     this.getIp();
     this.btcVolume();
     this.getPackages();
+    this.getNews();
+    this.getTeams();
+    this.getInvestors();
+    this.getTestimonials();
   },
   methods: {
     alert: function alert(type, title, message) {
@@ -86803,11 +86633,56 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
         timer: 1500
       });
     },
+    getUpdates: function getUpdates() {
+      this.getPackages();
+      this.getNews();
+      this.getTeams();
+      this.getInvestors();
+      this.getTestimonials();
+    },
     getPackages: function getPackages() {
       var _this = this;
 
       this.$http.get("/auth/packages").then(function (response) {
         _this.packages = response.data.data.item;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    getNews: function getNews() {
+      var _this2 = this;
+
+      this.$http.get("/auth/news").then(function (response) {
+        _this2.news = response.data.data.item;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    getTeams: function getTeams() {
+      var _this3 = this;
+
+      this.$http.get("/auth/teams").then(function (response) {
+        _this3.teams = response.data.data.item;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    getInvestors: function getInvestors() {
+      var _this4 = this;
+
+      this.$http.get("/auth/investors").then(function (response) {
+        _this4.investors = response.data.data.item;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    getTestimonials: function getTestimonials() {
+      var _this5 = this;
+
+      this.$http.get("/auth/testimonials").then(function (response) {
+        _this5.testimonials = response.data.data.item;
+        var e = window.Slick;
+        console.log(e.reinit());
       })["catch"](function (error) {
         console.log(error.response);
       });
@@ -86879,44 +86754,44 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       this.time = moment__WEBPACK_IMPORTED_MODULE_12___default()().format("h:mm:ss a");
     },
     btcRate: function btcRate() {
-      var _this2 = this;
+      var _this6 = this;
 
       this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(function (response) {
-        _this2.usd_btc_rate = response.data.bpi.USD.rate;
-        _this2.eur_btc_rate = response.data.bpi.EUR.rate;
+        _this6.usd_btc_rate = response.data.bpi.USD.rate;
+        _this6.eur_btc_rate = response.data.bpi.EUR.rate;
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     btcVolume: function btcVolume() {
-      var _this3 = this;
+      var _this7 = this;
 
       this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT").then(function (response) {
         var volume = response.data.volume;
-        _this3.btc_volume = parseInt(volume) / 3;
-        _this3.active_trade = volume; // console.log(response.data);
+        _this7.btc_volume = parseInt(volume) / 3;
+        _this7.active_trade = volume; // console.log(response.data);
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     getIp: function getIp() {
-      var _this4 = this;
+      var _this8 = this;
 
       var form = new vform__WEBPACK_IMPORTED_MODULE_16__["Form"]();
       form.get("https://api.ipify.org?format=json").then(function (response) {
-        _this4.ip = response.data.ip;
+        _this8.ip = response.data.ip;
         localStorage.ip = JSON.stringify(response.data.ip);
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     refreshUser: function refreshUser() {
-      var _this5 = this;
+      var _this9 = this;
 
       this.$auth.fetch({
         params: {},
         success: function success(response) {
-          _this5.user = _this5.$auth.user();
+          _this9.user = _this9.$auth.user();
         },
         error: function error(_error) {
           console.log(_error.response.data);

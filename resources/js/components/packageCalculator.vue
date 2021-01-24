@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="col-lg-6 mb-30">
                                         <label>Profit Amount</label>
-                                        <input v-model="profit_amount" type="text" name="profit_amount" id="profit_amount" class="form-control base--bg" disabled>
+                                        <input v-model="profit_amount" type="text" name="profit_amount"  id="profit_amount" class="form-control base--bg" disabled>
                                     </div>
                                     <div class="col-lg-6 mb-30">
                                         <label>Total Earning</label>
@@ -55,14 +55,14 @@ export default {
     computed: {
     	profit_amount(){
     		if(parseInt(this.invest_amount) >= this.plan.min_deposit && parseInt(this.invest_amount) <= this.plan.max_deposit ){
-    			return this.$root.normalNumeral((parseInt(this.plan.roi) / 100) *  parseInt(this.invest_amount))
+    			return (parseInt(this.plan.roi) / 100) *  parseInt(this.invest_amount)
     		}
     		else if (this.plan.name == undefined || this.invest_amount == "") return '0.00'
     		else return 'input a valid amount for this plan'
     	},
     	total_earning(){
 
-    		return this.$root.normalNumeral( parseInt(this.profit_amount )+ parseInt(this.invest_amount))
+    		return this.$root.numeral( parseInt(this.profit_amount ) + parseInt(this.invest_amount))
     	}
 
     },
