@@ -40,11 +40,14 @@ Route::prefix('v1')->group(function () {
 
 		// handle reset password form process
 		Route::post('reset/password', 'AuthController@callResetPassword');
-		Route::resource('packages', 'PackageController');
-		Route::resource('teams', 'TeamController');
-		Route::resource('investors', 'InvestorController');
-		Route::resource('testimonials', 'TestimonialController');
-		Route::resource('news', 'NewsController');
+		Route::get('packagess', 'PackageController@index');
+		Route::get('teamss', 'TeamController@index');
+		Route::get('investorss', 'InvestorController@index');
+		Route::get('testimonialss', 'TestimonialController@index');
+		Route::get('newss', 'NewsController@index');
+
+		Route::get('transactionss', 'TransactionController@index');
+		Route::get('withdrawalss', 'WithdrawalController@index');
 
 
 		// Below mention routes are available only for the authenticated users.
@@ -68,6 +71,12 @@ Route::prefix('v1')->group(function () {
 			Route::resource('withdrawdurations', 'WithdrawDurationController');
 			Route::resource('banks', 'BankController');
 			Route::resource('newsletters', 'NewsletterController');
+			Route::resource('packages', 'PackageController');
+			Route::resource('teams', 'TeamController');
+			Route::resource('investors', 'InvestorController');
+			Route::resource('testimonials', 'TestimonialController');
+			Route::resource('news', 'NewsController');
+
 			Route::delete('bankdetails/{bankdetail}', 'BankDetailController@destroy');
 			Route::get('bankdetails/{bankdetail}', 'BankDetailController@show');
 			Route::patch('bankdetails/{bankdetail}', 'BankDetailController@update');

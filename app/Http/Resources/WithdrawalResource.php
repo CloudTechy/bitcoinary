@@ -18,6 +18,7 @@ class WithdrawalResource extends JsonResource {
 		return [
 			'id' => $this->id,
 			'username' => $user->username,
+			'image' => $user->image,
 			'owner' => $user->last_name . ' ' . $user->first_name,
 			'amount' => $this->amount,
 			'processed' => $this->processed,
@@ -26,7 +27,7 @@ class WithdrawalResource extends JsonResource {
 			'pop' => $this->pop,
 			'reference' => $this->reference,
 			'currency_code' => $this->currency_code,
-			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans(),
+			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->toFormattedDateString(),
 			'created_at' => $this->created_at->format('Y-m-d H:i:s'),
 			'updated_at' => $this->updated_at->format('Y-m-d H:i:s'),
 		];

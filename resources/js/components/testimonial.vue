@@ -1,5 +1,5 @@
 <template>
-    <section class="pt-120 pb-120 bg_img overlay--radial" :data-background="$root.basepath + '/images/bg/bg-7.jpg'">
+    <section :key="key" class="pt-120 pb-120 bg_img overlay--radial" :data-background="$root.basepath + '/images/bg/bg-7.jpg'">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center">
@@ -12,32 +12,8 @@
             <!-- row end -->
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="testimonial-slider">
-
-                        <div class="single-slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-card__content">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus obcaecati.</p>
-                                </div>
-                                <div class="testimonial-card__client">
-                                    <div class="thumb">
-                                        <img src="assets/images/testimonial/1.jpg" alt="image">
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="name">Fahaddevs</h6>
-                                        <span class="designation">CEO of fahaddevs</span>
-                                        <div class="ratings">
-                                            <i class="las la-star"></i>
-                                            <i class="las la-star"></i>
-                                            <i class="las la-star"></i>
-                                            <i class="las la-star"></i>
-                                            <i class="las la-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- testimonial-card end -->
-                        </div>
-                        <div  v-for = "(testimonial) in $root.testimonials" class="single-slide">
+                    <VueSlickCarousel v-bind="settings">
+                        <div v-for="(testimonial) in data" class="single-slide">
                             <div class="testimonial-card">
                                 <div class="testimonial-card__content">
                                     <p>{{testimonial.content}}</p>
@@ -50,15 +26,23 @@
                                         <h6 class="name">{{testimonial.name}}</h6>
                                         <span class="designation">{{testimonial.designation + ' of ' + testimonial.company}}</span>
                                         <div class="ratings">
-                                            <i v-for = "n in testimonial.rating" class="las la-star"></i>
+                                            <i v-for="n in testimonial.rating" class="las la-star"></i>
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- testimonial-card end -->
+                            </div>
                         </div>
-                
-                       
-                    </div>
+                        <!--  <VueSlickCarousel v-if = "!loading" v-bind="settings">
+                        <div>
+                            <h3>1</h3>
+                        </div>
+                        <div>
+                            <h3>2</h3>
+                        </div>
+                        <div>
+                            <h3>3</h3>
+                        </div> -->
+                    </VueSlickCarousel>
                 </div>
             </div>
             <!-- row end -->
@@ -66,22 +50,52 @@
     </section>
 </template>
 <script>
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
+    name: 'Testimonial',
+
     data() {
         return {
-
+            settings: {
+                "dots": true,
+                "dotsClass": "slick-dots custom-dot-class",
+                "infinite": true,
+                "speed": 500,
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "rtl": true,
+            },
+            loading: true,
+            key: 1,
         }
 
     },
-    computed: {},
+    watch: {
+        data() {
+            console.log('data', this.data)
+            if (this.data) {
+                this.key++
+                this.loading = false
+            } else {
+                this.loading = true
+            }
+        }
+    },
     created() {
 
     },
-    // components: { Menu },
+    components: { VueSlickCarousel },
+    props: ['data'],
     methods: {},
 
 }
 
 </script>
-<style>
+<style scoped>
+div.slick-slide {
+    margin: 15px !important;
+}
+
 </style>

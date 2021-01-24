@@ -15,6 +15,7 @@ import moment from 'moment'
 import fontawesome from '@fortawesome/fontawesome-free'
 import Clipboard from 'v-clipboard'
 
+
 Vue.use(Clipboard)
 Vue.use(fontawesome)
 
@@ -93,6 +94,8 @@ const app = new Vue({
         news : [],
         investors : [],
         testimonials : [],
+        transactions : [],
+        withdrawals : [],
         teams : [],
     },
     el: '#app',
@@ -115,7 +118,9 @@ const app = new Vue({
         this.getTeams();
         this.getInvestors();
         this.getTestimonials();
-    },
+        this.getTransactions();
+        this.getWithdrawals();
+        },
     methods: {
         alert(type, title, message) {
             this.$swal({
@@ -134,9 +139,11 @@ const app = new Vue({
             this.getTeams();
             this.getInvestors();
             this.getTestimonials();
+            this.getTransactions();
+            this.getWithdrawals();
         },
         getPackages(){
-            this.$http.get("/auth/packages")
+            this.$http.get("/auth/packagess")
                 .then(response => {
                     this.packages = response.data.data.item
                 })
@@ -145,7 +152,7 @@ const app = new Vue({
                 })
         },
         getNews(){
-            this.$http.get("/auth/news")
+            this.$http.get("/auth/newss")
                 .then(response => {
                     this.news = response.data.data.item
                 })
@@ -154,7 +161,7 @@ const app = new Vue({
                 })
         },
         getTeams(){
-            this.$http.get("/auth/teams")
+            this.$http.get("/auth/teamss")
                 .then(response => {
                     this.teams = response.data.data.item
                 })
@@ -163,7 +170,7 @@ const app = new Vue({
                 })
         },
         getInvestors(){
-            this.$http.get("/auth/investors")
+            this.$http.get("/auth/investorss")
                 .then(response => {
                     this.investors = response.data.data.item
                 })
@@ -172,14 +179,30 @@ const app = new Vue({
                 })
         },
         getTestimonials(){
-            this.$http.get("/auth/testimonials")
+            this.$http.get("/auth/testimonialss")
                 .then(response => {
                     this.testimonials = response.data.data.item
-                    var e = window.Slick;
-                    console.log(e.reinit())
                 })
                 .catch(error => {
-                    console.log(error.response)
+                    console.log(error)
+                })
+        },
+        getTransactions(){
+            this.$http.get("/auth/transactionss?pageSize=6&reference=SELF")
+                .then(response => {
+                    this.transactions = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        },
+        getWithdrawals(){
+            this.$http.get("/auth/withdrawalss?pageSize=6")
+                .then(response => {
+                    this.withdrawals = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error)
                 })
         },
         numeral(value) {

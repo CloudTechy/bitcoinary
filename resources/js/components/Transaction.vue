@@ -33,71 +33,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr v-for = "trx in transactions">
                                             <td data-label="Name">
                                                 <div class="user">
-                                                    <div class="thumb"><img :src="$root.basepath + '/images/investor/1.jpg'" alt="image"></div>
-                                                    <span>fahaddevs</span>
+                                                    <div class="thumb"><img :src="trx.image == null ? $root.basepath + '/images/uploads/anonymous.jpg' :  $root.basepath + '/images/uploads/' +trx.image" alt="image"></div>
+                                                    <span>{{trx.owner}}</span>
                                                 </div>
                                             </td>
-                                            <td data-label="Date">Nov 22, 2020</td>
-                                            <td data-label="Amount">$ 5000</td>
-                                            <td data-label="Gateway">Stripe Hosted</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-label="Name">
-                                                <div class="user">
-                                                    <div class="thumb"><img :src="$root.basepath + '/images/investor/2.jpg'" alt="image"></div>
-                                                    <span>Jon Tulsa</span>
-                                                </div>
-                                            </td>
-                                            <td data-label="Date">Dec 11, 2020</td>
-                                            <td data-label="Amount">$ 1000</td>
-                                            <td data-label="Gateway">Stripe Hosted</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-label="Name">
-                                                <div class="user">
-                                                    <div class="thumb"><img :src="$root.basepath + '/images/investor/3.jpg'" alt="image"></div>
-                                                    <span>Thomas Okeyson</span>
-                                                </div>
-                                            </td>
-                                            <td data-label="Date">Dec 12, 2020</td>
-                                            <td data-label="Amount">$ 10000</td>
-                                            <td data-label="Gateway">Stripe Storefront</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-label="Name">
-                                                <div class="user">
-                                                    <div class="thumb"><img :src="$root.basepath + '/images/investor/6.jpg'" alt="image"></div>
-                                                    <span>Thomas Okeyson</span>
-                                                </div>
-                                            </td>
-                                            <td data-label="Date">Dec 12, 2020</td>
-                                            <td data-label="Amount">$ 6500</td>
-                                            <td data-label="Gateway">Stripe Hosted</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-label="Name">
-                                                <div class="user">
-                                                    <div class="thumb"><img :src="$root.basepath + '/images/investor/7.jpg'" alt="image"></div>
-                                                    <span>Thomas Okeyson</span>
-                                                </div>
-                                            </td>
-                                            <td data-label="Date">Dec 12, 2020</td>
-                                            <td data-label="Amount">$ 6500</td>
-                                            <td data-label="Gateway">Stripe Hosted</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-label="Name">
-                                                <div class="user">
-                                                    <div class="thumb"><img :src="$root.basepath + '/images/investor/8.jpg'" alt="image"></div>
-                                                    <span>Thomas Okeyson</span>
-                                                </div>
-                                            </td>
-                                            <td data-label="Date">Dec 12, 2020</td>
-                                            <td data-label="Amount">$ 6500</td>
-                                            <td data-label="Gateway">Stripe Hosted</td>
+                                            <td data-label="Date">{{trx.date}}</td>
+                                            <td data-label="Amount">$ {{$root.normalNumeral(trx.amount)}}</td>
+                                            <td data-label="Gateway">Bitcoin</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -115,71 +60,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr v-for = "wlt in withdrawals">
                                             <td data-label="Name">
                                                 <div class="user">
-                                                    <div class="thumb"><img :src="$root.basepath + '/images/investor/1.jpg'" alt="image"></div>
-                                                    <span>fahaddevs</span>
+                                                    <div class="thumb"><img :src="wlt.image == null ? $root.basepath + '/images/uploads/anonymous.jpg' :  $root.basepath + '/images/uploads/' +wlt.image" alt="image"></div>
+                                                    <span>{{wlt.owner}}</span>
                                                 </div>
                                             </td>
-                                            <td data-label="Date">Nov 22, 2020</td>
-                                            <td data-label="Amount">$ 5000</td>
-                                            <td data-label="Gateway">Stripe Hosted</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-label="Name">
-                                                <div class="user">
-                                                    <div class="thumb"><img :src="$root.basepath + '/images/investor/2.jpg'" alt="image"></div>
-                                                    <span>Jon Tulsa</span>
-                                                </div>
-                                            </td>
-                                            <td data-label="Date">Dec 11, 2020</td>
-                                            <td data-label="Amount">$ 1000</td>
-                                            <td data-label="Gateway">Stripe Hosted</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-label="Name">
-                                                <div class="user">
-                                                    <div class="thumb"><img :src="$root.basepath + '/images/investor/3.jpg'" alt="image"></div>
-                                                    <span>Thomas Okeyson</span>
-                                                </div>
-                                            </td>
-                                            <td data-label="Date">Dec 12, 2020</td>
-                                            <td data-label="Amount">$ 10000</td>
-                                            <td data-label="Gateway">Stripe Storefront</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-label="Name">
-                                                <div class="user">
-                                                    <div class="thumb"><img :src="$root.basepath + '/images/investor/6.jpg'" alt="image"></div>
-                                                    <span>Thomas Okeyson</span>
-                                                </div>
-                                            </td>
-                                            <td data-label="Date">Dec 12, 2020</td>
-                                            <td data-label="Amount">$ 6500</td>
-                                            <td data-label="Gateway">Stripe Hosted</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-label="Name">
-                                                <div class="user">
-                                                    <div class="thumb"><img :src="$root.basepath + '/images/investor/7.jpg'" alt="image"></div>
-                                                    <span>Thomas Okeyson</span>
-                                                </div>
-                                            </td>
-                                            <td data-label="Date">Dec 12, 2020</td>
-                                            <td data-label="Amount">$ 6500</td>
-                                            <td data-label="Gateway">Stripe Hosted</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-label="Name">
-                                                <div class="user">
-                                                    <div class="thumb"><img :src="$root.basepath + '/images/investor/8.jpg'" alt="image"></div>
-                                                    <span>Thomas Okeyson</span>
-                                                </div>
-                                            </td>
-                                            <td data-label="Date">Dec 12, 2020</td>
-                                            <td data-label="Amount">$ 6500</td>
-                                            <td data-label="Gateway">Stripe Hosted</td>
+                                            <td data-label="Date">{{wlt.date}}</td>
+                                            <td data-label="Amount">$ {{$root.normalNumeral(wlt.amount)}}</td>
+                                            <td data-label="Gateway">Bitcoin</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -204,6 +94,7 @@ export default {
     created() {
 
     },
+    props : ['withdrawals' , 'transactions'],
     // components: { Menu },
     methods: {},
 

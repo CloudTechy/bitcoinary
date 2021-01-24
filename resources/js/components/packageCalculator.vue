@@ -51,7 +51,7 @@ export default {
         }
            
     },
-    watch: {profit_amount(){ console.log(typeof this.profit_amount)}},
+    watch: {},
     computed: {
     	profit_amount(){
     		if(parseInt(this.invest_amount) >= this.plan.min_deposit && parseInt(this.invest_amount) <= this.plan.max_deposit ){

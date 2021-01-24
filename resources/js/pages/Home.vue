@@ -274,16 +274,16 @@
         <FaqComponent></FaqComponent>
         <!-- faq section end -->
         <!-- testimonial section start -->
-        <testimonial></testimonial>
+        <testimonial v-if = "$root.testimonials.length > 0" :data = "$root.testimonials"></testimonial>
         <!-- testimonial section end -->
         <!-- team section start -->
-        <Team></Team>
+        <Team :data = "$root.teams"></Team>
         <!-- team section end -->
         <!-- data section start -->
-        <Transaction></Transaction>
+        <Transaction :transactions = "$root.transactions" :withdrawals = "$root.withdrawals"></Transaction>
         <!-- data section end -->
         <!-- top investor section start -->
-        <Investor></Investor>
+        <Investor :data = "$root.investors"></Investor>
         <!-- top investor section end -->
         <!-- cta section start -->
         <section class="pb-120">

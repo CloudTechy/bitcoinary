@@ -5,108 +5,26 @@
                     <div class="col-lg-6 text-center">
                         <div class="section-header">
                             <h2 class="section-title"><span class="font-weight-normal">Our Expert</span> <b class="base--color">Team Members</b></h2>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse voluptatum eaque earum quos quia? Id aspernatur ratione, voluptas nulla rerum laudantium neque ipsam eaque</p>
+                            <p>We have team of experts whose sole duty is to initiate profitable and well strategized plans that will accrue massive profit. </p>
                         </div>
                     </div>
                 </div>
                 <!-- row end -->
+
                 <div class="row justify-content-center mb-none-30">
-                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                    <div :key = "team.id" v-for = "team in data" class="col-xl-3 col-lg-4 col-sm-6 mb-30">
                         <div class="team-card">
                             <div class="team-card__thumb">
-                                <img :src="$root.basepath + '/images/investor/1.jpg'" alt="image">
+                                <img :src="$root.basepath + '/images/investor/'+ team.image" alt="image">
                             </div>
                             <div class="team-card__content">
-                                <h4 class="name mb-1">Fahad Bin Faiz</h4>
-                                <span class="designation">CEO</span>
+                                <h4 class="name mb-1">{{team.name}}</h4>
+                                <span class="designation">{{team.designation}}</span>
                             </div>
                         </div>
                         <!-- team-card end -->
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
-                        <div class="team-card">
-                            <div class="team-card__thumb">
-                                <img :src="$root.basepath + '/images/investor/2.jpg'" alt="image">
-                            </div>
-                            <div class="team-card__content">
-                                <h4 class="name mb-1">Danial K.</h4>
-                                <span class="designation">CTO</span>
-                            </div>
-                        </div>
-                        <!-- team-card end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
-                        <div class="team-card">
-                            <div class="team-card__thumb">
-                                <img :src="$root.basepath + '/images/investor/3.jpg'" alt="image">
-                            </div>
-                            <div class="team-card__content">
-                                <h4 class="name mb-1">Lew Son</h4>
-                                <span class="designation">Marketing Head</span>
-                            </div>
-                        </div>
-                        <!-- team-card end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
-                        <div class="team-card">
-                            <div class="team-card__thumb">
-                                <img :src="$root.basepath + '/images/investor/4.jpg'" alt="image">
-                            </div>
-                            <div class="team-card__content">
-                                <h4 class="name mb-1">Tend z Joe</h4>
-                                <span class="designation">Designer</span>
-                            </div>
-                        </div>
-                        <!-- team-card end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
-                        <div class="team-card">
-                            <div class="team-card__thumb">
-                                <img :src="$root.basepath + '/images/investor/5.jpg'" alt="image">
-                            </div>
-                            <div class="team-card__content">
-                                <h4 class="name mb-1">Sam Joe</h4>
-                                <span class="designation">Developer</span>
-                            </div>
-                        </div>
-                        <!-- team-card end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
-                        <div class="team-card">
-                            <div class="team-card__thumb">
-                                <img :src="$root.basepath + '/images/investor/6.jpg'" alt="image">
-                            </div>
-                            <div class="team-card__content">
-                                <h4 class="name mb-1">Alex Joe</h4>
-                                <span class="designation">UX Expert</span>
-                            </div>
-                        </div>
-                        <!-- team-card end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
-                        <div class="team-card">
-                            <div class="team-card__thumb">
-                                <img :src="$root.basepath + '/images/investor/7.jpg'" alt="image">
-                            </div>
-                            <div class="team-card__content">
-                                <h4 class="name mb-1">Juna Sun</h4>
-                                <span class="designation">SEO Expert</span>
-                            </div>
-                        </div>
-                        <!-- team-card end -->
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
-                        <div class="team-card">
-                            <div class="team-card__thumb">
-                                <img :src="$root.basepath + '/images/investor/8.jpg'" alt="image">
-                            </div>
-                            <div class="team-card__content">
-                                <h4 class="name mb-1">Profed Laun</h4>
-                                <span class="designation">Manager</span>
-                            </div>
-                        </div>
-                        <!-- team-card end -->
-                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -123,6 +41,7 @@ export default {
     created(){
     	
     },
+    props: ['data'],
     // components: { Menu },
     methods: {
     },
@@ -131,4 +50,15 @@ export default {
 
 </script>
 <style>
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
 </style>

@@ -16,6 +16,6 @@ $factory->define(Transaction::class, function (Faker $faker) {
 		'amount' => $faker->numberBetween($min = 50, $max = 200000),
 		'sent' => true,
 		'confirmed' => true,
-		'reference' => $user->username,
+		'reference' => 'SELF',
 	];
 });

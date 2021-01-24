@@ -19,14 +19,15 @@ class TransactionResource extends JsonResource {
 			'id' => $this->id,
 			'user_id' => $user->id,
 			'username' => $user->username,
+			'image' => $user->image,
 			'owner' => $user->last_name . ' ' . $user->first_name,
 			'amount' => $this->amount,
 			'sent' => $this->sent,
 			'confirmed' => $this->confirmed,
 			'reference' => $this->reference,
 			'currency_code' => $this->currency_code,
-			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans(),
-			'created_at' => $this->created_at->format('Y-m-d H:i:s'),
+			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->toFormattedDateString(),
+			'created_at' => $this->created_at->format('Y-m-d'),
 			'updated_at' => $this->updated_at->format('Y-m-d H:i:s'),
 		];
 	}
