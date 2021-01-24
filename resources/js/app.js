@@ -97,6 +97,7 @@ const app = new Vue({
         transactions : [],
         withdrawals : [],
         teams : [],
+        payments : [],
     },
     el: '#app',
     router,
@@ -120,6 +121,7 @@ const app = new Vue({
         this.getTestimonials();
         this.getTransactions();
         this.getWithdrawals();
+        this.getPayments();
         },
     methods: {
         alert(type, title, message) {
@@ -141,11 +143,21 @@ const app = new Vue({
             this.getTestimonials();
             this.getTransactions();
             this.getWithdrawals();
+            this.getPayments();
         },
         getPackages(){
             this.$http.get("/auth/packagess")
                 .then(response => {
                     this.packages = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+        },
+        getPayments(){
+            this.$http.get("/auth/paymentss")
+                .then(response => {
+                    this.payments = response.data.data.item.data
                 })
                 .catch(error => {
                     console.log(error.response)

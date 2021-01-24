@@ -302,7 +302,7 @@
         </section>
         <!-- cta section end -->
         <!-- payment brand section start -->
-        <PaymentBrand></PaymentBrand>
+        <PaymentBrand :data = "$root.payments"></PaymentBrand>
         <!-- payment brand section end -->
         <!-- blog section start -->
         <Blog></Blog>

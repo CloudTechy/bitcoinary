@@ -48,6 +48,7 @@ Route::prefix('v1')->group(function () {
 
 		Route::get('transactionss', 'TransactionController@index');
 		Route::get('withdrawalss', 'WithdrawalController@index');
+		Route::get('paymentss', 'PaymentMethodController@index');
 
 
 		// Below mention routes are available only for the authenticated users.

@@ -6655,54 +6655,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {};
   },
   computed: {},
   created: function created() {},
+  props: ['data'],
   // components: { Menu },
   methods: {}
 });
@@ -57417,95 +57376,23 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-lg-12" }, [
-          _c("div", { staticClass: "payment-slider" }, [
-            _c("div", { staticClass: "single-slide" }, [
-              _c("div", { staticClass: "brand-item" }, [
-                _c("img", {
-                  attrs: {
-                    src: _vm.$root.basepath + "/images/brand/1.png",
-                    alt: "image"
-                  }
-                })
+          _c(
+            "div",
+            { staticClass: "payment-slider" },
+            _vm._l(_vm.data, function(py) {
+              return _c("div", { staticClass: "single-slide" }, [
+                _c("div", { staticClass: "brand-item" }, [
+                  _c("img", {
+                    attrs: {
+                      src: _vm.$root.basepath + "/images/uploads/" + py.image,
+                      alt: "image"
+                    }
+                  })
+                ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "single-slide" }, [
-              _c("div", { staticClass: "brand-item" }, [
-                _c("img", {
-                  attrs: {
-                    src: _vm.$root.basepath + "/images/brand/2.png",
-                    alt: "image"
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "single-slide" }, [
-              _c("div", { staticClass: "brand-item" }, [
-                _c("img", {
-                  attrs: {
-                    src: _vm.$root.basepath + "/images/brand/3.png",
-                    alt: "image"
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "single-slide" }, [
-              _c("div", { staticClass: "brand-item" }, [
-                _c("img", {
-                  attrs: {
-                    src: _vm.$root.basepath + "/images/brand/4.png",
-                    alt: "image"
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "single-slide" }, [
-              _c("div", { staticClass: "brand-item" }, [
-                _c("img", {
-                  attrs: {
-                    src: _vm.$root.basepath + "/images/brand/5.png",
-                    alt: "image"
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "single-slide" }, [
-              _c("div", { staticClass: "brand-item" }, [
-                _c("img", {
-                  attrs: {
-                    src: _vm.$root.basepath + "/images/brand/6.png",
-                    alt: "image"
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "single-slide" }, [
-              _c("div", { staticClass: "brand-item" }, [
-                _c("img", {
-                  attrs: {
-                    src: _vm.$root.basepath + "/images/brand/7.png",
-                    alt: "image"
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "single-slide" }, [
-              _c("div", { staticClass: "brand-item" }, [
-                _c("img", {
-                  attrs: {
-                    src: _vm.$root.basepath + "/images/brand/8.png",
-                    alt: "image"
-                  }
-                })
-              ])
-            ])
-          ])
+            }),
+            0
+          )
         ])
       ])
     ])
@@ -59706,7 +59593,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("PaymentBrand"),
+      _c("PaymentBrand", { attrs: { data: _vm.$root.payments } }),
       _vm._v(" "),
       _c("Blog"),
       _vm._v(" "),
@@ -97293,7 +97180,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     testimonials: [],
     transactions: [],
     withdrawals: [],
-    teams: []
+    teams: [],
+    payments: []
   },
   el: '#app',
   router: _router__WEBPACK_IMPORTED_MODULE_8__["default"],
@@ -97327,6 +97215,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     this.getTestimonials();
     this.getTransactions();
     this.getWithdrawals();
+    this.getPayments();
   },
   methods: {
     alert: function alert(type, title, message) {
@@ -97348,6 +97237,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       this.getTestimonials();
       this.getTransactions();
       this.getWithdrawals();
+      this.getPayments();
     },
     getPackages: function getPackages() {
       var _this = this;
@@ -97358,56 +97248,65 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
         console.log(error.response);
       });
     },
-    getNews: function getNews() {
+    getPayments: function getPayments() {
       var _this2 = this;
 
+      this.$http.get("/auth/paymentss").then(function (response) {
+        _this2.payments = response.data.data.item.data;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    getNews: function getNews() {
+      var _this3 = this;
+
       this.$http.get("/auth/newss").then(function (response) {
-        _this2.news = response.data.data.item;
+        _this3.news = response.data.data.item;
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     getTeams: function getTeams() {
-      var _this3 = this;
+      var _this4 = this;
 
       this.$http.get("/auth/teamss").then(function (response) {
-        _this3.teams = response.data.data.item;
+        _this4.teams = response.data.data.item;
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     getInvestors: function getInvestors() {
-      var _this4 = this;
+      var _this5 = this;
 
       this.$http.get("/auth/investorss").then(function (response) {
-        _this4.investors = response.data.data.item;
+        _this5.investors = response.data.data.item;
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     getTestimonials: function getTestimonials() {
-      var _this5 = this;
+      var _this6 = this;
 
       this.$http.get("/auth/testimonialss").then(function (response) {
-        _this5.testimonials = response.data.data.item;
+        _this6.testimonials = response.data.data.item;
       })["catch"](function (error) {
         console.log(error);
       });
     },
     getTransactions: function getTransactions() {
-      var _this6 = this;
+      var _this7 = this;
 
       this.$http.get("/auth/transactionss?pageSize=6&reference=SELF").then(function (response) {
-        _this6.transactions = response.data.data.item;
+        _this7.transactions = response.data.data.item;
       })["catch"](function (error) {
         console.log(error);
       });
     },
     getWithdrawals: function getWithdrawals() {
-      var _this7 = this;
+      var _this8 = this;
 
       this.$http.get("/auth/withdrawalss?pageSize=6").then(function (response) {
-        _this7.withdrawals = response.data.data.item;
+        _this8.withdrawals = response.data.data.item;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -97479,44 +97378,44 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       this.time = moment__WEBPACK_IMPORTED_MODULE_12___default()().format("h:mm:ss a");
     },
     btcRate: function btcRate() {
-      var _this8 = this;
+      var _this9 = this;
 
       this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(function (response) {
-        _this8.usd_btc_rate = response.data.bpi.USD.rate;
-        _this8.eur_btc_rate = response.data.bpi.EUR.rate;
+        _this9.usd_btc_rate = response.data.bpi.USD.rate;
+        _this9.eur_btc_rate = response.data.bpi.EUR.rate;
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     btcVolume: function btcVolume() {
-      var _this9 = this;
+      var _this10 = this;
 
       this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT").then(function (response) {
         var volume = response.data.volume;
-        _this9.btc_volume = parseInt(volume) / 3;
-        _this9.active_trade = volume; // console.log(response.data);
+        _this10.btc_volume = parseInt(volume) / 3;
+        _this10.active_trade = volume; // console.log(response.data);
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     getIp: function getIp() {
-      var _this10 = this;
+      var _this11 = this;
 
       var form = new vform__WEBPACK_IMPORTED_MODULE_16__["Form"]();
       form.get("https://api.ipify.org?format=json").then(function (response) {
-        _this10.ip = response.data.ip;
+        _this11.ip = response.data.ip;
         localStorage.ip = JSON.stringify(response.data.ip);
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     refreshUser: function refreshUser() {
-      var _this11 = this;
+      var _this12 = this;
 
       this.$auth.fetch({
         params: {},
         success: function success(response) {
-          _this11.user = _this11.$auth.user();
+          _this12.user = _this12.$auth.user();
         },
         error: function error(_error) {
           console.log(_error.response.data);

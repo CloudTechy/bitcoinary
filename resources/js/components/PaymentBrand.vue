@@ -13,51 +13,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="payment-slider">
-                            <div class="single-slide">
+                            <div v-for = "py in data" class="single-slide">
                                 <div class="brand-item">
-                                    <img :src="$root.basepath + '/images/brand/1.png'" alt="image">
-                                </div>
-                                <!-- brand-item end -->
-                            </div>
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img :src="$root.basepath + '/images/brand/2.png'" alt="image">
-                                </div>
-                                <!-- brand-item end -->
-                            </div>
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img :src="$root.basepath + '/images/brand/3.png'" alt="image">
-                                </div>
-                                <!-- brand-item end -->
-                            </div>
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img :src="$root.basepath + '/images/brand/4.png'" alt="image">
-                                </div>
-                                <!-- brand-item end -->
-                            </div>
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img :src="$root.basepath + '/images/brand/5.png'" alt="image">
-                                </div>
-                                <!-- brand-item end -->
-                            </div>
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img :src="$root.basepath + '/images/brand/6.png'" alt="image">
-                                </div>
-                                <!-- brand-item end -->
-                            </div>
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img :src="$root.basepath + '/images/brand/7.png'" alt="image">
-                                </div>
-                                <!-- brand-item end -->
-                            </div>
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img :src="$root.basepath + '/images/brand/8.png'" alt="image">
+                                    <img :src="$root.basepath + '/images/uploads/' + py.image" alt="image">
                                 </div>
                                 <!-- brand-item end -->
                             </div>
@@ -80,6 +38,7 @@ export default {
     created(){
     	
     },
+    props : ['data'],
     // components: { Menu },
     methods: {
     },
