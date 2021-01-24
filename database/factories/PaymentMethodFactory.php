@@ -12,5 +12,6 @@ $factory->define(PaymentMethod::class, function (Faker $faker) {
         'name' => $paymentMethod,
         'show_on' => $paymentMethod == 'Tron' ? 'deposit' : $show,
         'type' => 'crypto',
+        'image' => '1.jpg',
     ];
 });

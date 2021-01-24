@@ -18,6 +18,7 @@ class CreatePaymentMethodsTable extends Migration
             $table->string('name')->index();
             $table->primary('name');
             $table->string('show_on')->default('both');
+            $table->string('image');
             $table->string('type')->index();
         });
         Schema::table('bank_details', function ($table) {

@@ -68,6 +68,13 @@ Route::prefix('v1')->group(function () {
 			Route::get('bankdetails/{bankdetail}', 'BankDetailController@show');
 			Route::patch('bankdetails/{bankdetail}', 'BankDetailController@update');
 			Route::resource('bankdetails', 'BankDetailController');
+
+			Route::resource('teams', 'TeamController');
+			Route::resource('investors', 'InvestorController');
+			Route::resource('newsletters', 'NewsletterController');
+			Route::resource('testimonials', 'TestimonialController');
+			Route::resource('news', 'NewsController');
+
 			Route::resource('paymentmethods', 'PaymentMethodController');
 			Route::resource('packageusers', 'PackageUserController');
 			Route::resource('transactions', 'TransactionController');
@@ -79,7 +86,7 @@ Route::prefix('v1')->group(function () {
 			Route::post('pop', 'WithdrawalController@popUpload');
 			Route::post('email', 'EmailController@sendEmail');
 			Route::post('showWlt', 'TransactionController@wlt');
-			Route::post('deposit', 'TransactionController@deposit');
+			Route::post('deposit', 'PackageUserController@deposit');
 
 		});
 	});

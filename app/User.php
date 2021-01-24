@@ -15,7 +15,7 @@ use \DB;
 
 class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 	use Notifiable;
-	protected $fillable = ['first_name', 'withdraw_request', 'secret_question', 'created_at', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
+	protected $fillable = ['first_name','image', 'withdraw_request', 'secret_question', 'created_at', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
 	protected $hidden = ['password', 'remember_token'];
 	protected $casts = ['email_verified_at' => 'datetime'];
 	protected $appends = array('processedWithdrawals', 'confirmedWithdrawals', 'nullWithdrawals', 'names', 'balance', 'confirmedTransactions', 'nullTransactions', 'sentTransactions', 'totalEarned', 'activeTransactions', 'activePackages', 'maturePackages', 'processMaturePackages', 'canWithdraw');
@@ -123,7 +123,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 		$this->notify(new \App\Notifications\MailResetPasswordNotification($token));
 	}
 	public function packages() {
-		return $this->belongsToMany(Package::class)->withPivot('id', 'transaction_id', 'referral', 'amount', 'expiration','pop', 'active')->as('subscription')->withTimestamps();
+		return $this->belongsToMany(Package::class)->withPivot('id', 'transaction_id', 'referral', 'amount','roi', 'expiration','pop', 'active')->as('subscription')->withTimestamps();
 
 	}
 	public function withdrawDuration() {

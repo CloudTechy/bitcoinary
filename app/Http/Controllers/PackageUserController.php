@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helper;
 use App\Http\Requests\ValidatePackageUserRequest;
+use App\Http\Requests\ValidateTransactionRequest;
 use App\Http\Resources\PackageUserResource;
 use App\Notifications\PackageSubscribed;
 use App\Notifications\NewDepositRequest;
@@ -66,7 +67,7 @@ class PackageUserController extends Controller {
 
 		                $file = $request->file('pop');
 
-		                $file->move('img/uploads', $file->getClientOriginalName());
+		                $file->move('images/uploads', $file->getClientOriginalName());
 
 		                $pop = $file->getClientOriginalName();
 		                  $ad = User::find(2);
@@ -80,7 +81,8 @@ class PackageUserController extends Controller {
 		try
 		{
 			$user = User::find($validated['user_id']);
-			$package = Package::find($validated['package_id']);
+			$package = Package::whereRaw('? >= min_deposit  and ? <= max_deposit',[$validated['amount'],$validated['amount']])->firstOrFail();
+			// $package = Package::find($validated['package_id']);
 
 			// if(PackageUser::where('user_id', $user->id)->where('active', true)->count() > 0){
 			// 	return Helper::invalidRequest(['This subscription is invalid'], 'Oops!!! There is an active subscription on this account', 400);
@@ -98,7 +100,7 @@ class PackageUserController extends Controller {
 
 				$withdrawal = $user->withdrawals()->create(['amount' => $validated['amount'], 'reference' => 'Bitcoinary Finance', 'processed' => true, 'confirmed' => true]);
 
-				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
+				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
 
 				$user->notify(new WithdrawalMade($withdrawal));
 				$user->notify(new PackageSubscribed($package));
@@ -111,20 +113,9 @@ class PackageUserController extends Controller {
 				$subscription = new PackageUserResource($subscription);
 				return Helper::validRequest($subscription, 'subscription was successful', 200);
 			} else {
-				if ($request->hasFile('pop')) {
-
-		            if ($request->file('pop')->isValid()) {
-
-		                $file = $request->file('pop');
-
-		                $file->move('img/uploads', $file->getClientOriginalName());
-
-		                $pop = $file->getClientOriginalName();
-		            }
-		        }
+		        $pop = Helper::uploadImage($request, 'pop', 'images/pop');
 		        $transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $validated['amount'], 'pop' => $pop]);
-
-				$subscription = PackageUser::create(['transaction_id' => $transaction->id, 'user_id' => $user->id, 'package_id' => $package->id, 'amount' => $validated['amount'], 'active' => false]);
+				$subscription = PackageUser::create(['transaction_id' => $transaction->id, 'user_id' => $user->id, 'package_id' => $package->id, 'roi' => $package->roi, 'pop' => $pop, 'amount' => $validated['amount'],  'active' => false]);
 
 				// if ($user->balance > 0) {
 				// 	$withdrawal = $user->withdrawals()->create(['amount' => $user->balance, 'reference' => 'BFIN', 'processed' => true, 'confirmed' => true]);
@@ -177,7 +168,20 @@ class PackageUserController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function update(Request $request, PackageUser $packageuser) {
-		//
+		$validated = $request->validate([
+            'pop' => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
+        ]);
+        DB::beginTransaction();
+        try {
+            $validated['pop'] = $request->hasFile('pop') ? Helper::uploadImage($request, 'pop', 'images/pop') : $packageuser->image;
+
+            $packageuser = $packageuser->update($validated);
+            DB::commit();
+            return Helper::validRequest(["success" => $packageuser], 'data was updated successfully', 200);
+        } catch (Exception $bug) {
+            DB::rollback();
+            return $this->exception($bug, 'unknown error', 500);
+        }
 	}
 
 	/**
@@ -283,6 +287,35 @@ class PackageUserController extends Controller {
 		}
 		else{
 			return false;
+		}
+	}
+	public function deposit(ValidateTransactionRequest $request){
+		$validated = $request->validated();
+		try
+		{
+			$user = User::find($validated['user_id']);
+			$package = Package::whereRaw('? >= min_deposit  and ? <= max_deposit',[$validated['amount'],$validated['amount']])->firstOrFail();
+			DB::beginTransaction();
+
+			$transaction = $user->transactions()->create(['reference' =>$validated['reference'] ,'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
+
+			$withdrawal = $user->withdrawals()->create(['amount' => $validated['amount'], 'reference' => 'Bitcoinary Finance', 'processed' => true, 'confirmed' => true]);
+
+			$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
+
+			// $user->notify(new WithdrawalMade($withdrawal));
+			$user->notify(new PackageSubscribed($package));
+
+
+			DB::commit();
+
+			$this->referralPayment($subscription);
+
+			$subscription = new PackageUserResource($subscription);
+			return Helper::validRequest($subscription, 'subscription was successful', 200);
+		} catch (Exception $bug) {
+			DB::rollback();
+			return $this->exception($bug, 'unknown error', 500);
 		}
 	}
 	

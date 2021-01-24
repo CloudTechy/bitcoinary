@@ -316,12 +316,30 @@ class Helper {
 	}
 	public static function checkWlt($wallet){
 		if(empty($wallet)){
-				return true;
-			}
-			else{
-				return static::validateWallet($wallet);
-			}
+			return true;
 		}
+		else{
+			return static::validateWallet($wallet);
+		}
+	}
+	public static function uploadImage(Request $request, $filename = 'image', $path = 'image'){
+		
+		if ($request->hasFile($filename)) {
+
+            if ($request->file($filename)->isValid()) {
+
+                $file = $request->file($filename);
+
+                $file->move($path, $file->getClientOriginalName());
+
+                $imagePath = $file->getClientOriginalName();
+                  return $imagePath;
+            }
+            else return 'not valid';
+        }
+        else return 'no file ' . $filename;
+
+	}
 
 
 

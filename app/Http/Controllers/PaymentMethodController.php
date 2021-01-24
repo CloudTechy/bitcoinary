@@ -59,10 +59,11 @@ class PaymentMethodController extends Controller
             "name" => "required|unique:payment_methods,name|string",
             "show_on" => 'required|string|in:both,withdrawal,deposit',
             "type" => 'required|string|in:crypto,fiat',
+            "image" => 'required|mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
 
         ]);
         DB::beginTransaction();
-
+         $validated['image'] = Helper::uploadImage($request, 'image', 'images/payment');
         try
         {
             $paymentmethod = PaymentMethod::create($validated);
@@ -114,11 +115,14 @@ class PaymentMethodController extends Controller
     public function update(Request $request, PaymentMethod $paymentmethod)
     {
         $validated = $request->validate([
+            "name" => 'unique:payment_methods,name|string|min:2|max:100',
             "show_on" => 'string|in:both,withdrawal,deposit',
             "type" => 'string|in:crypto,fiat',
+            "image" => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
 
         ]);
         DB::beginTransaction();
+        $validated['image'] = $request->hasFile('image') ? Helper::uploadImage($request, 'image', 'images/payment') : $paymentmethod->image;
         try {
 
             $data = $paymentmethod->update($validated);

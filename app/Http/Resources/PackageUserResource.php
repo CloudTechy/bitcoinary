@@ -25,7 +25,7 @@ class PackageUserResource extends JsonResource {
 			'amount' => $this->amount,
 			'expiration' => $this->expiration,
 			'turnover' => $package->turnover,
-			'roi' => $package->roi,
+			'roi' => $this->roi, // yet to be implemented
 			'pop' => $this->pop,
 			'transaction_id' => $this->transaction_id,
 			'expired' => !empty($this->expiration) && $this->active == false ? true : false,

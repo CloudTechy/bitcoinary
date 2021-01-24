@@ -22,8 +22,7 @@ class ValidatePackageUserRequest extends FormRequest {
 	public function rules() {
 		return [
 			'user_id' => 'required|numeric|exists:users,id',
-			'package_id' => 'required|numeric|exists:packages,id',
-			'pop' => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
+			'pop' => 'required|mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
 			'amount' => 'required|numeric|min:50',
 		];
 	}

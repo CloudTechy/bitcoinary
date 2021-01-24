@@ -160,22 +160,5 @@ class TransactionController extends Controller {
 		}
 	}
 
-	public function deposit(ValidateTransactionRequest $request){
-		$validated = $request->validated();
-		$validated['sent'] =  true;
-		$validated['confirmed'] =  true;
-		$validated['active'] =  false;
-		$validated['currency_code'] = empty($validated['currency_code']) ? 'USD' : $validated['currency_code'];
-		DB::beginTransaction();
-		try
-		{
-			$data = Transaction::create($validated);
-			DB::commit();
-			$data = new TransactionResource($data);
-			return Helper::validRequest($data, 'Amount deposited successfully', 200);
-		} catch (Exception $bug) {
-			DB::rollback();
-			return $this->exception($bug, 'unknown error', 500);
-		}
-	}
+	
 }

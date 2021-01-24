@@ -112,6 +112,7 @@ class UserController extends Controller {
 			"email" => "email",
 			'password' => 'string|min:5|confirmed',
 			'user_level_id' => 'integer',
+			'image' => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
 		]);
 		try {
 			if (isset($validated['password'])) {

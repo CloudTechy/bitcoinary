@@ -3,7 +3,7 @@
         <div  v-for = "plan in $root.packages" class="col-xl-3 col-lg-4 col-md-6 mb-30">
             <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
                 <h4 class="package-card__title base--color text-capitalize mb-2">{{plan.name}}</h4>
-                <div v-if="plan.name == 'bronze' || plan.name == 'silver' ">
+                <div v-if="plan.name == 'Bronze' || plan.name == 'Silver' ">
                 	<ul class="package-card__features mt-4">
 	                    <li>Return {{plan.roi}}%</li>
 	                    <li>Every {{plan.turnover}}</li>
@@ -11,7 +11,7 @@
 	                    <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span></li>
 	                </ul>
                 </div>
-                <div v-if="plan.name == 'gold'">
+                <div v-if="plan.name == 'Gold'">
                 	<ul class="package-card__features mt-4">
 	                    <li>Return {{plan.roi}}%</li>
 	                    <li>Every {{plan.turnover}}</li>
@@ -19,7 +19,7 @@
 	                    <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span></li>
 	                </ul>
                 </div>
-                <div v-if="plan.name == 'premium'">
+                <div v-if="plan.name == 'Premium'">
                 	<ul class="package-card__features mt-4">
 	                    <li>Return {{plan.roi}}%</li>
 	                    <li>Every {{plan.turnover}}</li>
@@ -40,26 +40,16 @@
 export default {
     data() {
         return {
-        	packages : [],
+        	
         }
            
     },
     computed: {},
     created(){
-    	this.getPackages();
+    	
     },
     // components: { Menu },
     methods: {
-    	getPackages(){
-    		this.$http.get("/auth/packages")
-                .then(response => {
-                    this.packages = response.data.data.item
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
-    	}
-
     },
 
 }

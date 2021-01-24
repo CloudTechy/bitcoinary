@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration {
 			$table->string('number')->nullable();
 			$table->string('email')->unique();
 			$table->string('password');
+			$table->string('image')->nullable();
 			$table->timestamp('email_verified_at')->nullable();
 			$table->bigInteger('user_level_id')->unsigned()->index();
 			$table->string('referral')->nullable();
