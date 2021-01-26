@@ -7113,6 +7113,74 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/newsletter.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/newsletter.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      form: new Form({
+        email: ''
+      })
+    };
+  },
+  computed: {},
+  created: function created() {},
+  // components: { Menu },
+  methods: {
+    subscribe: function subscribe() {
+      var _this = this;
+
+      if (this.form.email) {
+        this.form.post("/auth/newsletterss").then(function (response) {
+          _this.$root.alert('success', 'Ok', 'you have subscribed successfully');
+
+          _this.form.reset();
+        })["catch"](function (error) {
+          _this.errors = error.response.data.error || {};
+          console.log(error.response);
+
+          _this.$root.alert('error', ' ', 'subscription was not successful, please try again...');
+        });
+      } else return false;
+
+      return false;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/packageCalculator.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/packageCalculator.vue?vue&type=script&lang=js& ***!
@@ -7642,27 +7710,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -58371,6 +58418,116 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/newsletter.vue?vue&type=template&id=a0703e78&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/newsletter.vue?vue&type=template&id=a0703e78& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("section", { staticClass: "pb-120" }, [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-lg-10" }, [
+          _c(
+            "div",
+            {
+              staticClass: "subscribe-wrapper bg_img",
+              attrs: {
+                "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg"
+              }
+            },
+            [
+              _c("div", { staticClass: "row align-items-center" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-lg-7 mt-lg-0 mt-4" }, [
+                  _c(
+                    "form",
+                    {
+                      staticClass: "subscribe-form",
+                      attrs: { action: "", method: "post" }
+                    },
+                    [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.email,
+                            expression: "form.email"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "email",
+                          required: "",
+                          placeholder: "Email Address "
+                        },
+                        domProps: { value: _vm.form.email },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "email", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "subscribe-btn",
+                          attrs: { type: "submit" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.subscribe($event)
+                            },
+                            submit: function($event) {
+                              $event.preventDefault()
+                              return _vm.subscribe($event)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "las la-envelope" })]
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-5" }, [
+      _c("h2", { staticClass: "title" }, [_vm._v("Subscribe Our Newsletter")])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/packageCalculator.vue?vue&type=template&id=5f44b5a6&":
 /*!********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/packageCalculator.vue?vue&type=template&id=5f44b5a6& ***!
@@ -58740,6 +58897,54 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/404.vue?vue&type=template&id=82158542&":
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/404.vue?vue&type=template&id=82158542& ***!
+  \*************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "page-wrapper" }, [
+      _c("div", { staticClass: "error-area" }, [
+        _c("div", { staticClass: "error-content text-center" }, [
+          _c("div", { staticClass: "error-num" }, [
+            _vm._v("\n          404\n          "),
+            _c("div", { staticClass: "error-num__clip" }, [_vm._v("404")])
+          ]),
+          _vm._v(" "),
+          _c("h2", [_vm._v("Page Not Found")]),
+          _vm._v(" "),
+          _c(
+            "a",
+            { staticClass: "cmn-btn mt-4", attrs: { href: "index.html" } },
+            [_vm._v("Go back to Home")]
+          )
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/About.vue?vue&type=template&id=520b5d54&":
 /*!***************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/About.vue?vue&type=template&id=520b5d54& ***!
@@ -58755,195 +58960,81 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "section",
-      {
-        staticClass: "main-container",
-        style:
-          "background:url(" +
-          _vm.$root.basepath +
-          "/img/home.png) no-repeat 0 0;"
-      },
-      [
-        _c("div", { staticClass: "main" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "wrapper" }, [
-              _c("div", { staticClass: "row company" }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c("div", { staticClass: "services" }, [
-                  _c("ul", { staticClass: "row" }, [
-                    _c("li", { staticClass: "col col-md-6 text-center" }, [
-                      _c("div", { staticClass: "inner-s" }, [
-                        _c("img", {
-                          staticClass: "centered-img",
-                          attrs: { src: _vm.$root.basepath + "/img/key-1.png" }
-                        }),
-                        _vm._v(" "),
-                        _c("h4", [_vm._v("High growth & substantial returns")]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            " Bitcoinary Mint Limited is guided by an excellent team to ensure lofty yields & steady profits in the long run."
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "col col-md-6 text-center" }, [
-                      _c("div", { staticClass: "inner-s" }, [
-                        _c("img", {
-                          staticClass: "centered-img",
-                          attrs: { src: _vm.$root.basepath + "/img/key-2.png" }
-                        }),
-                        _vm._v(" "),
-                        _c("h4", [
-                          _vm._v("Outstanding 14% affiliate commission")
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Earn splendid five level affiliate commission by referring others. Make us popular & we will make you rich!"
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "col col-md-6 text-center" }, [
-                      _c("div", { staticClass: "inner-s" }, [
-                        _c("img", {
-                          staticClass: "centered-img",
-                          attrs: { src: _vm.$root.basepath + "/img/key-3.png" }
-                        }),
-                        _vm._v(" "),
-                        _c("h4", [_vm._v("Strong Anti-Ddos protection")]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Our company has robust security measures with a tough layer of defense to stop attacks of all types and sizes."
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "col col-md-6 text-center" }, [
-                      _c("div", { staticClass: "inner-s" }, [
-                        _c("img", {
-                          staticClass: "centered-img",
-                          attrs: { src: _vm.$root.basepath + "/img/key-4.png" }
-                        }),
-                        _vm._v(" "),
-                        _c("h4", [_vm._v("Registered Company")]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            " Bitcoinary Mint is fully registered in United States."
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "big-video",
-                    staticStyle: { position: "relative" }
-                  },
-                  [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      staticStyle: { width: "100%" },
-                      attrs: { src: _vm.$root.basepath + "/img/screen-big.png" }
-                    }),
-                    _vm._v(" "),
-                    _vm._m(2)
-                  ]
-                )
-              ])
-            ])
-          ])
-        ])
-      ]
-    )
-  ])
+  return _c(
+    "section",
+    {
+      staticClass: "bg_img pt-120 pb-120 border-top-1",
+      attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-10.jpg" }
+    },
+    [_vm._m(0)]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row page-title m-3 p-2" }, [
-      _c("div", { staticClass: "col-12 col-lg-8 container" }, [
-        _c("h1", [_vm._v("About Us")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            " Bitcoinary Mint is an innovating company diversified in several Investment methods\n                Our company is a big investor in real estate,oil and gas,gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of most popular Crypto currency by volume-Bitcoins. Such Investment methods is free from capital loss and returns supposed profits.\n            "
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "col-md-7 col-11 m-1 p-2 company-profile" },
-      [
-        _c("h2", { staticClass: "company-title" }, [_vm._v("Our Company")]),
-        _vm._v(" "),
-        _c("p", {}, [
-          _vm._v(
-            " \n                                Bitcoinary Mint started in 2005 as a Financial Advisory Firm and recently in 2018 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading."
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bitcoinary Mint team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of Bitcoinary Mint Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. "
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(
-            "We have put great efforts to provide our clients with a user-friendly profit making investment platform. Also, the developers are real technical mavericks, whose vision to create a unique investment system has become successful. Also, you can be sure of security since we ensure that no one will access your data without consent."
-          ),
-          _c("br")
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
       "div",
       {
-        staticClass: "video-youtube",
-        staticStyle: { top: "40px", left: "40px" }
+        staticClass: "container",
+        staticStyle: {
+          "background-color": "rgba(0,0,0,0.5)",
+          padding: "40px 10px"
+        }
       },
       [
-        _c("iframe", {
-          staticStyle: { width: "100%" },
-          attrs: {
-            src: "https://www.youtube.com/embed/5xsDZolAW2o",
-            frameborder: "0",
-            allow:
-              "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-            allowfullscreen: ""
-          }
-        })
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-lg-6 text-center" }, [
+            _c("div", { staticClass: "section-header" }, [
+              _c("h2", { staticClass: "section-title" }, [
+                _c("span", { staticClass: "font-weight-normal" }, [
+                  _vm._v("About ")
+                ]),
+                _vm._v(" "),
+                _c("b", { staticClass: "base--color" }, [_vm._v("Us")])
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "blog-details__content" }, [
+                _vm._v(
+                  "\n                        Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits.\n                    "
+                )
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("div", { staticClass: "blog-details-wrapper" }, [
+            _c("div", { staticClass: "blog-details__content" }, [
+              _c("h4", { staticClass: "blog-details__title" }, [
+                _vm._v("Our Company")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "p-2" }, [
+                _vm._v(
+                  "\n                        Bitcoinary Mint started in 2005 as a Financial Advisory Firm and recently in 2018 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading."
+                ),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bitcoinary Mint team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
+                ),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of Bitcoinary Mint Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. "
+                ),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  "We have put great efforts to provide our clients with a user-friendly profit making investment platform. Also, the developers are real technical mavericks, whose vision to create a unique investment system has become successful. Also, you can be sure of security since we ensure that no one will access your data without consent."
+                ),
+                _c("br")
+              ])
+            ])
+          ])
+        ])
       ]
     )
   }
@@ -59873,25 +59964,7 @@ var render = function() {
       _vm._v(" "),
       _c("PaymentBrand", { attrs: { data: _vm.$root.payments } }),
       _vm._v(" "),
-      _c("section", { staticClass: "pb-120" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row justify-content-center" }, [
-            _c("div", { staticClass: "col-lg-10" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "subscribe-wrapper bg_img",
-                  attrs: {
-                    "data-background":
-                      _vm.$root.basepath + "/images/bg/bg-5.jpg"
-                  }
-                },
-                [_vm._m(6)]
-              )
-            ])
-          ])
-        ])
-      ])
+      _c("newsletter")
     ],
     1
   )
@@ -60269,29 +60342,6 @@ var staticRenderFns = [
                 _vm._v("Get Profit")
               ])
             ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row align-items-center" }, [
-      _c("div", { staticClass: "col-lg-5" }, [
-        _c("h2", { staticClass: "title" }, [_vm._v("Subscribe Our Newsletter")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-7 mt-lg-0 mt-4" }, [
-        _c("form", { staticClass: "subscribe-form" }, [
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "email", placeholder: "Email Address" }
-          }),
-          _vm._v(" "),
-          _c("button", { staticClass: "subscribe-btn" }, [
-            _c("i", { staticClass: "las la-envelope" })
           ])
         ])
       ])
@@ -98157,8 +98207,10 @@ var map = {
 	"./components/Transaction.vue": "./resources/js/components/Transaction.vue",
 	"./components/ViewComponent.vue": "./resources/js/components/ViewComponent.vue",
 	"./components/bootstrap.vue": "./resources/js/components/bootstrap.vue",
+	"./components/newsletter.vue": "./resources/js/components/newsletter.vue",
 	"./components/packageCalculator.vue": "./resources/js/components/packageCalculator.vue",
 	"./components/testimonial.vue": "./resources/js/components/testimonial.vue",
+	"./pages/404.vue": "./resources/js/pages/404.vue",
 	"./pages/About.vue": "./resources/js/pages/About.vue",
 	"./pages/CheckEmail.vue": "./resources/js/pages/CheckEmail.vue",
 	"./pages/ConfirmRegistration.vue": "./resources/js/pages/ConfirmRegistration.vue",
@@ -100175,6 +100227,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/newsletter.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/newsletter.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _newsletter_vue_vue_type_template_id_a0703e78___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./newsletter.vue?vue&type=template&id=a0703e78& */ "./resources/js/components/newsletter.vue?vue&type=template&id=a0703e78&");
+/* harmony import */ var _newsletter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./newsletter.vue?vue&type=script&lang=js& */ "./resources/js/components/newsletter.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _newsletter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _newsletter_vue_vue_type_template_id_a0703e78___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _newsletter_vue_vue_type_template_id_a0703e78___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/newsletter.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/newsletter.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/newsletter.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_newsletter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./newsletter.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/newsletter.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_newsletter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/newsletter.vue?vue&type=template&id=a0703e78&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/newsletter.vue?vue&type=template&id=a0703e78& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_newsletter_vue_vue_type_template_id_a0703e78___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./newsletter.vue?vue&type=template&id=a0703e78& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/newsletter.vue?vue&type=template&id=a0703e78&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_newsletter_vue_vue_type_template_id_a0703e78___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_newsletter_vue_vue_type_template_id_a0703e78___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/packageCalculator.vue":
 /*!*******************************************************!*\
   !*** ./resources/js/components/packageCalculator.vue ***!
@@ -100326,6 +100447,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonial_vue_vue_type_template_id_0a43ffb8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_testimonial_vue_vue_type_template_id_0a43ffb8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/404.vue":
+/*!************************************!*\
+  !*** ./resources/js/pages/404.vue ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _404_vue_vue_type_template_id_82158542___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./404.vue?vue&type=template&id=82158542& */ "./resources/js/pages/404.vue?vue&type=template&id=82158542&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _404_vue_vue_type_template_id_82158542___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _404_vue_vue_type_template_id_82158542___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/404.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/404.vue?vue&type=template&id=82158542&":
+/*!*******************************************************************!*\
+  !*** ./resources/js/pages/404.vue?vue&type=template&id=82158542& ***!
+  \*******************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_404_vue_vue_type_template_id_82158542___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./404.vue?vue&type=template&id=82158542& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/404.vue?vue&type=template&id=82158542&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_404_vue_vue_type_template_id_82158542___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_404_vue_vue_type_template_id_82158542___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -102460,35 +102634,37 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Home */ "./resources/js/pages/Home.vue");
-/* harmony import */ var _pages_About__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/About */ "./resources/js/pages/About.vue");
-/* harmony import */ var _pages_getStarted__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/getStarted */ "./resources/js/pages/getStarted.vue");
-/* harmony import */ var _pages_faq__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/faq */ "./resources/js/pages/faq.vue");
-/* harmony import */ var _pages_investmentPlans__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/investmentPlans */ "./resources/js/pages/investmentPlans.vue");
-/* harmony import */ var _pages_partners__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/partners */ "./resources/js/pages/partners.vue");
-/* harmony import */ var _pages_news__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/news */ "./resources/js/pages/news.vue");
-/* harmony import */ var _pages_DataCenter__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/DataCenter */ "./resources/js/pages/DataCenter.vue");
-/* harmony import */ var _pages_Support__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/Support */ "./resources/js/pages/Support.vue");
-/* harmony import */ var _pages_ConfirmRegistration__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/ConfirmRegistration */ "./resources/js/pages/ConfirmRegistration.vue");
-/* harmony import */ var _pages_Register__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/Register */ "./resources/js/pages/Register.vue");
-/* harmony import */ var _pages_Login__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/Login */ "./resources/js/pages/Login.vue");
-/* harmony import */ var _pages_CheckEmail__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/CheckEmail */ "./resources/js/pages/CheckEmail.vue");
-/* harmony import */ var _pages_ResetPasswordForm__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/ResetPasswordForm */ "./resources/js/pages/ResetPasswordForm.vue");
-/* harmony import */ var _pages_ForgotPassword__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/ForgotPassword */ "./resources/js/pages/ForgotPassword.vue");
-/* harmony import */ var _pages_user_Dashboard__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/user/Dashboard */ "./resources/js/pages/user/Dashboard.vue");
-/* harmony import */ var _pages_user_Deposit__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/user/Deposit */ "./resources/js/pages/user/Deposit.vue");
-/* harmony import */ var _pages_user_Withdraw__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./pages/user/Withdraw */ "./resources/js/pages/user/Withdraw.vue");
-/* harmony import */ var _pages_admin_Users__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pages/admin/Users */ "./resources/js/pages/admin/Users.vue");
-/* harmony import */ var _pages_admin_Deposits__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pages/admin/Deposits */ "./resources/js/pages/admin/Deposits.vue");
-/* harmony import */ var _pages_admin_Withdrawals__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./pages/admin/Withdrawals */ "./resources/js/pages/admin/Withdrawals.vue");
-/* harmony import */ var _pages_admin_Subscriptions__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./pages/admin/Subscriptions */ "./resources/js/pages/admin/Subscriptions.vue");
-/* harmony import */ var _pages_admin_Dashboard__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./pages/admin/Dashboard */ "./resources/js/pages/admin/Dashboard.vue");
-/* harmony import */ var _pages_user_reports_WithdrawalReport__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./pages/user/reports/WithdrawalReport */ "./resources/js/pages/user/reports/WithdrawalReport.vue");
-/* harmony import */ var _pages_user_reports_DepositReport__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./pages/user/reports/DepositReport */ "./resources/js/pages/user/reports/DepositReport.vue");
-/* harmony import */ var _pages_user_reports_ReferralReport__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./pages/user/reports/ReferralReport */ "./resources/js/pages/user/reports/ReferralReport.vue");
-/* harmony import */ var _pages_user_reports_TransactionReport__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./pages/user/reports/TransactionReport */ "./resources/js/pages/user/reports/TransactionReport.vue");
-/* harmony import */ var _pages_user_Setting__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./pages/user/Setting */ "./resources/js/pages/user/Setting.vue");
-/* harmony import */ var _pages_user_Security__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./pages/user/Security */ "./resources/js/pages/user/Security.vue");
+/* harmony import */ var _pages_404_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/404.vue */ "./resources/js/pages/404.vue");
+/* harmony import */ var _pages_About__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/About */ "./resources/js/pages/About.vue");
+/* harmony import */ var _pages_getStarted__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/getStarted */ "./resources/js/pages/getStarted.vue");
+/* harmony import */ var _pages_faq__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/faq */ "./resources/js/pages/faq.vue");
+/* harmony import */ var _pages_investmentPlans__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/investmentPlans */ "./resources/js/pages/investmentPlans.vue");
+/* harmony import */ var _pages_partners__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/partners */ "./resources/js/pages/partners.vue");
+/* harmony import */ var _pages_news__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/news */ "./resources/js/pages/news.vue");
+/* harmony import */ var _pages_DataCenter__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/DataCenter */ "./resources/js/pages/DataCenter.vue");
+/* harmony import */ var _pages_Support__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/Support */ "./resources/js/pages/Support.vue");
+/* harmony import */ var _pages_ConfirmRegistration__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/ConfirmRegistration */ "./resources/js/pages/ConfirmRegistration.vue");
+/* harmony import */ var _pages_Register__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/Register */ "./resources/js/pages/Register.vue");
+/* harmony import */ var _pages_Login__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/Login */ "./resources/js/pages/Login.vue");
+/* harmony import */ var _pages_CheckEmail__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/CheckEmail */ "./resources/js/pages/CheckEmail.vue");
+/* harmony import */ var _pages_ResetPasswordForm__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/ResetPasswordForm */ "./resources/js/pages/ResetPasswordForm.vue");
+/* harmony import */ var _pages_ForgotPassword__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/ForgotPassword */ "./resources/js/pages/ForgotPassword.vue");
+/* harmony import */ var _pages_user_Dashboard__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/user/Dashboard */ "./resources/js/pages/user/Dashboard.vue");
+/* harmony import */ var _pages_user_Deposit__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./pages/user/Deposit */ "./resources/js/pages/user/Deposit.vue");
+/* harmony import */ var _pages_user_Withdraw__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pages/user/Withdraw */ "./resources/js/pages/user/Withdraw.vue");
+/* harmony import */ var _pages_admin_Users__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pages/admin/Users */ "./resources/js/pages/admin/Users.vue");
+/* harmony import */ var _pages_admin_Deposits__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./pages/admin/Deposits */ "./resources/js/pages/admin/Deposits.vue");
+/* harmony import */ var _pages_admin_Withdrawals__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./pages/admin/Withdrawals */ "./resources/js/pages/admin/Withdrawals.vue");
+/* harmony import */ var _pages_admin_Subscriptions__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./pages/admin/Subscriptions */ "./resources/js/pages/admin/Subscriptions.vue");
+/* harmony import */ var _pages_admin_Dashboard__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./pages/admin/Dashboard */ "./resources/js/pages/admin/Dashboard.vue");
+/* harmony import */ var _pages_user_reports_WithdrawalReport__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./pages/user/reports/WithdrawalReport */ "./resources/js/pages/user/reports/WithdrawalReport.vue");
+/* harmony import */ var _pages_user_reports_DepositReport__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./pages/user/reports/DepositReport */ "./resources/js/pages/user/reports/DepositReport.vue");
+/* harmony import */ var _pages_user_reports_ReferralReport__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./pages/user/reports/ReferralReport */ "./resources/js/pages/user/reports/ReferralReport.vue");
+/* harmony import */ var _pages_user_reports_TransactionReport__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./pages/user/reports/TransactionReport */ "./resources/js/pages/user/reports/TransactionReport.vue");
+/* harmony import */ var _pages_user_Setting__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./pages/user/Setting */ "./resources/js/pages/user/Setting.vue");
+/* harmony import */ var _pages_user_Security__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./pages/user/Security */ "./resources/js/pages/user/Security.vue");
  // Pages
+
 
 
 
@@ -102530,105 +102706,105 @@ var routes = [{
 }, {
   path: '*',
   name: '404',
-  component: _pages_Home__WEBPACK_IMPORTED_MODULE_1__["default"],
+  component: _pages_404_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
   meta: {
     auth: undefined
   }
 }, {
   path: '/about',
   name: 'about',
-  component: _pages_About__WEBPACK_IMPORTED_MODULE_2__["default"],
+  component: _pages_About__WEBPACK_IMPORTED_MODULE_3__["default"],
   meta: {
     auth: undefined
   }
 }, {
   path: '/checkEmail',
   name: 'checkEmail',
-  component: _pages_CheckEmail__WEBPACK_IMPORTED_MODULE_13__["default"],
+  component: _pages_CheckEmail__WEBPACK_IMPORTED_MODULE_14__["default"],
   meta: {
     auth: undefined
   }
 }, {
   path: '/confirm-registration',
   name: 'confirmRegistration',
-  component: _pages_ConfirmRegistration__WEBPACK_IMPORTED_MODULE_10__["default"],
+  component: _pages_ConfirmRegistration__WEBPACK_IMPORTED_MODULE_11__["default"],
   meta: {
     auth: true
   }
 }, {
   path: '/news',
   name: 'news',
-  component: _pages_news__WEBPACK_IMPORTED_MODULE_7__["default"],
+  component: _pages_news__WEBPACK_IMPORTED_MODULE_8__["default"],
   meta: {
     auth: undefined
   }
 }, {
   path: '/partners',
   name: 'partners',
-  component: _pages_partners__WEBPACK_IMPORTED_MODULE_6__["default"],
+  component: _pages_partners__WEBPACK_IMPORTED_MODULE_7__["default"],
   meta: {
     auth: undefined
   }
 }, {
   path: '/investmentPlans',
   name: 'investmentPlans',
-  component: _pages_investmentPlans__WEBPACK_IMPORTED_MODULE_5__["default"],
+  component: _pages_investmentPlans__WEBPACK_IMPORTED_MODULE_6__["default"],
   meta: {
     auth: undefined
   }
 }, {
   path: '/dataCenter',
   name: 'dataCenter',
-  component: _pages_DataCenter__WEBPACK_IMPORTED_MODULE_8__["default"],
+  component: _pages_DataCenter__WEBPACK_IMPORTED_MODULE_9__["default"],
   meta: {
     auth: undefined
   }
 }, {
   path: '/getStarted',
   name: 'getStarted',
-  component: _pages_getStarted__WEBPACK_IMPORTED_MODULE_3__["default"],
+  component: _pages_getStarted__WEBPACK_IMPORTED_MODULE_4__["default"],
   meta: {
     auth: undefined
   }
 }, {
   path: '/faq',
   name: 'faq',
-  component: _pages_faq__WEBPACK_IMPORTED_MODULE_4__["default"],
+  component: _pages_faq__WEBPACK_IMPORTED_MODULE_5__["default"],
   meta: {
     auth: undefined
   }
 }, {
   path: '/support',
   name: 'support',
-  component: _pages_Support__WEBPACK_IMPORTED_MODULE_9__["default"],
+  component: _pages_Support__WEBPACK_IMPORTED_MODULE_10__["default"],
   meta: {
     auth: true
   }
 }, {
   path: '/register',
   name: 'register',
-  component: _pages_Register__WEBPACK_IMPORTED_MODULE_11__["default"],
+  component: _pages_Register__WEBPACK_IMPORTED_MODULE_12__["default"],
   meta: {
     auth: false
   }
 }, {
   path: '/login',
   name: 'login',
-  component: _pages_Login__WEBPACK_IMPORTED_MODULE_12__["default"],
+  component: _pages_Login__WEBPACK_IMPORTED_MODULE_13__["default"],
   meta: {
     auth: false
   }
 }, {
   path: '/reset_password',
   name: 'resetPassword',
-  component: _pages_ResetPasswordForm__WEBPACK_IMPORTED_MODULE_14__["default"],
+  component: _pages_ResetPasswordForm__WEBPACK_IMPORTED_MODULE_15__["default"],
   meta: {
     auth: false
   }
 }, {
   path: '/forgot_password',
   name: 'forgotPassword',
-  component: _pages_ForgotPassword__WEBPACK_IMPORTED_MODULE_15__["default"],
+  component: _pages_ForgotPassword__WEBPACK_IMPORTED_MODULE_16__["default"],
   meta: {
     auth: false
   }
@@ -102636,63 +102812,63 @@ var routes = [{
 {
   path: '/user/dashboard',
   name: 'dashboard',
-  component: _pages_user_Dashboard__WEBPACK_IMPORTED_MODULE_16__["default"],
+  component: _pages_user_Dashboard__WEBPACK_IMPORTED_MODULE_17__["default"],
   meta: {
     auth: true
   }
 }, {
   path: '/user/dashboard/deposit',
   name: 'deposit',
-  component: _pages_user_Deposit__WEBPACK_IMPORTED_MODULE_17__["default"],
+  component: _pages_user_Deposit__WEBPACK_IMPORTED_MODULE_18__["default"],
   meta: {
     auth: true
   }
 }, {
   path: '/user/dashboard/withdraw',
   name: 'withdraw',
-  component: _pages_user_Withdraw__WEBPACK_IMPORTED_MODULE_18__["default"],
+  component: _pages_user_Withdraw__WEBPACK_IMPORTED_MODULE_19__["default"],
   meta: {
     auth: true
   }
 }, {
   path: '/user/dashboard/settings',
   name: 'setting',
-  component: _pages_user_Setting__WEBPACK_IMPORTED_MODULE_28__["default"],
+  component: _pages_user_Setting__WEBPACK_IMPORTED_MODULE_29__["default"],
   meta: {
     auth: true
   }
 }, {
   path: '/user/dashboard/security',
   name: 'security',
-  component: _pages_user_Security__WEBPACK_IMPORTED_MODULE_29__["default"],
+  component: _pages_user_Security__WEBPACK_IMPORTED_MODULE_30__["default"],
   meta: {
     auth: true
   }
 }, {
   path: '/user/dashboard/report/withdraw',
   name: 'withdrawReport',
-  component: _pages_user_reports_WithdrawalReport__WEBPACK_IMPORTED_MODULE_24__["default"],
+  component: _pages_user_reports_WithdrawalReport__WEBPACK_IMPORTED_MODULE_25__["default"],
   meta: {
     auth: true
   }
 }, {
   path: '/user/dashboard/report/deposit',
   name: 'depositReport',
-  component: _pages_user_reports_DepositReport__WEBPACK_IMPORTED_MODULE_25__["default"],
+  component: _pages_user_reports_DepositReport__WEBPACK_IMPORTED_MODULE_26__["default"],
   meta: {
     auth: true
   }
 }, {
   path: '/user/dashboard/report/transaction',
   name: 'transactionReport',
-  component: _pages_user_reports_TransactionReport__WEBPACK_IMPORTED_MODULE_27__["default"],
+  component: _pages_user_reports_TransactionReport__WEBPACK_IMPORTED_MODULE_28__["default"],
   meta: {
     auth: true
   }
 }, {
   path: '/user/dashboard/report/referral',
   name: 'referralReport',
-  component: _pages_user_reports_ReferralReport__WEBPACK_IMPORTED_MODULE_26__["default"],
+  component: _pages_user_reports_ReferralReport__WEBPACK_IMPORTED_MODULE_27__["default"],
   meta: {
     auth: true
   }
@@ -102700,7 +102876,7 @@ var routes = [{
 {
   path: '/admin/dashboard',
   name: 'adminDashboard',
-  component: _pages_admin_Dashboard__WEBPACK_IMPORTED_MODULE_23__["default"],
+  component: _pages_admin_Dashboard__WEBPACK_IMPORTED_MODULE_24__["default"],
   meta: {
     auth: true,
     AdminAuth: true,
@@ -102709,7 +102885,7 @@ var routes = [{
 }, {
   path: '/admin/dashboard/users',
   name: 'users',
-  component: _pages_admin_Users__WEBPACK_IMPORTED_MODULE_19__["default"],
+  component: _pages_admin_Users__WEBPACK_IMPORTED_MODULE_20__["default"],
   meta: {
     auth: true,
     AdminAuth: true
@@ -102717,7 +102893,7 @@ var routes = [{
 }, {
   path: '/admin/dashboard/deposits',
   name: 'deposits',
-  component: _pages_admin_Deposits__WEBPACK_IMPORTED_MODULE_20__["default"],
+  component: _pages_admin_Deposits__WEBPACK_IMPORTED_MODULE_21__["default"],
   meta: {
     auth: true,
     AdminAuth: true
@@ -102725,7 +102901,7 @@ var routes = [{
 }, {
   path: '/admin/dashboard/subscriptions',
   name: 'subscriptions',
-  component: _pages_admin_Subscriptions__WEBPACK_IMPORTED_MODULE_22__["default"],
+  component: _pages_admin_Subscriptions__WEBPACK_IMPORTED_MODULE_23__["default"],
   meta: {
     auth: true,
     AdminAuth: true
@@ -102733,7 +102909,7 @@ var routes = [{
 }, {
   path: '/admin/dashboard/withdrawals',
   name: 'withdrawals',
-  component: _pages_admin_Withdrawals__WEBPACK_IMPORTED_MODULE_21__["default"],
+  component: _pages_admin_Withdrawals__WEBPACK_IMPORTED_MODULE_22__["default"],
   meta: {
     auth: true,
     AdminAuth: true

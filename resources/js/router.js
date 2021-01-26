@@ -2,6 +2,7 @@ import VueRouter from 'vue-router'
 
 // Pages
 import Home from './pages/Home'
+import notFound from './pages/404.vue'
 import About from './pages/About'
 import GetStarted from './pages/getStarted'
 import Faq from './pages/faq'
@@ -43,7 +44,7 @@ const routes = [{
     {
         path: '*',
         name: '404',
-        component: Home,
+        component: notFound,
         meta: {
             auth: undefined
         }

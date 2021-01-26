@@ -45,7 +45,7 @@ Route::prefix('v1')->group(function () {
 		Route::get('investorss', 'InvestorController@index');
 		Route::get('testimonialss', 'TestimonialController@index');
 		Route::get('newss', 'NewsController@index');
-
+		Route::post('newsletterss', 'NewsletterController@store');
 		Route::get('transactionss', 'TransactionController@index');
 		Route::get('withdrawalss', 'WithdrawalController@index');
 		Route::get('paymentss', 'PaymentMethodController@index');

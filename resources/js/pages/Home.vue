@@ -308,28 +308,7 @@
         <!-- <Blog></Blog> -->
         <!-- blog section end -->
         <!-- subscribe section start -->
-        <section class="pb-120">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="subscribe-wrapper bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
-                            <div class="row align-items-center">
-                                <div class="col-lg-5">
-                                    <h2 class="title">Subscribe Our Newsletter</h2>
-                                </div>
-                                <div class="col-lg-7 mt-lg-0 mt-4">
-                                    <form class="subscribe-form">
-                                        <input type="email" class="form-control" placeholder="Email Address">
-                                        <button class="subscribe-btn"><i class="las la-envelope"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- subscribe-wrapper end -->
-                    </div>
-                </div>
-            </div>
-        </section>
+       <newsletter></newsletter>
         <!-- subscribe section end -->
     </div>
 </template>
