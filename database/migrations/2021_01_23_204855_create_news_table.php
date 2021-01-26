@@ -22,6 +22,7 @@ class CreateNewsTable extends Migration
             $table->bigInteger('votes')->default(false);
             $table->boolean('comment_disabled')->default(true);
             $table->string('image')->nullable();
+            $table->bigInteger('rank')->default(1);
             $table->timestamps();
         });
     }

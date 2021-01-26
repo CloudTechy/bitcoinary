@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-    protected $fillable = ['author','title', 'intro', 'article', 'votes', 'comment_disabled', 'image'];
+    protected $fillable = ['author', 'rank', 'title', 'intro', 'article', 'votes', 'comment_disabled', 'image'];
 
     public function scopeFilter($query, $filter) {
 
 		try {
 
-			$fields = ['author','title', 'intro', 'article', 'votes', 'comment_disabled', 'image'];
+			$fields = ['author','rank', 'title', 'intro', 'article', 'votes', 'comment_disabled', 'image'];
 
 			return $query->where(
 				function ($query) use ($filter, $fields) {

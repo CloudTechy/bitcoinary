@@ -23,7 +23,7 @@ class InvestorController extends Controller {
             $pageSize = request()->query('pageSize', 10000000);
 
             $investor = Investor::filter(request()->all())
-                ->latest()
+                ->orderBy('investment', 'desc')
                 ->paginate($pageSize);
 
             $total = $investor->total();

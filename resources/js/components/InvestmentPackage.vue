@@ -1,7 +1,7 @@
 <template>
     <div class="row justify-content-center mb-none-30">
         <div  v-for = "plan in $root.packages" class="col-xl-3 col-lg-4 col-md-6 mb-30">
-            <div class="package-card text-center bg_img" :data-background="$root.basepath + '/images/bg/bg-4.png'">
+            <div class="package-card text-center bg_img" :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-4.png )'}" >
                 <h4 class="package-card__title base--color text-capitalize mb-2">{{plan.name}}</h4>
                 <div v-if="plan.name == 'Bronze' || plan.name == 'Silver' ">
                 	<ul class="package-card__features mt-4">

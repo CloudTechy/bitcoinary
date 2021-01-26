@@ -21,6 +21,7 @@ class CreateTestimonialsTable extends Migration
             $table->string('designation')->nullable();
             $table->string('company')->nullable();
             $table->bigInteger('rating')->nullable();
+            $table->bigInteger('rank')->default(1);
             $table->timestamps();
         });
     }

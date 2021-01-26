@@ -30,6 +30,7 @@ class ValidateTestimonialRequest extends FormRequest
             'designation' => 'string|max:255',
             'company' =>  'string|max:255',
             'rating' =>  'required|numeric|min:1|max:5',
+            'rank' => 'numeric',
         ];
     }
 }

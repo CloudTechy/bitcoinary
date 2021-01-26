@@ -31,6 +31,7 @@ class ValidateNewsRequest extends FormRequest
             'votes' => 'numeric',
             'comment_disabled' => 'boolean',
             'image' => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
+            'rank' => 'numeric',
         ];
     }
 }

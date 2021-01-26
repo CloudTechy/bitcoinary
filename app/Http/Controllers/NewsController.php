@@ -23,7 +23,7 @@ class NewsController extends Controller {
             $pageSize = request()->query('pageSize', 10000000);
 
             $news = News::filter(request()->all())
-                ->latest()
+                ->orderBy('rank' , 'desc')
                 ->paginate($pageSize);
 
             $total = $news->total();
@@ -115,6 +115,7 @@ class NewsController extends Controller {
             'votes' => 'numeric',
             'comment_disabled' => 'boolean',
             'image' => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
+            'rank' => 'numeric',
         ]);
         DB::beginTransaction();
         $validated['image'] = $request->hasFile('image') ? Helper::uploadImage($request, 'image', 'images/news') : $news->image;

@@ -1,5 +1,5 @@
 <template>
-	<section class="pt-120 pb-120 border-top-1">
+	<section :key="key" class="pt-120 pb-120 border-top-1">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-6 col-lg-8 text-center">
@@ -11,12 +11,12 @@
                 </div>
                 <!-- row end -->
                 <div class="row justify-content-center mb-none-30">
-                    <div v-for = "investor in data" class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                    <div :key = "investor.id" v-for = "investor in data" class="col-xl-3 col-lg-4 col-sm-6 mb-30">
                         <div class="investor-card border-radius--5">
-                            <div class="investor-card__thumb bg_img background-position-y-top" :data-background="$root.basepath + '/images/investor/' + investor.image"></div>
+                            <div :style="{backgroundImage : 'url(' +$root.basepath + '/images/investor/' + investor.image + ')'}" class="investor-card__thumb bg_img dd background-position-y-top" ></div>
                             <div class="investor-card__content">
                                 <h6 class="name">{{investor.name}}</h6>
-                                <span class="amount f-size-14">Investment - ${{$root.normalNumeral(investor.Investment)}}</span>
+                                <span class="amount f-size-14">Investment - ${{$root.normalNumeral(investor.investment)}}</span>
                             </div>
                         </div>
                         <!-- investor-card end -->
@@ -29,11 +29,23 @@
 export default {
     data() {
         return {
-        	
+        	loading: true,
+            key: 1,
         }
            
     },
-    computed: {},
+    watch: {
+        data() {
+            // console.log('data', this.data)
+            if (this.data) {
+                this.loading = false
+                this.key++
+               
+            } else {
+                this.loading = true
+            }
+        }
+    },
     created(){
     	
     },

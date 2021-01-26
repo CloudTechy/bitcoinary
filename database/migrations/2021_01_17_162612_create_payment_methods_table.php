@@ -20,6 +20,7 @@ class CreatePaymentMethodsTable extends Migration
             $table->string('show_on')->default('both');
             $table->string('image');
             $table->string('type')->index();
+            $table->bigInteger('rank')->default(1);
         });
         Schema::table('bank_details', function ($table) {
             $table->foreign('payment_method')->references('name')->on('payment_methods')->onDelete('cascade')->onUpdate('cascade');

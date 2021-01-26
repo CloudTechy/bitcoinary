@@ -23,6 +23,7 @@ class PaymentMethodController extends Controller
             $pageSize = request()->query('pageSize', 10000000);
 
             $paymentmethod = PaymentMethod::filter(request()->all())
+                ->orderBy('rank' , 'desc')
                 ->paginate($pageSize);
 
             $total = $paymentmethod->total();
@@ -60,6 +61,7 @@ class PaymentMethodController extends Controller
             "show_on" => 'required|string|in:both,withdrawal,deposit',
             "type" => 'required|string|in:crypto,fiat',
             "image" => 'required|mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
+            'rank' => 'numeric',
 
         ]);
         DB::beginTransaction();

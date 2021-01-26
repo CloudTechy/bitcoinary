@@ -23,7 +23,7 @@ class TestimonialController extends Controller {
             $pageSize = request()->query('pageSize', 10000000);
 
             $testimonial = Testimonial::filter(request()->all())
-                ->latest()
+                ->orderBy('rank' , 'desc')
                 ->paginate($pageSize);
 
             $total = $testimonial->total();
@@ -114,6 +114,7 @@ class TestimonialController extends Controller {
             'designation' => 'string|max:255',
             'company' =>  'string|max:255',
             'rating' =>  'numeric|min:1|max:5',
+            'rank' => 'numeric',
         ]);
         DB::beginTransaction();
         $validated['image'] = $request->hasFile('image') ? Helper::uploadImage($request, 'image', 'images/testimonial') : $testimonial->image;

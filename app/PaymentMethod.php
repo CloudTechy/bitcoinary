@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PaymentMethod extends Model
 {
-   protected $fillable = ['name','show_on' , 'image' ,'type'];
+   protected $fillable = ['name',  'rank',  'show_on' , 'image' ,'type'];
    public $timestamps = false;
    public $incrementing = false;
    protected $keyType = "string";
@@ -16,7 +16,7 @@ class PaymentMethod extends Model
     {
 
         try {
-            $fields = ['name','show_on' , 'image' ,'type'];
+            $fields = ['name',  'rank',  'show_on' , 'image' ,'type'];
 
             return $query->where(
                 function ($query) use ($filter, $fields) {

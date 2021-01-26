@@ -16,7 +16,7 @@
         </section>
         <!-- hero end -->
         <!-- cureency section start -->
-        <div class="cureency-section">
+         <div class="cureency-section">
             <div class="container">
                 <div class="row mb-none-30">
                     <div class="col-lg-3 col-sm-6 cureency-item mb-30">
@@ -274,7 +274,7 @@
         <FaqComponent></FaqComponent>
         <!-- faq section end -->
         <!-- testimonial section start -->
-        <testimonial v-if = "$root.testimonials.length > 0" :data = "$root.testimonials"></testimonial>
+        <testimonial :data = "$root.testimonials"></testimonial>
         <!-- testimonial section end -->
         <!-- team section start -->
         <Team :data = "$root.teams"></Team>
@@ -305,7 +305,7 @@
         <PaymentBrand :data = "$root.payments"></PaymentBrand>
         <!-- payment brand section end -->
         <!-- blog section start -->
-        <Blog></Blog>
+        <!-- <Blog></Blog> -->
         <!-- blog section end -->
         <!-- subscribe section start -->
         <section class="pb-120">
@@ -372,6 +372,9 @@
 .section-home__btn:active {
     background-color: #e25e5a !important;
     border-color: #f8b782;
+}
+.slick-slide .slick-active {
+    margin: 15px !important;
 }
 
 </style>

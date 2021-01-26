@@ -23,7 +23,7 @@ class TeamController extends Controller {
             $pageSize = request()->query('pageSize', 10000000);
 
             $team = Team::filter(request()->all())
-                ->latest()
+                ->orderBy('rank' , 'desc')
                 ->paginate($pageSize);
 
             $total = $team->total();
@@ -111,6 +111,7 @@ class TeamController extends Controller {
              'name' => 'min:2|string|max:255',
             'designation' => 'string|max:255',
             'image' => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
+            'rank' => 'numeric',
         ]);
         $validated['image'] = $request->hasFile('image') ? Helper::uploadImage($request, 'image', 'images/team') : $team->image;
         DB::beginTransaction();
