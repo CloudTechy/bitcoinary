@@ -4,10 +4,10 @@
         <div class="account-section bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-xl-6 col-lg-7">
+                    <div class="col-xl-7 col-lg-9">
                         <div class="account-card">
                             <div class="account-card__header bg_img overlay--one" :data-background="$root.basepath + '/images/bg/bg-6.jpg'">
-                                <h2 class="section-title">Welcome to <span class="base--color">Bitcoinary Mint</span></h2>
+                                <h2 class="section-title text-center">Welcome to <span class="base--color">Bitcoinary Mint</span></h2>
                             </div>
                             <div class="account-card__body">
                                 <h3 class="text-center">Create an Account</h3>
@@ -53,6 +53,15 @@
                                         <input type="password" min="4" required placeholder="Password" v-model="password" :class="{'form-control' : true, 'error-input': errors.password != undefined}">
                                         <p v-if="errors.password" v-for="error in errors.password" class="text-danger m-0 p-2">{{error}}</p>
                                     </div>
+                                    <div class="form-group">
+                                        <label>Confirm Password</label>
+                                        <input type="password" min="4" required placeholder="Confirm Password" v-model="password_confirmation" :class="{'form-control' : true, 'error-input': errors.password_confirmation != undefined}">
+                                        <p v-if="errors.password_confirmation" v-for="error in errors.password_confirmation" class="text-danger m-0 p-2">{{error}}</p>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input checked="" v-model="terms" type="checkbox" class="form-check-input" id="terms">
+                                        <label class="form-check-label" for="terms"> I agree to the <a href="/terms" class="base--color">terms & condition</a></label>
+                                    </div>
                                     <div class="form-row">
                                         <div class="col-sm-6">
                                             <div class="form-group form-check">
@@ -63,10 +72,6 @@
                                         <div class="col-sm-6 text-sm-right">
                                             <p class="f-size-14">Have an account? <a href="/login" class="base--color">Login</a></p>
                                         </div>
-                                    </div>
-                                    <div class="form-group form-check">
-                                        <input checked="" v-model="terms" type="checkbox" class="form-check-input" id="terms">
-                                        <label class="form-check-label" for="terms"> I agree to the <a href="/terms" class="base--color">terms & condition</a></label>
                                     </div>
                                     <div class="mt-3">
                                         <button class="cmn-btn">SignUp Now</button>

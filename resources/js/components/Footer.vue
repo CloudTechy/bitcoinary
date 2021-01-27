@@ -11,7 +11,7 @@
                                     <div class="incrop-left-img">
                                         <img :src="$root.basepath + '/images/uploads/uk.png'">
                                         <h4 class="step__title base--color" style="padding-bottom: 15px;">UK Registered &amp; USA Based Company</h4>
-                                        <p>Bitcoinary Mint which is based in the United States is a fully registered and licensed company in UK. Golden Mint is powered by the latest and most secure form of SSL data encryption to keep all your data and information safe and secure.</p>
+                                        <p>Bitcoinary Mint which is based in the United States is a fully registered and licensed company in UK. Bitcoinary Mint is powered by the latest and most secure form of SSL data encryption to keep all your data and information safe and secure.</p>
                                     </div>
                                 </div>
                             </div>
@@ -20,20 +20,20 @@
                                     <div class="incorp-inner">
                                         <h4 class="step__title" style="padding-bottom: 15px;color:#2f2e2e;">958792765</h4>
                                         <p style="color:#2f2e2e;">Official Registered Company</p>
-                                        <a target="_blank" href="/register" style="padding-left:20px;margin-top: 0px;display: block;" class="btn btn-black-warning section-home__btn textsite truncate" data-pjax="">Check Companies House</a>
+                                        <a target="_blank" href="/register" style="padding-left:20px;margin-top: 0px;display: block;font-size: 0.8rem;" class="btn btn-black-warning section-home__btn textsite truncate" data-pjax="">Check Companies House</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-center">
+                <div class="row mt-5 justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <a style="max-height: 200px;" href="#0" class="footer-logo"><img :src="$root.basepath + '/images/logo.png'" alt="image"></a>
+                        <a style="max-height: 200px;" href="#" class="footer-logo"><img :src="$root.basepath + '/images/logo.png'" alt="image"></a>
                         <ul class="footer-short-menu d-flex flex-wrap justify-content-center mt-4">
                             <li><a href="/">Home</a></li>
-                            <li><a href="/terms/#privacy">Privacy & Policy</a></li>
-                            <li><a href="/terms/#terms">Terms & Conditions</a></li>
+                            <li><a href="/terms#privacy">Privacy & Policy</a></li>
+                            <li><a href="/terms">Terms & Conditions</a></li>
                         </ul>
                     </div>
                 </div>
@@ -164,5 +164,7 @@ export default {
     background-color: black !important;
     border-color: #cca354;
 }
-
+.equal{
+    box-shadow: 0 0 10px 2px rgba(204, 163, 84, 0.45) !important;
+}
 </style>

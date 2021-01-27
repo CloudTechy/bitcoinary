@@ -66,7 +66,7 @@
                                 Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits.</p>
                             <p class="mt-4">Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service, allowing us to automate and simplify the relations between the investors and
                                 the trustees. We work towards increasing your profit margin by profitable investment strategies. We look forward to you being part of our community.</p>
-                            <router-link class="cmn-btn mt-4" to="/about">READ MORE</router-link>
+                                <a href="/about" class="cmn-btn mt-4">READ MORE</a>
                         </div>
                         <!-- about-content end -->
                     </div>

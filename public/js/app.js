@@ -8323,6 +8323,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -16344,7 +16349,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n._text_1nv7e_24[data-v-61a7c374] {\r\n    font-family: Sailec-Regular, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;\r\n    font-size: 14px;\r\n    font-weight: 400;\r\n    line-height: 1.6;\r\n    margin: 0\n}\n.incrop-left[data-v-61a7c374] {\r\n    background-color: #171717;\r\n    background-size: 100%;\r\n    background-position: 0 100%;\r\n    padding: 30px;\r\n    border-radius: 10px 0 0 10px;\r\n    box-shadow: -3px 0px 10px 1px rgba(0, 0, 0, 0.3);\n}\n.incrop-left img[data-v-61a7c374] {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    max-width: 90px;\n}\n@media screen and (max-width: 991px) {\n.incrop-left[data-v-61a7c374] {\r\n        border-radius: initial;\n}\n}\n.incrop-left-img[data-v-61a7c374] {\r\n    position: relative;\r\n    padding-left: 100px;\n}\n.incorp-inner[data-v-61a7c374] {\r\n    padding-left: 90px;\r\n    background: url(" + escape(__webpack_require__(/*! ../../../public/images/uploads/company-logo.png */ "./public/images/uploads/company-logo.png")) + ") no-repeat 0 0;\r\n    background-size: 80px auto;\n}\n.step__title[data-v-61a7c374] {\r\n    font-weight: 500;\r\n    font-size: 22px;\r\n    font-size: 1.57rem;\r\n    color: #2e3035;\n}\n.no-padding[data-v-61a7c374] {\r\n    padding: 0 !important;\n}\n.incrop-right[data-v-61a7c374] {\r\n    background-color: #cca354;\r\n    padding: 30px;\r\n    border-radius: 0 10px 10px 0;\n}\n@media screen and (max-width: 991px) {\n.incrop-right[data-v-61a7c374] {\r\n        border-radius: initial;\n}\n}\n.section-home__btn[data-v-61a7c374] {\r\n    margin-top: 25px;\r\n    text-transform: uppercase;\n}\n.textsite[data-v-61a7c374] {\r\n    color: rgba(255, 255, 255, 0.8) !important;\n}\n.btn-black-warning[data-v-61a7c374] {\r\n    color: #4f4f4f;\r\n    background-color: #171717;\r\n    border-color: #171717;\n}\n.section-home__btn[data-v-61a7c374]:hover {\r\n    background-color: black !important;\r\n    border-color: #cca354;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n._text_1nv7e_24[data-v-61a7c374] {\r\n    font-family: Sailec-Regular, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;\r\n    font-size: 14px;\r\n    font-weight: 400;\r\n    line-height: 1.6;\r\n    margin: 0\n}\n.incrop-left[data-v-61a7c374] {\r\n    background-color: #171717;\r\n    background-size: 100%;\r\n    background-position: 0 100%;\r\n    padding: 30px;\r\n    border-radius: 10px 0 0 10px;\r\n    box-shadow: -3px 0px 10px 1px rgba(0, 0, 0, 0.3);\n}\n.incrop-left img[data-v-61a7c374] {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    max-width: 90px;\n}\n@media screen and (max-width: 991px) {\n.incrop-left[data-v-61a7c374] {\r\n        border-radius: initial;\n}\n}\n.incrop-left-img[data-v-61a7c374] {\r\n    position: relative;\r\n    padding-left: 100px;\n}\n.incorp-inner[data-v-61a7c374] {\r\n    padding-left: 90px;\r\n    background: url(" + escape(__webpack_require__(/*! ../../../public/images/uploads/company-logo.png */ "./public/images/uploads/company-logo.png")) + ") no-repeat 0 0;\r\n    background-size: 80px auto;\n}\n.step__title[data-v-61a7c374] {\r\n    font-weight: 500;\r\n    font-size: 22px;\r\n    font-size: 1.57rem;\r\n    color: #2e3035;\n}\n.no-padding[data-v-61a7c374] {\r\n    padding: 0 !important;\n}\n.incrop-right[data-v-61a7c374] {\r\n    background-color: #cca354;\r\n    padding: 30px;\r\n    border-radius: 0 10px 10px 0;\n}\n@media screen and (max-width: 991px) {\n.incrop-right[data-v-61a7c374] {\r\n        border-radius: initial;\n}\n}\n.section-home__btn[data-v-61a7c374] {\r\n    margin-top: 25px;\r\n    text-transform: uppercase;\n}\n.textsite[data-v-61a7c374] {\r\n    color: rgba(255, 255, 255, 0.8) !important;\n}\n.btn-black-warning[data-v-61a7c374] {\r\n    color: #4f4f4f;\r\n    background-color: #171717;\r\n    border-color: #171717;\n}\n.section-home__btn[data-v-61a7c374]:hover {\r\n    background-color: black !important;\r\n    border-color: #cca354;\n}\n.equal[data-v-61a7c374]{\r\n    box-shadow: 0 0 10px 2px rgba(204, 163, 84, 0.45) !important;\n}\r\n", ""]);
 
 // exports
 
@@ -16439,7 +16444,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*    .box {\r\n  background: #666666;\r\n  color: #ffffff;\r\n  width: 250px;\r\n  padding: 10px;\r\n  margin: 1em auto;\r\n}\r\np {\r\n  margin: 1.5em 0;\r\n  padding: 0;\r\n}*/\ninput[type=\"checkbox\"] {\r\n    visibility: hidden;\n}\nlabel {\r\n    cursor: pointer;\n}\ninput[type=\"checkbox\"]+label:before {\r\n    border: 1px solid #cca354;\r\n    content: \"\\A0\";\r\n    display: inline-block;\r\n    font: 16px/1em sans-serif;\r\n    height: 16px;\r\n    margin: 0 .25em 0 0;\r\n    vertical-align: top;\r\n    width: 16px;\n}\ninput[type=\"checkbox\"]:checked+label:before {\r\n    background: #cca354;\r\n    color: #fff;\r\n    content: \"\\2713\";\r\n    text-align: center;\n}\ninput[type=\"checkbox\"]:checked+label:after {\r\n    font-weight: bold;\n}\ninput[type=\"checkbox\"]:focus+label::before {\r\n    outline: rgb(59, 153, 252) auto 5px;\n}\n.iti-flag {\r\n  background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags.png\");\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2),\r\n  only screen and (min-device-pixel-ratio: 2),\r\n  only screen and (min-resolution: 192dpi),\r\n  only screen and (min-resolution: 2dppx) {\n.iti-flag {\r\n    background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags@2x.png\");\n}\n}\n.vue-tel-input {\r\n    width: 100% !important;\r\n    border: 1px solid rgba(204, 163, 84, 0.45) !important;\n}\n.vti__input {\r\n\r\n    background-color: black;\r\n    font-weight: bold;\r\n    color: white;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*    .box {\r\n  background: #666666;\r\n  color: #ffffff;\r\n  width: 250px;\r\n  padding: 10px;\r\n  margin: 1em auto;\r\n}\r\np {\r\n  margin: 1.5em 0;\r\n  padding: 0;\r\n}*/\ninput[type=\"checkbox\"] {\r\n    visibility: hidden;\n}\nlabel {\r\n    cursor: pointer;\n}\ninput[type=\"checkbox\"]+label:before {\r\n    border: 1px solid #cca354;\r\n    content: \"\\A0\";\r\n    display: inline-block;\r\n    font: 16px/1em sans-serif;\r\n    height: 16px;\r\n    margin: 0 .25em 0 0;\r\n    vertical-align: top;\r\n    width: 16px;\n}\ninput[type=\"checkbox\"]:checked+label:before {\r\n    background: #cca354;\r\n    color: #fff;\r\n    content: \"\\2713\";\r\n    text-align: center;\n}\ninput[type=\"checkbox\"]:checked+label:after {\r\n    font-weight: bold;\n}\ninput[type=\"checkbox\"]:focus+label::before {\r\n    outline: rgb(59, 153, 252) auto 5px;\n}\n.iti-flag {\r\n  background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags.png\");\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2),\r\n  only screen and (min-device-pixel-ratio: 2),\r\n  only screen and (min-resolution: 192dpi),\r\n  only screen and (min-resolution: 2dppx) {\n.iti-flag {\r\n    background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags@2x.png\");\n}\n}\n.vue-tel-input {\r\n    width: 100% !important;\r\n    border: 1px solid rgba(204, 163, 84, 0.45) !important;\n}\n.vti__input {\r\n\r\n    background-color: black;\r\n    font-weight: bold;\r\n    color: white;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -56837,7 +56842,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "Bitcoinary Mint which is based in the United States is a fully registered and licensed company in UK. Golden Mint is powered by the latest and most secure form of SSL data encryption to keep all your data and information safe and secure."
+                                "Bitcoinary Mint which is based in the United States is a fully registered and licensed company in UK. Bitcoinary Mint is powered by the latest and most secure form of SSL data encryption to keep all your data and information safe and secure."
                               )
                             ])
                           ])
@@ -56852,14 +56857,14 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "row mt-5 justify-content-center" }, [
             _c("div", { staticClass: "col-lg-12 text-center" }, [
               _c(
                 "a",
                 {
                   staticClass: "footer-logo",
                   staticStyle: { "max-height": "200px" },
-                  attrs: { href: "#0" }
+                  attrs: { href: "#" }
                 },
                 [
                   _c("img", {
@@ -56949,7 +56954,8 @@ var staticRenderFns = [
                   staticStyle: {
                     "padding-left": "20px",
                     "margin-top": "0px",
-                    display: "block"
+                    display: "block",
+                    "font-size": "0.8rem"
                   },
                   attrs: {
                     target: "_blank",
@@ -56979,15 +56985,13 @@ var staticRenderFns = [
         _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("Home")])]),
         _vm._v(" "),
         _c("li", [
-          _c("a", { attrs: { href: "/terms/#privacy" } }, [
+          _c("a", { attrs: { href: "/terms#privacy" } }, [
             _vm._v("Privacy & Policy")
           ])
         ]),
         _vm._v(" "),
         _c("li", [
-          _c("a", { attrs: { href: "/terms/#terms" } }, [
-            _vm._v("Terms & Conditions")
-          ])
+          _c("a", { attrs: { href: "/terms" } }, [_vm._v("Terms & Conditions")])
         ])
       ]
     )
@@ -57098,10 +57102,7 @@ var render = function() {
           [
             _c(
               "a",
-              {
-                staticClass: "site-logo site-title",
-                attrs: { href: "index.html" }
-              },
+              { staticClass: "site-logo site-title", attrs: { href: "/" } },
               [
                 _c("img", {
                   attrs: {
@@ -60004,36 +60005,7 @@ var render = function() {
             "data-background": _vm.$root.basepath + "/images/bg/bg-2.jpg"
           }
         },
-        [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-lg-6 offset-lg-6" }, [
-                _c(
-                  "div",
-                  { staticClass: "about-content" },
-                  [
-                    _vm._m(1),
-                    _vm._v(" "),
-                    _vm._m(2),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "mt-4" }, [
-                      _vm._v(
-                        "Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service, allowing us to automate and simplify the relations between the investors and\n                            the trustees. We work towards increasing your profit margin by profitable investment strategies. We look forward to you being part of our community."
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "router-link",
-                      { staticClass: "cmn-btn mt-4", attrs: { to: "/about" } },
-                      [_vm._v("READ MORE")]
-                    )
-                  ],
-                  1
-                )
-              ])
-            ])
-          ])
-        ]
+        [_vm._m(1)]
       ),
       _vm._v(" "),
       _c(
@@ -60044,7 +60016,7 @@ var render = function() {
             "data-background": _vm.$root.basepath + "/images/bg/bg-3.jpg"
           }
         },
-        [_vm._m(3)]
+        [_vm._m(2)]
       ),
       _vm._v(" "),
       _c(
@@ -60054,7 +60026,7 @@ var render = function() {
           _c(
             "div",
             { staticClass: "container" },
-            [_vm._m(4), _vm._v(" "), _c("InvestmentPackage")],
+            [_vm._m(3), _vm._v(" "), _c("InvestmentPackage")],
             1
           )
         ]
@@ -60070,7 +60042,7 @@ var render = function() {
             "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg"
           }
         },
-        [_vm._m(5)]
+        [_vm._m(4)]
       ),
       _vm._v(" "),
       _c("FaqComponent"),
@@ -60177,24 +60149,42 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "section-title mb-3" }, [
-      _c("span", { staticClass: "font-weight-normal" }, [_vm._v("About")]),
-      _vm._v(" "),
-      _c("b", { staticClass: "base--color" }, [_vm._v("Us")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", [
-      _vm._v(
-        "Bitcoinary Mint is an innovating company diversified in several Investment methods."
-      ),
-      _c("br"),
-      _vm._v(
-        "\n                            Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits."
-      )
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-6 offset-lg-6" }, [
+          _c("div", { staticClass: "about-content" }, [
+            _c("h2", { staticClass: "section-title mb-3" }, [
+              _c("span", { staticClass: "font-weight-normal" }, [
+                _vm._v("About")
+              ]),
+              _vm._v(" "),
+              _c("b", { staticClass: "base--color" }, [_vm._v("Us")])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Bitcoinary Mint is an innovating company diversified in several Investment methods."
+              ),
+              _c("br"),
+              _vm._v(
+                "\n                            Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits."
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "mt-4" }, [
+              _vm._v(
+                "Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service, allowing us to automate and simplify the relations between the investors and\n                            the trustees. We work towards increasing your profit margin by profitable investment strategies. We look forward to you being part of our community."
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              { staticClass: "cmn-btn mt-4", attrs: { href: "/about" } },
+              [_vm._v("READ MORE")]
+            )
+          ])
+        ])
+      ])
     ])
   },
   function() {
@@ -60812,7 +60802,7 @@ var render = function() {
       [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row justify-content-center" }, [
-            _c("div", { staticClass: "col-xl-6 col-lg-7" }, [
+            _c("div", { staticClass: "col-xl-7 col-lg-9" }, [
               _c("div", { staticClass: "account-card" }, [
                 _c(
                   "div",
@@ -61149,7 +61139,59 @@ var render = function() {
                             2
                           ),
                           _vm._v(" "),
-                          _vm._m(1),
+                          _c(
+                            "div",
+                            { staticClass: "form-group" },
+                            [
+                              _c("label", [_vm._v("Confirm Password")]),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.password_confirmation,
+                                    expression: "password_confirmation"
+                                  }
+                                ],
+                                class: {
+                                  "form-control": true,
+                                  "error-input":
+                                    _vm.errors.password_confirmation !=
+                                    undefined
+                                },
+                                attrs: {
+                                  type: "password",
+                                  min: "4",
+                                  required: "",
+                                  placeholder: "Confirm Password"
+                                },
+                                domProps: { value: _vm.password_confirmation },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.password_confirmation =
+                                      $event.target.value
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _vm._l(_vm.errors.password_confirmation, function(
+                                error
+                              ) {
+                                return _vm.errors.password_confirmation
+                                  ? _c(
+                                      "p",
+                                      { staticClass: "text-danger m-0 p-2" },
+                                      [_vm._v(_vm._s(error))]
+                                    )
+                                  : _vm._e()
+                              })
+                            ],
+                            2
+                          ),
                           _vm._v(" "),
                           _c("div", { staticClass: "form-group form-check" }, [
                             _c("input", {
@@ -61195,8 +61237,10 @@ var render = function() {
                               }
                             }),
                             _vm._v(" "),
-                            _vm._m(2)
+                            _vm._m(1)
                           ]),
+                          _vm._v(" "),
+                          _vm._m(2),
                           _vm._v(" "),
                           _vm._m(3)
                         ]
@@ -61216,10 +61260,25 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "section-title" }, [
+    return _c("h2", { staticClass: "section-title text-center" }, [
       _vm._v("Welcome to "),
       _c("span", { staticClass: "base--color" }, [_vm._v("Bitcoinary Mint")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "form-check-label", attrs: { for: "terms" } },
+      [
+        _vm._v(" I agree to the "),
+        _c("a", { staticClass: "base--color", attrs: { href: "/terms" } }, [
+          _vm._v("terms & condition")
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -61253,21 +61312,6 @@ var staticRenderFns = [
         ])
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "label",
-      { staticClass: "form-check-label", attrs: { for: "terms" } },
-      [
-        _vm._v(" I agree to the "),
-        _c("a", { staticClass: "base--color", attrs: { href: "/terms" } }, [
-          _vm._v("terms & condition")
-        ])
-      ]
-    )
   },
   function() {
     var _vm = this
@@ -66765,48 +66809,48 @@ var staticRenderFns = [
           _c("div", { staticClass: "blog-details__content" }, [
             _c("h4", { staticClass: "blog-details__title" }, [
               _vm._v("Terms of "),
-              _c("span", { staticClass: "base--color" }, [_vm._v(" use ")])
+              _c("span", { staticClass: "base--color" }, [_vm._v(" Use ")])
             ]),
             _vm._v(" "),
             _c("p", { staticClass: "text-justify" }, [
               _vm._v(
-                "This user agreement (the Agreement) describes the terms and conditions of using the services provided by Bitcoinary Mint to the registered user (Client), including the access to the personal account and payment operations performed through the Bitcoinary Mint website located at Bitcoinary Mint.\n\t\t\t\t\t\t\t\t"
+                "This user agreement (the Agreement) describes the terms and conditions of using the services provided by Bitcoinary Mint to the registered user (Client), including the access to the personal account and payment operations performed through the Bitcoinary Mint website located at Bitcoinary Mint.\n                        "
               ),
               _c("br"),
               _vm._v(
-                "Using Bitcoinary Mint services, you confirm that you have read this Agreement, understood its meaning in full and accept this Agreement.\n\t\t\t\t\t\t\t\t"
+                "Using Bitcoinary Mint services, you confirm that you have read this Agreement, understood its meaning in full and accept this Agreement.\n                        "
               ),
               _c("br"),
               _vm._v(
-                "All interested parties are required to read all that is written and stated on this page without skipping even a single word. This acts as the official and binding terms and conditions between You the registrant and our company Bitcoinary Mint.\n\t\t\t\t\t\t\t\t"
+                "All interested parties are required to read all that is written and stated on this page without skipping even a single word. This acts as the official and binding terms and conditions between You the registrant and our company Bitcoinary Mint.\n                        "
               ),
               _c("br"),
               _vm._v(
-                "Prior to registration, all interested registrants understand that upon registration, you shall be bound by these terms and conditions without negotiations. If you are not ready to accept the terms written herewith, please do not register for an account.\n\t\t\t\t\t\t\t\t"
+                "Prior to registration, all interested registrants understand that upon registration, you shall be bound by these terms and conditions without negotiations. If you are not ready to accept the terms written herewith, please do not register for an account.\n                        "
               ),
               _c("br"),
               _vm._v(
-                'Upon registration, the user shall be called "member". All members of our company must oblige to follow all the rules written on this page. We stress this multiple times, as our company have very stringent rulings regarding the use of our website and that of our company program.\n\t\t\t\t\t\t\t\t'
+                'Upon registration, the user shall be called "member". All members of our company must oblige to follow all the rules written on this page. We stress this multiple times, as our company have very stringent rulings regarding the use of our website and that of our company program.\n                        '
               ),
               _c("br"),
               _vm._v(
-                "All registrants should be of legal ages and must reside in a country where participation in foreign investment programs is not prohibited. If you live within said conditions, then feel free to sign up without worries.\n\t\t\t\t\t\t\t\t"
+                "All registrants should be of legal ages and must reside in a country where participation in foreign investment programs is not prohibited. If you live within said conditions, then feel free to sign up without worries.\n                        "
               ),
               _c("br"),
               _vm._v(
-                "All registrants must use a valid e-mail address in order for us to be able to communicate properly when issues arise out of misuse or technical reasons.\n\t\t\t\t\t\t\t\t"
+                "All registrants must use a valid e-mail address in order for us to be able to communicate properly when issues arise out of misuse or technical reasons.\n                        "
               ),
               _c("br"),
               _vm._v(
-                "When registering, you hold Bitcoinary Mint free from any liabilities and losses you may incur in the circumstances unforeseen, such as account compromise, suspension, and or deletion, due to reasons caused by the registrant.\n\t\t\t\t\t\t\t\t"
+                "When registering, you hold Bitcoinary Mint free from any liabilities and losses you may incur in the circumstances unforeseen, such as account compromise, suspension, and or deletion, due to reasons caused by the registrant.\n                        "
               ),
               _c("br"),
               _vm._v(
-                "Bitcoinary Mint services are not available to the general public and are opened only to the qualified members of Bitcoinary Mint, the use of this site is restricted to our members and to individuals personally invited by them. Every deposit is considered to be a private transaction between the Bitcoinary Mint and its Member.\n\t\t\t\t\t\t\t\t"
+                "Bitcoinary Mint services are not available to the general public and are opened only to the qualified members of Bitcoinary Mint, the use of this site is restricted to our members and to individuals personally invited by them. Every deposit is considered to be a private transaction between the Bitcoinary Mint and its Member.\n                        "
               ),
               _c("br"),
               _vm._v(
-                "We reserve the rights to decline, reject and reverse deposits back to the depositor for reasons we may either disclose publicly or not, and for whatever reason we deem necessary for the better performance of our company.\n\t\t\t\t\t\t\t\t"
+                "We reserve the rights to decline, reject and reverse deposits back to the depositor for reasons we may either disclose publicly or not, and for whatever reason we deem necessary for the better performance of our company.\n                        "
               ),
               _c("br"),
               _vm._v(
@@ -66820,83 +66864,85 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-lg-12", attrs: { id: "restrictions" } }, [
         _c("div", { staticClass: "blog-details-wrapper" }, [
           _c("div", { staticClass: "blog-details__content" }, [
-            _c("h4", { staticClass: "blog-details__title" }, [
+            _c("h4", { staticClass: "blog-details__title base--color" }, [
               _vm._v("Restrictions")
             ]),
             _vm._v(" "),
             _c("p", { staticClass: "text-justify" }, [
               _vm._v(
-                "You may not use the Services if you are located in, or a citizen or resident of any state, country, territory or other jurisdiction that is embargoed by the UNSC or where your use of the Services would be illegal or otherwise violate any applicable law. You represent and warrant that you are not a citizen or resident of any such jurisdiction and that you will not use any Services while located in any such jurisdiction. You also may not use the Services if you are located in, or a citizen or resident of, any other jurisdiction where Bitcoinary Mint has determined, at its discretion, to prohibit use of the Services (USA etc.). Bitcoinary Mint may implement controls to restrict access to the Services from any jurisdiction prohibited pursuant to this Section. You will comply with this Section, even if Bitcoinary Mint methods to prevent use of the Services are not effective or can be bypassed.\n\t\t\t\t\t\t\t\t"
+                "You may not use the Services if you are located in, or a citizen or resident of any state, country, territory or other jurisdiction that is embargoed by the UNSC or where your use of the Services would be illegal or otherwise violate any applicable law. You represent and warrant that you are not a citizen or resident of any such jurisdiction and that you will not use any Services while located in any such jurisdiction. You also may not use the Services if you are located in, or a citizen or resident of, any other jurisdiction where Bitcoinary Mint has determined, at its discretion, to prohibit use of the Services (USA etc.). Bitcoinary Mint may implement controls to restrict access to the Services from any jurisdiction prohibited pursuant to this Section. You will comply with this Section, even if Bitcoinary Mint methods to prevent use of the Services are not effective or can be bypassed.\n                        "
               ),
               _c("br"),
               _vm._v(
-                "We reserve the right to use “geo-blocking”, that is, we may block by IP-address the visitors that arrive from the US. Any resident or citizen of the United States of America is prohibited from using the website, making any operations at dashboard. We reserve the right to immediately close any of your accounts and liquidate any operation if it is determined that you have provided false information about your location or place of residence. We also reserve the right to block by IP address the visitors that arrive from countries included in the sanction lists.\n\t\t\t\t\t\t\t\t"
+                "We reserve the right to use “geo-blocking”, that is, we may block by IP-address the visitors that arrive from the US. Any resident or citizen of the United States of America is prohibited from using the website, making any operations at dashboard. We reserve the right to immediately close any of your accounts and liquidate any operation if it is determined that you have provided false information about your location or place of residence. We also reserve the right to block by IP address the visitors that arrive from countries included in the sanction lists.\n                        "
               ),
               _c("br"),
               _vm._v(
-                "The Company may at any time institute daily, weekly and/or monthly transactional limits on a Customer's use of the Service. These limits may be changed at any time for any reason by the Company. Each Customer may have different transactional limits for different reasons.\n\t\t\t\t\t\t\t\t"
+                "The Company may at any time institute daily, weekly and/or monthly transactional limits on a Customer's use of the Service. These limits may be changed at any time for any reason by the Company. Each Customer may have different transactional limits for different reasons.\n                        "
               ),
               _c("br"),
               _vm._v(
-                "If a Customer is suspected of using multiple accounts to override the daily or weekly transactional limits, that shall be reason by the Company to suspend all of implicated accounts from the Service.\n\t\t\t\t\t\t\t\t"
+                "If a Customer is suspected of using multiple accounts to override the daily or weekly transactional limits, that shall be reason by the Company to suspend all of implicated accounts from the Service.\n                        "
               ),
               _c("br"),
               _vm._v(
-                "You are not allowed to use more than one account per IP address. You are not allowed to create multiple accounts. You are not allowed to login more than one account on the same computer. This includes family, friends and using your account on public computers. You may not permit any other person to use your Account. Unless we otherwise permit from time to time, you may not open more than one Account and we may, without notice, close any or all of the Accounts of a Member who has, or whom we reasonably suspect has, unauthorised multiple Accounts.\n\t\t\t\t\t\t\t\t"
+                "You are not allowed to use more than one account per IP address. You are not allowed to create multiple accounts. You are not allowed to login more than one account on the same computer. This includes family, friends and using your account on public computers. You may not permit any other person to use your Account. Unless we otherwise permit from time to time, you may not open more than one Account and we may, without notice, close any or all of the Accounts of a Member who has, or whom we reasonably suspect has, unauthorised multiple Accounts.\n                        "
               ),
               _c("br"),
               _vm._v(
-                "Our company assumes no responsibility for lost, late, incomplete, incorrect, or misdirected registrations. We are not responsible for technical, hardware or software malfunctions, misdirected entries, lost or unavailable network connections, or other communications or other technical problems related to the registration.\n\t\t\t\t\t\t\t\t"
+                "Our company assumes no responsibility for lost, late, incomplete, incorrect, or misdirected registrations. We are not responsible for technical, hardware or software malfunctions, misdirected entries, lost or unavailable network connections, or other communications or other technical problems related to the registration.\n                        "
               ),
               _c("br"),
               _vm._v(
-                "We do not accept any responsibility to you for:\n\t\t\t\t\t\t\t\t"
+                "We do not accept any responsibility to you for:\n                        "
               ),
               _c("br"),
               _vm._v(
-                "- malfunctions in communications facilities which cannot reasonably be considered to be under our control and that may affect the accuracy or timeliness of messages you send to us;\n\t\t\t\t\t\t\t\t"
+                "- malfunctions in communications facilities which cannot reasonably be considered to be under our control and that may affect the accuracy or timeliness of messages you send to us;\n                        "
               ),
               _c("br"),
               _vm._v(
-                "- any losses or delays in transmission of messages arising out of the use of any Internet access service provider or caused by any browser or other software which is not under our control;\n\t\t\t\t\t\t\t\t"
+                "- any losses or delays in transmission of messages arising out of the use of any Internet access service provider or caused by any browser or other software which is not under our control;\n                        "
               ),
               _c("br"),
               _vm._v(
-                "- the services provided to you by your e-payment issuer or provider (Payeer, PerfectMoney, Blockhain.info, Cryptonator, Coinomi etc), as well as transaction delays due to their fault;\n\t\t\t\t\t\t\t\t"
-              ),
-              _c("br"),
-              _vm._v("- viruses caused by third parties;\n\t\t\t\t\t\t\t\t"),
-              _c("br"),
-              _vm._v(
-                "- errors on the Site or with the Bitcoinary Mint Online Service caused by incomplete or incorrect information provided to us by you or a third party;\n\t\t\t\t\t\t\t\t"
+                "- the services provided to you by your e-payment issuer or provider (Payeer, PerfectMoney, Blockhain.info, Cryptonator, Coinomi etc), as well as transaction delays due to their fault;\n                        "
               ),
               _c("br"),
               _vm._v(
-                "- any unauthorised use or interception of any message or information before it reaches the Site;\n\t\t\t\t\t\t\t\t"
+                "- viruses caused by third parties;\n                        "
               ),
               _c("br"),
               _vm._v(
-                "- any unauthorised use of or access to data relating to you or your transactions which is held by us (unless such use or access is caused by our negligence, fraud or failure to comply with laws relating to the protection of your data); We have no obligation to you to initiate or perform a money transfer or other transaction as part of the Bitcoinary Mint Online Service if:\n\t\t\t\t\t\t\t\t"
+                "- errors on the Site or with the Bitcoinary Mint Online Service caused by incomplete or incorrect information provided to us by you or a third party;\n                        "
               ),
               _c("br"),
               _vm._v(
-                "- we are unable to obtain satisfactory evidence of your identity;\n\t\t\t\t\t\t\t\t"
+                "- any unauthorised use or interception of any message or information before it reaches the Site;\n                        "
               ),
               _c("br"),
               _vm._v(
-                "- we have reason to believe that the transaction message is incorrect, unauthorized or forged;\n\t\t\t\t\t\t\t\t"
+                "- any unauthorised use of or access to data relating to you or your transactions which is held by us (unless such use or access is caused by our negligence, fraud or failure to comply with laws relating to the protection of your data); We have no obligation to you to initiate or perform a money transfer or other transaction as part of the Bitcoinary Mint Online Service if:\n                        "
               ),
               _c("br"),
               _vm._v(
-                "- you provide us with incorrect or incomplete information or if your transaction message is not given to us sufficiently in advance to allow for timely provision of the requested transaction;\n\t\t\t\t\t\t\t\t"
+                "- we are unable to obtain satisfactory evidence of your identity;\n                        "
               ),
               _c("br"),
               _vm._v(
-                "- your e-payment issuer or provider does not authorise your use of your e-payment account for payment of the transaction and our related charges,\n\t\t\t\t\t\t\t\t"
+                "- we have reason to believe that the transaction message is incorrect, unauthorized or forged;\n                        "
               ),
               _c("br"),
               _vm._v(
-                "and we do not accept any liability for damages resulting from 3rd party non-payment or delay in payment of a money transfer to our internal accounts or failure to perform a transaction under the Bitcoinary Mint Online Service by reason of any of these matters. If you received payment for advertising / listing from our official wallet, which provides for a certain amount of reinvest in the project, it means that you do not can close the deposit and withdraw all funds including deposit, you can only withdraw daily income 5% from the deposit, otherwise we are entitled to suspend payments to you. We may refuse to provide the Bitcoinary Mint Online Service (in whole or in part) to you if to do so may breach any Bitcoinary Mint policy (including policies intended to prevent fraud, money laundering or terrorist financing) and/or any applicable law, order of a court or requirement of any regulatory or governmental authority, body or agency having jurisdiction over us, or if we otherwise consider such action necessary to protect our interests.\n\t\t\t\t\t\t\t\t"
+                "- you provide us with incorrect or incomplete information or if your transaction message is not given to us sufficiently in advance to allow for timely provision of the requested transaction;\n                        "
+              ),
+              _c("br"),
+              _vm._v(
+                "- your e-payment issuer or provider does not authorise your use of your e-payment account for payment of the transaction and our related charges,\n                        "
+              ),
+              _c("br"),
+              _vm._v(
+                "and we do not accept any liability for damages resulting from 3rd party non-payment or delay in payment of a money transfer to our internal accounts or failure to perform a transaction under the Bitcoinary Mint Online Service by reason of any of these matters. If you received payment for advertising / listing from our official wallet, which provides for a certain amount of reinvest in the project, it means that you do not can close the deposit and withdraw all funds including deposit, you can only withdraw daily income 5% from the deposit, otherwise we are entitled to suspend payments to you. We may refuse to provide the Bitcoinary Mint Online Service (in whole or in part) to you if to do so may breach any Bitcoinary Mint policy (including policies intended to prevent fraud, money laundering or terrorist financing) and/or any applicable law, order of a court or requirement of any regulatory or governmental authority, body or agency having jurisdiction over us, or if we otherwise consider such action necessary to protect our interests.\n                        "
               ),
               _c("br"),
               _vm._v(
@@ -66917,29 +66963,37 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("p", {}, [
               _vm._v(
-                "Since we conduct business in the UK we have to follow the AML & KYC requirements strictly. As part of our AML policy, we ensure that any client agreeing to use our services, is also agreeing - if it is requested by Bitcoinary Mint - to provide us with identification documentation, including but not limited to the high resolution (300 DPI) color scan of all sides of the following Personal Identity Documents and/or Proof of Address Documents:\n\t\t\t\t\t\t\t\t"
+                "Since we conduct business in the UK we have to follow the AML & KYC requirements strictly. As part of our AML policy, we ensure that any client agreeing to use our services, is also agreeing - if it is requested by Bitcoinary Mint - to provide us with identification documentation, including but not limited to the high resolution (300 DPI) color scan of all sides of the following Personal Identity Documents and/or Proof of Address Documents:\n                        "
               ),
               _c("br"),
-              _vm._v("1. Personal Identity Documents:\n\t\t\t\t\t\t\t\t"),
-              _c("br"),
               _vm._v(
-                "- Current valid full EU or non EU Passport;\n\t\t\t\t\t\t\t\t"
+                "1. Personal Identity Documents:\n                        "
               ),
               _c("br"),
-              _vm._v("- Current valid National ID card;\n\t\t\t\t\t\t\t\t"),
-              _c("br"),
-              _vm._v("- Current valid Driving License;\n\t\t\t\t\t\t\t\t"),
-              _c("br"),
-              _vm._v("2. Proof of Address Documents:\n\t\t\t\t\t\t\t\t"),
-              _c("br"),
               _vm._v(
-                "- Recent (not more 3 months) Utility Bill — Gas, Electricity, Water, Telephone (Not mobile phones)\n\t\t\t\t\t\t\t\t"
+                "- Current valid full EU or non EU Passport;\n                        "
               ),
               _c("br"),
-              _vm._v("- Bank Statement\n\t\t\t\t\t\t\t\t"),
+              _vm._v(
+                "- Current valid National ID card;\n                        "
+              ),
               _c("br"),
               _vm._v(
-                "We require the documents to be sent to us in high quality (300 DPI) colour format. If the documents have more than one side then we require all sides to be sent to us. We reserve the right to reject any documents, which do not comply with the above.\n\t\t\t\t\t\t\t\t"
+                "- Current valid Driving License;\n                        "
+              ),
+              _c("br"),
+              _vm._v(
+                "2. Proof of Address Documents:\n                        "
+              ),
+              _c("br"),
+              _vm._v(
+                "- Recent (not more 3 months) Utility Bill — Gas, Electricity, Water, Telephone (Not mobile phones)\n                        "
+              ),
+              _c("br"),
+              _vm._v("- Bank Statement\n                        "),
+              _c("br"),
+              _vm._v(
+                "We require the documents to be sent to us in high quality (300 DPI) colour format. If the documents have more than one side then we require all sides to be sent to us. We reserve the right to reject any documents, which do not comply with the above.\n                        "
               ),
               _c("br"),
               _vm._v(

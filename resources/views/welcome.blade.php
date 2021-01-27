@@ -51,11 +51,6 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
 
 <!--End of Tawk.to Script-->
-<style type="text/css">
-  .single-slide .slick-slide .slick-active{
-        margin : 5px !important;
-    }
-</style>
 </head>
 <!--Start of Tawk.to Script-->
 
@@ -85,7 +80,7 @@ s0.parentNode.insertBefore(s1,s0);
             <!-- / STAR ANIMATION -->
         </div>
     </div>
-  <div id="app" style="width: 100vw; padding: 0px; margin: auto; overflow: hidden; box-sizing: border-box;">
+  <div id="app" >
     <index></index>
   </div>
   <script src="{{ asset('js/jquery.js') }}"></script>
