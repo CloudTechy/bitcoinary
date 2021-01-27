@@ -98624,44 +98624,45 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     timer: function timer() {
       this.time = moment__WEBPACK_IMPORTED_MODULE_12___default()().format("h:mm:ss a");
     },
-    btcRate: function btcRate() {// this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json")
-      //     .then(response => {
-      //         this.usd_btc_rate = response.data.bpi.USD.rate
-      //         this.eur_btc_rate = response.data.bpi.EUR.rate
-      //     })
-      //     .catch(error => {
-      //         console.log(error.response)
-      //     })
+    btcRate: function btcRate() {
+      var _this9 = this;
+
+      this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(function (response) {
+        _this9.usd_btc_rate = response.data.bpi.USD.rate;
+        _this9.eur_btc_rate = response.data.bpi.EUR.rate;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
     },
-    btcVolume: function btcVolume() {// this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT")
-      //     .then(response => {
-      //         let volume = response.data.volume
-      //         this.btc_volume = parseInt(volume) / 3
-      //         this.active_trade = volume
-      //         // console.log(response.data);
-      //     })
-      //     .catch(error => {
-      //         console.log(error.response)
-      //     })
+    btcVolume: function btcVolume() {
+      var _this10 = this;
+
+      this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT").then(function (response) {
+        var volume = response.data.volume;
+        _this10.btc_volume = parseInt(volume) / 3;
+        _this10.active_trade = volume; // console.log(response.data);
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
     },
     getIp: function getIp() {
-      var _this9 = this;
+      var _this11 = this;
 
       var form = new vform__WEBPACK_IMPORTED_MODULE_18__["Form"]();
       form.get("https://api.ipify.org?format=json").then(function (response) {
-        _this9.ip = response.data.ip;
+        _this11.ip = response.data.ip;
         localStorage.ip = JSON.stringify(response.data.ip);
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     refreshUser: function refreshUser() {
-      var _this10 = this;
+      var _this12 = this;
 
       this.$auth.fetch({
         params: {},
         success: function success(response) {
-          _this10.user = _this10.$auth.user();
+          _this12.user = _this12.$auth.user();
         },
         error: function error(_error) {
           console.log(_error.response.data);
