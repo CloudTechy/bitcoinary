@@ -22,7 +22,7 @@
                         <p> This is located in your account user dashboard as your <span class="base--color">affiliate link.</span></p>
                         <p>You can attract any number of new investors, the more your active referrals, the more earnings you have. You are entitled to 15% on every deposit made by your downline.
                         </p>
-                        <p> You do not need to have an active deposit before you can earn from our investment program. <br> For first level, you will receive 10% affiliate commission and for second level you will receive 5% affiliate commission.<br>This multi-tier affiliate program will ensure multiple sources of passive income for you.
+                        <p> You do not need to have an active deposit before you can earn from our investment program.</p> <p> For first level, you will receive 10% affiliate commission and for second level you will receive 5% affiliate commission.</p><p>This multi-tier affiliate program will ensure multiple sources of passive income for you.
                         </p>
                     </div>
                 </div>

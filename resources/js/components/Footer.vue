@@ -6,7 +6,7 @@
                 <div class="row" style="margin-top:50px;">
                     <div class="col-md-12">
                         <div class="row equal">
-                            <div class="col-md-8 no-padding wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;min-height: 180px;">
+                            <div :data-background="$root.basepath + '/images/bg/bg-5.jpg'" class="col-md-8 no-padding wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;min-height: 180px;">
                                 <div class="incrop-left" style="min-height: 100%;">
                                     <div class="incrop-left-img">
                                         <img :src="$root.basepath + '/images/uploads/uk.png'">

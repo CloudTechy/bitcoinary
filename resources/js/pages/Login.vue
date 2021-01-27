@@ -1,59 +1,53 @@
 <template>
-    <div style="width: inherit;">
-        <div class="page-title row page-title m-3 p-2 with-btn">
-            <div class=" col-12 col-lg-8  container">
-                <h1>Account Login</h1>
-                <p>Don't have an account? Click the signup button below for account registration.</p>
-                <router-link class="btn btn-default" to="/register">Sign Up</router-link>
-            </div>
-        </div>
-        <section class="main-container" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
-            <div class="main">
-                <div class="container" >
-                    <div class="wrapper">
-                        <div class="login-wrapper">
-                            <div class="login-heading mb-0 text-center">
-                                <h2>Enter Login Credentials</h2>
+    <div class="page-wrapper">
+        <!-- account section start -->
+        <div class="account-section bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-9">
+                        <div class="account-card">
+                            <div class="account-card__header bg_img overlay--one" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
+                                <h2 class="section-title text-center">Welcome to <span class="base--color">Bitcoinary Mint</span></h2>
                             </div>
-                            <div class="card-body">
-                                <div class="error-msg p-2 m-1" v-if="has_error && !success">
-                                    <p class="m-1" v-if="error == 'login_error'">Validation Errors.</p>
-                                    <p class="p-2 m-4" v-else>Error, unable to connect with these credentials.</p>
-                                </div>
-                                <div class="error-msg p-2 m-1" v-if="success && !this.$auth.user().isEmailVerified"><div class="text-center ml-2"><div class="danger-group p-0 p-md-2  m-1"><h4>Please Verify your Email</h4> <p class="w-note m-1">Thank you for your interest in joining our program, you are now close to becoming an official member of  Bitcoinary Mint</p> <span>Please login into  to finish up your registration</span></div> <div class="text-center"><button @click = "resendEmail" class="btn btn-default">Resend Email</button></div></div></div>
-
-                               
-                                <form autocomplete="off" @submit.prevent="login" method="post">
-                                    <ul class="form-list">
-                                        <li class="row clearfix text-center">
-                                            <div class="input-box col-12 p-2  col-md-6">
-                                                <label>Username</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
-                                                    <input type="email" placeholder="email" v-model="email" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="input-box col-12 p-2  col-md-6">
-                                                <label>Password</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-lock" aria-hidden="true"></i></span>
-                                                    <input type="password" placeholder="Password" v-model="password" required class="form-control">
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="buttons-set text-center">
-                                        <button ref="signin" type="submit" class="btn btn-default">Sign In</button>
+                            <div class="account-card__body">
+                                <h3 class="text-center">Login</h3>
+                                <form class="mt-4" autocomplete="off" @submit.prevent="login" method="post">
+                                    <div class="form-group">
+                                        <label>Email Address</label>
+                                        <input type="email" placeholder="Enter email address" v-model="email" class="form-control">
                                     </div>
-                                    <p class="forgot-password">Forgot your password? <router-link to="/forgot_password">Click here to retrieve</router-link>
-                                    </p>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="password" placeholder="Enter password" v-model="password" required class="form-control">
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group form-check">
+                                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <p class="f-size-14">No account yet? <a href="/register" class="base--color">Sign Up</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 text-sm-right">
+                                            <p class="f-size-14 mb-3">Forgot your password? <a href="/forgot_password" class="base--color">Click here to retrieve</a></p>
+                                        </div>
+                                    </div>
+                                    <button ref="signin" type="submit" class="cmn-btn">Login Now</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+    <!-- account section end -->
     </div>
 </template>
 <script>
@@ -74,7 +68,7 @@ export default {
             }
         })
 
-    }, 
+    },
     methods: {
         login() {
             this.processing(true)
@@ -89,12 +83,12 @@ export default {
                     this.processing(false)
                     var redirectTo = 'dashboard'
                     app.success = true
-                     // console.log(redirect)
-                     // console.log(redirect  && !this.$auth.user().isEmailVerified)
-                    if(redirect  && !this.$auth.user().isEmailVerified){
-                       if(redirect.from.path == "/confirm-registration") {
-                         this.$router.push(redirect.from.fullPath)
-                       }
+                    // console.log(redirect)
+                    // console.log(redirect  && !this.$auth.user().isEmailVerified)
+                    if (redirect && !this.$auth.user().isEmailVerified) {
+                        if (redirect.from.path == "/confirm-registration") {
+                            this.$router.push(redirect.from.fullPath)
+                        }
                     }
                     if (this.$auth.user().isEmailVerified) {
                         if (redirect) {
@@ -102,8 +96,8 @@ export default {
                         } else if (this.$auth.user().isAdmin) {
                             redirectTo = 'adminDashboard'
                         }
-                         this.$router.push({ name: redirectTo })
-                    } 
+                        this.$router.push({ name: redirectTo })
+                    }
                 },
                 error: function(res) {
                     this.processing(false)
@@ -136,7 +130,7 @@ export default {
                 })
         }
     },
-    
+
 }
 
 </script>
