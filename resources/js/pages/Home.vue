@@ -75,19 +75,7 @@
         </section>
         <!-- about section end -->
         <!-- package section start -->
-        <section id="packages" class="pt-120 pb-120">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 text-center">
-                        <div class="section-header">
-                            <h2 class="section-title"><span class="font-weight-normal">Investment</span> <b class="base--color">Plans</b></h2>
-                            <p>To make a solid investment, you have to know where you are investing. Find a plan which is best for you.</p>
-                        </div>
-                    </div>
-                </div>
-                <InvestmentPackage></InvestmentPackage>
-            </div>
-        </section>
+        
         <!-- package section end  -->
         <!-- choose us section start -->
         <section class="pt-120 pb-120 overlay--radial bg_img" :data-background="$root.basepath + '/images/bg/bg-3.jpg'">
@@ -211,6 +199,20 @@
                         <!-- choose-card end -->
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="packages" class="pt-120 pb-120">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <div class="section-header">
+                            <h2 class="section-title"><span class="font-weight-normal">Investment</span> <b class="base--color">Plans</b></h2>
+                            <p>To make a solid investment, you have to know where you are investing. Find a plan which is best for you.</p>
+                        </div>
+                    </div>
+                </div>
+                <InvestmentPackage></InvestmentPackage>
             </div>
         </section>
         <!-- choose us section end  -->

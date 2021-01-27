@@ -14,6 +14,8 @@ import popper from 'popper.js'
 import moment from 'moment'
 import fontawesome from '@fortawesome/fontawesome-free'
 import Clipboard from 'v-clipboard'
+import vueTelInput from "vue-tel-input";
+
 
 
 Vue.use(Clipboard)
@@ -25,6 +27,9 @@ Vue.use(fontawesome)
 window.Vue = Vue
 window.basepath = window.location.origin
 
+//install vue-tel-input
+import 'vue-tel-input/dist/vue-tel-input.css'
+Vue.use(vueTelInput);
 // Set Vue router
 Vue.router = router
 Vue.use(VueRouter)
@@ -132,7 +137,7 @@ const app = new Vue({
                 title,
                 text: message,
                 showConfirmButton: false,
-                timer: 1500
+                timer: 3000
             })
         },
         getUpdates() {
@@ -265,28 +270,28 @@ const app = new Vue({
             this.time = moment().format("h:mm:ss a")
         },
         btcRate() {
-            this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json")
-                .then(response => {
-                    this.usd_btc_rate = response.data.bpi.USD.rate
-                    this.eur_btc_rate = response.data.bpi.EUR.rate
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
+            // this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json")
+            //     .then(response => {
+            //         this.usd_btc_rate = response.data.bpi.USD.rate
+            //         this.eur_btc_rate = response.data.bpi.EUR.rate
+            //     })
+            //     .catch(error => {
+            //         console.log(error.response)
+            //     })
 
 
         },
         btcVolume() {
-            this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT")
-                .then(response => {
-                    let volume = response.data.volume
-                    this.btc_volume = parseInt(volume) / 3
-                    this.active_trade = volume
-                    // console.log(response.data);
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
+            // this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT")
+            //     .then(response => {
+            //         let volume = response.data.volume
+            //         this.btc_volume = parseInt(volume) / 3
+            //         this.active_trade = volume
+            //         // console.log(response.data);
+            //     })
+            //     .catch(error => {
+            //         console.log(error.response)
+            //     })
 
 
         },

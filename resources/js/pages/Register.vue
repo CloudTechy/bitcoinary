@@ -1,171 +1,93 @@
 <template>
-    <div style="width: inherit;">
-        <div class="page-title row page-title m-3 p-0 with-btn">
-            <div class=" col-12 col-lg-8  container">
-                <h1>account Registration</h1>
-                <p>Already have an account? Click here to login</p>
-                <router-link class="btn btn-default" to="/login">Sign In</router-link>
-            </div>
-        </div>
-        <section class="main-container"  :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
-            <div class="main">
-                <div class="container">
-                    <div class="wrapper">
-                        <div class="register-wrapper">
-                            <div v-if="!success" class="register-form p-0 m-0">
-                                <form autocomplete="off" @submit.prevent="register" v-if="!success" method="post">
-                                    <div class="login-heading">
-                                        <h2>Account Information</h2>
+    <div class="page-wrapper">
+        <!-- account section start -->
+        <div class="account-section bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-lg-7">
+                        <div class="account-card">
+                            <div class="account-card__header bg_img overlay--one" :data-background="$root.basepath + '/images/bg/bg-6.jpg'">
+                                <h2 class="section-title">Welcome to <span class="base--color">Bitcoinary Mint</span></h2>
+                            </div>
+                            <div class="account-card__body">
+                                <h3 class="text-center">Create an Account</h3>
+                                <form class="mt-4" autocomplete="off" @submit.prevent="register" v-if="!success" method="post">
+                                    <div class="form-group">
+                                        <div class="error-msg  m-3" v-if="has_error && !success">
+                                            <p class="p-2 m-3" v-if="error == 'registration_validation_error'">Validation Errors.</p>
+                                        </div>
                                     </div>
-                                    <div class="error-msg  m-3" v-if="has_error && !success">
-                                        <p class="p-2 m-3" v-if="error == 'registration_validation_error'">Validation Errors.</p>
-                                        <p class="p-2 m-3"  v-else>Error, can not register at the moment. If the problem persists, please contact an administrator.</p>
+                                    <div class="form-group">
+                                        <label>First Name</label>
+                                        <input type="text" required v-model="first_name" placeholder="Your first name" :class="{'form-control' : true, 'error-input': errors.first_name != undefined}">
+                                        <p v-if="errors.first_name" v-for="error in errors.first_name" class="text-danger m-0 p-2">{{error}}</p>
                                     </div>
-                                    <ul class="form-list p-1">
-                                        <li class="row clearfix">
-                                            <div class="col-12 p-2  col-md-6">
-                                                <label>First Name</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-user" aria-hidden="true"></i></span>
-                                                    <input type="text" required v-model="first_name" placeholder="Your first name" :class="{'form-control' : true, 'error-input': errors.first_name != undefined}">
-                                                    <p v-if="errors.first_name" v-for="error in errors.first_name" class="text-danger m-0 p-2">{{error}}</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 p-2  col-md-6">
-                                                <label>Last Name</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-user" aria-hidden="true"></i></span>
-                                                    <input type="text" required placeholder="Your last name" v-model="last_name" :class="{'form-control' : true, 'error-input': errors.last_name != undefined}">
-                                                    <p v-if="errors.last_name" v-for="error in errors.last_name" class="text-danger m-0 p-2">{{error}}</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="row clearfix">
-                                            <div class="col-12 p-2  col-md-6">
-                                                <label>Username</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-user" aria-hidden="true"></i></span>
-                                                    <input type="text" required v-model="username" placeholder="Username" :class="{'form-control' : true, 'error-input': errors.username != undefined}">
-                                                    <p v-if="errors.username" v-for="error in errors.username" class="text-danger m-0 p-2">{{error}}</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 p-2  col-md-6">
-                                                <label>Phone Number</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-user" aria-hidden="true"></i></span>
-                                                    <input type="text" v-model="number" placeholder="Your phone number" :class="{'form-control' : true, 'error-input': errors.number != undefined}">
-                                                    <p v-if="errors.number" v-for="error in errors.number" class="text-danger m-0 p-2">{{error}}</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="row clearfix">
-                                            <div class="col-12 p-2  col-md-6">
-                                                <label>Email Address</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
-                                                    <input type="email" required="" v-model="email" placeholder="Email address" :class="{'form-control' : true, 'error-input': errors.email != undefined}">
-                                                    <p v-if="errors.email" v-for="error in errors.email" class="text-danger m-0 p-2">{{error}}</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 p-2  col-md-6">
-                                                <label>Re-type Email Address</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
-                                                    <input type="email" required v-model="email_confirmation" placeholder="Re-type Email address" :class="{'form-control' : true, 'error-input': errors.email_confirmation != undefined}">
-                                                    <p v-if="errors.email_confirmation" v-for="error in errors.email_confirmation" class="text-danger m-0 p-2">{{error}}</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="row clearfix">
-                                            <div class="col-12 p-2  col-md-6">
-                                                <label>Password</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-lock" aria-hidden="true"></i></span>
-                                                    <input type="password" min="4" required placeholder="Password" v-model="password" :class="{'form-control' : true, 'error-input': errors.password != undefined}">
-                                                    <p v-if="errors.password" v-for="error in errors.password" class="text-danger m-0 p-2">{{error}}</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 p-2  col-md-6">
-                                                <label>Re-type Password</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-lock" aria-hidden="true"></i></span>
-                                                    <input type="password" required v-model="password_confirmation" placeholder="Re-type Password" :class="{'form-control' : true, 'error-input': errors.password_confirmation != undefined}">
-                                                    <p v-if="errors.password_confirmation" v-for="error in errors.password_confirmation" class="text-danger m-0 p-2">{{error}}</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="login-heading">
-                                        <h2>Payment Address</h2>
-                                        <p>Enter your Payment wallet address in below field, make sure you enter the correct Payment address where you will received the payments.</p>
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input type="text" required placeholder="Your last name" v-model="last_name" :class="{'form-control' : true, 'error-input': errors.last_name != undefined}">
+                                        <p v-if="errors.last_name" v-for="error in errors.last_name" class="text-danger m-0 p-2">{{error}}</p>
                                     </div>
-                                    <ul class="form-list p-1">
-                                        <li>
-                                            <div class="col-12 p-2 ">
-                                                <label>Your Bitcoin wallet address</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-dollar-sign"></i></span>
-                                                    <input type="text" placeholder="Your Bitcoin wallet address" v-model="wallet" :class="{'form-control' : true, 'error-input': errors.wallet != undefined}">
-                                                    <p v-if="errors.wallet" v-for="error in errors.wallet" class="text-danger m-0 p-2">{{error}}</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <ul class="form-list p-1">
-                                        <li>
-                                            <div class="col-12 p-2">
-                                                <label>Your Perfectmoney USD ACCOUNT NUMBER</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-dollar-sign"></i></span>
-                                                    <input type="text" placeholder="Your Perfectmoney USD ACCOUNT NUMBER" v-model="pm" :class="{'form-control' : true, 'error-input': errors.pm != undefined}">
-                                                    <p v-if="errors.pm" v-for="error in errors.pm" class="text-danger m-0 p-2">{{error}}</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <ul class="form-list p-1">
-                                        <li class="row clearfix">
-                                            <div class="col-12 p-2  col-md-6">
-                                                <label>Secret question</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-question" aria-hidden="true"></i></span>
-                                                    <input type="text" required="" v-model="secret_question" placeholder="Secret question" :class="{'form-control' : true, 'error-input': errors.secret_question != undefined}">
-                                                    <p v-if="errors.secret_question" v-for="error in errors.secret_question" class="text-danger m-0 p-2">{{error}}</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 p-2  col-md-6">
-                                                <label>Secret answer</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-reply" aria-hidden="true"></i></span>
-                                                    <input type="text" required="" v-model="secret_answer" placeholder="Secret answer" :class="{'form-control' : true, 'error-input': errors.secret_answer != undefined}">
-                                                    <p v-if="errors.secret_answer" v-for="error in errors.secret_answer" class="text-danger m-0 p-2">{{error}}</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="accept-terms text-center">
-                                        <label class="small">Completing your registration you agree with Terms of  Bitcoinary Mint Limited</label>
+                                    <div class="form-group">
+                                        <label>Username</label>
+                                        <input type="text" required v-model="username" placeholder="Username" :class="{'form-control' : true, 'error-input': errors.username != undefined}">
+                                        <p v-if="errors.username" v-for="error in errors.username" class="text-danger m-0 p-2">{{error}}</p>
                                     </div>
-                                    <div class="buttons-set text-center">
-                                        <button ref="signup" type="submit" class="btn btn-default">Sign Up</button>
+                                    <div class="form-group">
+                                        <label>Email Address</label>
+                                        <input type="email" required="" v-model="email" placeholder="Email address" :class="{'form-control' : true, 'error-input': errors.email != undefined}">
+                                        <p v-if="errors.email" v-for="error in errors.email" class="text-danger m-0 p-2">{{error}}</p>
+                                    </div>
+                                <!--     <div class="form-group">
+                                        <label>Phone Number</label>
+                                        <vue-tel-input v-model="number" :class="{'form-control' : true, 'error-input': errors.number != undefined}">>
+                                        </vue-tel-input>
+                                        <p v-if="errors.number" v-for="error in errors.number" class="text-danger m-0 p-2">{{error}}</p>
+                                    </div> -->
+                                    <div class="form-group">
+                                        <label>BTC Wallet</label>
+                                        <input type="text" placeholder="Your Bitcoin wallet address" v-model="wallet" :class="{'form-control' : true, 'error-input': errors.wallet != undefined}">
+                                        <p v-if="errors.wallet" v-for="error in errors.wallet" class="text-danger m-0 p-2">{{error}}</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="password" min="4" required placeholder="Password" v-model="password" :class="{'form-control' : true, 'error-input': errors.password != undefined}">
+                                        <p v-if="errors.password" v-for="error in errors.password" class="text-danger m-0 p-2">{{error}}</p>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group form-check">
+                                                <input checked="" type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 text-sm-right">
+                                            <p class="f-size-14">Have an account? <a href="/login" class="base--color">Login</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input checked="" v-model="terms" type="checkbox" class="form-check-input" id="terms">
+                                        <label class="form-check-label" for="terms"> I agree to the <a href="/terms" class="base--color">terms & condition</a></label>
+                                    </div>
+                                    <div class="mt-3">
+                                        <button class="cmn-btn">SignUp Now</button>
                                     </div>
                                 </form>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        <!-- account section end -->
     </div>
 </template>
 <script>
-export default {
+    export default {
     data() {
         return {
             first_name: '',
             last_name: '',
-            number: '',
+            // number: '',
             email: '',
             username: '',
             email_confirmation: '',
@@ -176,6 +98,7 @@ export default {
             pm: '',
             referral: this.$route.query.ref ? this.$route.query.ref : null,
             wallet: '',
+            terms: true,
             has_error: false,
             error: '',
             errors: {},
@@ -193,7 +116,7 @@ export default {
                     email: app.email,
                     email_confirmation: app.email_confirmation,
                     last_name: app.last_name,
-                    number: app.number,
+                    // number: app.number,
                     secret_answer: app.secret_answer,
                     secret_question: app.secret_question,
                     username: app.username,
@@ -209,7 +132,7 @@ export default {
                     this.$root.alert('success', '', 'Registration Successful!!! Redirecting...')
                     this.processing(false)
                     app.success = true
-                  this.$router.push({ name: 'login', params: { successRegistrationRedirect: true } }) 
+                    this.$router.push({ name: 'login', params: { successRegistrationRedirect: true } })
                 },
                 error: function(res) {
                     window.scrollTo(0, 300)
@@ -243,3 +166,75 @@ export default {
 }
 
 </script>
+<style type="text/css">
+/*    .box {
+  background: #666666;
+  color: #ffffff;
+  width: 250px;
+  padding: 10px;
+  margin: 1em auto;
+}
+p {
+  margin: 1.5em 0;
+  padding: 0;
+}*/
+input[type="checkbox"] {
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+}
+
+input[type="checkbox"]+label:before {
+    border: 1px solid #cca354;
+    content: "\00a0";
+    display: inline-block;
+    font: 16px/1em sans-serif;
+    height: 16px;
+    margin: 0 .25em 0 0;
+    vertical-align: top;
+    width: 16px;
+}
+
+input[type="checkbox"]:checked+label:before {
+    background: #cca354;
+    color: #fff;
+    content: "\2713";
+    text-align: center;
+}
+
+input[type="checkbox"]:checked+label:after {
+    font-weight: bold;
+}
+
+input[type="checkbox"]:focus+label::before {
+    outline: rgb(59, 153, 252) auto 5px;
+}
+
+.iti-flag {
+  background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags.png");
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2 / 1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+  .iti-flag {
+    background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags@2x.png");
+  }
+}
+.vue-tel-input {
+    width: 100% !important;
+    border: 1px solid rgba(204, 163, 84, 0.45) !important;
+}
+.vti__input {
+
+    background-color: black;
+    font-weight: bold;
+    color: white;
+}
+
+</style>

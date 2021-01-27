@@ -3,13 +3,37 @@
     <footer class="footer bg_img" :data-background="$root.basepath + '/images/bg/bg-7.jpg'">
         <div class="footer__top">
             <div class="container">
+                <div class="row" style="margin-top:50px;">
+                    <div class="col-md-12">
+                        <div class="row equal">
+                            <div class="col-md-8 no-padding wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;min-height: 180px;">
+                                <div class="incrop-left" style="min-height: 100%;">
+                                    <div class="incrop-left-img">
+                                        <img :src="$root.basepath + '/images/uploads/uk.png'">
+                                        <h4 class="step__title base--color" style="padding-bottom: 15px;">UK Registered &amp; USA Based Company</h4>
+                                        <p>Bitcoinary Mint which is based in the United States is a fully registered and licensed company in UK. Golden Mint is powered by the latest and most secure form of SSL data encryption to keep all your data and information safe and secure.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 no-padding wow fadeInRight" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInRight;min-height: 180px;">
+                                <div class="incrop-right" style="min-height: 100%;">
+                                    <div class="incorp-inner">
+                                        <h4 class="step__title" style="padding-bottom: 15px;color:#2f2e2e;">958792765</h4>
+                                        <p style="color:#2f2e2e;">Official Registered Company</p>
+                                        <a target="_blank" href="/register" style="padding-left:20px;margin-top: 0px;display: block;" class="btn btn-black-warning section-home__btn textsite truncate" data-pjax="">Check Companies House</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <a style="max-height: 200px;" href="#0" class="footer-logo"><img :src="$root.basepath + '/images/bg/bg-10.jpg'" alt="image"></a>
+                        <a style="max-height: 200px;" href="#0" class="footer-logo"><img :src="$root.basepath + '/images/logo.png'" alt="image"></a>
                         <ul class="footer-short-menu d-flex flex-wrap justify-content-center mt-4">
-                            <li><a href="#0">Home</a></li>
-                            <li><a href="#0">Privacy & Policy</a></li>
-                            <li><a href="#0">Terms & Conditions</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/terms/#privacy">Privacy & Policy</a></li>
+                            <li><a href="/terms/#terms">Terms & Conditions</a></li>
                         </ul>
                     </div>
                 </div>
@@ -63,6 +87,82 @@ export default {
     font-weight: 400;
     line-height: 1.6;
     margin: 0
+}
+
+.incrop-left {
+    background-color: #171717;
+    background-size: 100%;
+    background-position: 0 100%;
+    padding: 30px;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -3px 0px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.incrop-left img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 90px;
+}
+
+@media screen and (max-width: 991px) {
+    .incrop-left {
+        border-radius: initial;
+    }
+}
+
+.incrop-left-img {
+    position: relative;
+    padding-left: 100px;
+}
+
+.incorp-inner {
+    padding-left: 90px;
+    background: url(../../../public/images/uploads/company-logo.png) no-repeat 0 0;
+    background-size: 80px auto;
+}
+
+.step__title {
+    font-weight: 500;
+    font-size: 22px;
+    font-size: 1.57rem;
+    color: #2e3035;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.incrop-right {
+    background-color: #cca354;
+    padding: 30px;
+    border-radius: 0 10px 10px 0;
+}
+
+@media screen and (max-width: 991px) {
+    .incrop-right {
+        border-radius: initial;
+    }
+}
+
+.section-home__btn {
+    margin-top: 25px;
+    text-transform: uppercase;
+}
+
+.textsite {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.btn-black-warning {
+    color: #4f4f4f;
+    background-color: #171717;
+    border-color: #171717;
+}
+
+.section-home__btn:hover {
+    background-color: black !important;
+    border-color: #cca354;
 }
 
 </style>

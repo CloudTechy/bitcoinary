@@ -1,6 +1,6 @@
 <template>
     <section :data-background="$root.basepath + '/images/bg/bg-10.jpg'" class="bg_img pt-120 pb-120 border-top-1">
-        <div style="background-color: rgba(0,0,0,0.5); padding: 40px 10px;" class="container">
+        <div style="background-color: rgba(0,0,0,0.7);" class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center">
                     <div class="section-header">

@@ -2,7 +2,8 @@ import VueRouter from 'vue-router'
 
 // Pages
 import Home from './pages/Home'
-import notFound from './pages/404.vue'
+import NotFound from './pages/Error404.vue'
+import Terms from './pages/terms.vue'
 import About from './pages/About'
 import GetStarted from './pages/getStarted'
 import Faq from './pages/faq'
@@ -43,8 +44,16 @@ const routes = [{
     },
     {
         path: '*',
-        name: '404',
-        component: notFound,
+        name: 'NotFound',
+        component: NotFound,
+        meta: {
+            auth: undefined
+        }
+    },
+    {
+        path: '/terms',
+        name: 'Terms',
+        component: Terms,
         meta: {
             auth: undefined
         }
