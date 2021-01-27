@@ -60564,7 +60564,7 @@ var render = function() {
                     },
                     [
                       _c("div", { staticClass: "form-group" }, [
-                        _c("label", [_vm._v("Email Address")]),
+                        _c("label", [_vm._v("Email Adress")]),
                         _vm._v(" "),
                         _c("input", {
                           directives: [

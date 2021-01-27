@@ -13,7 +13,7 @@
                                 <h3 class="text-center">Login</h3>
                                 <form class="mt-4" autocomplete="off" @submit.prevent="login" method="post">
                                     <div class="form-group">
-                                        <label>Email Address</label>
+                                        <label>Email Adress</label>
                                         <input type="email" placeholder="Enter email address" v-model="email" class="form-control">
                                     </div>
                                     <div class="form-group">
