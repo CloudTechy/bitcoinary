@@ -18,9 +18,9 @@
                             <div class="col-md-4 no-padding wow fadeInRight" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInRight;min-height: 180px;">
                                 <div class="incrop-right" style="min-height: 100%;">
                                     <div class="incorp-inner">
-                                        <h4 class="step__title" style="padding-bottom: 15px;color:#2f2e2e;">958792765</h4>
+                                        <h4 class="step__title" style="padding-bottom: 15px;color:#2f2e2e;">959792761</h4>
                                         <p style="color:#2f2e2e;">Official Registered Company</p>
-                                        <a target="_blank" href="/register" style="padding-left:20px;margin-top: 0px;display: block;font-size: 0.8rem;" class="btn btn-black-warning section-home__btn textsite truncate" data-pjax="">Check Companies House</a>
+                                        <a target="_blank" title="Read more about us" href="/about" style="padding-left:20px;margin-top: 0px;display: block;font-size: 0.8rem;" class="btn btn-black-warning section-home__btn textsite truncate" data-pjax="">Of Companies House</a>
                                     </div>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-md-right text-center">
-                        <p>© {{fullYear}}<router-link class="base--color" to="/"> &nbsp; Bitcoinary Mint. All Rights Reserved.</router-link>
+                        <p> © {{fullYear}} <a class="base--color" href="/">  Bitcoinary Mint. </a> All Rights Reserved.
                         </p>
                     </div>
                     <div class="col-md-6">

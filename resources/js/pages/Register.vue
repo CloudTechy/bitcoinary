@@ -13,54 +13,56 @@
                                 <h3 class="text-center">Create an Account</h3>
                                 <form class="mt-4" autocomplete="off" @submit.prevent="register" v-if="!success" method="post">
                                     <div class="form-group">
-                                        <div class="error-msg  m-3" v-if="has_error && !success">
-                                            <p class="p-2 m-3" v-if="error == 'registration_validation_error'">Validation Errors.</p>
+                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jog )'}" class="error-msg  m-3" v-if="has_error && !success  ">
+                                            <p v-if = "!unknown_error && errors" class="text-center p-2 m-3 small">You have some errors in your form</p>
+                                            <p class="p-2 m-3 small" v-if="unknown_error" >{{unknown_error}}</p>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>First Name</label>
                                         <input type="text" required v-model="first_name" placeholder="Your first name" :class="{'form-control' : true, 'error-input': errors.first_name != undefined}">
-                                        <p v-if="errors.first_name" v-for="error in errors.first_name" class="text-danger m-0 p-2">{{error}}</p>
+                                        <p v-if="errors.first_name" v-for="error in errors.first_name" class="base--color m-0 p-2 small">{{error}}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>Last Name</label>
                                         <input type="text" required placeholder="Your last name" v-model="last_name" :class="{'form-control' : true, 'error-input': errors.last_name != undefined}">
-                                        <p v-if="errors.last_name" v-for="error in errors.last_name" class="text-danger m-0 p-2">{{error}}</p>
+                                        <p v-if="errors.last_name" v-for="error in errors.last_name" class="base--color m-0 p-2 small">{{error}}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>Username</label>
                                         <input type="text" required v-model="username" placeholder="Username" :class="{'form-control' : true, 'error-input': errors.username != undefined}">
-                                        <p v-if="errors.username" v-for="error in errors.username" class="text-danger m-0 p-2">{{error}}</p>
+                                        <p v-if="errors.username" v-for="error in errors.username" class="base--color m-0 p-2 small">{{error}}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>Email Address</label>
                                         <input type="email" required="" v-model="email" placeholder="Email address" :class="{'form-control' : true, 'error-input': errors.email != undefined}">
-                                        <p v-if="errors.email" v-for="error in errors.email" class="text-danger m-0 p-2">{{error}}</p>
+                                        <p v-if="errors.email" v-for="error in errors.email" class="base--color m-0 p-2 small">{{error}}</p>
                                     </div>
-                                <!--     <div class="form-group">
+                                    <!--     <div class="form-group">
                                         <label>Phone Number</label>
                                         <vue-tel-input v-model="number" :class="{'form-control' : true, 'error-input': errors.number != undefined}">>
                                         </vue-tel-input>
-                                        <p v-if="errors.number" v-for="error in errors.number" class="text-danger m-0 p-2">{{error}}</p>
+                                        <p v-if="errors.number" v-for="error in errors.number" class="base--color m-0 p-2 small">{{error}}</p>
                                     </div> -->
                                     <div class="form-group">
                                         <label>BTC Wallet</label>
-                                        <input type="text" placeholder="Your Bitcoin wallet address" v-model="wallet" :class="{'form-control' : true, 'error-input': errors.wallet != undefined}">
-                                        <p v-if="errors.wallet" v-for="error in errors.wallet" class="text-danger m-0 p-2">{{error}}</p>
+                                        <input type="text" required v-model="wallet" placeholder="Your Bitcoin wallet address" :class="{'form-control' : true, 'error-input': errors.wallet != undefined}">
+                                        <p v-if="errors.wallet" v-for="error in errors.wallet" class="base--color m-0 p-2 small">{{error}}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input type="password" min="4" required placeholder="Password" v-model="password" :class="{'form-control' : true, 'error-input': errors.password != undefined}">
-                                        <p v-if="errors.password" v-for="error in errors.password" class="text-danger m-0 p-2">{{error}}</p>
+                                        <input type="password" required v-model="password" placeholder="password" :class="{'form-control' : true, 'error-input': errors.password != undefined}">
+                                        <p v-if="errors.password" v-for="error in errors.password" class="base--color m-0 p-2 small">{{error}}</p>
                                     </div>
                                     <div class="form-group">
                                         <label>Confirm Password</label>
                                         <input type="password" min="4" required placeholder="Confirm Password" v-model="password_confirmation" :class="{'form-control' : true, 'error-input': errors.password_confirmation != undefined}">
-                                        <p v-if="errors.password_confirmation" v-for="error in errors.password_confirmation" class="text-danger m-0 p-2">{{error}}</p>
+                                        <p v-if="errors.password_confirmation" v-for="error in errors.password_confirmation" class="base--color m-0 p-2 small">{{error}}</p>
                                     </div>
                                     <div class="form-group form-check">
                                         <input checked="" v-model="terms" type="checkbox" class="form-check-input" id="terms">
                                         <label class="form-check-label" for="terms"> I agree to the <a href="/terms" class="base--color">terms & condition</a></label>
+                                        <p v-if="errors.terms && !terms" class="text-danger m-0 p-2">You will need to accept the terms to proceed.</p>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-sm-6">
@@ -70,11 +72,11 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-6 text-sm-right">
-                                            <p class="f-size-14">Have an account? <a href="/login" class="base--color">Login</a></p>
+                                            <p class="f-size-14">Already a member? <a href="/login" class="base--color">Login</a></p>
                                         </div>
                                     </div>
                                     <div class="mt-3">
-                                        <button class="cmn-btn">SignUp Now</button>
+                                        <button :disabled="!terms" ref="signup" type="submit" :class="{'cmn-btn' : true,'btn' : true, disabled : !terms}">SignUp Now</button>
                                     </div>
                                 </form>
                             </div>
@@ -95,35 +97,31 @@
             // number: '',
             email: '',
             username: '',
-            email_confirmation: '',
             password: '',
             password_confirmation: '',
-            secret_answer: '',
-            secret_question: '',
-            pm: '',
             referral: this.$route.query.ref ? this.$route.query.ref : null,
             wallet: '',
             terms: true,
             has_error: false,
             error: '',
             errors: {},
+            unknown_error : '',
             success: false
         }
     },
     mounted() {},
     methods: {
         register() {
+            this.$root.loader('show')
             this.processing(true)
+            this.formDefault()
             var app = this
-            this.$auth.register({
+                this.$auth.register({
                 data: {
                     first_name: app.first_name,
                     email: app.email,
-                    email_confirmation: app.email_confirmation,
                     last_name: app.last_name,
                     // number: app.number,
-                    secret_answer: app.secret_answer,
-                    secret_question: app.secret_question,
                     username: app.username,
                     pm: app.pm,
                     wallet: app.wallet,
@@ -134,26 +132,37 @@
                     password_confirmation: app.password_confirmation
                 },
                 success: function() {
-                    this.$root.alert('success', '', 'Registration Successful!!! Redirecting...')
+                    this.$root.loader('hide')
+                    this.$root.alert('success', ' ', 'Registration Successful!!! Redirecting...')
                     this.processing(false)
                     app.success = true
                     this.$router.push({ name: 'login', params: { successRegistrationRedirect: true } })
                 },
                 error: function(res) {
-                    window.scrollTo(0, 300)
+                    this.$root.loader('hide')
+                    window.scrollTo(0, 180)
                     app.has_error = true
                     app.error = res.response.data.message
-                    app.errors = res.response.data.error || {}
+                    app.errors = typeof res.response.data.error == 'string' ? {} : res.response.data.error
+                    app.unknown_error = typeof res.response.data.error == 'string' ? res.response.data.error : ''
                     this.processing(false)
+                    this.$root.alert('error', ' ', app.error)
                 }
             })
+            
+        },
+        formDefault(){
+            this.success = false
+            this.unknown_error = ''
+            this.errors = {}
+            this.has_error = false
         },
         processing(status) {
             if (status) {
                 this.$refs.signup.innerText = "processing..."
                 this.$refs.signup.disabled = true
             } else {
-                this.$refs.signup.innerText = "Sign Up"
+                this.$refs.signup.innerText = "SignUp Now"
                 this.$refs.signup.disabled = false
             }
         },
@@ -218,28 +227,151 @@ input[type="checkbox"]:focus+label::before {
 }
 
 .iti-flag {
-  background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags.png");
+    background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags.png");
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min--moz-device-pixel-ratio: 2),
-  only screen and (-o-min-device-pixel-ratio: 2 / 1),
-  only screen and (min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-  .iti-flag {
-    background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags@2x.png");
-  }
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2 / 1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+    .iti-flag {
+        background-image: url("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags@2x.png");
+    }
 }
+
 .vue-tel-input {
     width: 100% !important;
     border: 1px solid rgba(204, 163, 84, 0.45) !important;
 }
+
 .vti__input {
 
     background-color: black;
     font-weight: bold;
     color: white;
+}
+.success-group{
+      display: inline-block;
+    color: #2ee388;
+    position: relative;
+    padding: 15px 15px 15px 65px;
+    margin-bottom: 20px;
+    text-align: left;
+    border: 1px solid #2ee388;
+    border-radius: 6px;
+}
+.success-group.clone{
+  padding:0;
+}
+.success-group h4{
+  font-size: 30px;
+  margin-bottom:8px;
+  font-weight:700;
+}
+.success-group span{
+  font-size:18px;
+  color:#fff;
+}
+.success-group:before{
+  content:"\f058";
+  font-size:40px;
+  position:absolute;
+  top:50%;
+  left:15px;
+  transform:translateY(-50%);
+  -webkit-transform:translateY(-50%); 
+  -moz-transform:translateY(-50%);
+  font-family:'fontAwesome';
+}
+.success-group.clone:before{display:none;}
+.success-group.clone > div:first-child{
+  position:relative;
+  padding: 15px 15px 15px 65px;
+}
+.success-group.clone > div:first-child:before{
+  content:"\f058";
+  font-size:40px;
+  position:absolute;
+  top:50%;
+  left:15px;
+  transform:translateY(-50%);
+  -webkit-transform:translateY(-50%); 
+  -moz-transform:translateY(-50%);
+  font-family:'fontAwesome';
+}
+.error-group{
+  display:inline-block;
+  color:#FF9494;
+  position:relative;
+  padding-left:50px;
+  margin-bottom:20px;
+  text-align:left;
+}
+.error-group h4{
+  font-size:18px;
+  margin-bottom:8px;
+  font-weight:700;
+}
+.error-group span{
+  font-size:14px;
+  color:#fff;
+}
+.error-group:before{
+  content:"\f00d";
+  font-size:40px;
+  position:absolute;
+  top:50%;
+  left:0;
+  transform:translateY(-50%);
+  -webkit-transform:translateY(-50%); 
+  -moz-transform:translateY(-50%);
+  font-family:'fontAwesome';
+}
+.error-msg, .success-msg{
+  margin-bottom:30px;
+  font-size:15px;
+  color:#fff;
+  line-height:22px;
+  padding:10px 50px;
+  position:relative;
+  border-radius:6px;
+  border:1px solid transparent;
+}
+.error-msg:before, .success-msg:before{
+  content:"";
+  font-size:30px;
+  position:absolute;
+  top:50%;
+  left:10px;
+  transform:translateY(-50%);
+  -webkit-transform:translateY(-50%); 
+  -moz-transform:translateY(-50%);
+  font-family:'fontAwesome';
+}
+.error-msg li, .success-msg li{
+  margin-bottom:5px;
+}
+.error-msg li:last-child, .success-msg li:last-child{
+  margin-bottom:0;
+}
+.success-msg{
+  border-color:#cca354;
+}
+.success-msg p{
+  margin:0;
+}
+.success-msg:before{
+  content:"\f058";
+  color:#cca354;
+}
+.error-msg{
+  border-color: #cca354 !important;
+}
+.error-msg:before{
+  content:"\f00d";
+  color:#cca354;
 }
 
 </style>

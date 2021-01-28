@@ -52,7 +52,7 @@ class AuthController extends Controller {
 			if ($token = $this->guard()->attempt($credentials)) {
 				return response()->json(['status' => 'success'], 200)->header('Authorization', $token);
 			} else {
-				return Helper::invalidRequest(['error' => 'login error'], 'Authentication error', 401);
+				return Helper::invalidRequest(['error' => 'Invalid Credentials'], 'Your username or password is incorrect', 401);
 			}
 
 		} catch (Exception $bug) {

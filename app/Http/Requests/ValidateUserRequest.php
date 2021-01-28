@@ -36,7 +36,7 @@ class ValidateUserRequest extends FormRequest {
 			'referral' => 'nullable|string|exists:users,username',
 			"number" => "nullable|string|min:5|max:255|unique:users,number",
 			'user_level_id' => 'required|numeric|exists:user_levels,id',
-			'image' => 'required|mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
+			'image' => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
 		];
 	}
 }

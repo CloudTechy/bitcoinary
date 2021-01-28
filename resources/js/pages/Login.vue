@@ -6,14 +6,19 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-9">
                         <div class="account-card">
-                            <div class="account-card__header bg_img overlay--one" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
+                            <div class="account-card__header bg_img overlay--one" :data-background="$root.basepath + '/images/bg/bg-6.jpg'">
                                 <h2 class="section-title text-center">Welcome to <span class="base--color">Bitcoinary Mint</span></h2>
                             </div>
                             <div class="account-card__body">
                                 <h3 class="text-center">Login</h3>
                                 <form class="mt-4" autocomplete="off" @submit.prevent="login" method="post">
                                     <div class="form-group">
-                                        <label>Email Adress</label>
+                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jog )'}" class="error-msg  m-3" v-if="has_error && !success  ">
+                                            <p v-if = "error.error" class="text-center p-2 m-3 small">{{error.message}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email Address</label>
                                         <input type="email" placeholder="Enter email address" v-model="email" class="form-control">
                                     </div>
                                     <div class="form-group">
@@ -23,7 +28,7 @@
                                     <div class="form-row">
                                         <div class="col-sm-6">
                                             <div class="form-group form-check">
-                                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                                <input v-model = "rememberMe" type="checkbox" class="form-check-input" id="rememberMe">
                                                 <label class="form-check-label" for="rememberMe">Remember me</label>
                                             </div>
                                         </div>
@@ -31,14 +36,14 @@
                                     <div class="form-row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <p class="f-size-14">No account yet? <a href="/register" class="base--color">Sign Up</a></p>
+                                                <p class="f-size-14">Not yet a member? <a href="/register" class="base--color">Sign Up</a></p>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 text-sm-right">
-                                            <p class="f-size-14 mb-3">Forgot your password? <a href="/forgot_password" class="base--color">Click here to retrieve</a></p>
+                                            <p class="f-size-14 mb-3">Forgotten password? <a href="/forgot_password" class="base--color">Reset</a></p>
                                         </div>
                                     </div>
-                                    <button ref="signin" type="submit" class="cmn-btn">Login Now</button>
+                                    <button  ref="signin" type="submit" class="cmn-btn">Login Now</button>
                                 </form>
                             </div>
                         </div>
@@ -58,7 +63,8 @@ export default {
             password: null,
             success: false,
             has_error: false,
-            error: ''
+            error: '',
+            rememberMe : false
         }
     },
     mounted() {
@@ -71,7 +77,9 @@ export default {
     },
     methods: {
         login() {
+            this.$root.loader('show')
             this.processing(true)
+            this.formDefault()
             var redirect = this.$auth.redirect()
             var app = this
             this.$auth.login({
@@ -81,10 +89,9 @@ export default {
                 },
                 success: function(response) {
                     this.processing(false)
+                    this.$root.loader('hide')
                     var redirectTo = 'dashboard'
                     app.success = true
-                    // console.log(redirect)
-                    // console.log(redirect  && !this.$auth.user().isEmailVerified)
                     if (redirect && !this.$auth.user().isEmailVerified) {
                         if (redirect.from.path == "/confirm-registration") {
                             this.$router.push(redirect.from.fullPath)
@@ -100,21 +107,29 @@ export default {
                     }
                 },
                 error: function(res) {
+                    this.$root.loader('hide')
+                    window.scrollTo(0, 180)
                     this.processing(false)
                     app.has_error = true
-                    app.error = res.response.data.error
-                    console.log(res)
+                    app.error = res.response ? res.response.data : {}
+                    this.$root.alert('error', ' ', app.error.error ? app.error.error.error :'An unknown error has occured, please try again later.' )
+                    console.log(res.response.data.error.error)
                 },
-                rememberMe: true,
+                rememberMe: app.rememberMe,
                 fetchUser: true
             })
+        },
+        formDefault(){
+            this.success = false
+            this.error = ""
+            this.has_error = false
         },
         processing(status) {
             if (status) {
                 this.$refs.signin.innerText = "Signing in..."
                 this.$refs.signin.disabled = true
             } else {
-                this.$refs.signin.innerText = "Sign In"
+                this.$refs.signin.innerText = "Login Now"
                 this.$refs.signin.disabled = false
             }
         },

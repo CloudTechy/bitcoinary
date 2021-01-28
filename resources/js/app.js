@@ -140,6 +140,21 @@ const app = new Vue({
                 timer: 3000
             })
         },
+        loader(action) {
+            if (action == 'show') {
+                $(".preloader").animate({
+                    "opacity": "0.8"
+                }, 300, function() {
+                    $(".preloader").css("display", "flex");
+                });
+            } else {
+                $(".preloader").delay(200).animate({
+                    "opacity": "0"
+                }, 300, function() {
+                    $(".preloader").css("display", "none");
+                });
+            }
+        },
         getUpdates() {
             this.getPackages();
             this.getNews();

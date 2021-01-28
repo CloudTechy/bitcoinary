@@ -8133,6 +8133,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8140,7 +8145,8 @@ __webpack_require__.r(__webpack_exports__);
       password: null,
       success: false,
       has_error: false,
-      error: ''
+      error: '',
+      rememberMe: false
     };
   },
   mounted: function mounted() {
@@ -8154,7 +8160,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     login: function login() {
+      this.$root.loader('show');
       this.processing(true);
+      this.formDefault();
       var redirect = this.$auth.redirect();
       var app = this;
       this.$auth.login({
@@ -8164,9 +8172,9 @@ __webpack_require__.r(__webpack_exports__);
         },
         success: function success(response) {
           this.processing(false);
+          this.$root.loader('hide');
           var redirectTo = 'dashboard';
-          app.success = true; // console.log(redirect)
-          // console.log(redirect  && !this.$auth.user().isEmailVerified)
+          app.success = true;
 
           if (redirect && !this.$auth.user().isEmailVerified) {
             if (redirect.from.path == "/confirm-registration") {
@@ -8187,21 +8195,29 @@ __webpack_require__.r(__webpack_exports__);
           }
         },
         error: function error(res) {
+          this.$root.loader('hide');
+          window.scrollTo(0, 180);
           this.processing(false);
           app.has_error = true;
-          app.error = res.response.data.error;
-          console.log(res);
+          app.error = res.response ? res.response.data : {};
+          this.$root.alert('error', ' ', app.error.error ? app.error.error.error : 'An unknown error has occured, please try again later.');
+          console.log(res.response.data.error.error);
         },
-        rememberMe: true,
+        rememberMe: app.rememberMe,
         fetchUser: true
       });
+    },
+    formDefault: function formDefault() {
+      this.success = false;
+      this.error = "";
+      this.has_error = false;
     },
     processing: function processing(status) {
       if (status) {
         this.$refs.signin.innerText = "Signing in...";
         this.$refs.signin.disabled = true;
       } else {
-        this.$refs.signin.innerText = "Sign In";
+        this.$refs.signin.innerText = "Login Now";
         this.$refs.signin.disabled = false;
       }
     },
@@ -8322,6 +8338,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8330,35 +8348,31 @@ __webpack_require__.r(__webpack_exports__);
       // number: '',
       email: '',
       username: '',
-      email_confirmation: '',
       password: '',
       password_confirmation: '',
-      secret_answer: '',
-      secret_question: '',
-      pm: '',
       referral: this.$route.query.ref ? this.$route.query.ref : null,
       wallet: '',
       terms: true,
       has_error: false,
       error: '',
       errors: {},
+      unknown_error: '',
       success: false
     };
   },
   mounted: function mounted() {},
   methods: {
     register: function register() {
+      this.$root.loader('show');
       this.processing(true);
+      this.formDefault();
       var app = this;
       this.$auth.register({
         data: {
           first_name: app.first_name,
           email: app.email,
-          email_confirmation: app.email_confirmation,
           last_name: app.last_name,
           // number: app.number,
-          secret_answer: app.secret_answer,
-          secret_question: app.secret_question,
           username: app.username,
           pm: app.pm,
           wallet: app.wallet,
@@ -8369,7 +8383,8 @@ __webpack_require__.r(__webpack_exports__);
           password_confirmation: app.password_confirmation
         },
         success: function success() {
-          this.$root.alert('success', '', 'Registration Successful!!! Redirecting...');
+          this.$root.loader('hide');
+          this.$root.alert('success', ' ', 'Registration Successful!!! Redirecting...');
           this.processing(false);
           app.success = true;
           this.$router.push({
@@ -8380,20 +8395,29 @@ __webpack_require__.r(__webpack_exports__);
           });
         },
         error: function error(res) {
-          window.scrollTo(0, 300);
+          this.$root.loader('hide');
+          window.scrollTo(0, 180);
           app.has_error = true;
           app.error = res.response.data.message;
-          app.errors = res.response.data.error || {};
+          app.errors = typeof res.response.data.error == 'string' ? {} : res.response.data.error;
+          app.unknown_error = typeof res.response.data.error == 'string' ? res.response.data.error : '';
           this.processing(false);
+          this.$root.alert('error', ' ', app.error);
         }
       });
+    },
+    formDefault: function formDefault() {
+      this.success = false;
+      this.unknown_error = '';
+      this.errors = {};
+      this.has_error = false;
     },
     processing: function processing(status) {
       if (status) {
         this.$refs.signup.innerText = "processing...";
         this.$refs.signup.disabled = true;
       } else {
-        this.$refs.signup.innerText = "Sign Up";
+        this.$refs.signup.innerText = "SignUp Now";
         this.$refs.signup.disabled = false;
       }
     },
@@ -16438,7 +16462,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*    .box {\r\n  background: #666666;\r\n  color: #ffffff;\r\n  width: 250px;\r\n  padding: 10px;\r\n  margin: 1em auto;\r\n}\r\np {\r\n  margin: 1.5em 0;\r\n  padding: 0;\r\n}*/\ninput[type=\"checkbox\"] {\r\n    visibility: hidden;\n}\nlabel {\r\n    cursor: pointer;\n}\ninput[type=\"checkbox\"]+label:before {\r\n    border: 1px solid #cca354;\r\n    content: \"\\A0\";\r\n    display: inline-block;\r\n    font: 16px/1em sans-serif;\r\n    height: 16px;\r\n    margin: 0 .25em 0 0;\r\n    vertical-align: top;\r\n    width: 16px;\n}\ninput[type=\"checkbox\"]:checked+label:before {\r\n    background: #cca354;\r\n    color: #fff;\r\n    content: \"\\2713\";\r\n    text-align: center;\n}\ninput[type=\"checkbox\"]:checked+label:after {\r\n    font-weight: bold;\n}\ninput[type=\"checkbox\"]:focus+label::before {\r\n    outline: rgb(59, 153, 252) auto 5px;\n}\n.iti-flag {\r\n  background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags.png\");\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2),\r\n  only screen and (min-device-pixel-ratio: 2),\r\n  only screen and (min-resolution: 192dpi),\r\n  only screen and (min-resolution: 2dppx) {\n.iti-flag {\r\n    background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags@2x.png\");\n}\n}\n.vue-tel-input {\r\n    width: 100% !important;\r\n    border: 1px solid rgba(204, 163, 84, 0.45) !important;\n}\n.vti__input {\r\n\r\n    background-color: black;\r\n    font-weight: bold;\r\n    color: white;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*    .box {\r\n  background: #666666;\r\n  color: #ffffff;\r\n  width: 250px;\r\n  padding: 10px;\r\n  margin: 1em auto;\r\n}\r\np {\r\n  margin: 1.5em 0;\r\n  padding: 0;\r\n}*/\ninput[type=\"checkbox\"] {\r\n    visibility: hidden;\n}\nlabel {\r\n    cursor: pointer;\n}\ninput[type=\"checkbox\"]+label:before {\r\n    border: 1px solid #cca354;\r\n    content: \"\\A0\";\r\n    display: inline-block;\r\n    font: 16px/1em sans-serif;\r\n    height: 16px;\r\n    margin: 0 .25em 0 0;\r\n    vertical-align: top;\r\n    width: 16px;\n}\ninput[type=\"checkbox\"]:checked+label:before {\r\n    background: #cca354;\r\n    color: #fff;\r\n    content: \"\\2713\";\r\n    text-align: center;\n}\ninput[type=\"checkbox\"]:checked+label:after {\r\n    font-weight: bold;\n}\ninput[type=\"checkbox\"]:focus+label::before {\r\n    outline: rgb(59, 153, 252) auto 5px;\n}\n.iti-flag {\r\n    background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags.png\");\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2),\r\nonly screen and (min-device-pixel-ratio: 2),\r\nonly screen and (min-resolution: 192dpi),\r\nonly screen and (min-resolution: 2dppx) {\n.iti-flag {\r\n        background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags@2x.png\");\n}\n}\n.vue-tel-input {\r\n    width: 100% !important;\r\n    border: 1px solid rgba(204, 163, 84, 0.45) !important;\n}\n.vti__input {\r\n\r\n    background-color: black;\r\n    font-weight: bold;\r\n    color: white;\n}\n.success-group{\r\n      display: inline-block;\r\n    color: #2ee388;\r\n    position: relative;\r\n    padding: 15px 15px 15px 65px;\r\n    margin-bottom: 20px;\r\n    text-align: left;\r\n    border: 1px solid #2ee388;\r\n    border-radius: 6px;\n}\n.success-group.clone{\r\n  padding:0;\n}\n.success-group h4{\r\n  font-size: 30px;\r\n  margin-bottom:8px;\r\n  font-weight:700;\n}\n.success-group span{\r\n  font-size:18px;\r\n  color:#fff;\n}\n.success-group:before{\r\n  content:\"\\F058\";\r\n  font-size:40px;\r\n  position:absolute;\r\n  top:50%;\r\n  left:15px;\r\n  transform:translateY(-50%);\r\n  -webkit-transform:translateY(-50%); \r\n  -moz-transform:translateY(-50%);\r\n  font-family:'fontAwesome';\n}\n.success-group.clone:before{display:none;}\n.success-group.clone > div:first-child{\r\n  position:relative;\r\n  padding: 15px 15px 15px 65px;\n}\n.success-group.clone > div:first-child:before{\r\n  content:\"\\F058\";\r\n  font-size:40px;\r\n  position:absolute;\r\n  top:50%;\r\n  left:15px;\r\n  transform:translateY(-50%);\r\n  -webkit-transform:translateY(-50%); \r\n  -moz-transform:translateY(-50%);\r\n  font-family:'fontAwesome';\n}\n.error-group{\r\n  display:inline-block;\r\n  color:#FF9494;\r\n  position:relative;\r\n  padding-left:50px;\r\n  margin-bottom:20px;\r\n  text-align:left;\n}\n.error-group h4{\r\n  font-size:18px;\r\n  margin-bottom:8px;\r\n  font-weight:700;\n}\n.error-group span{\r\n  font-size:14px;\r\n  color:#fff;\n}\n.error-group:before{\r\n  content:\"\\F00D\";\r\n  font-size:40px;\r\n  position:absolute;\r\n  top:50%;\r\n  left:0;\r\n  transform:translateY(-50%);\r\n  -webkit-transform:translateY(-50%); \r\n  -moz-transform:translateY(-50%);\r\n  font-family:'fontAwesome';\n}\n.error-msg, .success-msg{\r\n  margin-bottom:30px;\r\n  font-size:15px;\r\n  color:#fff;\r\n  line-height:22px;\r\n  padding:10px 50px;\r\n  position:relative;\r\n  border-radius:6px;\r\n  border:1px solid transparent;\n}\n.error-msg:before, .success-msg:before{\r\n  content:\"\";\r\n  font-size:30px;\r\n  position:absolute;\r\n  top:50%;\r\n  left:10px;\r\n  transform:translateY(-50%);\r\n  -webkit-transform:translateY(-50%); \r\n  -moz-transform:translateY(-50%);\r\n  font-family:'fontAwesome';\n}\n.error-msg li, .success-msg li{\r\n  margin-bottom:5px;\n}\n.error-msg li:last-child, .success-msg li:last-child{\r\n  margin-bottom:0;\n}\n.success-msg{\r\n  border-color:#cca354;\n}\n.success-msg p{\r\n  margin:0;\n}\n.success-msg:before{\r\n  content:\"\\F058\";\r\n  color:#cca354;\n}\n.error-msg{\r\n  border-color: #cca354 !important;\n}\n.error-msg:before{\r\n  content:\"\\F00D\";\r\n  color:#cca354;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -56884,18 +56908,13 @@ var render = function() {
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-md-6 text-md-right text-center" }, [
-              _c(
-                "p",
-                [
-                  _vm._v("© " + _vm._s(_vm.fullYear)),
-                  _c(
-                    "router-link",
-                    { staticClass: "base--color", attrs: { to: "/" } },
-                    [_vm._v("   Bitcoinary Mint. All Rights Reserved.")]
-                  )
-                ],
-                1
-              )
+              _c("p", [
+                _vm._v(" © " + _vm._s(_vm.fullYear) + " "),
+                _c("a", { staticClass: "base--color", attrs: { href: "/" } }, [
+                  _vm._v("  Bitcoinary Mint. ")
+                ]),
+                _vm._v(" All Rights Reserved.\n                    ")
+              ])
             ]),
             _vm._v(" "),
             _vm._m(2)
@@ -56937,7 +56956,7 @@ var staticRenderFns = [
                   staticClass: "step__title",
                   staticStyle: { "padding-bottom": "15px", color: "#2f2e2e" }
                 },
-                [_vm._v("958792765")]
+                [_vm._v("959792761")]
               ),
               _vm._v(" "),
               _c("p", { staticStyle: { color: "#2f2e2e" } }, [
@@ -56957,11 +56976,12 @@ var staticRenderFns = [
                   },
                   attrs: {
                     target: "_blank",
-                    href: "/register",
+                    title: "Read more about us",
+                    href: "/about",
                     "data-pjax": ""
                   }
                 },
-                [_vm._v("Check Companies House")]
+                [_vm._v("Of Companies House")]
               )
             ])
           ]
@@ -60287,7 +60307,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("p", [
               _vm._v(
-                "Our all retreats are treated spontaneously once requested. There are high maximum limits. The minimum withdrawal amount is only $10."
+                "Our all retreats are treated spontaneously once requested. There are high maximum limits. The minimum withdrawal amount is only $1."
               )
             ])
           ])
@@ -60541,7 +60561,7 @@ var render = function() {
                     staticClass: "account-card__header bg_img overlay--one",
                     attrs: {
                       "data-background":
-                        _vm.$root.basepath + "/images/bg/bg-5.jpg"
+                        _vm.$root.basepath + "/images/bg/bg-6.jpg"
                     }
                   },
                   [_vm._m(0)]
@@ -60564,7 +60584,35 @@ var render = function() {
                     },
                     [
                       _c("div", { staticClass: "form-group" }, [
-                        _c("label", [_vm._v("Email Adress")]),
+                        _vm.has_error && !_vm.success
+                          ? _c(
+                              "div",
+                              {
+                                staticClass: "error-msg  m-3",
+                                style: {
+                                  backgroundImage:
+                                    "url(" +
+                                    _vm.$root.basepath +
+                                    "/images/bg/bg-5.jog )"
+                                }
+                              },
+                              [
+                                _vm.error.error
+                                  ? _c(
+                                      "p",
+                                      {
+                                        staticClass: "text-center p-2 m-3 small"
+                                      },
+                                      [_vm._v(_vm._s(_vm.error.message))]
+                                    )
+                                  : _vm._e()
+                              ]
+                            )
+                          : _vm._e()
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Email Address")]),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -60622,9 +60670,62 @@ var render = function() {
                         })
                       ]),
                       _vm._v(" "),
-                      _vm._m(1),
+                      _c("div", { staticClass: "form-row" }, [
+                        _c("div", { staticClass: "col-sm-6" }, [
+                          _c("div", { staticClass: "form-group form-check" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.rememberMe,
+                                  expression: "rememberMe"
+                                }
+                              ],
+                              staticClass: "form-check-input",
+                              attrs: { type: "checkbox", id: "rememberMe" },
+                              domProps: {
+                                checked: Array.isArray(_vm.rememberMe)
+                                  ? _vm._i(_vm.rememberMe, null) > -1
+                                  : _vm.rememberMe
+                              },
+                              on: {
+                                change: function($event) {
+                                  var $$a = _vm.rememberMe,
+                                    $$el = $event.target,
+                                    $$c = $$el.checked ? true : false
+                                  if (Array.isArray($$a)) {
+                                    var $$v = null,
+                                      $$i = _vm._i($$a, $$v)
+                                    if ($$el.checked) {
+                                      $$i < 0 &&
+                                        (_vm.rememberMe = $$a.concat([$$v]))
+                                    } else {
+                                      $$i > -1 &&
+                                        (_vm.rememberMe = $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1)))
+                                    }
+                                  } else {
+                                    _vm.rememberMe = $$c
+                                  }
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "form-check-label",
+                                attrs: { for: "rememberMe" }
+                              },
+                              [_vm._v("Remember me")]
+                            )
+                          ])
+                        ])
+                      ]),
                       _vm._v(" "),
-                      _vm._m(2),
+                      _vm._m(1),
                       _vm._v(" "),
                       _c(
                         "button",
@@ -60662,30 +60763,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-row" }, [
       _c("div", { staticClass: "col-sm-6" }, [
-        _c("div", { staticClass: "form-group form-check" }, [
-          _c("input", {
-            staticClass: "form-check-input",
-            attrs: { type: "checkbox", id: "rememberMe" }
-          }),
-          _vm._v(" "),
-          _c(
-            "label",
-            { staticClass: "form-check-label", attrs: { for: "rememberMe" } },
-            [_vm._v("Remember me")]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-row" }, [
-      _c("div", { staticClass: "col-sm-6" }, [
         _c("div", { staticClass: "form-group" }, [
           _c("p", { staticClass: "f-size-14" }, [
-            _vm._v("No account yet? "),
+            _vm._v("Not yet a member? "),
             _c(
               "a",
               { staticClass: "base--color", attrs: { href: "/register" } },
@@ -60697,11 +60777,11 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "col-sm-6 text-sm-right" }, [
         _c("p", { staticClass: "f-size-14 mb-3" }, [
-          _vm._v("Forgot your password? "),
+          _vm._v("Forgotten password? "),
           _c(
             "a",
             { staticClass: "base--color", attrs: { href: "/forgot_password" } },
-            [_vm._v("Click here to retrieve")]
+            [_vm._v("Reset")]
           )
         ])
       ])
@@ -60774,13 +60854,42 @@ var render = function() {
                         [
                           _c("div", { staticClass: "form-group" }, [
                             _vm.has_error && !_vm.success
-                              ? _c("div", { staticClass: "error-msg  m-3" }, [
-                                  _vm.error == "registration_validation_error"
-                                    ? _c("p", { staticClass: "p-2 m-3" }, [
-                                        _vm._v("Validation Errors.")
-                                      ])
-                                    : _vm._e()
-                                ])
+                              ? _c(
+                                  "div",
+                                  {
+                                    staticClass: "error-msg  m-3",
+                                    style: {
+                                      backgroundImage:
+                                        "url(" +
+                                        _vm.$root.basepath +
+                                        "/images/bg/bg-5.jog )"
+                                    }
+                                  },
+                                  [
+                                    !_vm.unknown_error && _vm.errors
+                                      ? _c(
+                                          "p",
+                                          {
+                                            staticClass:
+                                              "text-center p-2 m-3 small"
+                                          },
+                                          [
+                                            _vm._v(
+                                              "You have some errors in your form"
+                                            )
+                                          ]
+                                        )
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    _vm.unknown_error
+                                      ? _c(
+                                          "p",
+                                          { staticClass: "p-2 m-3 small" },
+                                          [_vm._v(_vm._s(_vm.unknown_error))]
+                                        )
+                                      : _vm._e()
+                                  ]
+                                )
                               : _vm._e()
                           ]),
                           _vm._v(" "),
@@ -60824,7 +60933,9 @@ var render = function() {
                                 return _vm.errors.first_name
                                   ? _c(
                                       "p",
-                                      { staticClass: "text-danger m-0 p-2" },
+                                      {
+                                        staticClass: "base--color m-0 p-2 small"
+                                      },
                                       [_vm._v(_vm._s(error))]
                                     )
                                   : _vm._e()
@@ -60873,7 +60984,9 @@ var render = function() {
                                 return _vm.errors.last_name
                                   ? _c(
                                       "p",
-                                      { staticClass: "text-danger m-0 p-2" },
+                                      {
+                                        staticClass: "base--color m-0 p-2 small"
+                                      },
                                       [_vm._v(_vm._s(error))]
                                     )
                                   : _vm._e()
@@ -60922,7 +61035,9 @@ var render = function() {
                                 return _vm.errors.username
                                   ? _c(
                                       "p",
-                                      { staticClass: "text-danger m-0 p-2" },
+                                      {
+                                        staticClass: "base--color m-0 p-2 small"
+                                      },
                                       [_vm._v(_vm._s(error))]
                                     )
                                   : _vm._e()
@@ -60970,7 +61085,9 @@ var render = function() {
                                 return _vm.errors.email
                                   ? _c(
                                       "p",
-                                      { staticClass: "text-danger m-0 p-2" },
+                                      {
+                                        staticClass: "base--color m-0 p-2 small"
+                                      },
                                       [_vm._v(_vm._s(error))]
                                     )
                                   : _vm._e()
@@ -61000,6 +61117,7 @@ var render = function() {
                                 },
                                 attrs: {
                                   type: "text",
+                                  required: "",
                                   placeholder: "Your Bitcoin wallet address"
                                 },
                                 domProps: { value: _vm.wallet },
@@ -61017,7 +61135,9 @@ var render = function() {
                                 return _vm.errors.wallet
                                   ? _c(
                                       "p",
-                                      { staticClass: "text-danger m-0 p-2" },
+                                      {
+                                        staticClass: "base--color m-0 p-2 small"
+                                      },
                                       [_vm._v(_vm._s(error))]
                                     )
                                   : _vm._e()
@@ -61048,9 +61168,8 @@ var render = function() {
                                 },
                                 attrs: {
                                   type: "password",
-                                  min: "4",
                                   required: "",
-                                  placeholder: "Password"
+                                  placeholder: "password"
                                 },
                                 domProps: { value: _vm.password },
                                 on: {
@@ -61067,7 +61186,9 @@ var render = function() {
                                 return _vm.errors.password
                                   ? _c(
                                       "p",
-                                      { staticClass: "text-danger m-0 p-2" },
+                                      {
+                                        staticClass: "base--color m-0 p-2 small"
+                                      },
                                       [_vm._v(_vm._s(error))]
                                     )
                                   : _vm._e()
@@ -61121,7 +61242,9 @@ var render = function() {
                                 return _vm.errors.password_confirmation
                                   ? _c(
                                       "p",
-                                      { staticClass: "text-danger m-0 p-2" },
+                                      {
+                                        staticClass: "base--color m-0 p-2 small"
+                                      },
                                       [_vm._v(_vm._s(error))]
                                     )
                                   : _vm._e()
@@ -61174,12 +61297,38 @@ var render = function() {
                               }
                             }),
                             _vm._v(" "),
-                            _vm._m(1)
+                            _vm._m(1),
+                            _vm._v(" "),
+                            _vm.errors.terms && !_vm.terms
+                              ? _c(
+                                  "p",
+                                  { staticClass: "text-danger m-0 p-2" },
+                                  [
+                                    _vm._v(
+                                      "You will need to accept the terms to proceed."
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
                           ]),
                           _vm._v(" "),
                           _vm._m(2),
                           _vm._v(" "),
-                          _vm._m(3)
+                          _c("div", { staticClass: "mt-3" }, [
+                            _c(
+                              "button",
+                              {
+                                ref: "signup",
+                                class: {
+                                  "cmn-btn": true,
+                                  btn: true,
+                                  disabled: !_vm.terms
+                                },
+                                attrs: { disabled: !_vm.terms, type: "submit" }
+                              },
+                              [_vm._v("SignUp Now")]
+                            )
+                          ])
                         ]
                       )
                     : _vm._e()
@@ -61242,20 +61391,12 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "col-sm-6 text-sm-right" }, [
         _c("p", { staticClass: "f-size-14" }, [
-          _vm._v("Have an account? "),
+          _vm._v("Already a member? "),
           _c("a", { staticClass: "base--color", attrs: { href: "/login" } }, [
             _vm._v("Login")
           ])
         ])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-3" }, [
-      _c("button", { staticClass: "cmn-btn" }, [_vm._v("SignUp Now")])
     ])
   }
 ]
@@ -98415,6 +98556,21 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
         showConfirmButton: false,
         timer: 3000
       });
+    },
+    loader: function loader(action) {
+      if (action == 'show') {
+        jquery__WEBPACK_IMPORTED_MODULE_9___default()(".preloader").animate({
+          "opacity": "0.8"
+        }, 300, function () {
+          jquery__WEBPACK_IMPORTED_MODULE_9___default()(".preloader").css("display", "flex");
+        });
+      } else {
+        jquery__WEBPACK_IMPORTED_MODULE_9___default()(".preloader").delay(200).animate({
+          "opacity": "0"
+        }, 300, function () {
+          jquery__WEBPACK_IMPORTED_MODULE_9___default()(".preloader").css("display", "none");
+        });
+      }
     },
     getUpdates: function getUpdates() {
       this.getPackages();

@@ -134,7 +134,7 @@
                                 </div>
                                 <h4 class="choose-card__title base--color">Quick Withdrawal</h4>
                             </div>
-                            <p>Our all retreats are treated spontaneously once requested. There are high maximum limits. The minimum withdrawal amount is only $10.</p>
+                            <p>Our all retreats are treated spontaneously once requested. There are high maximum limits. The minimum withdrawal amount is only $1.</p>
                         </div>
                         <!-- choose-card end -->
                     </div>
