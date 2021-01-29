@@ -13,9 +13,9 @@
                                 <h3 class="text-center">Create an Account</h3>
                                 <form class="mt-4" autocomplete="off" @submit.prevent="register" v-if="!success" method="post">
                                     <div class="form-group">
-                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jog )'}" class="error-msg  m-3" v-if="has_error && !success  ">
-                                            <p v-if = "!unknown_error && errors" class="text-center p-2 m-3 small">You have some errors in your form</p>
-                                            <p class="p-2 m-3 small" v-if="unknown_error" >{{unknown_error}}</p>
+                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="has_error && !success  ">
+                                            <p v-if="!unknown_error && errors" class="text-center  m-3 small">You have some errors in your form</p>
+                                            <p class=" m-3 small" v-if="unknown_error">{{unknown_error}}</p>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -136,7 +136,9 @@
                     this.$root.alert('success', ' ', 'Registration Successful!!! Redirecting...')
                     this.processing(false)
                     app.success = true
-                    this.$router.push({ name: 'login', params: { successRegistrationRedirect: true } })
+                    window.location.href = this.$root.basepath + '/login'
+                    // this.$router.push({ name: 'login', params: { successRegistrationRedirect: true }, base : 'hash' })
+
                 },
                 error: function(res) {
                     this.$root.loader('hide')
@@ -252,8 +254,9 @@ only screen and (min-resolution: 2dppx) {
     font-weight: bold;
     color: white;
 }
-.success-group{
-      display: inline-block;
+
+.success-group {
+    display: inline-block;
     color: #2ee388;
     position: relative;
     padding: 15px 15px 15px 65px;
@@ -262,116 +265,143 @@ only screen and (min-resolution: 2dppx) {
     border: 1px solid #2ee388;
     border-radius: 6px;
 }
-.success-group.clone{
-  padding:0;
+
+.success-group.clone {
+    padding: 0;
 }
-.success-group h4{
-  font-size: 30px;
-  margin-bottom:8px;
-  font-weight:700;
+
+.success-group h4 {
+    font-size: 30px;
+    margin-bottom: 8px;
+    font-weight: 700;
 }
-.success-group span{
-  font-size:18px;
-  color:#fff;
+
+.success-group span {
+    font-size: 18px;
+    color: #fff;
 }
-.success-group:before{
-  content:"\f058";
-  font-size:40px;
-  position:absolute;
-  top:50%;
-  left:15px;
-  transform:translateY(-50%);
-  -webkit-transform:translateY(-50%); 
-  -moz-transform:translateY(-50%);
-  font-family:'fontAwesome';
+
+.success-group:before {
+    content: "\f058";
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    font-family: 'fontAwesome';
 }
-.success-group.clone:before{display:none;}
-.success-group.clone > div:first-child{
-  position:relative;
-  padding: 15px 15px 15px 65px;
+
+.success-group.clone:before {
+    display: none;
 }
-.success-group.clone > div:first-child:before{
-  content:"\f058";
-  font-size:40px;
-  position:absolute;
-  top:50%;
-  left:15px;
-  transform:translateY(-50%);
-  -webkit-transform:translateY(-50%); 
-  -moz-transform:translateY(-50%);
-  font-family:'fontAwesome';
+
+.success-group.clone>div:first-child {
+    position: relative;
+    padding: 15px 15px 15px 65px;
 }
-.error-group{
-  display:inline-block;
-  color:#FF9494;
-  position:relative;
-  padding-left:50px;
-  margin-bottom:20px;
-  text-align:left;
+
+.success-group.clone>div:first-child:before {
+    content: "\f058";
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    font-family: 'fontAwesome';
 }
-.error-group h4{
-  font-size:18px;
-  margin-bottom:8px;
-  font-weight:700;
+
+.error-group {
+    display: inline-block;
+    color: #FF9494;
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 20px;
+    text-align: left;
 }
-.error-group span{
-  font-size:14px;
-  color:#fff;
+
+.error-group h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 700;
 }
-.error-group:before{
-  content:"\f00d";
-  font-size:40px;
-  position:absolute;
-  top:50%;
-  left:0;
-  transform:translateY(-50%);
-  -webkit-transform:translateY(-50%); 
-  -moz-transform:translateY(-50%);
-  font-family:'fontAwesome';
+
+.error-group span {
+    font-size: 14px;
+    color: #fff;
 }
-.error-msg, .success-msg{
-  margin-bottom:30px;
-  font-size:15px;
-  color:#fff;
-  line-height:22px;
-  padding:10px 50px;
-  position:relative;
-  border-radius:6px;
-  border:1px solid transparent;
+
+.error-group:before {
+    content: "\f00d";
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    font-family: 'fontAwesome';
 }
-.error-msg:before, .success-msg:before{
-  content:"";
-  font-size:30px;
-  position:absolute;
-  top:50%;
-  left:10px;
-  transform:translateY(-50%);
-  -webkit-transform:translateY(-50%); 
-  -moz-transform:translateY(-50%);
-  font-family:'fontAwesome';
+
+.error-msg,
+.success-msg {
+    margin-bottom: 30px;
+    font-size: 15px;
+    color: #fff;
+    line-height: 22px;
+    padding: 5px;
+    position: relative;
+    border-radius: 6px;
+    border: 1px solid transparent;
 }
-.error-msg li, .success-msg li{
-  margin-bottom:5px;
+
+.error-msg:before,
+.success-msg:before {
+    content: "";
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    font-family: 'fontAwesome';
 }
-.error-msg li:last-child, .success-msg li:last-child{
-  margin-bottom:0;
+
+.error-msg li,
+.success-msg li {
+    margin-bottom: 5px;
 }
-.success-msg{
-  border-color:#cca354;
+
+.error-msg li:last-child,
+.success-msg li:last-child {
+    margin-bottom: 0;
 }
-.success-msg p{
-  margin:0;
+
+.success-msg {
+    border: 1px solid #cca354;
+    border-top-color: green;
+
 }
-.success-msg:before{
-  content:"\f058";
-  color:#cca354;
+
+.success-msg p {
+    margin: 0;
 }
-.error-msg{
-  border-color: #cca354 !important;
+
+.success-msg:before {
+    color: #cca354;
 }
-.error-msg:before{
-  content:"\f00d";
-  color:#cca354;
+
+.error-msg {
+    border: 1px solid #cca354;
+    border-top-color: red;
+}
+
+.error-msg:before {
+    color: #cca354;
 }
 
 </style>

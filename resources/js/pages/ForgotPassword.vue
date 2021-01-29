@@ -1,51 +1,46 @@
 <template>
-    <div style="width: inherit;">
-        <div class="page-title row page-title m-3 p-2 with-btn">
-            <div class=" col-12 col-lg-8  container">
-                <h1>Forgot Password</h1>
-                <p>Don't have an account? Click the button signup below for account registration.</p>
-                <router-link class="btn btn-default" to="/register">Sign Up</router-link>
-            </div>
-        </div>
-        <section class="main-container" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
-            <div class="main">
-                <div class="container">
-                    <div class="wrapper">
-                        <div class="login-wrapper">
-                            <div class="login-heading mb-0 text-center">
-                                <h2>Enter Email address to reset your password</h2>
-                                <p>Then submit your email address, if your account is found in our system you will receive confirmation link sent to your email address. click on the link to reset your password successfully.</p>
+    <div class="page-wrapper">
+        <!-- account section start -->
+        <div class="account-section bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-9">
+                        <div class="account-card">
+                            <div class="account-card__header bg_img overlay--one" :data-background="$root.basepath + '/images/bg/bg-6.jpg'">
+                                <h2 class="section-title text-center">Welcome to <span class="base--color">Bitcoinary Mint</span></h2>
+                                <h3 class="text-center m-3 ">Recover your password</h3>
+                                <p class="mt-2 font-weight-bold text-uppercase base--color">Steps:</p>
+                                <ul style="list-style-type: circle;" class="">
+                                 <li style="margin-left: 2em;">Submit your email address through the form below.</li>  
+                                 <li style="margin-left: 2em;">A reset password link will be sent to your email address.</li> 
+                                 <li style="margin-left: 2em;">click on the reset link and change your password.</li>
+                                </ul>
+                                
                             </div>
-                            <div class="card-body">
-                                <div class="error-msg P-3 m-3" v-if="has_error && !success">
-                                    <p v-if="errors.error.email" v-for="error in errors.error.email">{{error}}</p>
-                                    <p v-else>Error, unable to process with these credentials.</p>
-                                </div>
-                                <div class="success-msg P-3 m-3" v-if="success && !has_error">
-                                    <p v-if="response != undefined">{{response.message}}</p>
-                                </div>
+                            <div class="account-card__body">
                                 <form autocomplete="off" @submit.prevent="requestResetPassword" method="post">
-                                    <ul class="form-list">
-                                        <li class="row clearfix text-center">
-                                            <div class="input-box col-12">
-                                                <label>Email</label>
-                                                <div class="iconed">
-                                                    <span class="icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
-                                                    <input type="email" required v-model="email" placeholder="Email address" value="" class="form-control" size="30">
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="buttons-set text-center">
-                                        <button ref="process" type="submit" class="btn btn-default">Send Password Reset Link</button>
+
+                                    <div class="form-group">
+                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="has_error && !success  ">
+                                            <p class="p-2 m-lg-3 m-sm-2" v-if="errors.error.email" v-for="error in errors.error.email">{{error}}</p>
+                                            <p v-if = "errors.error && typeof errors.error == 'string' " class="text-center p-2 m-lg-3 m-sm-1">{{errors.message || errors.error}}</p>
+                                        </div>
+                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="success-msg " v-if="success && !has_error">
+                                             <p class="p-2 m-lg-3 m-sm-1" v-if="response != undefined">{{response.message == "The selected email is invalid." ? "Invalid email" : response.message}}</p>
+                                        </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label>Email Address</label>
+                                        <input type="email" placeholder="Enter email address" required="" v-model="email" class="form-control">
+                                    </div>
+                                    <button ref="process" type="submit" class="cmn-btn m-2">Submit</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 </template>
 <script>
@@ -61,17 +56,21 @@ export default {
     },
     methods: {
         requestResetPassword() {
+            this.$root.loader('show')
             this.processing(true)
+            this.formDefault()
             this.$http.post("/auth/reset-password", { email: this.email }).then(result => {
+                this.$root.loader('hide')
+                this.$root.scrollUp()
                 this.processing(false)
                 this.response = result.data
                 this.success = true
-                this.has_error = false
                 // console.log(result.data)
             }, error => {
+                this.$root.loader('hide')
+                this.$root.scrollUp()
                 this.processing(false)
                 this.has_error = true
-                this.success = false
                 // console.error(error.response)
                 this.errors = error.response.data
             });
@@ -84,6 +83,12 @@ export default {
                 this.$refs.process.innerText = "Send Password Reset Link"
                 this.$refs.process.disabled = false
             }
+        },
+        formDefault(){
+            this.success = false
+            this.errors = ""
+            this.response = ""
+            this.has_error = false
         }
     }
 }

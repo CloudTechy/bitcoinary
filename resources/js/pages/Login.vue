@@ -13,8 +13,8 @@
                                 <h3 class="text-center">Login</h3>
                                 <form class="mt-4" autocomplete="off" @submit.prevent="login" method="post">
                                     <div class="form-group">
-                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jog )'}" class="error-msg  m-3" v-if="has_error && !success  ">
-                                            <p v-if = "error.error" class="text-center p-2 m-3 small">{{error.message}}</p>
+                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="has_error && !success  ">
+                                            <p v-if = "error.error" class="text-center m-3 small">{{error.message}}</p>
                                         </div>
                                     </div>
                                     <div class="form-group">

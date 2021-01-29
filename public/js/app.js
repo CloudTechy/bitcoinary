@@ -7505,13 +7505,7 @@ __webpack_require__.r(__webpack_exports__);
     return {};
   },
   mounted: function mounted() {
-    this.$router.push({
-      name: 'login',
-      params: {
-        successRegistrationRedirect: true
-      }
-    });
-
+    // this.$router.push({ name: 'login', params: { successRegistrationRedirect: true } }) 
     if (this.$auth.check()) {
       this.$auth.logout();
     }
@@ -7674,11 +7668,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7693,20 +7682,28 @@ __webpack_require__.r(__webpack_exports__);
     requestResetPassword: function requestResetPassword() {
       var _this = this;
 
+      this.$root.loader('show');
       this.processing(true);
+      this.formDefault();
       this.$http.post("/auth/reset-password", {
         email: this.email
       }).then(function (result) {
+        _this.$root.loader('hide');
+
+        _this.$root.scrollUp();
+
         _this.processing(false);
 
         _this.response = result.data;
-        _this.success = true;
-        _this.has_error = false; // console.log(result.data)
+        _this.success = true; // console.log(result.data)
       }, function (error) {
+        _this.$root.loader('hide');
+
+        _this.$root.scrollUp();
+
         _this.processing(false);
 
-        _this.has_error = true;
-        _this.success = false; // console.error(error.response)
+        _this.has_error = true; // console.error(error.response)
 
         _this.errors = error.response.data;
       });
@@ -7719,6 +7716,12 @@ __webpack_require__.r(__webpack_exports__);
         this.$refs.process.innerText = "Send Password Reset Link";
         this.$refs.process.disabled = false;
       }
+    },
+    formDefault: function formDefault() {
+      this.success = false;
+      this.errors = "";
+      this.response = "";
+      this.has_error = false;
     }
   }
 });
@@ -8387,12 +8390,7 @@ __webpack_require__.r(__webpack_exports__);
           this.$root.alert('success', ' ', 'Registration Successful!!! Redirecting...');
           this.processing(false);
           app.success = true;
-          this.$router.push({
-            name: 'login',
-            params: {
-              successRegistrationRedirect: true
-            }
-          });
+          window.location.href = this.$root.basepath + '/login'; // this.$router.push({ name: 'login', params: { successRegistrationRedirect: true }, base : 'hash' })
         },
         error: function error(res) {
           this.$root.loader('hide');
@@ -8511,6 +8509,60 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8519,7 +8571,9 @@ __webpack_require__.r(__webpack_exports__);
       password: null,
       password_confirmation: null,
       has_error: false,
-      errors: []
+      errors: [],
+      response: '',
+      success: false
     };
   },
   methods: {
@@ -8527,23 +8581,31 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.processing(true);
+      this.$root.loader('show');
+      this.formDefault();
       this.$http.post("/auth/reset/password/", {
         token: this.$route.query.token,
         email: this.email,
         password: this.password,
         password_confirmation: this.password_confirmation
       }).then(function (result) {
-        // console.log(result.data);
+        _this.$root.loader('hide');
+
+        _this.$root.scrollUp();
+
+        _this.response = result.data;
+
         _this.processing(false);
 
-        _this.has_error = false;
+        _this.success = true;
 
-        _this.$root.alert('success', '', 'Password Reset Successful!!! Redirecting...');
+        _this.$root.alert('success', '', 'Password Reset Successful!!! Redirecting...'); // this.$router.push({ name: 'login' })
 
-        _this.$router.push({
-          name: 'login'
-        });
       }, function (error) {
+        _this.$root.loader('hide');
+
+        _this.$root.scrollUp();
+
         _this.has_error = true;
 
         _this.processing(false);
@@ -8551,6 +8613,12 @@ __webpack_require__.r(__webpack_exports__);
         _this.errors = error.response.data != undefined ? error.response.data : _this.errors.push('Password reset not successful, check that your email is valid');
         console.error(error.response);
       });
+    },
+    formDefault: function formDefault() {
+      this.success = false;
+      this.response = '';
+      this.errors = [];
+      this.has_error = false;
     },
     processing: function processing(status) {
       if (status) {
@@ -16462,7 +16530,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*    .box {\r\n  background: #666666;\r\n  color: #ffffff;\r\n  width: 250px;\r\n  padding: 10px;\r\n  margin: 1em auto;\r\n}\r\np {\r\n  margin: 1.5em 0;\r\n  padding: 0;\r\n}*/\ninput[type=\"checkbox\"] {\r\n    visibility: hidden;\n}\nlabel {\r\n    cursor: pointer;\n}\ninput[type=\"checkbox\"]+label:before {\r\n    border: 1px solid #cca354;\r\n    content: \"\\A0\";\r\n    display: inline-block;\r\n    font: 16px/1em sans-serif;\r\n    height: 16px;\r\n    margin: 0 .25em 0 0;\r\n    vertical-align: top;\r\n    width: 16px;\n}\ninput[type=\"checkbox\"]:checked+label:before {\r\n    background: #cca354;\r\n    color: #fff;\r\n    content: \"\\2713\";\r\n    text-align: center;\n}\ninput[type=\"checkbox\"]:checked+label:after {\r\n    font-weight: bold;\n}\ninput[type=\"checkbox\"]:focus+label::before {\r\n    outline: rgb(59, 153, 252) auto 5px;\n}\n.iti-flag {\r\n    background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags.png\");\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2),\r\nonly screen and (min-device-pixel-ratio: 2),\r\nonly screen and (min-resolution: 192dpi),\r\nonly screen and (min-resolution: 2dppx) {\n.iti-flag {\r\n        background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags@2x.png\");\n}\n}\n.vue-tel-input {\r\n    width: 100% !important;\r\n    border: 1px solid rgba(204, 163, 84, 0.45) !important;\n}\n.vti__input {\r\n\r\n    background-color: black;\r\n    font-weight: bold;\r\n    color: white;\n}\n.success-group{\r\n      display: inline-block;\r\n    color: #2ee388;\r\n    position: relative;\r\n    padding: 15px 15px 15px 65px;\r\n    margin-bottom: 20px;\r\n    text-align: left;\r\n    border: 1px solid #2ee388;\r\n    border-radius: 6px;\n}\n.success-group.clone{\r\n  padding:0;\n}\n.success-group h4{\r\n  font-size: 30px;\r\n  margin-bottom:8px;\r\n  font-weight:700;\n}\n.success-group span{\r\n  font-size:18px;\r\n  color:#fff;\n}\n.success-group:before{\r\n  content:\"\\F058\";\r\n  font-size:40px;\r\n  position:absolute;\r\n  top:50%;\r\n  left:15px;\r\n  transform:translateY(-50%);\r\n  -webkit-transform:translateY(-50%); \r\n  -moz-transform:translateY(-50%);\r\n  font-family:'fontAwesome';\n}\n.success-group.clone:before{display:none;}\n.success-group.clone > div:first-child{\r\n  position:relative;\r\n  padding: 15px 15px 15px 65px;\n}\n.success-group.clone > div:first-child:before{\r\n  content:\"\\F058\";\r\n  font-size:40px;\r\n  position:absolute;\r\n  top:50%;\r\n  left:15px;\r\n  transform:translateY(-50%);\r\n  -webkit-transform:translateY(-50%); \r\n  -moz-transform:translateY(-50%);\r\n  font-family:'fontAwesome';\n}\n.error-group{\r\n  display:inline-block;\r\n  color:#FF9494;\r\n  position:relative;\r\n  padding-left:50px;\r\n  margin-bottom:20px;\r\n  text-align:left;\n}\n.error-group h4{\r\n  font-size:18px;\r\n  margin-bottom:8px;\r\n  font-weight:700;\n}\n.error-group span{\r\n  font-size:14px;\r\n  color:#fff;\n}\n.error-group:before{\r\n  content:\"\\F00D\";\r\n  font-size:40px;\r\n  position:absolute;\r\n  top:50%;\r\n  left:0;\r\n  transform:translateY(-50%);\r\n  -webkit-transform:translateY(-50%); \r\n  -moz-transform:translateY(-50%);\r\n  font-family:'fontAwesome';\n}\n.error-msg, .success-msg{\r\n  margin-bottom:30px;\r\n  font-size:15px;\r\n  color:#fff;\r\n  line-height:22px;\r\n  padding:10px 50px;\r\n  position:relative;\r\n  border-radius:6px;\r\n  border:1px solid transparent;\n}\n.error-msg:before, .success-msg:before{\r\n  content:\"\";\r\n  font-size:30px;\r\n  position:absolute;\r\n  top:50%;\r\n  left:10px;\r\n  transform:translateY(-50%);\r\n  -webkit-transform:translateY(-50%); \r\n  -moz-transform:translateY(-50%);\r\n  font-family:'fontAwesome';\n}\n.error-msg li, .success-msg li{\r\n  margin-bottom:5px;\n}\n.error-msg li:last-child, .success-msg li:last-child{\r\n  margin-bottom:0;\n}\n.success-msg{\r\n  border-color:#cca354;\n}\n.success-msg p{\r\n  margin:0;\n}\n.success-msg:before{\r\n  content:\"\\F058\";\r\n  color:#cca354;\n}\n.error-msg{\r\n  border-color: #cca354 !important;\n}\n.error-msg:before{\r\n  content:\"\\F00D\";\r\n  color:#cca354;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*    .box {\r\n  background: #666666;\r\n  color: #ffffff;\r\n  width: 250px;\r\n  padding: 10px;\r\n  margin: 1em auto;\r\n}\r\np {\r\n  margin: 1.5em 0;\r\n  padding: 0;\r\n}*/\ninput[type=\"checkbox\"] {\r\n    visibility: hidden;\n}\nlabel {\r\n    cursor: pointer;\n}\ninput[type=\"checkbox\"]+label:before {\r\n    border: 1px solid #cca354;\r\n    content: \"\\A0\";\r\n    display: inline-block;\r\n    font: 16px/1em sans-serif;\r\n    height: 16px;\r\n    margin: 0 .25em 0 0;\r\n    vertical-align: top;\r\n    width: 16px;\n}\ninput[type=\"checkbox\"]:checked+label:before {\r\n    background: #cca354;\r\n    color: #fff;\r\n    content: \"\\2713\";\r\n    text-align: center;\n}\ninput[type=\"checkbox\"]:checked+label:after {\r\n    font-weight: bold;\n}\ninput[type=\"checkbox\"]:focus+label::before {\r\n    outline: rgb(59, 153, 252) auto 5px;\n}\n.iti-flag {\r\n    background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags.png\");\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2),\r\nonly screen and (min-device-pixel-ratio: 2),\r\nonly screen and (min-resolution: 192dpi),\r\nonly screen and (min-resolution: 2dppx) {\n.iti-flag {\r\n        background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags@2x.png\");\n}\n}\n.vue-tel-input {\r\n    width: 100% !important;\r\n    border: 1px solid rgba(204, 163, 84, 0.45) !important;\n}\n.vti__input {\r\n\r\n    background-color: black;\r\n    font-weight: bold;\r\n    color: white;\n}\n.success-group {\r\n    display: inline-block;\r\n    color: #2ee388;\r\n    position: relative;\r\n    padding: 15px 15px 15px 65px;\r\n    margin-bottom: 20px;\r\n    text-align: left;\r\n    border: 1px solid #2ee388;\r\n    border-radius: 6px;\n}\n.success-group.clone {\r\n    padding: 0;\n}\n.success-group h4 {\r\n    font-size: 30px;\r\n    margin-bottom: 8px;\r\n    font-weight: 700;\n}\n.success-group span {\r\n    font-size: 18px;\r\n    color: #fff;\n}\n.success-group:before {\r\n    content: \"\\F058\";\r\n    font-size: 40px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 15px;\r\n    transform: translateY(-50%);\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    font-family: 'fontAwesome';\n}\n.success-group.clone:before {\r\n    display: none;\n}\n.success-group.clone>div:first-child {\r\n    position: relative;\r\n    padding: 15px 15px 15px 65px;\n}\n.success-group.clone>div:first-child:before {\r\n    content: \"\\F058\";\r\n    font-size: 40px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 15px;\r\n    transform: translateY(-50%);\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    font-family: 'fontAwesome';\n}\n.error-group {\r\n    display: inline-block;\r\n    color: #FF9494;\r\n    position: relative;\r\n    padding-left: 50px;\r\n    margin-bottom: 20px;\r\n    text-align: left;\n}\n.error-group h4 {\r\n    font-size: 18px;\r\n    margin-bottom: 8px;\r\n    font-weight: 700;\n}\n.error-group span {\r\n    font-size: 14px;\r\n    color: #fff;\n}\n.error-group:before {\r\n    content: \"\\F00D\";\r\n    font-size: 40px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 0;\r\n    transform: translateY(-50%);\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    font-family: 'fontAwesome';\n}\n.error-msg,\r\n.success-msg {\r\n    margin-bottom: 30px;\r\n    font-size: 15px;\r\n    color: #fff;\r\n    line-height: 22px;\r\n    padding: 5px;\r\n    position: relative;\r\n    border-radius: 6px;\r\n    border: 1px solid transparent;\n}\n.error-msg:before,\r\n.success-msg:before {\r\n    content: \"\";\r\n    font-size: 30px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 10px;\r\n    transform: translateY(-50%);\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    font-family: 'fontAwesome';\n}\n.error-msg li,\r\n.success-msg li {\r\n    margin-bottom: 5px;\n}\n.error-msg li:last-child,\r\n.success-msg li:last-child {\r\n    margin-bottom: 0;\n}\n.success-msg {\r\n    border: 1px solid #cca354;\r\n    border-top-color: green;\n}\n.success-msg p {\r\n    margin: 0;\n}\n.success-msg:before {\r\n    color: #cca354;\n}\n.error-msg {\r\n    border: 1px solid #cca354;\r\n    border-top-color: red;\n}\n.error-msg:before {\r\n    color: #cca354;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -59257,18 +59325,18 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "success-group" }, [
-      _c("h4", { staticClass: "p-2 m-2" }, [_vm._v("Verify your Email")]),
+      _c("h4", { staticClass: "p-2 m-2" }, [
+        _vm._v("Verify your email address")
+      ]),
       _vm._v(" "),
       _c("p", { staticClass: "w-note m-2 p-3" }, [
         _vm._v(
-          "Thank you for your interest in joining our program, you are now close to becoming an official member of  Bitcoinary Mint "
+          "We thank you for showing interest in joining our platform, you are now an email away in becoming an official member of  Bitcoinary Mint "
         )
       ]),
       _vm._v(" "),
       _c("span", { staticClass: "p-2" }, [
-        _vm._v(
-          "Please login into your email account to finish up your registration"
-        )
+        _vm._v("An email confirmation link has been sent to your email")
       ])
     ])
   }
@@ -59384,13 +59452,13 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", { staticClass: "w-note p-2 m-2" }, [
         _vm._v(
-          "Thank you for joining our program, you are now official member of  Bitcoinary Mint "
+          "Welcome onboard, you are now an official member of  Bitcoinary Mint "
         )
       ]),
       _vm._v(" "),
       _c("span", { staticClass: "p-2" }, [
         _vm._v(
-          "Please login into your account to continue and keep safe your login credentials!"
+          "Please login into your account to continue and keep safe your login credentials."
         )
       ])
     ])
@@ -59701,72 +59769,48 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticStyle: { width: "inherit" } }, [
-    _c("div", { staticClass: "page-title row page-title m-3 p-2 with-btn" }, [
-      _c(
-        "div",
-        { staticClass: " col-12 col-lg-8  container" },
-        [
-          _c("h1", [_vm._v("Forgot Password")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Don't have an account? Click the button signup below for account registration."
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "router-link",
-            { staticClass: "btn btn-default", attrs: { to: "/register" } },
-            [_vm._v("Sign Up")]
-          )
-        ],
-        1
-      )
-    ]),
-    _vm._v(" "),
+  return _c("div", { staticClass: "page-wrapper" }, [
     _c(
-      "section",
+      "div",
       {
-        staticClass: "main-container",
-        style:
-          "background:url(" +
-          _vm.$root.basepath +
-          "/img/home.png) no-repeat 0 0;"
+        staticClass: "account-section bg_img",
+        attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg" }
       },
       [
-        _c("div", { staticClass: "main" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "wrapper" }, [
-              _c("div", { staticClass: "login-wrapper" }, [
-                _vm._m(0),
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row justify-content-center" }, [
+            _c("div", { staticClass: "col-xl-7 col-lg-9" }, [
+              _c("div", { staticClass: "account-card" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "account-card__header bg_img overlay--one",
+                    attrs: {
+                      "data-background":
+                        _vm.$root.basepath + "/images/bg/bg-6.jpg"
+                    }
+                  },
+                  [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "text-center m-3 " }, [
+                      _vm._v("Recover your password")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "mt-2 font-weight-bold text-uppercase base--color"
+                      },
+                      [_vm._v("Steps:")]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(1)
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _vm.has_error && !_vm.success
-                    ? _c(
-                        "div",
-                        { staticClass: "error-msg P-3 m-3" },
-                        _vm._l(_vm.errors.error.email, function(error) {
-                          return _vm.errors.error.email
-                            ? _c("p", [_vm._v(_vm._s(error))])
-                            : _c("p", [
-                                _vm._v(
-                                  "Error, unable to process with these credentials."
-                                )
-                              ])
-                        }),
-                        0
-                      )
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.success && !_vm.has_error
-                    ? _c("div", { staticClass: "success-msg P-3 m-3" }, [
-                        _vm.response != undefined
-                          ? _c("p", [_vm._v(_vm._s(_vm.response.message))])
-                          : _vm._e()
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
+                _c("div", { staticClass: "account-card__body" }, [
                   _c(
                     "form",
                     {
@@ -59779,57 +59823,126 @@ var render = function() {
                       }
                     },
                     [
-                      _c("ul", { staticClass: "form-list" }, [
-                        _c("li", { staticClass: "row clearfix text-center" }, [
-                          _c("div", { staticClass: "input-box col-12" }, [
-                            _c("label", [_vm._v("Email")]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "iconed" }, [
-                              _vm._m(1),
-                              _vm._v(" "),
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.email,
-                                    expression: "email"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  type: "email",
-                                  required: "",
-                                  placeholder: "Email address",
-                                  value: "",
-                                  size: "30"
-                                },
-                                domProps: { value: _vm.email },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.email = $event.target.value
-                                  }
+                      _c("div", { staticClass: "form-group" }, [
+                        _vm.has_error && !_vm.success
+                          ? _c(
+                              "div",
+                              {
+                                staticClass: "error-msg  m-3",
+                                style: {
+                                  backgroundImage:
+                                    "url(" +
+                                    _vm.$root.basepath +
+                                    "/images/bg/bg-5.jpg )"
                                 }
-                              })
-                            ])
-                          ])
-                        ])
+                              },
+                              [
+                                _vm._l(_vm.errors.error.email, function(error) {
+                                  return _vm.errors.error.email
+                                    ? _c(
+                                        "p",
+                                        { staticClass: "p-2 m-lg-3 m-sm-2" },
+                                        [_vm._v(_vm._s(error))]
+                                      )
+                                    : _vm._e()
+                                }),
+                                _vm._v(" "),
+                                _vm.errors.error &&
+                                typeof _vm.errors.error == "string"
+                                  ? _c(
+                                      "p",
+                                      {
+                                        staticClass:
+                                          "text-center p-2 m-lg-3 m-sm-1"
+                                      },
+                                      [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.errors.message ||
+                                              _vm.errors.error
+                                          )
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ],
+                              2
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.success && !_vm.has_error
+                          ? _c(
+                              "div",
+                              {
+                                staticClass: "success-msg ",
+                                style: {
+                                  backgroundImage:
+                                    "url(" +
+                                    _vm.$root.basepath +
+                                    "/images/bg/bg-5.jpg )"
+                                }
+                              },
+                              [
+                                _vm.response != undefined
+                                  ? _c(
+                                      "p",
+                                      { staticClass: "p-2 m-lg-3 m-sm-1" },
+                                      [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.response.message ==
+                                              "The selected email is invalid."
+                                              ? "Invalid email"
+                                              : _vm.response.message
+                                          )
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ]
+                            )
+                          : _vm._e()
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "buttons-set text-center" }, [
-                        _c(
-                          "button",
-                          {
-                            ref: "process",
-                            staticClass: "btn btn-default",
-                            attrs: { type: "submit" }
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Email Address")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.email,
+                              expression: "email"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "email",
+                            placeholder: "Enter email address",
+                            required: ""
                           },
-                          [_vm._v("Send Password Reset Link")]
-                        )
-                      ])
+                          domProps: { value: _vm.email },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.email = $event.target.value
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          ref: "process",
+                          staticClass: "cmn-btn m-2",
+                          attrs: { type: "submit" }
+                        },
+                        [_vm._v("Submit")]
+                      )
                     ]
                   )
                 ])
@@ -59846,25 +59959,27 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "login-heading mb-0 text-center" }, [
-      _c("h2", [_vm._v("Enter Email address to reset your password")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "Then submit your email address, if your account is found in our system you will receive confirmation link sent to your email address. click on the link to reset your password successfully."
-        )
-      ])
+    return _c("h2", { staticClass: "section-title text-center" }, [
+      _vm._v("Welcome to "),
+      _c("span", { staticClass: "base--color" }, [_vm._v("Bitcoinary Mint")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "icon" }, [
-      _c("i", {
-        staticClass: "fas fa-envelope",
-        attrs: { "aria-hidden": "true" }
-      })
+    return _c("ul", { staticStyle: { "list-style-type": "circle" } }, [
+      _c("li", { staticStyle: { "margin-left": "2em" } }, [
+        _vm._v("Submit your email address through the form below.")
+      ]),
+      _vm._v(" "),
+      _c("li", { staticStyle: { "margin-left": "2em" } }, [
+        _vm._v("A reset password link will be sent to your email address.")
+      ]),
+      _vm._v(" "),
+      _c("li", { staticStyle: { "margin-left": "2em" } }, [
+        _vm._v("click on the reset link and change your password.")
+      ])
     ])
   }
 ]
@@ -60593,16 +60708,14 @@ var render = function() {
                                   backgroundImage:
                                     "url(" +
                                     _vm.$root.basepath +
-                                    "/images/bg/bg-5.jog )"
+                                    "/images/bg/bg-5.jpg )"
                                 }
                               },
                               [
                                 _vm.error.error
                                   ? _c(
                                       "p",
-                                      {
-                                        staticClass: "text-center p-2 m-3 small"
-                                      },
+                                      { staticClass: "text-center m-3 small" },
                                       [_vm._v(_vm._s(_vm.error.message))]
                                     )
                                   : _vm._e()
@@ -60862,7 +60975,7 @@ var render = function() {
                                       backgroundImage:
                                         "url(" +
                                         _vm.$root.basepath +
-                                        "/images/bg/bg-5.jog )"
+                                        "/images/bg/bg-5.jpg )"
                                     }
                                   },
                                   [
@@ -60871,7 +60984,7 @@ var render = function() {
                                           "p",
                                           {
                                             staticClass:
-                                              "text-center p-2 m-3 small"
+                                              "text-center  m-3 small"
                                           },
                                           [
                                             _vm._v(
@@ -60882,11 +60995,9 @@ var render = function() {
                                       : _vm._e(),
                                     _vm._v(" "),
                                     _vm.unknown_error
-                                      ? _c(
-                                          "p",
-                                          { staticClass: "p-2 m-3 small" },
-                                          [_vm._v(_vm._s(_vm.unknown_error))]
-                                        )
+                                      ? _c("p", { staticClass: " m-3 small" }, [
+                                          _vm._v(_vm._s(_vm.unknown_error))
+                                        ])
                                       : _vm._e()
                                   ]
                                 )
@@ -61421,74 +61532,37 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticStyle: { width: "inherit" } }, [
-    _c("div", { staticClass: "page-title row page-title m-3 p-2 with-btn" }, [
-      _c(
-        "div",
-        { staticClass: " col-12 col-lg-8  container" },
-        [
-          _c("h1", [_vm._v("Reset Password")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Don't have an account? Click the button signup below for account registration."
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "router-link",
-            { staticClass: "btn btn-default", attrs: { to: "/register" } },
-            [_vm._v("Sign Up")]
-          )
-        ],
-        1
-      )
-    ]),
-    _vm._v(" "),
+  return _c("div", { staticClass: "page-wrapper" }, [
     _c(
-      "section",
+      "div",
       {
-        staticClass: "main-container",
-        style:
-          "background:url(" +
-          _vm.$root.basepath +
-          "/img/home.png) no-repeat 0 0;"
+        staticClass: "account-section bg_img",
+        attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg" }
       },
       [
-        _c("div", { staticClass: "main" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "wrapper" }, [
-              _c("div", { staticClass: "login-wrapper" }, [
-                _vm._m(0),
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row justify-content-center" }, [
+            _c("div", { staticClass: "col-xl-7 col-lg-9" }, [
+              _c("div", { staticClass: "account-card" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "account-card__header bg_img overlay--one",
+                    attrs: {
+                      "data-background":
+                        _vm.$root.basepath + "/images/bg/bg-6.jpg"
+                    }
+                  },
+                  [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "mt-2 text-center" }, [
+                      _vm._v("Reset your Password")
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _vm.errors.error
-                    ? _c(
-                        "ul",
-                        { staticClass: "error-msg P-3 m-3" },
-                        [
-                          _vm._l(_vm.errors.error.token, function(error) {
-                            return _vm.errors.error.token
-                              ? _c("li", [_vm._v(_vm._s(error))])
-                              : _vm._e()
-                          }),
-                          _vm._v(" "),
-                          _vm._l(_vm.errors.error.password, function(error) {
-                            return _vm.errors.error.password
-                              ? _c("li", [_vm._v(_vm._s(error))])
-                              : _vm._e()
-                          }),
-                          _vm._v(" "),
-                          _vm._l(_vm.errors.error.email, function(error) {
-                            return _vm.errors.error.email
-                              ? _c("li", [_vm._v(_vm._s(error))])
-                              : _vm._e()
-                          })
-                        ],
-                        2
-                      )
-                    : _vm._e(),
-                  _vm._v(" "),
+                _c("div", { staticClass: "account-card__body" }, [
                   _c(
                     "form",
                     {
@@ -61501,145 +61575,216 @@ var render = function() {
                       }
                     },
                     [
-                      _c("ul", { staticClass: "form-list m-2" }, [
-                        _c("li", { staticClass: "row clearfix text-center" }, [
-                          _c("div", { staticClass: "input-box col-12 " }, [
-                            _c("label", [_vm._v("Email")]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "iconed" }, [
-                              _vm._m(1),
-                              _vm._v(" "),
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.email,
-                                    expression: "email"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  type: "email",
-                                  id: "email",
-                                  placeholder: "user@example.com",
-                                  required: ""
-                                },
-                                domProps: { value: _vm.email },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.email = $event.target.value
-                                  }
+                      _c("div", { staticClass: "form-group" }, [
+                        _vm.errors.error
+                          ? _c(
+                              "ul",
+                              {
+                                staticClass: "error-msg ",
+                                style: {
+                                  backgroundImage:
+                                    "url(" +
+                                    _vm.$root.basepath +
+                                    "/images/bg/bg-5.jpg )"
                                 }
-                              })
-                            ])
-                          ])
-                        ])
+                              },
+                              [
+                                _vm._l(_vm.errors.error.token, function(error) {
+                                  return _vm.errors.error.token
+                                    ? _c("li", [
+                                        _c(
+                                          "p",
+                                          { staticClass: "p-1 m-lg-3 m-sm-1" },
+                                          [_vm._v(_vm._s(error))]
+                                        )
+                                      ])
+                                    : _vm._e()
+                                }),
+                                _vm._v(" "),
+                                _vm._l(_vm.errors.error.password, function(
+                                  error
+                                ) {
+                                  return _vm.errors.error.password
+                                    ? _c("li", [
+                                        _c(
+                                          "p",
+                                          { staticClass: "p-1 m-lg-3 m-sm-1" },
+                                          [_vm._v(_vm._s(error))]
+                                        )
+                                      ])
+                                    : _vm._e()
+                                }),
+                                _vm._v(" "),
+                                _vm._l(_vm.errors.error.email, function(error) {
+                                  return _vm.errors.error.email
+                                    ? _c("li", [
+                                        _c(
+                                          "p",
+                                          { staticClass: "p-1 m-lg-3 m-sm-1" },
+                                          [_vm._v(_vm._s(error))]
+                                        )
+                                      ])
+                                    : _vm._e()
+                                }),
+                                _vm._v(" "),
+                                _c("li", [
+                                  _vm.errors.error &&
+                                  typeof _vm.errors.error == "string"
+                                    ? _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "text-center p-1 m-lg-3 m-sm-1"
+                                        },
+                                        [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm.errors.message ||
+                                                _vm.errors.error
+                                            )
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ])
+                              ],
+                              2
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.success && !_vm.has_error
+                          ? _c(
+                              "div",
+                              {
+                                staticClass: "success-msg ",
+                                style: {
+                                  backgroundImage:
+                                    "url(" +
+                                    _vm.$root.basepath +
+                                    "/images/bg/bg-5.jpg )"
+                                }
+                              },
+                              [
+                                _vm.response != undefined
+                                  ? _c(
+                                      "p",
+                                      { staticClass: "p-2 m-lg-3 m-sm-1" },
+                                      [_vm._v(_vm._s(_vm.response.message))]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm._m(1)
+                              ]
+                            )
+                          : _vm._e()
                       ]),
                       _vm._v(" "),
-                      _c("ul", { staticClass: "form-list m-2" }, [
-                        _c("li", { staticClass: "row clearfix text-center" }, [
-                          _c(
-                            "div",
-                            { staticClass: "input-box col-12 col-md-6" },
-                            [
-                              _c("label", { attrs: { for: "email" } }, [
-                                _vm._v("Password")
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "iconed" }, [
-                                _vm._m(2),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.password,
-                                      expression: "password"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  attrs: {
-                                    type: "password",
-                                    id: "password",
-                                    placeholder: "",
-                                    required: ""
-                                  },
-                                  domProps: { value: _vm.password },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.password = $event.target.value
-                                    }
-                                  }
-                                })
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "input-box col-12 col-md-6" },
-                            [
-                              _c("label", { attrs: { for: "email" } }, [
-                                _vm._v("Confirm Password")
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "iconed" }, [
-                                _vm._m(3),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.password_confirmation,
-                                      expression: "password_confirmation"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  attrs: {
-                                    type: "password",
-                                    id: "password_confirmation",
-                                    placeholder: "",
-                                    required: ""
-                                  },
-                                  domProps: {
-                                    value: _vm.password_confirmation
-                                  },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.password_confirmation =
-                                        $event.target.value
-                                    }
-                                  }
-                                })
-                              ])
-                            ]
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "buttons-set text-center" }, [
-                        _c(
-                          "button",
-                          {
-                            ref: "process",
-                            staticClass: "btn btn-default",
-                            attrs: { type: "submit" }
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Email")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.email,
+                              expression: "email"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "email",
+                            id: "email",
+                            placeholder: "user@example.com",
+                            required: ""
                           },
-                          [_vm._v("Update")]
-                        )
-                      ])
+                          domProps: { value: _vm.email },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.email = $event.target.value
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Password")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.password,
+                              expression: "password"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "password",
+                            id: "password",
+                            placeholder: "",
+                            required: ""
+                          },
+                          domProps: { value: _vm.password },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.password = $event.target.value
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "label",
+                          { attrs: { for: "password_confirmation" } },
+                          [_vm._v("Confirm Password")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.password_confirmation,
+                              expression: "password_confirmation"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "password",
+                            id: "password_confirmation",
+                            placeholder: "",
+                            required: ""
+                          },
+                          domProps: { value: _vm.password_confirmation },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.password_confirmation = $event.target.value
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          ref: "process",
+                          staticClass: "cmn-btn m-2",
+                          attrs: { type: "submit" }
+                        },
+                        [_vm._v("Submit")]
+                      )
                     ]
                   )
                 ])
@@ -61656,35 +61801,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "login-heading mb-0 text-center" }, [
-      _c("h2", [_vm._v("Enter details to reset your password")])
+    return _c("h2", { staticClass: "section-title text-center" }, [
+      _vm._v("Welcome to "),
+      _c("span", { staticClass: "base--color" }, [_vm._v("Bitcoinary Mint")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "icon" }, [
-      _c("i", {
-        staticClass: "fas fa-envelope",
-        attrs: { "aria-hidden": "true" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "icon" }, [
-      _c("i", { staticClass: "fas fa-lock", attrs: { "aria-hidden": "true" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "icon" }, [
-      _c("i", { staticClass: "fas fa-lock", attrs: { "aria-hidden": "true" } })
+    return _c("p", [
+      _vm._v("Go to "),
+      _c("a", { attrs: { href: "/login" } }, [_vm._v("Login")])
     ])
   }
 ]
@@ -98560,7 +98688,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     loader: function loader(action) {
       if (action == 'show') {
         jquery__WEBPACK_IMPORTED_MODULE_9___default()(".preloader").animate({
-          "opacity": "0.8"
+          "opacity": "0.7"
         }, 300, function () {
           jquery__WEBPACK_IMPORTED_MODULE_9___default()(".preloader").css("display", "flex");
         });
@@ -98571,6 +98699,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
           jquery__WEBPACK_IMPORTED_MODULE_9___default()(".preloader").css("display", "none");
         });
       }
+    },
+    scrollUp: function scrollUp() {
+      window.scrollTo(0, 170);
     },
     getUpdates: function getUpdates() {
       this.getPackages();

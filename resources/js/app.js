@@ -143,7 +143,7 @@ const app = new Vue({
         loader(action) {
             if (action == 'show') {
                 $(".preloader").animate({
-                    "opacity": "0.8"
+                    "opacity": "0.7"
                 }, 300, function() {
                     $(".preloader").css("display", "flex");
                 });
@@ -154,6 +154,9 @@ const app = new Vue({
                     $(".preloader").css("display", "none");
                 });
             }
+        },
+        scrollUp() {
+            window.scrollTo(0, 170)
         },
         getUpdates() {
             this.getPackages();

@@ -52,7 +52,7 @@ class AuthController extends Controller {
 			if ($token = $this->guard()->attempt($credentials)) {
 				return response()->json(['status' => 'success'], 200)->header('Authorization', $token);
 			} else {
-				return Helper::invalidRequest(['error' => 'Invalid Credentials'], 'Your username or password is incorrect', 401);
+				return Helper::invalidRequest(['error' => 'Invalid Credentials'], 'Your email or password is incorrect', 401);
 			}
 
 		} catch (Exception $bug) {
@@ -139,7 +139,7 @@ class AuthController extends Controller {
 	function sendResetLinkResponse(Request $request, $response) {
 		try
 		{
-			return Helper::validRequest($response, 'Password reset email sent.', 200);
+			return Helper::validRequest($response, 'A password reset link has been sent to your email.', 200);
 
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'Unknown error', 500);
@@ -159,7 +159,7 @@ class AuthController extends Controller {
 		event(new PasswordReset($user));
 	}
 	function sendResetResponse(Request $request, $response) {
-		return Helper::validRequest(['success' => 'password reset success'], 'Password reset successfully.', 200);
+		return Helper::validRequest(['success' => 'password reset success'], 'Password updated successfully.', 200);
 	}
 	function sendResetFailedResponse(Request $request, $response) {
 		return Helper::invalidRequest(['error' => 'Token is Invalid'], 'Failed, Invalid Token.', 401);

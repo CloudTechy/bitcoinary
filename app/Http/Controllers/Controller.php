@@ -14,7 +14,7 @@ class Controller extends BaseController {
 	protected function exception(Exception $bug, $message, $code = 500) {
 
 		if ($code == 500) {
-			$message = "Oops. An unexpected server error occured";
+			$message = "Oops. An unexpected server error occured, contact the site administrator";
 		}
 
 		$error = $bug->getMessage();

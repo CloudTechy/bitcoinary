@@ -12,9 +12,9 @@
                     <div class="wrapper">
                         <div class="text-center">
                             <div class="success-group">
-                                <h4 class="p-2 m-2">Verify your Email</h4>
-                                <p class="w-note m-2 p-3">Thank you for your interest in joining our program, you are now close to becoming an official member of  Bitcoinary Mint </p>
-                                <span class="p-2">Please login into your email account to finish up your registration</span>
+                                <h4 class="p-2 m-2">Verify your email address</h4>
+                                <p class="w-note m-2 p-3">We thank you for showing interest in joining our platform, you are now an email away in becoming an official member of  Bitcoinary Mint </p>
+                                <span class="p-2">An email confirmation link has been sent to your email</span>
                             </div>
                             <div class="text-center">
                                 <router-link to="/login" class="btn btn-default">Login</router-link>
@@ -34,7 +34,7 @@ export default {
         }
     },
     mounted() {
-        this.$router.push({ name: 'login', params: { successRegistrationRedirect: true } }) 
+        // this.$router.push({ name: 'login', params: { successRegistrationRedirect: true } }) 
         if (this.$auth.check()) { 
             this.$auth.logout()
         }
