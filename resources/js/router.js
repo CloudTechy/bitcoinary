@@ -176,7 +176,7 @@ const routes = [{
         name: 'dashboard',
         component: Dashboard,
         meta: {
-            auth: true
+            auth: false
         }
     },
     {

@@ -1,6 +1,9 @@
 <template>
     <div class="" style="">
-        <Header class="p-0 m-0"></Header>
+        
+        <DashboardHeader v-if  = "$route.name == 'dashboard'"></DashboardHeader>
+        <AdminDashboardHeader v-else-if = "$route.name == 'adminDashboard'"></AdminDashboardHeader>
+        <Header v-else class="p-0 m-0"></Header>
         <div style="min-height: 370px;  position: relative;">
             <router-view></router-view>
         </div>

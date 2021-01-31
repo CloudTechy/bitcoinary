@@ -1,118 +1,248 @@
 <template>
-    <div class="m-0 p-0">
-        <DashboardHeader></DashboardHeader>
-        <section class="main-container m-lg-3 m-0 acc">
-            <div class="main">
-                <!--start wrapper-->
-                <div class="container">
-                    <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;min-height:400px;'">
-                        <div class="account-wrapper m-xl-2 row m-0 ">
-                            <nav class="nav  navbar-dark ml-4 ml-lg-0 mb-3 mb-lg-b p-0 mt-3 navbar navbar-expand-lg ">
-                                <button @click="" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar4">
-                                    <span class="navbar-toggler-icon "></span>
-                                </button>
-                            </nav>
-                            <DashboardSidebar></DashboardSidebar>
-                            <div class="columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc">
-                                <div v-if = "user.withdraw_request" style="width : 98% !important" class="success-group p-2 m-2">
-                                    <h4>Important Notice</h4>
-                                    <p class="w-note ml-5 m-3">You have indicated interest to put your withdrawal on hold for a specific period of time. </p> <span>Please <button class="text-center btn btn-link text-light p-0 font-weight-bold font-italic  m-1" type="button" data-toggle="modal" data-target="#pausewithdrawal">click here
-                                        </button> to complete this process.</span>
-                                </div>
-                                <!-- content goes here -->
-                                <div class="acc-block overview">
-                                    <div class="acc-heading clearfix">
-                                        <h2>Account Overview</h2>
-                                        <ul class="breadcrumbs">
-                                            <li>Main</li>
-                                            <li><img :src="$root.basepath + '/img/right-b.png'"></li>
-                                            <li class="active">Overview</li>
-                                        </ul>
-                                    </div>
-                                    <div class="acc-body ">
-                                        <div class="stat-box row ">
-                                            <div class="s-box col-sm-4 col-12 p-2">
-                                                <img :src="$root.basepath + '/img/box-1.png'">
-                                                <h4>Account Balance</h4>
-                                                <span>{{$root.numeral(user.balance)}}</span><br>
-                                                <span style="font-size: 70%" v-if = "this.$auth.user().canWithdraw == false"  :class="{badge:true, 'badge-danger' :  !this.$auth.user().CanWithdraw, small : true,'badge-success' : this.$auth.user().CanWithdraw, ' m-1' : true, 'p-1':true, }"> {{ this.$auth.user().CanWithdraw ? 'Active' : 'On-Hold'}}</span>
-                                            </div>
-                                            <div class="s-box col-sm-4 col-12 p-2"> 
-                                                <img :src="$root.basepath + '/img/box-2.png'">
-                                                <h4>Active Deposit</h4>
-                                                <span>{{$root.numeral(user.totalActiveTransaction)}}</span>
-                                            </div>
-                                            <div class="s-box col-sm-4 col-12 p-2">
-                                                <img :src="$root.basepath + '/img/box-3.png'">
-                                                <h4>Total Earned</h4>
-                                                <span>{{$root.numeral(user.totalEarned)}}</span>
-                                            </div>
-                                        </div>
-                                        <h3 class="acc-sub-heading'">Account Statistics</h3>
-                                        <div class="simple-stats">
-                                            <ul class="clearfix">
-                                                <li>
-                                                    <img :src="$root.basepath + '/img/stat-deposit.png'">
-                                                    <p>Total Deposits: <span>{{$root.numeral(user.totalDeposit)}}</span></p>
-                                                </li>
-                                                <li>
-                                                    <img :src="$root.basepath + '/img/stat-withdraw.png'">
-                                                    <p>Total Withdrawals: <span>{{$root.numeral(user.totalWithdraw)}}</span></p>
-                                                </li>
-                                                <li>
-                                                    <img :src="$root.basepath + '/img/stat-last-deposit.png'">
-                                                    <p>Last Deposit: <span>{{$root.numeral(user.lastDeposit)}}</span></p>
-                                                </li>
-                                                <li>
-                                                    <img :src="$root.basepath + '/img/stat-last-withdrawal.png'">
-                                                    <p>Last Withdrawal: <span>{{$root.numeral(user.lastWithdraw)}}</span></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="acc-block affiliate-link">
-                                    <div class="acc-heading clearfix">
-                                        <h2>Affiliate Link</h2>
-                                    </div>
-                                    <div class="acc-body p-0 clearfix">
-                                        <div class="aff-link-1 clearfix">
-                                            <a class="aff-link" id="foo" :href="Referral_link">{{Referral_link}}</a>
-                                            <button v-clipboard="Referral_link" class="btn btn-default small" style="float:right;" data-clipboard-target="#foo">Copy</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="acc-inv-plans text-center">
-                                    <h2>Our Investment Plans</h2>
-                                    <div class="plan-wrap justify-content-center row">
-                                        <div class="plan-inner col-sm-6 col-12 p-2 m-2">
-                                            <div class="plan-in">
-                                                <h3>5%</h3>
-                                                <p>5% <span>R.O.l in 72 hours</span></p>
-                                            </div>
-                                        </div>
-                                        <div class="plan-inner col-sm-6 col-12 p-2 m-2">
-                                            <div class="plan-in">
-                                                <h3>20%</h3>
-                                                <p>20% <span>7 days turnover</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-center mb-3 mb-l-0">
-                                        <router-link class="btn btn-default" to="/user/dashboard/deposit">Make Deposit</router-link>
-                                    </div>
-                                </div>
-                                <!--  content ends here -->
-                            </div>
-                        </div>
-                        <div v-if="user.withdraw_request" ref="pausewithdrawal" class="modal fade" id="pausewithdrawal">
-                            <pause-withdrawal-component></pause-withdrawal-component>
-                        </div>
-                        <!--end account wrapper-->
+    <div class="page-wrapper">
+        <section class="inner-hero bg_img" :data-background="$root.basepath + '/images/bg/bg-1.jpg'">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2 class="page-title">Dashboard</h2>
+                        <ul class="page-breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li>Dashboard</li>
+                        </ul>
+                        <h2 class="page-title pt-4"><span class="base--color">Welcome, </span> {{'Bitcoinary'}}</h2>
                     </div>
                 </div>
             </div>
         </section>
+        <div class="pt-60 pb-60">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="row mb-none-30">
+                            <div class="col-xl-3 col-sm-6 mb-30">
+                                <div class="d-widget d-flex flex-wrap">
+                                    <div class="col-8">
+                                        <span class="caption">Active Investment</span>
+                                        <h4 class="currency-amount">$500</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="icon ml-auto">
+                                            <i class="las la-cubes "></i>
+                                        </div>
+                                    </div>
+                                </div><!-- d-widget-two end -->
+                            </div>
+                            <div class="col-xl-3 col-sm-6 mb-30">
+                                <div class="d-widget d-flex flex-wrap">
+                                    <div class="col-8">
+                                        <span class="caption">Total Earned</span>
+                                        <h4 class="currency-amount">$1,050</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="icon ml-auto">
+                                            <i class="las la-credit-card"></i>
+                                        </div>
+                                    </div>
+                                </div><!-- d-widget-two end -->
+                            </div>
+                            <div class="col-xl-3 col-sm-6 mb-30">
+                                <div class="d-widget d-flex flex-wrap">
+                                    <div class="col-8">
+                                        <span class="caption">Total Withdraw</span>
+                                        <h4 class="currency-amount">$1703</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="icon ml-auto">
+                                            <i class="las la-cloud-download-alt"></i>
+                                        </div>
+                                    </div>
+                                </div><!-- d-widget-two end -->
+                            </div>
+                            <div class="col-xl-3 col-sm-6 mb-30">
+                                <div class="d-widget d-flex flex-wrap">
+                                    <div class="col-8">
+                                        <span class="caption">Referral Earnings</span>
+                                        <h4 class="currency-amount">$1710.5</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="icon ml-auto">
+                                            <i class="las la-user-friends"></i>
+                                        </div>
+                                    </div>
+                                </div><!-- d-widget-two end -->
+                            </div>
+                        </div><!-- row end -->
+                        <div class="row mt-50 ">
+                            <div class="col-lg-4 mb-50">
+
+                                <div class="m-auto equal blog-card mb-30">
+                                    <h4 class=""><span class="font-weight-normal">Financial </span> <span class="base--color">Statistics</span></h4>
+                                    <div class="dropdown-divider pb-3"></div>
+                                    <div class="d-widget d-flex flex-wrap">
+                                        <div class="col-8">
+                                            <span class="caption">Deposit Wallet Balance</span>
+                                            <h4 class="currency-amount">$255</h4>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="icon ml-auto">
+                                                <i class="las la-dollar-sign"></i>
+                                            </div>
+                                        </div>
+                                    </div><!-- d-widget-two end -->
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="table-responsive--md p-0">
+                                    <table class="table style--two white-space-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Transaction ID</th>
+                                                <th>Amount</th>
+                                                <th>Wallet</th>
+                                                <th>Details</th>
+                                                <th>Post Balance</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td data-label="Date">21/02/2020</td>
+                                                <td data-label="Transaction ID">
+                                                    <span class="base--color">DZQXF5NAN2AT</span>
+                                                </td>
+                                                <td data-label="Amount">
+                                                    <span class="text-success">+ $17.5</span>
+                                                </td>
+                                                <td data-label="Wallet">
+                                                    <span class="badge base--bg">Interest Wallet</span>
+                                                </td>
+                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Post Balance">$22991.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="Date">21/02/2020</td>
+                                                <td data-label="Transaction ID">
+                                                    <span class="base--color">DZQXF5NAN2AT</span>
+                                                </td>
+                                                <td data-label="Amount">
+                                                    <span class="text-success">+ $17.5</span>
+                                                </td>
+                                                <td data-label="Wallet">
+                                                    <span class="badge base--bg">Interest Wallet</span>
+                                                </td>
+                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Post Balance">$22991.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="Date">21/02/2020</td>
+                                                <td data-label="Transaction ID">
+                                                    <span class="base--color">DZQXF5NAN2AT</span>
+                                                </td>
+                                                <td data-label="Amount">
+                                                    <span class="text-success">+ $17.5</span>
+                                                </td>
+                                                <td data-label="Wallet">
+                                                    <span class="badge base--bg">Interest Wallet</span>
+                                                </td>
+                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Post Balance">$22991.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="Date">21/02/2020</td>
+                                                <td data-label="Transaction ID">
+                                                    <span class="base--color">DZQXF5NAN2AT</span>
+                                                </td>
+                                                <td data-label="Amount">
+                                                    <span class="text-success">+ $17.5</span>
+                                                </td>
+                                                <td data-label="Wallet">
+                                                    <span class="badge base--bg">Interest Wallet</span>
+                                                </td>
+                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Post Balance">$22991.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="Date">21/02/2020</td>
+                                                <td data-label="Transaction ID">
+                                                    <span class="base--color">DZQXF5NAN2AT</span>
+                                                </td>
+                                                <td data-label="Amount">
+                                                    <span class="text-success">+ $17.5</span>
+                                                </td>
+                                                <td data-label="Wallet">
+                                                    <span class="badge base--bg">Interest Wallet</span>
+                                                </td>
+                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Post Balance">$22991.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="Date">21/02/2020</td>
+                                                <td data-label="Transaction ID">
+                                                    <span class="base--color">DZQXF5NAN2AT</span>
+                                                </td>
+                                                <td data-label="Amount">
+                                                    <span class="text-success">+ $17.5</span>
+                                                </td>
+                                                <td data-label="Wallet">
+                                                    <span class="badge base--bg">Interest Wallet</span>
+                                                </td>
+                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Post Balance">$22991.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="Date">21/02/2020</td>
+                                                <td data-label="Transaction ID">
+                                                    <span class="base--color">DZQXF5NAN2AT</span>
+                                                </td>
+                                                <td data-label="Amount">
+                                                    <span class="text-success">+ $17.5</span>
+                                                </td>
+                                                <td data-label="Wallet">
+                                                    <span class="badge base--bg">Interest Wallet</span>
+                                                </td>
+                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Post Balance">$22991.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-label="Date">21/02/2020</td>
+                                                <td data-label="Transaction ID">
+                                                    <span class="base--color">DZQXF5NAN2AT</span>
+                                                </td>
+                                                <td data-label="Amount">
+                                                    <span class="text-success">+ $17.5</span>
+                                                </td>
+                                                <td data-label="Wallet">
+                                                    <span class="badge base--bg">Interest Wallet</span>
+                                                </td>
+                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Post Balance">$22991.9</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="pb-60 pt-3">
+                                    <div class="container equal blog-card">
+                                        <div class="row justify-content-center ">
+                                            <div :data-background="$root.basepath + '/images/bg/bg-5.jpg'" class="col-md-12 no-padding wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                                                <h3 class="row m-2">Your&nbsp;<span class="base--color"> Affiliate Link</span></h3>
+                                                <div class="row">
+                                                    <div class="col-lg-8 col-md-7 col-sm-8 m-2">
+                                                        <div id="link">https://bitcoinarymint.com/?ref=bitcoinary</div>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-4 col-sm-3 m-2 text-md-right">
+                                                        <button v-clipboard="Referral_link" class="btn base--bg text-white" data-clipboard-target="#link">COPY LINK</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- row end -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -121,7 +251,7 @@ export default {
         return {}
     },
     mounted() {
-        window.scrollTo(200, 200);
+        window.scrollTo(0, 0);
     },
     computed: {
         user() {

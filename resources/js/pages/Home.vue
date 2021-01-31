@@ -338,24 +338,27 @@
 
 </script>
 <style type="text/css">
-.section-home__btn {
-    border-color: #f8b782;
-    color: rgba(255, 255, 255, 0.8) !important;
-    text-transform: uppercase;
-    padding: 5px 12px !important;
-}
+    .section-home__btn {
+        border-color: #f8b782;
+        color: rgba(255, 255, 255, 0.8) !important;
+        text-transform: uppercase;
+        padding: 5px 12px !important;
+    }
 
-.section-home__btn:hover {
-    background-color: #e25e5a !important;
-    border-color: #f8b782;
-}
+    .section-home__btn:hover {
+        background-color: #e25e5a !important;
+        border-color: #f8b782;
+    }
 
-.section-home__btn:active {
-    background-color: #e25e5a !important;
-    border-color: #f8b782;
-}
-.slick-slide .slick-active {
-    margin: 15px !important;
-}
+    .section-home__btn:active {
+        background-color: #e25e5a !important;
+        border-color: #f8b782;
+    }
+    .slick-slide .slick-active {
+        margin: 15px !important;
+    }
+    .equal{
+        box-shadow: 0 0 10px 2px rgba(204, 163, 84, 0.45) !important;
+    }
 
 </style>

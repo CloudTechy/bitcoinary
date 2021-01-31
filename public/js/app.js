@@ -5616,6 +5616,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -5818,6 +5821,22 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -8499,70 +8518,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -10528,12 +10483,142 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {};
   },
   mounted: function mounted() {
-    window.scrollTo(200, 200);
+    window.scrollTo(0, 0);
   },
   computed: {
     user: function user() {
@@ -16435,7 +16520,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n._text_1nv7e_24[data-v-61a7c374] {\r\n    font-family: Sailec-Regular, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;\r\n    font-size: 14px;\r\n    font-weight: 400;\r\n    line-height: 1.6;\r\n    margin: 0\n}\n.incrop-left[data-v-61a7c374] {\r\n    background-color: #171717;\r\n    background-size: 100%;\r\n    background-position: 0 100%;\r\n    padding: 30px;\r\n    border-radius: 10px 0 0 10px;\r\n    box-shadow: -3px 0px 10px 1px rgba(0, 0, 0, 0.3);\n}\n.incrop-left img[data-v-61a7c374] {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    max-width: 90px;\n}\n@media screen and (max-width: 991px) {\n.incrop-left[data-v-61a7c374] {\r\n        border-radius: initial;\n}\n}\n.incrop-left-img[data-v-61a7c374] {\r\n    position: relative;\r\n    padding-left: 100px;\n}\n.incorp-inner[data-v-61a7c374] {\r\n    padding-left: 90px;\r\n    background: url(" + escape(__webpack_require__(/*! ../../../public/images/uploads/company-logo.png */ "./public/images/uploads/company-logo.png")) + ") no-repeat 0 0;\r\n    background-size: 80px auto;\n}\n.step__title[data-v-61a7c374] {\r\n    font-weight: 500;\r\n    font-size: 22px;\r\n    font-size: 1.57rem;\r\n    color: #2e3035;\n}\n.no-padding[data-v-61a7c374] {\r\n    padding: 0 !important;\n}\n.incrop-right[data-v-61a7c374] {\r\n    background-color: #cca354;\r\n    padding: 30px;\r\n    border-radius: 0 10px 10px 0;\n}\n@media screen and (max-width: 991px) {\n.incrop-right[data-v-61a7c374] {\r\n        border-radius: initial;\n}\n}\n.section-home__btn[data-v-61a7c374] {\r\n    margin-top: 25px;\r\n    text-transform: uppercase;\n}\n.textsite[data-v-61a7c374] {\r\n    color: rgba(255, 255, 255, 0.8) !important;\n}\n.btn-black-warning[data-v-61a7c374] {\r\n    color: #4f4f4f;\r\n    background-color: #171717;\r\n    border-color: #171717;\n}\n.section-home__btn[data-v-61a7c374]:hover {\r\n    background-color: black !important;\r\n    border-color: #cca354;\n}\n.equal[data-v-61a7c374]{\r\n    box-shadow: 0 0 10px 2px rgba(204, 163, 84, 0.45) !important;\n}\r\n", ""]);
+exports.push([module.i, "\n._text_1nv7e_24[data-v-61a7c374] {\r\n    font-family: Sailec-Regular, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;\r\n    font-size: 14px;\r\n    font-weight: 400;\r\n    line-height: 1.6;\r\n    margin: 0\n}\n.incrop-left[data-v-61a7c374] {\r\n    background-color: #171717;\r\n    background-size: 100%;\r\n    background-position: 0 100%;\r\n    padding: 30px;\r\n    border-radius: 10px 0 0 10px;\r\n    box-shadow: -3px 0px 10px 1px rgba(0, 0, 0, 0.3);\n}\n.incrop-left img[data-v-61a7c374] {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    max-width: 90px;\n}\n@media screen and (max-width: 991px) {\n.incrop-left[data-v-61a7c374] {\r\n        border-radius: initial;\n}\n}\n.incrop-left-img[data-v-61a7c374] {\r\n    position: relative;\r\n    padding-left: 100px;\n}\n.incorp-inner[data-v-61a7c374] {\r\n    padding-left: 90px;\r\n    background: url(" + escape(__webpack_require__(/*! ../../../public/images/uploads/company-logo.png */ "./public/images/uploads/company-logo.png")) + ") no-repeat 0 0;\r\n    background-size: 80px auto;\n}\n.step__title[data-v-61a7c374] {\r\n    font-weight: 500;\r\n    font-size: 22px;\r\n    font-size: 1.57rem;\r\n    color: #2e3035;\n}\n.no-padding[data-v-61a7c374] {\r\n    padding: 0 !important;\n}\n.incrop-right[data-v-61a7c374] {\r\n    background-color: #cca354;\r\n    padding: 30px;\r\n    border-radius: 0 10px 10px 0;\n}\n@media screen and (max-width: 991px) {\n.incrop-right[data-v-61a7c374] {\r\n        border-radius: initial;\n}\n}\n.section-home__btn[data-v-61a7c374] {\r\n    margin-top: 25px;\r\n    text-transform: uppercase;\n}\n.textsite[data-v-61a7c374] {\r\n    color: rgba(255, 255, 255, 0.8) !important;\n}\n.btn-black-warning[data-v-61a7c374] {\r\n    color: #4f4f4f;\r\n    background-color: #171717;\r\n    border-color: #171717;\n}\n.section-home__btn[data-v-61a7c374]:hover {\r\n    background-color: black !important;\r\n    border-color: #cca354;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -16511,7 +16596,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.section-home__btn {\r\n    border-color: #f8b782;\r\n    color: rgba(255, 255, 255, 0.8) !important;\r\n    text-transform: uppercase;\r\n    padding: 5px 12px !important;\n}\n.section-home__btn:hover {\r\n    background-color: #e25e5a !important;\r\n    border-color: #f8b782;\n}\n.section-home__btn:active {\r\n    background-color: #e25e5a !important;\r\n    border-color: #f8b782;\n}\n.slick-slide .slick-active {\r\n    margin: 15px !important;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.section-home__btn {\n    border-color: #f8b782;\n    color: rgba(255, 255, 255, 0.8) !important;\n    text-transform: uppercase;\n    padding: 5px 12px !important;\n}\n.section-home__btn:hover {\n    background-color: #e25e5a !important;\n    border-color: #f8b782;\n}\n.section-home__btn:active {\n    background-color: #e25e5a !important;\n    border-color: #f8b782;\n}\n.slick-slide .slick-active {\n    margin: 15px !important;\n}\n.equal{\n    box-shadow: 0 0 10px 2px rgba(204, 163, 84, 0.45) !important;\n}\n\n", ""]);
 
 // exports
 
@@ -55266,7 +55351,11 @@ var render = function() {
     "div",
     {},
     [
-      _c("Header", { staticClass: "p-0 m-0" }),
+      _vm.$route.name == "dashboard"
+        ? _c("DashboardHeader")
+        : _vm.$route.name == "adminDashboard"
+        ? _c("AdminDashboardHeader")
+        : _c("Header", { staticClass: "p-0 m-0" }),
       _vm._v(" "),
       _c(
         "div",
@@ -55827,133 +55916,136 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "account-header mb-2 p-0 mt-3" }, [
-    _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "column col-xl-7 p-0 p-lg-1 col-lg-6 col-12 alpha" },
-          [
-            _c(
-              "h3",
-              {
-                staticClass: "user-hello text-left pl-3 p-md-0",
-                staticStyle: { color: "#fff" }
-              },
-              [
-                _vm._v("Hello, "),
-                _c("span", [_vm._v(_vm._s(_vm.$auth.user().username))])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "header-box user  row",
-                staticStyle: { "padding-left": "30px" }
-              },
-              [
-                _vm._m(0),
-                _vm._v(" "),
-                _c("div", { staticClass: "col" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col" }, [
-                      _c(
-                        "td",
-                        {
-                          staticClass: "p-2",
-                          staticStyle: {
-                            "text-align": "right",
-                            color: "#f8b882"
-                          }
-                        },
-                        [_vm._v(_vm._s(_vm.time))]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col" }, [
-                      _c(
-                        "td",
-                        {
-                          staticClass: "p-1",
-                          staticStyle: {
-                            "text-align": "right",
-                            color: "#f8b882"
-                          }
-                        },
-                        [_vm._v(_vm._s(_vm.getIp))]
-                      )
-                    ])
-                  ])
-                ])
-              ]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "column col-xl-5 col-lg-6 col-sm-9 col-12 omega" },
-          [
-            _c(
-              "h3",
-              {
-                staticClass: "user-hello",
-                staticStyle: { visibility: "hidden" }
-              },
-              [_vm._v("Affiliate Link")]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "top-buttons clearfix" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "m-xl-1 mr-lg-0 m-1 mr-0 btn btn-default",
-                    attrs: { to: "/user/dashboard/deposit" }
-                  },
-                  [_vm._v("Make Deposit")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "m-xl-1 m-1 btn btn-default",
-                    attrs: { to: "/user/dashboard/withdraw" }
-                  },
-                  [_vm._v("Withdrawal")]
-                )
-              ],
-              1
-            )
-          ]
-        )
+  return _c(
+    "header",
+    { staticClass: "header animated fadeInDown menu-fixed" },
+    [
+      _c("div", { staticClass: "header__bottom" }, [
+        _c("div", { staticClass: "container" }, [
+          _c(
+            "nav",
+            { staticClass: "navbar navbar-expand-xl p-0 align-items-center" },
+            [
+              _c(
+                "a",
+                { staticClass: "site-logo site-title", attrs: { href: "/" } },
+                [
+                  _c("img", {
+                    attrs: {
+                      src: _vm.$root.basepath + "/images/logo.png",
+                      alt: "site-logo"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _vm._m(2)
+            ]
+          )
+        ])
       ])
-    ])
-  ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col" }, [
-          _c("td", { staticClass: "p-2", staticStyle: { color: "#fff" } }, [
-            _vm._v("Registration Date :")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col justify-content-end" }, [
-          _c("td", { staticClass: "p-1", staticStyle: { color: "#fff" } }, [
-            _vm._v("Your IP Address :")
-          ])
+    return _c("ul", { staticClass: "account-menu mobile-acc-menu" }, [
+      _c("li", { staticClass: "icon" }, [
+        _c("a", { attrs: { href: "/login" } }, [
+          _c("i", { staticClass: "las la-user" })
         ])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarSupportedContent",
+          "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "true",
+          "aria-label": "Toggle navigation"
+        }
+      },
+      [_c("span", { staticClass: "menu-toggle" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "collapse navbar-collapse",
+        attrs: { id: "navbarSupportedContent" }
+      },
+      [
+        _c("ul", { staticClass: "navbar-nav main-menu m-auto" }, [
+          _c("li", [
+            _c("a", { attrs: { href: "/user/dashboard" } }, [
+              _vm._v("Dashboard")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "/about" } }, [_vm._v("Add deposit")])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "/register" } }, [
+              _vm._v("Deposit history")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "/#packages" } }, [_vm._v("Withdraw")])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "/partners" } }, [
+              _vm._v("Withdrawal history")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "/#faq" } }, [_vm._v("Referrals")])
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "menu_has_children" }, [
+            _c("a", { attrs: { href: "#0" } }, [_vm._v("Account Setting")]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "sub-menu" }, [
+              _c("li", [
+                _c("a", { attrs: { href: "blog.html" } }, [
+                  _vm._v("Profile setup")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("a", { attrs: { href: "login.html" } }, [
+                  _vm._v("Payment setup")
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -57024,7 +57116,7 @@ var staticRenderFns = [
                   staticClass: "step__title",
                   staticStyle: { "padding-bottom": "15px", color: "#2f2e2e" }
                 },
-                [_vm._v("959792761")]
+                [_vm._v("12019970")]
               ),
               _vm._v(" "),
               _c("p", { staticStyle: { color: "#2f2e2e" } }, [
@@ -59176,7 +59268,37 @@ var render = function() {
       staticClass: "bg_img pt-120 pb-120 border-top-1",
       attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-10.jpg" }
     },
-    [_vm._m(0)]
+    [
+      _c(
+        "div",
+        {
+          staticClass: "container",
+          staticStyle: { "background-color": "rgba(0,0,0,0.7)" }
+        },
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "row justify-content-center mb-none-30" }, [
+            _c("div", { staticClass: "col-lg-10 col-md-12 mb-30" }, [
+              _c("div", { staticClass: "blog-card" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("div", { staticClass: "blog-card__thumb" }, [
+                  _c("img", {
+                    attrs: {
+                      src: _vm.$root.basepath + "/images/blog/1.jpg",
+                      alt: "image"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _vm._m(2)
+              ])
+            ])
+          ])
+        ]
+      )
+    ]
   )
 }
 var staticRenderFns = [
@@ -59184,66 +59306,62 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "container",
-        staticStyle: { "background-color": "rgba(0,0,0,0.7)" }
-      },
-      [
-        _c("div", { staticClass: "row justify-content-center" }, [
-          _c("div", { staticClass: "col-lg-6 text-center" }, [
-            _c("div", { staticClass: "section-header" }, [
-              _c("h2", { staticClass: "section-title" }, [
-                _c("span", { staticClass: "font-weight-normal" }, [
-                  _vm._v("About ")
-                ]),
-                _vm._v(" "),
-                _c("b", { staticClass: "base--color" }, [_vm._v("Us")])
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-lg-7 text-center" }, [
+          _c("div", { staticClass: "section-header" }, [
+            _c("h2", { staticClass: "section-title" }, [
+              _c("span", { staticClass: "font-weight-normal" }, [
+                _vm._v("About ")
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "blog-details__content" }, [
-                _vm._v(
-                  "\n                        Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits.\n                    "
-                )
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-12" }, [
-          _c("div", { staticClass: "blog-details-wrapper" }, [
-            _c("div", { staticClass: "blog-details__content" }, [
-              _c("h4", { staticClass: "blog-details__title" }, [
-                _vm._v("Our Company")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "p-2" }, [
-                _vm._v(
-                  "\n                        Bitcoinary Mint started in 2005 as a Financial Advisory Firm and recently in 2018 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading."
-                ),
-                _c("br"),
-                _c("br"),
-                _vm._v(
-                  " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bitcoinary Mint team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
-                ),
-                _c("br"),
-                _c("br"),
-                _vm._v(
-                  "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of Bitcoinary Mint Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. "
-                ),
-                _c("br"),
-                _c("br"),
-                _vm._v(
-                  "We have put great efforts to provide our clients with a user-friendly profit making investment platform. Also, the developers are real technical mavericks, whose vision to create a unique investment system has become successful. Also, you can be sure of security since we ensure that no one will access your data without consent."
-                ),
-                _c("br")
-              ])
+              _c("b", { staticClass: "base--color" }, [_vm._v("Us")])
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "blog-details__content" }, [
+              _vm._v(
+                "\n                            Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits.\n                        "
+              )
             ])
           ])
         ])
-      ]
-    )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h4", { staticClass: "blog-card__title mb-4" }, [
+      _vm._v("Our  "),
+      _c("span", { staticClass: "base--color" }, [_vm._v("Company")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "blog-card__content" }, [
+      _vm._v(
+        "\n                        Bitcoinary Mint started in 2005 as a Financial Advisory Firm and recently in 2018 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading."
+      ),
+      _c("br"),
+      _c("br"),
+      _vm._v(
+        " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bitcoinary Mint team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
+      ),
+      _c("br"),
+      _c("br"),
+      _vm._v(
+        "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of Bitcoinary Mint Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. "
+      ),
+      _c("br"),
+      _c("br"),
+      _vm._v(
+        "We have put great efforts to provide our clients with a user-friendly profit making investment platform. Also, the developers are real technical mavericks, whose vision to create a unique investment system has become successful. Also, you can be sure of security since we ensure that no one will access your data without consent."
+      ),
+      _c("br")
+    ])
   }
 ]
 render._withStripped = true
@@ -66982,232 +67100,227 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "section",
-    {
-      staticClass: "bg_img pt-120 pb-120 border-top-1",
-      attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg" }
-    },
-    [_vm._m(0)]
-  )
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-lg-6 text-center" }, [
-          _c("div", { staticClass: "section-header" }, [
-            _c("h2", { staticClass: "section-title" }, [
-              _c("span", { staticClass: "font-weight-normal" }, [
-                _vm._v("Our ")
-              ]),
-              _vm._v(" "),
-              _c("b", { staticClass: "base--color" }, [
-                _vm._v("Terms and Condition ")
+    return _c("section", { staticClass: "bg_img pt-120 pb-120 border-top-1" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-lg-6 text-center" }, [
+            _c("div", { staticClass: "section-header" }, [
+              _c("h2", { staticClass: "section-title" }, [
+                _c("span", { staticClass: "font-weight-normal" }, [
+                  _vm._v("Our ")
+                ]),
+                _vm._v(" "),
+                _c("b", { staticClass: "base--color" }, [
+                  _vm._v("Terms and Condition ")
+                ])
               ])
             ])
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-12", attrs: { id: "terms" } }, [
-        _c("div", { staticClass: "blog-details-wrapper" }, [
-          _c("div", { staticClass: "blog-details__content" }, [
-            _c("h4", { staticClass: "blog-details__title" }, [
-              _vm._v("Terms of "),
-              _c("span", { staticClass: "base--color" }, [_vm._v(" Use ")])
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-justify" }, [
-              _vm._v(
-                "This user agreement (the Agreement) describes the terms and conditions of using the services provided by Bitcoinary Mint to the registered user (Client), including the access to the personal account and payment operations performed through the Bitcoinary Mint website located at Bitcoinary Mint.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "Using Bitcoinary Mint services, you confirm that you have read this Agreement, understood its meaning in full and accept this Agreement.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "All interested parties are required to read all that is written and stated on this page without skipping even a single word. This acts as the official and binding terms and conditions between You the registrant and our company Bitcoinary Mint.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "Prior to registration, all interested registrants understand that upon registration, you shall be bound by these terms and conditions without negotiations. If you are not ready to accept the terms written herewith, please do not register for an account.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                'Upon registration, the user shall be called "member". All members of our company must oblige to follow all the rules written on this page. We stress this multiple times, as our company have very stringent rulings regarding the use of our website and that of our company program.\n                        '
-              ),
-              _c("br"),
-              _vm._v(
-                "All registrants should be of legal ages and must reside in a country where participation in foreign investment programs is not prohibited. If you live within said conditions, then feel free to sign up without worries.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "All registrants must use a valid e-mail address in order for us to be able to communicate properly when issues arise out of misuse or technical reasons.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "When registering, you hold Bitcoinary Mint free from any liabilities and losses you may incur in the circumstances unforeseen, such as account compromise, suspension, and or deletion, due to reasons caused by the registrant.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "Bitcoinary Mint services are not available to the general public and are opened only to the qualified members of Bitcoinary Mint, the use of this site is restricted to our members and to individuals personally invited by them. Every deposit is considered to be a private transaction between the Bitcoinary Mint and its Member.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "We reserve the rights to decline, reject and reverse deposits back to the depositor for reasons we may either disclose publicly or not, and for whatever reason we deem necessary for the better performance of our company.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "All transactions are final and no refunding possible once a deposit has been made. On special situations where applicable, we will issue refunds."
-              )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12", attrs: { id: "terms" } }, [
+          _c("div", { staticClass: "blog-details-wrapper" }, [
+            _c("div", { staticClass: "blog-details__content" }, [
+              _c("h4", { staticClass: "blog-details__title" }, [
+                _vm._v("Terms of "),
+                _c("span", { staticClass: "base--color" }, [_vm._v(" Use ")])
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-justify" }, [
+                _vm._v(
+                  "This user agreement (the Agreement) describes the terms and conditions of using the services provided by Bitcoinary Mint to the registered user (Client), including the access to the personal account and payment operations performed through the Bitcoinary Mint website located at Bitcoinary Mint.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "Using Bitcoinary Mint services, you confirm that you have read this Agreement, understood its meaning in full and accept this Agreement.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "All interested parties are required to read all that is written and stated on this page without skipping even a single word. This acts as the official and binding terms and conditions between You the registrant and our company Bitcoinary Mint.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "Prior to registration, all interested registrants understand that upon registration, you shall be bound by these terms and conditions without negotiations. If you are not ready to accept the terms written herewith, please do not register for an account.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  'Upon registration, the user shall be called "member". All members of our company must oblige to follow all the rules written on this page. We stress this multiple times, as our company have very stringent rulings regarding the use of our website and that of our company program.\n                        '
+                ),
+                _c("br"),
+                _vm._v(
+                  "All registrants should be of legal ages and must reside in a country where participation in foreign investment programs is not prohibited. If you live within said conditions, then feel free to sign up without worries.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "All registrants must use a valid e-mail address in order for us to be able to communicate properly when issues arise out of misuse or technical reasons.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "When registering, you hold Bitcoinary Mint free from any liabilities and losses you may incur in the circumstances unforeseen, such as account compromise, suspension, and or deletion, due to reasons caused by the registrant.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "Bitcoinary Mint services are not available to the general public and are opened only to the qualified members of Bitcoinary Mint, the use of this site is restricted to our members and to individuals personally invited by them. Every deposit is considered to be a private transaction between the Bitcoinary Mint and its Member.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "We reserve the rights to decline, reject and reverse deposits back to the depositor for reasons we may either disclose publicly or not, and for whatever reason we deem necessary for the better performance of our company.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "All transactions are final and no refunding possible once a deposit has been made. On special situations where applicable, we will issue refunds."
+                )
+              ])
             ])
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-12", attrs: { id: "restrictions" } }, [
-        _c("div", { staticClass: "blog-details-wrapper" }, [
-          _c("div", { staticClass: "blog-details__content" }, [
-            _c("h4", { staticClass: "blog-details__title base--color" }, [
-              _vm._v("Restrictions")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-justify" }, [
-              _vm._v(
-                "You may not use the Services if you are located in, or a citizen or resident of any state, country, territory or other jurisdiction that is embargoed by the UNSC or where your use of the Services would be illegal or otherwise violate any applicable law. You represent and warrant that you are not a citizen or resident of any such jurisdiction and that you will not use any Services while located in any such jurisdiction. You also may not use the Services if you are located in, or a citizen or resident of, any other jurisdiction where Bitcoinary Mint has determined, at its discretion, to prohibit use of the Services (USA etc.). Bitcoinary Mint may implement controls to restrict access to the Services from any jurisdiction prohibited pursuant to this Section. You will comply with this Section, even if Bitcoinary Mint methods to prevent use of the Services are not effective or can be bypassed.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "We reserve the right to use “geo-blocking”, that is, we may block by IP-address the visitors that arrive from the US. Any resident or citizen of the United States of America is prohibited from using the website, making any operations at dashboard. We reserve the right to immediately close any of your accounts and liquidate any operation if it is determined that you have provided false information about your location or place of residence. We also reserve the right to block by IP address the visitors that arrive from countries included in the sanction lists.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "The Company may at any time institute daily, weekly and/or monthly transactional limits on a Customer's use of the Service. These limits may be changed at any time for any reason by the Company. Each Customer may have different transactional limits for different reasons.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "If a Customer is suspected of using multiple accounts to override the daily or weekly transactional limits, that shall be reason by the Company to suspend all of implicated accounts from the Service.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "You are not allowed to use more than one account per IP address. You are not allowed to create multiple accounts. You are not allowed to login more than one account on the same computer. This includes family, friends and using your account on public computers. You may not permit any other person to use your Account. Unless we otherwise permit from time to time, you may not open more than one Account and we may, without notice, close any or all of the Accounts of a Member who has, or whom we reasonably suspect has, unauthorised multiple Accounts.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "Our company assumes no responsibility for lost, late, incomplete, incorrect, or misdirected registrations. We are not responsible for technical, hardware or software malfunctions, misdirected entries, lost or unavailable network connections, or other communications or other technical problems related to the registration.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "We do not accept any responsibility to you for:\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- malfunctions in communications facilities which cannot reasonably be considered to be under our control and that may affect the accuracy or timeliness of messages you send to us;\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- any losses or delays in transmission of messages arising out of the use of any Internet access service provider or caused by any browser or other software which is not under our control;\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- the services provided to you by your e-payment issuer or provider (Payeer, PerfectMoney, Blockhain.info, Cryptonator, Coinomi etc), as well as transaction delays due to their fault;\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- viruses caused by third parties;\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- errors on the Site or with the Bitcoinary Mint Online Service caused by incomplete or incorrect information provided to us by you or a third party;\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- any unauthorised use or interception of any message or information before it reaches the Site;\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- any unauthorised use of or access to data relating to you or your transactions which is held by us (unless such use or access is caused by our negligence, fraud or failure to comply with laws relating to the protection of your data); We have no obligation to you to initiate or perform a money transfer or other transaction as part of the Bitcoinary Mint Online Service if:\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- we are unable to obtain satisfactory evidence of your identity;\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- we have reason to believe that the transaction message is incorrect, unauthorized or forged;\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- you provide us with incorrect or incomplete information or if your transaction message is not given to us sufficiently in advance to allow for timely provision of the requested transaction;\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- your e-payment issuer or provider does not authorise your use of your e-payment account for payment of the transaction and our related charges,\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "and we do not accept any liability for damages resulting from 3rd party non-payment or delay in payment of a money transfer to our internal accounts or failure to perform a transaction under the Bitcoinary Mint Online Service by reason of any of these matters. If you received payment for advertising / listing from our official wallet, which provides for a certain amount of reinvest in the project, it means that you do not can close the deposit and withdraw all funds including deposit, you can only withdraw daily income 5% from the deposit, otherwise we are entitled to suspend payments to you. We may refuse to provide the Bitcoinary Mint Online Service (in whole or in part) to you if to do so may breach any Bitcoinary Mint policy (including policies intended to prevent fraud, money laundering or terrorist financing) and/or any applicable law, order of a court or requirement of any regulatory or governmental authority, body or agency having jurisdiction over us, or if we otherwise consider such action necessary to protect our interests.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "We may suspend the operation of the Bitcoinary Mint Online Service in whole or in part if, in our absolute discretion, we consider it appropriate to do so by reason of any circumstances beyond our control. We shall not be liable to you for any loss or liability which may be suffered or incurred by you as a result of any such interruption, even if caused by our negligence or Force Majeure."
-              )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12", attrs: { id: "restrictions" } }, [
+          _c("div", { staticClass: "blog-details-wrapper" }, [
+            _c("div", { staticClass: "blog-details__content" }, [
+              _c("h4", { staticClass: "blog-details__title base--color" }, [
+                _vm._v("Restrictions")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-justify" }, [
+                _vm._v(
+                  "You may not use the Services if you are located in, or a citizen or resident of any state, country, territory or other jurisdiction that is embargoed by the UNSC or where your use of the Services would be illegal or otherwise violate any applicable law. You represent and warrant that you are not a citizen or resident of any such jurisdiction and that you will not use any Services while located in any such jurisdiction. You also may not use the Services if you are located in, or a citizen or resident of, any other jurisdiction where Bitcoinary Mint has determined, at its discretion, to prohibit use of the Services (USA etc.). Bitcoinary Mint may implement controls to restrict access to the Services from any jurisdiction prohibited pursuant to this Section. You will comply with this Section, even if Bitcoinary Mint methods to prevent use of the Services are not effective or can be bypassed.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "We reserve the right to use “geo-blocking”, that is, we may block by IP-address the visitors that arrive from the US. Any resident or citizen of the United States of America is prohibited from using the website, making any operations at dashboard. We reserve the right to immediately close any of your accounts and liquidate any operation if it is determined that you have provided false information about your location or place of residence. We also reserve the right to block by IP address the visitors that arrive from countries included in the sanction lists.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "The Company may at any time institute daily, weekly and/or monthly transactional limits on a Customer's use of the Service. These limits may be changed at any time for any reason by the Company. Each Customer may have different transactional limits for different reasons.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "If a Customer is suspected of using multiple accounts to override the daily or weekly transactional limits, that shall be reason by the Company to suspend all of implicated accounts from the Service.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "You are not allowed to use more than one account per IP address. You are not allowed to create multiple accounts. You are not allowed to login more than one account on the same computer. This includes family, friends and using your account on public computers. You may not permit any other person to use your Account. Unless we otherwise permit from time to time, you may not open more than one Account and we may, without notice, close any or all of the Accounts of a Member who has, or whom we reasonably suspect has, unauthorised multiple Accounts.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "Our company assumes no responsibility for lost, late, incomplete, incorrect, or misdirected registrations. We are not responsible for technical, hardware or software malfunctions, misdirected entries, lost or unavailable network connections, or other communications or other technical problems related to the registration.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "We do not accept any responsibility to you for:\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- malfunctions in communications facilities which cannot reasonably be considered to be under our control and that may affect the accuracy or timeliness of messages you send to us;\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- any losses or delays in transmission of messages arising out of the use of any Internet access service provider or caused by any browser or other software which is not under our control;\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- the services provided to you by your e-payment issuer or provider (Payeer, PerfectMoney, Blockhain.info, Cryptonator, Coinomi etc), as well as transaction delays due to their fault;\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- viruses caused by third parties;\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- errors on the Site or with the Bitcoinary Mint Online Service caused by incomplete or incorrect information provided to us by you or a third party;\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- any unauthorised use or interception of any message or information before it reaches the Site;\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- any unauthorised use of or access to data relating to you or your transactions which is held by us (unless such use or access is caused by our negligence, fraud or failure to comply with laws relating to the protection of your data); We have no obligation to you to initiate or perform a money transfer or other transaction as part of the Bitcoinary Mint Online Service if:\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- we are unable to obtain satisfactory evidence of your identity;\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- we have reason to believe that the transaction message is incorrect, unauthorized or forged;\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- you provide us with incorrect or incomplete information or if your transaction message is not given to us sufficiently in advance to allow for timely provision of the requested transaction;\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- your e-payment issuer or provider does not authorise your use of your e-payment account for payment of the transaction and our related charges,\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "and we do not accept any liability for damages resulting from 3rd party non-payment or delay in payment of a money transfer to our internal accounts or failure to perform a transaction under the Bitcoinary Mint Online Service by reason of any of these matters. If you received payment for advertising / listing from our official wallet, which provides for a certain amount of reinvest in the project, it means that you do not can close the deposit and withdraw all funds including deposit, you can only withdraw daily income 5% from the deposit, otherwise we are entitled to suspend payments to you. We may refuse to provide the Bitcoinary Mint Online Service (in whole or in part) to you if to do so may breach any Bitcoinary Mint policy (including policies intended to prevent fraud, money laundering or terrorist financing) and/or any applicable law, order of a court or requirement of any regulatory or governmental authority, body or agency having jurisdiction over us, or if we otherwise consider such action necessary to protect our interests.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "We may suspend the operation of the Bitcoinary Mint Online Service in whole or in part if, in our absolute discretion, we consider it appropriate to do so by reason of any circumstances beyond our control. We shall not be liable to you for any loss or liability which may be suffered or incurred by you as a result of any such interruption, even if caused by our negligence or Force Majeure."
+                )
+              ])
             ])
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-12", attrs: { id: "privacy" } }, [
-        _c("div", { staticClass: "blog-details-wrapper" }, [
-          _c("div", { staticClass: "blog-details__content" }, [
-            _c("h4", { staticClass: "blog-details__title" }, [
-              _vm._v("Privacy "),
-              _c("span", { staticClass: "base--color" }, [_vm._v(" Policy ")])
-            ]),
-            _vm._v(" "),
-            _c("p", {}, [
-              _vm._v(
-                "Since we conduct business in the UK we have to follow the AML & KYC requirements strictly. As part of our AML policy, we ensure that any client agreeing to use our services, is also agreeing - if it is requested by Bitcoinary Mint - to provide us with identification documentation, including but not limited to the high resolution (300 DPI) color scan of all sides of the following Personal Identity Documents and/or Proof of Address Documents:\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "1. Personal Identity Documents:\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- Current valid full EU or non EU Passport;\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- Current valid National ID card;\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- Current valid Driving License;\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "2. Proof of Address Documents:\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "- Recent (not more 3 months) Utility Bill — Gas, Electricity, Water, Telephone (Not mobile phones)\n                        "
-              ),
-              _c("br"),
-              _vm._v("- Bank Statement\n                        "),
-              _c("br"),
-              _vm._v(
-                "We require the documents to be sent to us in high quality (300 DPI) colour format. If the documents have more than one side then we require all sides to be sent to us. We reserve the right to reject any documents, which do not comply with the above.\n                        "
-              ),
-              _c("br"),
-              _vm._v(
-                "We reserve the right to require additional information at any time to verify the client's identification and any further information that may be required to satisfy the Money Laundering Regulations."
-              )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12", attrs: { id: "privacy" } }, [
+          _c("div", { staticClass: "blog-details-wrapper" }, [
+            _c("div", { staticClass: "blog-details__content" }, [
+              _c("h4", { staticClass: "blog-details__title" }, [
+                _vm._v("Privacy "),
+                _c("span", { staticClass: "base--color" }, [_vm._v(" Policy ")])
+              ]),
+              _vm._v(" "),
+              _c("p", {}, [
+                _vm._v(
+                  "Since we conduct business in the UK we have to follow the AML & KYC requirements strictly. As part of our AML policy, we ensure that any client agreeing to use our services, is also agreeing - if it is requested by Bitcoinary Mint - to provide us with identification documentation, including but not limited to the high resolution (300 DPI) color scan of all sides of the following Personal Identity Documents and/or Proof of Address Documents:\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "1. Personal Identity Documents:\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- Current valid full EU or non EU Passport;\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- Current valid National ID card;\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- Current valid Driving License;\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "2. Proof of Address Documents:\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "- Recent (not more 3 months) Utility Bill — Gas, Electricity, Water, Telephone (Not mobile phones)\n                        "
+                ),
+                _c("br"),
+                _vm._v("- Bank Statement\n                        "),
+                _c("br"),
+                _vm._v(
+                  "We require the documents to be sent to us in high quality (300 DPI) colour format. If the documents have more than one side then we require all sides to be sent to us. We reserve the right to reject any documents, which do not comply with the above.\n                        "
+                ),
+                _c("br"),
+                _vm._v(
+                  "We reserve the right to require additional information at any time to verify the client's identification and any further information that may be required to satisfy the Money Laundering Regulations."
+                )
+              ])
             ])
           ])
         ])
@@ -67459,443 +67572,509 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "m-0 p-0" },
-    [
-      _c("DashboardHeader"),
-      _vm._v(" "),
-      _c("section", { staticClass: "main-container m-lg-3 m-0 acc" }, [
-        _c("div", { staticClass: "main" }, [
-          _c("div", { staticClass: "container" }, [
-            _c(
-              "div",
-              {
-                staticClass: "wrapper",
-                style:
-                  "background:url(" +
-                  _vm.$root.basepath +
-                  "/img/home.png) no-repeat 0 0;min-height:400px;"
-              },
-              [
-                _c(
-                  "div",
-                  { staticClass: "account-wrapper m-xl-2 row m-0 " },
-                  [
-                    _c(
-                      "nav",
-                      {
-                        staticClass:
-                          "nav  navbar-dark ml-4 ml-lg-0 mb-3 mb-lg-b p-0 mt-3 navbar navbar-expand-lg "
-                      },
-                      [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "navbar-toggler",
-                            attrs: {
-                              type: "button",
-                              "data-toggle": "collapse",
-                              "data-target": "#collapsibleNavbar4"
-                            },
-                            on: { click: function($event) {} }
+  return _c("div", { staticClass: "page-wrapper" }, [
+    _c(
+      "section",
+      {
+        staticClass: "inner-hero bg_img",
+        attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-1.jpg" }
+      },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c("h2", { staticClass: "page-title" }, [_vm._v("Dashboard")]),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _c("h2", { staticClass: "page-title pt-4" }, [
+                _c("span", { staticClass: "base--color" }, [
+                  _vm._v("Welcome, ")
+                ]),
+                _vm._v(" " + _vm._s("Bitcoinary"))
+              ])
+            ])
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "pt-60 pb-60" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-lg-12" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "row mt-50 " }, [
+              _vm._m(2),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-8" }, [
+                _vm._m(3),
+                _vm._v(" "),
+                _c("div", { staticClass: "pb-60 pt-3" }, [
+                  _c("div", { staticClass: "container equal blog-card" }, [
+                    _c("div", { staticClass: "row justify-content-center " }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "col-md-12 no-padding wow fadeInLeft",
+                          staticStyle: {
+                            visibility: "visible",
+                            "animation-delay": "0.2s",
+                            "animation-name": "fadeInLeft"
                           },
-                          [_c("span", { staticClass: "navbar-toggler-icon " })]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("DashboardSidebar"),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc"
-                      },
-                      [
-                        _vm.user.withdraw_request
-                          ? _c(
-                              "div",
-                              {
-                                staticClass: "success-group p-2 m-2",
-                                staticStyle: { width: "98% !important" }
-                              },
-                              [
-                                _c("h4", [_vm._v("Important Notice")]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "w-note ml-5 m-3" }, [
-                                  _vm._v(
-                                    "You have indicated interest to put your withdrawal on hold for a specific period of time. "
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _vm._m(0)
-                              ]
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "acc-block overview" }, [
-                          _c("div", { staticClass: "acc-heading clearfix" }, [
-                            _c("h2", [_vm._v("Account Overview")]),
-                            _vm._v(" "),
-                            _c("ul", { staticClass: "breadcrumbs" }, [
-                              _c("li", [_vm._v("Main")]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("img", {
-                                  attrs: {
-                                    src: _vm.$root.basepath + "/img/right-b.png"
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "active" }, [
-                                _vm._v("Overview")
-                              ])
-                            ])
-                          ]),
+                          attrs: {
+                            "data-background":
+                              _vm.$root.basepath + "/images/bg/bg-5.jpg",
+                            "data-wow-delay": "0.2s"
+                          }
+                        },
+                        [
+                          _vm._m(4),
                           _vm._v(" "),
-                          _c("div", { staticClass: "acc-body " }, [
-                            _c("div", { staticClass: "stat-box row " }, [
-                              _c(
-                                "div",
-                                { staticClass: "s-box col-sm-4 col-12 p-2" },
-                                [
-                                  _c("img", {
-                                    attrs: {
-                                      src: _vm.$root.basepath + "/img/box-1.png"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("h4", [_vm._v("Account Balance")]),
-                                  _vm._v(" "),
-                                  _c("span", [
-                                    _vm._v(
-                                      _vm._s(
-                                        _vm.$root.numeral(_vm.user.balance)
-                                      )
-                                    )
-                                  ]),
-                                  _c("br"),
-                                  _vm._v(" "),
-                                  this.$auth.user().canWithdraw == false
-                                    ? _c(
-                                        "span",
-                                        {
-                                          class: {
-                                            badge: true,
-                                            "badge-danger": !this.$auth.user()
-                                              .CanWithdraw,
-                                            small: true,
-                                            "badge-success": this.$auth.user()
-                                              .CanWithdraw,
-                                            " m-1": true,
-                                            "p-1": true
-                                          },
-                                          staticStyle: { "font-size": "70%" }
-                                        },
-                                        [
-                                          _vm._v(
-                                            " " +
-                                              _vm._s(
-                                                this.$auth.user().CanWithdraw
-                                                  ? "Active"
-                                                  : "On-Hold"
-                                              )
-                                          )
-                                        ]
-                                      )
-                                    : _vm._e()
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "s-box col-sm-4 col-12 p-2" },
-                                [
-                                  _c("img", {
-                                    attrs: {
-                                      src: _vm.$root.basepath + "/img/box-2.png"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("h4", [_vm._v("Active Deposit")]),
-                                  _vm._v(" "),
-                                  _c("span", [
-                                    _vm._v(
-                                      _vm._s(
-                                        _vm.$root.numeral(
-                                          _vm.user.totalActiveTransaction
-                                        )
-                                      )
-                                    )
-                                  ])
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "s-box col-sm-4 col-12 p-2" },
-                                [
-                                  _c("img", {
-                                    attrs: {
-                                      src: _vm.$root.basepath + "/img/box-3.png"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("h4", [_vm._v("Total Earned")]),
-                                  _vm._v(" "),
-                                  _c("span", [
-                                    _vm._v(
-                                      _vm._s(
-                                        _vm.$root.numeral(_vm.user.totalEarned)
-                                      )
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h3", { staticClass: "acc-sub-heading'" }, [
-                              _vm._v("Account Statistics")
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "simple-stats" }, [
-                              _c("ul", { staticClass: "clearfix" }, [
-                                _c("li", [
-                                  _c("img", {
-                                    attrs: {
-                                      src:
-                                        _vm.$root.basepath +
-                                        "/img/stat-deposit.png"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v("Total Deposits: "),
-                                    _c("span", [
-                                      _vm._v(
-                                        _vm._s(
-                                          _vm.$root.numeral(
-                                            _vm.user.totalDeposit
-                                          )
-                                        )
-                                      )
-                                    ])
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("li", [
-                                  _c("img", {
-                                    attrs: {
-                                      src:
-                                        _vm.$root.basepath +
-                                        "/img/stat-withdraw.png"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v("Total Withdrawals: "),
-                                    _c("span", [
-                                      _vm._v(
-                                        _vm._s(
-                                          _vm.$root.numeral(
-                                            _vm.user.totalWithdraw
-                                          )
-                                        )
-                                      )
-                                    ])
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("li", [
-                                  _c("img", {
-                                    attrs: {
-                                      src:
-                                        _vm.$root.basepath +
-                                        "/img/stat-last-deposit.png"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v("Last Deposit: "),
-                                    _c("span", [
-                                      _vm._v(
-                                        _vm._s(
-                                          _vm.$root.numeral(
-                                            _vm.user.lastDeposit
-                                          )
-                                        )
-                                      )
-                                    ])
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("li", [
-                                  _c("img", {
-                                    attrs: {
-                                      src:
-                                        _vm.$root.basepath +
-                                        "/img/stat-last-withdrawal.png"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("p", [
-                                    _vm._v("Last Withdrawal: "),
-                                    _c("span", [
-                                      _vm._v(
-                                        _vm._s(
-                                          _vm.$root.numeral(
-                                            _vm.user.lastWithdraw
-                                          )
-                                        )
-                                      )
-                                    ])
-                                  ])
-                                ])
-                              ])
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "acc-block affiliate-link" }, [
-                          _vm._m(1),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "acc-body p-0 clearfix" }, [
-                            _c("div", { staticClass: "aff-link-1 clearfix" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "aff-link",
-                                  attrs: { id: "foo", href: _vm.Referral_link }
-                                },
-                                [_vm._v(_vm._s(_vm.Referral_link))]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "button",
-                                {
-                                  directives: [
-                                    {
-                                      name: "clipboard",
-                                      rawName: "v-clipboard",
-                                      value: _vm.Referral_link,
-                                      expression: "Referral_link"
-                                    }
-                                  ],
-                                  staticClass: "btn btn-default small",
-                                  staticStyle: { float: "right" },
-                                  attrs: { "data-clipboard-target": "#foo" }
-                                },
-                                [_vm._v("Copy")]
-                              )
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "acc-inv-plans text-center" },
-                          [
-                            _c("h2", [_vm._v("Our Investment Plans")]),
-                            _vm._v(" "),
-                            _vm._m(2),
+                          _c("div", { staticClass: "row" }, [
+                            _vm._m(5),
                             _vm._v(" "),
                             _c(
                               "div",
-                              { staticClass: "text-center mb-3 mb-l-0" },
+                              {
+                                staticClass:
+                                  "col-lg-3 col-md-4 col-sm-3 m-2 text-md-right"
+                              },
                               [
                                 _c(
-                                  "router-link",
+                                  "button",
                                   {
-                                    staticClass: "btn btn-default",
-                                    attrs: { to: "/user/dashboard/deposit" }
+                                    directives: [
+                                      {
+                                        name: "clipboard",
+                                        rawName: "v-clipboard",
+                                        value: _vm.Referral_link,
+                                        expression: "Referral_link"
+                                      }
+                                    ],
+                                    staticClass: "btn base--bg text-white",
+                                    attrs: { "data-clipboard-target": "#link" }
                                   },
-                                  [_vm._v("Make Deposit")]
+                                  [_vm._v("COPY LINK")]
                                 )
-                              ],
-                              1
+                              ]
                             )
-                          ]
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm.user.withdraw_request
-                  ? _c(
-                      "div",
-                      {
-                        ref: "pausewithdrawal",
-                        staticClass: "modal fade",
-                        attrs: { id: "pausewithdrawal" }
-                      },
-                      [_c("pause-withdrawal-component")],
-                      1
-                    )
-                  : _vm._e()
-              ]
-            )
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ])
           ])
         ])
       ])
-    ],
-    1
-  )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", [
-      _vm._v("Please "),
-      _c(
-        "button",
-        {
-          staticClass:
-            "text-center btn btn-link text-light p-0 font-weight-bold font-italic  m-1",
-          attrs: {
-            type: "button",
-            "data-toggle": "modal",
-            "data-target": "#pausewithdrawal"
-          }
-        },
-        [_vm._v("click here\n                                    ")]
-      ),
-      _vm._v(" to complete this process.")
+    return _c("ul", { staticClass: "page-breadcrumb" }, [
+      _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("Home")])]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Dashboard")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "acc-heading clearfix" }, [
-      _c("h2", [_vm._v("Affiliate Link")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "plan-wrap justify-content-center row" }, [
-      _c("div", { staticClass: "plan-inner col-sm-6 col-12 p-2 m-2" }, [
-        _c("div", { staticClass: "plan-in" }, [
-          _c("h3", [_vm._v("5%")]),
+    return _c("div", { staticClass: "row mb-none-30" }, [
+      _c("div", { staticClass: "col-xl-3 col-sm-6 mb-30" }, [
+        _c("div", { staticClass: "d-widget d-flex flex-wrap" }, [
+          _c("div", { staticClass: "col-8" }, [
+            _c("span", { staticClass: "caption" }, [
+              _vm._v("Active Investment")
+            ]),
+            _vm._v(" "),
+            _c("h4", { staticClass: "currency-amount" }, [_vm._v("$500")])
+          ]),
           _vm._v(" "),
-          _c("p", [_vm._v("5% "), _c("span", [_vm._v("R.O.l in 72 hours")])])
+          _c("div", { staticClass: "col-4" }, [
+            _c("div", { staticClass: "icon ml-auto" }, [
+              _c("i", { staticClass: "las la-cubes " })
+            ])
+          ])
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "plan-inner col-sm-6 col-12 p-2 m-2" }, [
-        _c("div", { staticClass: "plan-in" }, [
-          _c("h3", [_vm._v("20%")]),
+      _c("div", { staticClass: "col-xl-3 col-sm-6 mb-30" }, [
+        _c("div", { staticClass: "d-widget d-flex flex-wrap" }, [
+          _c("div", { staticClass: "col-8" }, [
+            _c("span", { staticClass: "caption" }, [_vm._v("Total Earned")]),
+            _vm._v(" "),
+            _c("h4", { staticClass: "currency-amount" }, [_vm._v("$1,050")])
+          ]),
           _vm._v(" "),
-          _c("p", [_vm._v("20% "), _c("span", [_vm._v("7 days turnover")])])
+          _c("div", { staticClass: "col-4" }, [
+            _c("div", { staticClass: "icon ml-auto" }, [
+              _c("i", { staticClass: "las la-credit-card" })
+            ])
+          ])
         ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-3 col-sm-6 mb-30" }, [
+        _c("div", { staticClass: "d-widget d-flex flex-wrap" }, [
+          _c("div", { staticClass: "col-8" }, [
+            _c("span", { staticClass: "caption" }, [_vm._v("Total Withdraw")]),
+            _vm._v(" "),
+            _c("h4", { staticClass: "currency-amount" }, [_vm._v("$1703")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-4" }, [
+            _c("div", { staticClass: "icon ml-auto" }, [
+              _c("i", { staticClass: "las la-cloud-download-alt" })
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-3 col-sm-6 mb-30" }, [
+        _c("div", { staticClass: "d-widget d-flex flex-wrap" }, [
+          _c("div", { staticClass: "col-8" }, [
+            _c("span", { staticClass: "caption" }, [
+              _vm._v("Referral Earnings")
+            ]),
+            _vm._v(" "),
+            _c("h4", { staticClass: "currency-amount" }, [_vm._v("$1710.5")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-4" }, [
+            _c("div", { staticClass: "icon ml-auto" }, [
+              _c("i", { staticClass: "las la-user-friends" })
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-4 mb-50" }, [
+      _c("div", { staticClass: "m-auto equal blog-card mb-30" }, [
+        _c("h4", {}, [
+          _c("span", { staticClass: "font-weight-normal" }, [
+            _vm._v("Financial ")
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "base--color" }, [_vm._v("Statistics")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "dropdown-divider pb-3" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "d-widget d-flex flex-wrap" }, [
+          _c("div", { staticClass: "col-8" }, [
+            _c("span", { staticClass: "caption" }, [
+              _vm._v("Deposit Wallet Balance")
+            ]),
+            _vm._v(" "),
+            _c("h4", { staticClass: "currency-amount" }, [_vm._v("$255")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-4" }, [
+            _c("div", { staticClass: "icon ml-auto" }, [
+              _c("i", { staticClass: "las la-dollar-sign" })
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "table-responsive--md p-0" }, [
+      _c("table", { staticClass: "table style--two white-space-nowrap" }, [
+        _c("thead", [
+          _c("tr", [
+            _c("th", [_vm._v("Date")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Transaction ID")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Amount")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Wallet")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Details")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Post Balance")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("tbody", [
+          _c("tr", [
+            _c("td", { attrs: { "data-label": "Date" } }, [
+              _vm._v("21/02/2020")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
+              _c("span", { staticClass: "base--color" }, [
+                _vm._v("DZQXF5NAN2AT")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Amount" } }, [
+              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Wallet" } }, [
+              _c("span", { staticClass: "badge base--bg" }, [
+                _vm._v("Interest Wallet")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Details" } }, [
+              _vm._v("17.5 USD Interest From Crown")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Post Balance" } }, [
+              _vm._v("$22991.9")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", { attrs: { "data-label": "Date" } }, [
+              _vm._v("21/02/2020")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
+              _c("span", { staticClass: "base--color" }, [
+                _vm._v("DZQXF5NAN2AT")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Amount" } }, [
+              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Wallet" } }, [
+              _c("span", { staticClass: "badge base--bg" }, [
+                _vm._v("Interest Wallet")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Details" } }, [
+              _vm._v("17.5 USD Interest From Crown")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Post Balance" } }, [
+              _vm._v("$22991.9")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", { attrs: { "data-label": "Date" } }, [
+              _vm._v("21/02/2020")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
+              _c("span", { staticClass: "base--color" }, [
+                _vm._v("DZQXF5NAN2AT")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Amount" } }, [
+              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Wallet" } }, [
+              _c("span", { staticClass: "badge base--bg" }, [
+                _vm._v("Interest Wallet")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Details" } }, [
+              _vm._v("17.5 USD Interest From Crown")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Post Balance" } }, [
+              _vm._v("$22991.9")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", { attrs: { "data-label": "Date" } }, [
+              _vm._v("21/02/2020")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
+              _c("span", { staticClass: "base--color" }, [
+                _vm._v("DZQXF5NAN2AT")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Amount" } }, [
+              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Wallet" } }, [
+              _c("span", { staticClass: "badge base--bg" }, [
+                _vm._v("Interest Wallet")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Details" } }, [
+              _vm._v("17.5 USD Interest From Crown")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Post Balance" } }, [
+              _vm._v("$22991.9")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", { attrs: { "data-label": "Date" } }, [
+              _vm._v("21/02/2020")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
+              _c("span", { staticClass: "base--color" }, [
+                _vm._v("DZQXF5NAN2AT")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Amount" } }, [
+              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Wallet" } }, [
+              _c("span", { staticClass: "badge base--bg" }, [
+                _vm._v("Interest Wallet")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Details" } }, [
+              _vm._v("17.5 USD Interest From Crown")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Post Balance" } }, [
+              _vm._v("$22991.9")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", { attrs: { "data-label": "Date" } }, [
+              _vm._v("21/02/2020")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
+              _c("span", { staticClass: "base--color" }, [
+                _vm._v("DZQXF5NAN2AT")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Amount" } }, [
+              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Wallet" } }, [
+              _c("span", { staticClass: "badge base--bg" }, [
+                _vm._v("Interest Wallet")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Details" } }, [
+              _vm._v("17.5 USD Interest From Crown")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Post Balance" } }, [
+              _vm._v("$22991.9")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", { attrs: { "data-label": "Date" } }, [
+              _vm._v("21/02/2020")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
+              _c("span", { staticClass: "base--color" }, [
+                _vm._v("DZQXF5NAN2AT")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Amount" } }, [
+              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Wallet" } }, [
+              _c("span", { staticClass: "badge base--bg" }, [
+                _vm._v("Interest Wallet")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Details" } }, [
+              _vm._v("17.5 USD Interest From Crown")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Post Balance" } }, [
+              _vm._v("$22991.9")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", { attrs: { "data-label": "Date" } }, [
+              _vm._v("21/02/2020")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
+              _c("span", { staticClass: "base--color" }, [
+                _vm._v("DZQXF5NAN2AT")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Amount" } }, [
+              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Wallet" } }, [
+              _c("span", { staticClass: "badge base--bg" }, [
+                _vm._v("Interest Wallet")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Details" } }, [
+              _vm._v("17.5 USD Interest From Crown")
+            ]),
+            _vm._v(" "),
+            _c("td", { attrs: { "data-label": "Post Balance" } }, [
+              _vm._v("$22991.9")
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h3", { staticClass: "row m-2" }, [
+      _vm._v("Your "),
+      _c("span", { staticClass: "base--color" }, [_vm._v(" Affiliate Link")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-8 col-md-7 col-sm-8 m-2" }, [
+      _c("div", { attrs: { id: "link" } }, [
+        _vm._v("https://bitcoinarymint.com/?ref=bitcoinary")
       ])
     ])
   }
@@ -103088,7 +103267,7 @@ var routes = [{
   name: 'dashboard',
   component: _pages_user_Dashboard__WEBPACK_IMPORTED_MODULE_18__["default"],
   meta: {
-    auth: true
+    auth: false
   }
 }, {
   path: '/user/dashboard/deposit',
