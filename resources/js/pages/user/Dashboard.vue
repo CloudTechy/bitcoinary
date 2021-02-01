@@ -73,7 +73,7 @@
                             </div>
                         </div><!-- row end -->
                         <div class="row mt-50 ">
-                            <div class="col-lg-4 mb-50">
+                            <div class="col-lg-4 col-sm-12 mb-50">
                                 <div class="m-auto equal blog-card p-0 mb-30">
                                     <div class="headeraccount base--bg"><span class="font-weight-bold">Financial Statistics </span> </div>
                                     <div class="row p-4 pb-2">
@@ -102,7 +102,7 @@
                                     </div> -->
                                 </div>
                             </div>
-                            <div class="col-lg-8">
+                            <div class="col-lg-8 col-sm-12">
                                 <div class="table-responsive--md p-0">
                                     <table class="table style--two white-space-nowrap">
                                         <thead>

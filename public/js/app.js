@@ -67668,7 +67668,7 @@ var render = function() {
             _c("div", { staticClass: "row mt-50 " }, [
               _vm._m(2),
               _vm._v(" "),
-              _c("div", { staticClass: "col-lg-8" }, [
+              _c("div", { staticClass: "col-lg-8 col-sm-12" }, [
                 _vm._m(3),
                 _vm._v(" "),
                 _c("div", { staticClass: "pb-60 pt-3" }, [
@@ -67823,7 +67823,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-4 mb-50" }, [
+    return _c("div", { staticClass: "col-lg-4 col-sm-12 mb-50" }, [
       _c("div", { staticClass: "m-auto equal blog-card p-0 mb-30" }, [
         _c("div", { staticClass: "headeraccount base--bg" }, [
           _c("span", { staticClass: "font-weight-bold" }, [
