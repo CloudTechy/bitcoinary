@@ -10607,23 +10607,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {};
@@ -67853,267 +67836,221 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "table-responsive--md p-0" }, [
-      _c("table", { staticClass: "table style--two white-space-nowrap" }, [
-        _c("thead", [
-          _c("tr", [
-            _c("th", [_vm._v("Date")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Transaction ID")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Amount")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Wallet")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Details")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Post Balance")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("tbody", [
-          _c("tr", [
-            _c("td", { attrs: { "data-label": "Date" } }, [
-              _vm._v("21/02/2020")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
-              _c("span", { staticClass: "base--color" }, [
-                _vm._v("DZQXF5NAN2AT")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Amount" } }, [
-              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Wallet" } }, [
-              _c("span", { staticClass: "badge base--bg" }, [
-                _vm._v("Interest Wallet")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Details" } }, [
-              _vm._v("17.5 USD Interest From Crown")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Post Balance" } }, [
-              _vm._v("$22991.9")
+    return _c(
+      "div",
+      { staticClass: "table-responsive table-responsive--md p-0" },
+      [
+        _c("table", { staticClass: "table style--two white-space-nowrap" }, [
+          _c("thead", [
+            _c("tr", [
+              _c("th", [_vm._v("Date")]),
+              _vm._v(" "),
+              _c("th", [_vm._v("Amount")]),
+              _vm._v(" "),
+              _c("th", [_vm._v("Wallet")]),
+              _vm._v(" "),
+              _c("th", [_vm._v("Details")]),
+              _vm._v(" "),
+              _c("th", [_vm._v("Post Balance")])
             ])
           ]),
           _vm._v(" "),
-          _c("tr", [
-            _c("td", { attrs: { "data-label": "Date" } }, [
-              _vm._v("21/02/2020")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
-              _c("span", { staticClass: "base--color" }, [
-                _vm._v("DZQXF5NAN2AT")
+          _c("tbody", [
+            _c("tr", [
+              _c("td", { attrs: { "data-label": "Date" } }, [
+                _vm._v("21/02/2020")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Amount" } }, [
+                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Wallet" } }, [
+                _c("span", { staticClass: "badge base--bg" }, [
+                  _vm._v("Interest Wallet")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Details" } }, [
+                _vm._v(" From Crown")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Post Balance" } }, [
+                _vm._v("$22991.9")
               ])
             ]),
             _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Amount" } }, [
-              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Wallet" } }, [
-              _c("span", { staticClass: "badge base--bg" }, [
-                _vm._v("Interest Wallet")
+            _c("tr", [
+              _c("td", { attrs: { "data-label": "Date" } }, [
+                _vm._v("21/02/2020")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Amount" } }, [
+                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Wallet" } }, [
+                _c("span", { staticClass: "badge base--bg" }, [
+                  _vm._v("Interest Wallet")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Details" } }, [
+                _vm._v(" From Crown")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Post Balance" } }, [
+                _vm._v("$22991.9")
               ])
             ]),
             _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Details" } }, [
-              _vm._v("17.5 USD Interest From Crown")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Post Balance" } }, [
-              _vm._v("$22991.9")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", { attrs: { "data-label": "Date" } }, [
-              _vm._v("21/02/2020")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
-              _c("span", { staticClass: "base--color" }, [
-                _vm._v("DZQXF5NAN2AT")
+            _c("tr", [
+              _c("td", { attrs: { "data-label": "Date" } }, [
+                _vm._v("21/02/2020")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Amount" } }, [
+                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Wallet" } }, [
+                _c("span", { staticClass: "badge base--bg" }, [
+                  _vm._v("Interest Wallet")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Details" } }, [
+                _vm._v(" From Crown")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Post Balance" } }, [
+                _vm._v("$22991.9")
               ])
             ]),
             _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Amount" } }, [
-              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Wallet" } }, [
-              _c("span", { staticClass: "badge base--bg" }, [
-                _vm._v("Interest Wallet")
+            _c("tr", [
+              _c("td", { attrs: { "data-label": "Date" } }, [
+                _vm._v("21/02/2020")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Amount" } }, [
+                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Wallet" } }, [
+                _c("span", { staticClass: "badge base--bg" }, [
+                  _vm._v("Interest Wallet")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Details" } }, [
+                _vm._v(" From Crown")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Post Balance" } }, [
+                _vm._v("$22991.9")
               ])
             ]),
             _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Details" } }, [
-              _vm._v("17.5 USD Interest From Crown")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Post Balance" } }, [
-              _vm._v("$22991.9")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", { attrs: { "data-label": "Date" } }, [
-              _vm._v("21/02/2020")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
-              _c("span", { staticClass: "base--color" }, [
-                _vm._v("DZQXF5NAN2AT")
+            _c("tr", [
+              _c("td", { attrs: { "data-label": "Date" } }, [
+                _vm._v("21/02/2020")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Amount" } }, [
+                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Wallet" } }, [
+                _c("span", { staticClass: "badge base--bg" }, [
+                  _vm._v("Interest Wallet")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Details" } }, [
+                _vm._v(" From Crown")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Post Balance" } }, [
+                _vm._v("$22991.9")
               ])
             ]),
             _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Amount" } }, [
-              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Wallet" } }, [
-              _c("span", { staticClass: "badge base--bg" }, [
-                _vm._v("Interest Wallet")
+            _c("tr", [
+              _c("td", { attrs: { "data-label": "Date" } }, [
+                _vm._v("21/02/2020")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Amount" } }, [
+                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Wallet" } }, [
+                _c("span", { staticClass: "badge base--bg" }, [
+                  _vm._v("Interest Wallet")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Details" } }, [
+                _vm._v(" From Crown")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Post Balance" } }, [
+                _vm._v("$22991.9")
               ])
             ]),
             _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Details" } }, [
-              _vm._v("17.5 USD Interest From Crown")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Post Balance" } }, [
-              _vm._v("$22991.9")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", { attrs: { "data-label": "Date" } }, [
-              _vm._v("21/02/2020")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
-              _c("span", { staticClass: "base--color" }, [
-                _vm._v("DZQXF5NAN2AT")
+            _c("tr", [
+              _c("td", { attrs: { "data-label": "Date" } }, [
+                _vm._v("21/02/2020")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Amount" } }, [
+                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Wallet" } }, [
+                _c("span", { staticClass: "badge base--bg" }, [
+                  _vm._v("Interest Wallet")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Details" } }, [
+                _vm._v(" From Crown")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Post Balance" } }, [
+                _vm._v("$22991.9")
               ])
             ]),
             _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Amount" } }, [
-              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Wallet" } }, [
-              _c("span", { staticClass: "badge base--bg" }, [
-                _vm._v("Interest Wallet")
+            _c("tr", [
+              _c("td", { attrs: { "data-label": "Date" } }, [
+                _vm._v("21/02/2020")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Amount" } }, [
+                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Wallet" } }, [
+                _c("span", { staticClass: "badge base--bg" }, [
+                  _vm._v("Interest Wallet")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Details" } }, [
+                _vm._v(" From Crown")
+              ]),
+              _vm._v(" "),
+              _c("td", { attrs: { "data-label": "Post Balance" } }, [
+                _vm._v("$22991.9")
               ])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Details" } }, [
-              _vm._v("17.5 USD Interest From Crown")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Post Balance" } }, [
-              _vm._v("$22991.9")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", { attrs: { "data-label": "Date" } }, [
-              _vm._v("21/02/2020")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
-              _c("span", { staticClass: "base--color" }, [
-                _vm._v("DZQXF5NAN2AT")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Amount" } }, [
-              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Wallet" } }, [
-              _c("span", { staticClass: "badge base--bg" }, [
-                _vm._v("Interest Wallet")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Details" } }, [
-              _vm._v("17.5 USD Interest From Crown")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Post Balance" } }, [
-              _vm._v("$22991.9")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", { attrs: { "data-label": "Date" } }, [
-              _vm._v("21/02/2020")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
-              _c("span", { staticClass: "base--color" }, [
-                _vm._v("DZQXF5NAN2AT")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Amount" } }, [
-              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Wallet" } }, [
-              _c("span", { staticClass: "badge base--bg" }, [
-                _vm._v("Interest Wallet")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Details" } }, [
-              _vm._v("17.5 USD Interest From Crown")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Post Balance" } }, [
-              _vm._v("$22991.9")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("td", { attrs: { "data-label": "Date" } }, [
-              _vm._v("21/02/2020")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Transaction ID" } }, [
-              _c("span", { staticClass: "base--color" }, [
-                _vm._v("DZQXF5NAN2AT")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Amount" } }, [
-              _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Wallet" } }, [
-              _c("span", { staticClass: "badge base--bg" }, [
-                _vm._v("Interest Wallet")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Details" } }, [
-              _vm._v("17.5 USD Interest From Crown")
-            ]),
-            _vm._v(" "),
-            _c("td", { attrs: { "data-label": "Post Balance" } }, [
-              _vm._v("$22991.9")
             ])
           ])
         ])
-      ])
-    ])
+      ]
+    )
   },
   function() {
     var _vm = this

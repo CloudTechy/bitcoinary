@@ -103,12 +103,11 @@
                                 </div>
                             </div>
                             <div class="col-lg-8 col-sm-12">
-                                <div class="table-responsive--md p-0">
+                                <div class="table-responsive table-responsive--md p-0">
                                     <table class="table style--two white-space-nowrap">
                                         <thead>
                                             <tr>
                                                 <th>Date</th>
-                                                <th>Transaction ID</th>
                                                 <th>Amount</th>
                                                 <th>Wallet</th>
                                                 <th>Details</th>
@@ -118,114 +117,98 @@
                                         <tbody>
                                             <tr>
                                                 <td data-label="Date">21/02/2020</td>
-                                                <td data-label="Transaction ID">
-                                                    <span class="base--color">DZQXF5NAN2AT</span>
-                                                </td>
+                                                
                                                 <td data-label="Amount">
                                                     <span class="text-success">+ $17.5</span>
                                                 </td>
                                                 <td data-label="Wallet">
                                                     <span class="badge base--bg">Interest Wallet</span>
                                                 </td>
-                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Details"> From Crown</td>
                                                 <td data-label="Post Balance">$22991.9</td>
                                             </tr>
                                             <tr>
                                                 <td data-label="Date">21/02/2020</td>
-                                                <td data-label="Transaction ID">
-                                                    <span class="base--color">DZQXF5NAN2AT</span>
-                                                </td>
+                                                
                                                 <td data-label="Amount">
                                                     <span class="text-success">+ $17.5</span>
                                                 </td>
                                                 <td data-label="Wallet">
                                                     <span class="badge base--bg">Interest Wallet</span>
                                                 </td>
-                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Details"> From Crown</td>
                                                 <td data-label="Post Balance">$22991.9</td>
                                             </tr>
                                             <tr>
                                                 <td data-label="Date">21/02/2020</td>
-                                                <td data-label="Transaction ID">
-                                                    <span class="base--color">DZQXF5NAN2AT</span>
-                                                </td>
+                                                
                                                 <td data-label="Amount">
                                                     <span class="text-success">+ $17.5</span>
                                                 </td>
                                                 <td data-label="Wallet">
                                                     <span class="badge base--bg">Interest Wallet</span>
                                                 </td>
-                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Details"> From Crown</td>
                                                 <td data-label="Post Balance">$22991.9</td>
                                             </tr>
                                             <tr>
                                                 <td data-label="Date">21/02/2020</td>
-                                                <td data-label="Transaction ID">
-                                                    <span class="base--color">DZQXF5NAN2AT</span>
-                                                </td>
+                                                
                                                 <td data-label="Amount">
                                                     <span class="text-success">+ $17.5</span>
                                                 </td>
                                                 <td data-label="Wallet">
                                                     <span class="badge base--bg">Interest Wallet</span>
                                                 </td>
-                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Details"> From Crown</td>
                                                 <td data-label="Post Balance">$22991.9</td>
                                             </tr>
                                             <tr>
                                                 <td data-label="Date">21/02/2020</td>
-                                                <td data-label="Transaction ID">
-                                                    <span class="base--color">DZQXF5NAN2AT</span>
-                                                </td>
+                                                
                                                 <td data-label="Amount">
                                                     <span class="text-success">+ $17.5</span>
                                                 </td>
                                                 <td data-label="Wallet">
                                                     <span class="badge base--bg">Interest Wallet</span>
                                                 </td>
-                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Details"> From Crown</td>
                                                 <td data-label="Post Balance">$22991.9</td>
                                             </tr>
                                             <tr>
                                                 <td data-label="Date">21/02/2020</td>
-                                                <td data-label="Transaction ID">
-                                                    <span class="base--color">DZQXF5NAN2AT</span>
-                                                </td>
+                                                
                                                 <td data-label="Amount">
                                                     <span class="text-success">+ $17.5</span>
                                                 </td>
                                                 <td data-label="Wallet">
                                                     <span class="badge base--bg">Interest Wallet</span>
                                                 </td>
-                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Details"> From Crown</td>
                                                 <td data-label="Post Balance">$22991.9</td>
                                             </tr>
                                             <tr>
                                                 <td data-label="Date">21/02/2020</td>
-                                                <td data-label="Transaction ID">
-                                                    <span class="base--color">DZQXF5NAN2AT</span>
-                                                </td>
+                                                
                                                 <td data-label="Amount">
                                                     <span class="text-success">+ $17.5</span>
                                                 </td>
                                                 <td data-label="Wallet">
                                                     <span class="badge base--bg">Interest Wallet</span>
                                                 </td>
-                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Details"> From Crown</td>
                                                 <td data-label="Post Balance">$22991.9</td>
                                             </tr>
                                             <tr>
                                                 <td data-label="Date">21/02/2020</td>
-                                                <td data-label="Transaction ID">
-                                                    <span class="base--color">DZQXF5NAN2AT</span>
-                                                </td>
+                                                
                                                 <td data-label="Amount">
                                                     <span class="text-success">+ $17.5</span>
                                                 </td>
                                                 <td data-label="Wallet">
                                                     <span class="badge base--bg">Interest Wallet</span>
                                                 </td>
-                                                <td data-label="Details">17.5 USD Interest From Crown</td>
+                                                <td data-label="Details"> From Crown</td>
                                                 <td data-label="Post Balance">$22991.9</td>
                                             </tr>
                                         </tbody>
