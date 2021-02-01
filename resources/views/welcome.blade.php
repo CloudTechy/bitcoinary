@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title> Bitcoinary Finance ltd</title>
-
-    <meta name="description" content=" Bitcoinary Finance is a community of dedicated investors that wants to make a steady extra income. we deal extensively on Bitcoin">
-    <meta name="keywords" content=" Bitcoinary Finance, Shares, Finance, Bitcoin, Investment">
-    <meta name="author" content=" Bitcoinary Finance ICT Team">
+    <title id="title">Bitcoinary Mint</title>
+    <meta name="theme-color" content="#cca354"/>
+    <meta name="description" content="Bitcoinary Mint is a community of dedicated investors that wants to make a steady extra income. we deal extensively on bitcoin">
+    <meta name="keywords" content=" Bitcoinary Mint, Shares, Finance, Bitcoin, Investment">
+    <meta name="author" content=" Bitcoinary Mint ICT Team">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Fonts -->
@@ -33,9 +33,6 @@
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
   <!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/themefisher-fonts.css') }}"> -->
 
-
-<!--Start of Tawk.to Script-->
-<!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -48,14 +45,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-<!--End of Tawk.to Script-->
-
-<!--End of Tawk.to Script-->
 </head>
-<!--Start of Tawk.to Script-->
-
-<!--End of Tawk.to Script-->
-<body>
    <div>
         <div class="preloader">
             <div class="preloader-container">

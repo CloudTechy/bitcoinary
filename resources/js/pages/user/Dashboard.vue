@@ -74,13 +74,24 @@
                         </div><!-- row end -->
                         <div class="row mt-50 ">
                             <div class="col-lg-4 mb-50">
+                                <div class="m-auto equal blog-card p-0 mb-30">
+                                    <div class="headeraccount base--bg"><span class="font-weight-bold">Financial Statistics </span> </div>
+                                    <div class="row p-4 pb-2">
+                                        <div class="col-9 col-md-10 ">
+                                            <h2 class="mb-1">$0.00</h2>
+                                            <p class="mb-3">Account Balance</p>
+                                        </div>
+                                        <div class="col-3 col-md-2 p-0">
+                                            <div class="icon base--bg text-white">
+                                                <i class="las la-dollar-sign"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="divider pb-3"></div>
 
-                                <div class="m-auto equal blog-card mb-30">
-                                    <h4 class=""><span class="font-weight-normal">Financial </span> <span class="base--color">Statistics</span></h4>
-                                    <div class="dropdown-divider pb-3"></div>
-                                    <div class="d-widget d-flex flex-wrap">
+                                    <!-- <div class="d-widget d-flex flex-wrap">
                                         <div class="col-8">
-                                            <span class="caption">Deposit Wallet Balance</span>
+                                            <span class="caption">Wallet Balance</span>
                                             <h4 class="currency-amount">$255</h4>
                                         </div>
                                         <div class="col-4">
@@ -88,7 +99,7 @@
                                                 <i class="las la-dollar-sign"></i>
                                             </div>
                                         </div>
-                                    </div><!-- d-widget-two end -->
+                                    </div> -->
                                 </div>
                             </div>
                             <div class="col-lg-8">
@@ -246,7 +257,7 @@
     </div>
 </template>
 <script>
-export default {
+    export default {
     data() {
         return {}
     },
@@ -267,3 +278,32 @@ export default {
 }
 
 </script>
+<style type="text/css" scoped="">
+.equal {
+    box-shadow: 0 5px 5px 0 rgb(204 163 84 / 25%) !important;
+}
+
+.divider {
+    border-top: 1px solid #cca354 !important
+}
+
+.headeraccount {
+    padding: 10px;
+    position: relative;
+    box-shadow: none;
+    color: black;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #000000;
+    color: #cca354;
+    font-size: 32px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+</style>
