@@ -172,7 +172,7 @@ const routes = [{
     },
     // USER ROUTES
     {
-        path: '/user/dashboard',
+        path: '/dashboard',
         name: 'dashboard',
         component: Dashboard,
         meta: {
@@ -180,15 +180,15 @@ const routes = [{
         }
     },
     {
-        path: '/user/dashboard/deposit',
+        path: '/dashboard/deposit',
         name: 'deposit',
         component: Deposit,
         meta: {
-            auth: true
+            auth: false
         }
     },
     {
-        path: '/user/dashboard/withdraw',
+        path: '/dashboard/withdraw',
         name: 'withdraw',
         component: Withdraw,
         meta: {
@@ -196,7 +196,7 @@ const routes = [{
         }
     },
     {
-        path: '/user/dashboard/settings',
+        path: '/dashboard/settings',
         name: 'setting',
         component: Setting,
         meta: {
@@ -204,7 +204,7 @@ const routes = [{
         }
     },
     {
-        path: '/user/dashboard/security',
+        path: '/dashboard/security',
         name: 'security',
         component: Security,
         meta: {
@@ -212,7 +212,7 @@ const routes = [{
         }
     },
     {
-        path: '/user/dashboard/report/withdraw',
+        path: '/dashboard/report/withdraw',
         name: 'withdrawReport',
         component: WithdrawReport,
         meta: {
@@ -220,7 +220,7 @@ const routes = [{
         }
     },
     {
-        path: '/user/dashboard/report/deposit',
+        path: '/dashboard/report/deposit',
         name: 'depositReport',
         component: DepositReport,
         meta: {
@@ -228,7 +228,7 @@ const routes = [{
         }
     },
     {
-        path: '/user/dashboard/report/transaction',
+        path: '/dashboard/report/transaction',
         name: 'transactionReport',
         component: TransactionReport,
         meta: {
@@ -236,7 +236,7 @@ const routes = [{
         }
     },
     {
-        path: '/user/dashboard/report/referral',
+        path: '/dashboard/report/referral',
         name: 'referralReport',
         component: ReferralReport,
         meta: {

@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="package-card__range mt-5 base--color">{{'$' + plan.min_deposit + ' - ' + '$' + plan.max_deposit}}</div>
-                <a href="/dashboard/#deposit" class="cmn-btn btn-md mt-4">Invest Now</a>
+                <a :href="route" class="cmn-btn btn-md mt-4">Invest Now</a>
             </div>
         </div>
             <!-- package-card end -->
@@ -44,10 +44,18 @@ export default {
         }
            
     },
-    computed: {},
+    computed: {
+        route(){
+            let props = this.$router.resolve({ 
+              name: this.href,
+            });
+            return props.href
+        }
+    },
     created(){
     	
     },
+    props: ['href'],
     // components: { Menu },
     methods: {
     },

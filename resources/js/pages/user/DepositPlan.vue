@@ -1,74 +1,23 @@
 <template>
-    <div class="acc-block">
-        <div class="acc-heading clearfix">
-            <h2>Deposit</h2>
-            <ul class="breadcrumbs">
-                <li>Main</li>
-                <li><img :src="$root.basepath + '/img/right-b.png'"></li>
-                <li class="active">Deposit</li>
-            </ul>:
+    <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+            <div class="section-header">
+                <h2 class="section-title"><span class="font-weight-normal">Investment</span> <b class="base--color">Plans</b></h2>
+            </div>
         </div>
-        <div class="success-msg text-capitalize  m-3" v-if="msg">
-            <p  class="p-2 m-2">{{msg}} </p>
+        <div class="col-lg-12 mb-3">
+            <InvestmentPackage></InvestmentPackage>
         </div>
-        <div class="error-msg  m-3" v-if="error">
-            <p  class="p-2 m-2">{{error}}</p>
-        </div>
-        <form method="post" name="spendform">
-            <input type="hidden" name="a" value="deposit">
-            <div class="acc-body p-0 deposit">
-                <div class="bal p-0 text-center">
-                    <span>Account Balance:</span> {{$root.numeral(user.balance)}}
-                </div>
-                <div class="acc-inv-plans text-center">
-                    <h2>Our Investment Portfolios</h2>
-                    <p>Select the plan that best suites you to continue</p>
-                    <div class="accordion mb-4" id="accordionExample">
-                        <div @click="selectPortfolio(portfolio.name)" v-if="portfolios" v-for="portfolio in portfolios" class="m-1">
-                            <div :class="{'card-header' : true,silver : true, 'mb-3' : true, gold : selectedPortfolio == portfolio.name}" :id="'h-'+portfolio.name">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-block text-capitalize font-weight-bold" type="button" data-toggle="collapse" :data-target="'#' + portfolio.name" aria-expanded="true" :aria-controls="portfolio.name">
-                                        {{portfolio.name + ' Portfolio'}}
-                                    </button>
-                                </h2>
-                            </div>
-                            <div class="m-0 p-0 row collapse" :id="portfolio.name" :aria-labelledby="'h-'+portfolio.name" data-parent="#accordionExample">
-                                <div class="col-sm-6 col-12" v-for="packag in packages" v-if="packag.portfolio == portfolio.name">
-                                    <div class="plan-wrap">
-                                        <div :class="{'plan-inner' : true, 'plan-selection' : true, selected : select == packag.name}">
-                                            <input type="radio" @click="updateSelection(packag)" v-model="form.amount" :value="packag.deposit">
-                                            <span :class="{selection : select == packag.name}"></span>
-                                            <div class="plan-in">
-                                                <h3>${{$root.normalNumeral(packag.deposit)}}</h3>
-                                                <p class="font-weight-bold">Deposit Plan</p>
-                                                <span class="range font-weight-bold">{{packag.duration + ' days duration'}}</span>
-                                                <p class="font-weight-bold">${{$root.normalNumeral(packag.interest_rate)}} R.O.I</p>
-                                                <span class="range  text-capitalize">{{packag.portfolio + ' Plan'}}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-header text-center">
+                        <h2 class="section-title"><span class="font-weight-normal">Calculate your</span> <b class="base--color">Profit</b></h2>
                     </div>
-                    <ul class="form-list text-left deposit-form-wrapper">
-                        <li class="clearfix floated">
-                            <div class="input-box m-1">
-                                <label>Deposit Amount</label>
-                                <div class="iconed">
-                                    <span class="icon"><i class="fas fa-dollar-sign" aria-hidden="true"></i></span>
-                                    <input type="number" placeholder="Choose your plan" disabled v-model="form.amount" value="" class="form-control">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
-            <div v-if="selectedPackage" class="text-center  mb-3 mb-l-0">
-                <button ref = "deposit" v-if="user.balance < selectedPackage.deposit" @click.prevent="processDeposit" class="btn btn-default">Make a Deposit</button>
-                <button ref="process" v-if="user.balance > selectedPackage.deposit" @click.prevent="subscribe" class="btn btn-default">Subscribe</button>
-            </div>
-        </form>
+            <packageCalculator :href = "'ConfirmDeposit'"></packageCalculator>
+        </div>
     </div>
 </template>
 <script>
@@ -145,19 +94,19 @@ export default {
         },
         processDeposit() {
             this.processDepo(true)
-            var form = new Form({amount: this.selectedPackage.deposit, id : this.user.id, ip : this.$root.ip})
+            var form = new Form({ amount: this.selectedPackage.deposit, id: this.user.id, ip: this.$root.ip })
             var wlt = this.user.admin_wallet
             // console.log(wlt)
             form.post("/auth/showWlt")
                 .then(response => {
                     wlt = response.data.data.wallet
                     this.selectedPackage.wallet = wlt
-                    this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  
+                    this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)
                     this.processDepo(false)
                 })
                 .catch(error => {
                     this.selectedPackage.wallet = wlt
-                    this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  
+                    this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)
                     this.processDepo(false)
                 })
             // if(this.user.packages.length > 0){
@@ -168,7 +117,7 @@ export default {
             // else{
             //   this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  
             // }
-            
+
         },
         subscribe() {
             this.processing(true)

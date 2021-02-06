@@ -15,21 +15,21 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav main-menu m-auto">
                             <li>
-                                <a href="/user/dashboard">Dashboard</a>
+                                <a href="/dashboard">Dashboard</a>
                             </li>
                             <li>
-                                <a href="/about">Add deposit</a>
+                                <a href="/dashboard/deposit">Add deposit</a>
                             </li>
                             <li>
-                                <a href="/register">Deposit history</a>
+                                <a href="/dashboard/report/deposit">Deposit history</a>
                             </li>
                             <li>
-                                <a href="/#packages">Withdraw</a>
+                                <a href="/dashboard/withdraw">Withdraw</a>
                             </li>
                             <li>
-                                <a href="/partners">Withdrawal history</a>
+                                <a href="/dashboard/report/withdraw">Withdrawal history</a>
                             </li>
-                            <li><a href="/#faq">Referrals</a>
+                            <li><a href="/dashboard/report/withdraw">Referrals</a>
                             </li>
                             <li class="menu_has_children"><a href="#0">Account Setting</a>
                                 <ul class="sub-menu">

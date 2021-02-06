@@ -6419,8 +6419,16 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
-  computed: {},
+  computed: {
+    route: function route() {
+      var props = this.$router.resolve({
+        name: this.href
+      });
+      return props.href;
+    }
+  },
   created: function created() {},
+  props: ['href'],
   // components: { Menu },
   methods: {}
 });
@@ -7265,18 +7273,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7756,6 +7752,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -10662,6 +10668,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -10711,57 +10737,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -16559,6 +16534,25 @@ exports.push([module.i, "\n.slide-fade-enter-active {\r\n  transition: all .3s e
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/packageCalculator.vue?vue&type=style&index=0&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/packageCalculator.vue?vue&type=style&index=0&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\nselect option {\r\n    padding: 10px 20px !important;\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/testimonial.vue?vue&type=style&index=0&lang=css&":
 /*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/testimonial.vue?vue&type=style&index=0&lang=css& ***!
@@ -16590,7 +16584,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.section-home__btn {\n    border-color: #f8b782;\n    color: rgba(255, 255, 255, 0.8) !important;\n    text-transform: uppercase;\n    padding: 5px 12px !important;\n}\n.section-home__btn:hover {\n    background-color: #e25e5a !important;\n    border-color: #f8b782;\n}\n.section-home__btn:active {\n    background-color: #e25e5a !important;\n    border-color: #f8b782;\n}\n.slick-slide .slick-active {\n    margin: 15px !important;\n}\n.equal{\n    box-shadow: 0 0 10px 2px rgba(204, 163, 84, 0.45) !important;\n}\n\n", ""]);
+exports.push([module.i, "\n.section-home__btn {\r\n    border-color: #f8b782;\r\n    color: rgba(255, 255, 255, 0.8) !important;\r\n    text-transform: uppercase;\r\n    padding: 5px 12px !important;\n}\n.section-home__btn:hover {\r\n    background-color: #e25e5a !important;\r\n    border-color: #f8b782;\n}\n.section-home__btn:active {\r\n    background-color: #e25e5a !important;\r\n    border-color: #f8b782;\n}\n.slick-slide .slick-active {\r\n    margin: 15px !important;\n}\n.equal {\r\n    box-shadow: 0 0 10px 2px rgba(204, 163, 84, 0.45) !important;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -50621,6 +50615,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/packageCalculator.vue?vue&type=style&index=0&lang=css&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/packageCalculator.vue?vue&type=style&index=0&lang=css& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./packageCalculator.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/packageCalculator.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/testimonial.vue?vue&type=style&index=0&lang=css&":
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/testimonial.vue?vue&type=style&index=0&lang=css& ***!
@@ -56040,33 +56064,37 @@ var staticRenderFns = [
       [
         _c("ul", { staticClass: "navbar-nav main-menu m-auto" }, [
           _c("li", [
-            _c("a", { attrs: { href: "/user/dashboard" } }, [
-              _vm._v("Dashboard")
+            _c("a", { attrs: { href: "/dashboard" } }, [_vm._v("Dashboard")])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "/dashboard/deposit" } }, [
+              _vm._v("Add deposit")
             ])
           ]),
           _vm._v(" "),
           _c("li", [
-            _c("a", { attrs: { href: "/about" } }, [_vm._v("Add deposit")])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "/register" } }, [
+            _c("a", { attrs: { href: "/dashboard/report/deposit" } }, [
               _vm._v("Deposit history")
             ])
           ]),
           _vm._v(" "),
           _c("li", [
-            _c("a", { attrs: { href: "/#packages" } }, [_vm._v("Withdraw")])
+            _c("a", { attrs: { href: "/dashboard/withdraw" } }, [
+              _vm._v("Withdraw")
+            ])
           ]),
           _vm._v(" "),
           _c("li", [
-            _c("a", { attrs: { href: "/partners" } }, [
+            _c("a", { attrs: { href: "/dashboard/report/withdraw" } }, [
               _vm._v("Withdrawal history")
             ])
           ]),
           _vm._v(" "),
           _c("li", [
-            _c("a", { attrs: { href: "/#faq" } }, [_vm._v("Referrals")])
+            _c("a", { attrs: { href: "/dashboard/report/withdraw" } }, [
+              _vm._v("Referrals")
+            ])
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "menu_has_children" }, [
@@ -57554,7 +57582,7 @@ var render = function() {
               "a",
               {
                 staticClass: "cmn-btn btn-md mt-4",
-                attrs: { href: "/dashboard/#deposit" }
+                attrs: { href: _vm.route }
               },
               [_vm._v("Invest Now")]
             )
@@ -58936,176 +58964,170 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "pt-120 pb-120" }, [
-    _c("div", { staticClass: "container" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-xl-8" }, [
-          _c("div", { staticClass: "profit-calculator-wrapper" }, [
-            _c("form", { staticClass: "profit-calculator" }, [
-              _c("div", { staticClass: "row mb-none-30" }, [
-                _c("div", { staticClass: "col-lg-6 mb-30" }, [
-                  _c("label", [_vm._v("Choose Plan")]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
+  return _c("div", { staticClass: "row justify-content-center" }, [
+    _c("div", { staticClass: "col-xl-8" }, [
+      _c("div", { staticClass: "profit-calculator-wrapper" }, [
+        _c("form", { staticClass: "profit-calculator" }, [
+          _c("div", { staticClass: "row mb-none-30" }, [
+            _c("div", { staticClass: "col-lg-6 mb-30" }, [
+              _c("label", [_vm._v("Choose Plan")]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
                     {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.plan,
-                          expression: "plan"
-                        }
-                      ],
-                      staticClass: "base--bg",
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.plan = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        }
-                      }
-                    },
-                    [
-                      _vm.$root.packages == ""
-                        ? _c("option", { attrs: { selected: "" } }, [
-                            _vm._v("Fetching Packages...")
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm._l(_vm.$root.packages, function(plan) {
-                        return _c(
-                          "option",
-                          {
-                            staticClass: "p-1 text-capitalize",
-                            domProps: { value: plan }
-                          },
-                          [_vm._v(_vm._s(plan.name) + " Package")]
-                        )
-                      })
-                    ],
-                    2
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-lg-6 mb-30" }, [
-                  _c("label", [_vm._v("Invest Amount")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.invest_amount,
-                        expression: "invest_amount"
-                      }
-                    ],
-                    staticClass: "form-control base--bg",
-                    attrs: {
-                      type: "text",
-                      name: "invest_amount",
-                      placeholder: "0",
-                      min: _vm.plan.min_deposit,
-                      max: _vm.plan.max_deposit,
-                      id: "invest_amount"
-                    },
-                    domProps: { value: _vm.invest_amount },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.invest_amount = $event.target.value
-                      }
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.plan,
+                      expression: "plan"
                     }
-                  }),
-                  _vm._v(" "),
-                  _vm.plan.name
-                    ? _c("p", { staticClass: "small" }, [
-                        _vm._v(
-                          _vm._s(
-                            "Limit: $" +
-                              _vm.plan.min_deposit +
-                              " - $" +
-                              _vm.plan.max_deposit
-                          )
-                        )
+                  ],
+                  staticClass: "base--bg",
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.plan = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    }
+                  }
+                },
+                [
+                  _vm.$root.packages == ""
+                    ? _c("option", { attrs: { selected: "" } }, [
+                        _vm._v("Fetching Packages...")
                       ])
-                    : _vm._e()
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-lg-6 mb-30" }, [
-                  _c("label", [_vm._v("Profit Amount")]),
+                    : _vm._e(),
                   _vm._v(" "),
-                  _c("input", {
-                    directives: [
+                  _vm._l(_vm.$root.packages, function(plan) {
+                    return _c(
+                      "option",
                       {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.profit_amount,
-                        expression: "profit_amount"
-                      }
-                    ],
-                    staticClass: "form-control base--bg",
-                    attrs: {
-                      type: "text",
-                      name: "profit_amount",
-                      id: "profit_amount",
-                      disabled: ""
-                    },
-                    domProps: { value: _vm.profit_amount },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.profit_amount = $event.target.value
-                      }
-                    }
+                        staticClass: " text-capitalize",
+                        domProps: { value: plan }
+                      },
+                      [_vm._v(_vm._s(plan.name) + " Package")]
+                    )
                   })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-lg-6 mb-30" }, [
-                  _c("label", [_vm._v("Total Earning")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.total_earning,
-                        expression: "total_earning"
-                      }
-                    ],
-                    staticClass: "form-control base--bg",
-                    attrs: {
-                      type: "text",
-                      name: "total_earning",
-                      id: "total_earning",
-                      disabled: ""
-                    },
-                    domProps: { value: _vm.total_earning },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.total_earning = $event.target.value
-                      }
+                ],
+                2
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-6 mb-30" }, [
+              _c("label", [_vm._v("Invest Amount")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.invest_amount,
+                    expression: "invest_amount"
+                  }
+                ],
+                staticClass: "form-control base--bg",
+                attrs: {
+                  type: "text",
+                  name: "invest_amount",
+                  placeholder: "0",
+                  min: _vm.plan.min_deposit,
+                  max: _vm.plan.max_deposit,
+                  id: "invest_amount"
+                },
+                domProps: { value: _vm.invest_amount },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
                     }
-                  })
-                ])
-              ])
+                    _vm.invest_amount = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm.plan.name
+                ? _c("p", { staticClass: "small" }, [
+                    _vm._v(
+                      _vm._s(
+                        "Limit: $" +
+                          _vm.plan.min_deposit +
+                          " - $" +
+                          _vm.plan.max_deposit
+                      )
+                    )
+                  ])
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-6 mb-30" }, [
+              _c("label", [_vm._v("Profit Amount")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.profit_amount,
+                    expression: "profit_amount"
+                  }
+                ],
+                staticClass: "form-control base--bg",
+                attrs: {
+                  type: "text",
+                  name: "profit_amount",
+                  id: "profit_amount",
+                  disabled: ""
+                },
+                domProps: { value: _vm.profit_amount },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.profit_amount = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-6 mb-30" }, [
+              _c("label", [_vm._v("Total Earning")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.total_earning,
+                    expression: "total_earning"
+                  }
+                ],
+                staticClass: "form-control base--bg",
+                attrs: {
+                  type: "text",
+                  name: "total_earning",
+                  id: "total_earning",
+                  disabled: ""
+                },
+                domProps: { value: _vm.total_earning },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.total_earning = $event.target.value
+                  }
+                }
+              })
             ])
           ])
         ])
@@ -59113,32 +59135,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-lg-6" }, [
-        _c("div", { staticClass: "section-header text-center" }, [
-          _c("h2", { staticClass: "section-title" }, [
-            _c("span", { staticClass: "font-weight-normal" }, [
-              _vm._v("Profit")
-            ]),
-            _vm._v(" "),
-            _c("b", { staticClass: "base--color" }, [_vm._v("Calculator")])
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "You must know the calculation before investing in any plan, so you never make mistakes. Check the calculation and you will get as our calculator says."
-            )
-          ])
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -60320,13 +60317,24 @@ var render = function() {
           _c(
             "div",
             { staticClass: "container" },
-            [_vm._m(3), _vm._v(" "), _c("InvestmentPackage")],
+            [
+              _vm._m(3),
+              _vm._v(" "),
+              _c("InvestmentPackage", { attrs: { href: "deposit" } })
+            ],
             1
           )
         ]
       ),
       _vm._v(" "),
-      _c("packageCalculator"),
+      _c("section", { staticClass: "pt-120 pb-120" }, [
+        _c(
+          "div",
+          { staticClass: "container" },
+          [_vm._m(4), _vm._v(" "), _c("packageCalculator")],
+          1
+        )
+      ]),
       _vm._v(" "),
       _c(
         "section",
@@ -60336,7 +60344,7 @@ var render = function() {
             "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg"
           }
         },
-        [_vm._m(4)]
+        [_vm._m(5)]
       ),
       _vm._v(" "),
       _c("FaqComponent"),
@@ -60709,6 +60717,30 @@ var staticRenderFns = [
           _c("p", [
             _vm._v(
               "To make a solid investment, you have to know where you are investing. Find a plan which is best for you."
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-lg-6" }, [
+        _c("div", { staticClass: "section-header text-center" }, [
+          _c("h2", { staticClass: "section-title" }, [
+            _c("span", { staticClass: "font-weight-normal" }, [
+              _vm._v("Profit")
+            ]),
+            _vm._v(" "),
+            _c("b", { staticClass: "base--color" }, [_vm._v("Calculator")])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "You must know the calculation before investing in any plan, so you never make mistakes. Check the calculation and you will get as our calculator says."
             )
           ])
         ])
@@ -67733,7 +67765,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row mb-none-30" }, [
-      _c("div", { staticClass: "col-xl-3 col-sm-6 mb-30" }, [
+      _c("div", { staticClass: "col-xl-3 col-sm-6 mb-30 " }, [
         _c("div", { staticClass: "d-widget d-flex flex-wrap" }, [
           _c("div", { staticClass: "col-8" }, [
             _c("span", { staticClass: "caption" }, [
@@ -67745,7 +67777,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "col-4" }, [
             _c("div", { staticClass: "icon ml-auto" }, [
-              _c("i", { staticClass: "las la-cubes " })
+              _c("i", { staticClass: "las la-cubes" })
             ])
           ])
         ])
@@ -68093,90 +68125,70 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "m-0 p-0" },
-    [
-      _c("DashboardHeader"),
-      _vm._v(" "),
-      _c("section", { staticClass: "main-container m-lg-3 m-0 acc" }, [
-        _c("div", { staticClass: "main" }, [
-          _c("div", { staticClass: "container" }, [
-            _c(
-              "div",
-              {
-                staticClass: "wrapper",
-                style:
-                  "background:url(" +
-                  _vm.$root.basepath +
-                  "/img/home.png) no-repeat 0 0;min-height:400px;"
-              },
-              [
-                _c(
-                  "div",
-                  { staticClass: "account-wrapper m-xl-2 row m-0 " },
-                  [
-                    _c(
-                      "nav",
-                      {
-                        staticClass:
-                          "nav  navbar-dark ml-4 ml-lg-0 mb-3 mb-lg-b p-0 mt-3 navbar navbar-expand-lg "
-                      },
-                      [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "navbar-toggler",
-                            attrs: {
-                              type: "button",
-                              "data-toggle": "collapse",
-                              "data-target": "#collapsibleNavbar4"
-                            },
-                            on: { click: function($event) {} }
-                          },
-                          [_c("span", { staticClass: "navbar-toggler-icon " })]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("DashboardSidebar"),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc"
-                      },
-                      [
-                        _c(_vm.componentName, {
-                          tag: "component",
-                          staticClass: "m-0 p-0",
-                          attrs: {
-                            success: _vm.message,
-                            plan: _vm.selectedPlan,
-                            user: _vm.user
-                          },
-                          on: {
-                            success: _vm.success,
-                            changeComponent: _vm.changeComponent
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                )
-              ]
-            )
+  return _c("div", { staticClass: "page-wrapper" }, [
+    _c(
+      "section",
+      {
+        staticClass: "inner-hero bg_img",
+        attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-1.jpg" }
+      },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c("h2", { staticClass: "page-title" }, [_vm._v("Dashboard")]),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _c("h2", { staticClass: "page-title pt-4" }, [
+                _c("span", { staticClass: "base--color" }, [
+                  _vm._v("Welcome, ")
+                ]),
+                _vm._v(" " + _vm._s("Bitcoinary"))
+              ])
+            ])
           ])
         ])
-      ])
-    ],
-    1
-  )
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "pt-60 pb-60" }, [
+      _c(
+        "div",
+        { staticClass: "container" },
+        [
+          _c(_vm.componentName, {
+            tag: "component",
+            staticClass: "m-0 p-0",
+            attrs: {
+              success: _vm.message,
+              plan: _vm.selectedPlan,
+              user: _vm.user
+            },
+            on: { success: _vm.success, changeComponent: _vm.changeComponent }
+          })
+        ],
+        1
+      )
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "page-breadcrumb" }, [
+      _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("Home")])]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "/dashboard" } }, [_vm._v("Dashoard")])
+      ]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Deposit")])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -68198,329 +68210,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "acc-block" }, [
-    _c("div", { staticClass: "acc-heading clearfix" }, [
-      _c("h2", [_vm._v("Deposit")]),
-      _vm._v(" "),
-      _c("ul", { staticClass: "breadcrumbs" }, [
-        _c("li", [_vm._v("Main")]),
-        _vm._v(" "),
-        _c("li", [
-          _c("img", { attrs: { src: _vm.$root.basepath + "/img/right-b.png" } })
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "active" }, [_vm._v("Deposit")])
-      ]),
-      _vm._v(":\n    ")
-    ]),
+  return _c("div", { staticClass: "row justify-content-center" }, [
+    _vm._m(0),
     _vm._v(" "),
-    _vm.msg
-      ? _c("div", { staticClass: "success-msg text-capitalize  m-3" }, [
-          _c("p", { staticClass: "p-2 m-2" }, [_vm._v(_vm._s(_vm.msg) + " ")])
-        ])
-      : _vm._e(),
+    _c("div", { staticClass: "col-lg-12 mb-3" }, [_c("InvestmentPackage")], 1),
     _vm._v(" "),
-    _vm.error
-      ? _c("div", { staticClass: "error-msg  m-3" }, [
-          _c("p", { staticClass: "p-2 m-2" }, [_vm._v(_vm._s(_vm.error))])
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("form", { attrs: { method: "post", name: "spendform" } }, [
-      _c("input", { attrs: { type: "hidden", name: "a", value: "deposit" } }),
-      _vm._v(" "),
-      _c("div", { staticClass: "acc-body p-0 deposit" }, [
-        _c("div", { staticClass: "bal p-0 text-center" }, [
-          _c("span", [_vm._v("Account Balance:")]),
-          _vm._v(
-            " " + _vm._s(_vm.$root.numeral(_vm.user.balance)) + "\n            "
-          )
-        ]),
+    _c(
+      "div",
+      { staticClass: "container mt-5" },
+      [
+        _vm._m(1),
         _vm._v(" "),
-        _c("div", { staticClass: "acc-inv-plans text-center" }, [
-          _c("h2", [_vm._v("Our Investment Portfolios")]),
-          _vm._v(" "),
-          _c("p", [_vm._v("Select the plan that best suites you to continue")]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "accordion mb-4",
-              attrs: { id: "accordionExample" }
-            },
-            _vm._l(_vm.portfolios, function(portfolio) {
-              return _vm.portfolios
-                ? _c(
-                    "div",
-                    {
-                      staticClass: "m-1",
-                      on: {
-                        click: function($event) {
-                          return _vm.selectPortfolio(portfolio.name)
-                        }
-                      }
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          class: {
-                            "card-header": true,
-                            silver: true,
-                            "mb-3": true,
-                            gold: _vm.selectedPortfolio == portfolio.name
-                          },
-                          attrs: { id: "h-" + portfolio.name }
-                        },
-                        [
-                          _c("h2", { staticClass: "mb-0" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass:
-                                  "btn btn-block text-capitalize font-weight-bold",
-                                attrs: {
-                                  type: "button",
-                                  "data-toggle": "collapse",
-                                  "data-target": "#" + portfolio.name,
-                                  "aria-expanded": "true",
-                                  "aria-controls": portfolio.name
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(portfolio.name + " Portfolio") +
-                                    "\n                                "
-                                )
-                              ]
-                            )
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "m-0 p-0 row collapse",
-                          attrs: {
-                            id: portfolio.name,
-                            "aria-labelledby": "h-" + portfolio.name,
-                            "data-parent": "#accordionExample"
-                          }
-                        },
-                        _vm._l(_vm.packages, function(packag) {
-                          return packag.portfolio == portfolio.name
-                            ? _c("div", { staticClass: "col-sm-6 col-12" }, [
-                                _c("div", { staticClass: "plan-wrap" }, [
-                                  _c(
-                                    "div",
-                                    {
-                                      class: {
-                                        "plan-inner": true,
-                                        "plan-selection": true,
-                                        selected: _vm.select == packag.name
-                                      }
-                                    },
-                                    [
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.amount,
-                                            expression: "form.amount"
-                                          }
-                                        ],
-                                        attrs: { type: "radio" },
-                                        domProps: {
-                                          value: packag.deposit,
-                                          checked: _vm._q(
-                                            _vm.form.amount,
-                                            packag.deposit
-                                          )
-                                        },
-                                        on: {
-                                          click: function($event) {
-                                            return _vm.updateSelection(packag)
-                                          },
-                                          change: function($event) {
-                                            return _vm.$set(
-                                              _vm.form,
-                                              "amount",
-                                              packag.deposit
-                                            )
-                                          }
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("span", {
-                                        class: {
-                                          selection: _vm.select == packag.name
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("div", { staticClass: "plan-in" }, [
-                                        _c("h3", [
-                                          _vm._v(
-                                            "$" +
-                                              _vm._s(
-                                                _vm.$root.normalNumeral(
-                                                  packag.deposit
-                                                )
-                                              )
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _c(
-                                          "p",
-                                          { staticClass: "font-weight-bold" },
-                                          [_vm._v("Deposit Plan")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "range font-weight-bold"
-                                          },
-                                          [
-                                            _vm._v(
-                                              _vm._s(
-                                                packag.duration +
-                                                  " days duration"
-                                              )
-                                            )
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "p",
-                                          { staticClass: "font-weight-bold" },
-                                          [
-                                            _vm._v(
-                                              "$" +
-                                                _vm._s(
-                                                  _vm.$root.normalNumeral(
-                                                    packag.interest_rate
-                                                  )
-                                                ) +
-                                                " R.O.I"
-                                            )
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          {
-                                            staticClass:
-                                              "range  text-capitalize"
-                                          },
-                                          [
-                                            _vm._v(
-                                              _vm._s(packag.portfolio + " Plan")
-                                            )
-                                          ]
-                                        )
-                                      ])
-                                    ]
-                                  )
-                                ])
-                              ])
-                            : _vm._e()
-                        }),
-                        0
-                      )
-                    ]
-                  )
-                : _vm._e()
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "ul",
-            { staticClass: "form-list text-left deposit-form-wrapper" },
-            [
-              _c("li", { staticClass: "clearfix floated" }, [
-                _c("div", { staticClass: "input-box m-1" }, [
-                  _c("label", [_vm._v("Deposit Amount")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "iconed" }, [
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.amount,
-                          expression: "form.amount"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "number",
-                        placeholder: "Choose your plan",
-                        disabled: "",
-                        value: ""
-                      },
-                      domProps: { value: _vm.form.amount },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "amount", $event.target.value)
-                        }
-                      }
-                    })
-                  ])
-                ])
-              ])
-            ]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _vm.selectedPackage
-        ? _c("div", { staticClass: "text-center  mb-3 mb-l-0" }, [
-            _vm.user.balance < _vm.selectedPackage.deposit
-              ? _c(
-                  "button",
-                  {
-                    ref: "deposit",
-                    staticClass: "btn btn-default",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.processDeposit($event)
-                      }
-                    }
-                  },
-                  [_vm._v("Make a Deposit")]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.user.balance > _vm.selectedPackage.deposit
-              ? _c(
-                  "button",
-                  {
-                    ref: "process",
-                    staticClass: "btn btn-default",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.subscribe($event)
-                      }
-                    }
-                  },
-                  [_vm._v("Subscribe")]
-                )
-              : _vm._e()
-          ])
-        : _vm._e()
-    ])
+        _c("packageCalculator", { attrs: { href: "ConfirmDeposit" } })
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = [
@@ -68528,11 +68232,34 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "icon" }, [
-      _c("i", {
-        staticClass: "fas fa-dollar-sign",
-        attrs: { "aria-hidden": "true" }
-      })
+    return _c("div", { staticClass: "col-lg-6 text-center" }, [
+      _c("div", { staticClass: "section-header" }, [
+        _c("h2", { staticClass: "section-title" }, [
+          _c("span", { staticClass: "font-weight-normal" }, [
+            _vm._v("Investment")
+          ]),
+          _vm._v(" "),
+          _c("b", { staticClass: "base--color" }, [_vm._v("Plans")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-lg-6" }, [
+        _c("div", { staticClass: "section-header text-center" }, [
+          _c("h2", { staticClass: "section-title" }, [
+            _c("span", { staticClass: "font-weight-normal" }, [
+              _vm._v("Calculate your")
+            ]),
+            _vm._v(" "),
+            _c("b", { staticClass: "base--color" }, [_vm._v("Profit")])
+          ])
+        ])
+      ])
     ])
   }
 ]
@@ -100673,7 +100400,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _packageCalculator_vue_vue_type_template_id_5f44b5a6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./packageCalculator.vue?vue&type=template&id=5f44b5a6& */ "./resources/js/components/packageCalculator.vue?vue&type=template&id=5f44b5a6&");
 /* harmony import */ var _packageCalculator_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./packageCalculator.vue?vue&type=script&lang=js& */ "./resources/js/components/packageCalculator.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _packageCalculator_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./packageCalculator.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/packageCalculator.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -100681,7 +100410,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _packageCalculator_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _packageCalculator_vue_vue_type_template_id_5f44b5a6___WEBPACK_IMPORTED_MODULE_0__["render"],
   _packageCalculator_vue_vue_type_template_id_5f44b5a6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -100710,6 +100439,22 @@ component.options.__file = "resources/js/components/packageCalculator.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_packageCalculator_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./packageCalculator.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/packageCalculator.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_packageCalculator_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/packageCalculator.vue?vue&type=style&index=0&lang=css&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/packageCalculator.vue?vue&type=style&index=0&lang=css& ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_packageCalculator_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./packageCalculator.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/packageCalculator.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_packageCalculator_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_packageCalculator_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_packageCalculator_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_packageCalculator_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_packageCalculator_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -103274,63 +103019,63 @@ var routes = [{
   }
 }, // USER ROUTES
 {
-  path: '/user/dashboard',
+  path: '/dashboard',
   name: 'dashboard',
   component: _pages_user_Dashboard__WEBPACK_IMPORTED_MODULE_18__["default"],
   meta: {
     auth: false
   }
 }, {
-  path: '/user/dashboard/deposit',
+  path: '/dashboard/deposit',
   name: 'deposit',
   component: _pages_user_Deposit__WEBPACK_IMPORTED_MODULE_19__["default"],
   meta: {
-    auth: true
+    auth: false
   }
 }, {
-  path: '/user/dashboard/withdraw',
+  path: '/dashboard/withdraw',
   name: 'withdraw',
   component: _pages_user_Withdraw__WEBPACK_IMPORTED_MODULE_20__["default"],
   meta: {
     auth: true
   }
 }, {
-  path: '/user/dashboard/settings',
+  path: '/dashboard/settings',
   name: 'setting',
   component: _pages_user_Setting__WEBPACK_IMPORTED_MODULE_30__["default"],
   meta: {
     auth: true
   }
 }, {
-  path: '/user/dashboard/security',
+  path: '/dashboard/security',
   name: 'security',
   component: _pages_user_Security__WEBPACK_IMPORTED_MODULE_31__["default"],
   meta: {
     auth: true
   }
 }, {
-  path: '/user/dashboard/report/withdraw',
+  path: '/dashboard/report/withdraw',
   name: 'withdrawReport',
   component: _pages_user_reports_WithdrawalReport__WEBPACK_IMPORTED_MODULE_26__["default"],
   meta: {
     auth: true
   }
 }, {
-  path: '/user/dashboard/report/deposit',
+  path: '/dashboard/report/deposit',
   name: 'depositReport',
   component: _pages_user_reports_DepositReport__WEBPACK_IMPORTED_MODULE_27__["default"],
   meta: {
     auth: true
   }
 }, {
-  path: '/user/dashboard/report/transaction',
+  path: '/dashboard/report/transaction',
   name: 'transactionReport',
   component: _pages_user_reports_TransactionReport__WEBPACK_IMPORTED_MODULE_29__["default"],
   meta: {
     auth: true
   }
 }, {
-  path: '/user/dashboard/report/referral',
+  path: '/dashboard/report/referral',
   name: 'referralReport',
   component: _pages_user_reports_ReferralReport__WEBPACK_IMPORTED_MODULE_28__["default"],
   meta: {

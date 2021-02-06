@@ -19,7 +19,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="row mb-none-30">
-                            <div class="col-xl-3 col-sm-6 mb-30">
+                            <div class="col-xl-3 col-sm-6 mb-30 ">
                                 <div class="d-widget d-flex flex-wrap">
                                     <div class="col-8">
                                         <span class="caption">Active Investment</span>
@@ -27,10 +27,10 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="icon ml-auto">
-                                            <i class="las la-cubes "></i>
+                                            <i class="las la-cubes"></i>
                                         </div>
                                     </div>
-                                </div><!-- d-widget-two end -->
+                                </div>
                             </div>
                             <div class="col-xl-3 col-sm-6 mb-30">
                                 <div class="d-widget d-flex flex-wrap">
@@ -43,7 +43,7 @@
                                             <i class="las la-credit-card"></i>
                                         </div>
                                     </div>
-                                </div><!-- d-widget-two end -->
+                                </div>
                             </div>
                             <div class="col-xl-3 col-sm-6 mb-30">
                                 <div class="d-widget d-flex flex-wrap">
@@ -56,7 +56,7 @@
                                             <i class="las la-cloud-download-alt"></i>
                                         </div>
                                     </div>
-                                </div><!-- d-widget-two end -->
+                                </div>
                             </div>
                             <div class="col-xl-3 col-sm-6 mb-30">
                                 <div class="d-widget d-flex flex-wrap">

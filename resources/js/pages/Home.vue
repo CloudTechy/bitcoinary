@@ -16,7 +16,7 @@
         </section>
         <!-- hero end -->
         <!-- cureency section start -->
-         <div class="cureency-section">
+        <div class="cureency-section">
             <div class="container">
                 <div class="row mb-none-30">
                     <div class="col-lg-3 col-sm-6 cureency-item mb-30">
@@ -66,7 +66,7 @@
                                 Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits.</p>
                             <p class="mt-4">Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service, allowing us to automate and simplify the relations between the investors and
                                 the trustees. We work towards increasing your profit margin by profitable investment strategies. We look forward to you being part of our community.</p>
-                                <a href="/about" class="cmn-btn mt-4">READ MORE</a>
+                            <a href="/about" class="cmn-btn mt-4">READ MORE</a>
                         </div>
                         <!-- about-content end -->
                     </div>
@@ -75,7 +75,6 @@
         </section>
         <!-- about section end -->
         <!-- package section start -->
-        
         <!-- package section end  -->
         <!-- choose us section start -->
         <section class="pt-120 pb-120 overlay--radial bg_img" :data-background="$root.basepath + '/images/bg/bg-3.jpg'">
@@ -201,7 +200,6 @@
                 </div>
             </div>
         </section>
-
         <section id="packages" class="pt-120 pb-120">
             <div class="container">
                 <div class="row justify-content-center">
@@ -212,12 +210,24 @@
                         </div>
                     </div>
                 </div>
-                <InvestmentPackage></InvestmentPackage>
+                <InvestmentPackage :href = "'deposit'"></InvestmentPackage>
             </div>
         </section>
         <!-- choose us section end  -->
-        <!-- profit calculator section start --> 
-        <packageCalculator></packageCalculator>
+        <!-- profit calculator section start -->
+        <section class="pt-120 pb-120">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section-header text-center">
+                            <h2 class="section-title"><span class="font-weight-normal">Profit</span> <b class="base--color">Calculator</b></h2>
+                            <p>You must know the calculation before investing in any plan, so you never make mistakes. Check the calculation and you will get as our calculator says.</p>
+                        </div>
+                    </div>
+                </div>
+                <packageCalculator></packageCalculator>
+            </div>
+        </section>
         <!-- profit calculator section end -->
         <!-- how work section start -->
         <section class="pt-120 pb-120 bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
@@ -276,16 +286,16 @@
         <FaqComponent></FaqComponent>
         <!-- faq section end -->
         <!-- testimonial section start -->
-        <testimonial :data = "$root.testimonials"></testimonial>
+        <testimonial :data="$root.testimonials"></testimonial>
         <!-- testimonial section end -->
         <!-- team section start -->
-        <Team :data = "$root.teams"></Team>
+        <Team :data="$root.teams"></Team>
         <!-- team section end -->
         <!-- data section start -->
-        <Transaction :transactions = "$root.transactions" :withdrawals = "$root.withdrawals"></Transaction>
+        <Transaction :transactions="$root.transactions" :withdrawals="$root.withdrawals"></Transaction>
         <!-- data section end -->
         <!-- top investor section start -->
-        <Investor :data = "$root.investors"></Investor>
+        <Investor :data="$root.investors"></Investor>
         <!-- top investor section end -->
         <!-- cta section start -->
         <section class="pb-120">
@@ -304,13 +314,13 @@
         </section>
         <!-- cta section end -->
         <!-- payment brand section start -->
-        <PaymentBrand :data = "$root.payments"></PaymentBrand>
+        <PaymentBrand :data="$root.payments"></PaymentBrand>
         <!-- payment brand section end -->
         <!-- blog section start -->
         <!-- <Blog></Blog> -->
         <!-- blog section end -->
         <!-- subscribe section start -->
-       <newsletter></newsletter>
+        <newsletter></newsletter>
         <!-- subscribe section end -->
     </div>
 </template>
@@ -338,27 +348,29 @@
 
 </script>
 <style type="text/css">
-    .section-home__btn {
-        border-color: #f8b782;
-        color: rgba(255, 255, 255, 0.8) !important;
-        text-transform: uppercase;
-        padding: 5px 12px !important;
-    }
+.section-home__btn {
+    border-color: #f8b782;
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-transform: uppercase;
+    padding: 5px 12px !important;
+}
 
-    .section-home__btn:hover {
-        background-color: #e25e5a !important;
-        border-color: #f8b782;
-    }
+.section-home__btn:hover {
+    background-color: #e25e5a !important;
+    border-color: #f8b782;
+}
 
-    .section-home__btn:active {
-        background-color: #e25e5a !important;
-        border-color: #f8b782;
-    }
-    .slick-slide .slick-active {
-        margin: 15px !important;
-    }
-    .equal{
-        box-shadow: 0 0 10px 2px rgba(204, 163, 84, 0.45) !important;
-    }
+.section-home__btn:active {
+    background-color: #e25e5a !important;
+    border-color: #f8b782;
+}
+
+.slick-slide .slick-active {
+    margin: 15px !important;
+}
+
+.equal {
+    box-shadow: 0 0 10px 2px rgba(204, 163, 84, 0.45) !important;
+}
 
 </style>
