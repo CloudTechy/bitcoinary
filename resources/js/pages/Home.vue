@@ -372,5 +372,8 @@
 .equal {
     box-shadow: 0 0 10px 2px rgba(204, 163, 84, 0.45) !important;
 }
+.cmn-btn:hover {
+    cursor: pointer;
+}
 
 </style>

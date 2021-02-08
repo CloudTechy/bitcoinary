@@ -10272,6 +10272,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -10316,6 +10356,9 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         return 'N/A';
       }
+    },
+    paymentMethods: function paymentMethods() {
+      return this.$root.payment;
     }
   },
   methods: {
@@ -10737,6 +10780,40 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -16584,7 +16661,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.section-home__btn {\r\n    border-color: #f8b782;\r\n    color: rgba(255, 255, 255, 0.8) !important;\r\n    text-transform: uppercase;\r\n    padding: 5px 12px !important;\n}\n.section-home__btn:hover {\r\n    background-color: #e25e5a !important;\r\n    border-color: #f8b782;\n}\n.section-home__btn:active {\r\n    background-color: #e25e5a !important;\r\n    border-color: #f8b782;\n}\n.slick-slide .slick-active {\r\n    margin: 15px !important;\n}\n.equal {\r\n    box-shadow: 0 0 10px 2px rgba(204, 163, 84, 0.45) !important;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.section-home__btn {\r\n    border-color: #f8b782;\r\n    color: rgba(255, 255, 255, 0.8) !important;\r\n    text-transform: uppercase;\r\n    padding: 5px 12px !important;\n}\n.section-home__btn:hover {\r\n    background-color: #e25e5a !important;\r\n    border-color: #f8b782;\n}\n.section-home__btn:active {\r\n    background-color: #e25e5a !important;\r\n    border-color: #f8b782;\n}\n.slick-slide .slick-active {\r\n    margin: 15px !important;\n}\n.equal {\r\n    box-shadow: 0 0 10px 2px rgba(204, 163, 84, 0.45) !important;\n}\n.cmn-btn:hover {\r\n    cursor: pointer;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -59023,7 +59100,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-lg-6 mb-30" }, [
-              _c("label", [_vm._v("Invest Amount")]),
+              _c("label", [_vm._v("Capital")]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -59069,7 +59146,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-lg-6 mb-30" }, [
-              _c("label", [_vm._v("Profit Amount")]),
+              _c("label", [_vm._v("Profit")]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -67424,170 +67501,180 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "acc-block" }, [
-    _c("div", { staticClass: "acc-heading clearfix" }, [
-      _c("h2", [_vm._v("Confirm Deposit")]),
-      _vm._v(" "),
-      _c("ul", { staticClass: "breadcrumbs" }, [
-        _c("li", [_vm._v("Main")]),
-        _vm._v(" "),
-        _c("li", [
-          _c("img", { attrs: { src: _vm.$root.basepath + "/img/right-b.png" } })
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "active" }, [_vm._v("Deposit Confirm")])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "acc-body deposit-confirm" }, [
-      !_vm.plan.wallet && !_vm.user.admin_pm
-        ? _c("div", { staticClass: "error-msg  m-2" }, [
-            _c("p", { staticClass: "p-2 m-2" }, [
-              _vm._v(
-                "Unable to process a wallet address at this time, Please contact your administrator or try again later."
-              )
-            ])
-          ])
-        : _vm._e(),
-      _vm._v("\n        Please send your payments to this account: "),
-      _c("b", { ref: "wlt" }, [_vm._v(_vm._s(_vm.plan.wallet))]),
-      _c("br"),
-      _vm._v(" "),
-      _vm.user.admin_pm
-        ? _c("p", { staticClass: "p-2 m-2" }, [
-            _vm._v(" Use Perfect Money: "),
-            _c("b", [_vm._v(_vm._s(_vm.user.admin_pm))])
-          ])
-        : _vm._e(),
-      _c("br"),
-      _c("br"),
-      _vm._v(" "),
-      _c("table", { staticClass: "stat" }, [
-        _c("thead", [
-          _c("tr", [
-            _c("th", [_vm._v("Plan:")]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.plan.duration) + " days turnover")])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("th", [_vm._v("Amount:")]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.$root.numeral(_vm.plan.deposit)))])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("th", [_vm._v("Profit:")]),
-            _vm._v(" "),
-            _c("td", [
-              _vm._v(
-                _vm._s(_vm.$root.numeral(_vm.plan.interest_rate)) +
-                  " after " +
-                  _vm._s(_vm.plan.duration) +
-                  " days"
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _c("tr", [
-            _c("th", [_vm._v(" Your Account Balance:")]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.$root.numeral(_vm.user.balance)))])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("th", [_vm._v(" Pay:")]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.$root.numeral(_vm.payment)))])
-          ]),
-          _vm._v(" "),
-          _c("tr", [
-            _c("th", [_vm._v("Btc Conversion:")]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(_vm.btc))])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("br"),
-      _c("br"),
-      _vm._v(" "),
-      _c(
-        "form",
-        {
-          attrs: { method: "post" },
-          on: {
-            submit: function($event) {
-              $event.preventDefault()
-              return _vm.processDeposit($event)
-            }
-          }
-        },
-        [
-          _vm.error
-            ? _c("div", { staticClass: "error-msg p-3 m-2" }, [
-                _c("p", { staticClass: "p-2 m-2" }, [_vm._v(_vm._s(_vm.error))])
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("table", { staticClass: "stat" }, [
-            _c("thead", [
-              _vm._m(2),
-              _vm._v(" "),
-              _c("tr", [
-                _c("td", [_vm._v("Upload POP/Screenshot: ")]),
+  return _c("div", { staticClass: "page-wrapper" }, [
+    _c(
+      "div",
+      {
+        staticClass: "account-section bg_img",
+        attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg" }
+      },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row justify-content-center" }, [
+            _c("div", { staticClass: "col-xl-7 col-lg-9" }, [
+              _c("div", { staticClass: "account-card" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "account-card__header bg_img overlay--one",
+                    attrs: {
+                      "data-background":
+                        _vm.$root.basepath + "/images/bg/bg-6.jpg"
+                    }
+                  },
+                  [_vm._m(0)]
+                ),
                 _vm._v(" "),
-                _c("td", [
-                  _c("input", {
-                    ref: "fileInput",
-                    staticClass: "inpts",
-                    attrs: { required: true, type: "file" }
-                  })
+                _c("div", { staticClass: "account-card__body" }, [
+                  _c("h3", { staticClass: "text-center" }, [
+                    _vm._v("Investment Details")
+                  ]),
+                  _vm._v(" "),
+                  !_vm.success
+                    ? _c(
+                        "form",
+                        {
+                          staticClass: "mt-4",
+                          attrs: { autocomplete: "off", method: "post" },
+                          on: {
+                            submit: function($event) {
+                              $event.preventDefault()
+                              return _vm.register($event)
+                            }
+                          }
+                        },
+                        [
+                          _c("div", { staticClass: "form-group" }, [
+                            _c("label", [_vm._v("Payment method")]),
+                            _vm._v(" "),
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.plan,
+                                    expression: "plan"
+                                  }
+                                ],
+                                staticClass: "base--bg",
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.plan = $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  }
+                                }
+                              },
+                              [
+                                _vm.$root.packages == ""
+                                  ? _c("option", { attrs: { selected: "" } }, [
+                                      _vm._v("Fetching Payment processors...")
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm._l(_vm.$root.payments, function(processor) {
+                                  return _c(
+                                    "option",
+                                    {
+                                      staticClass: "text-capitalize",
+                                      domProps: { value: processor }
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._s(
+                                          "Direct Invest " + processor.name
+                                        )
+                                      )
+                                    ]
+                                  )
+                                })
+                              ],
+                              2
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-group" }, [
+                            _c("label", [_vm._v("Capital")]),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.amount,
+                                  expression: "amount"
+                                }
+                              ],
+                              class: {
+                                "form-control": true,
+                                "error-input": _vm.errors.amount != undefined
+                              },
+                              attrs: {
+                                type: "text",
+                                required: "",
+                                placeholder: "Amount"
+                              },
+                              domProps: { value: _vm.amount },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.amount = $event.target.value
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm.plan.name
+                              ? _c("p", { staticClass: "small" }, [
+                                  _vm._v(
+                                    _vm._s(
+                                      "Limit: $" +
+                                        _vm.plan.min_deposit +
+                                        " - $" +
+                                        _vm.plan.max_deposit
+                                    )
+                                  )
+                                ])
+                              : _vm._e()
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "mt-3" }, [
+                            _c(
+                              "button",
+                              {
+                                ref: "submit",
+                                class: {
+                                  "cmn-btn": true,
+                                  btn: true,
+                                  disabled: false
+                                },
+                                attrs: { disabled: false, type: "submit" }
+                              },
+                              [_vm._v("Proceed")]
+                            )
+                          ])
+                        ]
+                      )
+                    : _vm._e()
                 ])
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              ref: "process",
-              class: {
-                btn: true,
-                disabled: !_vm.user.admin_wallet,
-                "btn-inverse": true
-              },
-              attrs: {
-                disabled: !_vm.user.admin_wallet && !_vm.user.admin_pm,
-                type: "submit"
-              }
-            },
-            [_vm._v("Upload")]
-          ),
-          _vm._v(" \n            "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-inverse",
-              attrs: { type: "submit", required: "" },
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  return _vm.$router.push({ name: "dashboard" })
-                }
-              }
-            },
-            [_vm._v("Cancel")]
-          )
-        ]
-      )
-    ])
+          ])
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -67595,34 +67682,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("Principal Return:")]),
-      _vm._v(" "),
-      _c("td", [_vm._v("Yes")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("Principal Withdraw:")]),
-      _vm._v(" "),
-      _c("td", [
-        _vm._v(
-          "\n                        Available with\n                        0.00% fee "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", { attrs: { colspan: "2" } }, [
-        _c("b", [_vm._v("Required Information:")])
-      ])
+    return _c("h2", { staticClass: "section-title text-center" }, [
+      _vm._v("Make an "),
+      _c("span", { staticClass: "base--color" }, [_vm._v(" Investment")])
     ])
   }
 ]
@@ -68213,7 +68275,155 @@ var render = function() {
   return _c("div", { staticClass: "row justify-content-center" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "col-lg-12 mb-3" }, [_c("InvestmentPackage")], 1),
+    _c("div", { staticClass: "col-lg-12 mb-3" }, [
+      _c(
+        "div",
+        { staticClass: "row justify-content-center mb-none-30" },
+        _vm._l(_vm.$root.packages, function(plan) {
+          return _c(
+            "div",
+            { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "package-card text-center bg_img",
+                  style: {
+                    backgroundImage:
+                      "url(" + _vm.$root.basepath + "/images/bg/bg-4.png )"
+                  }
+                },
+                [
+                  _c(
+                    "h4",
+                    {
+                      staticClass:
+                        "package-card__title base--color text-capitalize mb-2"
+                    },
+                    [_vm._v(_vm._s(plan.name))]
+                  ),
+                  _vm._v(" "),
+                  plan.name == "Bronze" || plan.name == "Silver"
+                    ? _c("div", [
+                        _c(
+                          "ul",
+                          { staticClass: "package-card__features mt-4" },
+                          [
+                            _c("li", [
+                              _vm._v("Return " + _vm._s(plan.roi) + "%")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _vm._v("Every " + _vm._s(plan.turnover))
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [_vm._v("For 6 Days")]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _vm._v("Total " + _vm._s(plan.roi) + "% + "),
+                              _c("span", { staticClass: "badge base--bg" }, [
+                                _vm._v("Capital")
+                              ])
+                            ])
+                          ]
+                        )
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  plan.name == "Gold"
+                    ? _c("div", [
+                        _c(
+                          "ul",
+                          { staticClass: "package-card__features mt-4" },
+                          [
+                            _c("li", [
+                              _vm._v("Return " + _vm._s(plan.roi) + "%")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _vm._v("Every " + _vm._s(plan.turnover))
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [_vm._v("For 3x")]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _vm._v("Total " + _vm._s(plan.roi) + "% + "),
+                              _c("span", { staticClass: "badge base--bg" }, [
+                                _vm._v("Capital")
+                              ])
+                            ])
+                          ]
+                        )
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  plan.name == "Premium"
+                    ? _c("div", [
+                        _c(
+                          "ul",
+                          { staticClass: "package-card__features mt-4" },
+                          [
+                            _c("li", [
+                              _vm._v("Return " + _vm._s(plan.roi) + "%")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _vm._v("Every " + _vm._s(plan.turnover))
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [_vm._v("For 2x")]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _vm._v("Total " + _vm._s(plan.roi) + "% + "),
+                              _c("span", { staticClass: "badge base--bg" }, [
+                                _vm._v("Capital")
+                              ])
+                            ])
+                          ]
+                        )
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "package-card__range mt-5 base--color" },
+                    [
+                      _vm._v(
+                        _vm._s(
+                          "$" +
+                            plan.min_deposit +
+                            " - " +
+                            "$" +
+                            plan.max_deposit
+                        )
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "cmn-btn btn-md mt-4",
+                      on: {
+                        click: function($event) {
+                          return _vm.$emit(
+                            "changeComponent",
+                            "ConfirmDeposit",
+                            plan
+                          )
+                        }
+                      }
+                    },
+                    [_vm._v("Invest Now")]
+                  )
+                ]
+              )
+            ]
+          )
+        }),
+        0
+      )
+    ]),
     _vm._v(" "),
     _c(
       "div",

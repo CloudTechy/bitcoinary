@@ -12,12 +12,12 @@
                             </select>
                         </div>
                         <div class="col-lg-6 mb-30">
-                            <label>Invest Amount</label>
+                            <label>Capital</label>
                             <input type="text" v-model="invest_amount" name="invest_amount" placeholder="0" :min="plan.min_deposit" :max="plan.max_deposit" id="invest_amount" class="form-control base--bg">
                             <p v-if="plan.name" class="small">{{'Limit: $' + plan.min_deposit + ' - $' + plan.max_deposit}}</p>
                         </div>
                         <div class="col-lg-6 mb-30">
-                            <label>Profit Amount</label>
+                            <label>Profit</label>
                             <input v-model="profit_amount" type="text" name="profit_amount" id="profit_amount" class="form-control base--bg" disabled>
                         </div>
                         <div class="col-lg-6 mb-30">

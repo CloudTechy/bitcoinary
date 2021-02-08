@@ -1,5 +1,5 @@
 <template>
-    <div class="acc-block">
+    <!-- <div class="acc-block">
         <div class="acc-heading clearfix">
             <h2>Confirm Deposit</h2>
             <ul class="breadcrumbs">
@@ -54,10 +54,6 @@
             </table>
             <br><br>
             <form @submit.prevent="processDeposit" method="post">
-                <!-- <div class="error-msg " v-for = "error in errors" v-if="errors">
-                    <p class="p-2 m-2">{{error}}</p>
-
-                </div> -->
                 <div class="error-msg p-3 m-2" v-if="error">
                     <p class="p-2 m-2">{{error}}</p>
                 </div>
@@ -77,6 +73,50 @@
                 <button type="submit" @click.prevent="$router.push({ name: 'dashboard'})" required class="btn btn-inverse">Cancel</button>
             </form>
         </div>
+    </div> -->
+    <div class="page-wrapper">
+        <!-- account section start -->
+        <div class="account-section bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-9">
+                        <div class="account-card">
+                            <div class="account-card__header bg_img overlay--one" :data-background="$root.basepath + '/images/bg/bg-6.jpg'">
+                                <h2 class="section-title text-center">Make an <span class="base--color"> Investment</span></h2>
+                            </div>
+                            <div class="account-card__body">
+                                <h3 class="text-center">Investment Details</h3>
+                                <form class="mt-4" autocomplete="off" @submit.prevent="register" v-if="!success" method="post">
+                                    <!-- <div class="form-group">
+                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="has_error && !success  ">
+                                            <p v-if="!unknown_error && errors" class="text-center  m-3 small">You have some errors in your form</p>
+                                            <p class=" m-3 small" v-if="unknown_error">{{unknown_error}}</p>
+                                        </div>
+                                    </div> -->
+                                    <div class="form-group">
+                                        <label>Payment method</label>
+                                        <select v-model="plan" class="base--bg">
+                                            <option selected v-if=" $root.packages == '' ">Fetching Payment processors...</option>
+                                            <option class="text-capitalize" :value="processor" v-for="processor in $root.payments">{{'Direct Invest ' + processor.name}}</option>
+                                        </select>
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Capital</label>
+                                        <input type="text" required placeholder="Amount" v-model="amount" :class="{'form-control' : true, 'error-input': errors.amount != undefined}">
+                                        <p v-if="plan.name" class="small">{{'Limit: $' + plan.min_deposit + ' - $' + plan.max_deposit}}</p>
+                                    </div>
+                                    <div class="mt-3">
+                                        <button :disabled="false" ref="submit" type="submit" :class="{'cmn-btn' : true,'btn' : true, disabled : false}">Proceed</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- account section end -->
     </div>
 </template>
 <script>
@@ -118,6 +158,9 @@ export default {
                 return 'N/A'
             }
         },
+        paymentMethods(){
+            return this.$root.payment
+        }
 
     },
     methods: {
