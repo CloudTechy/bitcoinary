@@ -10333,7 +10333,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    window.scrollTo(0, 300);
+    window.scrollTo(0, 350);
     this.getPaymentMethods();
   },
   watch: {
@@ -10914,7 +10914,9 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   props: ['user', 'success'],
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    window.scrollTo(0, 0);
+  },
   created: function created() {// this.$root.loader('show')
   },
   methods: {
@@ -67736,25 +67738,32 @@ var render = function() {
                         )
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "col mt-3 text-right" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "cmn-btn btn",
-                            on: {
-                              click: function($event) {
-                                $event.preventDefault()
-                                return _vm.$emit(
-                                  "changeComponent",
-                                  "DepositPlan",
-                                  ""
-                                )
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "col mt-3 text-left text-sm-right mr-auto"
+                        },
+                        [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "cmn-btn btn",
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.$emit(
+                                    "changeComponent",
+                                    "DepositPlan",
+                                    ""
+                                  )
+                                }
                               }
-                            }
-                          },
-                          [_vm._v("Back")]
-                        )
-                      ])
+                            },
+                            [_vm._v("Back")]
+                          )
+                        ]
+                      )
                     ])
                   ]
                 )

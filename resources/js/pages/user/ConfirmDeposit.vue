@@ -109,7 +109,7 @@
                                         <div class="col mt-3">
                                         <button :disabled="false" ref="submit" type="submit" :class="{'cmn-btn' : true,'btn' : true, disabled : false}">Proceed</button>
                                     </div>
-                                        <div class="col mt-3 text-right">
+                                        <div class="col mt-3 text-left text-sm-right">
                                         <button @click.prevent = "$emit('changeComponent', 'DepositPlan', '')" class="cmn-btn btn">Back</button>
                                     </div>
                                     
@@ -142,7 +142,7 @@ export default {
         }
     },
     mounted() {
-        window.scrollTo(0, 300)
+        window.scrollTo(0, 350)
         this.getPaymentMethods()
     },
     watch: {

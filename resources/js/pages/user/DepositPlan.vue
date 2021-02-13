@@ -101,6 +101,7 @@ export default {
     },
     props: ['user', 'success'],
     mounted() {
+         window.scrollTo(0, 0)
     },
     created(){
         // this.$root.loader('show')
