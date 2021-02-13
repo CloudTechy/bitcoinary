@@ -10311,20 +10311,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       errors: '',
       form: new Form({
         package_id: this.plan.id,
-        user_id: this.user.id
+        user_id: this.user.id,
+        amount: undefined
       }),
-      error: ''
+      error: '',
+      paymentMethods: undefined,
+      paymentMethod: undefined
     };
   },
   mounted: function mounted() {
-    window.scrollTo(0, 200);
+    window.scrollTo(0, 180);
+    this.getPaymentMethods();
   },
   watch: {
     error: function error() {
@@ -10356,10 +10359,10 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         return 'N/A';
       }
-    },
-    paymentMethods: function paymentMethods() {
-      return this.$root.payment;
-    }
+    } // paymentMethods(){
+    //     return this.getPaymentMethods
+    // }
+
   },
   methods: {
     processDeposit: function processDeposit() {
@@ -10400,6 +10403,23 @@ __webpack_require__.r(__webpack_exports__);
         this.$refs.process.innerText = "Process";
         this.$refs.process.disabled = false;
       }
+    },
+    getPaymentMethods: function getPaymentMethods() {
+      var _this4 = this;
+
+      this.$root.loader('show');
+      this.$error = '';
+      this.$http.get("/auth/bankdetails/?user_id=1").then(function (response) {
+        _this4.paymentMethods = response.data.data.item;
+
+        _this4.$root.loader('hide');
+      })["catch"](function (error) {
+        _this4.error = error.response.data.message;
+
+        _this4.$root.loader('hide');
+
+        console.log(error.response);
+      });
     }
   }
 });
@@ -10839,8 +10859,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      portfolios: '',
-      packages: '',
       form: new Form({
         amount: '',
         user_id: this.user.id,
@@ -10849,7 +10867,6 @@ __webpack_require__.r(__webpack_exports__);
       }),
       selectedPackage: '',
       select: '',
-      selectedPortfolio: '',
       error: '',
       msg: this.success
     };
@@ -10868,21 +10885,30 @@ __webpack_require__.r(__webpack_exports__);
       setTimeout(function () {
         _this2.error = '';
       }, 10000);
+    },
+    plans: function plans() {
+      if (this.plans) {
+        this.$root.loader('hide');
+      }
+    }
+  },
+  computed: {
+    plans: function plans() {
+      var plans = this.$root.packages;
+      var app = this;
+      app.$root.loader('show');
+
+      if (plans.length > 0) {
+        app.$root.loader('hide');
+        return plans;
+      } else {
+        app.$root.loader('show');
+      }
     }
   },
   props: ['user', 'success'],
-  mounted: function mounted() {
-    if (localStorage.portfolioss) {
-      this.portfolios = JSON.parse(localStorage.portfolioss);
-    }
-
-    if (localStorage.packages) {
-      this.packages = JSON.parse(localStorage.packages);
-    }
-
-    this.getPortfolios();
-    this.getPackages();
-    this.$root.getIp();
+  mounted: function mounted() {},
+  created: function created() {// this.$root.loader('show')
   },
   methods: {
     getPortfolios: function getPortfolios() {
@@ -67505,7 +67531,7 @@ var render = function() {
     _c(
       "div",
       {
-        staticClass: "account-section bg_img",
+        staticClass: "account-section p-0 bg_img",
         attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg" }
       },
       [
@@ -67530,144 +67556,136 @@ var render = function() {
                     _vm._v("Investment Details")
                   ]),
                   _vm._v(" "),
-                  !_vm.success
-                    ? _c(
-                        "form",
-                        {
-                          staticClass: "mt-4",
-                          attrs: { autocomplete: "off", method: "post" },
-                          on: {
-                            submit: function($event) {
-                              $event.preventDefault()
-                              return _vm.register($event)
-                            }
-                          }
-                        },
-                        [
-                          _c("div", { staticClass: "form-group" }, [
-                            _c("label", [_vm._v("Payment method")]),
-                            _vm._v(" "),
-                            _c(
-                              "select",
+                  _c(
+                    "form",
+                    {
+                      staticClass: "mt-4",
+                      attrs: { autocomplete: "off", method: "post" },
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          return _vm.register($event)
+                        }
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Payment method")]),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            directives: [
                               {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.plan,
-                                    expression: "plan"
-                                  }
-                                ],
-                                staticClass: "base--bg",
-                                on: {
-                                  change: function($event) {
-                                    var $$selectedVal = Array.prototype.filter
-                                      .call($event.target.options, function(o) {
-                                        return o.selected
-                                      })
-                                      .map(function(o) {
-                                        var val =
-                                          "_value" in o ? o._value : o.value
-                                        return val
-                                      })
-                                    _vm.plan = $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  }
-                                }
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.paymentMethod,
+                                expression: "paymentMethod"
+                              }
+                            ],
+                            staticClass: "base--bg",
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.paymentMethod = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              }
+                            }
+                          },
+                          _vm._l(_vm.paymentMethods, function(processor) {
+                            return _c(
+                              "option",
+                              {
+                                staticClass: "text-capitalize",
+                                domProps: { value: processor.payment_method }
                               },
                               [
-                                _vm.$root.packages == ""
-                                  ? _c("option", { attrs: { selected: "" } }, [
-                                      _vm._v("Fetching Payment processors...")
-                                    ])
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm._l(_vm.$root.payments, function(processor) {
-                                  return _c(
-                                    "option",
-                                    {
-                                      staticClass: "text-capitalize",
-                                      domProps: { value: processor }
-                                    },
-                                    [
-                                      _vm._v(
-                                        _vm._s(
-                                          "Direct Invest " + processor.name
-                                        )
-                                      )
-                                    ]
+                                _vm._v(
+                                  _vm._s(
+                                    "Direct Invest with " +
+                                      processor.payment_method
                                   )
-                                })
-                              ],
-                              2
+                                )
+                              ]
                             )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "form-group" }, [
-                            _c("label", [_vm._v("Capital")]),
-                            _vm._v(" "),
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.amount,
-                                  expression: "amount"
-                                }
-                              ],
-                              class: {
-                                "form-control": true,
-                                "error-input": _vm.errors.amount != undefined
-                              },
-                              attrs: {
-                                type: "text",
-                                required: "",
-                                placeholder: "Amount"
-                              },
-                              domProps: { value: _vm.amount },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.amount = $event.target.value
-                                }
+                          }),
+                          0
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", [_vm._v("Capital")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.amount,
+                              expression: "form.amount"
+                            }
+                          ],
+                          class: {
+                            "form-control": true,
+                            "error-input": _vm.errors.amount != undefined
+                          },
+                          attrs: {
+                            type: "number",
+                            required: "",
+                            placeholder: "Enter amount",
+                            min: _vm.plan.min_deposit,
+                            max: _vm.plan.max_deposit
+                          },
+                          domProps: { value: _vm.form.amount },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
                               }
-                            }),
-                            _vm._v(" "),
-                            _vm.plan.name
-                              ? _c("p", { staticClass: "small" }, [
-                                  _vm._v(
-                                    _vm._s(
-                                      "Limit: $" +
-                                        _vm.plan.min_deposit +
-                                        " - $" +
-                                        _vm.plan.max_deposit
-                                    )
-                                  )
-                                ])
-                              : _vm._e()
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-3" }, [
-                            _c(
-                              "button",
-                              {
-                                ref: "submit",
-                                class: {
-                                  "cmn-btn": true,
-                                  btn: true,
-                                  disabled: false
-                                },
-                                attrs: { disabled: false, type: "submit" }
-                              },
-                              [_vm._v("Proceed")]
-                            )
-                          ])
-                        ]
-                      )
-                    : _vm._e()
+                              _vm.$set(_vm.form, "amount", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _vm.plan.name
+                          ? _c("p", { staticClass: "small p-1" }, [
+                              _vm._v(
+                                _vm._s(
+                                  "Limit: $" +
+                                    _vm.plan.min_deposit +
+                                    " - $" +
+                                    _vm.plan.max_deposit
+                                )
+                              )
+                            ])
+                          : _vm._e()
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "mt-3" }, [
+                        _c(
+                          "button",
+                          {
+                            ref: "submit",
+                            class: {
+                              "cmn-btn": true,
+                              btn: true,
+                              disabled: false
+                            },
+                            attrs: { disabled: false, type: "submit" }
+                          },
+                          [_vm._v("Proceed")]
+                        )
+                      ])
+                    ]
+                  )
                 ])
               ])
             ])
@@ -68279,7 +68297,7 @@ var render = function() {
       _c(
         "div",
         { staticClass: "row justify-content-center mb-none-30" },
-        _vm._l(_vm.$root.packages, function(plan) {
+        _vm._l(_vm.plans, function(plan) {
           return _c(
             "div",
             { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" },
@@ -98882,7 +98900,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       this.$http.get("/auth/transactionss?pageSize=6&reference=SELF").then(function (response) {
         _this7.transactions = response.data.data.item;
       })["catch"](function (error) {
-        console.log(error);
+        console.log(error.response);
       });
     },
     getWithdrawals: function getWithdrawals() {
@@ -98891,7 +98909,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       this.$http.get("/auth/withdrawalss?pageSize=6").then(function (response) {
         _this8.withdrawals = response.data.data.item;
       })["catch"](function (error) {
-        console.log(error);
+        console.log(error.response);
       });
     },
     numeral: function (_numeral) {
@@ -103233,14 +103251,14 @@ var routes = [{
   name: 'dashboard',
   component: _pages_user_Dashboard__WEBPACK_IMPORTED_MODULE_18__["default"],
   meta: {
-    auth: false
+    auth: true
   }
 }, {
   path: '/dashboard/deposit',
   name: 'deposit',
   component: _pages_user_Deposit__WEBPACK_IMPORTED_MODULE_19__["default"],
   meta: {
-    auth: false
+    auth: true
   }
 }, {
   path: '/dashboard/withdraw',

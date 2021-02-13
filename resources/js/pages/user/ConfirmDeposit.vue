@@ -76,7 +76,7 @@
     </div> -->
     <div class="page-wrapper">
         <!-- account section start -->
-        <div class="account-section bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
+        <div class="account-section p-0 bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-9">
@@ -86,7 +86,7 @@
                             </div>
                             <div class="account-card__body">
                                 <h3 class="text-center">Investment Details</h3>
-                                <form class="mt-4" autocomplete="off" @submit.prevent="register" v-if="!success" method="post">
+                                <form class="mt-4" autocomplete="off" @submit.prevent="register" method="post">
                                     <!-- <div class="form-group">
                                         <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="has_error && !success  ">
                                             <p v-if="!unknown_error && errors" class="text-center  m-3 small">You have some errors in your form</p>
@@ -95,16 +95,15 @@
                                     </div> -->
                                     <div class="form-group">
                                         <label>Payment method</label>
-                                        <select v-model="plan" class="base--bg">
-                                            <option selected v-if=" $root.packages == '' ">Fetching Payment processors...</option>
-                                            <option class="text-capitalize" :value="processor" v-for="processor in $root.payments">{{'Direct Invest ' + processor.name}}</option>
+                                        <select v-model="paymentMethod" class="base--bg">
+                                            <option class="text-capitalize" :value="processor.payment_method" v-for="processor in paymentMethods">{{'Direct Invest with ' + processor.payment_method}}</option>
                                         </select>
                                         
                                     </div>
                                     <div class="form-group">
                                         <label>Capital</label>
-                                        <input type="text" required placeholder="Amount" v-model="amount" :class="{'form-control' : true, 'error-input': errors.amount != undefined}">
-                                        <p v-if="plan.name" class="small">{{'Limit: $' + plan.min_deposit + ' - $' + plan.max_deposit}}</p>
+                                        <input type="number" required placeholder="Enter amount" :min="plan.min_deposit" :max="plan.max_deposit" v-model="form.amount" :class="{'form-control' : true, 'error-input': errors.amount != undefined}">
+                                        <p v-if="plan.name" class="small p-1">{{'Limit: $' + plan.min_deposit + ' - $' + plan.max_deposit}}</p>
                                     </div>
                                     <div class="mt-3">
                                         <button :disabled="false" ref="submit" type="submit" :class="{'cmn-btn' : true,'btn' : true, disabled : false}">Proceed</button>
@@ -127,13 +126,17 @@ export default {
             errors: '',
             form: new Form({
                 package_id: this.plan.id,
-                user_id: this.user.id
+                user_id: this.user.id,
+                amount : undefined
             }),
             error: '',
+            paymentMethods : undefined,
+            paymentMethod : undefined
         }
     },
     mounted() {
-        window.scrollTo(0, 200)
+        window.scrollTo(0, 180)
+        this.getPaymentMethods()
     },
     watch: {
         error() {
@@ -158,9 +161,9 @@ export default {
                 return 'N/A'
             }
         },
-        paymentMethods(){
-            return this.$root.payment
-        }
+        // paymentMethods(){
+        //     return this.getPaymentMethods
+        // }
 
     },
     methods: {
@@ -196,8 +199,23 @@ export default {
                 this.$refs.process.innerText = "Process"
                 this.$refs.process.disabled = false
             }
-        }
+        },
+        getPaymentMethods(){
+        this.$root.loader('show')
+        this.$error = ''
+        this.$http.get("/auth/bankdetails/?user_id=1")
+                .then(response => {
+                    this.paymentMethods = response.data.data.item
+                    this.$root.loader('hide')
+                })
+                .catch(error => {
+                    this.error = error.response.data.message
+                    this.$root.loader('hide')
+                    console.log(error.response)
+                })
     }
+    },
+    
 }
 
 </script>

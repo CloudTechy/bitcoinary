@@ -7,7 +7,7 @@
         </div>
         <div class="col-lg-12 mb-3">
             <div class="row justify-content-center mb-none-30">
-        <div  v-for = "plan in $root.packages" class="col-xl-3 col-lg-4 col-md-6 mb-30">
+        <div  v-for = "plan in plans" class="col-xl-3 col-lg-4 col-md-6 mb-30">
             <div class="package-card text-center bg_img" :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-4.png )'}" >
                 <h4 class="package-card__title base--color text-capitalize mb-2">{{plan.name}}</h4>
                 <div v-if="plan.name == 'Bronze' || plan.name == 'Silver' ">
@@ -58,8 +58,6 @@
 export default {
     data() {
         return {
-            portfolios: '',
-            packages: '',
             form: new Form({
                 amount: '',
                 user_id: this.user.id,
@@ -68,7 +66,6 @@ export default {
             }),
             selectedPackage: '',
             select: '',
-            selectedPortfolio: '',
             error: '',
             msg: this.success,
 
@@ -81,18 +78,32 @@ export default {
         error() {
             setTimeout(() => { this.error = '' }, 10000);
         },
+        plans() {
+           if(this.plans){
+                
+                this.$root.loader('hide')
+            }
+        }
+    },
+    computed:{
+        plans(){
+            var plans = this.$root.packages
+            var app = this
+            app.$root.loader('show')
+            if(plans.length > 0){
+                app.$root.loader('hide')
+                return plans
+            }
+            else{
+              app.$root.loader('show')  
+            }
+        }
     },
     props: ['user', 'success'],
     mounted() {
-        if (localStorage.portfolioss) {
-            this.portfolios = JSON.parse(localStorage.portfolioss)
-        }
-        if (localStorage.packages) {
-            this.packages = JSON.parse(localStorage.packages)
-        }
-        this.getPortfolios()
-        this.getPackages()
-        this.$root.getIp()
+    },
+    created(){
+        // this.$root.loader('show')
     },
     methods: {
         getPortfolios() {

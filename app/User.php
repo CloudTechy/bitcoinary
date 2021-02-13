@@ -33,7 +33,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 		return $this->transactions->where('sent', true)->where('confirmed', true)->where('active', true)->sum('amount');
 	}
 	public function getTotalEarnedAttribute() {
-		return $this->confirmedTransactions->where('reference', 'BFIN')->sum('amount') + $this->confirmedTransactions->where('reference', 'BFIN commission')->sum('amount');
+		return $this->confirmedTransactions->where('reference', 'BM')->sum('amount') + $this->confirmedTransactions->where('reference', 'BM first tier commission')->sum('amount') + $this->confirmedTransactions->where('reference', 'BM second tier commission')->sum('amount');;
 	}
 	public function getActivePackagesAttribute() {
 		$activePackages = [];
@@ -61,12 +61,11 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 				DB::beginTransaction();
 				$transaction = new Transaction;
 				$transaction->user_id = $maturePackage->subscription->user_id;
-				$transaction->amount = $maturePackage->interest_rate;
-				$transaction->payment = $maturePackage->interest_rate;
+				$transaction->amount = ($maturePackage->roi / 100) *  $maturePackage->subscription->amount;
 				$transaction->sent = true;
 				$transaction->confirmed = true;
 				$transaction->active = false;
-				$transaction->reference = 'BFIN';
+				$transaction->reference = 'BM';
 				if ($transaction->save()) {
 					$maturePackage->subscription->update(['expiration' => Carbon::now()->addDays($maturePackage->duration), 'active' => true, 'created_at' => Carbon::now()]);
 					$transaction->user->notify(new TransactionMade($transaction));

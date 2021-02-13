@@ -98,7 +98,7 @@ class PackageUserController extends Controller {
 			if ($user->balance >= $validated['amount']) {
 				$transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
 
-				$withdrawal = $user->withdrawals()->create(['amount' => $validated['amount'], 'reference' => 'Bitcoinary Finance', 'processed' => true, 'confirmed' => true]);
+				$withdrawal = $user->withdrawals()->create(['amount' => $validated['amount'], 'reference' => 'BM', 'processed' => true, 'confirmed' => true]);
 
 				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
 
@@ -118,7 +118,7 @@ class PackageUserController extends Controller {
 				$subscription = PackageUser::create(['transaction_id' => $transaction->id, 'user_id' => $user->id, 'package_id' => $package->id, 'roi' => $package->roi, 'pop' => $pop, 'amount' => $validated['amount'],  'active' => false]);
 
 				// if ($user->balance > 0) {
-				// 	$withdrawal = $user->withdrawals()->create(['amount' => $user->balance, 'reference' => 'BFIN', 'processed' => true, 'confirmed' => true]);
+				// 	$withdrawal = $user->withdrawals()->create(['amount' => $user->balance, 'reference' => 'BM', 'processed' => true, 'confirmed' => true]);
 
 				// 	$user->notify(new WithdrawalMade($withdrawal));
 				// }
@@ -245,12 +245,12 @@ class PackageUserController extends Controller {
 
 			if ($referrer && $user->user_level_id != 1) {
 				if ($commission_first_level > 0) {
-					$transaction = $referrer->transactions()->create(['reference' => 'BFIN first tier commission', 'amount' => $commission_first_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
+					$transaction = $referrer->transactions()->create(['reference' => 'BM first tier commission', 'amount' => $commission_first_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
 					$subscription->update(['referral' => $referrer->id]);	
 					$transaction->user->notify(new TransactionMade($transaction));
 				}
 				if ($upline && $commission_second_level > 0) {
-					$transaction = $referrer->transactions()->create(['reference' => 'BFIN second tier commission', 'amount' => $commission_second_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
+					$transaction = $referrer->transactions()->create(['reference' => 'BM second tier commission', 'amount' => $commission_second_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
 					$transaction->user->notify(new TransactionMade($transaction));
 				}
 				DB::commit();

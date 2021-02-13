@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Resources\BankDetailResource;
 use \DB;
 use \Exception;
+use Illuminate\Validation\Rule;
 
 class BankDetailController extends Controller {
 	/**
@@ -55,13 +56,23 @@ class BankDetailController extends Controller {
 	public function store(Request $request) {
 		$validated = $request->validate([
 
-			"bank_id" => "required_unless:currency_type,crypto|numeric|exists:banks,id",
+			"bank_id" => "numeric|exists:banks,id",
 			"acc_name" => "required_unless:currency_type,crypto|string",
 			"acc_number" => "required_unless:currency_type,crypto|numeric",
 			"user_id" => "required|numeric|exists:users,id",
 			'swift_code' => 'nullable|string',
-			'payment_method' => 'required|string|exists:payment_methods,name',
 			'currency_type' => 'required|string|exists:payment_methods,type',
+			'payment_method' => [
+				'required',
+				'string', 
+				Rule::exists('payment_methods' , 'name')->where(function ($query) use($request){
+		            $query->where('type', $request->currency_type);
+		        }),
+				Rule::unique('bank_details')->where(function ($query) use($request){
+				    return $query->where('user_id', $request->user_id);
+				})
+			],
+			
 			'wallet' => 'required_unless:currency_type,fiat|string',
 
 		]);

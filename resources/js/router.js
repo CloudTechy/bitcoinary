@@ -176,7 +176,7 @@ const routes = [{
         name: 'dashboard',
         component: Dashboard,
         meta: {
-            auth: false
+            auth: true
         }
     },
     {
@@ -184,7 +184,7 @@ const routes = [{
         name: 'deposit',
         component: Deposit,
         meta: {
-            auth: false
+            auth: true
         }
     },
     {

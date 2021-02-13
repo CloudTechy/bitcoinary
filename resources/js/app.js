@@ -228,7 +228,7 @@ const app = new Vue({
                     this.transactions = response.data.data.item
                 })
                 .catch(error => {
-                    console.log(error)
+                    console.log(error.response)
                 })
         },
         getWithdrawals() {
@@ -237,7 +237,7 @@ const app = new Vue({
                     this.withdrawals = response.data.data.item
                 })
                 .catch(error => {
-                    console.log(error)
+                    console.log(error.response)
                 })
         },
         numeral(value) {
