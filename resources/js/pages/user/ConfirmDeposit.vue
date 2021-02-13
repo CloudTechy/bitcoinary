@@ -76,12 +76,12 @@
     </div> -->
     <div class="page-wrapper">
         <!-- account section start -->
-        <div class="account-section p-0 bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
+        <div class="account-section p-0">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-9">
                         <div class="account-card">
-                            <div class="account-card__header bg_img overlay--one" :data-background="$root.basepath + '/images/bg/bg-6.jpg'">
+                            <div class="account-card__header bg_img overlay--one" :style="'background:url('+ $root.basepath +'/images/bg/bg-6.jpg) no-repeat 0 0;'" >
                                 <h2 class="section-title text-center">Make an <span class="base--color"> Investment</span></h2>
                             </div>
                             <div class="account-card__body">
@@ -105,9 +105,16 @@
                                         <input type="number" required placeholder="Enter amount" :min="plan.min_deposit" :max="plan.max_deposit" v-model="form.amount" :class="{'form-control' : true, 'error-input': errors.amount != undefined}">
                                         <p v-if="plan.name" class="small p-1">{{'Limit: $' + plan.min_deposit + ' - $' + plan.max_deposit}}</p>
                                     </div>
-                                    <div class="mt-3">
+                                    <div class="p-0 m-0  row">
+                                        <div class="col mt-3">
                                         <button :disabled="false" ref="submit" type="submit" :class="{'cmn-btn' : true,'btn' : true, disabled : false}">Proceed</button>
                                     </div>
+                                        <div class="col mt-3 text-right">
+                                        <button @click.prevent = "$emit('changeComponent', 'DepositPlan', '')" class="cmn-btn btn">Back</button>
+                                    </div>
+                                    
+                                    </div>
+                                    
                                 </form>
                             </div>
                         </div>
@@ -135,7 +142,7 @@ export default {
         }
     },
     mounted() {
-        window.scrollTo(0, 180)
+        window.scrollTo(0, 300)
         this.getPaymentMethods()
     },
     watch: {
@@ -201,9 +208,9 @@ export default {
             }
         },
         getPaymentMethods(){
-        this.$root.loader('show')
-        this.$error = ''
-        this.$http.get("/auth/bankdetails/?user_id=1")
+            this.$root.loader('show')
+            this.$error = ''
+            this.$http.get("/auth/bankdetails/?user_id=1")
                 .then(response => {
                     this.paymentMethods = response.data.data.item
                     this.$root.loader('hide')
@@ -213,9 +220,17 @@ export default {
                     this.$root.loader('hide')
                     console.log(error.response)
                 })
-    }
+        },
     },
     
 }
 
 </script>
+<style type="text/css" >
+    .bg_img{
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+</style>
+

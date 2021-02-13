@@ -10311,6 +10311,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -10326,7 +10333,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    window.scrollTo(0, 180);
+    window.scrollTo(0, 300);
     this.getPaymentMethods();
   },
   watch: {
@@ -16726,6 +16733,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, "\n.example .btn-toggle {\r\n    top: 50%;\r\n    transform: translateY(-50%);\n}\n.btn-toggle {\r\n    margin: 0 4rem;\r\n    padding: 0;\r\n    position: relative;\r\n    border: none;\r\n    height: 1.5rem;\r\n    width: 3rem;\r\n    border-radius: 1.5rem;\r\n    color: #6b7381;\r\n    background: #bdc1c8;\n}\n.btn-toggle:focus,\r\n.btn-toggle.focus,\r\n.btn-toggle:focus.active,\r\n.btn-toggle.focus.active {\r\n    outline: none;\n}\n.btn-toggle:before,\r\n.btn-toggle:after {\r\n    line-height: 1.5rem;\r\n    width: 4rem;\r\n    text-align: center;\r\n    font-weight: 600;\r\n    font-size: 0.75rem;\r\n    text-transform: uppercase;\r\n    letter-spacing: 2px;\r\n    position: absolute;\r\n    bottom: 0;\r\n    transition: opacity 0.25s;\n}\n.btn-toggle:before {\r\n    content: 'Off';\r\n    left: -4rem;\n}\n.btn-toggle:after {\r\n    content: 'On';\r\n    right: -4rem;\r\n    opacity: 0.5;\n}\n.btn-toggle>.handle {\r\n    position: absolute;\r\n    top: 0.1875rem;\r\n    left: 0.1875rem;\r\n    width: 1.125rem;\r\n    height: 1.125rem;\r\n    border-radius: 1.125rem;\r\n    background: #fff;\r\n    transition: left 0.25s;\n}\n.btn-toggle.active {\r\n    transition: background-color 0.25s;\n}\n.btn-toggle.active>.handle {\r\n    left: 1.6875rem;\r\n    transition: left 0.25s;\n}\n.btn-toggle.active:before {\r\n    opacity: 0.5;\n}\n.btn-toggle.active:after {\r\n    opacity: 1;\n}\n.btn-toggle.btn-sm:before,\r\n.btn-toggle.btn-sm:after {\r\n    line-height: -0.5rem;\r\n    color: #fff;\r\n    letter-spacing: 0.75px;\r\n    left: 0.4125rem;\r\n    width: 2.325rem;\n}\n.btn-toggle.btn-sm:before {\r\n    text-align: right;\n}\n.btn-toggle.btn-sm:after {\r\n    text-align: left;\r\n    opacity: 0;\n}\n.btn-toggle.btn-sm.active:before {\r\n    opacity: 0;\n}\n.btn-toggle.btn-sm.active:after {\r\n    opacity: 1;\n}\n.btn-toggle.btn-xs:before,\r\n.btn-toggle.btn-xs:after {\r\n    display: none;\n}\n.btn-toggle:before,\r\n.btn-toggle:after {\r\n    color: #6b7381;\n}\n.btn-toggle.active {\r\n    background-color: #29b5a8;\n}\n.btn-toggle.btn-lg {\r\n    margin: 0 5rem;\r\n    padding: 0;\r\n    position: relative;\r\n    border: none;\r\n    height: 2.5rem;\r\n    width: 5rem;\r\n    border-radius: 2.5rem;\n}\n.btn-toggle.btn-lg:focus,\r\n.btn-toggle.btn-lg.focus,\r\n.btn-toggle.btn-lg:focus.active,\r\n.btn-toggle.btn-lg.focus.active {\r\n    outline: none;\n}\n.btn-toggle.btn-lg:before,\r\n.btn-toggle.btn-lg:after {\r\n    line-height: 2.5rem;\r\n    width: 5rem;\r\n    text-align: center;\r\n    font-weight: 600;\r\n    font-size: 1rem;\r\n    text-transform: uppercase;\r\n    letter-spacing: 2px;\r\n    position: absolute;\r\n    bottom: 0;\r\n    transition: opacity 0.25s;\n}\n.btn-toggle.btn-lg:before {\r\n    content: 'Off';\r\n    left: -5rem;\n}\n.btn-toggle.btn-lg:after {\r\n    content: 'On';\r\n    right: -5rem;\r\n    opacity: 0.5;\n}\n.btn-toggle.btn-lg>.handle {\r\n    position: absolute;\r\n    top: 0.3125rem;\r\n    left: 0.3125rem;\r\n    width: 1.875rem;\r\n    height: 1.875rem;\r\n    border-radius: 1.875rem;\r\n    background: #fff;\r\n    transition: left 0.25s;\n}\n.btn-toggle.btn-lg.active {\r\n    transition: background-color 0.25s;\n}\n.btn-toggle.btn-lg.active>.handle {\r\n    left: 2.8125rem;\r\n    transition: left 0.25s;\n}\n.btn-toggle.btn-lg.active:before {\r\n    opacity: 0.5;\n}\n.btn-toggle.btn-lg.active:after {\r\n    opacity: 1;\n}\n.btn-toggle.btn-lg.btn-sm:before,\r\n.btn-toggle.btn-lg.btn-sm:after {\r\n    line-height: 0.5rem;\r\n    color: #fff;\r\n    letter-spacing: 0.75px;\r\n    left: 0.6875rem;\r\n    width: 3.875rem;\n}\n.btn-toggle.btn-lg.btn-sm:before {\r\n    text-align: right;\n}\n.btn-toggle.btn-lg.btn-sm:after {\r\n    text-align: left;\r\n    opacity: 0;\n}\n.btn-toggle.btn-lg.btn-sm.active:before {\r\n    opacity: 0;\n}\n.btn-toggle.btn-lg.btn-sm.active:after {\r\n    opacity: 1;\n}\n.btn-toggle.btn-lg.btn-xs:before,\r\n.btn-toggle.btn-lg.btn-xs:after {\r\n    display: none;\n}\n.btn-toggle.btn-sm {\r\n    margin: 0 0.5rem;\r\n    padding: 0;\r\n    position: relative;\r\n    border: none;\r\n    height: 1.5rem;\r\n    width: 3rem;\r\n    border-radius: 1.5rem;\n}\n.btn-toggle.btn-sm:focus,\r\n.btn-toggle.btn-sm.focus,\r\n.btn-toggle.btn-sm:focus.active,\r\n.btn-toggle.btn-sm.focus.active {\r\n    outline: none;\n}\n.btn-toggle.btn-sm:before,\r\n.btn-toggle.btn-sm:after {\r\n    line-height: 1.5rem;\r\n    width: 0.5rem;\r\n    text-align: center;\r\n    font-weight: 600;\r\n    font-size: 0.55rem;\r\n    text-transform: uppercase;\r\n    letter-spacing: 2px;\r\n    position: absolute;\r\n    bottom: 0;\r\n    transition: opacity 0.25s;\n}\n.btn-toggle.btn-sm:before {\r\n    content: 'Off';\r\n    left: -0.5rem;\n}\n.btn-toggle.btn-sm:after {\r\n    content: 'On';\r\n    right: -0.5rem;\r\n    opacity: 0.5;\n}\n.btn-toggle.btn-sm>.handle {\r\n    position: absolute;\r\n    top: 0.1875rem;\r\n    left: 0.1875rem;\r\n    width: 1.125rem;\r\n    height: 1.125rem;\r\n    border-radius: 1.125rem;\r\n    background: #fff;\r\n    transition: left 0.25s;\n}\n.btn-toggle.btn-sm.active {\r\n    transition: background-color 0.25s;\n}\n.btn-toggle.btn-sm.active>.handle {\r\n    left: 1.6875rem;\r\n    transition: left 0.25s;\n}\n.btn-toggle.btn-sm.active:before {\r\n    opacity: 0.5;\n}\n.btn-toggle.btn-sm.active:after {\r\n    opacity: 1;\n}\n.btn-toggle.btn-sm.btn-sm:before,\r\n.btn-toggle.btn-sm.btn-sm:after {\r\n    line-height: -0.5rem;\r\n    color: #fff;\r\n    letter-spacing: 0.75px;\r\n    left: 0.4125rem;\r\n    width: 2.325rem;\n}\n.btn-toggle.btn-sm.btn-sm:before {\r\n    text-align: right;\n}\n.btn-toggle.btn-sm.btn-sm:after {\r\n    text-align: left;\r\n    opacity: 0;\n}\n.btn-toggle.btn-sm.btn-sm.active:before {\r\n    opacity: 0;\n}\n.btn-toggle.btn-sm.btn-sm.active:after {\r\n    opacity: 1;\n}\n.btn-toggle.btn-sm.btn-xs:before,\r\n.btn-toggle.btn-sm.btn-xs:after {\r\n    display: none;\n}\n.btn-toggle.btn-xs {\r\n    margin: 0 0;\r\n    padding: 0;\r\n    position: relative;\r\n    border: none;\r\n    height: 1rem;\r\n    width: 2rem;\r\n    border-radius: 1rem;\n}\n.btn-toggle.btn-xs:focus,\r\n.btn-toggle.btn-xs.focus,\r\n.btn-toggle.btn-xs:focus.active,\r\n.btn-toggle.btn-xs.focus.active {\r\n    outline: none;\n}\n.btn-toggle.btn-xs:before,\r\n.btn-toggle.btn-xs:after {\r\n    line-height: 1rem;\r\n    width: 0;\r\n    text-align: center;\r\n    font-weight: 600;\r\n    font-size: 0.75rem;\r\n    text-transform: uppercase;\r\n    letter-spacing: 2px;\r\n    position: absolute;\r\n    bottom: 0;\r\n    transition: opacity 0.25s;\n}\n.btn-toggle.btn-xs:before {\r\n    content: 'Off';\r\n    left: 0;\n}\n.btn-toggle.btn-xs:after {\r\n    content: 'On';\r\n    right: 0;\r\n    opacity: 0.5;\n}\n.btn-toggle.btn-xs>.handle {\r\n    position: absolute;\r\n    top: 0.125rem;\r\n    left: 0.125rem;\r\n    width: 0.75rem;\r\n    height: 0.75rem;\r\n    border-radius: 0.75rem;\r\n    background: #fff;\r\n    transition: left 0.25s;\n}\n.btn-toggle.btn-xs.active {\r\n    transition: background-color 0.25s;\n}\n.btn-toggle.btn-xs.active>.handle {\r\n    left: 1.125rem;\r\n    transition: left 0.25s;\n}\n.btn-toggle.btn-xs.active:before {\r\n    opacity: 0.5;\n}\n.btn-toggle.btn-xs.active:after {\r\n    opacity: 1;\n}\n.btn-toggle.btn-xs.btn-sm:before,\r\n.btn-toggle.btn-xs.btn-sm:after {\r\n    line-height: -1rem;\r\n    color: #fff;\r\n    letter-spacing: 0.75px;\r\n    left: 0.275rem;\r\n    width: 1.55rem;\n}\n.btn-toggle.btn-xs.btn-sm:before {\r\n    text-align: right;\n}\n.btn-toggle.btn-xs.btn-sm:after {\r\n    text-align: left;\r\n    opacity: 0;\n}\n.btn-toggle.btn-xs.btn-sm.active:before {\r\n    opacity: 0;\n}\n.btn-toggle.btn-xs.btn-sm.active:after {\r\n    opacity: 1;\n}\n.btn-toggle.btn-xs.btn-xs:before,\r\n.btn-toggle.btn-xs.btn-xs:after {\r\n    display: none;\n}\n.btn-toggle.btn-secondary {\r\n    color: #6b7381;\r\n    background: #bdc1c8;\n}\n.btn-toggle.btn-secondary:before,\r\n.btn-toggle.btn-secondary:after {\r\n    color: #6b7381;\n}\n.btn-toggle.btn-secondary.active {\r\n    background-color: #ff8300;\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/user/ConfirmDeposit.vue?vue&type=style&index=0&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/user/ConfirmDeposit.vue?vue&type=style&index=0&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.bg_img{\n    background-size: cover !important;\n    background-position: center !important;\n    background-repeat: no-repeat !important;\n}\n", ""]);
 
 // exports
 
@@ -50868,6 +50894,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/user/ConfirmDeposit.vue?vue&type=style&index=0&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/user/ConfirmDeposit.vue?vue&type=style&index=0&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./ConfirmDeposit.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/user/ConfirmDeposit.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/user/Dashboard.vue?vue&type=style&index=0&id=5c5876d9&scoped=true&lang=css&":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/user/Dashboard.vue?vue&type=style&index=0&id=5c5876d9&scoped=true&lang=css& ***!
@@ -67528,148 +67584,143 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "page-wrapper" }, [
-    _c(
-      "div",
-      {
-        staticClass: "account-section p-0 bg_img",
-        attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg" }
-      },
-      [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row justify-content-center" }, [
-            _c("div", { staticClass: "col-xl-7 col-lg-9" }, [
-              _c("div", { staticClass: "account-card" }, [
+    _c("div", { staticClass: "account-section p-0" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-xl-7 col-lg-9" }, [
+            _c("div", { staticClass: "account-card" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "account-card__header bg_img overlay--one",
+                  style:
+                    "background:url(" +
+                    _vm.$root.basepath +
+                    "/images/bg/bg-6.jpg) no-repeat 0 0;"
+                },
+                [_vm._m(0)]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "account-card__body" }, [
+                _c("h3", { staticClass: "text-center" }, [
+                  _vm._v("Investment Details")
+                ]),
+                _vm._v(" "),
                 _c(
-                  "div",
+                  "form",
                   {
-                    staticClass: "account-card__header bg_img overlay--one",
-                    attrs: {
-                      "data-background":
-                        _vm.$root.basepath + "/images/bg/bg-6.jpg"
+                    staticClass: "mt-4",
+                    attrs: { autocomplete: "off", method: "post" },
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        return _vm.register($event)
+                      }
                     }
                   },
-                  [_vm._m(0)]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "account-card__body" }, [
-                  _c("h3", { staticClass: "text-center" }, [
-                    _vm._v("Investment Details")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "form",
-                    {
-                      staticClass: "mt-4",
-                      attrs: { autocomplete: "off", method: "post" },
-                      on: {
-                        submit: function($event) {
-                          $event.preventDefault()
-                          return _vm.register($event)
-                        }
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "form-group" }, [
-                        _c("label", [_vm._v("Payment method")]),
-                        _vm._v(" "),
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.paymentMethod,
-                                expression: "paymentMethod"
-                              }
-                            ],
-                            staticClass: "base--bg",
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.paymentMethod = $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              }
-                            }
-                          },
-                          _vm._l(_vm.paymentMethods, function(processor) {
-                            return _c(
-                              "option",
-                              {
-                                staticClass: "text-capitalize",
-                                domProps: { value: processor.payment_method }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(
-                                    "Direct Invest with " +
-                                      processor.payment_method
-                                  )
-                                )
-                              ]
-                            )
-                          }),
-                          0
-                        )
-                      ]),
+                  [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", [_vm._v("Payment method")]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "form-group" }, [
-                        _c("label", [_vm._v("Capital")]),
-                        _vm._v(" "),
-                        _c("input", {
+                      _c(
+                        "select",
+                        {
                           directives: [
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.form.amount,
-                              expression: "form.amount"
+                              value: _vm.paymentMethod,
+                              expression: "paymentMethod"
                             }
                           ],
-                          class: {
-                            "form-control": true,
-                            "error-input": _vm.errors.amount != undefined
-                          },
-                          attrs: {
-                            type: "number",
-                            required: "",
-                            placeholder: "Enter amount",
-                            min: _vm.plan.min_deposit,
-                            max: _vm.plan.max_deposit
-                          },
-                          domProps: { value: _vm.form.amount },
+                          staticClass: "base--bg",
                           on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(_vm.form, "amount", $event.target.value)
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.paymentMethod = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
                             }
                           }
-                        }),
-                        _vm._v(" "),
-                        _vm.plan.name
-                          ? _c("p", { staticClass: "small p-1" }, [
+                        },
+                        _vm._l(_vm.paymentMethods, function(processor) {
+                          return _c(
+                            "option",
+                            {
+                              staticClass: "text-capitalize",
+                              domProps: { value: processor.payment_method }
+                            },
+                            [
                               _vm._v(
                                 _vm._s(
-                                  "Limit: $" +
-                                    _vm.plan.min_deposit +
-                                    " - $" +
-                                    _vm.plan.max_deposit
+                                  "Direct Invest with " +
+                                    processor.payment_method
                                 )
                               )
-                            ])
-                          : _vm._e()
-                      ]),
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", [_vm._v("Capital")]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "mt-3" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.amount,
+                            expression: "form.amount"
+                          }
+                        ],
+                        class: {
+                          "form-control": true,
+                          "error-input": _vm.errors.amount != undefined
+                        },
+                        attrs: {
+                          type: "number",
+                          required: "",
+                          placeholder: "Enter amount",
+                          min: _vm.plan.min_deposit,
+                          max: _vm.plan.max_deposit
+                        },
+                        domProps: { value: _vm.form.amount },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "amount", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm.plan.name
+                        ? _c("p", { staticClass: "small p-1" }, [
+                            _vm._v(
+                              _vm._s(
+                                "Limit: $" +
+                                  _vm.plan.min_deposit +
+                                  " - $" +
+                                  _vm.plan.max_deposit
+                              )
+                            )
+                          ])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "p-0 m-0  row" }, [
+                      _c("div", { staticClass: "col mt-3" }, [
                         _c(
                           "button",
                           {
@@ -67683,16 +67734,36 @@ var render = function() {
                           },
                           [_vm._v("Proceed")]
                         )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col mt-3 text-right" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "cmn-btn btn",
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.$emit(
+                                  "changeComponent",
+                                  "DepositPlan",
+                                  ""
+                                )
+                              }
+                            }
+                          },
+                          [_vm._v("Back")]
+                        )
                       ])
-                    ]
-                  )
-                ])
+                    ])
+                  ]
+                )
               ])
             ])
           ])
         ])
-      ]
-    )
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -67732,6 +67803,7 @@ var render = function() {
       "section",
       {
         staticClass: "inner-hero bg_img",
+        style: "background:url(" + _vm.$root.basepath + "/images/bg/bg-1.jpg)",
         attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-1.jpg" }
       },
       [
@@ -68210,6 +68282,7 @@ var render = function() {
       "section",
       {
         staticClass: "inner-hero bg_img",
+        style: "background:url(" + _vm.$root.basepath + "/images/bg/bg-1.jpg)",
         attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-1.jpg" }
       },
       [
@@ -102249,7 +102322,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ConfirmDeposit_vue_vue_type_template_id_ffdf586e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ConfirmDeposit.vue?vue&type=template&id=ffdf586e& */ "./resources/js/pages/user/ConfirmDeposit.vue?vue&type=template&id=ffdf586e&");
 /* harmony import */ var _ConfirmDeposit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ConfirmDeposit.vue?vue&type=script&lang=js& */ "./resources/js/pages/user/ConfirmDeposit.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _ConfirmDeposit_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ConfirmDeposit.vue?vue&type=style&index=0&lang=css& */ "./resources/js/pages/user/ConfirmDeposit.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -102257,7 +102332,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _ConfirmDeposit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _ConfirmDeposit_vue_vue_type_template_id_ffdf586e___WEBPACK_IMPORTED_MODULE_0__["render"],
   _ConfirmDeposit_vue_vue_type_template_id_ffdf586e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -102286,6 +102361,22 @@ component.options.__file = "resources/js/pages/user/ConfirmDeposit.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeposit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ConfirmDeposit.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/user/ConfirmDeposit.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeposit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/user/ConfirmDeposit.vue?vue&type=style&index=0&lang=css&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/pages/user/ConfirmDeposit.vue?vue&type=style&index=0&lang=css& ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeposit_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./ConfirmDeposit.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/user/ConfirmDeposit.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeposit_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeposit_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeposit_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeposit_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeposit_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
