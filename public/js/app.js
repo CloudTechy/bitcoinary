@@ -102131,7 +102131,7 @@ var routes = [{
     auth: undefined
   }
 }, {
-  path: '*',
+  path: '/gg',
   name: 'NotFound',
   component: _pages_Error404_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
   meta: {

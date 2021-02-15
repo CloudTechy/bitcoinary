@@ -43,7 +43,7 @@ const routes = [{
         }
     },
     {
-        path: '*',
+        path: '/gg',
         name: 'NotFound',
         component: NotFound,
         meta: {

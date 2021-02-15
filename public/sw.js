@@ -1,10 +1,10 @@
-const version = "v1:1:11" //Change if you want to regenerate cache
+const version = "v1:1:12" //Change if you want to regenerate cache
 const staticCacheName = `${version}static-resources`;
 
 self.addEventListener('install', event => {
     event.waitUntil(
         caches
-        .open('my-site-name')
+        .open('Bitcoinary Mint')
         .then(cache =>
             cache.addAll([
                 '/css/all.min.css',
@@ -13,12 +13,11 @@ self.addEventListener('install', event => {
                 '/js/jquery.js',
                 '/js/contact.js.download',
                 '/js/wow.min.js.download',
-                '/js/contact.js.download',
                 '/images/logo.png',
                 '/js/jquery-3.5.1.min.js.download',
-                '/js/k.js.download',
+                '/js/k.js',
                 '/css/vendor/animate.min.css',
-                 '/css/vendor/slick.css',
+                '/css/vendor/slick.css',
 
                 '/js/jquery.js',
                 '/js/fancybox.js',
