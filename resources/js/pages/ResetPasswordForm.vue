@@ -1,11 +1,11 @@
 <template>
     <div class="page-wrapper">
-        <div class="account-section bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
+        <div class="account-section bg_img"  :style="'background:url('+ $root.basepath + '/images/bg/bg-5.jpg'">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-9">
                         <div class="account-card">
-                            <div class="account-card__header bg_img overlay--one" :data-background="$root.basepath + '/images/bg/bg-6.jpg'">
+                            <div class="account-card__header bg_img overlay--one"  :style="'background:url('+ $root.basepath + '/images/bg/bg-6.jpg'">
                                 <h2 class="section-title text-center">Welcome to <span class="base--color">Bitcoinary Mint</span></h2>
                                 <h3 class="mt-2 text-center">Reset your Password</h3>
                             </div>

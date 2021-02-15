@@ -205,7 +205,7 @@ export default {
 
 </script>
 <style scoped="">
-.btn:focus {
+/*.btn:focus {
     box-shadow: none !important;
 }
 
@@ -215,6 +215,6 @@ export default {
 
 .gold {
     background: linear-gradient(to right, #e25e5a 0%, #e25e5a 0%, #f8b982 100%, #f8b982 100%, #f8b982 100%);
-}
+}*/
 
 </style>

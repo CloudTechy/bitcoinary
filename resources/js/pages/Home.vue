@@ -1,6 +1,6 @@
 <template>
     <div class="page-wrapper">
-        <section class="hero bg_img" :data-background="$root.basepath + '/images/bg/hero.jpg'">
+        <section class="hero bg_img" :style="'background:url('+ $root.basepath + '/images/bg/hero.jpg'">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5 col-lg-8">
@@ -56,7 +56,7 @@
         </div>
         <!-- cureency section end  -->
         <!-- about section start -->
-        <section class="about-section pt-120 pb-120 bg_img" :data-background="$root.basepath + '/images/bg/bg-2.jpg'">
+        <section class="about-section pt-120 pb-120 bg_img" :style="'background:url('+ $root.basepath + '/images/bg/bg-2.jpg'">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-6">
@@ -77,7 +77,7 @@
         <!-- package section start -->
         <!-- package section end  -->
         <!-- choose us section start -->
-        <section class="pt-120 pb-120 overlay--radial bg_img" :data-background="$root.basepath + '/images/bg/bg-3.jpg'">
+        <section class="pt-120 pb-120 overlay--radial bg_img" :style="'background:url('+ $root.basepath + '/images/bg/bg-3.jpg'">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
@@ -230,7 +230,7 @@
         </section>
         <!-- profit calculator section end -->
         <!-- how work section start -->
-        <section class="pt-120 pb-120 bg_img" :data-background="$root.basepath + '/images/bg/bg-5.jpg'">
+        <section class="pt-120 pb-120 bg_img" :style="'background:url('+ $root.basepath + '/images/bg/bg-5.jpg'">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
@@ -302,7 +302,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-8">
-                        <div class="cta-wrapper bg_img border-radius--10 text-center" :data-background="$root.basepath + '/images/bg/bg-8.jpg'">
+                        <div class="cta-wrapper bg_img border-radius--10 text-center" :style="'background:url('+ $root.basepath + '/images/bg/bg-8.jpg'">
                             <h2 class="title mb-3">Get Started Today With Us</h2>
                             <p>This is a Revolutionary Money Making Platform! Invest for Future in Stable Platform and Make Fast Money. Not only we guarantee the fastest and the most exciting returns on your investments, but we also guarantee the security
                                 of your investment.</p>

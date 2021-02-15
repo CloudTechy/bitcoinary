@@ -1,5 +1,5 @@
 <template>
-	<section class="pt-120 pb-120 bg_img" :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" >
+	<section class="pt-120 pb-120 bg_img"  :style="'background:url('+  $root.basepath + '/images/bg/bg-5.jpg )'" >
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">

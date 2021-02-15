@@ -1,5 +1,5 @@
 <template>
-    <section :key="key" :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-7.jpg )'}"  class="pt-120 pb-120 bg_img overlay--radial" >
+    <section :key="key"  :style="'background:url('+  $root.basepath + '/images/bg/bg-7.jpg )'"  class="pt-120 pb-120 bg_img overlay--radial" >
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center">
@@ -93,8 +93,8 @@
     import VueSlickCarousel from 'vue-slick-carousel'
     import 'vue-slick-carousel/dist/vue-slick-carousel.css'
     import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-    import  "../../../public/js/vendor/slick.min.js"
-    import  "../../../public/js/k.js"
+    // import  "../../../public/js/vendor/slick.min.js"
+    // import  "../../../public/js/k.js"
 
 export default {
     name: 'Testimonial',

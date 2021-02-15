@@ -105,6 +105,15 @@ s0.parentNode.insertBefore(s1,s0);
         .register('/sw.js')
         .then(function() { console.log("Service Worker Registered"); });
     }
+
+    $(window).load(function(){
+      console.log('window loaded')
+      $(".preloader").delay(20).animate({
+       "opacity" : "0"
+       }, 300, function() {
+       $(".preloader").css("display","none");
+      });
+    })
 </script>
 </body>
 </html>

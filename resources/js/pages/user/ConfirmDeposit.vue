@@ -210,7 +210,7 @@ export default {
         getPaymentMethods(){
             this.$root.loader('show')
             this.$error = ''
-            this.$http.get("/auth/bankdetails/?user_id=1")
+            this.form.get("/auth/bankdetails/?user_id=1")
                 .then(response => {
                     this.paymentMethods = response.data.data.item
                     this.$root.loader('hide')
@@ -226,11 +226,11 @@ export default {
 }
 
 </script>
-<style type="text/css" >
-    .bg_img{
+<style type="text/css" scoped="">
+   /* .bg_img{
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-    }
+    }*/
 </style>
 
