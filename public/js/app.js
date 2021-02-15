@@ -6726,48 +6726,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
  // import "../../../public/js/vendor/slick.min.js"
@@ -6808,20 +6766,10 @@ __webpack_require__.r(__webpack_exports__);
           }
         }]
       },
-      loading: true,
       key: 1
     };
   },
-  watch: {
-    data: function data() {
-      if (this.data) {
-        this.key++;
-        this.loading = false;
-      } else {
-        this.loading = true;
-      }
-    }
-  },
+  watch: {},
   components: {
     VueSlickCarousel: vue_slick_carousel__WEBPACK_IMPORTED_MODULE_0___default.a
   },
@@ -7366,54 +7314,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
  // import  "../../../public/js/vendor/slick.min.js"
@@ -7450,20 +7350,10 @@ __webpack_require__.r(__webpack_exports__);
           }
         }]
       },
-      loading: true,
       key: 1
     };
   },
-  watch: {
-    data: function data() {
-      if (this.data) {
-        this.key++;
-        this.loading = false;
-      } else {
-        this.loading = true;
-      }
-    }
-  },
+  watch: {},
   created: function created() {},
   components: {
     VueSlickCarousel: vue_slick_carousel__WEBPACK_IMPORTED_MODULE_0___default.a
@@ -16651,7 +16541,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*#testimonial-slider{\r\n    min-height: 40px; \r\n}\r\n.slick-slide .slick-active .slick-current{\r\n    margin : 15px;\r\n}\r\n.slick-slide .slick-active {\r\n    margin : 15px;\r\n}*/\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*#testimonial-slider{\r\n    min-height: 40px; \r\n}\r\n.slick-slide .slick-active .slick-current{\r\n    margin : 15px;\r\n}\r\n.slick-slide .slick-active {\r\n    margin : 15px;\r\n}*/\r\n", ""]);
 
 // exports
 
@@ -58221,7 +58111,7 @@ var render = function() {
             "div",
             {},
             [
-              !_vm.loading
+              _vm.data
                 ? _c(
                     "VueSlickCarousel",
                     _vm._b({}, "VueSlickCarousel", _vm.settings, false),
@@ -59310,7 +59200,7 @@ var render = function() {
                 attrs: { id: "testimonial-slider" }
               },
               [
-                !_vm.loading
+                _vm.data
                   ? _c(
                       "VueSlickCarousel",
                       _vm._b({}, "VueSlickCarousel", _vm.settings, false),
@@ -97876,8 +97766,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
   created: function created() {
     setInterval(this.timer, 1000);
     setInterval(this.btcRate, 2000);
-    setInterval(this.btcVolume, 60000);
-    setInterval(this.getUpdates, 300000);
+    setInterval(this.btcVolume, 60000); // setInterval(this.getUpdates, 300000)
+
     this.btcRate(); // this.getIp()
 
     this.btcVolume();
@@ -97933,7 +97823,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     getPackages: function getPackages() {
       var _this = this;
 
-      this.form.get("/auth/packagess").then(function (response) {
+      this.$http.get("/auth/packagess").then(function (response) {
         _this.packages = response.data.data.item;
       })["catch"](function (error) {
         console.log(error.response);
@@ -97942,7 +97832,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     getPayments: function getPayments() {
       var _this2 = this;
 
-      this.form.get("/auth/paymentss").then(function (response) {
+      this.$http.get("/auth/paymentss").then(function (response) {
         _this2.payments = response.data.data.item.data;
       })["catch"](function (error) {
         console.log(error.response);
@@ -97951,7 +97841,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     getNews: function getNews() {
       var _this3 = this;
 
-      this.form.get("/auth/newss").then(function (response) {
+      this.$http.get("/auth/newss").then(function (response) {
         _this3.news = response.data.data.item;
       })["catch"](function (error) {
         console.log(error.response);
@@ -97960,7 +97850,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     getTeams: function getTeams() {
       var _this4 = this;
 
-      this.form.get("/auth/teamss").then(function (response) {
+      this.$http.get("/auth/teamss").then(function (response) {
         _this4.teams = response.data.data.item;
       })["catch"](function (error) {
         console.log(error.response);
@@ -97969,7 +97859,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     getInvestors: function getInvestors() {
       var _this5 = this;
 
-      this.form.get("/auth/investorss").then(function (response) {
+      this.$http.get("/auth/investorss").then(function (response) {
         _this5.investors = response.data.data.item;
       })["catch"](function (error) {
         console.log(error.response);
@@ -97978,7 +97868,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     getTestimonials: function getTestimonials() {
       var _this6 = this;
 
-      this.form.get("/auth/testimonialss").then(function (response) {
+      this.$http.get("/auth/testimonialss").then(function (response) {
         _this6.testimonials = response.data.data.item;
       })["catch"](function (error) {
         console.log(error);
@@ -97987,7 +97877,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     getTransactions: function getTransactions() {
       var _this7 = this;
 
-      this.form.get("/auth/transactionss?pageSize=6&reference=SELF").then(function (response) {
+      this.$http.get("/auth/transactionss?pageSize=6&reference=SELF").then(function (response) {
         _this7.transactions = response.data.data.item;
       })["catch"](function (error) {
         console.log(error.response);
@@ -97996,7 +97886,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     getWithdrawals: function getWithdrawals() {
       var _this8 = this;
 
-      this.form.get("/auth/withdrawalss?pageSize=6").then(function (response) {
+      this.$http.get("/auth/withdrawalss?pageSize=6").then(function (response) {
         _this8.withdrawals = response.data.data.item;
       })["catch"](function (error) {
         console.log(error.response);
@@ -98068,45 +97958,44 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     timer: function timer() {
       this.time = moment__WEBPACK_IMPORTED_MODULE_12___default()().format("h:mm:ss a");
     },
-    btcRate: function btcRate() {
-      var _this9 = this;
-
-      this.form.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(function (response) {
-        _this9.usd_btc_rate = response.data.bpi.USD.rate;
-        _this9.eur_btc_rate = response.data.bpi.EUR.rate;
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
+    btcRate: function btcRate() {// this.$http.get("http://api.coindesk.com/v1/bpi/currentprice.json")
+      //     .then(response => {
+      //         this.usd_btc_rate = response.data.bpi.USD.rate
+      //         this.eur_btc_rate = response.data.bpi.EUR.rate
+      //     })
+      //     .catch(error => {
+      //         console.log(error.response)
+      //     })
     },
-    btcVolume: function btcVolume() {
-      var _this10 = this;
-
-      this.form.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT").then(function (response) {
-        var volume = response.data.volume;
-        _this10.btc_volume = parseInt(volume) / 3;
-        _this10.active_trade = volume; // console.log(response.data);
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
+    btcVolume: function btcVolume() {// this.$http.get("http://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT")
+      //     .then(response => {
+      //         let volume = response.data.volume
+      //         this.btc_volume = parseInt(volume) / 3
+      //         this.active_trade = volume
+      //         // console.log(response.data);
+      //     })
+      //     .catch(error => {
+      //         console.log(error.response)
+      //     })
     },
     getIp: function getIp() {
-      var _this11 = this;
+      var _this9 = this;
 
       var form = new vform__WEBPACK_IMPORTED_MODULE_18__["Form"]();
       form.get("https://api.ipify.org?format=json").then(function (response) {
-        _this11.ip = response.data.ip;
+        _this9.ip = response.data.ip;
         localStorage.ip = JSON.stringify(response.data.ip);
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     refreshUser: function refreshUser() {
-      var _this12 = this;
+      var _this10 = this;
 
       this.$auth.fetch({
         params: {},
         success: function success(response) {
-          _this12.user = _this12.$auth.user();
+          _this10.user = _this10.$auth.user();
         },
         error: function error(_error) {
           console.log(_error.response.data);

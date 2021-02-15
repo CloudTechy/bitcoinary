@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div id="testimonial-slider" class="testimonial-slider">
-                        <VueSlickCarousel v-if = "!loading" v-bind="settings">
+                        <VueSlickCarousel v-if = "data" v-bind="settings">
                               <div :key = "testimonial.id" v-for="(testimonial) in data" class="single-slide">
                             <div class="testimonial-card m-2">
                                 <div class="testimonial-card__content">
@@ -33,54 +33,6 @@
                                 </div>
                             </div>
                         </div>
-                          <!--   <div class="single-slide">
-                                <div class="testimonial-card">
-                                    <div class="testimonial-card__content">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus
-                                            obcaecati.</p>
-                                    </div>
-                                    <div class="testimonial-card__client">
-                                        <div class="thumb">
-                                            <img src="assets/images/testimonial/1.jpg" alt="image">
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="name">Fahaddevs</h6>
-                                            <span class="designation">CEO of fahaddevs</span>
-                                            <div class="ratings">
-                                                <i class="las la-star"></i>
-                                                <i class="las la-star"></i>
-                                                <i class="las la-star"></i>
-                                                <i class="las la-star"></i>
-                                                <i class="las la-star"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-slide">
-                                <div  class="testimonial-card">
-                                    <div class="testimonial-card__content">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos minus, assumenda soluta unde veritatis voluptatibus adipisci, aliquid, non officiis repudiandae rerum porro odio ea laborum veniam numquam doloribus
-                                            obcaecati.</p>
-                                    </div>
-                                    <div class="testimonial-card__client">
-                                        <div class="thumb">
-                                            <img src="assets/images/testimonial/2.jpg" alt="image">
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="name">Alina</h6>
-                                            <span class="designation">CTO of fahaddevs</span>
-                                            <div class="ratings">
-                                                <i class="las la-star"></i>
-                                                <i class="las la-star"></i>
-                                                <i class="las la-star"></i>
-                                                <i class="las la-star"></i>
-                                                <i class="las la-star"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                         </VueSlickCarousel>
                     </div>
                 </div>
@@ -131,20 +83,11 @@ export default {
                     }
                 ]
             },
-            loading: true,
             key: 1,
         }
 
     },
     watch: {
-        data() {
-            if (this.data) {
-                this.key++
-                this.loading = false
-            } else {
-                this.loading = true
-            }
-        }
     },
     created() {
 

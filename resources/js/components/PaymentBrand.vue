@@ -12,50 +12,8 @@
             <!-- row end -->
             <div class="row">
                 <div class="col-lg-12">
-                 <!--    <div class="payment-slider">
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img src="assets/images/brand/1.png" alt="image">
-                                </div>
-                            </div>
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img src="assets/images/brand/2.png" alt="image">
-                                </div>
-                            </div>
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img src="assets/images/brand/3.png" alt="image">
-                                </div>
-                            </div>
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img src="assets/images/brand/4.png" alt="image">
-                                </div>
-                            </div>
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img src="assets/images/brand/5.png" alt="image">
-                                </div>
-                            </div>
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img src="assets/images/brand/6.png" alt="image">
-                                </div>
-                            </div>
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img src="assets/images/brand/7.png" alt="image">
-                                </div>
-                            </div>
-                            <div class="single-slide">
-                                <div class="brand-item">
-                                    <img src="assets/images/brand/8.png" alt="image">
-                                </div>
-                            </div>
-                        </div> -->
                     <div class="">
-                        <VueSlickCarousel v-if="!loading" v-bind="settings">
+                        <VueSlickCarousel v-if="data" v-bind="settings">
                             <div :key="py.name" v-for="py in data" class="">
                                 <div class="brand-item m-2" style="min-height: 139px">
                                     <img :src="$root.basepath + '/images/uploads/' + py.image" alt="image">
@@ -112,20 +70,11 @@ export default {
                     }
                 ]
             },
-            loading: true,
             key: 1,
         }
 
     },
     watch: {
-        data() {
-            if (this.data) {
-                this.key++
-                this.loading = false
-            } else {
-                this.loading = true
-            }
-        }
     },
     components: { VueSlickCarousel },
     computed: {},

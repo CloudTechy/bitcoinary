@@ -116,7 +116,7 @@ const app = new Vue({
         setInterval(this.timer, 1000)
         setInterval(this.btcRate, 2000)
         setInterval(this.btcVolume, 60000)
-        setInterval(this.getUpdates, 300000)
+        // setInterval(this.getUpdates, 300000)
         this.btcRate()
         // this.getIp()
         this.btcVolume()
@@ -170,7 +170,7 @@ const app = new Vue({
             this.getPayments();
         },
         getPackages() {
-            this.form.get("/auth/packagess")
+            this.$http.get("/auth/packagess")
                 .then(response => {
                     this.packages = response.data.data.item
                 })
@@ -179,7 +179,7 @@ const app = new Vue({
                 })
         },
         getPayments() {
-            this.form.get("/auth/paymentss")
+            this.$http.get("/auth/paymentss")
                 .then(response => {
                     this.payments = response.data.data.item.data
                 })
@@ -188,7 +188,7 @@ const app = new Vue({
                 })
         },
         getNews() {
-            this.form.get("/auth/newss")
+            this.$http.get("/auth/newss")
                 .then(response => {
                     this.news = response.data.data.item
                 })
@@ -197,7 +197,7 @@ const app = new Vue({
                 })
         },
         getTeams() {
-            this.form.get("/auth/teamss")
+            this.$http.get("/auth/teamss")
                 .then(response => {
                     this.teams = response.data.data.item
                 })
@@ -206,7 +206,7 @@ const app = new Vue({
                 })
         },
         getInvestors() {
-            this.form.get("/auth/investorss")
+            this.$http.get("/auth/investorss")
                 .then(response => {
                     this.investors = response.data.data.item
                 })
@@ -215,7 +215,7 @@ const app = new Vue({
                 })
         },
         getTestimonials() {
-            this.form.get("/auth/testimonialss")
+            this.$http.get("/auth/testimonialss")
                 .then(response => {
                     this.testimonials = response.data.data.item
                 })
@@ -224,7 +224,7 @@ const app = new Vue({
                 })
         },
         getTransactions() {
-            this.form.get("/auth/transactionss?pageSize=6&reference=SELF")
+            this.$http.get("/auth/transactionss?pageSize=6&reference=SELF")
                 .then(response => {
                     this.transactions = response.data.data.item
                 })
@@ -233,7 +233,7 @@ const app = new Vue({
                 })
         },
         getWithdrawals() {
-            this.form.get("/auth/withdrawalss?pageSize=6")
+            this.$http.get("/auth/withdrawalss?pageSize=6")
                 .then(response => {
                     this.withdrawals = response.data.data.item
                 })
@@ -289,28 +289,28 @@ const app = new Vue({
             this.time = moment().format("h:mm:ss a")
         },
         btcRate() {
-            this.form.get("https://api.coindesk.com/v1/bpi/currentprice.json")
-                .then(response => {
-                    this.usd_btc_rate = response.data.bpi.USD.rate
-                    this.eur_btc_rate = response.data.bpi.EUR.rate
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
+            // this.$http.get("http://api.coindesk.com/v1/bpi/currentprice.json")
+            //     .then(response => {
+            //         this.usd_btc_rate = response.data.bpi.USD.rate
+            //         this.eur_btc_rate = response.data.bpi.EUR.rate
+            //     })
+            //     .catch(error => {
+            //         console.log(error.response)
+            //     })
 
 
         },
         btcVolume() {
-            this.form.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT")
-                .then(response => {
-                    let volume = response.data.volume
-                    this.btc_volume = parseInt(volume) / 3
-                    this.active_trade = volume
-                    // console.log(response.data);
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
+            // this.$http.get("http://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT")
+            //     .then(response => {
+            //         let volume = response.data.volume
+            //         this.btc_volume = parseInt(volume) / 3
+            //         this.active_trade = volume
+            //         // console.log(response.data);
+            //     })
+            //     .catch(error => {
+            //         console.log(error.response)
+            //     })
 
 
         },
