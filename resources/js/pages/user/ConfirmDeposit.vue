@@ -81,12 +81,12 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-9">
                         <div class="account-card">
-                            <div class="account-card__header bg_img overlay--one" :style="'background:url('+ $root.basepath +'/images/bg/bg-6.jpg) no-repeat 0 0;'" >
+                            <div class="account-card__header bg_img overlay--one" :style="'background:url('+ $root.basepath +'/images/bg/bg-6.jpg) no-repeat 0 0;'">
                                 <h2 class="section-title text-center">Make an <span class="base--color"> Investment</span></h2>
                             </div>
                             <div class="account-card__body">
                                 <h3 class="text-center">Investment Details</h3>
-                                <form class="mt-4" autocomplete="off" @submit.prevent="register" method="post">
+                                <form class="mt-4" autocomplete="off" @submit.prevent="$refs.paymentModalbtn.click" method="post">
                                     <!-- <div class="form-group">
                                         <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="has_error && !success  ">
                                             <p v-if="!unknown_error && errors" class="text-center  m-3 small">You have some errors in your form</p>
@@ -95,10 +95,9 @@
                                     </div> -->
                                     <div class="form-group">
                                         <label>Payment method</label>
-                                        <select v-model="paymentMethod" class="base--bg">
+                                        <select required="" v-model="paymentMethod" class="base--bg">
                                             <option class="text-capitalize" :value="processor.payment_method" v-for="processor in paymentMethods">{{'Direct Invest with ' + processor.payment_method}}</option>
                                         </select>
-                                        
                                     </div>
                                     <div class="form-group">
                                         <label>Capital</label>
@@ -107,15 +106,18 @@
                                     </div>
                                     <div class="p-0 m-0  row">
                                         <div class="col mt-3">
-                                        <button :disabled="false" ref="submit" type="submit" :class="{'cmn-btn' : true,'btn' : true, disabled : false}">Proceed</button>
-                                    </div>
+                                            <button :disabled="false" ref="submit" type="submit" :class="{'cmn-btn' : true,'btn' : true, disabled : false}">Proceed</button>
+                                        </div>
                                         <div class="col mt-3 text-left text-sm-right">
-                                        <button @click.prevent = "$emit('changeComponent', 'DepositPlan', '')" class="cmn-btn btn">Back</button>
+                                            <button @click.prevent="$emit('changeComponent', 'DepositPlan', '')" class="cmn-btn btn">Back</button>
+                                        </div>
                                     </div>
-                                    
-                                    </div>
-                                    
                                 </form>
+                            </div>
+                            <button type="button" ref="paymentModalbtn" @click="paymentDetails" style="visibility: hidden;" id="add" data-toggle="modal" data-target="#paymentDetails"></button>
+
+                            <div class="modal fade" ref="paymentDetails" id="paymentDetails">
+                                <paymentDetails></paymentDetails>
                             </div>
                         </div>
                     </div>
@@ -126,7 +128,7 @@
     </div>
 </template>
 <script>
-export default {
+    export default {
     data() {
         return {
 
@@ -138,7 +140,8 @@ export default {
             }),
             error: '',
             paymentMethods : undefined,
-            paymentMethod : undefined
+            paymentMethod : undefined,
+            validated : false,
         }
     },
     mounted() {
@@ -174,29 +177,31 @@ export default {
 
     },
     methods: {
-        processDeposit() {
-            this.$refs.wlt.innerText = this.user.admin_wallet
-            this.processing(true)
-            var data = new FormData()
-            var file = this.$refs.fileInput.files[0]
-            this.form.pop = file
-            this.form.submit('post', "/auth/packageusers", {
-                    transformRequest: [function(data, headers) {
-                        return objectToFormData(data)
-                    }]
+        showPaymentDetails() {
+            this.validated = true
+            setTimeout(() => { this.validated = false }, 5000);
+            // this.$refs.wlt.innerText = this.user.admin_wallet
+            // this.processing(true)
+            // var data = new FormData()
+            // var file = this.$refs.fileInput.files[0]
+            // this.form.pop = file
+            // this.form.submit('post', "/auth/packageusers", {
+            //         transformRequest: [function(data, headers) {
+            //             return objectToFormData(data)
+            //         }]
 
-                })
-                .then(response => {
-                    window.scrollTo(0, 250)
-                    this.$emit('success', 'The deposit has been saved. It will become active when the administrator checks statistics.')
-                    this.processing(false)
-                })
-                .catch(error => {
-                    this.errors = error.response.data.error
-                    this.error = error.response.data.message
-                    setTimeout(() => { window.scrollTo(0, 600); this.$emit('changeComponent', 'DepositPlan', this.selectedPackage)  }, 2000);
-                    this.processing(false)
-                })
+            //     })
+            //     .then(response => {
+            //         window.scrollTo(0, 250)
+            //         this.$emit('success', 'The deposit has been saved. It will become active when the administrator checks statistics.')
+            //         this.processing(false)
+            //     })
+            //     .catch(error => {
+            //         this.errors = error.response.data.error
+            //         this.error = error.response.data.message
+            //         setTimeout(() => { window.scrollTo(0, 600); this.$emit('changeComponent', 'DepositPlan', this.selectedPackage)  }, 2000);
+            //         this.processing(false)
+            //     })
         },
         processing(status) {
             if (status) {
@@ -227,10 +232,10 @@ export default {
 
 </script>
 <style type="text/css" scoped="">
-   /* .bg_img{
+/* .bg_img{
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
     }*/
-</style>
 
+</style>
