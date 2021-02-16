@@ -224,7 +224,7 @@
                                                         <div id="link">https://bitcoinarymint.com/?ref=bitcoinary</div>
                                                     </div>
                                                     <div class="col-lg-3 col-md-4 col-sm-3 m-2 text-md-right">
-                                                        <button v-clipboard="Referral_link" class="btn base--bg text-white" data-clipboard-target="#link">COPY LINK</button>
+                                                        <button v-clipboard="Referral_link" class="cmn-btn" data-clipboard-target="#link">COPY LINK</button>
                                                     </div>
                                                 </div>
                                             </div>

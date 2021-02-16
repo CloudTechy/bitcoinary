@@ -1,34 +1,46 @@
 <template>
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg_img" :style="'backgroundImage:url('+ $root.basepath + '/images/bg/bg-5.jpg'">
+        <div class="modal-content bg-dark bg_img" :style="'backgroundImage:url('+ $root.basepath + '/images/bg/bg-5.jpg'">
             <div class="modal-header text-center">
                 <h3 class="modal-title font-weight-bold">Deposit</h3>
-                <button type="button" data-dismiss="modal">&times;</button>
+                <button class="btn base--color f-size-18" type="button" data-dismiss="modal">&times;</button>
             </div>
-            <div class="modal-body text-centerT">
-                <div class="account-card__body small">
-                    <p>Transfer Bitcoin address </p>
-                    <p>Once we confirm your payment, your account will be funded instantly,<br>Please note that there is a minimum deposit of 300USD</p>
+            <div class="modal-body">
+                <div class="text-center small">
+                    <p class="mb-2">Transfer Bitcoin address </p>
+                    <p>Once we confirm your payment, your account will be funded instantly,<br>Please note that you are making deposit of 300 USD</p>
+                    <div class="m-3">
+                        <vue-qrcode :value="Referral_link" />
+                    </div>
                     <div class="input-group mb-3">
-                        <input type="text" v-model = "Referral_link" disabled="" id="wallet" class="form-control">
+                        <input type="text" v-model="Referral_link" disabled="" id="wallet" class="text-center form-control">
                         <div class="input-group-append">
-                            <button v-clipboard="Referral_link" class="btn base--bg text-white" data-clipboard-target="#wallet">Copy</button>
+                            <button v-clipboard="Referral_link" style="border-radius: 0px;" class="cmn-btn" data-clipboard-target="#wallet">Copy</button>
                         </div>
                     </div>
-                    <vue-qrcode value="https://www.1stg.me" />
-                    <a href="/about" class="cmn-btn mt-4">Pay Using BTC Wallet App</a>
-                    <p class="f-size-14 mb-3">If you do not know where to buy bitcoin <a href="/forgot_password" class="base--color">click here</a></p>
+                    <a href="#" class="cmn-btn mt-2">Pay Using BTC Wallet App</a>
+                    <p class="f-size-14 m-3">If you do not know where to buy bitcoin <a href="#" class="base--color">click here</a></p>
+                    <p class="f-size-14 m-3">If you have made this transfer, upload your proof of payment (pop)</p>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn base--bg" type="button">Upload</button>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile03">
+                            <label class="custom-file-label" for="inputGroupFile03">Choose pop file</label>
+                        </div>
+                    </div>
                     <!-- <button" type="button" class="cmn-btn">Login Now</button> -->
                 </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer mb-4">
                 <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </template>
 <script>
-    import VueQrcode from 'vue-qrcode'
+import VueQrcode from 'vue-qrcode'
 export default {
 
     mounted() {
@@ -36,12 +48,12 @@ export default {
     },
     data() {
         return {
-            Referral_link : "jdshjdshjdhjdhjdhjdhjdsh"
+            Referral_link: "jdshjdshjdhjdhjdhjdhjdsh"
         }
     },
     components: {
-    VueQrcode,
-  },
+        VueQrcode,
+    },
     beforeDestroy() {
         // this.$refs.closeButton.click();
         // this.form.reset();
@@ -109,3 +121,8 @@ export default {
 }
 
 </script>
+<style type="text/css">
+    .custom-file-label::after {
+            background-color: #cca354 !important;
+    }
+</style>
