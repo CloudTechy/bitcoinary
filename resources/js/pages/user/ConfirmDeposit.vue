@@ -96,12 +96,12 @@
                                     <div class="form-group">
                                         <label>Payment method</label>
                                         <select required="" v-model="paymentMethod" class="base--bg">
-                                            <option class="text-capitalize" :value="processor.payment_method" v-for="processor in paymentMethods">{{'Direct Invest with ' + processor.payment_method}}</option>
+                                            <option class="text-capitalize" :value="processor" v-for="processor in paymentMethods">{{'Direct Invest ' + processor.payment_method}}</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Capital</label>
-                                        <input type="number" required placeholder="Enter amount" :min="plan.min_deposit" :max="plan.max_deposit" v-model="form.amount" :class="{'form-control' : true, 'error-input': errors.amount != undefined}">
+                                        <input type="number" required placeholder="Enter amount" :min="plan.min_deposit" :max="plan.max_deposit" v-model="amount" :class="{'form-control' : true, 'error-input': errors.amount != undefined}">
                                         <p v-if="plan.name" class="small p-1">{{'Limit: $' + plan.min_deposit + ' - $' + plan.max_deposit}}</p>
                                     </div>
                                     <div class="p-0 m-0  row">
@@ -114,10 +114,10 @@
                                     </div>
                                 </form>
                             </div>
-                            <button type="button" ref="paymentModalbtn" @click="paymentDetails" style="visibility: hidden;" id="add" data-toggle="modal" data-target="#paymentDetails"></button>
+                            <button type="button" ref="paymentModalbtn" @click="showPaymentDetails" style="visibility: hidden;" id="add" data-toggle="modal" data-target="#paymentDetails"></button>
 
                             <div class="modal fade" ref="paymentDetails" id="paymentDetails">
-                                <paymentDetails></paymentDetails>
+                                <paymentDetails :plan = "plan" :paymentMethod = "paymentMethod" :amount = "amount" :processor = "getPaymentProcessorDetails(paymentMethod.payment_method)"></paymentDetails>
                             </div>
                         </div>
                     </div>
@@ -136,12 +136,13 @@
             form: new Form({
                 package_id: this.plan.id,
                 user_id: this.user.id,
-                amount : undefined
+                
             }),
             error: '',
             paymentMethods : undefined,
-            paymentMethod : undefined,
+            paymentMethod : {payment_method:''},
             validated : false,
+            amount : undefined,
         }
     },
     mounted() {
@@ -177,6 +178,9 @@
 
     },
     methods: {
+        getPaymentProcessorDetails(search){
+           return this.$root.myFilter(this.$root.payments, search)[0]
+        },
         showPaymentDetails() {
             this.validated = true
             setTimeout(() => { this.validated = false }, 5000);

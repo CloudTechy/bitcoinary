@@ -7308,95 +7308,104 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {},
   data: function data() {
     return {
-      Referral_link: "jdshjdshjdhjdhjdhjdhjdsh"
+      form: new Form({}),
+      subscription_status: false,
+      label: 'Choose pop file'
     };
   },
   components: {
     VueQrcode: vue_qrcode__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
+  props: ['plan', 'paymentMethod', 'processor', 'amount'],
+  computed: {},
   beforeDestroy: function beforeDestroy() {// this.$refs.closeButton.click();
     // this.form.reset();
   },
   methods: {
-    add: function add() {
+    subscribe: function subscribe() {
       var _this = this;
 
-      this.$Progress.start();
-      this.form.post('./api/suppliers').then(function (response) {
-        _this.$refs.closeButton.click();
-
-        window.dispatchEvent(new Event('close_sidebar_min'));
-
-        if (response.data.status == true) {
-          Fire.$emit('supplier_created', response.data.data);
-
-          _this.form.reset();
-
-          _this.$Progress.finish();
-
-          _this.$root.alert('success', 'success', 'supplier created');
-        } else {
-          _this.$Progress.fail();
-
-          _this.$root.alert('error', 'error', 'An unexpected error occured, Try again Later');
-        }
-      })["catch"](function (error) {
-        _this.$Progress.fail();
-
-        _this.$root.alert('error', 'error', error.response.data.message);
-
-        var error = error.response.data.error;
-        console.log(error);
-
-        if (error.name) {
-          _this.$refs.name.classList.add('is-invalid');
+      if (!this.subscription_status) {
+        if (this.$refs.fileInput.files[0].size > 4000000) {
+          return this.$root.alert('error', ' ', ' File size is too large.');
         }
 
-        if (error.email) {
-          _this.$refs.email.classList.add('is-invalid');
-        }
+        this.$root.loader('show');
+        var data = new FormData();
+        var file = this.$refs.fileInput.files[0];
+        var form = new Form();
+        form.pop = file;
+        form.user_id = this.$auth.user().id;
+        form.amount = this.amount;
+        form.submit('post', "/auth/packageusers", {
+          transformRequest: [function (data, headers) {
+            return objectToFormData(data);
+          }]
+        }).then(function (response) {
+          _this.$root.loader('hide');
 
-        if (error.number) {
-          _this.$refs.number.classList.add('is-invalid');
-        }
+          _this.subscription_status = true;
 
-        if (error.city) {
-          _this.$refs.city.classList.add('is-invalid');
-        }
+          _this.$emit('popUploaded');
 
-        if (error.country) {
-          _this.$refs.country.classList.add('is-invalid');
-        }
+          _this.$root.alert('success', '', response.data.message);
 
-        if (error.acc_name) {
-          _this.$refs.acc_name.classList.add('is-invalid');
-        }
+          form.reset();
+          _this.label = 'Choose pop file';
 
-        if (error.acc_number) {
-          _this.$refs.acc_number.classList.add('is-invalid');
-        }
+          _this.$refs.closeButton.click();
 
-        if (error.bank_name) {
-          _this.$refs.bank_name.classList.add('is-invalid');
-        }
+          window.scrollTo(0, 0);
+          console.log(response.data); // this.$emit('success', 'The deposit has been saved. It will become active when the administrator checks statistics.')
+        })["catch"](function (error) {
+          _this.$root.loader('hide'); // this.errors = error.response.data.error
 
-        if (error.is_stock_available) {
-          _this.$refs.is_stock_available.classList.add('is-invalid');
-        }
 
-        if (error.address) {
-          _this.$refs.address.classList.add('is-invalid');
-        }
-      });
+          console.log(error, error.response); // this.error = error.response.data.message
+
+          _this.$root.alert('error', '', 'Upload not successful, try again.'); // setTimeout(() => { window.scrollTo(0, 600); this.$emit('changeComponent', 'DepositPlan', this.selectedPackage)  }, 2000);
+
+        });
+      } else {
+        this.$root.alert('error', '', 'you have submitted already');
+        console.log('you have submitted already');
+      }
     },
-    closeAddComponent: function closeAddComponent() {
-      window.dispatchEvent(new Event('close_sidebar_min'));
-      return true;
+    updateLabel: function updateLabel() {
+      this.label = this.$refs.fileInput.files[0].name;
+
+      if (this.$refs.fileInput.files[0].size > 4000000) {
+        this.$root.alert('warning', ' ', ' File size is too large.');
+      }
     }
   }
 });
@@ -10359,13 +10368,15 @@ __webpack_require__.r(__webpack_exports__);
       errors: '',
       form: new Form({
         package_id: this.plan.id,
-        user_id: this.user.id,
-        amount: undefined
+        user_id: this.user.id
       }),
       error: '',
       paymentMethods: undefined,
-      paymentMethod: undefined,
-      validated: false
+      paymentMethod: {
+        payment_method: ''
+      },
+      validated: false,
+      amount: undefined
     };
   },
   mounted: function mounted() {
@@ -10408,6 +10419,9 @@ __webpack_require__.r(__webpack_exports__);
 
   },
   methods: {
+    getPaymentProcessorDetails: function getPaymentProcessorDetails(search) {
+      return this.$root.myFilter(this.$root.payments, search)[0];
+    },
     showPaymentDetails: function showPaymentDetails() {
       var _this3 = this;
 
@@ -18655,7 +18669,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.custom-file-label::after {\n        background-color: #cca354 !important;\n}\n", ""]);
+exports.push([module.i, "\n.custom-file-label::after {\r\n    background-color: #cca354 !important;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -18750,7 +18764,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* .bg_img{\r\n        background-size: cover !important;\r\n        background-position: center !important;\r\n        background-repeat: no-repeat !important;\r\n    }*/\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* .bg_img{\r\n        background-size: cover !important;\r\n        background-position: center !important;\r\n        background-repeat: no-repeat !important;\r\n    }*/\r\n\r\n", ""]);
 
 // exports
 
@@ -65337,80 +65351,288 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "modal-body" }, [
           _c("div", { staticClass: "text-center small" }, [
-            _c("p", { staticClass: "mb-2" }, [
-              _vm._v("Transfer Bitcoin address ")
-            ]),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "m-3" },
-              [_c("vue-qrcode", { attrs: { value: _vm.Referral_link } })],
-              1
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "input-group mb-3" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.Referral_link,
-                    expression: "Referral_link"
-                  }
-                ],
-                staticClass: "text-center form-control",
-                attrs: { type: "text", disabled: "", id: "wallet" },
-                domProps: { value: _vm.Referral_link },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.Referral_link = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "input-group-append" }, [
-                _c(
-                  "button",
-                  {
-                    directives: [
-                      {
-                        name: "clipboard",
-                        rawName: "v-clipboard",
-                        value: _vm.Referral_link,
-                        expression: "Referral_link"
-                      }
+            _vm.paymentMethod.currency_type == "crypto"
+              ? _c("div", { staticClass: "p-0 m-0" }, [
+                  _c("h3", { staticClass: "mb-2" }, [
+                    _vm._v("Transfer "),
+                    _c("span", { staticClass: "base--color" }, [
+                      _vm._v(
+                        _vm._s(_vm.paymentMethod.payment_method) + " Address "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Once we confirm your payment, your account will be funded instantly,"
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "Please note that you are making a deposit of " +
+                        _vm._s(_vm.$root.normalNumeral(_vm.amount)) +
+                        " USD"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "m-3" },
+                    [
+                      _c("vue-qrcode", {
+                        attrs: { value: _vm.paymentMethod.wallet }
+                      })
                     ],
-                    staticClass: "cmn-btn",
-                    staticStyle: { "border-radius": "0px" },
-                    attrs: { "data-clipboard-target": "#wallet" }
-                  },
-                  [_vm._v("Copy")]
-                )
-              ])
-            ]),
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "input-group mb-3" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.paymentMethod.wallet,
+                          expression: "paymentMethod.wallet"
+                        }
+                      ],
+                      staticClass: "text-center form-control",
+                      attrs: { type: "text", disabled: "", id: "wallet" },
+                      domProps: { value: _vm.paymentMethod.wallet },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.paymentMethod,
+                            "wallet",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "input-group-append" }, [
+                      _c(
+                        "button",
+                        {
+                          directives: [
+                            {
+                              name: "clipboard",
+                              rawName: "v-clipboard",
+                              value: _vm.paymentMethod.wallet,
+                              expression: "paymentMethod.wallet"
+                            }
+                          ],
+                          staticClass: "cmn-btn",
+                          staticStyle: { "border-radius": "0px" },
+                          attrs: { "data-clipboard-target": "#wallet" }
+                        },
+                        [_vm._v("Copy")]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "f-size-14 m-2" }, [
+                    _vm._v("If you do not know where to buy "),
+                    _c("span", { staticClass: "text-lowercase" }, [
+                      _vm._v(_vm._s(_vm.paymentMethod.payment_method))
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      { staticClass: "base--color", attrs: { href: "#" } },
+                      [_vm._v("click here")]
+                    )
+                  ])
+                ])
+              : _c("div", { staticClass: "p-0 m-0" }, [
+                  _c("h3", { staticClass: "mb-2" }, [
+                    _vm._v("Transfer "),
+                    _c("span", { staticClass: "base--color" }, [
+                      _vm._v(
+                        _vm._s(_vm.paymentMethod.payment_method) + " Account"
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Once we confirm your payment, your account will be funded instantly,"
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "Please note that you are making deposit of " +
+                        _vm._s(_vm.$root.normalNumeral(_vm.amount)) +
+                        " USD"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "p-0 mt-3" }, [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _vm.paymentMethod.bank_name
+                      ? _c("p", [
+                          _c("b", [_vm._v("Bank Name:")]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _vm._v(_vm._s(_vm.paymentMethod.bank_name))
+                          ])
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.paymentMethod.acc_name
+                      ? _c("p", [
+                          _c("b", [_vm._v("Account Name:")]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _vm._v(_vm._s(_vm.paymentMethod.acc_name))
+                          ])
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.paymentMethod.acc_number
+                      ? _c("p", [
+                          _c("b", [_vm._v("Account Number:")]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _vm._v(_vm._s(_vm.paymentMethod.acc_number))
+                          ])
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.paymentMethod.swift_code
+                      ? _c("p", [
+                          _c("b", [_vm._v("Swift Code:")]),
+                          _vm._v(" "),
+                          _c("span", [
+                            _vm._v(_vm._s(_vm.paymentMethod.swift_code))
+                          ])
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "m-3" },
+                    [
+                      _c("vue-qrcode", {
+                        attrs: {
+                          quality: 1,
+                          value: "" + _vm.paymentMethod.acc_number
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "input-group mb-3" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.paymentMethod.acc_number,
+                          expression: "paymentMethod.acc_number"
+                        }
+                      ],
+                      staticClass: "text-center form-control",
+                      attrs: { type: "text", disabled: "", id: "acc_number" },
+                      domProps: { value: _vm.paymentMethod.acc_number },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.paymentMethod,
+                            "acc_number",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "input-group-append" }, [
+                      _c(
+                        "button",
+                        {
+                          directives: [
+                            {
+                              name: "clipboard",
+                              rawName: "v-clipboard",
+                              value: _vm.paymentMethod.acc_number,
+                              expression: "paymentMethod.acc_number"
+                            }
+                          ],
+                          staticClass: "cmn-btn",
+                          staticStyle: { "border-radius": "0px" },
+                          attrs: { "data-clipboard-target": "#wallet" }
+                        },
+                        [_vm._v("Copy")]
+                      )
+                    ])
+                  ])
+                ]),
             _vm._v(" "),
-            _c("a", { staticClass: "cmn-btn mt-2", attrs: { href: "#" } }, [
-              _vm._v("Pay Using BTC Wallet App")
-            ]),
-            _vm._v(" "),
-            _vm._m(2),
-            _vm._v(" "),
-            _c("p", { staticClass: "f-size-14 m-3" }, [
+            _c("p", { staticClass: "f-size-14 m-2" }, [
               _vm._v(
                 "If you have made this transfer, upload your proof of payment (pop)"
               )
             ]),
             _vm._v(" "),
-            _vm._m(3)
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.subscribe($event)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "input-group" }, [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "custom-file" }, [
+                    _c("input", {
+                      ref: "fileInput",
+                      staticClass: "custom-file-input",
+                      attrs: {
+                        required: "",
+                        type: "file",
+                        id: "inputGroupFile03"
+                      },
+                      on: { change: _vm.updateLabel }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "custom-file-label text-left",
+                        attrs: { for: "inputGroupFile03" }
+                      },
+                      [_vm._v(_vm._s(_vm.label))]
+                    )
+                  ])
+                ])
+              ]
+            )
           ])
         ]),
         _vm._v(" "),
-        _vm._m(4)
+        _c("div", { staticClass: "modal-footer mb-115" }, [
+          _c(
+            "button",
+            {
+              ref: "closeButton",
+              staticClass: "btn btn-outline-light",
+              attrs: { type: "button", "data-dismiss": "modal" }
+            },
+            [_vm._v("Close")]
+          )
+        ])
       ]
     )
   ])
@@ -65421,14 +65643,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "modal-header text-center" }, [
-      _c("h3", { staticClass: "modal-title font-weight-bold" }, [
+      _c("h3", { staticClass: "modal-title font-weight-bold base--color" }, [
         _vm._v("Deposit")
       ]),
       _vm._v(" "),
       _c(
         "button",
         {
-          staticClass: "btn base--color f-size-18",
+          staticClass: "btn base--color f-size-18 p-0",
           attrs: { type: "button", "data-dismiss": "modal" }
         },
         [_vm._v("×")]
@@ -65439,67 +65661,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", [
-      _vm._v(
-        "Once we confirm your payment, your account will be funded instantly,"
-      ),
-      _c("br"),
-      _vm._v("Please note that you are making deposit of 300 USD")
+    return _c("h4", [
+      _vm._v("Payment "),
+      _c("span", { staticClass: "base--color" }, [_vm._v("Details")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "f-size-14 m-3" }, [
-      _vm._v("If you do not know where to buy bitcoin "),
-      _c("a", { staticClass: "base--color", attrs: { href: "#" } }, [
-        _vm._v("click here")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group mb-3" }, [
-      _c("div", { staticClass: "input-group-prepend" }, [
-        _c(
-          "button",
-          { staticClass: "btn base--bg", attrs: { type: "button" } },
-          [_vm._v("Upload")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "custom-file" }, [
-        _c("input", {
-          staticClass: "custom-file-input",
-          attrs: { type: "file", id: "inputGroupFile03" }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          {
-            staticClass: "custom-file-label",
-            attrs: { for: "inputGroupFile03" }
-          },
-          [_vm._v("Choose pop file")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-footer mb-4" }, [
+    return _c("div", { staticClass: "input-group-prepend" }, [
       _c(
         "button",
-        {
-          staticClass: "btn btn-outline-light",
-          attrs: { type: "button", "data-dismiss": "modal" }
-        },
-        [_vm._v("Close")]
+        { staticClass: "btn base--bg text-white", attrs: { type: "submit" } },
+        [_vm._v("Upload")]
       )
     ])
   }
@@ -73855,13 +74030,12 @@ var render = function() {
                             "option",
                             {
                               staticClass: "text-capitalize",
-                              domProps: { value: processor.payment_method }
+                              domProps: { value: processor }
                             },
                             [
                               _vm._v(
                                 _vm._s(
-                                  "Direct Invest with " +
-                                    processor.payment_method
+                                  "Direct Invest " + processor.payment_method
                                 )
                               )
                             ]
@@ -73879,8 +74053,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.form.amount,
-                            expression: "form.amount"
+                            value: _vm.amount,
+                            expression: "amount"
                           }
                         ],
                         class: {
@@ -73894,13 +74068,13 @@ var render = function() {
                           min: _vm.plan.min_deposit,
                           max: _vm.plan.max_deposit
                         },
-                        domProps: { value: _vm.form.amount },
+                        domProps: { value: _vm.amount },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(_vm.form, "amount", $event.target.value)
+                            _vm.amount = $event.target.value
                           }
                         }
                       }),
@@ -73973,7 +74147,7 @@ var render = function() {
                   "data-toggle": "modal",
                   "data-target": "#paymentDetails"
                 },
-                on: { click: _vm.paymentDetails }
+                on: { click: _vm.showPaymentDetails }
               }),
               _vm._v(" "),
               _c(
@@ -73983,7 +74157,18 @@ var render = function() {
                   staticClass: "modal fade",
                   attrs: { id: "paymentDetails" }
                 },
-                [_c("paymentDetails")],
+                [
+                  _c("paymentDetails", {
+                    attrs: {
+                      plan: _vm.plan,
+                      paymentMethod: _vm.paymentMethod,
+                      amount: _vm.amount,
+                      processor: _vm.getPaymentProcessorDetails(
+                        _vm.paymentMethod.payment_method
+                      )
+                    }
+                  })
+                ],
                 1
               )
             ])

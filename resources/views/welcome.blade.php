@@ -98,7 +98,7 @@ s0.parentNode.insertBefore(s1,s0);
     <!-- <script src="{{asset('js/dashboard.js.download')}}" defer></script> -->
 
   
-  <!-- <script src="{{ asset('js/objectdata.js') }}" defer></script> -->
+  <script src="{{ asset('js/objectdata.js') }}" defer></script>
   <script>
     if('serviceWorker' in navigator) {
       navigator.serviceWorker
