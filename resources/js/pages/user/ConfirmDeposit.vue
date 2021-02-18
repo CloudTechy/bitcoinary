@@ -87,12 +87,9 @@
                             <div class="account-card__body">
                                 <h3 class="text-center">Investment Details</h3>
                                 <form class="mt-4" autocomplete="off" @submit.prevent="$refs.paymentModalbtn.click" method="post">
-                                    <!-- <div class="form-group">
-                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="has_error && !success  ">
-                                            <p v-if="!unknown_error && errors" class="text-center  m-3 small">You have some errors in your form</p>
-                                            <p class=" m-3 small" v-if="unknown_error">{{unknown_error}}</p>
+                                    <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="success-msg " v-if="message">
+                                             <p class="p-2 m-lg-3 m-sm-1">{{message.message}}</p>
                                         </div>
-                                    </div> -->
                                     <div class="form-group">
                                         <label>Payment method</label>
                                         <select required="" v-model="paymentMethod" class="base--bg">
@@ -114,10 +111,10 @@
                                     </div>
                                 </form>
                             </div>
-                            <button type="button" ref="paymentModalbtn" @click="showPaymentDetails" style="visibility: hidden;" id="add" data-toggle="modal" data-target="#paymentDetails"></button>
+                            <button type="button" ref="paymentModalbtn" style="visibility: hidden;" id="add" data-toggle="modal" data-target="#paymentDetails"></button>
 
                             <div class="modal fade" ref="paymentDetails" id="paymentDetails">
-                                <paymentDetails :plan = "plan" :paymentMethod = "paymentMethod" :amount = "amount" :processor = "getPaymentProcessorDetails(paymentMethod.payment_method)"></paymentDetails>
+                                <paymentDetails @popUploaded = "displayMessage" :key = "key" :plan = "plan" :paymentMethod = "paymentMethod" :amount = "amount" :processor = "getPaymentProcessorDetails(paymentMethod.payment_method)"></paymentDetails>
                             </div>
                         </div>
                     </div>
@@ -134,8 +131,6 @@
 
             errors: '',
             form: new Form({
-                package_id: this.plan.id,
-                user_id: this.user.id,
                 
             }),
             error: '',
@@ -143,10 +138,11 @@
             paymentMethod : {payment_method:''},
             validated : false,
             amount : undefined,
+            key : 0,
+            message : undefined,
         }
     },
     mounted() {
-        window.scrollTo(0, 350)
         this.getPaymentMethods()
     },
     watch: {
@@ -155,6 +151,14 @@
         },
         errors() {
             setTimeout(() => { this.errors = '' }, 5000);
+        },
+        amount(){
+            this.key++
+            this.message = undefined
+        },
+        paymentMethod(){
+            this.key++
+            this.message = undefined
         }
     },
     props: ['plan', 'user'],
@@ -181,32 +185,6 @@
         getPaymentProcessorDetails(search){
            return this.$root.myFilter(this.$root.payments, search)[0]
         },
-        showPaymentDetails() {
-            this.validated = true
-            setTimeout(() => { this.validated = false }, 5000);
-            // this.$refs.wlt.innerText = this.user.admin_wallet
-            // this.processing(true)
-            // var data = new FormData()
-            // var file = this.$refs.fileInput.files[0]
-            // this.form.pop = file
-            // this.form.submit('post', "/auth/packageusers", {
-            //         transformRequest: [function(data, headers) {
-            //             return objectToFormData(data)
-            //         }]
-
-            //     })
-            //     .then(response => {
-            //         window.scrollTo(0, 250)
-            //         this.$emit('success', 'The deposit has been saved. It will become active when the administrator checks statistics.')
-            //         this.processing(false)
-            //     })
-            //     .catch(error => {
-            //         this.errors = error.response.data.error
-            //         this.error = error.response.data.message
-            //         setTimeout(() => { window.scrollTo(0, 600); this.$emit('changeComponent', 'DepositPlan', this.selectedPackage)  }, 2000);
-            //         this.processing(false)
-            //     })
-        },
         processing(status) {
             if (status) {
                 this.$refs.process.innerText = "Processing..."
@@ -221,6 +199,7 @@
             this.$error = ''
             this.form.get("/auth/bankdetails/?user_id=1")
                 .then(response => {
+                    window.scrollTo(0, 350)
                     this.paymentMethods = response.data.data.item
                     this.$root.loader('hide')
                 })
@@ -230,6 +209,10 @@
                     console.log(error.response)
                 })
         },
+        displayMessage(msg){
+            this.message = msg
+            window.scrollTo(0, 350)
+        }
     },
     
 }

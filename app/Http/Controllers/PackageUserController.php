@@ -111,7 +111,7 @@ class PackageUserController extends Controller {
 				$this->referralPayment($subscription);
 
 				$subscription = new PackageUserResource($subscription);
-				return Helper::validRequest($subscription, 'subscription was successful', 200);
+				return Helper::validRequest($subscription, 'Your subscription has been activated successfully', 200);
 			} else {
 		        $pop = Helper::uploadImage($request, 'pop', 'images/pop');
 		        $transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $validated['amount'], 'pop' => $pop]);
@@ -126,7 +126,7 @@ class PackageUserController extends Controller {
 				DB::commit();
 				
 				$subscription = new PackageUserResource($subscription);
-				return Helper::validRequest($subscription, 'subscription is being processed', 200);
+				return Helper::validRequest($subscription, 'Your deposit has been saved. It will become active as soon as the checks are complete.', 200);
 			}
 
 		} catch (Exception $bug) {
@@ -169,7 +169,7 @@ class PackageUserController extends Controller {
 	 */
 	public function update(Request $request, PackageUser $packageuser) {
 		$validated = $request->validate([
-            'pop' => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
+            'pop' => 'required|mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
         ]);
         DB::beginTransaction();
         try {
@@ -312,7 +312,7 @@ class PackageUserController extends Controller {
 			$this->referralPayment($subscription);
 
 			$subscription = new PackageUserResource($subscription);
-			return Helper::validRequest($subscription, 'subscription was successful', 200);
+			return Helper::validRequest($subscription, 'Your subscription has been activated successfully', 200);
 		} catch (Exception $bug) {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);

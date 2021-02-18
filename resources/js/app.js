@@ -145,19 +145,19 @@ const app = new Vue({
             if (action == 'show') {
                 $(".preloader").animate({
                     "opacity": "0.7"
-                }, 300, function() {
+                }, 10, function() {
                     $(".preloader").css("display", "flex");
                 });
             } else {
                 $(".preloader").delay(200).animate({
                     "opacity": "0"
-                }, 300, function() {
+                }, 10, function() {
                     $(".preloader").css("display", "none");
                 });
             }
         },
         scrollUp() {
-            window.scrollTo(0, 170)
+            window.scrollTo(0, 50)
         },
         getUpdates() {
             this.getPackages();

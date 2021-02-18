@@ -9,6 +9,12 @@
                 <div class="text-center small">
                     <div v-if="paymentMethod.currency_type == 'crypto'" class="p-0 m-0">
                         <h3 class="mb-2">Transfer <span class="base--color">{{ paymentMethod.payment_method}} Address </span> </h3>
+                        <div class="form-group">
+                            <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="error">
+                                <p v-for="err in error" class="small m-2 m-md-3" v-if="typeof error == 'object'">{{err}}</p>
+                                <p v-else class="text-center m-2  m-md-3 small">{{error}}</p>
+                            </div>
+                        </div>
                         <p>Once we confirm your payment, your account will be funded instantly,<br>Please note that you are making a deposit of {{$root.normalNumeral(amount)}} USD</p>
                         <div class="m-3">
                             <vue-qrcode :value="paymentMethod.wallet" />
@@ -19,7 +25,7 @@
                                 <button v-clipboard="paymentMethod.wallet" style="border-radius: 0px;" class="cmn-btn" data-clipboard-target="#wallet">Copy</button>
                             </div>
                         </div>
-                        <p class="f-size-14 m-2">If you do not know where to buy <span class="text-lowercase">{{paymentMethod.payment_method}}</span> <a href="#" class="base--color">click here</a></p>
+                        <p v-if="!subscribed_plan" class="f-size-14 m-2">If you do not know where to buy <span class="text-lowercase">{{paymentMethod.payment_method}}</span> <a href="#" class="base--color">click here</a></p>
                     </div>
                     <div v-else class="p-0 m-0">
                         <h3 class="mb-2">Transfer&nbsp;<span class="base--color">{{ paymentMethod.payment_method}} Account</span> </h3>
@@ -42,19 +48,21 @@
                         </div>
                     </div>
                     <!-- <a href="#" class="cmn-btn mt-2">Pay Using BTC Wallet App< /a>-->
-                    <p class="f-size-14 m-2">If you have made this transfer, upload your proof of payment (pop)</p>
-                    <form @submit.prevent="subscribe">
+                    <p v-if="!subscribed_plan" class="f-size-14 m-2">If you have made this transfer, upload your proof of payment (pop)</p>
+                    <p v-else class="mt-4 font-weight-bold p-1">You have uploaded the POP of this deposit, you can change it below</p>
+                    <div class="bg--base" v-if="subscribed_plan" style="width: 128px;margin: auto;"><img :src="$root.basepath + '/images/pop/' + subscribed_plan.pop" class="p-1" alt="pop image"></div>
+                    <form class="mt-2" @submit.prevent="subscribe">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <button class="btn base--bg text-white" type="submit">Upload</button>
+                                <button class="btn base--bg text-white" type="submit">{{!subscribed_plan ? 'Upload' : 'Update'}}</button>
                             </div>
                             <div class="custom-file">
-                                <input required="" @change = "updateLabel" ref="fileInput" type="file" class="custom-file-input" id="inputGroupFile03">
+                                <input required="" @change="updateLabel" ref="fileInput" type="file" class="custom-file-input" id="inputGroupFile03">
                                 <label class="custom-file-label text-left" for="inputGroupFile03">{{label}}</label>
                             </div>
                         </div>
+                        <p v-for="err in error" class="small base--color" v-if="typeof error == 'object'">{{err}}</p>
                     </form>
-                    <!-- <button" type="button" class="cmn-btn">Login Now</button> -->
                 </div>
             </div>
             <div class="modal-footer mb-115">
@@ -75,8 +83,9 @@ export default {
             form : new Form({
 
             }),
-            subscription_status : false,
-            label : 'Choose pop file'
+            label : 'Choose pop file',
+            subscribed_plan : undefined,
+            error: undefined,
 
         }
     },
@@ -94,19 +103,20 @@ export default {
     methods: {
 
         subscribe() {
-            if(!this.subscription_status){
-                if(this.$refs.fileInput.files[0].size > 4000000){
-                    return this.$root.alert('error', ' ', ' File size is too large.')   
-                }
-               this.$root.loader('show')
-                let data = new FormData()
-                let file = this.$refs.fileInput.files[0]
-                let form = new Form()
-                form.pop = file
-                form.user_id = this.$auth.user().id
-                form.amount = this.amount
+            this.$root.loader('show')
+            let data = new FormData()
+            let file = this.$refs.fileInput.files[0]
+            let form = new Form()
+            form.pop = file
+            this.error = undefined
+            form.user_id = this.$auth.user().id
+            form.amount = this.amount
+            if(this.$refs.fileInput.files[0].size > 4000000){
+                this.$root.loader('hide')
+                return this.$root.alert('error', ' ', ' File size is too large.')   
+            }
 
-
+            if(!this.subscribed_plan){
                 form.submit('post', "/auth/packageusers", {
                     transformRequest: [function(data, headers) {
                         return objectToFormData(data)
@@ -114,28 +124,48 @@ export default {
                 })
                 .then(response => {
                     this.$root.loader('hide')
-                    this.subscription_status = true
-                    this.$emit('popUploaded')
-                    this.$root.alert('success', '', response.data.message)
+                    this.subscribed_plan = response.data.data
+                    this.$emit('popUploaded', {subscription:this.subscribed_plan, message:response.data.message})
                     form.reset()
-                    this.label = 'Choose pop file'
+                    this.label = 'Change pop file'
                     this.$refs.closeButton.click()
-                    window.scrollTo(0, 0)
-                    console.log(response.data)
-                    // this.$emit('success', 'The deposit has been saved. It will become active when the administrator checks statistics.')
                 })
                 .catch(error => {
                     this.$root.loader('hide')
-                    // this.errors = error.response.data.error
+                    if (error.response.status == 422) {
+                        this.error =  error.response.data.error.pop
+                    }
+                    else{
+                        this.error = error.response.data.message
+                    }
                     console.log(error, error.response)
-                    // this.error = error.response.data.message
-                    this.$root.alert('error', '', 'Upload not successful, try again.')
-                    // setTimeout(() => { window.scrollTo(0, 600); this.$emit('changeComponent', 'DepositPlan', this.selectedPackage)  }, 2000);
+                    
                 })
             }
             else {
-                this.$root.alert('error', '', 'you have submitted already')
-                console.log('you have submitted already')
+                form._method = "PUT"
+                form.submit('post', "/auth/packageusers/" + this.subscribed_plan.id, {
+                    transformRequest: [function(data, headers) {
+                        return objectToFormData(data)
+                    }]
+                })
+                .then(response => {
+                    this.$root.loader('hide')
+                    this.subscribed_plan.pop = this.$refs.fileInput.files[0].name
+                    this.$emit('popUploaded', {subscription:this.subscribed_plan, message:response.data.message})
+                    this.$root.alert('success', '', response.data.message)
+                    form.reset()
+                })
+                .catch(error => {
+                    this.$root.loader('hide')
+                    if (error.response.status == 422) {
+                        this.error =  error.response.data.error.pop
+                    }
+                    else{
+                        this.error = error.response.data.message
+                    }
+                    console.log(error, error.response)
+                })
             }  
         },
          updateLabel(){

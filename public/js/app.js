@@ -7332,14 +7332,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {},
   data: function data() {
     return {
       form: new Form({}),
-      subscription_status: false,
-      label: 'Choose pop file'
+      label: 'Choose pop file',
+      subscribed_plan: undefined,
+      error: undefined
     };
   },
   components: {
@@ -7354,18 +7363,21 @@ __webpack_require__.r(__webpack_exports__);
     subscribe: function subscribe() {
       var _this = this;
 
-      if (!this.subscription_status) {
-        if (this.$refs.fileInput.files[0].size > 4000000) {
-          return this.$root.alert('error', ' ', ' File size is too large.');
-        }
+      this.$root.loader('show');
+      var data = new FormData();
+      var file = this.$refs.fileInput.files[0];
+      var form = new Form();
+      form.pop = file;
+      this.error = undefined;
+      form.user_id = this.$auth.user().id;
+      form.amount = this.amount;
 
-        this.$root.loader('show');
-        var data = new FormData();
-        var file = this.$refs.fileInput.files[0];
-        var form = new Form();
-        form.pop = file;
-        form.user_id = this.$auth.user().id;
-        form.amount = this.amount;
+      if (this.$refs.fileInput.files[0].size > 4000000) {
+        this.$root.loader('hide');
+        return this.$root.alert('error', ' ', ' File size is too large.');
+      }
+
+      if (!this.subscribed_plan) {
         form.submit('post', "/auth/packageusers", {
           transformRequest: [function (data, headers) {
             return objectToFormData(data);
@@ -7373,31 +7385,58 @@ __webpack_require__.r(__webpack_exports__);
         }).then(function (response) {
           _this.$root.loader('hide');
 
-          _this.subscription_status = true;
+          _this.subscribed_plan = response.data.data;
 
-          _this.$emit('popUploaded');
+          _this.$emit('popUploaded', {
+            subscription: _this.subscribed_plan,
+            message: response.data.message
+          });
+
+          form.reset();
+          _this.label = 'Change pop file';
+
+          _this.$refs.closeButton.click();
+        })["catch"](function (error) {
+          _this.$root.loader('hide');
+
+          if (error.response.status == 422) {
+            _this.error = error.response.data.error.pop;
+          } else {
+            _this.error = error.response.data.message;
+          }
+
+          console.log(error, error.response);
+        });
+      } else {
+        form._method = "PUT";
+        form.submit('post', "/auth/packageusers/" + this.subscribed_plan.id, {
+          transformRequest: [function (data, headers) {
+            return objectToFormData(data);
+          }]
+        }).then(function (response) {
+          _this.$root.loader('hide');
+
+          _this.subscribed_plan.pop = _this.$refs.fileInput.files[0].name;
+
+          _this.$emit('popUploaded', {
+            subscription: _this.subscribed_plan,
+            message: response.data.message
+          });
 
           _this.$root.alert('success', '', response.data.message);
 
           form.reset();
-          _this.label = 'Choose pop file';
-
-          _this.$refs.closeButton.click();
-
-          window.scrollTo(0, 0);
-          console.log(response.data); // this.$emit('success', 'The deposit has been saved. It will become active when the administrator checks statistics.')
         })["catch"](function (error) {
-          _this.$root.loader('hide'); // this.errors = error.response.data.error
+          _this.$root.loader('hide');
 
+          if (error.response.status == 422) {
+            _this.error = error.response.data.error.pop;
+          } else {
+            _this.error = error.response.data.message;
+          }
 
-          console.log(error, error.response); // this.error = error.response.data.message
-
-          _this.$root.alert('error', '', 'Upload not successful, try again.'); // setTimeout(() => { window.scrollTo(0, 600); this.$emit('changeComponent', 'DepositPlan', this.selectedPackage)  }, 2000);
-
+          console.log(error, error.response);
         });
-      } else {
-        this.$root.alert('error', '', 'you have submitted already');
-        console.log('you have submitted already');
       }
     },
     updateLabel: function updateLabel() {
@@ -10359,28 +10398,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       errors: '',
-      form: new Form({
-        package_id: this.plan.id,
-        user_id: this.user.id
-      }),
+      form: new Form({}),
       error: '',
       paymentMethods: undefined,
       paymentMethod: {
         payment_method: ''
       },
       validated: false,
-      amount: undefined
+      amount: undefined,
+      key: 0,
+      message: undefined
     };
   },
   mounted: function mounted() {
-    window.scrollTo(0, 350);
     this.getPaymentMethods();
   },
   watch: {
@@ -10397,6 +10431,14 @@ __webpack_require__.r(__webpack_exports__);
       setTimeout(function () {
         _this2.errors = '';
       }, 5000);
+    },
+    amount: function amount() {
+      this.key++;
+      this.message = undefined;
+    },
+    paymentMethod: function paymentMethod() {
+      this.key++;
+      this.message = undefined;
     }
   },
   props: ['plan', 'user'],
@@ -10422,34 +10464,6 @@ __webpack_require__.r(__webpack_exports__);
     getPaymentProcessorDetails: function getPaymentProcessorDetails(search) {
       return this.$root.myFilter(this.$root.payments, search)[0];
     },
-    showPaymentDetails: function showPaymentDetails() {
-      var _this3 = this;
-
-      this.validated = true;
-      setTimeout(function () {
-        _this3.validated = false;
-      }, 5000); // this.$refs.wlt.innerText = this.user.admin_wallet
-      // this.processing(true)
-      // var data = new FormData()
-      // var file = this.$refs.fileInput.files[0]
-      // this.form.pop = file
-      // this.form.submit('post', "/auth/packageusers", {
-      //         transformRequest: [function(data, headers) {
-      //             return objectToFormData(data)
-      //         }]
-      //     })
-      //     .then(response => {
-      //         window.scrollTo(0, 250)
-      //         this.$emit('success', 'The deposit has been saved. It will become active when the administrator checks statistics.')
-      //         this.processing(false)
-      //     })
-      //     .catch(error => {
-      //         this.errors = error.response.data.error
-      //         this.error = error.response.data.message
-      //         setTimeout(() => { window.scrollTo(0, 600); this.$emit('changeComponent', 'DepositPlan', this.selectedPackage)  }, 2000);
-      //         this.processing(false)
-      //     })
-    },
     processing: function processing(status) {
       if (status) {
         this.$refs.process.innerText = "Processing...";
@@ -10460,21 +10474,26 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     getPaymentMethods: function getPaymentMethods() {
-      var _this4 = this;
+      var _this3 = this;
 
       this.$root.loader('show');
       this.$error = '';
       this.form.get("/auth/bankdetails/?user_id=1").then(function (response) {
-        _this4.paymentMethods = response.data.data.item;
+        window.scrollTo(0, 350);
+        _this3.paymentMethods = response.data.data.item;
 
-        _this4.$root.loader('hide');
+        _this3.$root.loader('hide');
       })["catch"](function (error) {
-        _this4.error = error.response.data.message;
+        _this3.error = error.response.data.message;
 
-        _this4.$root.loader('hide');
+        _this3.$root.loader('hide');
 
         console.log(error.response);
       });
+    },
+    displayMessage: function displayMessage(msg) {
+      this.message = msg;
+      window.scrollTo(0, 350);
     }
   }
 });
@@ -18764,7 +18783,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* .bg_img{\r\n        background-size: cover !important;\r\n        background-position: center !important;\r\n        background-repeat: no-repeat !important;\r\n    }*/\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* .bg_img{\r\n        background-size: cover !important;\r\n        background-position: center !important;\r\n        background-repeat: no-repeat !important;\r\n    }*/\r\n\r\n", ""]);
 
 // exports
 
@@ -65362,6 +65381,37 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _vm.error
+                      ? _c(
+                          "div",
+                          {
+                            staticClass: "error-msg  m-3",
+                            style: {
+                              backgroundImage:
+                                "url(" +
+                                _vm.$root.basepath +
+                                "/images/bg/bg-5.jpg )"
+                            }
+                          },
+                          _vm._l(_vm.error, function(err) {
+                            return typeof _vm.error == "object"
+                              ? _c("p", { staticClass: "small m-2 m-md-3" }, [
+                                  _vm._v(_vm._s(err))
+                                ])
+                              : _c(
+                                  "p",
+                                  {
+                                    staticClass: "text-center m-2  m-md-3 small"
+                                  },
+                                  [_vm._v(_vm._s(_vm.error))]
+                                )
+                          }),
+                          0
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
                   _c("p", [
                     _vm._v(
                       "Once we confirm your payment, your account will be funded instantly,"
@@ -65433,18 +65483,20 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("p", { staticClass: "f-size-14 m-2" }, [
-                    _vm._v("If you do not know where to buy "),
-                    _c("span", { staticClass: "text-lowercase" }, [
-                      _vm._v(_vm._s(_vm.paymentMethod.payment_method))
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      { staticClass: "base--color", attrs: { href: "#" } },
-                      [_vm._v("click here")]
-                    )
-                  ])
+                  !_vm.subscribed_plan
+                    ? _c("p", { staticClass: "f-size-14 m-2" }, [
+                        _vm._v("If you do not know where to buy "),
+                        _c("span", { staticClass: "text-lowercase" }, [
+                          _vm._v(_vm._s(_vm.paymentMethod.payment_method))
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          { staticClass: "base--color", attrs: { href: "#" } },
+                          [_vm._v("click here")]
+                        )
+                      ])
+                    : _vm._e()
                 ])
               : _c("div", { staticClass: "p-0 m-0" }, [
                   _c("h3", { staticClass: "mb-2" }, [
@@ -65575,15 +65627,44 @@ var render = function() {
                   ])
                 ]),
             _vm._v(" "),
-            _c("p", { staticClass: "f-size-14 m-2" }, [
-              _vm._v(
-                "If you have made this transfer, upload your proof of payment (pop)"
-              )
-            ]),
+            !_vm.subscribed_plan
+              ? _c("p", { staticClass: "f-size-14 m-2" }, [
+                  _vm._v(
+                    "If you have made this transfer, upload your proof of payment (pop)"
+                  )
+                ])
+              : _c("p", { staticClass: "mt-4 font-weight-bold p-1" }, [
+                  _vm._v(
+                    "You have uploaded the POP of this deposit, you can change it below"
+                  )
+                ]),
+            _vm._v(" "),
+            _vm.subscribed_plan
+              ? _c(
+                  "div",
+                  {
+                    staticClass: "bg--base",
+                    staticStyle: { width: "128px", margin: "auto" }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "p-1",
+                      attrs: {
+                        src:
+                          _vm.$root.basepath +
+                          "/images/pop/" +
+                          _vm.subscribed_plan.pop,
+                        alt: "pop image"
+                      }
+                    })
+                  ]
+                )
+              : _vm._e(),
             _vm._v(" "),
             _c(
               "form",
               {
+                staticClass: "mt-2",
                 on: {
                   submit: function($event) {
                     $event.preventDefault()
@@ -65593,7 +65674,20 @@ var render = function() {
               },
               [
                 _c("div", { staticClass: "input-group" }, [
-                  _vm._m(2),
+                  _c("div", { staticClass: "input-group-prepend" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn base--bg text-white",
+                        attrs: { type: "submit" }
+                      },
+                      [
+                        _vm._v(
+                          _vm._s(!_vm.subscribed_plan ? "Upload" : "Update")
+                        )
+                      ]
+                    )
+                  ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "custom-file" }, [
                     _c("input", {
@@ -65616,8 +65710,17 @@ var render = function() {
                       [_vm._v(_vm._s(_vm.label))]
                     )
                   ])
-                ])
-              ]
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.error, function(err) {
+                  return typeof _vm.error == "object"
+                    ? _c("p", { staticClass: "small base--color" }, [
+                        _vm._v(_vm._s(err))
+                      ])
+                    : _vm._e()
+                })
+              ],
+              2
             )
           ])
         ]),
@@ -65664,18 +65767,6 @@ var staticRenderFns = [
     return _c("h4", [
       _vm._v("Payment "),
       _c("span", { staticClass: "base--color" }, [_vm._v("Details")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group-prepend" }, [
-      _c(
-        "button",
-        { staticClass: "btn base--bg text-white", attrs: { type: "submit" } },
-        [_vm._v("Upload")]
-      )
     ])
   }
 ]
@@ -67653,7 +67744,7 @@ var render = function() {
       "div",
       {
         staticClass: "account-section bg_img",
-        attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-5.jpg" }
+        style: "background:url(" + _vm.$root.basepath + "/images/bg/bg-5.jpg"
       },
       [
         _c("div", { staticClass: "container" }, [
@@ -67664,10 +67755,10 @@ var render = function() {
                   "div",
                   {
                     staticClass: "account-card__header bg_img overlay--one",
-                    attrs: {
-                      "data-background":
-                        _vm.$root.basepath + "/images/bg/bg-6.jpg"
-                    }
+                    style:
+                      "background:url(" +
+                      _vm.$root.basepath +
+                      "/images/bg/bg-6.jpg"
                   },
                   [_vm._m(0)]
                 ),
@@ -73993,6 +74084,26 @@ var render = function() {
                     }
                   },
                   [
+                    _vm.message
+                      ? _c(
+                          "div",
+                          {
+                            staticClass: "success-msg ",
+                            style: {
+                              backgroundImage:
+                                "url(" +
+                                _vm.$root.basepath +
+                                "/images/bg/bg-5.jpg )"
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "p-2 m-lg-3 m-sm-1" }, [
+                              _vm._v(_vm._s(_vm.message.message))
+                            ])
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", [_vm._v("Payment method")]),
                       _vm._v(" "),
@@ -74146,8 +74257,7 @@ var render = function() {
                   id: "add",
                   "data-toggle": "modal",
                   "data-target": "#paymentDetails"
-                },
-                on: { click: _vm.showPaymentDetails }
+                }
               }),
               _vm._v(" "),
               _c(
@@ -74159,6 +74269,7 @@ var render = function() {
                 },
                 [
                   _c("paymentDetails", {
+                    key: _vm.key,
                     attrs: {
                       plan: _vm.plan,
                       paymentMethod: _vm.paymentMethod,
@@ -74166,7 +74277,8 @@ var render = function() {
                       processor: _vm.getPaymentProcessorDetails(
                         _vm.paymentMethod.payment_method
                       )
-                    }
+                    },
+                    on: { popUploaded: _vm.displayMessage }
                   })
                 ],
                 1
@@ -104475,19 +104587,19 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       if (action == 'show') {
         jquery__WEBPACK_IMPORTED_MODULE_9___default()(".preloader").animate({
           "opacity": "0.7"
-        }, 300, function () {
+        }, 10, function () {
           jquery__WEBPACK_IMPORTED_MODULE_9___default()(".preloader").css("display", "flex");
         });
       } else {
         jquery__WEBPACK_IMPORTED_MODULE_9___default()(".preloader").delay(200).animate({
           "opacity": "0"
-        }, 300, function () {
+        }, 10, function () {
           jquery__WEBPACK_IMPORTED_MODULE_9___default()(".preloader").css("display", "none");
         });
       }
     },
     scrollUp: function scrollUp() {
-      window.scrollTo(0, 170);
+      window.scrollTo(0, 50);
     },
     getUpdates: function getUpdates() {
       this.getPackages();
