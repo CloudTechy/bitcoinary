@@ -20,6 +20,10 @@ class BankDetail extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function paymentMethod()
+    {
+        return $this->belongsTo(PaymentMethod::class);
+    }
 
     public function scopeFilter($query, $filter)
     {

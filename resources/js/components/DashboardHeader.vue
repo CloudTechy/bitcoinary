@@ -33,8 +33,8 @@
                             </li>
                             <li class="menu_has_children"><a href="#0">Account Setting</a>
                                 <ul class="sub-menu">
-                                    <li><a href="blog.html">Profile setup</a></li>
-                                    <li><a href="login.html">Payment setup</a></li>
+                                    <li><a href="/dashboard/settings">Profile setup</a></li>
+                                    <li><a href="/dashboard/settings/#payment">Payment setup</a></li>
                                 </ul>
                             </li>
                         </ul>

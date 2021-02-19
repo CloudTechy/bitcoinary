@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Withdrawal extends Model
 {
-    protected $fillable = ['user_id', 'pop', 'amount', 'processed', 'confirmed', 'currency_code'];
+    protected $fillable = ['payment_method', 'user_id', 'pop', 'amount', 'processed', 'confirmed', 'currency_code'];
     protected $appends = array('processedWithdrawals', 'confirmedWithdrawals', 'nullWithdrawals');
 
     public function getConfirmedWithdrawalsAttribute()
@@ -26,12 +26,16 @@ class Withdrawal extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function paymentMethod()
+    {
+        return $this->belongsTo(PaymentMethod::class);
+    }
     public function scopeFilter($query, $filter)
     {
 
         try {
 
-            $fields = ['user_id', 'amount', 'processed', 'confirmed', 'currency_code'];
+            $fields = ['user_id', 'payment_method', 'amount', 'processed', 'confirmed', 'currency_code'];
 
             return $query->where(
                 function ($query) use ($filter, $fields) {

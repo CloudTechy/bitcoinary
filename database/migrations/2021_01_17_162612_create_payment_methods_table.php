@@ -26,6 +26,9 @@ class CreatePaymentMethodsTable extends Migration
             $table->foreign('payment_method')->references('name')->on('payment_methods')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('currency_type')->references('type')->on('payment_methods')->onDelete('cascade')->onUpdate('cascade');
         });
+        Schema::table('withdrawals', function ($table) {
+            $table->foreign('payment_method')->references('name')->on('payment_methods')->onDelete('cascade')->onUpdate('cascade');
+        });
     }
 
     /**

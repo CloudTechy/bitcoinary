@@ -23,6 +23,7 @@ class WithdrawalResource extends JsonResource {
 			'amount' => $this->amount,
 			'processed' => $this->processed,
 			'confirmed' => $this->confirmed,
+			'payment_method' => $this->paymentMethod->name,
 			'approved' => $this->confirmed == true && $this->processed == true ? true  : false,
 			'pop' => $this->pop,
 			'reference' => $this->reference,

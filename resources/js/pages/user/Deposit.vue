@@ -1,6 +1,6 @@
 <template>
     <div class="page-wrapper">
-        <section class="inner-hero bg_img" :style="'background:url('+ $root.basepath +'/images/bg/bg-1.jpg)'" :data-background="$root.basepath + '/images/bg/bg-1.jpg'">
+        <section class="inner-hero bg_img" :style="'background:url('+ $root.basepath +'/images/bg/bg-1.jpg)'">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">

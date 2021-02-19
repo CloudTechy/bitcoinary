@@ -58,7 +58,7 @@ class UserResource extends JsonResource {
 			// 'totalWithdraw' => $this->confirmedWithdrawals->sum('amount'),
 			// 'lastDeposit' => empty($this->confirmedTransactions->all()) ? 0 : (int) $this->confirmedTransactions->last()->amount,
 			// 'lastWithdraw' => empty($this->confirmedWithdrawals->all()) ? 0 : (int) $this->confirmedWithdrawals->last()->amount,
-			// 'totalPendingWithdrawal' => empty($this->processedWithdrawals) ? 0 : $this->processedWithdrawals->sum('amount'),
+			'totalPendingWithdrawal' => empty($this->processedWithdrawals) ? 0 : $this->processedWithdrawals->sum('amount'),
 			// 'transactions' => $this->confirmedTransactions->all(),
 			// 'withdrawals' => $this->confirmedWithdrawals->all(),
 			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans(),

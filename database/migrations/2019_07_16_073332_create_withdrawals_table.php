@@ -19,6 +19,7 @@ class CreateWithdrawalsTable extends Migration {
 			$table->boolean('processed')->default(false);
 			$table->boolean('confirmed')->default(false);
 			$table->string('pop')->nullable();
+			$table->string('payment_method')->index();
 			$table->string('reference')->default('SELF');
 			$table->timestamps();
 			$table->foreign('user_id')->references('id')->on('users');

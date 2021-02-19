@@ -24,6 +24,7 @@ class ValidateWithdrawalRequest extends FormRequest {
 			'user_id' => 'required|numeric|exists:users,id',
 			'amount' => 'required|numeric',
 			'reference' => 'required|string',
+			'payment_method' => 'required|exists:payment_methods,name',
 		];
 	}
 }

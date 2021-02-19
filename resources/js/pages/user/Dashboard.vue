@@ -261,7 +261,7 @@
 }
 
 </script>
-<style type="text/css" scoped="">
+<style type="text/css">
 .equal {
     box-shadow: 0 5px 5px 0 rgb(204 163 84 / 25%) !important;
 }

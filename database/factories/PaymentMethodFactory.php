@@ -10,7 +10,7 @@ $factory->define(PaymentMethod::class, function (Faker $faker) {
 	$show = $faker->randomElement(['withdrawal','deposit','both']);
     return [
         'name' => $paymentMethod,
-        'show_on' => $paymentMethod == 'Tron' ? 'deposit' : $show,
+        'show_on' => 'both',
         'type' => 'crypto',
         'image' => '1.jpg',
     ];

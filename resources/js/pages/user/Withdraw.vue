@@ -1,9 +1,9 @@
 <template>
-    <div class="m-0 p-0">
+    <!-- <div class="m-0 p-0">
         <DashboardHeader></DashboardHeader>
         <section class="main-container m-lg-3 m-0 acc">
             <div class="main">
-                <!--start wrapper-->
+                
                 <div class="container">
                     <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;min-height:400px;'">
                         <div class="account-wrapper m-xl-2 row m-0 ">
@@ -76,15 +76,108 @@
                                 </div>
                             </div>
                         </div>
-                        <!--end account wrapper-->
                     </div>
                 </div>
             </div>
         </section>
+    </div> -->
+    <div class="page-wrapper">
+        <section class="inner-hero bg_img" :style="'background:url('+ $root.basepath +'/images/bg/bg-1.jpg)'" :data-background="$root.basepath + '/images/bg/bg-1.jpg'">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2 class="page-title">Dashboard</h2>
+                        <ul class="page-breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li>Dashboard</li>
+                        </ul>
+                        <h2 class="page-title pt-4"><span class="base--color">Welcome, </span> {{'Bitcoinary'}}</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="pb-60">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="row mt-50 ">
+                            <div class="col-lg-4 col-sm-12 mb-5s0">
+                                <div class="m-auto equal blog-card p-0 mb-30">
+                                    <div class="headeraccount base--bg"><span class="font-weight-bold">Financial Statistics </span> </div>
+                                    <div class="row p-4 pb-2">
+                                        <div class="col-9 col-md-10 ">
+                                            <h2 class="mb-1">{{$root.numeral($auth.user().balance)}}</h2>
+                                            <p class="mb-3">Account Balance</p>
+                                        </div>
+                                        <div class="col-3 col-md-2 p-0">
+                                            <div class="icon base--bg text-white">
+                                                <i class="las la-dollar-sign"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="divider pb-3"></div>
+                                    <div class="row p-4 pb-2">
+                                        <div class="col-9 col-md-10 ">
+                                            <h2 class="mb-1">{{$root.numeral($auth.user().totalPendingWithdrawal)}}</h2>
+                                            <p class="mb-3">Pending Withdrawal</p>
+                                        </div>
+                                        <div class="col-3 col-md-2 p-0">
+                                            <div class="icon base--bg text-white">
+                                                <i class="las la-dollar-sign"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-sm-12">
+                                <div class="m-auto equal blog-card p-0 mb-30">
+                                    <div class="headeraccount base--bg mb-4"><span class="font-weight-bold">Make Withdrawal Request </span> </div>
+                                    <div class="table-respon2sive table-responsive--md p-0">
+                                        <table class="table style--two white-space-nowrap">
+                                            <thead class="bg-transparent text-white">
+                                                <tr>
+                                                    <th>Payment Processor</th>
+                                                    <th>Receiving Address</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr v-for="py in $root.payments">
+                                                    <td data-label="Payment processor">
+                                                        <span class="">
+                                                            <img class="img-size-50" :src="$root.basepath + '/images/uploads/' + py.image" alt="processor brand">
+                                                        </span>
+                                                        <span class="text-capitalize"> {{py.name}}</span></td>
+                                                    <td v-if="getAccountDetails(py.name, py.type)" data-label="Address">{{getAccountDetails(py.name, py.type)}}</td>
+                                                    <td data-label="Address" v-else>
+                                                        <p>Not set
+                                                            <a style="text-decoration: underline;" href="/dashboard/settings/#payment" class="base--color font-weight-bold"> setup?</a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="mt-4 p-3">
+                                        <div v-if = "$auth.user().balance > 1" class="form-group">
+                                            <label>Amount</label>
+                                            <input type="password" placeholder="Enter Amount" v-model="amount" required class="form-control">
+                                        </div>
+                                        <div class="pb-2" v-else>You have no funds to withdraw.</div>
+                                        <button :disabled="$auth.user().balance < 1"  ref="withdrawBtn" type="submit" :class="{'cmn-btn' : true, disabled : $auth.user().balance < 1}">Request</button>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
-export default {
+    export default {
     data() {
         return {
             form: new Form({
@@ -110,7 +203,8 @@ export default {
         },
     },
     mounted() {
-        window.scrollTo(200, 200);
+        this.$root.scrollUp()
+        console.log(this.$auth.user())
     },
     computed: {
         user() {
@@ -118,15 +212,6 @@ export default {
         },
     },
     methods: {
-        processing(status) {
-            if (status) {
-                this.$refs.process.innerText = "Processing..."
-                this.$refs.process.disabled = true
-            } else {
-                this.$refs.process.innerText = "Withdraw"
-                this.$refs.process.disabled = false
-            }
-        },
         withdraw() {
             this.processing(true)
             this.form.amount = this.amount
@@ -146,16 +231,24 @@ export default {
                     console.log(error.response)
                 })
         },
-        btc(amount) {
-            if (localStorage.rate) {
-                var rate = parseFloat(numeral(JSON.parse(localStorage.rate)).format('00.00'))
-                var btc = amount / rate
-                return btc.toFixed(8)
-            } else {
-                return 'N/A'
-            }
-        },
+        getAccountDetails(search, currencyType){
+           let paymentDetails = this.$root.myFilter(this.$auth.user().bank_details, search)[0]
+           return currencyType == 'fiat' ?  paymentDetails.acc_number : paymentDetails.wallet
+       }
     }
 }
 
 </script>
+<style type="text/css">
+    .img-size-50 {
+        width: 50px;
+        height: 50px;
+    }
+    .disabled:hover{
+        background-color: #cca354 !important;
+    }
+    .cmn-btn.disabled, .cmn-btn:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+    }
+</style>

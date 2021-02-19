@@ -7,6 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Withdrawal::class, function (Faker $faker) {
 	$package = Package::inRandomOrder()->first();
+	$payment_method = PaymentMethod::inRandomOrder()->first();
 	$processed = $faker->boolean;
 	$confirmed = $faker->boolean;
 	if ($processed == false) {
@@ -19,6 +20,7 @@ $factory->define(Withdrawal::class, function (Faker $faker) {
 		'processed' => $processed,
 		'confirmed' => $confirmed,
 		'amount' => $package->deposit,
+		'payment_method' => $payment_method->name,
 
 	];
 });
