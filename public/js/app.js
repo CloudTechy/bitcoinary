@@ -7342,6 +7342,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {},
@@ -11269,6 +11271,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -65484,11 +65487,19 @@ var render = function() {
                                 "/images/bg/bg-5.jpg )"
                             }
                           },
-                          _vm._l(_vm.error, function(err) {
-                            return typeof _vm.error == "object"
-                              ? _c("p", { staticClass: "small m-2 m-md-3" }, [
-                                  _vm._v(_vm._s(err))
-                                ])
+                          [
+                            typeof _vm.error == "object"
+                              ? _c(
+                                  "div",
+                                  _vm._l(_vm.error, function(err) {
+                                    return _c(
+                                      "p",
+                                      { staticClass: "small m-2 m-md-3" },
+                                      [_vm._v(_vm._s(err))]
+                                    )
+                                  }),
+                                  0
+                                )
                               : _c(
                                   "p",
                                   {
@@ -65496,8 +65507,7 @@ var render = function() {
                                   },
                                   [_vm._v(_vm._s(_vm.error))]
                                 )
-                          }),
-                          0
+                          ]
                         )
                       : _vm._e()
                   ]),
@@ -65566,7 +65576,12 @@ var render = function() {
                           ],
                           staticClass: "cmn-btn",
                           staticStyle: { "border-radius": "0px" },
-                          attrs: { "data-clipboard-target": "#wallet" }
+                          attrs: { "data-clipboard-target": "#wallet" },
+                          on: {
+                            click: function($event) {
+                              return _vm.$root.alert("success", " ", "copied")
+                            }
+                          }
                         },
                         [_vm._v("Copy")]
                       )
@@ -74300,7 +74315,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "p-0 m-0  row" }, [
-                      _c("div", { staticClass: "col mt-3" }, [
+                      _c("div", { staticClass: "col mt-2 p-0" }, [
                         _c(
                           "button",
                           {
@@ -74318,7 +74333,10 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "div",
-                        { staticClass: "col mt-3 text-left text-sm-right" },
+                        {
+                          staticClass:
+                            "col mt-2 p-0 ml-1 ml-sm-0 text-left text-sm-right"
+                        },
                         [
                           _c(
                             "button",
@@ -76087,18 +76105,25 @@ var render = function() {
                           "url(" + _vm.$root.basepath + "/images/bg/bg-5.jpg )"
                       }
                     },
-                    _vm._l(_vm.error, function(err) {
-                      return typeof _vm.error == "object"
-                        ? _c("p", { staticClass: "small m-2 m-md-3" }, [
-                            _vm._v(_vm._s(err))
-                          ])
+                    [
+                      typeof _vm.error == "object"
+                        ? _c(
+                            "div",
+                            _vm._l(_vm.error, function(err) {
+                              return _c(
+                                "p",
+                                { staticClass: "small m-2 m-md-3" },
+                                [_vm._v(_vm._s(err))]
+                              )
+                            }),
+                            0
+                          )
                         : _c(
                             "p",
                             { staticClass: "text-center m-2  m-md-3 small" },
                             [_vm._v(_vm._s(_vm.error))]
                           )
-                    }),
-                    0
+                    ]
                   )
                 : _vm._e(),
               _vm._v(" "),

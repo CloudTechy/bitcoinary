@@ -11,7 +11,9 @@
                         <h3 class="mb-2">Transfer <span class="base--color">{{ paymentMethod.payment_method}} Address </span> </h3>
                         <div class="form-group">
                             <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="error">
-                                <p v-for="err in error" class="small m-2 m-md-3" v-if="typeof error == 'object'">{{err}}</p>
+                                <div  v-if="typeof error == 'object'">
+                                    <p v-for="err in error" class="small m-2 m-md-3">{{err}}</p>
+                                </div>
                                 <p v-else class="text-center m-2  m-md-3 small">{{error}}</p>
                             </div>
                         </div>
@@ -22,7 +24,7 @@
                         <div class="input-group mb-3">
                             <input type="text" v-model="paymentMethod.wallet" disabled="" id="wallet" class="text-center form-control">
                             <div class="input-group-append">
-                                <button v-clipboard="paymentMethod.wallet" style="border-radius: 0px;" class="cmn-btn" data-clipboard-target="#wallet">Copy</button>
+                                <button @click="$root.alert('success',' ', 'copied')" v-clipboard="paymentMethod.wallet" style="border-radius: 0px;" class="cmn-btn" data-clipboard-target="#wallet">Copy</button>
                             </div>
                         </div>
                         <p v-if="!subscribed_plan" class="f-size-14 m-2">If you do not know where to buy <span class="text-lowercase">{{paymentMethod.payment_method}}</span> <a href="#" class="base--color">click here</a></p>

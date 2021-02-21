@@ -27,10 +27,10 @@
                                         <p v-if="plan.name" class="small p-1">{{'Limit: $' + plan.min_deposit + ' - $' + plan.max_deposit}}</p>
                                     </div>
                                     <div class="p-0 m-0  row">
-                                        <div class="col mt-3">
+                                        <div class="col mt-2 p-0">
                                             <button :disabled="false" ref="submit" type="submit" :class="{'cmn-btn' : true,'btn' : true, disabled : false}">Proceed</button>
                                         </div>
-                                        <div class="col mt-3 text-left text-sm-right">
+                                        <div class="col mt-2 p-0 ml-1 ml-sm-0 text-left text-sm-right">
                                             <button @click.prevent="$emit('changeComponent', 'DepositPlan', '')" class="cmn-btn btn">Back</button>
                                         </div>
                                     </div>

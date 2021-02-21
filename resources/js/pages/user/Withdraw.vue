@@ -102,16 +102,17 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="mt-50 form-group p-2 text-center">
-                                <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="error">
-                                    <p v-for="err in error" class="small m-2 m-md-3" v-if="typeof error == 'object'">{{err}}</p>
-                                    <p v-else class="text-center m-2  m-md-3 small">{{error}}</p>
+                            <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="error">
+                                <div  v-if="typeof error == 'object'">
+                                    <p v-for="err in error" class="small m-2 m-md-3">{{err}}</p>
                                 </div>
-                                <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="success-msg " v-if="message">
-                                    <p class="p-2 m-lg-3 m-sm-1">{{message}}</p>
-                                </div>
+                                <p v-else class="text-center m-2  m-md-3 small">{{error}}</p>
                             </div>
+                            <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="success-msg " v-if="message">
+                                <p class="p-2 m-lg-3 m-sm-1">{{message}}</p>
+                            </div>
+                        </div>
                         <div class="row mt-50 ">
-                            
                             <div class="col-lg-4 col-sm-12 mb-50">
                                 <div class="m-auto equal blog-card p-0 mb-30">
                                     <div class="headeraccount base--bg"><span class="font-weight-bold">Financial Statistics </span> </div>
