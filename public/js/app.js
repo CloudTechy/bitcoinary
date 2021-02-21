@@ -11479,6 +11479,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -76075,56 +76076,52 @@ var render = function() {
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row justify-content-center" }, [
           _c("div", { staticClass: "col-lg-12" }, [
-            _c("div", { staticClass: "row mt-50 " }, [
-              _c("div", { staticClass: "form-group p-2 text-center" }, [
-                _vm.error
-                  ? _c(
-                      "div",
-                      {
-                        staticClass: "error-msg  m-3",
-                        style: {
-                          backgroundImage:
-                            "url(" +
-                            _vm.$root.basepath +
-                            "/images/bg/bg-5.jpg )"
-                        }
-                      },
-                      _vm._l(_vm.error, function(err) {
-                        return typeof _vm.error == "object"
-                          ? _c("p", { staticClass: "small m-2 m-md-3" }, [
-                              _vm._v(_vm._s(err))
-                            ])
-                          : _c(
-                              "p",
-                              { staticClass: "text-center m-2  m-md-3 small" },
-                              [_vm._v(_vm._s(_vm.error))]
-                            )
-                      }),
-                      0
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.message
-                  ? _c(
-                      "div",
-                      {
-                        staticClass: "success-msg ",
-                        style: {
-                          backgroundImage:
-                            "url(" +
-                            _vm.$root.basepath +
-                            "/images/bg/bg-5.jpg )"
-                        }
-                      },
-                      [
-                        _c("p", { staticClass: "p-2 m-lg-3 m-sm-1" }, [
-                          _vm._v(_vm._s(_vm.message))
-                        ])
-                      ]
-                    )
-                  : _vm._e()
-              ]),
+            _c("div", { staticClass: "mt-50 form-group p-2 text-center" }, [
+              _vm.error
+                ? _c(
+                    "div",
+                    {
+                      staticClass: "error-msg  m-3",
+                      style: {
+                        backgroundImage:
+                          "url(" + _vm.$root.basepath + "/images/bg/bg-5.jpg )"
+                      }
+                    },
+                    _vm._l(_vm.error, function(err) {
+                      return typeof _vm.error == "object"
+                        ? _c("p", { staticClass: "small m-2 m-md-3" }, [
+                            _vm._v(_vm._s(err))
+                          ])
+                        : _c(
+                            "p",
+                            { staticClass: "text-center m-2  m-md-3 small" },
+                            [_vm._v(_vm._s(_vm.error))]
+                          )
+                    }),
+                    0
+                  )
+                : _vm._e(),
               _vm._v(" "),
+              _vm.message
+                ? _c(
+                    "div",
+                    {
+                      staticClass: "success-msg ",
+                      style: {
+                        backgroundImage:
+                          "url(" + _vm.$root.basepath + "/images/bg/bg-5.jpg )"
+                      }
+                    },
+                    [
+                      _c("p", { staticClass: "p-2 m-lg-3 m-sm-1" }, [
+                        _vm._v(_vm._s(_vm.message))
+                      ])
+                    ]
+                  )
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row mt-50 " }, [
               _c("div", { staticClass: "col-lg-4 col-sm-12 mb-50" }, [
                 _c("div", { staticClass: "m-auto equal blog-card p-0 mb-30" }, [
                   _vm._m(1),

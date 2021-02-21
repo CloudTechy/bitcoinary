@@ -64,7 +64,7 @@ class WithdrawalController extends Controller {
 					DB::commit();
 					$this->notificationRequest($data);
 					$data = new WithdrawalResource($data);
-					return Helper::validRequest($data, 'Your withdrawal request is being processed. Please note that withdrawal request can take up to 24 hours.', 200);
+					return Helper::validRequest($data, 'Your withdrawal request is being processed. Please note that withdrawal request might take up to 24 hours.', 200);
 				} else {
 					return Helper::invalidRequest('Insufficient funds', 'Your account is low for this transaction', 400);
 				}
