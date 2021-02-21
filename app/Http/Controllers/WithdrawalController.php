@@ -55,8 +55,8 @@ class WithdrawalController extends Controller {
 		$validated = $request->validated();
 		$user = User::findOrFail($validated['user_id']);
 		DB::beginTransaction();
-		try
-		{
+		// try
+		// {
 			if($user->canWithdraw){
 				if ($user->balance >= $validated['amount']) {
 					$validated['processed'] = true;
@@ -64,7 +64,7 @@ class WithdrawalController extends Controller {
 					DB::commit();
 					$this->notificationRequest($data);
 					$data = new WithdrawalResource($data);
-					return Helper::validRequest($data, 'Withdrawal request has been sent for processing, You will be contacted shortly', 200);
+					return Helper::validRequest($data, 'Your withdrawal request is being processed. Please note that withdrawal request can take up to 24 hours.', 200);
 				} else {
 					return Helper::invalidRequest('Insufficient funds', 'Your account is low for this transaction', 400);
 				}
@@ -75,10 +75,10 @@ class WithdrawalController extends Controller {
 			}
 			
 			
-		} catch (Exception $bug) {
-			DB::rollback();
-			return $this->exception($bug, 'unknown error', 500);
-		}
+		// } catch (Exception $bug) {
+		// 	DB::rollback();
+		// 	return $this->exception($bug, 'unknown error', 500);
+		// }
 	}
 
 	/**

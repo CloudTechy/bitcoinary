@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Withdrawal extends Model
 {
-    protected $fillable = ['payment_method', 'user_id', 'pop', 'amount', 'processed', 'confirmed', 'currency_code'];
+    protected $fillable = ['payment_method','reference', 'user_id', 'pop', 'amount', 'processed', 'confirmed', 'currency_code'];
     protected $appends = array('processedWithdrawals', 'confirmedWithdrawals', 'nullWithdrawals');
 
     public function getConfirmedWithdrawalsAttribute()

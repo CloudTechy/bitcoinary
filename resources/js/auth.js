@@ -39,7 +39,7 @@ const config = {
     url: 'auth/refresh', 
     method: 'GET', 
     enabled: true, 
-    interval: 30
+    interval: 10
   }
 }
 export default config

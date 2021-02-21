@@ -43,7 +43,7 @@
                         <div class="input-group mb-3">
                             <input type="text" v-model="paymentMethod.acc_number" disabled="" id="acc_number" class="text-center form-control">
                             <div class="input-group-append">
-                                <button v-clipboard="paymentMethod.acc_number" style="border-radius: 0px;" class="cmn-btn" data-clipboard-target="#wallet">Copy</button>
+                                <button @click="$root.alert('success',' ', 'copied')" v-clipboard="paymentMethod.acc_number" style="border-radius: 0px;" class="cmn-btn" data-clipboard-target="#wallet">Copy</button>
                             </div>
                         </div>
                     </div>

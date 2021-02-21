@@ -10324,7 +10324,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -11448,12 +11447,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       form: new Form({
         reference: 'SELF',
-        user_id: this.$auth.user().id
+        user_id: this.$auth.user().id,
+        payment_method: ''
       }),
       message: '',
       error: '',
@@ -11466,24 +11498,13 @@ __webpack_require__.r(__webpack_exports__);
         this.amount = this.user.balance;
       }
     },
-    message: function message() {
-      var _this = this;
-
-      setTimeout(function () {
-        _this.message = '';
-      }, 3000);
+    message: function message() {// setTimeout(() => { this.message = '' }, 3000);
     },
-    error: function error() {
-      var _this2 = this;
-
-      setTimeout(function () {
-        _this2.error = '';
-      }, 3000);
+    error: function error() {// setTimeout(() => { this.error = '' }, 3000);
     }
   },
   mounted: function mounted() {
     this.$root.scrollUp();
-    console.log(this.$auth.user());
   },
   computed: {
     user: function user() {
@@ -11492,26 +11513,34 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     withdraw: function withdraw() {
-      var _this3 = this;
+      var _this = this;
 
-      this.processing(true);
+      this.$root.loader('show');
+      this.message = "";
+      this.error = '';
       this.form.amount = this.amount;
       this.form.post("/auth/withdrawals").then(function (response) {
-        window.scrollTo(0, 200);
-        _this3.amount = '';
+        _this.$root.loader('hide');
 
-        _this3.processing(false);
+        _this.message = response.data.message;
 
-        _this3.error = '';
-        _this3.message = response.data.message;
+        _this.$root.scrollUp();
+
+        _this.amount = '';
+
+        _this.$auth.fetchData();
       })["catch"](function (error) {
-        _this3.message = '';
-        _this3.error = error.response.data.message;
+        _this.$root.loader('hide');
 
-        _this3.processing(false);
+        _this.$root.scrollUp();
 
-        window.scrollTo(0, 200);
-        console.log(error.response);
+        if (error.response.status == 422) {
+          _this.error = error.response.data.error.pop;
+        } else {
+          _this.error = error.response.data.message;
+        }
+
+        console.log(error, error.response);
       });
     },
     getAccountDetails: function getAccountDetails(search, currencyType) {
@@ -18790,7 +18819,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* .bg_img{\r\n        background-size: cover !important;\r\n        background-position: center !important;\r\n        background-repeat: no-repeat !important;\r\n    }*/\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* .bg_img{\r\n        background-size: cover !important;\r\n        background-position: center !important;\r\n        background-repeat: no-repeat !important;\r\n    }*/\r\n\r\n", ""]);
 
 // exports
 
@@ -18866,7 +18895,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.img-size-50 {\n    width: 50px;\n    height: 50px;\n}\n.disabled:hover{\n    background-color: #cca354 !important;\n}\n.cmn-btn.disabled, .cmn-btn:disabled {\n    opacity: 0.65;\n    cursor: not-allowed;\n}\n", ""]);
+exports.push([module.i, "\n.img-size-50 {\r\n    width: 50px;\r\n    height: 50px;\n}\n.disabled:hover {\r\n    background-color: #cca354 !important;\n}\n.cmn-btn:disabled {\r\n    opacity: 0.65;\r\n    cursor: not-allowed;\n}\n.select_input {\r\n    opacity: 0;\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    margin: 0;\r\n    top: 0;\r\n    z-index: 11;\r\n    cursor: pointer;\n}\n.selected {\r\n    border-radius: 3px;\r\n    background: #cca354 !important;\r\n    box-shadow: 0 5px 5px 0 rgb(204 163 84 / 25%) !important;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -65679,7 +65708,12 @@ var render = function() {
                           ],
                           staticClass: "cmn-btn",
                           staticStyle: { "border-radius": "0px" },
-                          attrs: { "data-clipboard-target": "#wallet" }
+                          attrs: { "data-clipboard-target": "#wallet" },
+                          on: {
+                            click: function($event) {
+                              return _vm.$root.alert("success", " ", "copied")
+                            }
+                          }
                         },
                         [_vm._v("Copy")]
                       )
@@ -74402,7 +74436,7 @@ var render = function() {
                 _c("span", { staticClass: "base--color" }, [
                   _vm._v("Welcome, ")
                 ]),
-                _vm._v(" " + _vm._s("Bitcoinary"))
+                _vm._v(" " + _vm._s(_vm.$auth.user().username))
               ])
             ])
           ])
@@ -74465,7 +74499,16 @@ var render = function() {
                                       }
                                     ],
                                     staticClass: "cmn-btn",
-                                    attrs: { "data-clipboard-target": "#link" }
+                                    attrs: { "data-clipboard-target": "#link" },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.$root.alert(
+                                          "success",
+                                          " ",
+                                          "copied"
+                                        )
+                                      }
+                                    }
                                   },
                                   [_vm._v("COPY LINK")]
                                 )
@@ -74880,7 +74923,7 @@ var render = function() {
                 _c("span", { staticClass: "base--color" }, [
                   _vm._v("Welcome, ")
                 ]),
-                _vm._v(" " + _vm._s("Bitcoinary"))
+                _vm._v(" " + _vm._s(_vm.$auth.user().username))
               ])
             ])
           ])
@@ -76020,7 +76063,7 @@ var render = function() {
                 _c("span", { staticClass: "base--color" }, [
                   _vm._v("Welcome, ")
                 ]),
-                _vm._v(" " + _vm._s("Bitcoinary"))
+                _vm._v(" " + _vm._s(_vm.$auth.user().username))
               ])
             ])
           ])
@@ -76033,7 +76076,56 @@ var render = function() {
         _c("div", { staticClass: "row justify-content-center" }, [
           _c("div", { staticClass: "col-lg-12" }, [
             _c("div", { staticClass: "row mt-50 " }, [
-              _c("div", { staticClass: "col-lg-4 col-sm-12 mb-5s0" }, [
+              _c("div", { staticClass: "form-group p-2 text-center" }, [
+                _vm.error
+                  ? _c(
+                      "div",
+                      {
+                        staticClass: "error-msg  m-3",
+                        style: {
+                          backgroundImage:
+                            "url(" +
+                            _vm.$root.basepath +
+                            "/images/bg/bg-5.jpg )"
+                        }
+                      },
+                      _vm._l(_vm.error, function(err) {
+                        return typeof _vm.error == "object"
+                          ? _c("p", { staticClass: "small m-2 m-md-3" }, [
+                              _vm._v(_vm._s(err))
+                            ])
+                          : _c(
+                              "p",
+                              { staticClass: "text-center m-2  m-md-3 small" },
+                              [_vm._v(_vm._s(_vm.error))]
+                            )
+                      }),
+                      0
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.message
+                  ? _c(
+                      "div",
+                      {
+                        staticClass: "success-msg ",
+                        style: {
+                          backgroundImage:
+                            "url(" +
+                            _vm.$root.basepath +
+                            "/images/bg/bg-5.jpg )"
+                        }
+                      },
+                      [
+                        _c("p", { staticClass: "p-2 m-lg-3 m-sm-1" }, [
+                          _vm._v(_vm._s(_vm.message))
+                        ])
+                      ]
+                    )
+                  : _vm._e()
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-4 col-sm-12 mb-50" }, [
                 _c("div", { staticClass: "m-auto equal blog-card p-0 mb-30" }, [
                   _vm._m(1),
                   _vm._v(" "),
@@ -76073,137 +76165,256 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _vm._m(3)
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "divider pb-3" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row p-4 pb-2" }, [
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-3 col-md-2 p-0" }, [
+                      _c("div", { staticClass: "mb-1" }, [
+                        _c(
+                          "span",
+                          {
+                            class: {
+                              badge: true,
+                              "badge-success": _vm.$auth.user().CanWithdraw,
+                              "badge-danger": !_vm.$auth.user().CanWithdraw
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                                " +
+                                _vm._s(
+                                  _vm.$auth.user().CanWithdraw
+                                    ? "Active"
+                                    : "Paused"
+                                ) +
+                                "\n                                            "
+                            )
+                          ]
+                        )
+                      ])
+                    ])
                   ])
                 ])
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-lg-8 col-sm-12" }, [
                 _c("div", { staticClass: "m-auto equal blog-card p-0 mb-30" }, [
-                  _vm._m(4),
+                  _vm._m(5),
                   _vm._v(" "),
                   _c(
-                    "div",
+                    "form",
                     {
-                      staticClass: "table-respon2sive table-responsive--md p-0"
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          return _vm.withdraw($event)
+                        }
+                      }
                     },
                     [
+                      _c("h6", { staticClass: "text-center p-2 base--color" }, [
+                        _vm._v("Select your Payment Method")
+                      ]),
+                      _vm._v(" "),
                       _c(
-                        "table",
-                        { staticClass: "table style--two white-space-nowrap" },
+                        "div",
+                        {
+                          staticClass:
+                            "table-respon2sive table-responsive--md p-0"
+                        },
                         [
-                          _vm._m(5),
-                          _vm._v(" "),
                           _c(
-                            "tbody",
-                            _vm._l(_vm.$root.payments, function(py) {
-                              return _c("tr", [
-                                _c(
-                                  "td",
-                                  {
-                                    attrs: { "data-label": "Payment processor" }
-                                  },
-                                  [
-                                    _c("span", {}, [
-                                      _c("img", {
-                                        staticClass: "img-size-50",
-                                        attrs: {
-                                          src:
-                                            _vm.$root.basepath +
-                                            "/images/uploads/" +
-                                            py.image,
-                                          alt: "processor brand"
-                                        }
-                                      })
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "span",
-                                      { staticClass: "text-capitalize" },
-                                      [_vm._v(" " + _vm._s(py.name))]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _vm.getAccountDetails(py.name, py.type)
-                                  ? _c(
-                                      "td",
-                                      { attrs: { "data-label": "Address" } },
-                                      [
-                                        _vm._v(
-                                          _vm._s(
-                                            _vm.getAccountDetails(
-                                              py.name,
-                                              py.type
-                                            )
+                            "table",
+                            {
+                              staticClass: "table style--two white-space-nowrap"
+                            },
+                            [
+                              _vm._m(6),
+                              _vm._v(" "),
+                              _c(
+                                "tbody",
+                                _vm._l(_vm.$root.payments, function(py) {
+                                  return _c(
+                                    "tr",
+                                    {
+                                      class: {
+                                        selected:
+                                          _vm.form.payment_method == py.name &&
+                                          _vm.getAccountDetails(
+                                            py.name,
+                                            py.type
                                           )
-                                        )
-                                      ]
-                                    )
-                                  : _c(
-                                      "td",
-                                      { attrs: { "data-label": "Address" } },
-                                      [_vm._m(6, true)]
-                                    )
-                              ])
-                            }),
-                            0
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "td",
+                                        {
+                                          attrs: {
+                                            "data-label": "Payment processor"
+                                          }
+                                        },
+                                        [
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: _vm.form.payment_method,
+                                                expression:
+                                                  "form.payment_method"
+                                              }
+                                            ],
+                                            staticClass: "select_input",
+                                            attrs: {
+                                              required: "",
+                                              name: "payment_option",
+                                              type: "radio"
+                                            },
+                                            domProps: {
+                                              value: py.name,
+                                              checked: _vm._q(
+                                                _vm.form.payment_method,
+                                                py.name
+                                              )
+                                            },
+                                            on: {
+                                              click: function($event) {},
+                                              change: function($event) {
+                                                return _vm.$set(
+                                                  _vm.form,
+                                                  "payment_method",
+                                                  py.name
+                                                )
+                                              }
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c("span", {}, [
+                                            _c("img", {
+                                              staticClass: "img-size-50",
+                                              attrs: {
+                                                src:
+                                                  _vm.$root.basepath +
+                                                  "/images/uploads/" +
+                                                  py.image,
+                                                alt: "processor brand"
+                                              }
+                                            })
+                                          ]),
+                                          _vm._v(" "),
+                                          _c(
+                                            "span",
+                                            { staticClass: "text-capitalize" },
+                                            [_vm._v(" " + _vm._s(py.name))]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _vm.getAccountDetails(py.name, py.type)
+                                        ? _c(
+                                            "td",
+                                            {
+                                              attrs: { "data-label": "Address" }
+                                            },
+                                            [
+                                              _vm._v(
+                                                _vm._s(
+                                                  _vm.getAccountDetails(
+                                                    py.name,
+                                                    py.type
+                                                  )
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        : _c(
+                                            "td",
+                                            {
+                                              attrs: { "data-label": "Address" }
+                                            },
+                                            [_vm._m(7, true)]
+                                          )
+                                    ]
+                                  )
+                                }),
+                                0
+                              )
+                            ]
                           )
                         ]
-                      )
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "mt-4 p-3" }, [
+                        _c(
+                          "h6",
+                          { staticClass: "text-center p-2 base--color" },
+                          [_vm._v("Withdrawal Amount")]
+                        ),
+                        _vm._v(" "),
+                        _vm.$auth.user().balance > 1
+                          ? _c("div", { staticClass: "form-group" }, [
+                              _c("div", { staticClass: "input-group" }, [
+                                _vm._m(8),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.amount,
+                                      expression: "amount"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    max: _vm.$auth.user().balance,
+                                    min: "1",
+                                    type: "number",
+                                    placeholder: "Enter amount",
+                                    required: ""
+                                  },
+                                  domProps: { value: _vm.amount },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.amount = $event.target.value
+                                    }
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "input-group-prepend" },
+                                  [
+                                    _c(
+                                      "button",
+                                      {
+                                        ref: "withdrawBtn",
+                                        staticClass: "cmn-btn",
+                                        staticStyle: {
+                                          "border-radius": "0px 5px"
+                                        },
+                                        attrs: { type: "submit" }
+                                      },
+                                      [_vm._v("Request")]
+                                    )
+                                  ]
+                                )
+                              ])
+                            ])
+                          : _c("div", { staticClass: "pb-2 mt-4 p-3" }, [
+                              _vm._v("You have no funds to withdraw.")
+                            ])
+                      ])
                     ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "mt-4 p-3" }, [
-                    _vm.$auth.user().balance > 1
-                      ? _c("div", { staticClass: "form-group" }, [
-                          _c("label", [_vm._v("Amount")]),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.amount,
-                                expression: "amount"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "password",
-                              placeholder: "Enter Amount",
-                              required: ""
-                            },
-                            domProps: { value: _vm.amount },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.amount = $event.target.value
-                              }
-                            }
-                          })
-                        ])
-                      : _c("div", { staticClass: "pb-2" }, [
-                          _vm._v("You have no funds to withdraw.")
-                        ]),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        ref: "withdrawBtn",
-                        class: {
-                          "cmn-btn": true,
-                          disabled: _vm.$auth.user().balance < 1
-                        },
-                        attrs: {
-                          disabled: _vm.$auth.user().balance < 1,
-                          type: "submit"
-                        }
-                      },
-                      [_vm._v("Request")]
-                    )
-                  ])
+                  )
                 ])
               ])
             ])
@@ -76221,7 +76432,11 @@ var staticRenderFns = [
     return _c("ul", { staticClass: "page-breadcrumb" }, [
       _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("Home")])]),
       _vm._v(" "),
-      _c("li", [_vm._v("Dashboard")])
+      _c("li", [
+        _c("a", { attrs: { href: "/dashboard" } }, [_vm._v("Dashboard")])
+      ]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Withdraw")])
     ])
   },
   function() {
@@ -76258,6 +76473,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-9 col-md-10 " }, [
+      _c("p", { staticClass: "mb-3" }, [_vm._v("Withdrawal Status")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "headeraccount base--bg mb-4" }, [
       _c("span", { staticClass: "font-weight-bold" }, [
         _vm._v("Make Withdrawal Request ")
@@ -76270,7 +76493,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", { staticClass: "bg-transparent text-white" }, [
       _c("tr", [
-        _c("th", [_vm._v("Payment Processor")]),
+        _c("th", [_vm._v("Processor")]),
         _vm._v(" "),
         _c("th", [_vm._v("Receiving Address")])
       ])
@@ -76282,7 +76505,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", [
       _vm._v(
-        "Not set\n                                                        "
+        "Not set\n                                                            "
       ),
       _c(
         "a",
@@ -76294,6 +76517,26 @@ var staticRenderFns = [
         [_vm._v(" setup?")]
       )
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "input-group-prepend",
+        staticStyle: { "border-radius": "0px 5px" }
+      },
+      [
+        _c("span", { staticClass: "icon bg--base text-white" }, [
+          _c("i", {
+            staticClass: "fas fa-dollar-sign",
+            attrs: { "aria-hidden": "true" }
+          })
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -104827,7 +105070,7 @@ var config = {
     url: 'auth/refresh',
     method: 'GET',
     enabled: true,
-    interval: 30
+    interval: 10
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (config);

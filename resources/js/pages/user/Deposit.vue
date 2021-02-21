@@ -10,7 +10,7 @@
                             <li><a href="/dashboard">Dashoard</a></li>
                             <li>Deposit</li>
                         </ul>
-                        <h2 class="page-title pt-4"><span class="base--color">Welcome, </span> {{'Bitcoinary'}}</h2>
+                        <h2 class="page-title pt-4"><span class="base--color">Welcome, </span> {{$auth.user().username}}</h2>
                     </div>
                 </div>
             </div>

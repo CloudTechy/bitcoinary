@@ -89,9 +89,10 @@
                         <h2 class="page-title">Dashboard</h2>
                         <ul class="page-breadcrumb">
                             <li><a href="/">Home</a></li>
-                            <li>Dashboard</li>
+                            <li><a href="/dashboard">Dashboard</a></li>
+                            <li>Withdraw</li>
                         </ul>
-                        <h2 class="page-title pt-4"><span class="base--color">Welcome, </span> {{'Bitcoinary'}}</h2>
+                        <h2 class="page-title pt-4"><span class="base--color">Welcome, </span> {{$auth.user().username}}</h2>
                     </div>
                 </div>
             </div>
@@ -101,7 +102,16 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="row mt-50 ">
-                            <div class="col-lg-4 col-sm-12 mb-5s0">
+                            <div class="form-group p-2 text-center">
+                                <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="error">
+                                    <p v-for="err in error" class="small m-2 m-md-3" v-if="typeof error == 'object'">{{err}}</p>
+                                    <p v-else class="text-center m-2  m-md-3 small">{{error}}</p>
+                                </div>
+                                <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="success-msg " v-if="message">
+                                    <p class="p-2 m-lg-3 m-sm-1">{{message}}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-12 mb-50">
                                 <div class="m-auto equal blog-card p-0 mb-30">
                                     <div class="headeraccount base--bg"><span class="font-weight-bold">Financial Statistics </span> </div>
                                     <div class="row p-4 pb-2">
@@ -127,53 +137,75 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="divider pb-3"></div>
+                                    <div class="row p-4 pb-2">
+                                        <div class="col-9 col-md-10 ">
+                                            <p class="mb-3">Withdrawal Status</p>
+                                        </div>
+                                        <div class="col-3 col-md-2 p-0">
+                                            <div class="mb-1">
+                                                <span :class="{badge:true, 'badge-success' : $auth.user().CanWithdraw , 'badge-danger' : !$auth.user().CanWithdraw }">
+                                                    {{$auth.user().CanWithdraw ? 'Active' : 'Paused'}}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-8 col-sm-12">
                                 <div class="m-auto equal blog-card p-0 mb-30">
                                     <div class="headeraccount base--bg mb-4"><span class="font-weight-bold">Make Withdrawal Request </span> </div>
-                                    <div class="table-respon2sive table-responsive--md p-0">
-                                        <table class="table style--two white-space-nowrap">
-                                            <thead class="bg-transparent text-white">
-                                                <tr>
-                                                    <th>Payment Processor</th>
-                                                    <th>Receiving Address</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr v-for="py in $root.payments">
-                                                    <td data-label="Payment processor">
-                                                        <span class="">
-                                                            <img class="img-size-50" :src="$root.basepath + '/images/uploads/' + py.image" alt="processor brand">
-                                                        </span>
-                                                        <span class="text-capitalize"> {{py.name}}</span></td>
-                                                    <td v-if="getAccountDetails(py.name, py.type)" data-label="Address">{{getAccountDetails(py.name, py.type)}}</td>
-                                                    <td data-label="Address" v-else>
-                                                        <p>Not set
-                                                            <a style="text-decoration: underline;" href="/dashboard/settings/#payment" class="base--color font-weight-bold"> setup?</a>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-                                    <div class="mt-4 p-3">
-                                        <div v-if = "$auth.user().balance > 1" class="form-group">
-                                            <label>Amount</label>
-                                            <input type="password" placeholder="Enter Amount" v-model="amount" required class="form-control">
+                                    <form @submit.prevent="withdraw">
+                                        <h6 class="text-center p-2 base--color">Select your Payment Method</h6>
+                                        <div class="table-respon2sive table-responsive--md p-0">
+                                            <table class="table style--two white-space-nowrap">
+                                                <thead class="bg-transparent text-white">
+                                                    <tr>
+                                                        <th>Processor</th>
+                                                        <th>Receiving Address</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr v-for="py in $root.payments" :class="{ selected : form.payment_method == py.name && getAccountDetails(py.name, py.type)}">
+                                                        <td data-label="Payment processor">
+                                                            <input class="select_input" required="" name="payment_option" type="radio" @click="" v-model="form.payment_method" :value="py.name">
+                                                            <span class="">
+                                                                <img class="img-size-50" :src="$root.basepath + '/images/uploads/' + py.image" alt="processor brand">
+                                                            </span>
+                                                            <span class="text-capitalize"> {{py.name}}</span></td>
+                                                        <td v-if="getAccountDetails(py.name, py.type)" data-label="Address">{{getAccountDetails(py.name, py.type)}}</td>
+                                                        <td data-label="Address" v-else>
+                                                            <p>Not set
+                                                                <a style="text-decoration: underline;" href="/dashboard/settings/#payment" class="base--color font-weight-bold"> setup?</a>
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                        <div class="pb-2" v-else>You have no funds to withdraw.</div>
-                                        <button :disabled="$auth.user().balance < 1"  ref="withdrawBtn" type="submit" :class="{'cmn-btn' : true, disabled : $auth.user().balance < 1}">Request</button>
-                                        
-                                    </div>
+                                        <div class="mt-4 p-3">
+                                            <h6 class="text-center p-2 base--color"">Withdrawal Amount</h6>
+                                            <div v-if=" $auth.user().balance> 1" class="form-group">
+                                                <div class="input-group">
+                                                    <div style="border-radius: 0px 5px" class="input-group-prepend">
+                                                        <span class="icon bg--base text-white"><i class="fas fa-dollar-sign" aria-hidden="true"></i></span>
+                                                    </div>
+                                                    <input :max='$auth.user().balance' min="1" type="number" placeholder="Enter amount" v-model="amount" required class="form-control">
+                                                    <div class="input-group-prepend">
+                                                        <button style="border-radius: 0px 5px" ref="withdrawBtn" type="submit" class="cmn-btn">Request</button>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <div class="pb-2 mt-4 p-3" v-else>You have no funds to withdraw.</div>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </template>
 <script>
@@ -182,11 +214,13 @@
         return {
             form: new Form({
                 reference: 'SELF',
-                user_id: this.$auth.user().id
+                user_id: this.$auth.user().id,
+                payment_method : '',
             }),
             message: '',
             error: '',
             amount: ''
+
         }
     },
     watch: {
@@ -196,15 +230,14 @@
             }
         },
         message() {
-            setTimeout(() => { this.message = '' }, 3000);
+            // setTimeout(() => { this.message = '' }, 3000);
         },
         error() {
-            setTimeout(() => { this.error = '' }, 3000);
+            // setTimeout(() => { this.error = '' }, 3000);
         },
     },
     mounted() {
         this.$root.scrollUp()
-        console.log(this.$auth.user())
     },
     computed: {
         user() {
@@ -213,22 +246,28 @@
     },
     methods: {
         withdraw() {
-            this.processing(true)
+            this.$root.loader('show')
+            this.message = ""
+            this.error = ''
             this.form.amount = this.amount
             this.form.post("/auth/withdrawals")
                 .then(response => {
-                    window.scrollTo(0, 200)
-                    this.amount = ''
-                    this.processing(false)
-                    this.error = ''
+                    this.$root.loader('hide')
                     this.message = response.data.message
+                    this.$root.scrollUp()
+                    this.amount = ''
+                    this.$auth.fetchData()
                 })
                 .catch(error => {
-                    this.message = ''
-                    this.error = error.response.data.message
-                    this.processing(false)
-                    window.scrollTo(0, 200)
-                    console.log(error.response)
+                    this.$root.loader('hide')
+                    this.$root.scrollUp()
+                    if (error.response.status == 422) {
+                        this.error =  error.response.data.error.pop
+                    }
+                    else{
+                        this.error = error.response.data.message
+                    }
+                    console.log(error, error.response)
                 })
         },
         getAccountDetails(search, currencyType){
@@ -240,15 +279,37 @@
 
 </script>
 <style type="text/css">
-    .img-size-50 {
-        width: 50px;
-        height: 50px;
-    }
-    .disabled:hover{
-        background-color: #cca354 !important;
-    }
-    .cmn-btn.disabled, .cmn-btn:disabled {
-        opacity: 0.65;
-        cursor: not-allowed;
-    }
+.img-size-50 {
+    width: 50px;
+    height: 50px;
+}
+
+.disabled:hover {
+    background-color: #cca354 !important;
+}
+
+.cmn-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.select_input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    top: 0;
+    z-index: 11;
+    cursor: pointer;
+}
+
+.selected {
+    border-radius: 3px;
+    background: #cca354 !important;
+    box-shadow: 0 5px 5px 0 rgb(204 163 84 / 25%) !important;
+
+}
+
 </style>

@@ -13,8 +13,8 @@
                                 <h3 class="text-center">Investment Details</h3>
                                 <form class="mt-4" autocomplete="off" @submit.prevent="$refs.paymentModalbtn.click" method="post">
                                     <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="success-msg " v-if="message">
-                                             <p class="p-2 m-lg-3 m-sm-1">{{message.message}}</p>
-                                        </div>
+                                        <p class="p-2 m-lg-3 m-sm-1">{{message.message}}</p>
+                                    </div>
                                     <div class="form-group">
                                         <label>Payment method</label>
                                         <select required="" v-model="paymentMethod" class="base--bg">
@@ -37,9 +37,8 @@
                                 </form>
                             </div>
                             <button type="button" ref="paymentModalbtn" style="visibility: hidden;" id="add" data-toggle="modal" data-target="#paymentDetails"></button>
-
                             <div class="modal fade" ref="paymentDetails" id="paymentDetails">
-                                <paymentDetails @popUploaded = "displayMessage" :key = "key" :plan = "plan" :paymentMethod = "paymentMethod" :amount = "amount" :processor = "getPaymentProcessorDetails(paymentMethod.payment_method)"></paymentDetails>
+                                <paymentDetails @popUploaded="displayMessage" :key="key" :plan="plan" :paymentMethod="paymentMethod" :amount="amount" :processor="getPaymentProcessorDetails(paymentMethod.payment_method)"></paymentDetails>
                             </div>
                         </div>
                     </div>

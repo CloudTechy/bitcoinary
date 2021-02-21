@@ -9,7 +9,7 @@
                             <li><a href="/">Home</a></li>
                             <li>Dashboard</li>
                         </ul>
-                        <h2 class="page-title pt-4"><span class="base--color">Welcome, </span> {{'Bitcoinary'}}</h2>
+                        <h2 class="page-title pt-4"><span class="base--color">Welcome, </span> {{$auth.user().username}}</h2>
                     </div>
                 </div>
             </div>
@@ -224,7 +224,7 @@
                                                         <div id="link">https://bitcoinarymint.com/?ref=bitcoinary</div>
                                                     </div>
                                                     <div class="col-lg-3 col-md-4 col-sm-3 m-2 text-md-right">
-                                                        <button v-clipboard="Referral_link" class="cmn-btn" data-clipboard-target="#link">COPY LINK</button>
+                                                        <button @click="$root.alert('success',' ', 'copied')" v-clipboard="Referral_link" class="cmn-btn" data-clipboard-target="#link">COPY LINK</button>
                                                     </div>
                                                 </div>
                                             </div>
