@@ -21,13 +21,10 @@
                                 <a href="/dashboard/deposit">Make deposit</a>
                             </li>
                             <li>
-                                <a href="/dashboard/plans">Deposit history</a>
-                            </li>
-                            <li>
                                 <a href="/dashboard/withdraw">Withdraw</a>
                             </li>
                             <li>
-                                <a href="/dashboard/report/depositReport">Active plans</a>
+                                <a href="/dashboard/plans">Active plans</a>
                             </li>
                             <li>
                                 <a href="/dashboard/report/withdraw">Withdrawal history</a>

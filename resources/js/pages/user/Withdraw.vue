@@ -115,9 +115,9 @@
                                                         <button style="border-radius: 0px 5px" ref="withdrawBtn" type="submit" class="cmn-btn">Request</button>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        <div class="pb-2 mt-4 p-3" v-else>You have no funds to withdraw.</div>
-                                    </div>
+                                        </div>
+                                        <div class="pb-2 mt-4 p-3 text-center" v-else>You have no funds to withdraw. click <a style="text-decoration: underline;" href="/dashboard/deposit" class="base--color font-weight-bold"> here </a> to start earning.</div>
+                                </div>
                                 </form>
                             </div>
                         </div>
