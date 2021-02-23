@@ -7565,11 +7565,11 @@ __webpack_require__.r(__webpack_exports__);
     data: function data() {
       console.log(this.data);
       return this.key++;
-    },
-    testimonial: function testimonial() {
-      console.log(this.testimonial);
-      return this.key++;
-    }
+    } // testimonial(){
+    //     console.log(this.testimonial)
+    //     return this.key++
+    // }
+
   },
   mounted: function mounted() {
     this.key++;
@@ -67153,10 +67153,18 @@ var staticRenderFns = [
             _c(
               "a",
               {
-                staticClass: "cmn-btn text-uppercase font-weight-600 mt-4",
+                staticClass: "cmn-btn mr-2 text-uppercase font-weight-600 mt-4",
                 attrs: { href: "/register" }
               },
               [_vm._v("Sign Up")]
+            ),
+            _c(
+              "a",
+              {
+                staticClass: "cmn-btn text-uppercase font-weight-600 mt-4",
+                attrs: { href: "/dashboard" }
+              },
+              [_vm._v("Login")]
             )
           ])
         ])
@@ -109260,7 +109268,7 @@ var routes = [{
     auth: undefined
   }
 }, {
-  path: '/gg',
+  path: '/404',
   name: 'NotFound',
   component: _pages_Error404_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
   meta: {

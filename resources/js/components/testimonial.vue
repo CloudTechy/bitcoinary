@@ -93,10 +93,10 @@ export default {
             console.log(this.data)
             return this.key++
         },
-        testimonial(){
-            console.log(this.testimonial)
-            return this.key++
-        }
+        // testimonial(){
+        //     console.log(this.testimonial)
+        //     return this.key++
+        // }
     },
     mounted() {
         this.key++

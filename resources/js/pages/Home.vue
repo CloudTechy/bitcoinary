@@ -8,7 +8,7 @@
                             <h2 class="hero__title"><span class="text-white font-weight-normal">Invest for Future in Stable Platform</span> <b class="base--color">and Make Fast Money</b></h2>
                             <p class="text-white f-size-18 mt-3">Invest in an Industry Leader, Professional, and Reliable Company. We provide you with the most necessary features that will make your experience better. Not only we guarantee the fastest and the most exciting returns on your
                                 investments, but we also guarantee the security of your investment.</p>
-                            <a href="/register" class="cmn-btn text-uppercase font-weight-600 mt-4">Sign Up</a>
+                            <a href="/register" class="cmn-btn mr-2 text-uppercase font-weight-600 mt-4">Sign Up</a><a href="/dashboard" class="cmn-btn text-uppercase font-weight-600 mt-4">Login</a>
                         </div>
                     </div>
                 </div>

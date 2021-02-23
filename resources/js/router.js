@@ -44,7 +44,7 @@ const routes = [{
         }
     },
     {
-        path: '/gg',
+        path: '/404',
         name: 'NotFound',
         component: NotFound,
         meta: {
