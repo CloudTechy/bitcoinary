@@ -19,6 +19,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 	protected $hidden = ['password', 'remember_token'];
 	protected $casts = ['email_verified_at' => 'datetime'];
 	protected $appends = array('processedWithdrawals', 'confirmedWithdrawals', 'nullWithdrawals', 'names', 'balance', 'confirmedTransactions', 'nullTransactions', 'sentTransactions', 'totalEarned', 'activeTransactions', 'activePackages', 'maturePackages', 'processMaturePackages', 'canWithdraw');
+	
 	public function getCanWithdrawAttribute() {
 		$w = $this->withdrawDuration->first();
 		if( !empty($w) && Carbon::now() < $w->expiration){
@@ -61,18 +62,24 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 				DB::beginTransaction();
 				$transaction = new Transaction;
 				$transaction->user_id = $maturePackage->subscription->user_id;
-				$transaction->amount = ($maturePackage->roi / 100) *  $maturePackage->subscription->amount;
+				$transaction->amount = ($maturePackage->roi / 100) * (int)$maturePackage->subscription->amount;
 				$transaction->sent = true;
 				$transaction->confirmed = true;
 				$transaction->active = false;
 				$transaction->reference = 'BM';
 				if ($transaction->save()) {
-					$maturePackage->subscription->update(['expiration' => Carbon::now()->addDays($maturePackage->duration), 'active' => true, 'created_at' => Carbon::now()]);
+					//check number of times to restart active trade
+					$loop = $maturePackage->subscription->loop;
+					$loop_termination = $maturePackage->loop_termination;
+					if (!$loop == $loop_termination) {
+						$maturePackage->subscription->update(['expiration' => Carbon::now()->addDays($maturePackage->duration), 'active' => true, 'created_at' => Carbon::now()]);
 					$transaction->user->notify(new TransactionMade($transaction));
 					$transaction = Transaction::where('id', $maturePackage->subscription->transaction_id)->first();
-					// if (!empty($transaction)) {
-					// 	$transaction->update(['active' => false]);
-					// }
+					}
+					else{
+						$maturePackage->subscription->update(['expiration' => Carbon::now()->addDays($maturePackage->duration), 'active' => false, 'created_at' => null]);
+					}
+					
 
 				}
 
@@ -122,7 +129,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 		$this->notify(new \App\Notifications\MailResetPasswordNotification($token));
 	}
 	public function packages() {
-		return $this->belongsToMany(Package::class)->withPivot('id', 'transaction_id', 'referral', 'amount','roi', 'expiration','pop', 'active')->as('subscription')->withTimestamps();
+		return $this->belongsToMany(Package::class)->withPivot('id', 'transaction_id', 'referral', 'amount','roi', 'loop', 'expiration','pop', 'active')->as('subscription')->withTimestamps();
 
 	}
 	public function withdrawDuration() {

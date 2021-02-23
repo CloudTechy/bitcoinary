@@ -51,7 +51,7 @@ class UserResource extends JsonResource {
 			// 'packages' => $this->activePackages,
 			'isAdmin' => $this->userLevel->name == "administrator" ? true : false,
 			'isEmailVerified' => empty($this->email_verified_at)  ? false : true,
-			// 'totalActiveTransaction' => $this->activeTransactions,
+			'`' => $this->activeTransactions,
 			// 'totalEarned' => $this->totalEarned,
 			// 'totalCommission' => $this->confirmedTransactions->where('reference', 'BFIN commission')->sum('amount'),
 			// 'totalDeposit' => $this->confirmedTransactions->sum('amount'),

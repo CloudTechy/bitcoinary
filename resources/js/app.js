@@ -282,6 +282,17 @@ const app = new Vue({
             }
             return data;
         },
+        cryptoFilter(list, search) {
+            var data = [];
+            if (search) {
+                data = list.filter((item) => {
+                    return item.payment_method.toLowerCase().includes(search.toLowerCase());
+                })
+            } else {
+                data = [];
+            }
+            return data;
+        },
         scrollToTop(x = 0, y = 300) {
             window.scrollTo(x, y);
         },

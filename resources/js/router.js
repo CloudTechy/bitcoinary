@@ -28,6 +28,7 @@ import Subscriptions from './pages/admin/Subscriptions'
 import AdminDashboard from './pages/admin/Dashboard'
 import WithdrawReport from './pages/user/reports/WithdrawalReport'
 import DepositReport from './pages/user/reports/DepositReport'
+import UserPlans from './pages/user/reports/DepositReport'
 import ReferralReport from './pages/user/reports/ReferralReport'
 import TransactionReport from './pages/user/reports/TransactionReport'
 import Setting from './pages/user/Setting'
@@ -223,6 +224,14 @@ const routes = [{
         path: '/dashboard/report/deposit',
         name: 'depositReport',
         component: DepositReport,
+        meta: {
+            auth: true
+        }
+    },
+    {
+        path: '/dashboard/plans',
+        name: 'UserPlans',
+        component: UserPlans,
         meta: {
             auth: true
         }

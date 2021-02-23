@@ -18,13 +18,16 @@
                                 <a href="/dashboard">Dashboard</a>
                             </li>
                             <li>
-                                <a href="/dashboard/deposit">Add deposit</a>
+                                <a href="/dashboard/deposit">Make deposit</a>
                             </li>
                             <li>
-                                <a href="/dashboard/report/deposit">Deposit history</a>
+                                <a href="/dashboard/plans">Deposit history</a>
                             </li>
                             <li>
                                 <a href="/dashboard/withdraw">Withdraw</a>
+                            </li>
+                            <li>
+                                <a href="/dashboard/report/depositReport">Active plans</a>
                             </li>
                             <li>
                                 <a href="/dashboard/report/withdraw">Withdrawal history</a>

@@ -1,97 +1,100 @@
 <template>
-    <div class="m-0 p-0">
-        <DashboardHeader></DashboardHeader>
-        <section class="main-container m-lg-3 m-0 acc">
-            <div class="main">
-                <!--start wrapper-->
-                <div class="container">
-                    <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;min-height:400px;'">
-                        <div class="account-wrapper m-xl-2 row m-0 ">
-                            <nav class="nav  navbar-dark ml-4 ml-lg-0 mb-3 mb-lg-b p-0 mt-3 navbar navbar-expand-lg ">
-                                <button @click="" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar4">
-                                    <span class="navbar-toggler-icon "></span>
-                                </button>
-                            </nav>
-                            <DashboardSidebar></DashboardSidebar>
-                            <div class="columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc">
-                                <div class="acc-body p-0 deposit-history ">
-                                    <div v-if="portfolios" v-for="portfolio in portfolios" class="m-0 p-0 mb-3">
-                                        <div v-if = "portfolio.name == 'bronze'" class="plan-wrap m-0 mb-2 clearfix">
-                                            <div class="plan-inner">
-                                                <div class="plan-in">
-                                                    <h3>Bronze</h3>
-                                                    <p>5% R.O.I</p>
-                                                </div>
-                                            </div>
-                                            <div class="plan-ad-text">$20.00 - $150.00</div>
-                                        </div>
-                                        <div v-if = "portfolio.name == 'silver'" class="plan-wrap m-0 mb-2 clearfix">
-                                            <div class="plan-inner">
-                                                <div class="plan-in">
-                                                    <h3>Silver</h3>
-                                                    <p>15% R.O.I</p>
-                                                </div>
-                                            </div>
-                                            <div class="plan-ad-text">$200.00 - $2,000.00</div>
-                                        </div>
-                                        <div v-if = "portfolio.name == 'gold'" class="plan-wrap m-0 mb-2 clearfix">
-                                            <div class="plan-inner">
-                                                <div class="plan-in">
-                                                    <h3>Gold</h3>
-                                                    <p>40% R.O.I</p>
-                                                </div>
-                                            </div>
-                                            <div class="plan-ad-text">$5,000.00 - $30,000.00</div>
-                                        </div>
-                                        <div v-if = "portfolio.name == 'platinum'" class="plan-wrap m-0 mb-2 clearfix">
-                                            <div class="plan-inner">
-                                                <div class="plan-in">
-                                                    <h3>Platinum</h3>
-                                                    <p>50% R.O.I</p>
-                                                </div>
-                                            </div>
-                                            <div class="plan-ad-text">$60,000.00 - $200,000.00</div>
-                                        </div>
-                                        <table class="stat mb-2">
-                                            <thead>
-                                                <tr>
-                                                    <th class="text-center">Deposit</th>
-                                                    <th class="text-center">Interest</th>
-                                                    <th class="text-center">Active</th>
-                                                    <th class="text-center">Timeout</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="body">
-                                                <tr v-if="userPackages && packag.portfolio == portfolio.name" v-for="packag in userPackages">
-                                                    <td class="text-center">${{$root.numeral(packag.account)}}</td>
-                                                    <td class="text-center">${{$root.normalNumeral(packag.interest)}}</td>
-                                                    <td class="text-center">{{packag.date}}</td>
-                                                    <td class="text-success text-center">{{getDate(packag.expiration)}}</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <div class="dropdown-divider"></div>
-                                    </div>
-                                    <div class="bal mt-2">
-                                        <span>Total:</span> {{$root.numeral(user.totalActiveTransaction)}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end account wrapper-->
+    <div class="page-wrapper">
+        <section class="inner-hero bg_img" :style="'background:url('+ $root.basepath +'/images/bg/bg-1.jpg)'" :data-background="$root.basepath + '/images/bg/bg-1.jpg'">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2 class="page-title">Dashboard</h2>
+                        <ul class="page-breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/dashboard">Dashboard</a></li>
+                            <li>Active Plans</li>
+                        </ul>
+                        <h2 class="page-title pt-4"><span class="base--color">Welcome, </span> {{$auth.user().username}}</h2>
                     </div>
                 </div>
             </div>
         </section>
+        <div class="pb-60">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="row mt-50 ">
+                            <div class="col-lg-4 col-sm-12 mb-50">
+                                <div class="m-auto equal blog-card p-0 mb-30">
+                                    <div class="headeraccount base--bg">
+                                        <span class="font-weight-bold">Financial Statistics </span>
+                                    </div>
+                                    <div class="row p-4 pb-2">
+                                        <div class="col-9 col-md-10 ">
+                                            <h2 class="mb-1">{{$root.numeral($auth.user().balance)}}</h2>
+                                            <p class="mb-3">Account Balance</p>
+                                        </div>
+                                        <div class="col-3 col-md-2 p-0">
+                                            <div class="icon base--bg text-white">
+                                                <i class="las la-dollar-sign"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="divider pb-3"></div>
+                                    <div class="row p-4 pb-2">
+                                        <div class="col-9 col-md-10 ">
+                                            <h2 class="mb-1">{{$root.numeral($auth.user().totalActiveTransaction)}}</h2>
+                                            <p class="mb-3">Active Investment</p>
+                                        </div>
+                                        <div class="col-3 col-md-2 p-0">
+                                            <div class="icon base--bg text-white">
+                                                <i class="las la-dollar-sign"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-sm-12">
+                                <div class="m-auto equal blog-card p-0 mb-30">
+                                    <div class="headeraccount base--bg mb-4"><span class="text-capitalize font-weight-bold">Your active subscription plans </span> </div>
+                                    <div class="table-respon2sive table-responsive--md p-0">
+                                        <table class="table style--two white-space-nowrap">
+                                            <thead  v-if="userPackages.length > 0" class="bg-transparent text-white">
+                                                <tr>
+                                                    <th>Plan</th>
+                                                    <th>Capital</th>
+                                                    <th>Interest</th>
+                                                    <th>Activation</th>
+                                                    <th>Countdown</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr v-if="userPackages.length > 0" v-for="packag in userPackages">
+                                                    <td data-label="Plan">{{$root.numeral(packag.name)}}</td>
+                                                    <td data-label="Capital">{{$root.numeral(packag.amount)}}</td>
+                                                    <td class="text-success" data-label="Interest">+ ${{$root.normalNumeral(packag.roi)}}</td>
+                                                    <td data-label="Activation">{{packag.date}}</td>
+                                                    <td data-label="Countdown" class="text-success">{{getDate(packag.expiration)}}</td>
+                                                </tr>
+                                                <tr v-if="userPackages.length == 0">
+                                                    <td class="text-center" colspan="5"> You do not have an active investment. click <a style="text-decoration: underline;" href="/dashboard/deposit" class="base--color font-weight-bold"> here </a> to invest.
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </template>
 <script>
-    import moment from 'moment'
+import moment from 'moment'
 export default {
     data() {
         return {
-            portfolios: '',
-            userPackages: '',
+            userPackages: [],
             form: new Form({}),
             select: '',
             error: '',
@@ -99,41 +102,23 @@ export default {
         }
     },
     mounted() {
-        
-        if (localStorage.portfolioss) {
-            this.portfolios = JSON.parse(localStorage.portfolioss)
-        }
-        if (localStorage.userPackages) {
-            this.userPackages = JSON.parse(localStorage.userPackages)
-        }
+        this.$root.loader('show')
         setInterval(this.getPackages, 61000)
-        this.getPortfolios()
         this.getPackages()
     },
     computed: {
-        user() {
-            return this.$auth.user()
-        },
+
     },
     methods: {
-        getPortfolios() {
-            window.scrollTo(0, 250);
-            this.form.get("/auth/portfolios")
-                .then(response => {
-                    this.portfolios = response.data.data.item
-                    localStorage.portfolioss = JSON.stringify(response.data.data.item)
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
-        },
         getPackages() {
-            this.form.get("auth/packageusers?active=1&user_id=" + this.user.id)
+            // this.$root.loader('show')
+            this.form.get("auth/packageusers?active=1&user_id=" + this.$auth.user().id)
                 .then(response => {
+                    this.$root.loader('hide')
                     this.userPackages = response.data.data.item
-                    localStorage.userPackages = JSON.stringify(response.data.data.item)
                 })
                 .catch(error => {
+                    this.$root.loader('hide')
                     console.log(error.response)
                 })
         },

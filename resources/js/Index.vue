@@ -4,6 +4,7 @@
         <DashboardHeader v-if  = "$route.name == 'dashboard'"></DashboardHeader>
         <DashboardHeader v-else-if = "$route.name == 'withdraw'"></DashboardHeader>
         <DashboardHeader v-else-if = "$route.name == 'deposit'"></DashboardHeader>
+        <DashboardHeader v-else-if = "$route.name == 'UserPlans'"></DashboardHeader>
         <AdminDashboardHeader v-else-if = "$route.name == 'adminDashboard'"></AdminDashboardHeader>
         <Header v-else class="p-0 m-0"></Header>
         <div style="min-height: 370px;  position: relative;">

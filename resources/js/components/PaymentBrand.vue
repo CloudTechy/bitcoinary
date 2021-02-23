@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="">
-                        <VueSlickCarousel v-if="data" v-bind="settings">
+                        <VueSlickCarousel :key="key" v-if="data" v-bind="settings">
                             <div :key="py.name" v-for="py in data" class="">
                                 <div class="brand-item m-2" style="min-height: 139px">
                                     <img :src="$root.basepath + '/images/uploads/' + py.image" alt="image">
@@ -75,11 +75,16 @@ export default {
 
     },
     watch: {
+        data(){
+            console.log('payment',this.data)
+            return this.key++
+        },
     },
     components: { VueSlickCarousel },
     computed: {},
-    created() {
+    mounted() {
 
+        this.key++
     },
     props: ['data'],
     // components: { Menu },

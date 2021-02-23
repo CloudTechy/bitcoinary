@@ -177,7 +177,7 @@ class PackageUserController extends Controller {
 
             $packageuser = $packageuser->update($validated);
             DB::commit();
-            return Helper::validRequest(["success" => $packageuser], 'data was updated successfully', 200);
+            return Helper::validRequest(["success" => $packageuser], 'pop was updated successfully', 200);
         } catch (Exception $bug) {
             DB::rollback();
             return $this->exception($bug, 'unknown error', 500);
@@ -198,7 +198,7 @@ class PackageUserController extends Controller {
 		DB::beginTransaction();
 		try {
 			if(auth()->user()->user_level_id != 1){
-				return Helper::inValidRequest('User not Unauthorized to peform this operation.', 'Unauthorized Access!', 400);
+				return Helper::inValidRequest('You are not unauthorized to peform this operation.', 'Unauthorized Access!', 400);
 			}
 
 			if($packageuser->active == true){

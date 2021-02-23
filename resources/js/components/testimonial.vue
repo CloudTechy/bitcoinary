@@ -1,5 +1,5 @@
 <template>
-    <section :key="key"  :style="'background:url('+  $root.basepath + '/images/bg/bg-7.jpg )'"  class="pt-120 pb-120 bg_img overlay--radial" >
+    <section  :style="'background:url('+  $root.basepath + '/images/bg/bg-7.jpg )'"  class="pt-120 pb-120 bg_img overlay--radial" >
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center">
@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div id="testimonial-slider" class="testimonial-slider">
-                        <VueSlickCarousel v-if = "data" v-bind="settings">
+                        <VueSlickCarousel :key="key"  v-if = "data" v-bind="settings">
                               <div :key = "testimonial.id" v-for="(testimonial) in data" class="single-slide">
                             <div class="testimonial-card m-2">
                                 <div class="testimonial-card__content">
@@ -84,13 +84,22 @@ export default {
                 ]
             },
             key: 1,
+            testimonial : this.data
         }
 
     },
     watch: {
+        data(){
+            console.log(this.data)
+            return this.key++
+        },
+        testimonial(){
+            console.log(this.testimonial)
+            return this.key++
+        }
     },
-    created() {
-
+    mounted() {
+        this.key++
     },
     components: { VueSlickCarousel },
     props: ['data'],

@@ -1,86 +1,4 @@
 <template>
-    <!-- <div class="m-0 p-0">
-        <DashboardHeader></DashboardHeader>
-        <section class="main-container m-lg-3 m-0 acc">
-            <div class="main">
-                
-                <div class="container">
-                    <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;min-height:400px;'">
-                        <div class="account-wrapper m-xl-2 row m-0 ">
-                            <nav class="nav  navbar-dark ml-4 ml-lg-0 mb-3 mb-lg-b p-0 mt-3 navbar navbar-expand-lg ">
-                                <button @click="" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar4">
-                                    <span class="navbar-toggler-icon "></span>
-                                </button>
-                            </nav>
-                            <DashboardSidebar></DashboardSidebar>
-                            <div class="columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc">
-                                <div class="acc-body p-0 deposit-confirm withdraw-confirm">
-                                    <div class="bal p-0 text-center">
-                                        <span>Account Balance:</span> {{$root.numeral(user.balance)}}
-                                    </div>
-                                    <div class="bal p-0 text-center">
-                                        <span>Pending Withdrawals:</span> {{$root.numeral(user.totalPendingWithdrawal)}}</div>
-                                    <div class="error-msg p-4 m-3" v-if="error">
-                                        <p  class="p-2 m-2">{{error}}</p>
-                                    </div>
-                                    <div class="success-msg p-4 m-4" v-if="message">
-                                        <p   class="p-2 m-2">{{message}}</p>
-                                    </div>
-                                    <form @submit.prevent="withdraw" method="post">
-                                        <table class="stat">
-                                            <thead>
-                                                <tr>
-                                                    <th></th>
-                                                    <th>Account</th>
-                                                    <th>Available</th>
-                                                    <th>Pending</th>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td> Dollar</td>
-                                                    <td><b style="color:green">{{$root.numeral(user.balance)}}</b></td>
-                                                    <td class="text-center"><b style="color:red">{{$root.numeral(user.totalPendingWithdrawal)}}</b></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td> Bitcoin</td>
-                                                    <td><b style="color:green">{{btc(user.balance)}}</b></td>
-                                                    <td class="text-center"><b style="color:red">{{btc(user.totalPendingWithdrawal)}}</b></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td> Perfectmoney</td>
-                                                    <td><b style="color:green">$0.00</b></td>
-                                                    <td class="text-center"><b style="color:red">$0.00</b></td>
-                                                </tr>
-                                            </thead>
-                                        </table>
-                                        <br><br>
-                                        <ul class="form-list text-left deposit-form-wrapper">
-                                            <li class="clearfix floated">
-                                                <div class="input-box m-1">
-                                                    <label>Withdraw Amount</label>
-                                                    <div class="iconed">
-                                                        <span class="icon"><i class="fas fa-dollar-sign" aria-hidden="true"></i></span>
-                                                        <input type="number" min="1" :disabled="user.balance <= 0" placeholder="Enter amount to Withdraw" v-model="amount" value="" :class="{'form-control' : true, disabled :user.balance > 0 }">
-                                                            <p class="small text-white m-2">maximum amount is {{$root.numeral(user.balance)}}</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <h3 v-if="user.balance <= 0" class="notice-message m-2 text-center">You have no funds to withdraw.</h3>
-                                        <div v-else class="text-center m-2 mb-3 p-3 mb-lg-0">
-                                            <button type="submit" ref="process" class="btn btn-default">Withdraw</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div> -->
     <div class="page-wrapper">
         <section class="inner-hero bg_img" :style="'background:url('+ $root.basepath +'/images/bg/bg-1.jpg)'" :data-background="$root.basepath + '/images/bg/bg-1.jpg'">
             <div class="container">
@@ -103,7 +21,7 @@
                     <div class="col-lg-12">
                         <div class="mt-50 form-group p-2 text-center">
                             <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="error">
-                                <div  v-if="typeof error == 'object'">
+                                <div v-if="typeof error == 'object'">
                                     <p v-for="err in error" class="small m-2 m-md-3">{{err}}</p>
                                 </div>
                                 <p v-else class="text-center m-2  m-md-3 small">{{error}}</p>
@@ -197,9 +115,9 @@
                                                         <button style="border-radius: 0px 5px" ref="withdrawBtn" type="submit" class="cmn-btn">Request</button>
                                                     </div>
                                                 </div>
-                                        </div>
+                                            </div>
                                         <div class="pb-2 mt-4 p-3" v-else>You have no funds to withdraw.</div>
-                                </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -258,7 +176,7 @@
                     this.message = response.data.message
                     this.$root.scrollUp()
                     this.amount = ''
-                    this.$auth.fetchData()
+                    this.$auth.fetch()
                 })
                 .catch(error => {
                     this.$root.loader('hide')
@@ -273,7 +191,7 @@
                 })
         },
         getAccountDetails(search, currencyType){
-           let paymentDetails = this.$root.myFilter(this.$auth.user().bank_details, search)[0]
+           let paymentDetails = this.$root.cryptoFilter(this.$auth.user().bank_details, search)[0]
            return currencyType == 'fiat' ?  paymentDetails.acc_number : paymentDetails.wallet
        }
     }

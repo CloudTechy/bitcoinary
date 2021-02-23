@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PackageUser extends Model {
 	protected $table = 'package_user';
-	protected $fillable = [ 'user_id', 'pop', 'roi',  'transaction_id', 'package_id', 'amount', 'referral', 'expiration', 'active'];
+	protected $fillable = [ 'user_id', 'pop', 'loop',  'roi',  'transaction_id', 'package_id', 'amount', 'referral', 'expiration', 'active'];
 	public function user() {
 
 		return $this->belongsTo(User::class);  
@@ -28,7 +28,7 @@ class PackageUser extends Model {
 
 		try {
 
-			$fields = [ 'user_id', 'pop', 'roi',  'transaction_id', 'package_id', 'referral', 'amount', 'expiration', 'active'];
+			$fields = [ 'user_id', 'pop', 'loop', 'roi',  'transaction_id', 'package_id', 'referral', 'amount', 'expiration', 'active'];
 
 			return $query->where(
 				function ($query) use ($filter, $fields) {

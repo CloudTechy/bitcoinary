@@ -21,6 +21,7 @@ class PackageResource extends JsonResource {
 			'max_deposit' => $this->max_deposit,
 			'roi' => $this->roi,
 			'turnover' => $duration->description,
+			'loop_termination' => $this->loop_termination,
 			'first_level_ref_commission' => $this->first_level_ref_commission,
 			'second_level_ref_commission' => $this->second_level_ref_commission,
 		];

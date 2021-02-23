@@ -5621,6 +5621,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -5823,6 +5824,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
 //
 //
 //
@@ -6772,12 +6776,19 @@ __webpack_require__.r(__webpack_exports__);
       key: 1
     };
   },
-  watch: {},
+  watch: {
+    data: function data() {
+      console.log('payment', this.data);
+      return this.key++;
+    }
+  },
   components: {
     VueSlickCarousel: vue_slick_carousel__WEBPACK_IMPORTED_MODULE_0___default.a
   },
   computed: {},
-  created: function created() {},
+  mounted: function mounted() {
+    this.key++;
+  },
   props: ['data'],
   // components: { Menu },
   methods: {}
@@ -7549,11 +7560,23 @@ __webpack_require__.r(__webpack_exports__);
           }
         }]
       },
-      key: 1
+      key: 1,
+      testimonial: this.data
     };
   },
-  watch: {},
-  created: function created() {},
+  watch: {
+    data: function data() {
+      console.log(this.data);
+      return this.key++;
+    },
+    testimonial: function testimonial() {
+      console.log(this.testimonial);
+      return this.key++;
+    }
+  },
+  mounted: function mounted() {
+    this.key++;
+  },
   components: {
     VueSlickCarousel: vue_slick_carousel__WEBPACK_IMPORTED_MODULE_0___default.a
   },
@@ -11401,88 +11424,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -11532,7 +11473,7 @@ __webpack_require__.r(__webpack_exports__);
 
         _this.amount = '';
 
-        _this.$auth.fetchData();
+        _this.$auth.fetch();
       })["catch"](function (error) {
         _this.$root.loader('hide');
 
@@ -11548,7 +11489,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     getAccountDetails: function getAccountDetails(search, currencyType) {
-      var paymentDetails = this.$root.myFilter(this.$auth.user().bank_details, search)[0];
+      var paymentDetails = this.$root.cryptoFilter(this.$auth.user().bank_details, search)[0];
       return currencyType == 'fiat' ? paymentDetails.acc_number : paymentDetails.wallet;
     }
   }
@@ -11654,54 +11595,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      portfolios: '',
-      userPackages: '',
+      userPackages: [],
       form: new Form({}),
       select: '',
       error: ''
     };
   },
   mounted: function mounted() {
-    if (localStorage.portfolioss) {
-      this.portfolios = JSON.parse(localStorage.portfolioss);
-    }
-
-    if (localStorage.userPackages) {
-      this.userPackages = JSON.parse(localStorage.userPackages);
-    }
-
+    this.$root.loader('show');
     setInterval(this.getPackages, 61000);
-    this.getPortfolios();
     this.getPackages();
   },
-  computed: {
-    user: function user() {
-      return this.$auth.user();
-    }
-  },
+  computed: {},
   methods: {
-    getPortfolios: function getPortfolios() {
+    getPackages: function getPackages() {
       var _this = this;
 
-      window.scrollTo(0, 250);
-      this.form.get("/auth/portfolios").then(function (response) {
-        _this.portfolios = response.data.data.item;
-        localStorage.portfolioss = JSON.stringify(response.data.data.item);
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    },
-    getPackages: function getPackages() {
-      var _this2 = this;
+      // this.$root.loader('show')
+      this.form.get("auth/packageusers?active=1&user_id=" + this.$auth.user().id).then(function (response) {
+        _this.$root.loader('hide');
 
-      this.form.get("auth/packageusers?active=1&user_id=" + this.user.id).then(function (response) {
-        _this2.userPackages = response.data.data.item;
-        localStorage.userPackages = JSON.stringify(response.data.data.item);
+        _this.userPackages = response.data.data.item;
       })["catch"](function (error) {
+        _this.$root.loader('hide');
+
         console.log(error.response);
       });
     },
@@ -18747,7 +18672,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*#testimonial-slider{\r\n    min-height: 40px; \r\n}\r\n.slick-slide .slick-active .slick-current{\r\n    margin : 15px;\r\n}\r\n.slick-slide .slick-active {\r\n    margin : 15px;\r\n}*/\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*#testimonial-slider{\r\n    min-height: 40px; \r\n}\r\n.slick-slide .slick-active .slick-current{\r\n    margin : 15px;\r\n}\r\n.slick-slide .slick-active {\r\n    margin : 15px;\r\n}*/\r\n", ""]);
 
 // exports
 
@@ -61715,6 +61640,8 @@ var render = function() {
         ? _c("DashboardHeader")
         : _vm.$route.name == "deposit"
         ? _c("DashboardHeader")
+        : _vm.$route.name == "UserPlans"
+        ? _c("DashboardHeader")
         : _vm.$route.name == "adminDashboard"
         ? _c("AdminDashboardHeader")
         : _c("Header", { staticClass: "p-0 m-0" }),
@@ -62364,12 +62291,12 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("li", [
             _c("a", { attrs: { href: "/dashboard/deposit" } }, [
-              _vm._v("Add deposit")
+              _vm._v("Make deposit")
             ])
           ]),
           _vm._v(" "),
           _c("li", [
-            _c("a", { attrs: { href: "/dashboard/report/deposit" } }, [
+            _c("a", { attrs: { href: "/dashboard/plans" } }, [
               _vm._v("Deposit history")
             ])
           ]),
@@ -62377,6 +62304,12 @@ var staticRenderFns = [
           _c("li", [
             _c("a", { attrs: { href: "/dashboard/withdraw" } }, [
               _vm._v("Withdraw")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "/dashboard/report/depositReport" } }, [
+              _vm._v("Active plans")
             ])
           ]),
           _vm._v(" "),
@@ -64384,7 +64317,12 @@ var render = function() {
               _vm.data
                 ? _c(
                     "VueSlickCarousel",
-                    _vm._b({}, "VueSlickCarousel", _vm.settings, false),
+                    _vm._b(
+                      { key: _vm.key },
+                      "VueSlickCarousel",
+                      _vm.settings,
+                      false
+                    ),
                     _vm._l(_vm.data, function(py) {
                       return _c("div", { key: py.name }, [
                         _c(
@@ -65904,7 +65842,6 @@ var render = function() {
   return _c(
     "section",
     {
-      key: _vm.key,
       staticClass: "pt-120 pb-120 bg_img overlay--radial",
       style: "background:url(" + _vm.$root.basepath + "/images/bg/bg-7.jpg )"
     },
@@ -65924,7 +65861,12 @@ var render = function() {
                 _vm.data
                   ? _c(
                       "VueSlickCarousel",
-                      _vm._b({}, "VueSlickCarousel", _vm.settings, false),
+                      _vm._b(
+                        { key: _vm.key },
+                        "VueSlickCarousel",
+                        _vm.settings,
+                        false
+                      ),
                       _vm._l(_vm.data, function(testimonial) {
                         return _c(
                           "div",
@@ -74207,9 +74149,11 @@ var render = function() {
                             }
                           },
                           [
-                            _c("p", { staticClass: "p-2 m-lg-3 m-sm-1" }, [
-                              _vm._v(_vm._s(_vm.message.message))
-                            ])
+                            _c(
+                              "p",
+                              { staticClass: "p-2 m-lg-3 m-sm-1 text-center" },
+                              [_vm._v(_vm._s(_vm.message.message))]
+                            )
                           ]
                         )
                       : _vm._e(),
@@ -76582,271 +76526,220 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "m-0 p-0" },
-    [
-      _c("DashboardHeader"),
-      _vm._v(" "),
-      _c("section", { staticClass: "main-container m-lg-3 m-0 acc" }, [
-        _c("div", { staticClass: "main" }, [
-          _c("div", { staticClass: "container" }, [
-            _c(
-              "div",
-              {
-                staticClass: "wrapper",
-                style:
-                  "background:url(" +
-                  _vm.$root.basepath +
-                  "/img/home.png) no-repeat 0 0;min-height:400px;"
-              },
-              [
-                _c(
-                  "div",
-                  { staticClass: "account-wrapper m-xl-2 row m-0 " },
-                  [
-                    _c(
-                      "nav",
-                      {
-                        staticClass:
-                          "nav  navbar-dark ml-4 ml-lg-0 mb-3 mb-lg-b p-0 mt-3 navbar navbar-expand-lg "
-                      },
-                      [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "navbar-toggler",
-                            attrs: {
-                              type: "button",
-                              "data-toggle": "collapse",
-                              "data-target": "#collapsibleNavbar4"
-                            },
-                            on: { click: function($event) {} }
-                          },
-                          [_c("span", { staticClass: "navbar-toggler-icon " })]
+  return _c("div", { staticClass: "page-wrapper" }, [
+    _c(
+      "section",
+      {
+        staticClass: "inner-hero bg_img",
+        style: "background:url(" + _vm.$root.basepath + "/images/bg/bg-1.jpg)",
+        attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-1.jpg" }
+      },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c("h2", { staticClass: "page-title" }, [_vm._v("Dashboard")]),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _c("h2", { staticClass: "page-title pt-4" }, [
+                _c("span", { staticClass: "base--color" }, [
+                  _vm._v("Welcome, ")
+                ]),
+                _vm._v(" " + _vm._s(_vm.$auth.user().username))
+              ])
+            ])
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "pb-60" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-lg-12" }, [
+            _c("div", { staticClass: "row mt-50 " }, [
+              _c("div", { staticClass: "col-lg-4 col-sm-12 mb-50" }, [
+                _c("div", { staticClass: "m-auto equal blog-card p-0 mb-30" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row p-4 pb-2" }, [
+                    _c("div", { staticClass: "col-9 col-md-10 " }, [
+                      _c("h2", { staticClass: "mb-1" }, [
+                        _vm._v(
+                          _vm._s(_vm.$root.numeral(_vm.$auth.user().balance))
                         )
-                      ]
-                    ),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mb-3" }, [
+                        _vm._v("Account Balance")
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _c("DashboardSidebar"),
+                    _vm._m(2)
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "divider pb-3" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row p-4 pb-2" }, [
+                    _c("div", { staticClass: "col-9 col-md-10 " }, [
+                      _c("h2", { staticClass: "mb-1" }, [
+                        _vm._v(
+                          _vm._s(
+                            _vm.$root.numeral(
+                              _vm.$auth.user().totalActiveTransaction
+                            )
+                          )
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mb-3" }, [
+                        _vm._v("Active Investment")
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc"
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "acc-body p-0 deposit-history " },
-                          [
-                            _vm._l(_vm.portfolios, function(portfolio) {
-                              return _vm.portfolios
-                                ? _c("div", { staticClass: "m-0 p-0 mb-3" }, [
-                                    portfolio.name == "bronze"
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "plan-wrap m-0 mb-2 clearfix"
-                                          },
-                                          [
-                                            _vm._m(0, true),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              { staticClass: "plan-ad-text" },
-                                              [_vm._v("$20.00 - $150.00")]
+                    _vm._m(3)
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-8 col-sm-12" }, [
+                _c("div", { staticClass: "m-auto equal blog-card p-0 mb-30" }, [
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "table-respon2sive table-responsive--md p-0"
+                    },
+                    [
+                      _c(
+                        "table",
+                        { staticClass: "table style--two white-space-nowrap" },
+                        [
+                          _vm.userPackages.length > 0
+                            ? _c(
+                                "thead",
+                                { staticClass: "bg-transparent text-white" },
+                                [_vm._m(5)]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c(
+                            "tbody",
+                            [
+                              _vm._l(_vm.userPackages, function(packag) {
+                                return _vm.userPackages.length > 0
+                                  ? _c("tr", [
+                                      _c(
+                                        "td",
+                                        { attrs: { "data-label": "Plan" } },
+                                        [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm.$root.numeral(packag.name)
                                             )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    portfolio.name == "silver"
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "plan-wrap m-0 mb-2 clearfix"
-                                          },
-                                          [
-                                            _vm._m(1, true),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              { staticClass: "plan-ad-text" },
-                                              [_vm._v("$200.00 - $2,000.00")]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    portfolio.name == "gold"
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "plan-wrap m-0 mb-2 clearfix"
-                                          },
-                                          [
-                                            _vm._m(2, true),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              { staticClass: "plan-ad-text" },
-                                              [_vm._v("$5,000.00 - $30,000.00")]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    portfolio.name == "platinum"
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "plan-wrap m-0 mb-2 clearfix"
-                                          },
-                                          [
-                                            _vm._m(3, true),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              { staticClass: "plan-ad-text" },
-                                              [
-                                                _vm._v(
-                                                  "$60,000.00 - $200,000.00"
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      : _vm._e(),
-                                    _vm._v(" "),
-                                    _c("table", { staticClass: "stat mb-2" }, [
-                                      _vm._m(4, true),
+                                          )
+                                        ]
+                                      ),
                                       _vm._v(" "),
                                       _c(
-                                        "tbody",
-                                        { attrs: { id: "body" } },
-                                        _vm._l(_vm.userPackages, function(
-                                          packag
-                                        ) {
-                                          return _vm.userPackages &&
-                                            packag.portfolio == portfolio.name
-                                            ? _c("tr", [
-                                                _c(
-                                                  "td",
-                                                  {
-                                                    staticClass: "text-center"
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "$" +
-                                                        _vm._s(
-                                                          _vm.$root.numeral(
-                                                            packag.account
-                                                          )
-                                                        )
-                                                    )
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "td",
-                                                  {
-                                                    staticClass: "text-center"
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "$" +
-                                                        _vm._s(
-                                                          _vm.$root.normalNumeral(
-                                                            packag.interest
-                                                          )
-                                                        )
-                                                    )
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "td",
-                                                  {
-                                                    staticClass: "text-center"
-                                                  },
-                                                  [_vm._v(_vm._s(packag.date))]
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "td",
-                                                  {
-                                                    staticClass:
-                                                      "text-success text-center"
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      _vm._s(
-                                                        _vm.getDate(
-                                                          packag.expiration
-                                                        )
-                                                      )
-                                                    )
-                                                  ]
+                                        "td",
+                                        { attrs: { "data-label": "Capital" } },
+                                        [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm.$root.numeral(packag.amount)
+                                            )
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        {
+                                          staticClass: "text-success",
+                                          attrs: { "data-label": "Interest" }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "+ $" +
+                                              _vm._s(
+                                                _vm.$root.normalNumeral(
+                                                  packag.roi
                                                 )
-                                              ])
-                                            : _vm._e()
-                                        }),
-                                        0
+                                              )
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        {
+                                          attrs: { "data-label": "Activation" }
+                                        },
+                                        [_vm._v(_vm._s(packag.date))]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        {
+                                          staticClass: "text-success",
+                                          attrs: { "data-label": "Countdown" }
+                                        },
+                                        [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm.getDate(packag.expiration)
+                                            )
+                                          )
+                                        ]
                                       )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("div", {
-                                      staticClass: "dropdown-divider"
-                                    })
-                                  ])
+                                    ])
+                                  : _vm._e()
+                              }),
+                              _vm._v(" "),
+                              _vm.userPackages.length == 0
+                                ? _c("tr", [_vm._m(6)])
                                 : _vm._e()
-                            }),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "bal mt-2" }, [
-                              _c("span", [_vm._v("Total:")]),
-                              _vm._v(
-                                " " +
-                                  _vm._s(
-                                    _vm.$root.numeral(
-                                      _vm.user.totalActiveTransaction
-                                    )
-                                  ) +
-                                  "\n                                "
-                              )
-                            ])
-                          ],
-                          2
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                )
-              ]
-            )
+                            ],
+                            2
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ])
           ])
         ])
       ])
-    ],
-    1
-  )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "plan-inner" }, [
-      _c("div", { staticClass: "plan-in" }, [
-        _c("h3", [_vm._v("Bronze")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("5% R.O.I")])
+    return _c("ul", { staticClass: "page-breadcrumb" }, [
+      _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("Home")])]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "/dashboard" } }, [_vm._v("Dashboard")])
+      ]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Active Plans")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "headeraccount base--bg" }, [
+      _c("span", { staticClass: "font-weight-bold" }, [
+        _vm._v("Financial Statistics ")
       ])
     ])
   },
@@ -76854,11 +76747,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "plan-inner" }, [
-      _c("div", { staticClass: "plan-in" }, [
-        _c("h3", [_vm._v("Silver")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("15% R.O.I")])
+    return _c("div", { staticClass: "col-3 col-md-2 p-0" }, [
+      _c("div", { staticClass: "icon base--bg text-white" }, [
+        _c("i", { staticClass: "las la-dollar-sign" })
       ])
     ])
   },
@@ -76866,11 +76757,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "plan-inner" }, [
-      _c("div", { staticClass: "plan-in" }, [
-        _c("h3", [_vm._v("Gold")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("40% R.O.I")])
+    return _c("div", { staticClass: "col-3 col-md-2 p-0" }, [
+      _c("div", { staticClass: "icon base--bg text-white" }, [
+        _c("i", { staticClass: "las la-dollar-sign" })
       ])
     ])
   },
@@ -76878,11 +76767,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "plan-inner" }, [
-      _c("div", { staticClass: "plan-in" }, [
-        _c("h3", [_vm._v("Platinum")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("50% R.O.I")])
+    return _c("div", { staticClass: "headeraccount base--bg mb-4" }, [
+      _c("span", { staticClass: "text-capitalize font-weight-bold" }, [
+        _vm._v("Your active subscription plans ")
       ])
     ])
   },
@@ -76890,16 +76777,34 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { staticClass: "text-center" }, [_vm._v("Deposit")]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-center" }, [_vm._v("Interest")]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-center" }, [_vm._v("Active")]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-center" }, [_vm._v("Timeout")])
-      ])
+    return _c("tr", [
+      _c("th", [_vm._v("Plan")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Capital")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Interest")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Activation")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Countdown")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "text-center", attrs: { colspan: "5" } }, [
+      _vm._v(" You do not have an active investment. click "),
+      _c(
+        "a",
+        {
+          staticClass: "base--color font-weight-bold",
+          staticStyle: { "text-decoration": "underline" },
+          attrs: { href: "/dashboard/deposit" }
+        },
+        [_vm._v(" here ")]
+      ),
+      _vm._v(" to invest.\n                                                ")
     ])
   }
 ]
@@ -104977,6 +104882,19 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 
       return data;
     },
+    cryptoFilter: function cryptoFilter(list, search) {
+      var data = [];
+
+      if (search) {
+        data = list.filter(function (item) {
+          return item.payment_method.toLowerCase().includes(search.toLowerCase());
+        });
+      } else {
+        data = [];
+      }
+
+      return data;
+    },
     scrollToTop: function scrollToTop() {
       var x = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
       var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 300;
@@ -109253,6 +109171,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
  // Routes
 
 var routes = [{
@@ -109420,6 +109339,13 @@ var routes = [{
 }, {
   path: '/dashboard/report/deposit',
   name: 'depositReport',
+  component: _pages_user_reports_DepositReport__WEBPACK_IMPORTED_MODULE_27__["default"],
+  meta: {
+    auth: true
+  }
+}, {
+  path: '/dashboard/plans',
+  name: 'UserPlans',
   component: _pages_user_reports_DepositReport__WEBPACK_IMPORTED_MODULE_27__["default"],
   meta: {
     auth: true

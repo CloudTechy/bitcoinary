@@ -18,6 +18,7 @@ class CreatePackageUsersTable extends Migration {
 			$table->decimal('amount', 60, 2)->default(0);
 			$table->timestamp('expiration')->nullable();
 			$table->bigInteger('roi');
+			$table->integer('loop')->unsigned()->default(0);
 			$table->boolean('active')->default(true);
 			$table->boolean('referral')->nullable();
 			$table->string('pop')->nullable();

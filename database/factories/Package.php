@@ -15,6 +15,7 @@ $factory->define(Package::class, function (Faker $faker) {
 		$plan['min_deposit'] = 50;
 		$plan['max_deposit'] = 499;
 		$plan['turnover'] = 1;
+		$plan['loop_termination'] = 6;
 		$plan['first_level_ref_commission'] = 7;
 		$plan['second_level_ref_commission'] = 5;
 	}
@@ -24,6 +25,7 @@ $factory->define(Package::class, function (Faker $faker) {
 		$plan['min_deposit'] = 1000;
 		$plan['max_deposit'] = 4999;
 		$plan['turnover'] = 1;
+		$plan['loop_termination'] = 6;
 		$plan['first_level_ref_commission'] = 10;
 		$plan['second_level_ref_commission'] = 5;
 	}
@@ -33,6 +35,7 @@ $factory->define(Package::class, function (Faker $faker) {
 		$plan['min_deposit'] = 5000;
 		$plan['max_deposit'] = 30000;
 		$plan['turnover'] = 2;
+		$plan['loop_termination'] = 3;
 		$plan['first_level_ref_commission'] = 10;
 		$plan['second_level_ref_commission'] = 5;
 	}
@@ -42,6 +45,7 @@ $factory->define(Package::class, function (Faker $faker) {
 		$plan['min_deposit'] = 31000;
 		$plan['max_deposit'] = 200000;
 		$plan['turnover'] = 3;
+		$plan['loop_termination'] = 2;
 		$plan['first_level_ref_commission'] = 10;
 		$plan['second_level_ref_commission'] = 5;
 	}
@@ -51,6 +55,7 @@ $factory->define(Package::class, function (Faker $faker) {
 		'min_deposit' => $plan['min_deposit'],
 		'max_deposit' => $plan['max_deposit'],
 		'turnover' => $plan['turnover'],
+		'loop_termination' => $plan['loop_termination'],
 		'first_level_ref_commission' => $plan['first_level_ref_commission'],
 		'second_level_ref_commission' => $plan['second_level_ref_commission'],
 
