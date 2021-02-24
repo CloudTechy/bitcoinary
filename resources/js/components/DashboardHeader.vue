@@ -27,7 +27,7 @@
                                 <a href="/dashboard/plans">Active plans</a>
                             </li>
                             <li>
-                                <a href="/dashboard/report/withdraw">Withdrawal history</a>
+                                <a href="/dashboard/withdrawal-report">Withdrawal history</a>
                             </li>
                             <li><a href="/dashboard/report/withdraw">Referrals</a>
                             </li>

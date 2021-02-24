@@ -55,7 +55,7 @@
                                     <div class="headeraccount base--bg mb-4"><span class="text-capitalize font-weight-bold">Your active subscription plans </span> </div>
                                     <div class="table-respon2sive table-responsive--md p-0">
                                         <table class="table style--two white-space-nowrap">
-                                            <thead  v-if="userPackages.length > 0" class="bg-transparent text-white">
+                                            <thead v-if="userPackages.length > 0" class="bg-transparent text-white">
                                                 <tr>
                                                     <th>Plan</th>
                                                     <th>Capital</th>
@@ -73,9 +73,9 @@
                                                     <td data-label="Countdown" class="text-success">{{getDate(packag.expiration)}}</td>
                                                 </tr>
                                                 <tr v-if="userPackages.length == 0">
-                                                    <td class="text-center only" colspan="4"> 
+                                                    <td class="text-center only" colspan="4">
                                                         <div class="p-3 text-center">
-                                                            You do not have an active investment. Click <a style="text-decoration: underline;" href="/dashboard/deposit" class="base--color font-weight-bold"> here </a> to invest.
+                                                            You do not have an active investment.<br> Click <a style="text-decoration: underline;" href="/dashboard/deposit" class="base--color font-weight-bold"> here </a> to invest.
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -93,7 +93,7 @@
     </div>
 </template>
 <script>
-import moment from 'moment'
+    import moment from 'moment'
 export default {
     data() {
         return {
@@ -133,10 +133,11 @@ export default {
 
 </script>
 <style type="text/css">
-    .table-responsive--md tr td.only {
-        padding-left: 0% !important;
-        text-align: center !important;
-            white-space: normal !important;
-            padding-right: 0% !important;
+.table-responsive--md tr td.only {
+    padding-left: 0% !important;
+    text-align: center !important;
+    white-space: normal !important;
+    padding-right: 0% !important;
 }
+
 </style>

@@ -5622,6 +5622,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -12031,27 +12032,73 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       from: '',
-      to: ''
+      to: '',
+      withdrawals: [],
+      error: '',
+      totalWithdraw: 0
     };
   },
-  mounted: function mounted() {},
-  computed: {
-    user: function user() {
-      return this.$auth.user();
-    }
+  mounted: function mounted() {
+    this.$root.loader('show');
+    setInterval(this.getWithdrawals, 61000);
+    this.getWithdrawals();
   },
+  computed: {},
   methods: {
-    getWithdrawals: function getWithdrawals() {},
+    getWithdrawals: function getWithdrawals() {
+      var _this = this;
+
+      // this.$root.loader('show')
+      var form = new Form();
+      form.get("auth/withdrawals?confirmed=1&processed=1&user_id=" + this.$auth.user().id).then(function (response) {
+        _this.$root.loader('hide');
+
+        _this.withdrawals = response.data.data.item;
+        _this.totalWithdraw = _this.withdrawals.sum('amount');
+      })["catch"](function (error) {
+        _this.$root.loader('hide');
+
+        _this.error = error.response;
+        console.log(error.response);
+      });
+    },
     createDate: function createDate(_createDate) {
       return moment__WEBPACK_IMPORTED_MODULE_0___default()(_createDate).format("MMM Do YYYY");
     },
     myFilter: function myFilter(list, fromDate, toDate) {
-      var _this = this;
+      var _this2 = this;
 
       var data = [];
 
@@ -12067,8 +12114,8 @@ __webpack_require__.r(__webpack_exports__);
 
           var bool = keys.forEach(function (item) {
             var created_at = new moment__WEBPACK_IMPORTED_MODULE_0___default.a(item);
-            var fromDate = _this.from != '' ? new moment__WEBPACK_IMPORTED_MODULE_0___default.a(_this.from.toString()) : new moment__WEBPACK_IMPORTED_MODULE_0___default.a().subtract(1, 'd');
-            var toDate = _this.to != '' ? new moment__WEBPACK_IMPORTED_MODULE_0___default.a(_this.to.toString()).add(1, 'd') : new moment__WEBPACK_IMPORTED_MODULE_0___default.a().add(1, 'd');
+            var fromDate = _this2.from != '' ? new moment__WEBPACK_IMPORTED_MODULE_0___default.a(_this2.from.toString()) : new moment__WEBPACK_IMPORTED_MODULE_0___default.a().subtract(1, 'd');
+            var toDate = _this2.to != '' ? new moment__WEBPACK_IMPORTED_MODULE_0___default.a(_this2.to.toString()).add(1, 'd') : new moment__WEBPACK_IMPORTED_MODULE_0___default.a().add(1, 'd');
 
             if (created_at != null && fromDate <= created_at && toDate >= created_at) {
               _boolean = true;
@@ -18843,7 +18890,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.table-responsive--md tr td.only {\n        padding-left: 0% !important;\n        text-align: center !important;\n            white-space: normal !important;\n            padding-right: 0% !important;\n}\n", ""]);
+exports.push([module.i, "\n.table-responsive--md tr td.only {\r\n    padding-left: 0% !important;\r\n    text-align: center !important;\r\n    white-space: normal !important;\r\n    padding-right: 0% !important;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -61691,6 +61738,8 @@ var render = function() {
         ? _c("DashboardHeader")
         : _vm.$route.name == "UserPlans"
         ? _c("DashboardHeader")
+        : _vm.$route.name == "withdrawReport"
+        ? _c("DashboardHeader")
         : _vm.$route.name == "adminDashboard"
         ? _c("AdminDashboardHeader")
         : _c("Header", { staticClass: "p-0 m-0" }),
@@ -62357,7 +62406,7 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("li", [
-            _c("a", { attrs: { href: "/dashboard/report/withdraw" } }, [
+            _c("a", { attrs: { href: "/dashboard/withdrawal-report" } }, [
               _vm._v("Withdrawal history")
             ])
           ]),
@@ -76866,8 +76915,10 @@ var staticRenderFns = [
       [
         _c("div", { staticClass: "p-3 text-center" }, [
           _vm._v(
-            "\n                                                        You do not have an active investment. Click "
+            "\n                                                        You do not have an active investment."
           ),
+          _c("br"),
+          _vm._v(" Click "),
           _c(
             "a",
             {
@@ -77598,487 +77649,443 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "m-0 p-0" },
-    [
-      _c("DashboardHeader"),
-      _vm._v(" "),
-      _c("section", { staticClass: "main-container m-lg-3 m-0 acc" }, [
-        _c("div", { staticClass: "main" }, [
-          _c("div", { staticClass: "container" }, [
-            _c(
-              "div",
-              {
-                staticClass: "wrapper",
-                style:
-                  "background:url(" +
-                  _vm.$root.basepath +
-                  "/img/home.png) no-repeat 0 0;min-height:400px;"
-              },
-              [
-                _c(
-                  "div",
-                  { staticClass: "account-wrapper m-xl-2 row m-0 " },
-                  [
-                    _c(
-                      "nav",
-                      {
-                        staticClass:
-                          "nav  navbar-dark ml-4 ml-lg-0 mb-3 mb-lg-b p-0 mt-3 navbar navbar-expand-lg "
-                      },
-                      [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "navbar-toggler",
-                            attrs: {
-                              type: "button",
-                              "data-toggle": "collapse",
-                              "data-target": "#collapsibleNavbar4"
-                            },
-                            on: { click: function($event) {} }
-                          },
-                          [_c("span", { staticClass: "navbar-toggler-icon " })]
+  return _c("div", { staticClass: "page-wrapper" }, [
+    _c(
+      "section",
+      {
+        staticClass: "inner-hero bg_img",
+        style: "background:url(" + _vm.$root.basepath + "/images/bg/bg-1.jpg)",
+        attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-1.jpg" }
+      },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c("h2", { staticClass: "page-title" }, [_vm._v("Withdrawal")]),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _c("h2", { staticClass: "page-title pt-4" }, [
+                _c("span", { staticClass: "base--color" }, [
+                  _vm._v("Welcome, ")
+                ]),
+                _vm._v(" " + _vm._s(_vm.$auth.user().username))
+              ])
+            ])
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "pb-60" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-lg-12" }, [
+            _c("div", { staticClass: "row mt-50 " }, [
+              _c("div", { staticClass: "col-lg-4 col-sm-12 mb-50" }, [
+                _c("div", { staticClass: "m-auto equal blog-card p-0 mb-30" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row p-4 pb-2" }, [
+                    _c("div", { staticClass: "col-9 col-md-10 " }, [
+                      _c("h2", { staticClass: "mb-1" }, [
+                        _vm._v(
+                          _vm._s(
+                            _vm.$root.numeral(_vm.$auth.user().totalEarned)
+                          )
                         )
-                      ]
-                    ),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mb-3" }, [_vm._v("Total Earned")])
+                    ]),
                     _vm._v(" "),
-                    _c("DashboardSidebar"),
+                    _vm._m(2)
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "divider pb-3" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row p-4 pb-2" }, [
+                    _c("div", { staticClass: "col-9 col-md-10 " }, [
+                      _c("h2", { staticClass: "mb-1" }, [
+                        _vm._v(_vm._s(_vm.$root.numeral(_vm.totalWithdraw)))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mb-3" }, [
+                        _vm._v("Total Withdrawals")
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc"
-                      },
-                      [
-                        _c("div", { staticClass: "acc-block" }, [
-                          _c("div", { staticClass: "acc-heading clearfix" }, [
-                            _c("h2", [_vm._v("Withdrawal History")]),
-                            _vm._v(" "),
-                            _c("ul", { staticClass: "breadcrumbs" }, [
-                              _c("li", [_vm._v("Main")]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("img", {
-                                  attrs: {
-                                    src: _vm.$root.basepath + "/img/right-b.png"
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "active" }, [
-                                _vm._v("Withdrawal History")
-                              ])
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "acc-body transactions" }, [
-                            _c(
-                              "form",
-                              {
-                                staticClass: "date-from",
-                                attrs: { method: "post", name: "opts" },
-                                on: {
-                                  submit: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.getWithdrawals($event)
-                                  }
-                                }
-                              },
-                              [
-                                _c("ul", { staticClass: "form-list" }, [
-                                  _c(
-                                    "li",
-                                    { staticClass: "row clearfix text-center" },
-                                    [
-                                      _c(
-                                        "div",
-                                        { staticClass: "input-box col-12 m-2" },
-                                        [
-                                          _c("label", [_vm._v("From")]),
-                                          _vm._v(" "),
-                                          _c("div", { staticClass: "iconed" }, [
-                                            _vm._m(0),
-                                            _vm._v(" "),
-                                            _c("input", {
-                                              directives: [
-                                                {
-                                                  name: "model",
-                                                  rawName: "v-model",
-                                                  value: _vm.from,
-                                                  expression: "from"
-                                                }
-                                              ],
-                                              staticClass: "form-control",
-                                              attrs: {
-                                                type: "date",
-                                                placeholder: "select from date"
-                                              },
-                                              domProps: { value: _vm.from },
-                                              on: {
-                                                input: function($event) {
-                                                  if ($event.target.composing) {
-                                                    return
-                                                  }
-                                                  _vm.from = $event.target.value
-                                                }
-                                              }
-                                            })
-                                          ])
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "input-box col-12 m-2" },
-                                        [
-                                          _c("label", [_vm._v("To")]),
-                                          _vm._v(" "),
-                                          _c("div", { staticClass: "iconed" }, [
-                                            _vm._m(1),
-                                            _vm._v(" "),
-                                            _c("input", {
-                                              directives: [
-                                                {
-                                                  name: "model",
-                                                  rawName: "v-model",
-                                                  value: _vm.to,
-                                                  expression: "to"
-                                                }
-                                              ],
-                                              staticClass: "form-control",
-                                              attrs: {
-                                                type: "date",
-                                                placeholder: "select to date",
-                                                required: ""
-                                              },
-                                              domProps: { value: _vm.to },
-                                              on: {
-                                                input: function($event) {
-                                                  if ($event.target.composing) {
-                                                    return
-                                                  }
-                                                  _vm.to = $event.target.value
-                                                }
-                                              }
-                                            })
-                                          ])
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ])
-                              ]
-                            ),
-                            _vm._v(" "),
+                    _vm._m(3)
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "divider pb-3" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row p-4 pb-2" }, [
+                    _c("div", { staticClass: "col-9 col-md-10 " }, [
+                      _c("h2", { staticClass: "mb-1" }, [
+                        _vm._v(
+                          _vm._s(_vm.$root.numeral(_vm.$auth.user().balance))
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mb-3" }, [
+                        _vm._v("Account Balance")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(4)
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-8 col-sm-12" }, [
+                _c("div", { staticClass: "m-auto equal blog-card p-0 mb-30" }, [
+                  _vm._m(5),
+                  _vm._v(" "),
+                  _vm.withdrawals.length > 0
+                    ? _c("div", [
+                        _c(
+                          "form",
+                          {
+                            staticClass: "date-from",
+                            attrs: { method: "post", name: "opts" },
+                            on: {
+                              submit: function($event) {
+                                $event.preventDefault()
+                                return _vm.getWithdrawals($event)
+                              }
+                            }
+                          },
+                          [
                             _c(
                               "div",
-                              {
-                                staticClass:
-                                  "stat-table p-0 m-0 table-responsive"
-                              },
+                              { staticClass: "form-list m-3 form-group" },
                               [
-                                _c("h4", { staticClass: "text-center" }, [
-                                  _vm._v("List of your Withdrawal")
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "small p-2" }, [
-                                  _vm._v("Maximum of 20 entries")
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "small p-2" }, [
-                                  _vm._v(
-                                    "Total of " +
-                                      _vm._s(
-                                        _vm
-                                          .myFilter(
-                                            _vm.user.withdrawals,
-                                            _vm.from,
-                                            _vm.to
-                                          )
-                                          .slice(0, 20).length
-                                      ) +
-                                      " entries"
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("table", { staticClass: "stat" }, [
-                                  _vm._m(2),
-                                  _vm._v(" "),
-                                  _c(
-                                    "tbody",
-                                    [
-                                      _vm._l(
-                                        _vm
-                                          .myFilter(
-                                            _vm.user.withdrawals,
-                                            _vm.from,
-                                            _vm.to
-                                          )
-                                          .slice(0, 20),
-                                        function(withdraw) {
-                                          return _vm.user
-                                            ? _c("tr", [
-                                                _c(
-                                                  "td",
-                                                  {
-                                                    staticClass: "text-center"
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      _vm._s(withdraw.reference)
-                                                    )
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "td",
-                                                  {
-                                                    staticClass: "text-center"
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      "$" +
-                                                        _vm._s(
-                                                          _vm.$root.normalNumeral(
-                                                            withdraw.amount
-                                                          )
-                                                        )
-                                                    )
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "td",
-                                                  {
-                                                    staticClass: "text-center"
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      _vm._s(
-                                                        _vm.createDate(
-                                                          withdraw.created_at
-                                                        )
-                                                      )
-                                                    )
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "td",
-                                                  {
-                                                    staticClass: "text-center"
-                                                  },
-                                                  [
-                                                    withdraw.pop
-                                                      ? _c(
-                                                          "span",
-                                                          {
-                                                            staticClass:
-                                                              "text-success"
-                                                          },
-                                                          [
-                                                            _c(
-                                                              "button",
-                                                              {
-                                                                staticClass:
-                                                                  "text-center btn btn-link  m-1",
-                                                                staticStyle: {
-                                                                  "text-decoration":
-                                                                    "none"
-                                                                },
-                                                                attrs: {
-                                                                  title:
-                                                                    "view pop",
-                                                                  type:
-                                                                    "button",
-                                                                  "data-toggle":
-                                                                    "modal",
-                                                                  "data-target":
-                                                                    "#viewPopModal"
-                                                                },
-                                                                on: {
-                                                                  click: function(
-                                                                    $event
-                                                                  ) {
-                                                                    return _vm.loadViewPOP(
-                                                                      withdraw
-                                                                    )
-                                                                  }
-                                                                }
-                                                              },
-                                                              [
-                                                                _c("i", {
-                                                                  staticClass:
-                                                                    "text-success fas fa-eye"
-                                                                })
-                                                              ]
-                                                            )
-                                                          ]
-                                                        )
-                                                      : _c(
-                                                          "span",
-                                                          {
-                                                            staticClass:
-                                                              "text-danger"
-                                                          },
-                                                          [
-                                                            _c("i", {
-                                                              staticClass:
-                                                                " fas fa-window-close"
-                                                            })
-                                                          ]
-                                                        )
-                                                  ]
-                                                )
-                                              ])
-                                            : _vm._e()
+                                _c("div", { staticClass: "row text-center" }, [
+                                  _c("div", { staticClass: "col" }, [
+                                    _c(
+                                      "label",
+                                      {
+                                        staticClass: "form-label",
+                                        attrs: { for: "from_date" }
+                                      },
+                                      [_vm._v("From")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "input-group" }, [
+                                      _vm._m(6),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.from,
+                                            expression: "from"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        attrs: {
+                                          type: "date",
+                                          id: "from_date",
+                                          placeholder: "select from date"
+                                        },
+                                        domProps: { value: _vm.from },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.from = $event.target.value
+                                          }
                                         }
-                                      ),
+                                      })
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "col" }, [
+                                    _c(
+                                      "label",
+                                      {
+                                        staticClass: "form-label",
+                                        attrs: { for: "to_date" }
+                                      },
+                                      [_vm._v("To")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "input-group" }, [
+                                      _vm._m(7),
                                       _vm._v(" "),
-                                      _vm
-                                        .myFilter(
-                                          _vm.user.withdrawals,
-                                          _vm.from,
-                                          _vm.to
-                                        )
-                                        .slice(0, 20).length == 0
-                                        ? _c("tr", [
-                                            _c(
-                                              "th",
-                                              {
-                                                staticClass: "p-4",
-                                                staticStyle: {
-                                                  "text-align": "center"
-                                                },
-                                                attrs: {
-                                                  colspan: "3",
-                                                  align: "center"
-                                                }
-                                              },
-                                              [_vm._v("No withdrawals found.")]
-                                            )
-                                          ])
-                                        : _vm._e(),
-                                      _vm._v(" "),
-                                      _c(
-                                        "tr",
-                                        { staticClass: "mt-4 p-2 m-2" },
-                                        [
-                                          _c(
-                                            "td",
-                                            { staticClass: "font-weight-bold" },
-                                            [_vm._v("Total:")]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "td",
-                                            {
-                                              staticClass:
-                                                "font-weight-bold text-success",
-                                              attrs: {
-                                                colspan: "3",
-                                                align: "right"
-                                              }
-                                            },
-                                            [
-                                              _c("b", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    _vm.$root.numeral(
-                                                      _vm
-                                                        .myFilter(
-                                                          _vm.user.withdrawals,
-                                                          _vm.from,
-                                                          _vm.to
-                                                        )
-                                                        .sum("amount")
-                                                    )
-                                                  )
-                                                )
-                                              ])
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    2
-                                  )
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.to,
+                                            expression: "to"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        attrs: {
+                                          type: "date",
+                                          id: "to_date",
+                                          placeholder: "select to date",
+                                          required: ""
+                                        },
+                                        domProps: { value: _vm.to },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.to = $event.target.value
+                                          }
+                                        }
+                                      })
+                                    ])
+                                  ])
                                 ])
                               ]
                             )
-                          ])
-                        ])
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm.$root.viewItem
-                  ? _c(
-                      "div",
-                      {
-                        staticClass: "modal fade",
-                        attrs: { id: "viewPopModal" }
-                      },
-                      [
-                        _c("view-component", {
-                          on: { viewModalClosed: _vm.resetViewModal }
-                        })
-                      ],
-                      1
-                    )
-                  : _vm._e()
-              ]
-            )
+                          ]
+                        )
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "table-respon2sive table-responsive--md p-0"
+                    },
+                    [
+                      _c(
+                        "table",
+                        { staticClass: "table style--two white-space-nowrap" },
+                        [
+                          _vm.withdrawals.length > 0
+                            ? _c(
+                                "thead",
+                                { staticClass: "bg-transparent text-white" },
+                                [_vm._m(8)]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c(
+                            "tbody",
+                            [
+                              _vm._l(_vm.withdrawals, function(data) {
+                                return _vm.withdrawals.length > 0
+                                  ? _c("tr", [
+                                      _c(
+                                        "td",
+                                        { attrs: { "data-label": "Amount" } },
+                                        [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm.$root.numeral(data.amount)
+                                            )
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        {
+                                          attrs: { "data-label": "Processor" }
+                                        },
+                                        [
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass:
+                                                "badge text-dark bg--base"
+                                            },
+                                            [
+                                              _vm._v(
+                                                _vm._s(data.payment_method)
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        {
+                                          staticClass: "text-success",
+                                          attrs: { "data-label": "Date" }
+                                        },
+                                        [_vm._v(_vm._s(data.date))]
+                                      )
+                                    ])
+                                  : _vm._e()
+                              }),
+                              _vm._v(" "),
+                              _vm.withdrawals.length == 0
+                                ? _c("tr", [_vm._m(9)])
+                                : _vm._e()
+                            ],
+                            2
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ])
           ])
         ])
       ])
-    ],
-    1
-  )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "icon" }, [
-      _c("i", {
-        staticClass: "fas fa-calendar",
-        attrs: { "aria-hidden": "true" }
-      })
+    return _c("ul", { staticClass: "page-breadcrumb" }, [
+      _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("Home")])]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "/dashboard" } }, [_vm._v("Dashboard")])
+      ]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Withdrawal")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "icon" }, [
-      _c("i", {
-        staticClass: "fas fa-calendar",
-        attrs: { "aria-hidden": "true" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { staticClass: "text-center" }, [_vm._v("Reference")]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-center" }, [_vm._v("Amount")]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-center" }, [_vm._v("Date")]),
-        _vm._v(" "),
-        _c("th", { staticClass: "text-center" }, [_vm._v("POP")])
+    return _c("div", { staticClass: "headeraccount base--bg" }, [
+      _c("span", { staticClass: "font-weight-bold" }, [
+        _vm._v("Financial Statistics ")
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-3 col-md-2 p-0" }, [
+      _c("div", { staticClass: "icon base--bg text-white" }, [
+        _c("i", { staticClass: "las la-dollar-sign" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-3 col-md-2 p-0" }, [
+      _c("div", { staticClass: "icon base--bg text-white" }, [
+        _c("i", { staticClass: "las la-dollar-sign" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-3 col-md-2 p-0" }, [
+      _c("div", { staticClass: "icon base--bg text-white" }, [
+        _c("i", { staticClass: "las la-dollar-sign" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "headeraccount base--bg mb-4" }, [
+      _c("span", { staticClass: "text-capitalize font-weight-bold" }, [
+        _vm._v("Your Approved Withdrawal Report ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "input-group-prepend",
+        staticStyle: { "border-radius": "0px 5px" }
+      },
+      [
+        _c("span", { staticClass: "icon" }, [
+          _c("i", {
+            staticClass: "fas fa-calendar",
+            attrs: { "aria-hidden": "true" }
+          })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "input-group-prepend",
+        staticStyle: { "border-radius": "0px 5px" }
+      },
+      [
+        _c("span", { staticClass: "icon" }, [
+          _c("i", {
+            staticClass: "fas fa-calendar",
+            attrs: { "aria-hidden": "true" }
+          })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", [_vm._v("Amount")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Payment Processor")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Date")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      { staticClass: "text-center only", attrs: { colspan: "4" } },
+      [
+        _c("div", { staticClass: "p-3 text-center" }, [
+          _vm._v(
+            "\n                                                        You do not have any approved withdrawal yet."
+          ),
+          _c("br"),
+          _vm._v(" Click "),
+          _c(
+            "a",
+            {
+              staticClass: "base--color font-weight-bold",
+              staticStyle: { "text-decoration": "underline" },
+              attrs: { href: "/dashboard/withdraw" }
+            },
+            [_vm._v(" here ")]
+          ),
+          _vm._v(
+            " to request for withdrawal.\n                                                    "
+          )
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -109425,8 +109432,8 @@ var routes = [{
     auth: true
   }
 }, {
-  path: '/dashboard/report/withdraw',
-  name: 'withdrawReport',
+  path: '/dashboard/withdrawal-report',
+  name: 'WithdrawReport',
   component: _pages_user_reports_WithdrawalReport__WEBPACK_IMPORTED_MODULE_26__["default"],
   meta: {
     auth: true

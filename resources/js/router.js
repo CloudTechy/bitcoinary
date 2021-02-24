@@ -213,8 +213,8 @@ const routes = [{
         }
     },
     {
-        path: '/dashboard/report/withdraw',
-        name: 'withdrawReport',
+        path: '/dashboard/withdrawal-report',
+        name: 'WithdrawReport',
         component: WithdrawReport,
         meta: {
             auth: true
