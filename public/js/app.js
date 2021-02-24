@@ -76885,7 +76885,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "headeraccount base--bg mb-4" }, [
       _c("span", { staticClass: "text-capitalize font-weight-bold" }, [
-        _vm._v("Your active subscription plans ")
+        _vm._v("Your active Investment plans ")
       ])
     ])
   },
@@ -77762,88 +77762,104 @@ var render = function() {
                               { staticClass: "form-list m-3 form-group" },
                               [
                                 _c("div", { staticClass: "row text-center" }, [
-                                  _c("div", { staticClass: "col" }, [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "form-label",
-                                        attrs: { for: "from_date" }
-                                      },
-                                      [_vm._v("From")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "input-group" }, [
-                                      _vm._m(6),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.from,
-                                            expression: "from"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "date",
-                                          id: "from_date",
-                                          placeholder: "select from date"
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-md-6 col-sm-12" },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass: "form-label",
+                                          attrs: { for: "from_date" }
                                         },
-                                        domProps: { value: _vm.from },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
+                                        [_vm._v("From")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "input-group" },
+                                        [
+                                          _vm._m(6),
+                                          _vm._v(" "),
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: _vm.from,
+                                                expression: "from"
+                                              }
+                                            ],
+                                            staticClass: "form-control",
+                                            attrs: {
+                                              type: "date",
+                                              id: "from_date",
+                                              placeholder: "select from date"
+                                            },
+                                            domProps: { value: _vm.from },
+                                            on: {
+                                              input: function($event) {
+                                                if ($event.target.composing) {
+                                                  return
+                                                }
+                                                _vm.from = $event.target.value
+                                              }
                                             }
-                                            _vm.from = $event.target.value
-                                          }
-                                        }
-                                      })
-                                    ])
-                                  ]),
+                                          })
+                                        ]
+                                      )
+                                    ]
+                                  ),
                                   _vm._v(" "),
-                                  _c("div", { staticClass: "col" }, [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "form-label",
-                                        attrs: { for: "to_date" }
-                                      },
-                                      [_vm._v("To")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "input-group" }, [
-                                      _vm._m(7),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.to,
-                                            expression: "to"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "date",
-                                          id: "to_date",
-                                          placeholder: "select to date",
-                                          required: ""
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-md-6 col-sm-12" },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass: "form-label",
+                                          attrs: { for: "to_date" }
                                         },
-                                        domProps: { value: _vm.to },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
+                                        [_vm._v("To")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "input-group" },
+                                        [
+                                          _vm._m(7),
+                                          _vm._v(" "),
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: _vm.to,
+                                                expression: "to"
+                                              }
+                                            ],
+                                            staticClass: "form-control",
+                                            attrs: {
+                                              type: "date",
+                                              id: "to_date",
+                                              placeholder: "select to date",
+                                              required: ""
+                                            },
+                                            domProps: { value: _vm.to },
+                                            on: {
+                                              input: function($event) {
+                                                if ($event.target.composing) {
+                                                  return
+                                                }
+                                                _vm.to = $event.target.value
+                                              }
                                             }
-                                            _vm.to = $event.target.value
-                                          }
-                                        }
-                                      })
-                                    ])
-                                  ])
+                                          })
+                                        ]
+                                      )
+                                    ]
+                                  )
                                 ])
                               ]
                             )

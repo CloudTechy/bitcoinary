@@ -52,7 +52,7 @@
                             </div>
                             <div class="col-lg-8 col-sm-12">
                                 <div class="m-auto equal blog-card p-0 mb-30">
-                                    <div class="headeraccount base--bg mb-4"><span class="text-capitalize font-weight-bold">Your active subscription plans </span> </div>
+                                    <div class="headeraccount base--bg mb-4"><span class="text-capitalize font-weight-bold">Your active Investment plans </span> </div>
                                     <div class="table-respon2sive table-responsive--md p-0">
                                         <table class="table style--two white-space-nowrap">
                                             <thead v-if="userPackages.length > 0" class="bg-transparent text-white">

@@ -69,7 +69,7 @@
                                         <form @submit.prevent="getWithdrawals" class="date-from" method="post" name="opts">
                                             <div class="form-list m-3 form-group">
                                                 <div class="row text-center">
-                                                    <div class="col">
+                                                    <div class="col-md-6 col-sm-12">
                                                         <label for="from_date" class="form-label">From</label>
                                                         <div class="input-group">
                                                             <div style="border-radius: 0px 5px" class="input-group-prepend">
@@ -78,7 +78,7 @@
                                                             <input type="date" id="from_date" placeholder="select from date" v-model="from" class="form-control">
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="col-md-6 col-sm-12">
                                                         <label for="to_date" class="form-label">To</label>
                                                         <div class="input-group">
                                                             <div style="border-radius: 0px 5px" class="input-group-prepend">
