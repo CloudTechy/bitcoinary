@@ -11596,6 +11596,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -18840,7 +18843,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.table-responsive--md tr td.only {\n        padding-left: 0% !important;\n        text-align: center !important;\n}\n", ""]);
+exports.push([module.i, "\n.table-responsive--md tr td.only {\n        padding-left: 0% !important;\n        text-align: center !important;\n            white-space: normal !important;\n            padding-right: 0% !important;\n}\n", ""]);
 
 // exports
 
@@ -63452,7 +63455,7 @@ var staticRenderFns = [
               _c(
                 "h4",
                 {
-                  staticClass: "step__title",
+                  staticClass: "step__title pb-sm-0",
                   staticStyle: { "padding-bottom": "15px", color: "#2f2e2e" }
                 },
                 [_vm._v("12019970")]
@@ -76861,17 +76864,23 @@ var staticRenderFns = [
       "td",
       { staticClass: "text-center only", attrs: { colspan: "4" } },
       [
-        _vm._v(" You do not have an active investment. click "),
-        _c(
-          "a",
-          {
-            staticClass: "base--color font-weight-bold",
-            staticStyle: { "text-decoration": "underline" },
-            attrs: { href: "/dashboard/deposit" }
-          },
-          [_vm._v(" here ")]
-        ),
-        _vm._v(" to invest.\n                                                ")
+        _c("div", { staticClass: "p-3 text-center" }, [
+          _vm._v(
+            "\n                                                        You do not have an active investment. Click "
+          ),
+          _c(
+            "a",
+            {
+              staticClass: "base--color font-weight-bold",
+              staticStyle: { "text-decoration": "underline" },
+              attrs: { href: "/dashboard/deposit" }
+            },
+            [_vm._v(" here ")]
+          ),
+          _vm._v(
+            " to invest.\n                                                    "
+          )
+        ])
       ]
     )
   }

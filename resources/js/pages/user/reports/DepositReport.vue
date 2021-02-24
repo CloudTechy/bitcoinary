@@ -73,7 +73,10 @@
                                                     <td data-label="Countdown" class="text-success">{{getDate(packag.expiration)}}</td>
                                                 </tr>
                                                 <tr v-if="userPackages.length == 0">
-                                                    <td class="text-center only" colspan="4"> You do not have an active investment. click <a style="text-decoration: underline;" href="/dashboard/deposit" class="base--color font-weight-bold"> here </a> to invest.
+                                                    <td class="text-center only" colspan="4"> 
+                                                        <div class="p-3 text-center">
+                                                            You do not have an active investment. Click <a style="text-decoration: underline;" href="/dashboard/deposit" class="base--color font-weight-bold"> here </a> to invest.
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -133,5 +136,7 @@ export default {
     .table-responsive--md tr td.only {
         padding-left: 0% !important;
         text-align: center !important;
+            white-space: normal !important;
+            padding-right: 0% !important;
 }
 </style>
