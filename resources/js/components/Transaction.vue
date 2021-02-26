@@ -41,7 +41,7 @@
                                                 </div>
                                             </td>
                                             <td data-label="Date">{{trx.date}}</td>
-                                            <td data-label="Amount">$ {{$root.normalNumeral(trx.amount)}}</td>
+                                            <td data-label="Amount">${{$root.normalNumeral(trx.amount)}}</td>
                                             <td data-label="Gateway">Bitcoin</td>
                                         </tr>
                                     </tbody>

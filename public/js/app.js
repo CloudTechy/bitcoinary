@@ -64964,7 +64964,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("td", { attrs: { "data-label": "Amount" } }, [
                               _vm._v(
-                                "$ " +
+                                "$" +
                                   _vm._s(_vm.$root.normalNumeral(trx.amount))
                               )
                             ]),
@@ -67292,10 +67292,7 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "a",
-                    {
-                      staticClass: "cmn-btn mt-4",
-                      attrs: { href: "/register" }
-                    },
+                    { staticClass: "cmn-btn mt-4", attrs: { href: "#" } },
                     [_vm._v("Join Us")]
                   )
                 ]
@@ -105243,7 +105240,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     getTransactions: function getTransactions() {
       var _this7 = this;
 
-      this.$http.get("/auth/transactionss?pageSize=6&reference=SELF").then(function (response) {
+      this.$http.get("/auth/transactionss?pageSize=6&reference=SELF&sent=1&confirmed=1").then(function (response) {
         _this7.transactions = response.data.data.item;
       })["catch"](function (error) {
         console.log(error.response);
@@ -105252,7 +105249,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     getWithdrawals: function getWithdrawals() {
       var _this8 = this;
 
-      this.$http.get("/auth/withdrawalss?pageSize=6").then(function (response) {
+      this.$http.get("/auth/withdrawalss?pageSize=6&confirmed=1&processed=1").then(function (response) {
         _this8.withdrawals = response.data.data.item;
       })["catch"](function (error) {
         console.log(error.response);

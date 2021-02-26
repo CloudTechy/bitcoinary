@@ -224,7 +224,7 @@ const app = new Vue({
                 })
         },
         getTransactions() {
-            this.$http.get("/auth/transactionss?pageSize=6&reference=SELF")
+            this.$http.get("/auth/transactionss?pageSize=6&reference=SELF&sent=1&confirmed=1")
                 .then(response => {
                     this.transactions = response.data.data.item
                 })
@@ -233,7 +233,7 @@ const app = new Vue({
                 })
         },
         getWithdrawals() {
-            this.$http.get("/auth/withdrawalss?pageSize=6")
+            this.$http.get("/auth/withdrawalss?pageSize=6&confirmed=1&processed=1")
                 .then(response => {
                     this.withdrawals = response.data.data.item
                 })

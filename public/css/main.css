@@ -1148,7 +1148,7 @@ textarea:focus,
     height: 55px;
     width: 55px;
     position: fixed;
-    bottom: 3.4%;
+    bottom: 3%;
     left: 2%;
     display: none;
     z-index: 99999;
