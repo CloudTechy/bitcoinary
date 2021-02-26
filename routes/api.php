@@ -65,6 +65,7 @@ Route::prefix('v1')->group(function () {
 
 			//Route::resource('users', 'UserController');
 			Route::resource('users', 'UserController');
+			Route::get('user/referrals/{user}', 'UserController@referral');
 			Route::resource('durations', 'DurationController');
 			Route::get('withdrawdurations/{withdraw_duration}', 'WithdrawDurationController@show');
 			Route::patch('withdrawdurations/{withdraw_duration}', 'WithdrawDurationController@update');

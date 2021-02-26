@@ -59,10 +59,10 @@
                                     </div>
                                     <div class="divider pb-3"></div>
                                     <div class="row p-4 pb-2">
-                                        <div class="col-9 col-md-10 ">
+                                        <div class="col-8 col-md-9 ">
                                             <p class="mb-3">Withdrawal Status</p>
                                         </div>
-                                        <div class="col-3 col-md-2 p-0">
+                                        <div class="col-4 col-md-3 p-0">
                                             <div class="mb-1">
                                                 <span :class="{badge:true, 'badge-success' : $auth.user().CanWithdraw , 'badge-danger' : !$auth.user().CanWithdraw }">
                                                     {{$auth.user().CanWithdraw ? 'Active' : 'Paused'}}

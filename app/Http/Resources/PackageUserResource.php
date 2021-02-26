@@ -19,7 +19,9 @@ class PackageUserResource extends JsonResource {
 		$package = Package::find($this->package_id);
 		return [
 			'id' => $this->id,
-			'name' =>$package->name . ' Plan',
+			'name' =>$package->name,
+			'first_level_ref_commission' => $package->first_level_ref_commission,
+			'second_level_ref_commission' => $package->second_level_ref_commission,
 			'username' => $user->username,
 			'owner' => $user->last_name . ' ' . $user->first_name,
 			'amount' => $this->amount,

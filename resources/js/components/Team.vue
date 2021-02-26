@@ -15,7 +15,7 @@
                     <div :key = "team.id" v-for = "team in data" class="col-xl-3 col-lg-4 col-sm-6 mb-30">
                         <div class="team-card">
                             <div class="team-card__thumb">
-                                <img :src="$root.basepath + '/images/investor/'+ team.image" alt="image">
+                                <img :src="$root.basepath + '/images/team/'+ team.image" alt="image">
                             </div>
                             <div class="team-card__content">
                                 <h4 class="name mb-1">{{team.name}}</h4>

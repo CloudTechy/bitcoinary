@@ -5623,6 +5623,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -11648,6 +11649,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -11718,44 +11721,175 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {};
+    return {
+      referrals: [],
+      error: '',
+      form: new Form()
+    };
   },
   mounted: function mounted() {
-    window.scrollTo(200, 200);
+    this.$root.loader('show'); // setInterval(this.getReferrals, 61000)
+
+    this.getReferrals();
   },
   computed: {
-    user: function user() {
-      return this.$auth.user();
-    },
     Referral_link: function Referral_link() {
-      return this.$root.basepath + '/register?ref=' + this.user.username;
+      return this.$root.basepath + '/register?ref=' + this.$auth.user().username;
     }
   },
+  watch: {},
   methods: {
-    refCommision: function refCommision(ref, activeRef) {
-      var total = 0;
+    getReferrals: function getReferrals() {
+      var _this = this;
 
-      for (var i = 0; i <= ref - 1; i++) {
-        total += 3;
-      }
+      this.form.get("auth/user/referrals/" + this.$auth.user().id).then(function (response) {
+        _this.$root.loader('hide');
 
-      for (var i = 0; i <= activeRef - 1; i++) {
-        total += 5;
-      } //this.updateUserRefCommission(total)
+        _this.referrals = response.data.data;
+      })["catch"](function (error) {
+        _this.$root.loader('hide');
 
-
-      return this.$root.numeral(total);
-    } //     updateUserRefCommission(total){
-    //         this.form.referral_commission = total
-    //         this.form.patch("/auth/users/" + this.user.id)
-    //             .then(response => {
-    //             })
-    //             .catch(error => {
-    //             })
-    //     }
-
+        _this.error = error.response;
+        console.log(error.response);
+      });
+    }
   }
 });
 
@@ -61738,7 +61872,9 @@ var render = function() {
         ? _c("DashboardHeader")
         : _vm.$route.name == "UserPlans"
         ? _c("DashboardHeader")
-        : _vm.$route.name == "withdrawReport"
+        : _vm.$route.name == "WithdrawReport"
+        ? _c("DashboardHeader")
+        : _vm.$route.name == "ReferralReport"
         ? _c("DashboardHeader")
         : _vm.$route.name == "adminDashboard"
         ? _c("AdminDashboardHeader")
@@ -62412,7 +62548,7 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("li", [
-            _c("a", { attrs: { href: "/dashboard/report/withdraw" } }, [
+            _c("a", { attrs: { href: "/dashboard/referral" } }, [
               _vm._v("Referrals")
             ])
           ]),
@@ -64695,8 +64831,7 @@ var render = function() {
                   _c("div", { staticClass: "team-card__thumb" }, [
                     _c("img", {
                       attrs: {
-                        src:
-                          _vm.$root.basepath + "/images/investor/" + team.image,
+                        src: _vm.$root.basepath + "/images/team/" + team.image,
                         alt: "image"
                       }
                     })
@@ -76238,7 +76373,7 @@ var render = function() {
                   _c("div", { staticClass: "row p-4 pb-2" }, [
                     _vm._m(4),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-3 col-md-2 p-0" }, [
+                    _c("div", { staticClass: "col-4 col-md-3 p-0" }, [
                       _c("div", { staticClass: "mb-1" }, [
                         _c(
                           "span",
@@ -76555,7 +76690,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-9 col-md-10 " }, [
+    return _c("div", { staticClass: "col-8 col-md-9 " }, [
       _c("p", { staticClass: "mb-3" }, [_vm._v("Withdrawal Status")])
     ])
   },
@@ -76957,242 +77092,432 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "m-0 p-0" },
-    [
-      _c("DashboardHeader"),
-      _vm._v(" "),
-      _c("section", { staticClass: "main-container m-lg-3 m-0 acc" }, [
-        _c("div", { staticClass: "main" }, [
-          _c("div", { staticClass: "container" }, [
-            _c(
-              "div",
-              {
-                staticClass: "wrapper",
-                style:
-                  "background:url(" +
-                  _vm.$root.basepath +
-                  "/img/home.png) no-repeat 0 0;min-height:400px;"
-              },
-              [
-                _c(
-                  "div",
-                  { staticClass: "account-wrapper m-xl-2 row m-0 " },
-                  [
-                    _c(
-                      "nav",
-                      {
-                        staticClass:
-                          "nav  navbar-dark ml-4 ml-lg-0 mb-3 mb-lg-b p-0 mt-3 navbar navbar-expand-lg "
-                      },
-                      [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "navbar-toggler",
-                            attrs: {
-                              type: "button",
-                              "data-toggle": "collapse",
-                              "data-target": "#collapsibleNavbar4"
-                            },
-                            on: { click: function($event) {} }
-                          },
-                          [_c("span", { staticClass: "navbar-toggler-icon " })]
+  return _c("div", { staticClass: "page-wrapper" }, [
+    _c(
+      "section",
+      {
+        staticClass: "inner-hero bg_img",
+        style: "background:url(" + _vm.$root.basepath + "/images/bg/bg-1.jpg)",
+        attrs: { "data-background": _vm.$root.basepath + "/images/bg/bg-1.jpg" }
+      },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c("h2", { staticClass: "page-title" }, [_vm._v("Referral")]),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _c("h2", { staticClass: "page-title pt-4" }, [
+                _c("span", { staticClass: "base--color" }, [
+                  _vm._v("Welcome, ")
+                ]),
+                _vm._v(" " + _vm._s(_vm.$auth.user().username))
+              ])
+            ])
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "pb-60" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-lg-12" }, [
+            _c("div", { staticClass: "row mt-50 " }, [
+              _c("div", { staticClass: "col-lg-4 col-sm-12 mb-50" }, [
+                _c("div", { staticClass: "m-auto equal blog-card p-0 mb-50" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row p-4 pb-2" }, [
+                    _c("div", { staticClass: "col-9 col-md-10" }, [
+                      _c("h2", { staticClass: "mb-1" }, [
+                        _vm._v(
+                          _vm._s(
+                            _vm.$root.numeral(_vm.$auth.user().totalCommission)
+                          )
                         )
-                      ]
-                    ),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mb-3" }, [
+                        _vm._v("Earned commission")
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _c("DashboardSidebar"),
+                    _vm._m(2)
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "divider pb-3" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row p-4 pb-2" }, [
+                    _vm._m(3),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc"
-                      },
-                      [
-                        _c("div", { staticClass: "acc-block m-0 p-0" }, [
-                          _c("div", { staticClass: "acc-heading clearfix" }, [
-                            _c("h2", [_vm._v("Referrals")]),
-                            _vm._v(" "),
-                            _c("ul", { staticClass: "breadcrumbs" }, [
-                              _c("li", [_vm._v("Main")]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("img", {
-                                  attrs: {
-                                    src: _vm.$root.basepath + "/img/right-b.png"
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "active" }, [
-                                _vm._v("Referrals")
-                              ])
-                            ])
-                          ]),
+                    _c("div", { staticClass: "col-4 text-center p-0" }, [
+                      _c("div", { staticClass: "mb-1" }, [
+                        _vm.$auth.user().totalActiveTransaction > 0 ||
+                        _vm.$auth.user().totalEarned > 0
+                          ? _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "badge badge-success text-uppercase"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                                Investor\n                                            "
+                                )
+                              ]
+                            )
+                          : _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "badge badge-warning text-uppercase"
+                              },
+                              [_vm._v("Prospect")]
+                            )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "divider pb-3" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row p-4 pb-2" }, [
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-4 text-center p-0" }, [
+                      _c("div", { staticClass: "mb-1" }, [
+                        _vm._v(
+                          "\n                                            " +
+                            _vm._s(
+                              _vm.$auth.user().referral == null
+                                ? "None"
+                                : _vm.$auth.user().referral
+                            ) +
+                            "\n                                        "
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "divider pb-3" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row p-4 pb-2" }, [
+                    _vm._m(5),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-4 text-center p-0" }, [
+                      _c("div", { staticClass: "mb-1" }, [
+                        _vm._v(
+                          "\n                                            " +
+                            _vm._s(_vm.$auth.user().referrals) +
+                            "\n                                        "
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "divider pb-3" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row p-4 pb-2" }, [
+                    _vm._m(6),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-4 text-center p-0" }, [
+                      _c("div", { staticClass: "mb-1" }, [
+                        _vm._v(
+                          "\n                                            " +
+                            _vm._s(_vm.$auth.user().activeReferrals) +
+                            "\n                                        "
+                        )
+                      ])
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-8 col-sm-12" }, [
+                _c("div", { staticClass: "m-auto equal blog-card p-0 mb-30" }, [
+                  _vm._m(7),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "table-respon2sive table-responsive--md p-0"
+                    },
+                    [
+                      _c(
+                        "table",
+                        { staticClass: "table style--two white-space-nowrap" },
+                        [
+                          _vm.referrals.length > 0
+                            ? _c(
+                                "thead",
+                                { staticClass: "bg-transparent text-white" },
+                                [_vm._m(8)]
+                              )
+                            : _vm._e(),
                           _vm._v(" "),
                           _c(
-                            "div",
-                            { staticClass: "acc-body m-0 p-0 referrals" },
+                            "tbody",
                             [
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "stat-box row p-0 m-0 clearfix"
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    { staticClass: "s-box col m-0 p-2" },
-                                    [
-                                      _c("img", {
-                                        attrs: {
-                                          src:
-                                            _vm.$root.basepath +
-                                            "/img/box-4.png"
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("h4", [_vm._v("Total Referrals")]),
-                                      _vm._v(" "),
-                                      _c("span", [
-                                        _vm._v(_vm._s(_vm.user.referrals))
-                                      ])
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "s-box col m-0 p-2" },
-                                    [
-                                      _c("img", {
-                                        attrs: {
-                                          src:
-                                            _vm.$root.basepath +
-                                            "/img/box-5.png"
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("h4", [_vm._v("Active referrals")]),
-                                      _vm._v(" "),
-                                      _c("span", [
-                                        _vm._v(_vm._s(_vm.user.activeReferrals))
-                                      ])
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "s-box col m-0 p-2" },
-                                    [
-                                      _c("img", {
-                                        attrs: {
-                                          src:
-                                            _vm.$root.basepath +
-                                            "/img/box-6.png"
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("h4", [_vm._v("Total commissions")]),
-                                      _vm._v(" "),
-                                      _c("span", [
-                                        _vm._v(
-                                          _vm._s(
-                                            _vm.$root.numeral(
-                                              _vm.user.totalCommission
-                                            )
-                                          )
-                                        )
-                                      ])
-                                    ]
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "acc-block affiliate-link" },
-                                [
-                                  _vm._m(0),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "acc-body p-0 m-1 clearfix"
-                                    },
-                                    [
+                              _vm._l(_vm.referrals.slice(0, 20), function(
+                                data
+                              ) {
+                                return _vm.referrals.length > 0
+                                  ? _c("tr", [
                                       _c(
-                                        "div",
-                                        { staticClass: "aff-link-1 clearfix" },
+                                        "td",
+                                        { attrs: { "data-label": "Username" } },
+                                        [_vm._v(_vm._s(data.username))]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        { attrs: { "data-label": "Status" } },
                                         [
                                           _c(
-                                            "a",
+                                            "span",
                                             {
-                                              staticClass: "aff-link p-0",
-                                              attrs: {
-                                                id: "foo",
-                                                href: _vm.Referral_link
+                                              class: {
+                                                badge: true,
+                                                "badge-success": data.active,
+                                                "text-uppercase": true,
+                                                "bg--base": !data.active,
+                                                "text-dark": !data.active
                                               }
                                             },
-                                            [_vm._v(_vm._s(_vm.Referral_link))]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "button",
-                                            {
-                                              directives: [
-                                                {
-                                                  name: "clipboard",
-                                                  rawName: "v-clipboard",
-                                                  value: _vm.Referral_link,
-                                                  expression: "Referral_link"
-                                                }
-                                              ],
-                                              staticClass:
-                                                "btn btn-default small",
-                                              staticStyle: { float: "right" },
-                                              attrs: {
-                                                "data-clipboard-target": "#foo"
-                                              }
-                                            },
-                                            [_vm._v("Copy")]
+                                            [
+                                              _vm._v(
+                                                "\n                                                        " +
+                                                  _vm._s(
+                                                    data.active
+                                                      ? "investor"
+                                                      : "prospect"
+                                                  )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        { attrs: { "data-label": "Level" } },
+                                        [
+                                          _vm._v(
+                                            _vm._s(
+                                              data.referral_level == 1
+                                                ? "First Level Downline"
+                                                : "Second Level Downline"
+                                            )
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        {
+                                          staticClass: "text-success",
+                                          attrs: { "data-label": "Commission" }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "+ $" +
+                                              _vm._s(
+                                                _vm.$root.normalNumeral(
+                                                  data.cumulativeCommission
+                                                )
+                                              )
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        { attrs: { "data-label": "Joined" } },
+                                        [
+                                          _vm._v(
+                                            _vm._s(_vm.$root.numeral(data.date))
                                           )
                                         ]
                                       )
-                                    ]
-                                  )
-                                ]
-                              ),
+                                    ])
+                                  : _vm._e()
+                              }),
                               _vm._v(" "),
-                              _c("ul", { staticClass: "form-list clearfix" })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("br")
-                        ])
-                      ]
-                    )
-                  ],
-                  1
-                )
-              ]
-            )
+                              _vm.referrals.length == 0
+                                ? _c("tr", [_vm._m(9)])
+                                : _vm._e()
+                            ],
+                            2
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "m-auto equal blog-card p-0 mb-30" }, [
+                  _vm._m(10),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "input-group mt-3 p-4" }, [
+                    _c("input", {
+                      staticClass: "text-center form-control",
+                      attrs: { type: "text", disabled: "" },
+                      domProps: { value: _vm.Referral_link }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "input-group-append" }, [
+                      _c(
+                        "button",
+                        {
+                          directives: [
+                            {
+                              name: "clipboard",
+                              rawName: "v-clipboard",
+                              value: _vm.Referral_link,
+                              expression: "Referral_link"
+                            }
+                          ],
+                          staticClass: "cmn-btn",
+                          staticStyle: { "border-radius": "0px" },
+                          attrs: { "data-clipboard-target": "#wallet" },
+                          on: {
+                            click: function($event) {
+                              return _vm.$root.alert("success", " ", "copied")
+                            }
+                          }
+                        },
+                        [_vm._v("Copy")]
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ])
           ])
         ])
       ])
-    ],
-    1
-  )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "acc-heading clearfix" }, [
-      _c("h2", [_vm._v("Affiliate Link")])
+    return _c("ul", { staticClass: "page-breadcrumb" }, [
+      _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("Home")])]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "/dashboard" } }, [_vm._v("Dashboard")])
+      ]),
+      _vm._v(" "),
+      _c("li", [_vm._v("Referral")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "headeraccount base--bg" }, [
+      _c("span", { staticClass: "font-weight-bold" }, [
+        _vm._v("Referral Statistics ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-3 col-md-2 p-0" }, [
+      _c("div", { staticClass: "icon base--bg text-white" }, [
+        _c("i", { staticClass: "las la-dollar-sign" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-8  " }, [
+      _c("p", { staticClass: "mb-3" }, [_vm._v("Your Status")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-8  " }, [
+      _c("p", { staticClass: "mb-3" }, [_vm._v("Your Upline")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-8  " }, [
+      _c("p", { staticClass: "mb-3" }, [_vm._v("Referrals")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-8  " }, [
+      _c("p", { staticClass: "mb-3" }, [_vm._v("Active referrals")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "headeraccount base--bg mb-4" }, [
+      _c("span", { staticClass: "text-capitalize font-weight-bold" }, [
+        _vm._v("Your Referrals ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", [_vm._v("Username")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Status")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Referral level")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Commission")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Joined")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      { staticClass: "text-center only", attrs: { colspan: "5" } },
+      [
+        _c("div", { staticClass: "p-3 text-center" }, [
+          _vm._v(
+            "\n                                                        You do not have any referred investor yet.\n                                                    "
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "headeraccount base--bg" }, [
+      _c("span", { staticClass: "font-weight-bold" }, [
+        _c("span", { staticClass: "text-white" }, [_vm._v("Your ")]),
+        _vm._v(" Affiliate Link ")
+      ])
     ])
   }
 ]
@@ -77707,7 +78032,11 @@ var render = function() {
                   _c("div", { staticClass: "row p-4 pb-2" }, [
                     _c("div", { staticClass: "col-9 col-md-10 " }, [
                       _c("h2", { staticClass: "mb-1" }, [
-                        _vm._v(_vm._s(_vm.$root.numeral(_vm.totalWithdraw)))
+                        _vm._v(
+                          _vm._s(
+                            _vm.$root.numeral(_vm.$auth.user().totalWithdraw)
+                          )
+                        )
                       ]),
                       _vm._v(" "),
                       _c("p", { staticClass: "mb-3" }, [
@@ -77889,53 +78218,58 @@ var render = function() {
                           _c(
                             "tbody",
                             [
-                              _vm._l(_vm.withdrawals, function(data) {
-                                return _vm.withdrawals.length > 0
-                                  ? _c("tr", [
-                                      _c(
-                                        "td",
-                                        { attrs: { "data-label": "Amount" } },
-                                        [
-                                          _vm._v(
-                                            _vm._s(
-                                              _vm.$root.numeral(data.amount)
-                                            )
-                                          )
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "td",
-                                        {
-                                          attrs: { "data-label": "Processor" }
-                                        },
-                                        [
-                                          _c(
-                                            "span",
-                                            {
-                                              staticClass:
-                                                "badge text-dark bg--base"
-                                            },
-                                            [
-                                              _vm._v(
-                                                _vm._s(data.payment_method)
+                              _vm._l(
+                                _vm
+                                  .myFilter(_vm.withdrawals, _vm.from, _vm.to)
+                                  .slice(0, 20),
+                                function(data) {
+                                  return _vm.withdrawals.length > 0
+                                    ? _c("tr", [
+                                        _c(
+                                          "td",
+                                          { attrs: { "data-label": "Amount" } },
+                                          [
+                                            _vm._v(
+                                              _vm._s(
+                                                _vm.$root.numeral(data.amount)
                                               )
-                                            ]
-                                          )
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "td",
-                                        {
-                                          staticClass: "text-success",
-                                          attrs: { "data-label": "Date" }
-                                        },
-                                        [_vm._v(_vm._s(data.date))]
-                                      )
-                                    ])
-                                  : _vm._e()
-                              }),
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          {
+                                            attrs: { "data-label": "Processor" }
+                                          },
+                                          [
+                                            _c(
+                                              "span",
+                                              {
+                                                staticClass:
+                                                  "badge text-dark bg--base"
+                                              },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(data.payment_method)
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          {
+                                            staticClass: "text-success",
+                                            attrs: { "data-label": "Date" }
+                                          },
+                                          [_vm._v(_vm._s(data.date))]
+                                        )
+                                      ])
+                                    : _vm._e()
+                                }
+                              ),
                               _vm._v(" "),
                               _vm.withdrawals.length == 0
                                 ? _c("tr", [_vm._m(9)])
@@ -109476,8 +109810,8 @@ var routes = [{
     auth: true
   }
 }, {
-  path: '/dashboard/report/referral',
-  name: 'referralReport',
+  path: '/dashboard/referral',
+  name: 'ReferralReport',
   component: _pages_user_reports_ReferralReport__WEBPACK_IMPORTED_MODULE_28__["default"],
   meta: {
     auth: true

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helper;
 use App\Http\Requests\ValidateUserRequest;
 use App\Http\Resources\UserResource;
+use App\Http\Resources\ReferralResource;
 use App\User;
 use App\Package;
 use Illuminate\Http\Request;
@@ -149,5 +150,42 @@ class UserController extends Controller {
 		$subscriptionController = new PackageUserController();
 		$result = $subscriptionController->store(new Request(['user_id' => $user->id, 'package_id' => $package->id]));
 		return $result;
+	}
+
+	public function referral(User $user){
+		try {
+			$firstLevelReferrers = User::where('referral', $user->username)->get()->toArray();
+
+			$firstLevelReferrers = array_map(function($user){
+				$user['referral_level']  = 1;
+				return $user;
+			}, $firstLevelReferrers );
+
+
+			global $secondLevelReferrers;
+			$secondLevelReferrers = [];
+			for ($i=0; $i < count($firstLevelReferrers)  ; $i++) { 
+				$user = $firstLevelReferrers[$i];
+				$secondLevelReferrersBk = User::where('referral', $user['username'])->get()->toArray();
+				$secondLevelReferrersBk_Levels = array_map(function($user){
+							$user['referral_level']  = 2;
+							return $user;
+						}, $secondLevelReferrersBk);
+				$secondLevelReferrers = array_merge($secondLevelReferrers, $secondLevelReferrersBk_Levels);
+			}
+			$referrals = array_merge($firstLevelReferrers, $secondLevelReferrers);
+			$referrals = collect($referrals);
+			$data = ReferralResource::collection($referrals);
+			return Helper::validRequest($data, 'data was fetched successfully', 200);
+			$data = ReferralResource::collection($referrals);
+			
+		} catch (Exception $bug) {
+			return $this->exception($bug, 'unknown error', 500);
+		}
+
+
+
+		
+
 	}
 }

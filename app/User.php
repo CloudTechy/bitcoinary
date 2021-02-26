@@ -34,7 +34,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 		return $this->transactions->where('sent', true)->where('confirmed', true)->where('active', true)->sum('amount');
 	}
 	public function getTotalEarnedAttribute() {
-		return $this->confirmedTransactions->where('reference', 'BM')->sum('amount') + $this->confirmedTransactions->where('reference', 'BM first tier commission')->sum('amount') + $this->confirmedTransactions->where('reference', 'BM second tier commission')->sum('amount');;
+		return $this->confirmedTransactions->where('reference', 'BM')->sum('amount') + $this->confirmedTransactions->where('reference', 'BM first tier commission')->sum('amount') + $this->confirmedTransactions->where('reference', 'BM second tier commission')->sum('amount');
 	}
 	public function getActivePackagesAttribute() {
 		$activePackages = [];

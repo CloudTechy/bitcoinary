@@ -29,7 +29,7 @@ import AdminDashboard from './pages/admin/Dashboard'
 import WithdrawReport from './pages/user/reports/WithdrawalReport'
 import DepositReport from './pages/user/reports/DepositReport'
 import UserPlans from './pages/user/reports/DepositReport'
-import ReferralReport from './pages/user/reports/ReferralReport'
+import referralReport from './pages/user/reports/ReferralReport'
 import TransactionReport from './pages/user/reports/TransactionReport'
 import Setting from './pages/user/Setting'
 import Security from './pages/user/Security'
@@ -245,9 +245,9 @@ const routes = [{
         }
     },
     {
-        path: '/dashboard/report/referral',
-        name: 'referralReport',
-        component: ReferralReport,
+        path: '/dashboard/referral',
+        name: 'ReferralReport',
+        component: referralReport,
         meta: {
             auth: true
         }

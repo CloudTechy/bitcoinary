@@ -29,7 +29,7 @@
                             <li>
                                 <a href="/dashboard/withdrawal-report">Withdrawal history</a>
                             </li>
-                            <li><a href="/dashboard/report/withdraw">Referrals</a>
+                            <li><a href="/dashboard/referral">Referrals</a>
                             </li>
                             <li class="menu_has_children"><a href="#0">Account Setting</a>
                                 <ul class="sub-menu">
