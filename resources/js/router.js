@@ -198,7 +198,7 @@ const routes = [{
     },
     {
         path: '/dashboard/settings',
-        name: 'setting',
+        name: 'Setting',
         component: Setting,
         meta: {
             auth: true

@@ -56,9 +56,9 @@ class BankDetailController extends Controller {
 	public function store(Request $request) {
 		$validated = $request->validate([
 
-			"bank_id" => "numeric|exists:banks,id",
-			"acc_name" => "required_unless:currency_type,crypto|string",
-			"acc_number" => "required_unless:currency_type,crypto|numeric",
+			"bank_id" => "numeric|exists:banks,id|nullable",
+			"acc_name" => "required_unless:currency_type,crypto|string|nullable",
+			"acc_number" => "required_unless:currency_type,crypto|numeric|nullable",
 			"user_id" => "required|numeric|exists:users,id",
 			'swift_code' => 'nullable|string',
 			'currency_type' => 'required|string|exists:payment_methods,type',
@@ -73,7 +73,7 @@ class BankDetailController extends Controller {
 				})
 			],
 			
-			'wallet' => 'required_unless:currency_type,fiat|string',
+			'wallet' => 'required_unless:currency_type,fiat|string|nullable',
 
 		]);
 		DB::beginTransaction();
@@ -129,12 +129,19 @@ class BankDetailController extends Controller {
 	 */
 	public function update(Request $request, BankDetail $bankdetail) {
 		$validated = $request->validate([
-			"bank" => "max:50|string",
-			"acc_name" => "string|min:4",
-			"acc_number" => "numeric|min:10",
-			"swift_code" => "string",
-			'payment_method' => 'string',
-			'wallet' => 'string',
+			"bank_id" => "numeric|exists:banks,id|nullable",
+			"acc_name" => "required_unless:currency_type,crypto|string|nullable",
+			"acc_number" => "required_unless:currency_type,crypto|numeric|nullable",
+			'swift_code' => 'nullable|string',
+			'currency_type' => 'string|exists:payment_methods,type',
+			'payment_method' => [
+				'string', 
+				Rule::exists('payment_methods' , 'name')->where(function ($query) use($request){
+		            $query->where('type', $request->currency_type);
+		        }),
+			],
+			
+			'wallet' => 'required_unless:currency_type,fiat|string|nullable',
 		]);
 		DB::beginTransaction();
 		try {

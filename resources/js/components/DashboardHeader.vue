@@ -31,9 +31,9 @@
                             </li>
                             <li><a href="/dashboard/referral">Referrals</a>
                             </li>
-                            <li class="menu_has_children"><a href="#0">Account Setting</a>
+                            <li class="menu_has_children"><a href="/dashboard/settings">Account Setting</a>
                                 <ul class="sub-menu">
-                                    <li><a href="/dashboard/settings">Profile setup</a></li>
+                                    <li><a href="/dashboard/settings/#profile">Profile setup</a></li>
                                     <li><a href="/dashboard/settings/#payment">Payment setup</a></li>
                                 </ul>
                             </li>

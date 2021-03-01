@@ -86,17 +86,17 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr v-for="py in $root.payments" :class="{ selected : form.payment_method == py.name && getAccountDetails(py.name, py.type)}">
+                                                    <tr v-for="py in $root.payments" :class="{ selected : form.payment_method == py.name && $root.getAccountDetails(py.name, py.type)}">
                                                         <td data-label="Payment processor">
                                                             <input class="select_input" required="" name="payment_option" type="radio" @click="" v-model="form.payment_method" :value="py.name">
                                                             <span class="">
                                                                 <img class="img-size-50" :src="$root.basepath + '/images/uploads/' + py.image" alt="processor brand">
                                                             </span>
                                                             <span class="text-capitalize"> {{py.name}}</span></td>
-                                                        <td v-if="getAccountDetails(py.name, py.type)" data-label="Address">{{getAccountDetails(py.name, py.type)}}</td>
+                                                        <td v-if="$root.getAccountDetails(py.name, py.type)" data-label="Address">{{$root.getAccountDetails(py.name, py.type)}}</td>
                                                         <td data-label="Address" v-else>
                                                             <p>Not set
-                                                                <a style="text-decoration: underline;" href="/dashboard/settings/#payment" class="base--color font-weight-bold"> setup?</a>
+                                                                <a style="text-decoration: underline;" :href="'/dashboard/settings?py='+py.name" class="base--color font-weight-bold"> setup?</a>
                                                             </p>
                                                         </td>
                                                     </tr>
@@ -190,10 +190,6 @@
                     console.log(error, error.response)
                 })
         },
-        getAccountDetails(search, currencyType){
-           let paymentDetails = this.$root.cryptoFilter(this.$auth.user().bank_details, search)[0]
-           return currencyType == 'fiat' ?  paymentDetails.acc_number : paymentDetails.wallet
-       }
     }
 }
 
