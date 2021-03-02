@@ -67472,12 +67472,14 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c(
-                    "router-link",
-                    { staticClass: "cmn-btn mt-4", attrs: { to: "/register" } },
+                    "a",
+                    {
+                      staticClass: "cmn-btn mt-4",
+                      attrs: { href: "/register" }
+                    },
                     [_vm._v("Join Us")]
                   )
-                ],
-                1
+                ]
               )
             ])
           ])
@@ -74910,7 +74912,27 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row mt-50 " }, [
-              _vm._m(5),
+              _c("div", { staticClass: "col-lg-4 col-sm-12 mb-50" }, [
+                _c("div", { staticClass: "m-auto equal blog-card p-0 mb-30" }, [
+                  _vm._m(5),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row p-4 pb-2" }, [
+                    _c("div", { staticClass: "col-9 col-md-10 " }, [
+                      _c("h2", { staticClass: "mb-1" }, [
+                        _vm._v(
+                          _vm._s(_vm.$root.numeral(_vm.$auth.user().balance))
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mb-3" }, [
+                        _vm._v("Account Balance")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(6)
+                  ])
+                ])
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-lg-8 col-sm-12" }, [
                 _c(
@@ -74921,7 +74943,7 @@ var render = function() {
                       "table",
                       { staticClass: "table style--two white-space-nowrap" },
                       [
-                        _vm._m(6),
+                        _vm._m(7),
                         _vm._v(" "),
                         _c(
                           "tbody",
@@ -74984,7 +75006,7 @@ var render = function() {
                             }),
                             _vm._v(" "),
                             _vm.transactions.length == 0
-                              ? _c("tr", [_vm._m(7)])
+                              ? _c("tr", [_vm._m(8)])
                               : _vm._e()
                           ],
                           2
@@ -75013,10 +75035,10 @@ var render = function() {
                           }
                         },
                         [
-                          _vm._m(8),
+                          _vm._m(9),
                           _vm._v(" "),
                           _c("div", { staticClass: "row" }, [
-                            _vm._m(9),
+                            _vm._m(10),
                             _vm._v(" "),
                             _c(
                               "div",
@@ -75121,27 +75143,19 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-4 col-sm-12 mb-50" }, [
-      _c("div", { staticClass: "m-auto equal blog-card p-0 mb-30" }, [
-        _c("div", { staticClass: "headeraccount base--bg" }, [
-          _c("span", { staticClass: "font-weight-bold" }, [
-            _vm._v("Financial Statistics ")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row p-4 pb-2" }, [
-          _c("div", { staticClass: "col-9 col-md-10 " }, [
-            _c("h2", { staticClass: "mb-1" }, [_vm._v("$0.00")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "mb-3" }, [_vm._v("Account Balance")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-3 col-md-2 p-0" }, [
-            _c("div", { staticClass: "icon base--bg text-white" }, [
-              _c("i", { staticClass: "las la-dollar-sign" })
-            ])
-          ])
-        ])
+    return _c("div", { staticClass: "headeraccount base--bg" }, [
+      _c("span", { staticClass: "font-weight-bold" }, [
+        _vm._v("Financial Statistics ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-3 col-md-2 p-0" }, [
+      _c("div", { staticClass: "icon base--bg text-white" }, [
+        _c("i", { staticClass: "las la-dollar-sign" })
       ])
     ])
   },

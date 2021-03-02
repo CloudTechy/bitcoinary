@@ -306,7 +306,7 @@
                             <h2 class="title mb-3">Get Started Today With Us</h2>
                             <p>This is a Revolutionary Money Making Platform! Invest for Future in Stable Platform and Make Fast Money. Not only we guarantee the fastest and the most exciting returns on your investments, but we also guarantee the security
                                 of your investment.</p>
-                            <router-link class="cmn-btn mt-4" to="/register">Join Us</router-link>
+                            <a class="cmn-btn mt-4" href="/register">Join Us</a>
                         </div>
                     </div>
                 </div>

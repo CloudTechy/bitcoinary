@@ -78,7 +78,7 @@
                                     <div class="headeraccount base--bg"><span class="font-weight-bold">Financial Statistics </span> </div>
                                     <div class="row p-4 pb-2">
                                         <div class="col-9 col-md-10 ">
-                                            <h2 class="mb-1">$0.00</h2>
+                                            <h2 class="mb-1">{{$root.numeral($auth.user().balance)}}</h2>
                                             <p class="mb-3">Account Balance</p>
                                         </div>
                                         <div class="col-3 col-md-2 p-0">
