@@ -7,8 +7,8 @@
                         <div class="col-lg-6 mb-30">
                             <label>Choose Plan</label>
                             <select v-model="plan" class="base--bg">
-                                <option selected v-if=" $root.packages == '' ">Fetching Packages...</option>
-                                <option class=" text-capitalize" :value="plan" v-for="plan in $root.packages">{{plan.name}} Package</option>
+                                <option selected v-if="packages == '' ">Fetching Packages...</option>
+                                <option class=" text-capitalize" :value="plan" v-for="plan in packages">{{plan.name}} Package</option>
                             </select>
                         </div>
                         <div class="col-lg-6 mb-30">
@@ -50,23 +50,19 @@
         total_earning() {
 
             return this.$root.numeral(parseInt(this.profit_amount) + parseInt(this.invest_amount))
+        },
+        packages(){
+            return this.$root.packages
         }
 
     },
     created() {
 
     },
+    props: [],
     // components: { Menu },
     methods: {
-        getPackages() {
-            this.$http.get("/auth/packages")
-                .then(response => {
-                    this.packages = response.data.data.item
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
-        }
+         
 
     },
 

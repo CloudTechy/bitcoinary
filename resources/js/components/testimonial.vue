@@ -12,9 +12,9 @@
             <!-- row end -->
             <div class="row">
                 <div class="col-lg-12">
-                    <div id="testimonial-slider" class="testimonial-slider">
-                        <VueSlickCarousel :key="key"  v-if = "data" v-bind="settings">
-                              <div :key = "testimonial.id" v-for="(testimonial) in data" class="single-slide">
+                    <div v-if = "data" id="testimonial-slider" class="testimonial-slider">
+                        <VueSlickCarousel :key="key"   v-bind="settings">
+                              <div :key = "testimonial.id" v-for="testimonial in data" class="single-slide">
                             <div class="testimonial-card m-2">
                                 <div class="testimonial-card__content">
                                     <p>{{testimonial.content}}</p>
@@ -93,17 +93,19 @@ export default {
             console.log(this.data)
             return this.key++
         },
-        // testimonial(){
-        //     console.log(this.testimonial)
-        //     return this.key++
-        // }
+        testimonial(){
+            // console.log(this.testimonial)
+            return this.key++
+        }
     },
     mounted() {
         this.key++
     },
     components: { VueSlickCarousel },
     props: ['data'],
-    methods: {},
+    methods: {
+        
+    },
 
 }
 

@@ -7250,21 +7250,15 @@ __webpack_require__.r(__webpack_exports__);
     },
     total_earning: function total_earning() {
       return this.$root.numeral(parseInt(this.profit_amount) + parseInt(this.invest_amount));
+    },
+    packages: function packages() {
+      return this.$root.packages;
     }
   },
   created: function created() {},
+  props: [],
   // components: { Menu },
-  methods: {
-    getPackages: function getPackages() {
-      var _this = this;
-
-      this.$http.get("/auth/packages").then(function (response) {
-        _this.packages = response.data.data.item;
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    }
-  }
+  methods: {}
 });
 
 /***/ }),
@@ -7567,11 +7561,11 @@ __webpack_require__.r(__webpack_exports__);
     data: function data() {
       console.log(this.data);
       return this.key++;
-    } // testimonial(){
-    //     console.log(this.testimonial)
-    //     return this.key++
-    // }
-
+    },
+    testimonial: function testimonial() {
+      // console.log(this.testimonial)
+      return this.key++;
+    }
   },
   mounted: function mounted() {
     this.key++;
@@ -8191,16 +8185,82 @@ __webpack_require__.r(__webpack_exports__);
       success: false,
       has_error: false,
       error: '',
-      response: ''
+      response: '',
+      news: [],
+      investors: [],
+      testimonials: [],
+      transactions: [],
+      withdrawals: [],
+      teams: []
     };
   },
-  mounted: function mounted() {//
+  mounted: function mounted() {
+    this.getNews();
+    this.getTeams();
+    this.getInvestors();
+    this.getTestimonials();
+    this.getTransactions();
+    this.getWithdrawals();
   },
   methods: {
     submitForm: function submitForm() {
       this.has_error = false;
       this.success = true;
       this.response = "Your message was delivered, you will be contacted as soon as possible.";
+    },
+    getNews: function getNews() {
+      var _this = this;
+
+      this.$http.get("/auth/newss").then(function (response) {
+        _this.news = response.data.data.item;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    getTeams: function getTeams() {
+      var _this2 = this;
+
+      this.$http.get("/auth/teamss").then(function (response) {
+        _this2.teams = response.data.data.item;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    getInvestors: function getInvestors() {
+      var _this3 = this;
+
+      this.$http.get("/auth/investorss").then(function (response) {
+        _this3.investors = response.data.data.item;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    getTestimonials: function getTestimonials() {
+      var _this4 = this;
+
+      this.$http.get("/auth/testimonialss").then(function (response) {
+        _this4.testimonials = response.data.data.item;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    getTransactions: function getTransactions() {
+      var _this5 = this;
+
+      this.$http.get("/auth/transactionss?pageSize=6&reference=SELF&sent=1&confirmed=1").then(function (response) {
+        _this5.transactions = response.data.data.item;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    getWithdrawals: function getWithdrawals() {
+      var _this6 = this;
+
+      this.$http.get("/auth/withdrawalss?pageSize=6&confirmed=1&processed=1").then(function (response) {
+        _this6.withdrawals = response.data.data.item;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
     }
   }
 });
@@ -10364,7 +10424,9 @@ __webpack_require__.r(__webpack_exports__);
       message: undefined
     };
   },
-  mounted: function mounted() {
+  mounted: function mounted() {},
+  created: function created() {
+    window.scrollTo(0, 350);
     this.getPaymentMethods();
   },
   watch: {
@@ -10429,7 +10491,6 @@ __webpack_require__.r(__webpack_exports__);
       this.$root.loader('show');
       this.$error = '';
       this.form.get("/auth/bankdetails/?user_id=1").then(function (response) {
-        window.scrollTo(0, 350);
         _this3.paymentMethods = response.data.data.item;
 
         _this3.$root.loader('hide');
@@ -10773,11 +10834,7 @@ __webpack_require__.r(__webpack_exports__);
       }, 3000);
     }
   },
-  computed: {
-    user: function user() {
-      return this.$auth.user();
-    }
-  },
+  computed: {},
   methods: {
     changeComponent: function changeComponent(component) {
       var plan = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
@@ -10863,7 +10920,6 @@ __webpack_require__.r(__webpack_exports__);
     return {
       form: new Form({
         amount: '',
-        user_id: this.user.id,
         package_id: '',
         reference: 'SELF'
       }),
@@ -10887,54 +10943,15 @@ __webpack_require__.r(__webpack_exports__);
       setTimeout(function () {
         _this2.error = '';
       }, 10000);
-    },
-    plans: function plans() {
-      if (this.plans) {
-        this.$root.loader('hide');
-      }
     }
   },
-  computed: {
-    plans: function plans() {
-      var plans = this.$root.packages;
-      var app = this;
-      app.$root.loader('show');
-
-      if (plans.length > 0) {
-        app.$root.loader('hide');
-        return plans;
-      } else {
-        app.$root.loader('show');
-      }
-    }
-  },
-  props: ['user', 'success'],
+  computed: {},
   mounted: function mounted() {
     window.scrollTo(0, 0);
   },
   created: function created() {// this.$root.loader('show')
   },
   methods: {
-    getPortfolios: function getPortfolios() {
-      var _this3 = this;
-
-      this.form.get("/auth/portfolios").then(function (response) {
-        _this3.portfolios = response.data.data.item;
-        localStorage.portfolioss = JSON.stringify(response.data.data.item);
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    },
-    getPackages: function getPackages() {
-      var _this4 = this;
-
-      this.form.get("/auth/packages").then(function (response) {
-        _this4.packages = response.data.data.item;
-        localStorage.packages = JSON.stringify(response.data.data.item);
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    },
     updateSelection: function updateSelection(pack) {
       this.selectedPackage = pack;
       this.select = pack.name;
@@ -10956,7 +10973,7 @@ __webpack_require__.r(__webpack_exports__);
       return numeral(value).format('0,0');
     }),
     processDeposit: function processDeposit() {
-      var _this5 = this;
+      var _this3 = this;
 
       this.processDepo(true);
       var form = new Form({
@@ -10968,17 +10985,17 @@ __webpack_require__.r(__webpack_exports__);
 
       form.post("/auth/showWlt").then(function (response) {
         wlt = response.data.data.wallet;
-        _this5.selectedPackage.wallet = wlt;
+        _this3.selectedPackage.wallet = wlt;
 
-        _this5.$emit('changeComponent', 'ConfirmDeposit', _this5.selectedPackage);
+        _this3.$emit('changeComponent', 'ConfirmDeposit', _this3.selectedPackage);
 
-        _this5.processDepo(false);
+        _this3.processDepo(false);
       })["catch"](function (error) {
-        _this5.selectedPackage.wallet = wlt;
+        _this3.selectedPackage.wallet = wlt;
 
-        _this5.$emit('changeComponent', 'ConfirmDeposit', _this5.selectedPackage);
+        _this3.$emit('changeComponent', 'ConfirmDeposit', _this3.selectedPackage);
 
-        _this5.processDepo(false);
+        _this3.processDepo(false);
       }); // if(this.user.packages.length > 0){
       //     this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  
       //     // this.error = 'Oops!!! There is an active subscription on this account'
@@ -10989,23 +11006,23 @@ __webpack_require__.r(__webpack_exports__);
       // }
     },
     subscribe: function subscribe() {
-      var _this6 = this;
+      var _this4 = this;
 
       this.processing(true);
       this.form.package_id = this.selectedPackage.id;
       this.form.post("/auth/packageusers").then(function (response) {
         window.scrollTo(0, 200);
 
-        _this6.processing(false);
+        _this4.processing(false);
 
-        _this6.error = '';
-        _this6.msg = response.data.message;
+        _this4.error = '';
+        _this4.msg = response.data.message;
       })["catch"](function (error) {
         window.scrollTo(0, 200);
-        _this6.success = '';
-        _this6.error = error.response.data ? error.response.data.message : 'Subscription was not successful';
+        _this4.success = '';
+        _this4.error = error.response.data ? error.response.data.message : 'Subscription was not successful';
 
-        _this6.processing(false);
+        _this4.processing(false);
       });
     },
     processing: function processing(status) {
@@ -19138,7 +19155,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*#testimonial-slider{\r\n    min-height: 40px; \r\n}\r\n.slick-slide .slick-active .slick-current{\r\n    margin : 15px;\r\n}\r\n.slick-slide .slick-active {\r\n    margin : 15px;\r\n}*/\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*#testimonial-slider{\r\n    min-height: 40px; \r\n}\r\n.slick-slide .slick-active .slick-current{\r\n    margin : 15px;\r\n}\r\n.slick-slide .slick-active {\r\n    margin : 15px;\r\n}*/\r\n", ""]);
 
 // exports
 
@@ -19214,7 +19231,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* .bg_img{\r\n        background-size: cover !important;\r\n        background-position: center !important;\r\n        background-repeat: no-repeat !important;\r\n    }*/\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* .bg_img{\r\n        background-size: cover !important;\r\n        background-position: center !important;\r\n        background-repeat: no-repeat !important;\r\n    }*/\r\n\r\n", ""]);
 
 // exports
 
@@ -19252,7 +19269,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /*table.stat tbody td {\n    font-size: 15px;\n    line-height: 24px;\n    padding: 12px 8px;\n     border-top: 1px solid rgba(255,255,255,0.10); \n}*/\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /*table.stat tbody td {\n    font-size: 15px;\n    line-height: 24px;\n    padding: 12px 8px;\n     border-top: 1px solid rgba(255,255,255,0.10); \n}*/\n", ""]);
 
 // exports
 
@@ -19271,7 +19288,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*.btn:focus {\r\n    box-shadow: none !important;\r\n}\r\n\r\n.silver {\r\n    background: linear-gradient(to right, #a7a7a7 0%, #eaeaea 100%);\r\n}\r\n\r\n.gold {\r\n    background: linear-gradient(to right, #e25e5a 0%, #e25e5a 0%, #f8b982 100%, #f8b982 100%, #f8b982 100%);\r\n}*/\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*.btn:focus {\r\n    box-shadow: none !important;\r\n}\r\n\r\n.silver {\r\n    background: linear-gradient(to right, #a7a7a7 0%, #eaeaea 100%);\r\n}\r\n\r\n.gold {\r\n    background: linear-gradient(to right, #e25e5a 0%, #e25e5a 0%, #f8b982 100%, #f8b982 100%, #f8b982 100%);\r\n}*/\r\n\r\n", ""]);
 
 // exports
 
@@ -65827,13 +65844,13 @@ var render = function() {
                   }
                 },
                 [
-                  _vm.$root.packages == ""
+                  _vm.packages == ""
                     ? _c("option", { attrs: { selected: "" } }, [
                         _vm._v("Fetching Packages...")
                       ])
                     : _vm._e(),
                   _vm._v(" "),
-                  _vm._l(_vm.$root.packages, function(plan) {
+                  _vm._l(_vm.packages, function(plan) {
                     return _c(
                       "option",
                       {
@@ -66446,15 +66463,15 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-lg-12" }, [
-            _c(
-              "div",
-              {
-                staticClass: "testimonial-slider",
-                attrs: { id: "testimonial-slider" }
-              },
-              [
-                _vm.data
-                  ? _c(
+            _vm.data
+              ? _c(
+                  "div",
+                  {
+                    staticClass: "testimonial-slider",
+                    attrs: { id: "testimonial-slider" }
+                  },
+                  [
+                    _c(
                       "VueSlickCarousel",
                       _vm._b(
                         { key: _vm.key },
@@ -66524,10 +66541,10 @@ var render = function() {
                       }),
                       0
                     )
-                  : _vm._e()
-              ],
-              1
-            )
+                  ],
+                  1
+                )
+              : _vm._e()
           ])
         ])
       ])
@@ -67620,18 +67637,17 @@ var render = function() {
       _vm._v(" "),
       _c("FaqComponent"),
       _vm._v(" "),
-      _c("testimonial", { attrs: { data: _vm.$root.testimonials } }),
+      _vm.testimonials.length > 0
+        ? _c("testimonial", { attrs: { data: _vm.testimonials } })
+        : _vm._e(),
       _vm._v(" "),
-      _c("Team", { attrs: { data: _vm.$root.teams } }),
+      _c("Team", { attrs: { data: _vm.teams } }),
       _vm._v(" "),
       _c("Transaction", {
-        attrs: {
-          transactions: _vm.$root.transactions,
-          withdrawals: _vm.$root.withdrawals
-        }
+        attrs: { transactions: _vm.transactions, withdrawals: _vm.withdrawals }
       }),
       _vm._v(" "),
-      _c("Investor", { attrs: { data: _vm.$root.investors } }),
+      _c("Investor", { attrs: { data: _vm.investors } }),
       _vm._v(" "),
       _c("section", { staticClass: "pb-120" }, [
         _c("div", { staticClass: "container" }, [
@@ -67671,7 +67687,9 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("PaymentBrand", { attrs: { data: _vm.$root.payments } }),
+      _vm.$root.payments.length > 0
+        ? _c("PaymentBrand", { attrs: { data: _vm.$root.payments } })
+        : _vm._e(),
       _vm._v(" "),
       _c("newsletter")
     ],
@@ -75503,11 +75521,7 @@ var render = function() {
           _c(_vm.componentName, {
             tag: "component",
             staticClass: "m-0 p-0",
-            attrs: {
-              success: _vm.message,
-              plan: _vm.selectedPlan,
-              user: _vm.user
-            },
+            attrs: { success: _vm.message, plan: _vm.selectedPlan },
             on: { success: _vm.success, changeComponent: _vm.changeComponent }
           })
         ],
@@ -75560,7 +75574,7 @@ var render = function() {
       _c(
         "div",
         { staticClass: "row justify-content-center mb-none-30" },
-        _vm._l(_vm.plans, function(plan) {
+        _vm._l(_vm.$root.packages, function(plan) {
           return _c(
             "div",
             { staticClass: "col-xl-3 col-lg-4 col-md-6 mb-30" },
@@ -105586,14 +105600,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     mailUser: null,
     btc_volume: '-',
     active_trade: '-',
-    packages: [],
-    news: [],
-    investors: [],
-    testimonials: [],
-    transactions: [],
-    withdrawals: [],
-    teams: [],
     payments: [],
+    packages: [],
     form: new vform__WEBPACK_IMPORTED_MODULE_18__["Form"]()
   },
   el: '#app',
@@ -105616,19 +105624,12 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
   created: function created() {
     setInterval(this.timer, 1000);
     setInterval(this.btcRate, 2000);
-    setInterval(this.btcVolume, 60000); // setInterval(this.getUpdates, 300000)
-
+    setInterval(this.btcVolume, 60000);
     this.btcRate(); // this.getIp()
 
     this.btcVolume();
-    this.getPackages();
-    this.getNews();
-    this.getTeams();
-    this.getInvestors();
-    this.getTestimonials();
-    this.getTransactions();
-    this.getWithdrawals();
     this.getPayments();
+    this.getPackages();
   },
   methods: {
     alert: function alert(type, title, message) {
@@ -105640,6 +105641,24 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
         text: message,
         showConfirmButton: false,
         timer: 3000
+      });
+    },
+    getPayments: function getPayments() {
+      var _this = this;
+
+      this.$http.get("/auth/paymentss").then(function (response) {
+        _this.payments = response.data.data.item.data;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    getPackages: function getPackages() {
+      var _this2 = this;
+
+      this.$http.get("/auth/packagess").then(function (response) {
+        _this2.packages = response.data.data.item;
+      })["catch"](function (error) {
+        console.log(error.response);
       });
     },
     loader: function loader(action) {
@@ -105659,88 +105678,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     },
     scrollUp: function scrollUp() {
       window.scrollTo(0, 50);
-    },
-    getUpdates: function getUpdates() {
-      this.getPackages();
-      this.getNews();
-      this.getTeams();
-      this.getInvestors();
-      this.getTestimonials();
-      this.getTransactions();
-      this.getWithdrawals();
-      this.getPayments();
-    },
-    getPackages: function getPackages() {
-      var _this = this;
-
-      this.$http.get("/auth/packagess").then(function (response) {
-        _this.packages = response.data.data.item;
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    },
-    getPayments: function getPayments() {
-      var _this2 = this;
-
-      this.$http.get("/auth/paymentss").then(function (response) {
-        _this2.payments = response.data.data.item.data;
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    },
-    getNews: function getNews() {
-      var _this3 = this;
-
-      this.$http.get("/auth/newss").then(function (response) {
-        _this3.news = response.data.data.item;
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    },
-    getTeams: function getTeams() {
-      var _this4 = this;
-
-      this.$http.get("/auth/teamss").then(function (response) {
-        _this4.teams = response.data.data.item;
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    },
-    getInvestors: function getInvestors() {
-      var _this5 = this;
-
-      this.$http.get("/auth/investorss").then(function (response) {
-        _this5.investors = response.data.data.item;
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    },
-    getTestimonials: function getTestimonials() {
-      var _this6 = this;
-
-      this.$http.get("/auth/testimonialss").then(function (response) {
-        _this6.testimonials = response.data.data.item;
-      })["catch"](function (error) {
-        console.log(error);
-      });
-    },
-    getTransactions: function getTransactions() {
-      var _this7 = this;
-
-      this.$http.get("/auth/transactionss?pageSize=6&reference=SELF&sent=1&confirmed=1").then(function (response) {
-        _this7.transactions = response.data.data.item;
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    },
-    getWithdrawals: function getWithdrawals() {
-      var _this8 = this;
-
-      this.$http.get("/auth/withdrawalss?pageSize=6&confirmed=1&processed=1").then(function (response) {
-        _this8.withdrawals = response.data.data.item;
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
     },
     numeral: function (_numeral) {
       function numeral(_x) {
@@ -105842,23 +105779,23 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       //     })
     },
     getIp: function getIp() {
-      var _this9 = this;
+      var _this3 = this;
 
       var form = new vform__WEBPACK_IMPORTED_MODULE_18__["Form"]();
       form.get("https://api.ipify.org?format=json").then(function (response) {
-        _this9.ip = response.data.ip;
+        _this3.ip = response.data.ip;
         localStorage.ip = JSON.stringify(response.data.ip);
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     refreshUser: function refreshUser() {
-      var _this10 = this;
+      var _this4 = this;
 
       this.$auth.fetch({
         params: {},
         success: function success(response) {
-          _this10.user = _this10.$auth.user();
+          _this4.user = _this4.$auth.user();
         },
         error: function error(_error) {
           console.log(_error.response.data);

@@ -67,6 +67,10 @@
         }
     },
     mounted() {
+        
+    },
+    created(){
+        window.scrollTo(0, 350)
         this.getPaymentMethods()
     },
     watch: {
@@ -123,7 +127,6 @@
             this.$error = ''
             this.form.get("/auth/bankdetails/?user_id=1")
                 .then(response => {
-                    window.scrollTo(0, 350)
                     this.paymentMethods = response.data.data.item
                     this.$root.loader('hide')
                 })

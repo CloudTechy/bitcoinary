@@ -210,7 +210,7 @@
                         </div>
                     </div>
                 </div>
-                <InvestmentPackage :href = "'deposit'"></InvestmentPackage>
+                <InvestmentPackage  :href="'deposit'"></InvestmentPackage>
             </div>
         </section>
         <!-- choose us section end  -->
@@ -286,16 +286,16 @@
         <FaqComponent></FaqComponent>
         <!-- faq section end -->
         <!-- testimonial section start -->
-        <testimonial :data="$root.testimonials"></testimonial>
+        <testimonial v-if="testimonials.length > 0" :data="testimonials"></testimonial>
         <!-- testimonial section end -->
         <!-- team section start -->
-        <Team :data="$root.teams"></Team>
+        <Team :data="teams"></Team>
         <!-- team section end -->
         <!-- data section start -->
-        <Transaction :transactions="$root.transactions" :withdrawals="$root.withdrawals"></Transaction>
+        <Transaction :transactions="transactions" :withdrawals="withdrawals"></Transaction>
         <!-- data section end -->
         <!-- top investor section start -->
-        <Investor :data="$root.investors"></Investor>
+        <Investor :data="investors"></Investor>
         <!-- top investor section end -->
         <!-- cta section start -->
         <section class="pb-120">
@@ -306,7 +306,7 @@
                             <h2 class="title mb-3">Get Started Today With Us</h2>
                             <p>This is a Revolutionary Money Making Platform! Invest for Future in Stable Platform and Make Fast Money. Not only we guarantee the fastest and the most exciting returns on your investments, but we also guarantee the security
                                 of your investment.</p>
-                                <router-link class = "cmn-btn mt-4" to="/register">Join Us</router-link>
+                            <router-link class="cmn-btn mt-4" to="/register">Join Us</router-link>
                         </div>
                     </div>
                 </div>
@@ -314,7 +314,7 @@
         </section>
         <!-- cta section end -->
         <!-- payment brand section start -->
-        <PaymentBrand :data="$root.payments"></PaymentBrand>
+        <PaymentBrand v-if="$root.payments.length > 0" :data="$root.payments"></PaymentBrand>
         <!-- payment brand section end -->
         <!-- blog section start -->
         <!-- <Blog></Blog> -->
@@ -331,18 +331,84 @@
             success: false,
             has_error: false,
             error: '',
-            response: ''
+            response: '',
+            news: [],
+            investors: [],
+            testimonials: [],
+            transactions: [],
+            withdrawals: [],
+            teams: [],
         }
     },
     mounted() {
-        //
+        this.getNews();
+        this.getTeams();
+        this.getInvestors();
+        this.getTestimonials();
+        this.getTransactions();
+        this.getWithdrawals();
     },
     methods: {
         submitForm() {
             this.has_error = false;
             this.success = true;
             this.response = "Your message was delivered, you will be contacted as soon as possible."
-        }
+        },
+        
+        getNews() {
+            this.$http.get("/auth/newss")
+                .then(response => {
+                    this.news = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+        },
+        getTeams() {
+            this.$http.get("/auth/teamss")
+                .then(response => {
+                    this.teams = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+        },
+        getInvestors() {
+            this.$http.get("/auth/investorss")
+                .then(response => {
+                    this.investors = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+        },
+        getTestimonials() {
+            this.$http.get("/auth/testimonialss")
+                .then(response => {
+                    this.testimonials = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        },
+        getTransactions() {
+            this.$http.get("/auth/transactionss?pageSize=6&reference=SELF&sent=1&confirmed=1")
+                .then(response => {
+                    this.transactions = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+        },
+        getWithdrawals() {
+            this.$http.get("/auth/withdrawalss?pageSize=6&confirmed=1&processed=1")
+                .then(response => {
+                    this.withdrawals = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+        },
     }
 }
 
@@ -372,6 +438,7 @@
 .equal {
     box-shadow: 0 0 10px 2px rgba(204, 163, 84, 0.45) !important;
 }
+
 .cmn-btn:hover {
     cursor: pointer;
 }

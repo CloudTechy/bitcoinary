@@ -95,14 +95,8 @@ const app = new Vue({
         mailUser: null,
         btc_volume: '-',
         active_trade: '-',
-        packages: [],
-        news: [],
-        investors: [],
-        testimonials: [],
-        transactions: [],
-        withdrawals: [],
-        teams: [],
         payments: [],
+        packages: [],
         form : new Form()
     },
     el: '#app',
@@ -112,22 +106,17 @@ const app = new Vue({
             return basepath
         },
     },
+
     created() {
         setInterval(this.timer, 1000)
         setInterval(this.btcRate, 2000)
         setInterval(this.btcVolume, 60000)
-        // setInterval(this.getUpdates, 300000)
         this.btcRate()
         // this.getIp()
         this.btcVolume()
-        this.getPackages();
-        this.getNews();
-        this.getTeams();
-        this.getInvestors();
-        this.getTestimonials();
-        this.getTransactions();
-        this.getWithdrawals();
         this.getPayments();
+        this.getPackages();
+        
     },
     methods: {
         alert(type, title, message) {
@@ -140,6 +129,24 @@ const app = new Vue({
                 showConfirmButton: false,
                 timer: 3000
             })
+        },
+        getPayments() {
+            this.$http.get("/auth/paymentss")
+                .then(response => {
+                    this.payments = response.data.data.item.data
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+        },
+        getPackages() {
+            this.$http.get("/auth/packagess")
+                .then(response => {
+                    this.packages = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
         },
         loader(action) {
             if (action == 'show') {
@@ -159,88 +166,7 @@ const app = new Vue({
         scrollUp() {
             window.scrollTo(0, 50)
         },
-        getUpdates() {
-            this.getPackages();
-            this.getNews();
-            this.getTeams();
-            this.getInvestors();
-            this.getTestimonials();
-            this.getTransactions();
-            this.getWithdrawals();
-            this.getPayments();
-        },
-        getPackages() {
-            this.$http.get("/auth/packagess")
-                .then(response => {
-                    this.packages = response.data.data.item
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
-        },
-        getPayments() {
-            this.$http.get("/auth/paymentss")
-                .then(response => {
-                    this.payments = response.data.data.item.data
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
-        },
-        getNews() {
-            this.$http.get("/auth/newss")
-                .then(response => {
-                    this.news = response.data.data.item
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
-        },
-        getTeams() {
-            this.$http.get("/auth/teamss")
-                .then(response => {
-                    this.teams = response.data.data.item
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
-        },
-        getInvestors() {
-            this.$http.get("/auth/investorss")
-                .then(response => {
-                    this.investors = response.data.data.item
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
-        },
-        getTestimonials() {
-            this.$http.get("/auth/testimonialss")
-                .then(response => {
-                    this.testimonials = response.data.data.item
-                })
-                .catch(error => {
-                    console.log(error)
-                })
-        },
-        getTransactions() {
-            this.$http.get("/auth/transactionss?pageSize=6&reference=SELF&sent=1&confirmed=1")
-                .then(response => {
-                    this.transactions = response.data.data.item
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
-        },
-        getWithdrawals() {
-            this.$http.get("/auth/withdrawalss?pageSize=6&confirmed=1&processed=1")
-                .then(response => {
-                    this.withdrawals = response.data.data.item
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
-        },
+        
         numeral(value) {
             if (typeof value == 'string') {
                 return value

@@ -17,7 +17,7 @@
         </section>
         <div class="pt-60 pb-60">
             <div class="container">
-                <component @success = 'success' :success = "message" :plan = "selectedPlan" @changeComponent = "changeComponent" :user="user" class = "m-0 p-0" :is="componentName"></component>
+                <component @success = 'success' :success = "message" :plan = "selectedPlan" @changeComponent = "changeComponent"  class = "m-0 p-0" :is="componentName"></component>
             </div>
         </div>
     </div>
@@ -41,9 +41,6 @@ export default {
         },
     },
     computed: {
-        user() {
-            return this.$auth.user()
-        }
     },
     methods: {
         changeComponent(component,plan='') {
