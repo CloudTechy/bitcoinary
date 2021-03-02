@@ -23,7 +23,7 @@
                                 <div class="d-widget d-flex flex-wrap">
                                     <div class="col-8">
                                         <span class="caption">Active Investment</span>
-                                        <h4 class="currency-amount">$500</h4>
+                                        <h4 class="currency-amount">{{$root.numeral($auth.user().totalActiveTransaction)}}</h4>
                                     </div>
                                     <div class="col-4">
                                         <div class="icon ml-auto">
@@ -36,7 +36,7 @@
                                 <div class="d-widget d-flex flex-wrap">
                                     <div class="col-8">
                                         <span class="caption">Total Earned</span>
-                                        <h4 class="currency-amount">$1,050</h4>
+                                        <h4 class="currency-amount">{{$root.numeral($auth.user().totalEarned)}}</h4>
                                     </div>
                                     <div class="col-4">
                                         <div class="icon ml-auto">
@@ -49,7 +49,7 @@
                                 <div class="d-widget d-flex flex-wrap">
                                     <div class="col-8">
                                         <span class="caption">Total Withdraw</span>
-                                        <h4 class="currency-amount">$1703</h4>
+                                        <h4 class="currency-amount">{{$root.numeral($auth.user().totalWithdraw)}}</h4>
                                     </div>
                                     <div class="col-4">
                                         <div class="icon ml-auto">
@@ -62,7 +62,7 @@
                                 <div class="d-widget d-flex flex-wrap">
                                     <div class="col-8">
                                         <span class="caption">Referral Earnings</span>
-                                        <h4 class="currency-amount">$1710.5</h4>
+                                        <h4 class="currency-amount">{{$root.numeral($auth.user().totalCommission)}}</h4>
                                     </div>
                                     <div class="col-4">
                                         <div class="icon ml-auto">
@@ -87,19 +87,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="divider pb-3"></div>
-
-                                    <!-- <div class="d-widget d-flex flex-wrap">
-                                        <div class="col-8">
-                                            <span class="caption">Wallet Balance</span>
-                                            <h4 class="currency-amount">$255</h4>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="icon ml-auto">
-                                                <i class="las la-dollar-sign"></i>
-                                            </div>
-                                        </div>
-                                    </div> -->
                                 </div>
                             </div>
                             <div class="col-lg-8 col-sm-12">
@@ -107,110 +94,33 @@
                                     <table class="table style--two white-space-nowrap">
                                         <thead>
                                             <tr>
+                                                <th>Name</th>
                                                 <th>Date</th>
                                                 <th>Amount</th>
-                                                <th>Wallet</th>
                                                 <th>Details</th>
-                                                <th>Post Balance</th>
+                                                <th>Gateway</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td data-label="Date">21/02/2020</td>
-                                                
-                                                <td data-label="Amount">
-                                                    <span class="text-success">+ $17.5</span>
+                                            <tr v-for="trx in transactions">
+                                                <td data-label="Name">
+                                                    <div class="user">
+                                                        <div class="thumb"><img :src="trx.image == null ? $root.basepath + '/images/uploads/anonymous.jpg' :  $root.basepath + '/images/uploads/' +trx.image" alt="image"></div>
+                                                        <span>{{trx.owner}}</span>
+                                                    </div>
                                                 </td>
-                                                <td data-label="Wallet">
-                                                    <span class="badge base--bg">Interest Wallet</span>
-                                                </td>
-                                                <td data-label="Details"> From Crown</td>
-                                                <td data-label="Post Balance">$22991.9</td>
+                                                <td data-label="Date">{{trx.date}}</td>
+                                                <td data-label="Details">From {{trx.reference}}</td>
+                                                <td class="text-success" data-label="Amount">${{$root.normalNumeral(trx.amount)}}</td>
+                                                <td data-label="Gateway">Bitcoin</td>
                                             </tr>
-                                            <tr>
-                                                <td data-label="Date">21/02/2020</td>
-                                                
-                                                <td data-label="Amount">
-                                                    <span class="text-success">+ $17.5</span>
-                                                </td>
-                                                <td data-label="Wallet">
-                                                    <span class="badge base--bg">Interest Wallet</span>
-                                                </td>
-                                                <td data-label="Details"> From Crown</td>
-                                                <td data-label="Post Balance">$22991.9</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Date">21/02/2020</td>
-                                                
-                                                <td data-label="Amount">
-                                                    <span class="text-success">+ $17.5</span>
-                                                </td>
-                                                <td data-label="Wallet">
-                                                    <span class="badge base--bg">Interest Wallet</span>
-                                                </td>
-                                                <td data-label="Details"> From Crown</td>
-                                                <td data-label="Post Balance">$22991.9</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Date">21/02/2020</td>
-                                                
-                                                <td data-label="Amount">
-                                                    <span class="text-success">+ $17.5</span>
-                                                </td>
-                                                <td data-label="Wallet">
-                                                    <span class="badge base--bg">Interest Wallet</span>
-                                                </td>
-                                                <td data-label="Details"> From Crown</td>
-                                                <td data-label="Post Balance">$22991.9</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Date">21/02/2020</td>
-                                                
-                                                <td data-label="Amount">
-                                                    <span class="text-success">+ $17.5</span>
-                                                </td>
-                                                <td data-label="Wallet">
-                                                    <span class="badge base--bg">Interest Wallet</span>
-                                                </td>
-                                                <td data-label="Details"> From Crown</td>
-                                                <td data-label="Post Balance">$22991.9</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Date">21/02/2020</td>
-                                                
-                                                <td data-label="Amount">
-                                                    <span class="text-success">+ $17.5</span>
-                                                </td>
-                                                <td data-label="Wallet">
-                                                    <span class="badge base--bg">Interest Wallet</span>
-                                                </td>
-                                                <td data-label="Details"> From Crown</td>
-                                                <td data-label="Post Balance">$22991.9</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Date">21/02/2020</td>
-                                                
-                                                <td data-label="Amount">
-                                                    <span class="text-success">+ $17.5</span>
-                                                </td>
-                                                <td data-label="Wallet">
-                                                    <span class="badge base--bg">Interest Wallet</span>
-                                                </td>
-                                                <td data-label="Details"> From Crown</td>
-                                                <td data-label="Post Balance">$22991.9</td>
-                                            </tr>
-                                            <tr>
-                                                <td data-label="Date">21/02/2020</td>
-                                                
-                                                <td data-label="Amount">
-                                                    <span class="text-success">+ $17.5</span>
-                                                </td>
-                                                <td data-label="Wallet">
-                                                    <span class="badge base--bg">Interest Wallet</span>
-                                                </td>
-                                                <td data-label="Details"> From Crown</td>
-                                                <td data-label="Post Balance">$22991.9</td>
-                                            </tr>
+                                            <tr v-if="transactions.length == 0">
+                                                    <td class="text-center only" colspan="5">
+                                                        <div class="p-3 text-center">
+                                                            No data to display yet. Click <a style="text-decoration: underline;" href="/dashboard/deposit" class="base--color font-weight-bold"> here </a> to invest and start earning.
+                                                        </div>
+                                                    </td>
+                                                </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -242,21 +152,29 @@
 <script>
     export default {
     data() {
-        return {}
+        return {
+            transactions : []   
+                 }
     },
     mounted() {
         window.scrollTo(0, 0);
+        this.getTransactions();
     },
     computed: {
-        user() {
-            return this.$auth.user()
-        },
         Referral_link() {
-            return this.$root.basepath + '/register?ref=' + this.user.username
+            return this.$root.basepath + '/register?ref=' + this.$auth.user().username
         }
     },
     methods: {
-
+        getTransactions() {
+            this.$http.get("/auth/transactions?pageSize=6&sent=1&confirmed=1&user_id="+this.$auth.user().id)
+                .then(response => {
+                    this.transactions = response.data.data.item
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+        },
     }
 }
 

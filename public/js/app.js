@@ -10671,112 +10671,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {};
+    return {
+      transactions: []
+    };
   },
   mounted: function mounted() {
     window.scrollTo(0, 0);
+    this.getTransactions();
   },
   computed: {
-    user: function user() {
-      return this.$auth.user();
-    },
     Referral_link: function Referral_link() {
-      return this.$root.basepath + '/register?ref=' + this.user.username;
+      return this.$root.basepath + '/register?ref=' + this.$auth.user().username;
     }
   },
-  methods: {}
+  methods: {
+    getTransactions: function getTransactions() {
+      var _this = this;
+
+      this.$http.get("/auth/transactions?pageSize=6&sent=1&confirmed=1&user_id=" + this.$auth.user().id).then(function (response) {
+        _this.transactions = response.data.data.item;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -11145,129 +11065,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -75030,13 +74827,172 @@ var render = function() {
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row justify-content-center" }, [
           _c("div", { staticClass: "col-lg-12" }, [
-            _vm._m(1),
+            _c("div", { staticClass: "row mb-none-30" }, [
+              _c("div", { staticClass: "col-xl-3 col-sm-6 mb-30 " }, [
+                _c("div", { staticClass: "d-widget d-flex flex-wrap" }, [
+                  _c("div", { staticClass: "col-8" }, [
+                    _c("span", { staticClass: "caption" }, [
+                      _vm._v("Active Investment")
+                    ]),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "currency-amount" }, [
+                      _vm._v(
+                        _vm._s(
+                          _vm.$root.numeral(
+                            _vm.$auth.user().totalActiveTransaction
+                          )
+                        )
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1)
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-xl-3 col-sm-6 mb-30" }, [
+                _c("div", { staticClass: "d-widget d-flex flex-wrap" }, [
+                  _c("div", { staticClass: "col-8" }, [
+                    _c("span", { staticClass: "caption" }, [
+                      _vm._v("Total Earned")
+                    ]),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "currency-amount" }, [
+                      _vm._v(
+                        _vm._s(_vm.$root.numeral(_vm.$auth.user().totalEarned))
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(2)
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-xl-3 col-sm-6 mb-30" }, [
+                _c("div", { staticClass: "d-widget d-flex flex-wrap" }, [
+                  _c("div", { staticClass: "col-8" }, [
+                    _c("span", { staticClass: "caption" }, [
+                      _vm._v("Total Withdraw")
+                    ]),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "currency-amount" }, [
+                      _vm._v(
+                        _vm._s(
+                          _vm.$root.numeral(_vm.$auth.user().totalWithdraw)
+                        )
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(3)
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-xl-3 col-sm-6 mb-30" }, [
+                _c("div", { staticClass: "d-widget d-flex flex-wrap" }, [
+                  _c("div", { staticClass: "col-8" }, [
+                    _c("span", { staticClass: "caption" }, [
+                      _vm._v("Referral Earnings")
+                    ]),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "currency-amount" }, [
+                      _vm._v(
+                        _vm._s(
+                          _vm.$root.numeral(_vm.$auth.user().totalCommission)
+                        )
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(4)
+                ])
+              ])
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "row mt-50 " }, [
-              _vm._m(2),
+              _vm._m(5),
               _vm._v(" "),
               _c("div", { staticClass: "col-lg-8 col-sm-12" }, [
-                _vm._m(3),
+                _c(
+                  "div",
+                  { staticClass: "table-responsive table-responsive--md p-0" },
+                  [
+                    _c(
+                      "table",
+                      { staticClass: "table style--two white-space-nowrap" },
+                      [
+                        _vm._m(6),
+                        _vm._v(" "),
+                        _c(
+                          "tbody",
+                          [
+                            _vm._l(_vm.transactions, function(trx) {
+                              return _c("tr", [
+                                _c("td", { attrs: { "data-label": "Name" } }, [
+                                  _c("div", { staticClass: "user" }, [
+                                    _c("div", { staticClass: "thumb" }, [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            trx.image == null
+                                              ? _vm.$root.basepath +
+                                                "/images/uploads/anonymous.jpg"
+                                              : _vm.$root.basepath +
+                                                "/images/uploads/" +
+                                                trx.image,
+                                          alt: "image"
+                                        }
+                                      })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v(_vm._s(trx.owner))])
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { attrs: { "data-label": "Date" } }, [
+                                  _vm._v(_vm._s(trx.date))
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Details" } },
+                                  [_vm._v("From " + _vm._s(trx.reference))]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  {
+                                    staticClass: "text-success",
+                                    attrs: { "data-label": "Amount" }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "$" +
+                                        _vm._s(
+                                          _vm.$root.normalNumeral(trx.amount)
+                                        )
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  { attrs: { "data-label": "Gateway" } },
+                                  [_vm._v("Bitcoin")]
+                                )
+                              ])
+                            }),
+                            _vm._v(" "),
+                            _vm.transactions.length == 0
+                              ? _c("tr", [_vm._m(7)])
+                              : _vm._e()
+                          ],
+                          2
+                        )
+                      ]
+                    )
+                  ]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "pb-60 pt-3" }, [
                   _c("div", { staticClass: "container equal blog-card" }, [
@@ -75057,10 +75013,10 @@ var render = function() {
                           }
                         },
                         [
-                          _vm._m(4),
+                          _vm._m(8),
                           _vm._v(" "),
                           _c("div", { staticClass: "row" }, [
-                            _vm._m(5),
+                            _vm._m(9),
                             _vm._v(" "),
                             _c(
                               "div",
@@ -75125,73 +75081,39 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mb-none-30" }, [
-      _c("div", { staticClass: "col-xl-3 col-sm-6 mb-30 " }, [
-        _c("div", { staticClass: "d-widget d-flex flex-wrap" }, [
-          _c("div", { staticClass: "col-8" }, [
-            _c("span", { staticClass: "caption" }, [
-              _vm._v("Active Investment")
-            ]),
-            _vm._v(" "),
-            _c("h4", { staticClass: "currency-amount" }, [_vm._v("$500")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-4" }, [
-            _c("div", { staticClass: "icon ml-auto" }, [
-              _c("i", { staticClass: "las la-cubes" })
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-xl-3 col-sm-6 mb-30" }, [
-        _c("div", { staticClass: "d-widget d-flex flex-wrap" }, [
-          _c("div", { staticClass: "col-8" }, [
-            _c("span", { staticClass: "caption" }, [_vm._v("Total Earned")]),
-            _vm._v(" "),
-            _c("h4", { staticClass: "currency-amount" }, [_vm._v("$1,050")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-4" }, [
-            _c("div", { staticClass: "icon ml-auto" }, [
-              _c("i", { staticClass: "las la-credit-card" })
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-xl-3 col-sm-6 mb-30" }, [
-        _c("div", { staticClass: "d-widget d-flex flex-wrap" }, [
-          _c("div", { staticClass: "col-8" }, [
-            _c("span", { staticClass: "caption" }, [_vm._v("Total Withdraw")]),
-            _vm._v(" "),
-            _c("h4", { staticClass: "currency-amount" }, [_vm._v("$1703")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-4" }, [
-            _c("div", { staticClass: "icon ml-auto" }, [
-              _c("i", { staticClass: "las la-cloud-download-alt" })
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-xl-3 col-sm-6 mb-30" }, [
-        _c("div", { staticClass: "d-widget d-flex flex-wrap" }, [
-          _c("div", { staticClass: "col-8" }, [
-            _c("span", { staticClass: "caption" }, [
-              _vm._v("Referral Earnings")
-            ]),
-            _vm._v(" "),
-            _c("h4", { staticClass: "currency-amount" }, [_vm._v("$1710.5")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-4" }, [
-            _c("div", { staticClass: "icon ml-auto" }, [
-              _c("i", { staticClass: "las la-user-friends" })
-            ])
-          ])
-        ])
+    return _c("div", { staticClass: "col-4" }, [
+      _c("div", { staticClass: "icon ml-auto" }, [
+        _c("i", { staticClass: "las la-cubes" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-4" }, [
+      _c("div", { staticClass: "icon ml-auto" }, [
+        _c("i", { staticClass: "las la-credit-card" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-4" }, [
+      _c("div", { staticClass: "icon ml-auto" }, [
+        _c("i", { staticClass: "las la-cloud-download-alt" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-4" }, [
+      _c("div", { staticClass: "icon ml-auto" }, [
+        _c("i", { staticClass: "las la-user-friends" })
       ])
     ])
   },
@@ -75219,9 +75141,25 @@ var staticRenderFns = [
               _c("i", { staticClass: "las la-dollar-sign" })
             ])
           ])
-        ]),
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Name")]),
         _vm._v(" "),
-        _c("div", { staticClass: "divider pb-3" })
+        _c("th", [_vm._v("Date")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Amount")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Details")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Gateway")])
       ])
     ])
   },
@@ -75230,217 +75168,25 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "div",
-      { staticClass: "table-responsive table-responsive--md p-0" },
+      "td",
+      { staticClass: "text-center only", attrs: { colspan: "5" } },
       [
-        _c("table", { staticClass: "table style--two white-space-nowrap" }, [
-          _c("thead", [
-            _c("tr", [
-              _c("th", [_vm._v("Date")]),
-              _vm._v(" "),
-              _c("th", [_vm._v("Amount")]),
-              _vm._v(" "),
-              _c("th", [_vm._v("Wallet")]),
-              _vm._v(" "),
-              _c("th", [_vm._v("Details")]),
-              _vm._v(" "),
-              _c("th", [_vm._v("Post Balance")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("tbody", [
-            _c("tr", [
-              _c("td", { attrs: { "data-label": "Date" } }, [
-                _vm._v("21/02/2020")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Amount" } }, [
-                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Wallet" } }, [
-                _c("span", { staticClass: "badge base--bg" }, [
-                  _vm._v("Interest Wallet")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Details" } }, [
-                _vm._v(" From Crown")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Post Balance" } }, [
-                _vm._v("$22991.9")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", { attrs: { "data-label": "Date" } }, [
-                _vm._v("21/02/2020")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Amount" } }, [
-                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Wallet" } }, [
-                _c("span", { staticClass: "badge base--bg" }, [
-                  _vm._v("Interest Wallet")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Details" } }, [
-                _vm._v(" From Crown")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Post Balance" } }, [
-                _vm._v("$22991.9")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", { attrs: { "data-label": "Date" } }, [
-                _vm._v("21/02/2020")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Amount" } }, [
-                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Wallet" } }, [
-                _c("span", { staticClass: "badge base--bg" }, [
-                  _vm._v("Interest Wallet")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Details" } }, [
-                _vm._v(" From Crown")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Post Balance" } }, [
-                _vm._v("$22991.9")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", { attrs: { "data-label": "Date" } }, [
-                _vm._v("21/02/2020")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Amount" } }, [
-                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Wallet" } }, [
-                _c("span", { staticClass: "badge base--bg" }, [
-                  _vm._v("Interest Wallet")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Details" } }, [
-                _vm._v(" From Crown")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Post Balance" } }, [
-                _vm._v("$22991.9")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", { attrs: { "data-label": "Date" } }, [
-                _vm._v("21/02/2020")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Amount" } }, [
-                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Wallet" } }, [
-                _c("span", { staticClass: "badge base--bg" }, [
-                  _vm._v("Interest Wallet")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Details" } }, [
-                _vm._v(" From Crown")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Post Balance" } }, [
-                _vm._v("$22991.9")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", { attrs: { "data-label": "Date" } }, [
-                _vm._v("21/02/2020")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Amount" } }, [
-                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Wallet" } }, [
-                _c("span", { staticClass: "badge base--bg" }, [
-                  _vm._v("Interest Wallet")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Details" } }, [
-                _vm._v(" From Crown")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Post Balance" } }, [
-                _vm._v("$22991.9")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", { attrs: { "data-label": "Date" } }, [
-                _vm._v("21/02/2020")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Amount" } }, [
-                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Wallet" } }, [
-                _c("span", { staticClass: "badge base--bg" }, [
-                  _vm._v("Interest Wallet")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Details" } }, [
-                _vm._v(" From Crown")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Post Balance" } }, [
-                _vm._v("$22991.9")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", { attrs: { "data-label": "Date" } }, [
-                _vm._v("21/02/2020")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Amount" } }, [
-                _c("span", { staticClass: "text-success" }, [_vm._v("+ $17.5")])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Wallet" } }, [
-                _c("span", { staticClass: "badge base--bg" }, [
-                  _vm._v("Interest Wallet")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Details" } }, [
-                _vm._v(" From Crown")
-              ]),
-              _vm._v(" "),
-              _c("td", { attrs: { "data-label": "Post Balance" } }, [
-                _vm._v("$22991.9")
-              ])
-            ])
-          ])
+        _c("div", { staticClass: "p-3 text-center" }, [
+          _vm._v(
+            "\n                                                        No data to display yet. Click "
+          ),
+          _c(
+            "a",
+            {
+              staticClass: "base--color font-weight-bold",
+              staticStyle: { "text-decoration": "underline" },
+              attrs: { href: "/dashboard/deposit" }
+            },
+            [_vm._v(" here ")]
+          ),
+          _vm._v(
+            " to invest and start earning.\n                                                    "
+          )
         ])
       ]
     )
@@ -75497,7 +75243,7 @@ var render = function() {
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-lg-6" }, [
-              _c("h2", { staticClass: "page-title" }, [_vm._v("Dashboard")]),
+              _c("h2", { staticClass: "page-title" }, [_vm._v("Deposit")]),
               _vm._v(" "),
               _vm._m(0),
               _vm._v(" "),
@@ -76726,7 +76472,7 @@ var render = function() {
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-lg-6" }, [
-              _c("h2", { staticClass: "page-title" }, [_vm._v("Dashboard")]),
+              _c("h2", { staticClass: "page-title" }, [_vm._v("Withdraw")]),
               _vm._v(" "),
               _vm._m(0),
               _vm._v(" "),
@@ -77269,7 +77015,9 @@ var render = function() {
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-lg-6" }, [
-              _c("h2", { staticClass: "page-title" }, [_vm._v("Dashboard")]),
+              _c("h2", { staticClass: "page-title" }, [
+                _vm._v("Deposit Statement")
+              ]),
               _vm._v(" "),
               _vm._m(0),
               _vm._v(" "),
@@ -78466,7 +78214,9 @@ var render = function() {
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-lg-6" }, [
-              _c("h2", { staticClass: "page-title" }, [_vm._v("Withdrawal")]),
+              _c("h2", { staticClass: "page-title" }, [
+                _vm._v("Withdrawal Statement")
+              ]),
               _vm._v(" "),
               _vm._m(0),
               _vm._v(" "),

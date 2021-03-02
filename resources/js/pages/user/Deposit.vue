@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h2 class="page-title">Dashboard</h2>
+                        <h2 class="page-title">Deposit</h2>
                         <ul class="page-breadcrumb">
                             <li><a href="/">Home</a></li>
                             <li><a href="/dashboard">Dashoard</a></li>
