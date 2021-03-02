@@ -100,6 +100,7 @@ export default {
     },
     mounted() {
         this.key++
+        console.log(this.data)
     },
     components: { VueSlickCarousel },
     props: ['data'],

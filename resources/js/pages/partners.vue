@@ -1,4 +1,8 @@
 <template>
+    <div class="page-wrapper">
+    <Header></Header>
+
+
     <section :style="'background:url('+ $root.basepath + '/images/bg/bg-8.jpg'" class="bg_img pt-120 pb-120 border-top-1">
         <div class="container">
             <div class="row justify-content-center">
@@ -29,4 +33,6 @@
             </div>
         </div>
     </section>
+    <Footer></Footer>
+</div>
 </template>

@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="page-wrapper">
+        <Header></Header>
         <div class="row page-title m-3 p-2">
             <div class="col-12 col-lg-8 container">
                 <h1>Support Center</h1>
@@ -51,7 +52,9 @@
                 </div>
             </div>
         </section>
+        <Footer></Footer>
     </div>
+
 </template>
 <script>
 export default {

@@ -93,16 +93,16 @@ export default {
             routes: {
                 // UNLOGGED
                 unlogged: [
-                    { name: 'Register', path: 'register' },
-                    { name: 'Login', path: 'login' }
+                    { name: 'Register', path: '/register' },
+                    { name: 'Login', path: 'l/ogin' }
                 ],
                 // LOGGED USER
                 user: [
-                    { name: 'Dashboard', path: 'dashboard' }
+                    { name: 'Dashboard', path: '/dashboard' }
                 ],
                 // LOGGED ADMIN
                 admin: [
-                    { name: 'Dashboard', path: 'admin.dashboard' }
+                    { name: 'Dashboard', path: '/admin/dashboard' }
                 ]
             },
             rate: ''
@@ -117,5 +117,7 @@ export default {
 }
 
 </script>
-<style>
-</style>
+<style scoped="">
+.icon{
+    background-color: unset;
+}</style>

@@ -1,10 +1,11 @@
 <template>
     <div class="page-wrapper">
+        <DashboardHeader></DashboardHeader>
         <section class="inner-hero bg_img" :style="'background:url('+ $root.basepath +'/images/bg/bg-1.jpg)'" :data-background="$root.basepath + '/images/bg/bg-1.jpg'">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h2 class="page-title">Withdraw</h2>
+                        <h2 class="page-title">Dashboard</h2>
                         <ul class="page-breadcrumb">
                             <li><a href="/">Home</a></li>
                             <li><a href="/dashboard">Dashboard</a></li>
@@ -118,7 +119,8 @@
                                         </div>
                                         <div class="pb-2 mt-4 p-3 text-center" v-else>You have no funds to withdraw. click <a style="text-decoration: underline;" href="/dashboard/deposit" class="base--color font-weight-bold"> here </a> to start earning.</div>
                                 </div>
-                                </form>
+                               
+                            </form> 
                             </div>
                         </div>
                     </div>
@@ -126,6 +128,7 @@
             </div>
         </div>
     </div>
+    <Footer></Footer>
     </div>
 </template>
 <script>

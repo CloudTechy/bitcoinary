@@ -1,5 +1,6 @@
 <template>
     <div class="page-wrapper">
+        <Header></Header>
         <!-- account section start -->
         <div class="account-section bg_img" :style="'background:url('+ $root.basepath + '/images/bg/bg-5.jpg'">
             <div class="container">
@@ -14,7 +15,7 @@
                                 <form class="mt-4" autocomplete="off" @submit.prevent="login" method="post">
                                     <div class="form-group">
                                         <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="has_error && !success  ">
-                                            <p v-if = "error.error" class="text-center m-3 small">{{error.message}}</p>
+                                            <p v-if="error.error" class="text-center m-3 small">{{error.message}}</p>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -28,7 +29,7 @@
                                     <div class="form-row">
                                         <div class="col-sm-6">
                                             <div class="form-group form-check">
-                                                <input v-model = "rememberMe" type="checkbox" class="form-check-input" id="rememberMe">
+                                                <input v-model="rememberMe" type="checkbox" class="form-check-input" id="rememberMe">
                                                 <label class="form-check-label" for="rememberMe">Remember me</label>
                                             </div>
                                         </div>
@@ -43,7 +44,7 @@
                                             <p class="f-size-14 mb-3">Forgotten password? <a href="/forgot_password" class="base--color">Reset</a></p>
                                         </div>
                                     </div>
-                                    <button  ref="signin" type="submit" class="cmn-btn">Login Now</button>
+                                    <button ref="signin" type="submit" class="cmn-btn">Login Now</button>
                                 </form>
                             </div>
                         </div>
@@ -51,9 +52,9 @@
                 </div>
             </div>
         </div>
+        <Footer></Footer>
     </div>
     <!-- account section end -->
-    </div>
 </template>
 <script>
 export default {
@@ -64,7 +65,7 @@ export default {
             success: false,
             has_error: false,
             error: '',
-            rememberMe : false
+            rememberMe: false
         }
     },
     mounted() {
@@ -112,14 +113,14 @@ export default {
                     this.processing(false)
                     app.has_error = true
                     app.error = res.response ? res.response.data : {}
-                    this.$root.alert('error', ' ', app.error.error ? app.error.error.error :'An unknown error has occured, please try again later.' )
+                    this.$root.alert('error', ' ', app.error.error ? app.error.error.error : 'An unknown error has occured, please try again later.')
                     console.log(res.response.data.error.error)
                 },
                 rememberMe: app.rememberMe,
                 fetchUser: true
             })
         },
-        formDefault(){
+        formDefault() {
             this.success = false
             this.error = ""
             this.has_error = false

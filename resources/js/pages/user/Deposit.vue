@@ -1,5 +1,7 @@
 <template>
     <div class="page-wrapper">
+        <DashboardHeader></DashboardHeader>
+
         <section class="inner-hero bg_img" :style="'background:url('+ $root.basepath +'/images/bg/bg-1.jpg)'">
             <div class="container">
                 <div class="row">
@@ -20,6 +22,7 @@
                 <component @success = 'success' :success = "message" :plan = "selectedPlan" @changeComponent = "changeComponent"  class = "m-0 p-0" :is="componentName"></component>
             </div>
         </div>
+        <Footer></Footer>
     </div>
 </template>
 <script>

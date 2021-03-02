@@ -1,5 +1,6 @@
 <template>
     <div class="page-wrapper">
+        <Header></Header>
         <section class="hero bg_img" :style="'background:url('+ $root.basepath + '/images/bg/hero.jpg'">
             <div class="container">
                 <div class="row">
@@ -322,6 +323,7 @@
         <!-- subscribe section start -->
         <newsletter></newsletter>
         <!-- subscribe section end -->
+        <Footer></Footer>
     </div>
 </template>
 <script>

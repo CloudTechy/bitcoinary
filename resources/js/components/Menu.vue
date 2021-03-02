@@ -29,9 +29,9 @@
                 <li class="m-0  m-lg-2 p-lg-2  m-md-1 p-md-0">
                     <a href="https://tawk.link/5be61a8a70ff5a5a3a717ba7/vc/5c0a5e54af5de8c7a62ef1f4/v/f6499c5fa1bda2dc59c0aaf0ca87fa79564509c1/BitcoinaryFinance">Company Certificate</a>
                 </li>
-                <li class="m-0  m-lg-2 p-lg-2  m-md-1 p-md-0">
+               <!--  <li class="m-0  m-lg-2 p-lg-2  m-md-1 p-md-0">
                     <router-link to="/news">News</router-link>
-                </li>
+                </li> -->
                 <li class="m-0  m-lg-2 p-lg-2  m-md-1 p-md-0">
                     <router-link to="/support">Support</router-link>
                 </li>

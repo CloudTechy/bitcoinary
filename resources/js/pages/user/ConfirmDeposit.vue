@@ -1,5 +1,7 @@
 <template>
     <div class="page-wrapper">
+        <DashboardHeader></DashboardHeader>
+
         <!-- account section start -->
         <div class="account-section p-0">
             <div class="container">
@@ -46,6 +48,7 @@
             </div>
         </div>
         <!-- account section end -->
+        <Footer></Footer>
     </div>
 </template>
 <script>

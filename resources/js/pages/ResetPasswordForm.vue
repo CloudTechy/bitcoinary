@@ -1,5 +1,7 @@
 <template>
     <div class="page-wrapper">
+        <Header></Header>
+
         <div class="account-section bg_img"  :style="'background:url('+ $root.basepath + '/images/bg/bg-5.jpg'">
             <div class="container">
                 <div class="row justify-content-center">
@@ -51,6 +53,7 @@
                 </div>
             </div>
         </div>
+        <Footer></Footer>
     </div>
 </template>
 <script>

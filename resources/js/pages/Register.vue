@@ -1,5 +1,7 @@
 <template>
     <div class="page-wrapper">
+        <Header></Header>
+
         <!-- account section start -->
         <div class="account-section bg_img" :style="'background:url('+ $root.basepath + '/images/bg/bg-5.jpg'">
             <div class="container">
@@ -86,6 +88,7 @@
             </div>
         </div>
         <!-- account section end -->
+        <Footer></Footer>
     </div>
 </template>
 <script>

@@ -1,5 +1,7 @@
 <template>
     <div class="page-wrapper">
+        <Header></Header>
+
         <div class="error-area">
             <div class="error-content text-center">
                 <div class="error-num">
@@ -10,5 +12,6 @@
                 <a href="/" class="cmn-btn mt-4">Go back to Home</a>
             </div>
         </div>
+        <Footer></Footer>
     </div>
 </template>
