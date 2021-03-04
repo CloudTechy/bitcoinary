@@ -5889,6 +5889,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -6336,9 +6337,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6349,7 +6347,7 @@ __webpack_require__.r(__webpack_exports__);
           path: '/register'
         }, {
           name: 'Login',
-          path: 'l/ogin'
+          path: '/login'
         }],
         // LOGGED USER
         user: [{
@@ -6358,7 +6356,7 @@ __webpack_require__.r(__webpack_exports__);
         }],
         // LOGGED ADMIN
         admin: [{
-          name: 'Dashboard',
+          name: 'AdminDashboard',
           path: '/admin/dashboard'
         }]
       },
@@ -6367,7 +6365,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {},
   // components: { Menu },
-  methods: {}
+  methods: {},
+  mounted: function mounted() {// console.log(this.$auth)
+  }
 });
 
 /***/ }),
@@ -7860,6 +7860,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -11719,7 +11720,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -12123,7 +12123,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
-//
 //
 //
 //
@@ -18857,7 +18856,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.icon[data-v-1f42fb90]{\r\n    background-color: unset;\n}", ""]);
+exports.push([module.i, "\n.icon[data-v-1f42fb90] {\r\n    background-color: unset;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -62640,11 +62639,30 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
+              _c("ul", { staticClass: "account-menu mobile-acc-menu" }, [
+                _c("li", { staticClass: "icon" }, [
+                  _vm.$auth.check()
+                    ? _c(
+                        "a",
+                        {
+                          attrs: { title: "logout" },
+                          on: {
+                            click: function($event) {
+                              return _vm.$auth.logout()
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "las la-user" })]
+                      )
+                    : _c("a", { attrs: { title: "login", href: "/login" } }, [
+                        _c("i", { staticClass: "las la-user" })
+                      ])
+                ])
+              ]),
+              _vm._v(" "),
               _vm._m(0),
               _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _vm._m(2)
+              _vm._m(1)
             ]
           )
         ])
@@ -62653,18 +62671,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "account-menu mobile-acc-menu" }, [
-      _c("li", { staticClass: "icon" }, [
-        _c("a", { attrs: { href: "/login" } }, [
-          _c("i", { staticClass: "las la-user" })
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -63978,50 +63984,61 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("header", { staticClass: "header" }, [
-    _c("div", { staticClass: "header__bottom" }, [
-      _c("div", { staticClass: "container" }, [
-        _c(
-          "nav",
-          { staticClass: "navbar navbar-expand-xl p-0 align-items-center" },
-          [
-            _c(
-              "a",
-              { staticClass: "site-logo site-title", attrs: { href: "/" } },
-              [
-                _c("img", {
-                  attrs: {
-                    src: _vm.$root.basepath + "/images/logo.png",
-                    alt: "site-logo"
-                  }
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _vm._m(2)
-          ]
-        )
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "account-menu mobile-acc-menu" }, [
-      _c("li", { staticClass: "icon" }, [
-        _c("a", { attrs: { href: "login.html" } }, [
-          _c("i", { staticClass: "las la-user" })
+  return _c(
+    "header",
+    { staticClass: "header animated fadeInDown menu-fixed" },
+    [
+      _c("div", { staticClass: "header__bottom" }, [
+        _c("div", { staticClass: "container" }, [
+          _c(
+            "nav",
+            { staticClass: "navbar navbar-expand-xl p-0 align-items-center" },
+            [
+              _c(
+                "a",
+                { staticClass: "site-logo site-title", attrs: { href: "/" } },
+                [
+                  _c("img", {
+                    attrs: {
+                      src: _vm.$root.basepath + "/images/logo.png",
+                      alt: "site-logo"
+                    }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c("ul", { staticClass: "account-menu mobile-acc-menu" }, [
+                _c("li", { staticClass: "icon" }, [
+                  _vm.$auth.check()
+                    ? _c(
+                        "a",
+                        {
+                          attrs: { title: "logout" },
+                          on: {
+                            click: function($event) {
+                              return _vm.$auth.logout()
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "las la-user" })]
+                      )
+                    : _c("a", { attrs: { title: "login", href: "/login" } }, [
+                        _c("i", { staticClass: "las la-user" })
+                      ])
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._m(1)
+            ]
+          )
         ])
       ])
-    ])
-  },
+    ]
+  )
+}
+var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -64072,19 +64089,13 @@ var staticRenderFns = [
             _c("a", { attrs: { href: "/partners" } }, [_vm._v("Partners")])
           ]),
           _vm._v(" "),
-          _c("li", [_c("a", { attrs: { href: "/#faq" } }, [_vm._v("FAQ")])]),
-          _vm._v(" "),
-          _c("li", [_c("a", { attrs: { href: "/news" } }, [_vm._v("Blog")])]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "/support" } }, [_vm._v("Support")])
-          ])
+          _c("li", [_c("a", { attrs: { href: "/#faq" } }, [_vm._v("FAQ")])])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "nav-right" }, [
           _c("ul", { staticClass: "account-menu ml-3" }, [
             _c("li", { staticClass: "icon" }, [
-              _c("a", { attrs: { href: "login.html" } }, [
+              _c("a", { attrs: { href: "#" } }, [
                 _c("i", { staticClass: "las la-user" })
               ])
             ])
@@ -64094,7 +64105,9 @@ var staticRenderFns = [
             "select",
             { staticClass: "select d-inline-block w-auto ml-xl-3" },
             [
-              _c("option", [_vm._v("Eng")]),
+              _c("option", [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Eng")])
+              ]),
               _vm._v(" "),
               _c("option", [_vm._v("Ban")]),
               _vm._v(" "),
@@ -65935,7 +65948,10 @@ var render = function() {
                         _vm._v(" "),
                         _c(
                           "a",
-                          { staticClass: "base--color", attrs: { href: "#" } },
+                          {
+                            staticClass: "base--color",
+                            attrs: { href: "https://www.coinmama.com" }
+                          },
                           [_vm._v("click here")]
                         )
                       ])
@@ -67305,7 +67321,43 @@ var render = function() {
           staticClass: "hero bg_img",
           style: "background:url(" + _vm.$root.basepath + "/images/bg/hero.jpg"
         },
-        [_vm._m(0)]
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-xl-5 col-lg-8" }, [
+                _c("div", { staticClass: "hero__content" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-white f-size-18 mt-3" }, [
+                    _vm._v(
+                      "Invest in an Industry Leader, Professional, and Reliable Company. We provide you with the most necessary features that will make your experience better. Not only we guarantee the fastest and the most exciting returns on your\n                            investments, but we also guarantee the security of your investment."
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm.$auth.check()
+                    ? _c(
+                        "a",
+                        {
+                          staticClass:
+                            "cmn-btn text-uppercase font-weight-600 mt-4",
+                          attrs: { href: "/dashboard" }
+                        },
+                        [_vm._v("Goto Dashboard")]
+                      )
+                    : _c(
+                        "a",
+                        {
+                          staticClass:
+                            "cmn-btn mr-2 text-uppercase font-weight-600 mt-4",
+                          attrs: { href: "/register" }
+                        },
+                        [_vm._v("Sign Up")]
+                      )
+                ])
+              ])
+            ])
+          ])
+        ]
       ),
       _vm._v(" "),
       _c("div", { staticClass: "cureency-section" }, [
@@ -67371,7 +67423,7 @@ var render = function() {
               [
                 _c("div", { staticClass: "cureency-card text-center" }, [
                   _c("h6", { staticClass: "cureency-card__title text-white" }, [
-                    _vm._v("24 VOLUME")
+                    _vm._v("24HRS VOLUME")
                   ]),
                   _vm._v(" "),
                   _c(
@@ -67542,45 +67594,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-xl-5 col-lg-8" }, [
-          _c("div", { staticClass: "hero__content" }, [
-            _c("h2", { staticClass: "hero__title" }, [
-              _c("span", { staticClass: "text-white font-weight-normal" }, [
-                _vm._v("Invest for Future in Stable Platform")
-              ]),
-              _vm._v(" "),
-              _c("b", { staticClass: "base--color" }, [
-                _vm._v("and Make Fast Money")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-white f-size-18 mt-3" }, [
-              _vm._v(
-                "Invest in an Industry Leader, Professional, and Reliable Company. We provide you with the most necessary features that will make your experience better. Not only we guarantee the fastest and the most exciting returns on your\n                            investments, but we also guarantee the security of your investment."
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "cmn-btn mr-2 text-uppercase font-weight-600 mt-4",
-                attrs: { href: "/register" }
-              },
-              [_vm._v("Sign Up")]
-            ),
-            _c(
-              "a",
-              {
-                staticClass: "cmn-btn text-uppercase font-weight-600 mt-4",
-                attrs: { href: "/dashboard" }
-              },
-              [_vm._v("Login")]
-            )
-          ])
-        ])
-      ])
+    return _c("h2", { staticClass: "hero__title" }, [
+      _c("span", { staticClass: "text-white font-weight-normal" }, [
+        _vm._v("Invest for Future in Stable Platform")
+      ]),
+      _vm._v(" "),
+      _c("b", { staticClass: "base--color" }, [_vm._v("and Make Fast Money")])
     ])
   },
   function() {
@@ -75191,7 +75210,7 @@ var render = function() {
                                     },
                                     [
                                       _vm._v(
-                                        "$" +
+                                        "+ $" +
                                           _vm._s(
                                             _vm.$root.normalNumeral(trx.amount)
                                           )
@@ -105833,7 +105852,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     })
   },
   created: function created() {
-    setInterval(this.timer, 1000);
+    // setInterval(this.timer, 1000)
     setInterval(this.btcRate, 2000);
     setInterval(this.btcVolume, 60000);
     this.btcRate(); // this.getIp()
@@ -105969,44 +105988,45 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     timer: function timer() {
       this.time = moment__WEBPACK_IMPORTED_MODULE_12___default()().format("h:mm:ss a");
     },
-    btcRate: function btcRate() {// this.$http.get("http://api.coindesk.com/v1/bpi/currentprice.json")
-      //     .then(response => {
-      //         this.usd_btc_rate = response.data.bpi.USD.rate
-      //         this.eur_btc_rate = response.data.bpi.EUR.rate
-      //     })
-      //     .catch(error => {
-      //         console.log(error.response)
-      //     })
+    btcRate: function btcRate() {
+      var _this3 = this;
+
+      this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(function (response) {
+        _this3.usd_btc_rate = response.data.bpi.USD.rate;
+        _this3.eur_btc_rate = response.data.bpi.EUR.rate;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
     },
-    btcVolume: function btcVolume() {// this.$http.get("http://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT")
-      //     .then(response => {
-      //         let volume = response.data.volume
-      //         this.btc_volume = parseInt(volume) / 3
-      //         this.active_trade = volume
-      //         // console.log(response.data);
-      //     })
-      //     .catch(error => {
-      //         console.log(error.response)
-      //     })
+    btcVolume: function btcVolume() {
+      var _this4 = this;
+
+      this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT").then(function (response) {
+        var volume = response.data.volume;
+        _this4.btc_volume = parseInt(volume) / 3;
+        _this4.active_trade = volume; // console.log(response.data);
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
     },
     getIp: function getIp() {
-      var _this3 = this;
+      var _this5 = this;
 
       var form = new vform__WEBPACK_IMPORTED_MODULE_18__["Form"]();
       form.get("https://api.ipify.org?format=json").then(function (response) {
-        _this3.ip = response.data.ip;
+        _this5.ip = response.data.ip;
         localStorage.ip = JSON.stringify(response.data.ip);
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     refreshUser: function refreshUser() {
-      var _this4 = this;
+      var _this6 = this;
 
       this.$auth.fetch({
         params: {},
         success: function success(response) {
-          _this4.user = _this4.$auth.user();
+          _this6.user = _this6.$auth.user();
         },
         error: function error(_error) {
           console.log(_error.response.data);

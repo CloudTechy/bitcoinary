@@ -1,14 +1,14 @@
-
 <template>
     <!-- header-section start  -->
-    <header class="header">
+    <header class="header animated fadeInDown menu-fixed">
         <div class="header__bottom">
             <div class="container">
                 <nav class="navbar navbar-expand-xl p-0 align-items-center">
                     <a class="site-logo site-title" href="/"><img :src="$root.basepath + '/images/logo.png'" alt="site-logo"></a>
                     <ul class="account-menu mobile-acc-menu">
                         <li class="icon">
-                            <a href="login.html"><i class="las la-user"></i></a>
+                            <a title="logout" v-if="$auth.check()" @click="$auth.logout()"><i class="las la-user"></i></a>
+                            <a title="login" v-else href="/login"><i class="las la-user"></i></a>
                         </li>
                     </ul>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,6 @@
                             </li>
                             <li>
                                 <a href="/partners">Partners</a>
-                                <!-- <router-link to="/partners">Partners</router-link> -->
                             </li>
                             <li><a href="/#faq">FAQ</a>
                                 <!-- <router-link to="/faq">Faq</router-link> -->
@@ -42,15 +41,13 @@
                             <!-- <li>
                                 <a href="https://tawk.link/5be61a8a70ff5a5a3a717ba7/vc/5c0a5e54af5de8c7a62ef1f4/v/f6499c5fa1bda2dc59c0aaf0ca87fa79564509c1/BitcoinaryFinance">Company Certificate</a>
                             </li> -->
-                            <li>
+                            <!-- <li>
                                 <a href="/news">Blog</a>
-                                <!-- <router-link to="/news">Blog</router-link> -->
-                            </li>
-                            <li>
+                            </li> -->
+                            <!-- <li>
                                 <a href="/support">Support</a>
-                                <!-- <router-link to="/support">Support</router-link> -->
-                            </li>
-                           <!--  <li> <a href="index.html">Home</a></li>
+                            </li> -->
+                            <!--  <li> <a href="index.html">Home</a></li>
                             <li> <a href="about.html">About Us</a></li>
                             <li> <a href="plan.html">Plan</a></li>
                             <li><a href="dashboard.html">Dashboard</a></li>
@@ -70,11 +67,11 @@
                         <div class="nav-right">
                             <ul class="account-menu ml-3">
                                 <li class="icon">
-                                    <a href="login.html"><i class="las la-user"></i></a>
+                                    <a href="#"><i class="las la-user"></i></a>
                                 </li>
                             </ul>
                             <select class="select d-inline-block w-auto ml-xl-3">
-                                <option>Eng</option>
+                                <option><a href="#">Eng</a></option>
                                 <option>Ban</option>
                                 <option>Hin</option>
                             </select>
@@ -94,7 +91,7 @@ export default {
                 // UNLOGGED
                 unlogged: [
                     { name: 'Register', path: '/register' },
-                    { name: 'Login', path: 'l/ogin' }
+                    { name: 'Login', path: '/login' }
                 ],
                 // LOGGED USER
                 user: [
@@ -102,7 +99,7 @@ export default {
                 ],
                 // LOGGED ADMIN
                 admin: [
-                    { name: 'Dashboard', path: '/admin/dashboard' }
+                    { name: 'AdminDashboard', path: '/admin/dashboard' }
                 ]
             },
             rate: ''
@@ -113,11 +110,16 @@ export default {
     methods: {
 
 
+    },
+    mounted() {
+        // console.log(this.$auth)
     }
 }
 
 </script>
 <style scoped="">
-.icon{
+.icon {
     background-color: unset;
-}</style>
+}
+
+</style>

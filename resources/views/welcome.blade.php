@@ -21,7 +21,7 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet"><!-- 
   <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
   <link rel="stylesheet" href="{{ asset('css/main.css') }}"> -->
-  <link rel="shortcut icon" href="{{asset('image/favicon.jpg')}}" type="image/x-icon">
+  <link rel="shortcut icon" href="{{asset('images/faviconb.png')}}" type="image/x-icon">
   <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
     <!-- line-awesome webfont -->
     <link rel="stylesheet" href="{{asset('css/line-awesome.min.css')}}">

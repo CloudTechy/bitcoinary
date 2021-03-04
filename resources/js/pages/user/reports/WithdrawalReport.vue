@@ -125,7 +125,6 @@
                 </div>
             </div>
         </div>
-        
     <Footer></Footer>
     </div>
 </template>

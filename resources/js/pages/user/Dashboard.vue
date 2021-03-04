@@ -113,7 +113,7 @@
                                                 </td>
                                                 <td data-label="Date">{{trx.date}}</td>
                                                 <td data-label="Details">From {{trx.reference}}</td>
-                                                <td class="text-success" data-label="Amount">${{$root.normalNumeral(trx.amount)}}</td>
+                                                <td class="text-success" data-label="Amount">+ ${{$root.normalNumeral(trx.amount)}}</td>
                                                 <td data-label="Gateway">Bitcoin</td>
                                             </tr>
                                             <tr v-if="transactions.length == 0">

@@ -1,7 +1,6 @@
 <template>
     <div class="page-wrapper">
         <DashboardHeader></DashboardHeader>
-
         <section class="inner-hero bg_img" :style="'background:url('+ $root.basepath +'/images/bg/bg-1.jpg)'" :data-background="$root.basepath + '/images/bg/bg-1.jpg'">
             <div class="container">
                 <div class="row">
@@ -91,7 +90,7 @@
                 </div>
             </div>
         </div>
-    <Footer></Footer>
+        <Footer></Footer>
     </div>
 </template>
 <script>

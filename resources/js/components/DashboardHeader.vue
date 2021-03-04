@@ -6,7 +6,8 @@
                     <a class="site-logo site-title" href="/"><img :src="$root.basepath + '/images/logo.png'" alt="site-logo"></a>
                     <ul class="account-menu mobile-acc-menu">
                         <li class="icon">
-                            <a href="/login"><i class="las la-user"></i></a>
+                            <a title="logout" v-if="$auth.check()" @click="$auth.logout()"><i class="las la-user"></i></a>
+                            <a title="login" v-else href="/login"><i class="las la-user"></i></a>
                         </li>
                     </ul>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">

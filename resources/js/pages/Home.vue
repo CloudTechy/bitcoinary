@@ -9,7 +9,8 @@
                             <h2 class="hero__title"><span class="text-white font-weight-normal">Invest for Future in Stable Platform</span> <b class="base--color">and Make Fast Money</b></h2>
                             <p class="text-white f-size-18 mt-3">Invest in an Industry Leader, Professional, and Reliable Company. We provide you with the most necessary features that will make your experience better. Not only we guarantee the fastest and the most exciting returns on your
                                 investments, but we also guarantee the security of your investment.</p>
-                            <a href="/register" class="cmn-btn mr-2 text-uppercase font-weight-600 mt-4">Sign Up</a><a href="/dashboard" class="cmn-btn text-uppercase font-weight-600 mt-4">Login</a>
+                            <a v-if="$auth.check()" href="/dashboard" class="cmn-btn text-uppercase font-weight-600 mt-4">Goto Dashboard</a>
+                            <a v-else href="/register" class="cmn-btn mr-2 text-uppercase font-weight-600 mt-4">Sign Up</a>
                         </div>
                     </div>
                 </div>
@@ -38,7 +39,7 @@
                     <!-- cureency-item end -->
                     <div class="col-lg-3 col-sm-6 cureency-item mb-30">
                         <div class="cureency-card text-center">
-                            <h6 class="cureency-card__title text-white">24 VOLUME</h6>
+                            <h6 class="cureency-card__title text-white">24HRS VOLUME</h6>
                             <span class="cureency-card__amount h-font-family font-weight-600 base--color">{{$root.normalNumeral( $root.btc_volume) }} BTC</span>
                         </div>
                         <!-- cureency-card end -->

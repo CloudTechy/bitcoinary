@@ -108,7 +108,7 @@ const app = new Vue({
     },
 
     created() {
-        setInterval(this.timer, 1000)
+        // setInterval(this.timer, 1000)
         setInterval(this.btcRate, 2000)
         setInterval(this.btcVolume, 60000)
         this.btcRate()
@@ -226,28 +226,28 @@ const app = new Vue({
             this.time = moment().format("h:mm:ss a")
         },
         btcRate() {
-            // this.$http.get("http://api.coindesk.com/v1/bpi/currentprice.json")
-            //     .then(response => {
-            //         this.usd_btc_rate = response.data.bpi.USD.rate
-            //         this.eur_btc_rate = response.data.bpi.EUR.rate
-            //     })
-            //     .catch(error => {
-            //         console.log(error.response)
-            //     })
+            this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json")
+                .then(response => {
+                    this.usd_btc_rate = response.data.bpi.USD.rate
+                    this.eur_btc_rate = response.data.bpi.EUR.rate
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
 
 
         },
         btcVolume() {
-            // this.$http.get("http://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT")
-            //     .then(response => {
-            //         let volume = response.data.volume
-            //         this.btc_volume = parseInt(volume) / 3
-            //         this.active_trade = volume
-            //         // console.log(response.data);
-            //     })
-            //     .catch(error => {
-            //         console.log(error.response)
-            //     })
+            this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT")
+                .then(response => {
+                    let volume = response.data.volume
+                    this.btc_volume = parseInt(volume) / 3
+                    this.active_trade = volume
+                    // console.log(response.data);
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
 
 
         },
