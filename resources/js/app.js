@@ -150,7 +150,7 @@ const app = new Vue({
             }
         },
         scrollUp() {
-            window.scrollTo(0, 50)
+            window.scrollTo(0, 100)
         },
         
         numeral(value) {
@@ -207,35 +207,6 @@ const app = new Vue({
         },
         scrollToTop(x = 0, y = 300) {
             window.scrollTo(x, y);
-        },
-        timer() {
-            this.time = moment().format("h:mm:ss a")
-        },
-        btcRate() {
-            this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json")
-                .then(response => {
-                    this.usd_btc_rate = response.data.bpi.USD.rate
-                    this.eur_btc_rate = response.data.bpi.EUR.rate
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
-
-
-        },
-        btcVolume() {
-            this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT")
-                .then(response => {
-                    let volume = response.data.volume
-                    this.btc_volume = parseInt(volume) / 3
-                    this.active_trade = volume
-                    // console.log(response.data);
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
-
-
         },
         getIp() {
             var form = new Form()

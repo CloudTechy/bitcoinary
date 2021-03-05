@@ -27,7 +27,7 @@
                                 <button @click="$root.alert('success',' ', 'copied')" v-clipboard="paymentMethod.wallet" style="border-radius: 0px;" class="cmn-btn" data-clipboard-target="#wallet">Copy</button>
                             </div>
                         </div>
-                        <p v-if="!subscribed_plan" class="f-size-14 m-2">If you do not know where to buy <span class="text-lowercase">{{paymentMethod.payment_method}}</span> <a href="https://www.coinmama.com" class="base--color">click here</a></p>
+                        <p v-if="!subscribed_plan" class="f-size-14 m-2">If you do not know where to buy <span class="text-lowercase">{{paymentMethod.payment_method}}</span> <a target="_blank" href="https://www.coinmama.com" class="base--color">click here</a></p>
                     </div>
                     <div v-else class="p-0 m-0">
                         <h3 class="mb-2">Transfer&nbsp;<span class="base--color">{{ paymentMethod.payment_method}} Account</span> </h3>

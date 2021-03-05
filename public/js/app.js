@@ -6337,6 +6337,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -11290,7 +11291,7 @@ __webpack_require__.r(__webpack_exports__);
         first_name: '',
         last_name: '',
         email: '',
-        username: '',
+        // username : '',
         password: '',
         password_confirmation: ''
       }),
@@ -64059,7 +64060,49 @@ var render = function() {
               _vm._v(" "),
               _vm._m(0),
               _vm._v(" "),
-              _vm._m(1)
+              _c(
+                "div",
+                {
+                  staticClass: "collapse navbar-collapse",
+                  attrs: { id: "navbarSupportedContent" }
+                },
+                [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "nav-right" }, [
+                    _c("ul", { staticClass: "account-menu ml-3" }, [
+                      _c("li", { staticClass: "icon" }, [
+                        _vm.$auth.check()
+                          ? _c(
+                              "a",
+                              {
+                                attrs: { title: "logout" },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.$auth.logout()
+                                  }
+                                }
+                              },
+                              [
+                                _c("i", { staticClass: "las la-user" }),
+                                _vm._v("  Login")
+                              ]
+                            )
+                          : _c(
+                              "a",
+                              { attrs: { title: "login", href: "/login" } },
+                              [
+                                _c("i", { staticClass: "las la-user" }),
+                                _vm._v(" Logout")
+                              ]
+                            )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(2)
+                  ])
+                ]
+              )
             ]
           )
         ])
@@ -64092,58 +64135,39 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "navbar-nav main-menu m-auto" }, [
+      _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("Home")])]),
+      _vm._v(" "),
+      _c("li", [_c("a", { attrs: { href: "/about" } }, [_vm._v("About")])]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "/register" } }, [_vm._v("Get Started")])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "/#packages" } }, [_vm._v("Investment plans")])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "/partners" } }, [_vm._v("Partners")])
+      ]),
+      _vm._v(" "),
+      _c("li", [_c("a", { attrs: { href: "/#faq" } }, [_vm._v("FAQ")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c(
-      "div",
-      {
-        staticClass: "collapse navbar-collapse",
-        attrs: { id: "navbarSupportedContent" }
-      },
+      "select",
+      { staticClass: "select d-inline-block w-auto ml-xl-3" },
       [
-        _c("ul", { staticClass: "navbar-nav main-menu m-auto" }, [
-          _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("Home")])]),
-          _vm._v(" "),
-          _c("li", [_c("a", { attrs: { href: "/about" } }, [_vm._v("About")])]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "/register" } }, [_vm._v("Get Started")])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "/#packages" } }, [
-              _vm._v("Investment plans")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "/partners" } }, [_vm._v("Partners")])
-          ]),
-          _vm._v(" "),
-          _c("li", [_c("a", { attrs: { href: "/#faq" } }, [_vm._v("FAQ")])])
-        ]),
+        _c("option", [_c("a", { attrs: { href: "#" } }, [_vm._v("Eng")])]),
         _vm._v(" "),
-        _c("div", { staticClass: "nav-right" }, [
-          _c("ul", { staticClass: "account-menu ml-3" }, [
-            _c("li", { staticClass: "icon" }, [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "las la-user" })
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "select",
-            { staticClass: "select d-inline-block w-auto ml-xl-3" },
-            [
-              _c("option", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Eng")])
-              ]),
-              _vm._v(" "),
-              _c("option", [_vm._v("Ban")]),
-              _vm._v(" "),
-              _c("option", [_vm._v("Hin")])
-            ]
-          )
-        ])
+        _c("option", [_vm._v("Ban")]),
+        _vm._v(" "),
+        _c("option", [_vm._v("Hin")])
       ]
     )
   }
@@ -65979,7 +66003,10 @@ var render = function() {
                           "a",
                           {
                             staticClass: "base--color",
-                            attrs: { href: "https://www.coinmama.com" }
+                            attrs: {
+                              target: "_blank",
+                              href: "https://www.coinmama.com"
+                            }
                           },
                           [_vm._v("click here")]
                         )
@@ -76256,76 +76283,6 @@ var render = function() {
                                                 _vm.errors.last_name,
                                                 function(error) {
                                                   return _vm.errors.last_name
-                                                    ? _c(
-                                                        "p",
-                                                        {
-                                                          staticClass:
-                                                            "base--color m-0 p-2 small"
-                                                        },
-                                                        [_vm._v(_vm._s(error))]
-                                                      )
-                                                    : _vm._e()
-                                                }
-                                              )
-                                            ],
-                                            2
-                                          )
-                                        ])
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("tr", [
-                                        _c("td", [_vm._v("Username:")]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _c(
-                                            "div",
-                                            { staticClass: "form-group" },
-                                            [
-                                              _c("input", {
-                                                directives: [
-                                                  {
-                                                    name: "model",
-                                                    rawName: "v-model",
-                                                    value: _vm.form.username,
-                                                    expression: "form.username"
-                                                  }
-                                                ],
-                                                class: {
-                                                  "form-control": true,
-                                                  "error-input":
-                                                    _vm.errors.username !=
-                                                    undefined,
-                                                  editbox: true
-                                                },
-                                                attrs: {
-                                                  disabled: "",
-                                                  type: "text",
-                                                  required: "",
-                                                  placeholder: "Enter username"
-                                                },
-                                                domProps: {
-                                                  value: _vm.form.username
-                                                },
-                                                on: {
-                                                  input: function($event) {
-                                                    if (
-                                                      $event.target.composing
-                                                    ) {
-                                                      return
-                                                    }
-                                                    _vm.$set(
-                                                      _vm.form,
-                                                      "username",
-                                                      $event.target.value
-                                                    )
-                                                  }
-                                                }
-                                              }),
-                                              _vm._v(" "),
-                                              _vm._l(
-                                                _vm.errors.username,
-                                                function(error) {
-                                                  return _vm.errors.username
                                                     ? _c(
                                                         "p",
                                                         {
@@ -105913,7 +105870,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       }
     },
     scrollUp: function scrollUp() {
-      window.scrollTo(0, 50);
+      window.scrollTo(0, 100);
     },
     numeral: function (_numeral) {
       function numeral(_x) {
@@ -105991,48 +105948,24 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 300;
       window.scrollTo(x, y);
     },
-    timer: function timer() {
-      this.time = moment__WEBPACK_IMPORTED_MODULE_12___default()().format("h:mm:ss a");
-    },
-    btcRate: function btcRate() {
-      var _this3 = this;
-
-      this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(function (response) {
-        _this3.usd_btc_rate = response.data.bpi.USD.rate;
-        _this3.eur_btc_rate = response.data.bpi.EUR.rate;
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    },
-    btcVolume: function btcVolume() {
-      var _this4 = this;
-
-      this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT").then(function (response) {
-        var volume = response.data.volume;
-        _this4.btc_volume = parseInt(volume) / 3;
-        _this4.active_trade = volume; // console.log(response.data);
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    },
     getIp: function getIp() {
-      var _this5 = this;
+      var _this3 = this;
 
       var form = new vform__WEBPACK_IMPORTED_MODULE_18__["Form"]();
       form.get("https://api.ipify.org?format=json").then(function (response) {
-        _this5.ip = response.data.ip;
+        _this3.ip = response.data.ip;
         localStorage.ip = JSON.stringify(response.data.ip);
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     refreshUser: function refreshUser() {
-      var _this6 = this;
+      var _this4 = this;
 
       this.$auth.fetch({
         params: {},
         success: function success(response) {
-          _this6.user = _this6.$auth.user();
+          _this4.user = _this4.$auth.user();
         },
         error: function error(_error) {
           console.log(_error.response.data);

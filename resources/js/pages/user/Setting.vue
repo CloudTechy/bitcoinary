@@ -70,7 +70,7 @@
                                                                 </div>
                                                             </td>
                                                         </tr>
-                                                        <tr>
+                                                        <!-- <tr>
                                                             <td>Username:</td>
                                                             <td>
                                                                 <div class="form-group">
@@ -78,7 +78,7 @@
                                                                     <p v-if="errors.username" v-for="error in errors.username" class="base--color m-0 p-2 small">{{error}}</p>
                                                                 </div>
                                                             </td>
-                                                        </tr>
+                                                        </tr> -->
                                                         <tr>
                                                             <td>Email:</td>
                                                             <td>
@@ -163,7 +163,7 @@ export default {
                 first_name : '',
                 last_name : '',
                 email: '',
-                username : '',
+                // username : '',
                 password : '',
                 password_confirmation : '',
             }),
