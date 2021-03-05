@@ -22,7 +22,9 @@ class UserResource extends JsonResource {
 				continue;
 			}
 		}
-		$this->processMaturePackages;
+		if(!empty($activeReferrals)){
+			$this->processMaturePackages;
+		}
 		return [
 			'id' => $this->id,
 			'username' => $this->username,
@@ -48,7 +50,7 @@ class UserResource extends JsonResource {
 			'CanWithdraw' => $this->canWithdraw,
 			'bank_details' => $this->bankDetails,
 			'user_level' => $this->userLevel->name,
-			'processPackageStatus' => $this->processMaturePackages,
+			// 'processPackageStatus' => $this->processMaturePackages,
 			'isAdmin' => $this->userLevel->name == "administrator" ? true : false,
 			'isEmailVerified' => empty($this->email_verified_at)  ? false : true,
 			'totalActiveTransaction' => $this->activeTransactions,

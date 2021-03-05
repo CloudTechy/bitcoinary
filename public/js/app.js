@@ -8189,6 +8189,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8201,7 +8202,11 @@ __webpack_require__.r(__webpack_exports__);
       testimonials: [],
       transactions: [],
       withdrawals: [],
-      teams: []
+      teams: [],
+      usd_btc_rate: '-',
+      eur_btc_rate: '-',
+      btc_volume: '-',
+      active_trade: '-'
     };
   },
   mounted: function mounted() {
@@ -8211,6 +8216,10 @@ __webpack_require__.r(__webpack_exports__);
     this.getTestimonials();
     this.getTransactions();
     this.getWithdrawals();
+    setInterval(this.btcRate, 45000);
+    setInterval(this.btcVolume, 60000);
+    this.btcRate();
+    this.btcVolume();
   },
   methods: {
     submitForm: function submitForm() {
@@ -8268,6 +8277,27 @@ __webpack_require__.r(__webpack_exports__);
 
       this.$http.get("/auth/withdrawalss?pageSize=6&confirmed=1&processed=1").then(function (response) {
         _this6.withdrawals = response.data.data.item;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    btcRate: function btcRate() {
+      var _this7 = this;
+
+      this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(function (response) {
+        _this7.usd_btc_rate = response.data.bpi.USD.rate;
+        _this7.eur_btc_rate = response.data.bpi.EUR.rate;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    btcVolume: function btcVolume() {
+      var _this8 = this;
+
+      this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT").then(function (response) {
+        var volume = response.data.volume;
+        _this8.btc_volume = parseInt(volume) / 3;
+        _this8.active_trade = volume; // console.log(response.data);
       })["catch"](function (error) {
         console.log(error.response);
       });
@@ -10546,7 +10576,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -67321,43 +67350,7 @@ var render = function() {
           staticClass: "hero bg_img",
           style: "background:url(" + _vm.$root.basepath + "/images/bg/hero.jpg"
         },
-        [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-xl-5 col-lg-8" }, [
-                _c("div", { staticClass: "hero__content" }, [
-                  _vm._m(0),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-white f-size-18 mt-3" }, [
-                    _vm._v(
-                      "Invest in an Industry Leader, Professional, and Reliable Company. We provide you with the most necessary features that will make your experience better. Not only we guarantee the fastest and the most exciting returns on your\n                            investments, but we also guarantee the security of your investment."
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _vm.$auth.check()
-                    ? _c(
-                        "a",
-                        {
-                          staticClass:
-                            "cmn-btn text-uppercase font-weight-600 mt-4",
-                          attrs: { href: "/dashboard" }
-                        },
-                        [_vm._v("Goto Dashboard")]
-                      )
-                    : _c(
-                        "a",
-                        {
-                          staticClass:
-                            "cmn-btn mr-2 text-uppercase font-weight-600 mt-4",
-                          attrs: { href: "/register" }
-                        },
-                        [_vm._v("Sign Up")]
-                      )
-                ])
-              ])
-            ])
-          ])
-        ]
+        [_vm._m(0)]
       ),
       _vm._v(" "),
       _c("div", { staticClass: "cureency-section" }, [
@@ -67380,9 +67373,8 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        _vm._s(
-                          _vm.$root.normalNumeral(_vm.$root.usd_btc_rate)
-                        ) + " USD"
+                        _vm._s(_vm.$root.normalNumeral(_vm.usd_btc_rate)) +
+                          " USD"
                       )
                     ]
                   )
@@ -67407,9 +67399,8 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        _vm._s(
-                          _vm.$root.normalNumeral(_vm.$root.eur_btc_rate)
-                        ) + " EUR"
+                        _vm._s(_vm.$root.normalNumeral(_vm.eur_btc_rate)) +
+                          " EUR"
                       )
                     ]
                   )
@@ -67434,8 +67425,7 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        _vm._s(_vm.$root.normalNumeral(_vm.$root.btc_volume)) +
-                          " BTC"
+                        _vm._s(_vm.$root.normalNumeral(_vm.btc_volume)) + " BTC"
                       )
                     ]
                   )
@@ -67458,11 +67448,7 @@ var render = function() {
                       staticClass:
                         "cureency-card__amount h-font-family font-weight-600 base--color"
                     },
-                    [
-                      _vm._v(
-                        _vm._s(_vm.$root.normalNumeral(_vm.$root.active_trade))
-                      )
-                    ]
+                    [_vm._v(_vm._s(_vm.$root.normalNumeral(_vm.active_trade)))]
                   )
                 ])
               ]
@@ -67594,12 +67580,46 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "hero__title" }, [
-      _c("span", { staticClass: "text-white font-weight-normal" }, [
-        _vm._v("Invest for Future in Stable Platform")
-      ]),
-      _vm._v(" "),
-      _c("b", { staticClass: "base--color" }, [_vm._v("and Make Fast Money")])
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-xl-5 col-lg-8" }, [
+          _c("div", { staticClass: "hero__content" }, [
+            _c("h2", { staticClass: "hero__title" }, [
+              _c("span", { staticClass: "text-white font-weight-normal" }, [
+                _vm._v("Invest for Future in Stable Platform")
+              ]),
+              _vm._v(" "),
+              _c("b", { staticClass: "base--color" }, [
+                _vm._v("and Make Fast Money")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-white f-size-18 mt-3" }, [
+              _vm._v(
+                "Invest in an Industry Leader, Professional, and Reliable Company. We provide you with the most necessary features that will make your experience better. Not only we guarantee the fastest and the most exciting returns on your\n                            investments, but we also guarantee the security of your investment."
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "cmn-btn mr-2 text-uppercase font-weight-600 mt-4",
+                attrs: { href: "/register" }
+              },
+              [_vm._v("Sign Up")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "cmn-btn text-uppercase font-weight-600 mt-4",
+                attrs: { href: "/dashboard" }
+              },
+              [_vm._v("Sign In")]
+            )
+          ])
+        ])
+      ])
     ])
   },
   function() {
@@ -75419,7 +75439,7 @@ var staticRenderFns = [
       [
         _c("div", { staticClass: "p-3 text-center" }, [
           _vm._v(
-            "\n                                                        No data to display yet. Click "
+            "\n                                                    No data to display yet. Click "
           ),
           _c(
             "a",
@@ -75431,7 +75451,7 @@ var staticRenderFns = [
             [_vm._v(" here ")]
           ),
           _vm._v(
-            " to invest and start earning.\n                                                    "
+            " to invest and start earning.\n                                                "
           )
         ])
       ]
@@ -105820,19 +105840,11 @@ Array.prototype.sum = function (prop) {
 vue__WEBPACK_IMPORTED_MODULE_2___default.a.component('index', _Index__WEBPACK_IMPORTED_MODULE_6__["default"]);
 var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
   data: {
-    time: '',
-    usd_btc_rate: '-',
-    user: '',
-    eur_btc_rate: '-',
-    ip: '',
     uploadItem: null,
     viewItem: null,
     mailUser: null,
-    btc_volume: '-',
-    active_trade: '-',
     payments: [],
-    packages: [],
-    form: new vform__WEBPACK_IMPORTED_MODULE_18__["Form"]()
+    packages: []
   },
   el: '#app',
   router: _router__WEBPACK_IMPORTED_MODULE_8__["default"],
@@ -105852,12 +105864,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     })
   },
   created: function created() {
-    // setInterval(this.timer, 1000)
-    setInterval(this.btcRate, 2000);
-    setInterval(this.btcVolume, 60000);
-    this.btcRate(); // this.getIp()
-
-    this.btcVolume();
     this.getPayments();
     this.getPackages();
   },
@@ -105870,7 +105876,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
         title: title,
         text: message,
         showConfirmButton: false,
-        timer: 3000
+        timer: 5000
       });
     },
     getPayments: function getPayments() {

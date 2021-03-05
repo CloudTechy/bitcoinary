@@ -9,8 +9,9 @@
                             <h2 class="hero__title"><span class="text-white font-weight-normal">Invest for Future in Stable Platform</span> <b class="base--color">and Make Fast Money</b></h2>
                             <p class="text-white f-size-18 mt-3">Invest in an Industry Leader, Professional, and Reliable Company. We provide you with the most necessary features that will make your experience better. Not only we guarantee the fastest and the most exciting returns on your
                                 investments, but we also guarantee the security of your investment.</p>
-                            <a v-if="$auth.check()" href="/dashboard" class="cmn-btn text-uppercase font-weight-600 mt-4">Goto Dashboard</a>
-                            <a v-else href="/register" class="cmn-btn mr-2 text-uppercase font-weight-600 mt-4">Sign Up</a>
+                            <a href="/register" class="cmn-btn mr-2 text-uppercase font-weight-600 mt-4">Sign Up</a>
+                            <a href="/dashboard" class="cmn-btn text-uppercase font-weight-600 mt-4">Sign In</a>
+                            
                         </div>
                     </div>
                 </div>
@@ -24,7 +25,7 @@
                     <div class="col-lg-3 col-sm-6 cureency-item mb-30">
                         <div class="cureency-card text-center">
                             <h6 class="cureency-card__title text-white">BITCOIN PRICE</h6>
-                            <span class="cureency-card__amount h-font-family font-weight-600 base--color">{{$root.normalNumeral( $root.usd_btc_rate) }} USD</span>
+                            <span class="cureency-card__amount h-font-family font-weight-600 base--color">{{$root.normalNumeral(usd_btc_rate) }} USD</span>
                         </div>
                         <!-- cureency-card end -->
                     </div>
@@ -32,7 +33,7 @@
                     <div class="col-lg-3 col-sm-6 cureency-item mb-30">
                         <div class="cureency-card text-center">
                             <h6 class="cureency-card__title text-white">BITCOIN PRICE</h6>
-                            <span class="cureency-card__amount h-font-family font-weight-600 base--color">{{$root.normalNumeral( $root.eur_btc_rate) }} EUR</span>
+                            <span class="cureency-card__amount h-font-family font-weight-600 base--color">{{$root.normalNumeral(eur_btc_rate) }} EUR</span>
                         </div>
                         <!-- cureency-card end -->
                     </div>
@@ -40,7 +41,7 @@
                     <div class="col-lg-3 col-sm-6 cureency-item mb-30">
                         <div class="cureency-card text-center">
                             <h6 class="cureency-card__title text-white">24HRS VOLUME</h6>
-                            <span class="cureency-card__amount h-font-family font-weight-600 base--color">{{$root.normalNumeral( $root.btc_volume) }} BTC</span>
+                            <span class="cureency-card__amount h-font-family font-weight-600 base--color">{{$root.normalNumeral(btc_volume) }} BTC</span>
                         </div>
                         <!-- cureency-card end -->
                     </div>
@@ -48,7 +49,7 @@
                     <div class="col-lg-3 col-sm-6 cureency-item mb-30">
                         <div class="cureency-card text-center">
                             <h6 class="cureency-card__title text-white">ACTIVE TRADES</h6>
-                            <span class="cureency-card__amount h-font-family font-weight-600 base--color">{{ $root.normalNumeral( $root.active_trade) }}</span>
+                            <span class="cureency-card__amount h-font-family font-weight-600 base--color">{{ $root.normalNumeral(active_trade) }}</span>
                         </div>
                         <!-- cureency-card end -->
                     </div>
@@ -212,7 +213,7 @@
                         </div>
                     </div>
                 </div>
-                <InvestmentPackage  :href="'deposit'"></InvestmentPackage>
+                <InvestmentPackage :href="'deposit'"></InvestmentPackage>
             </div>
         </section>
         <!-- choose us section end  -->
@@ -341,6 +342,10 @@
             transactions: [],
             withdrawals: [],
             teams: [],
+            usd_btc_rate: '-',
+            eur_btc_rate: '-',
+            btc_volume: '-',
+            active_trade: '-',
         }
     },
     mounted() {
@@ -350,6 +355,10 @@
         this.getTestimonials();
         this.getTransactions();
         this.getWithdrawals();
+        setInterval(this.btcRate, 45000)
+        setInterval(this.btcVolume, 60000)
+        this.btcRate()
+        this.btcVolume()
     },
     methods: {
         submitForm() {
@@ -411,6 +420,32 @@
                 .catch(error => {
                     console.log(error.response)
                 })
+        },
+        btcRate() {
+            this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json")
+                .then(response => {
+                    this.usd_btc_rate = response.data.bpi.USD.rate
+                    this.eur_btc_rate = response.data.bpi.EUR.rate
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+
+
+        },
+        btcVolume() {
+            this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT")
+                .then(response => {
+                    let volume = response.data.volume
+                    this.btc_volume = parseInt(volume) / 3
+                    this.active_trade = volume
+                    // console.log(response.data);
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+
+
         },
     }
 }

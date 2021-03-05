@@ -1,7 +1,6 @@
 <template>
     <div class="page-wrapper">
         <DashboardHeader></DashboardHeader>
-
         <section class="inner-hero bg_img" :style="'background:url('+ $root.basepath +'/images/bg/bg-1.jpg)'" :data-background="$root.basepath + '/images/bg/bg-1.jpg'">
             <div class="container">
                 <div class="row">
@@ -117,12 +116,12 @@
                                                 <td data-label="Gateway">Bitcoin</td>
                                             </tr>
                                             <tr v-if="transactions.length == 0">
-                                                    <td class="text-center only" colspan="5">
-                                                        <div class="p-3 text-center">
-                                                            No data to display yet. Click <a style="text-decoration: underline;" href="/dashboard/deposit" class="base--color font-weight-bold"> here </a> to invest and start earning.
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                <td class="text-center only" colspan="5">
+                                                    <div class="p-3 text-center">
+                                                        No data to display yet. Click <a style="text-decoration: underline;" href="/dashboard/deposit" class="base--color font-weight-bold"> here </a> to invest and start earning.
+                                                    </div>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>

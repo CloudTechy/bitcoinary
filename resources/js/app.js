@@ -85,19 +85,11 @@ Vue.component('index', Index)
 
 const app = new Vue({
     data: {
-        time: '',
-        usd_btc_rate: '-',
-        user: '',
-        eur_btc_rate: '-',
-        ip: '',
         uploadItem: null,
         viewItem: null,
         mailUser: null,
-        btc_volume: '-',
-        active_trade: '-',
         payments: [],
         packages: [],
-        form : new Form()
     },
     el: '#app',
     router,
@@ -108,12 +100,6 @@ const app = new Vue({
     },
 
     created() {
-        // setInterval(this.timer, 1000)
-        setInterval(this.btcRate, 2000)
-        setInterval(this.btcVolume, 60000)
-        this.btcRate()
-        // this.getIp()
-        this.btcVolume()
         this.getPayments();
         this.getPackages();
         
@@ -127,7 +113,7 @@ const app = new Vue({
                 title,
                 text: message,
                 showConfirmButton: false,
-                timer: 3000
+                timer: 5000
             })
         },
         getPayments() {
