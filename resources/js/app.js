@@ -226,8 +226,17 @@ const app = new Vue({
                 error: (error) => { console.log(error.response.data) },
             })
         },
-        getAccountDetails(search, currencyType){
+        getAccountDetails(accounts, search, currencyType){
            let paymentDetails = this.cryptoFilter(this.$auth.user().bank_details, search)[0]
+           if(paymentDetails){
+            var address = currencyType == 'fiat' ?  paymentDetails.acc_number : paymentDetails.wallet
+            var result = address == "Not Set" || address == 0 ? undefined : address
+            return result
+           }    
+           return undefined       
+       },
+       getPaymentAccountDetails(accounts, search, currencyType){
+           let paymentDetails = this.cryptoFilter(accounts, search)[0]
            if(paymentDetails){
             var address = currencyType == 'fiat' ?  paymentDetails.acc_number : paymentDetails.wallet
             var result = address == "Not Set" || address == 0 ? undefined : address

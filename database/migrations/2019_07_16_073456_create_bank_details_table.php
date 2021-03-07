@@ -21,7 +21,7 @@ class CreateBankDetailsTable extends Migration
             $table->string('currency_type')->index();
             $table->string('currency')->nullable();
             $table->bigInteger('bank_id')->unsigned()->index()->nullable();
-            $table->bigInteger('acc_number')->nullable();
+            $table->string('acc_number')->nullable();
             $table->string('acc_name')->nullable();
             $table->string('swift_code')->nullable();
             $table->timestamps();

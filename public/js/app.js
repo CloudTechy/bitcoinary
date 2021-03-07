@@ -74818,7 +74818,8 @@ var render = function() {
                             }
                           },
                           _vm._l(_vm.paymentMethods, function(processor) {
-                            return _vm.$root.getAccountDetails(
+                            return _vm.$root.getPaymentAccountDetails(
+                              _vm.paymentMethods,
                               processor.payment_method,
                               processor.currency_type
                             )
@@ -76727,7 +76728,7 @@ var render = function() {
           _c("div", { staticClass: "container" }, [
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-lg-6" }, [
-                _c("h2", { staticClass: "page-title" }, [_vm._v("Dashboard")]),
+                _c("h2", { staticClass: "page-title" }, [_vm._v("Withdraw")]),
                 _vm._v(" "),
                 _vm._m(0),
                 _vm._v(" "),
@@ -105947,8 +105948,19 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
         }
       });
     },
-    getAccountDetails: function getAccountDetails(search, currencyType) {
+    getAccountDetails: function getAccountDetails(accounts, search, currencyType) {
       var paymentDetails = this.cryptoFilter(this.$auth.user().bank_details, search)[0];
+
+      if (paymentDetails) {
+        var address = currencyType == 'fiat' ? paymentDetails.acc_number : paymentDetails.wallet;
+        var result = address == "Not Set" || address == 0 ? undefined : address;
+        return result;
+      }
+
+      return undefined;
+    },
+    getPaymentAccountDetails: function getPaymentAccountDetails(accounts, search, currencyType) {
+      var paymentDetails = this.cryptoFilter(accounts, search)[0];
 
       if (paymentDetails) {
         var address = currencyType == 'fiat' ? paymentDetails.acc_number : paymentDetails.wallet;
