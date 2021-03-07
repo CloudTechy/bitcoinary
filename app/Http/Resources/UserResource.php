@@ -22,11 +22,8 @@ class UserResource extends JsonResource {
 				continue;
 			}
 		}
-		if(!empty($activeReferrals)){
-			dd($activeReferrals);
 			$this->processMaturePackages;
 
-		}
 		return [
 			'id' => $this->id,
 			'username' => $this->username,

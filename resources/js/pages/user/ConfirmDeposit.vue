@@ -20,7 +20,7 @@
                                     <div class="form-group">
                                         <label>Payment method</label>
                                         <select required="" v-model="paymentMethod" class="base--bg">
-                                            <option class="text-capitalize" :value="processor" v-for="processor in paymentMethods">{{'Direct Invest ' + processor.payment_method}}</option>
+                                            <option v-if="$root.getAccountDetails( processor.payment_method, processor.currency_type)" class="text-capitalize" :value="processor" v-for="processor in paymentMethods">{{'Direct Invest ' + processor.payment_method}}</option>
                                         </select>
                                     </div>
                                     <div class="form-group">

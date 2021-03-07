@@ -10739,6 +10739,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     window.scrollTo(0, 0);
     this.getTransactions();
+    setInterval(this.getTransactions, 100000);
   },
   computed: {
     Referral_link: function Referral_link() {
@@ -10749,6 +10750,7 @@ __webpack_require__.r(__webpack_exports__);
     getTransactions: function getTransactions() {
       var _this = this;
 
+      this.$auth.fetch();
       this.$http.get("/auth/transactions?pageSize=6&sent=1&confirmed=1&user_id=" + this.$auth.user().id).then(function (response) {
         _this.transactions = response.data.data.item;
       })["catch"](function (error) {
@@ -11762,7 +11764,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.$root.loader('show');
-    setInterval(this.getPackages, 61000);
+    setInterval(this.getPackages, 100000);
     this.getPackages();
   },
   computed: {},
@@ -11770,7 +11772,7 @@ __webpack_require__.r(__webpack_exports__);
     getPackages: function getPackages() {
       var _this = this;
 
-      // this.$root.loader('show')
+      this.$auth.fetch();
       this.form.get("auth/packageusers?active=1&user_id=" + this.$auth.user().id).then(function (response) {
         _this.$root.loader('hide');
 
@@ -64083,18 +64085,12 @@ var render = function() {
                                   }
                                 }
                               },
-                              [
-                                _c("i", { staticClass: "las la-user" }),
-                                _vm._v("  Login")
-                              ]
+                              [_c("i", { staticClass: "las la-user" })]
                             )
                           : _c(
                               "a",
                               { attrs: { title: "login", href: "/login" } },
-                              [
-                                _c("i", { staticClass: "las la-user" }),
-                                _vm._v(" Logout")
-                              ]
+                              [_c("i", { staticClass: "las la-user" })]
                             )
                       ])
                     ]),
@@ -66470,41 +66466,7 @@ var render = function() {
           staticClass: "bg_img pt-120 pb-120 border-top-1",
           style: "background:url(" + _vm.$root.basepath + "/images/bg/bg-10.jpg"
         },
-        [
-          _c(
-            "div",
-            {
-              staticClass: "container",
-              staticStyle: { "background-color": "rgba(0,0,0,0.7)" }
-            },
-            [
-              _vm._m(0),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "row justify-content-center mb-none-30" },
-                [
-                  _c("div", { staticClass: "col-lg-10 col-md-12 mb-30" }, [
-                    _c("div", { staticClass: "blog-card" }, [
-                      _vm._m(1),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "blog-card__thumb" }, [
-                        _c("img", {
-                          attrs: {
-                            src: _vm.$root.basepath + "/images/blog/1.jpg",
-                            alt: "image"
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _vm._m(2)
-                    ])
-                  ])
-                ]
-              )
-            ]
-          )
-        ]
+        [_vm._m(0)]
       ),
       _vm._v(" "),
       _c("Footer")
@@ -66517,62 +66479,69 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-lg-7 text-center" }, [
-          _c("div", { staticClass: "section-header" }, [
-            _c("h2", { staticClass: "section-title" }, [
-              _c("span", { staticClass: "font-weight-normal" }, [
-                _vm._v("About ")
+    return _c(
+      "div",
+      {
+        staticClass: "container",
+        staticStyle: { "background-color": "rgba(0,0,0,0.7)" }
+      },
+      [
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "row justify-content-center" }, [
+            _c("div", { staticClass: "col-lg-7 text-center" }, [
+              _c("div", { staticClass: "section-header" }, [
+                _c("h2", { staticClass: "section-title" }, [
+                  _c("span", { staticClass: "font-weight-normal" }, [
+                    _vm._v("About ")
+                  ]),
+                  _vm._v(" "),
+                  _c("b", { staticClass: "base--color" }, [_vm._v("Us")])
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "blog-details__content" }, [
+                  _vm._v(
+                    "\n                                Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits.\n                            "
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row justify-content-center mb-none-30" }, [
+          _c("div", { staticClass: "col-lg-10 col-md-12 mb-30" }, [
+            _c("div", { staticClass: "blog-card" }, [
+              _c("h4", { staticClass: "blog-card__title mb-4" }, [
+                _vm._v("Our "),
+                _c("span", { staticClass: "base--color" }, [_vm._v("Company")])
               ]),
               _vm._v(" "),
-              _c("b", { staticClass: "base--color" }, [_vm._v("Us")])
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "blog-details__content" }, [
-              _vm._v(
-                "\n                                Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits.\n                            "
-              )
+              _c("div", { staticClass: "blog-card__content" }, [
+                _vm._v(
+                  "\n                            Bitcoinary Mint was established in 2005 as public relations and communication activities\n                            In 2019 Goldmint was Incorporated into automobiles, real estate, oil and gas, gold and Automated Trading."
+                ),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bitcoinary Mint team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
+                ),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of Bitcoinary Mint Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. "
+                ),
+                _c("br"),
+                _c("br"),
+                _vm._v(
+                  "We have put great efforts to provide our clients with a user-friendly profit making investment platform. Also, the developers are real technical mavericks, whose vision to create a unique investment system has become successful. Also, you can be sure of security since we ensure that no one will access your data without consent."
+                ),
+                _c("br")
+              ])
             ])
           ])
         ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h4", { staticClass: "blog-card__title mb-4" }, [
-      _vm._v("Our "),
-      _c("span", { staticClass: "base--color" }, [_vm._v("Company")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "blog-card__content" }, [
-      _vm._v(
-        "\n                            Bitcoinary Mint started in 2005 as a Financial Advisory Firm and recently in 2018 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading."
-      ),
-      _c("br"),
-      _c("br"),
-      _vm._v(
-        " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bitcoinary Mint team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
-      ),
-      _c("br"),
-      _c("br"),
-      _vm._v(
-        "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of Bitcoinary Mint Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. "
-      ),
-      _c("br"),
-      _c("br"),
-      _vm._v(
-        "We have put great efforts to provide our clients with a user-friendly profit making investment platform. Also, the developers are real technical mavericks, whose vision to create a unique investment system has become successful. Also, you can be sure of security since we ensure that no one will access your data without consent."
-      ),
-      _c("br")
-    ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -74849,20 +74818,26 @@ var render = function() {
                             }
                           },
                           _vm._l(_vm.paymentMethods, function(processor) {
-                            return _c(
-                              "option",
-                              {
-                                staticClass: "text-capitalize",
-                                domProps: { value: processor }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(
-                                    "Direct Invest " + processor.payment_method
-                                  )
-                                )
-                              ]
+                            return _vm.$root.getAccountDetails(
+                              processor.payment_method,
+                              processor.currency_type
                             )
+                              ? _c(
+                                  "option",
+                                  {
+                                    staticClass: "text-capitalize",
+                                    domProps: { value: processor }
+                                  },
+                                  [
+                                    _vm._v(
+                                      _vm._s(
+                                        "Direct Invest " +
+                                          processor.payment_method
+                                      )
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
                           }),
                           0
                         )
@@ -75211,7 +75186,7 @@ var render = function() {
                             "tbody",
                             [
                               _vm._l(_vm.transactions, function(trx) {
-                                return _c("tr", [
+                                return _c("tr", { key: _vm.transactions.id }, [
                                   _c(
                                     "td",
                                     { attrs: { "data-label": "Name" } },
@@ -105977,7 +105952,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 
       if (paymentDetails) {
         var address = currencyType == 'fiat' ? paymentDetails.acc_number : paymentDetails.wallet;
-        return address == "Not Set" || address == 0 ? undefined : address;
+        var result = address == "Not Set" || address == 0 ? undefined : address;
+        return result;
       }
 
       return undefined;

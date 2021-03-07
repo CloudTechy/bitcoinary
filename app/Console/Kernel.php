@@ -28,11 +28,11 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
        $schedule->call(function () {
-
             $data = json_encode( UserResource::collection(User::all()));
+        })->everyFiveMinutes();
 
-        })->twiceDaily(6, 18);
          $schedule->command('queue:work --tries=3')->everyMinute();
+         // twiceDaily(6, 18);
     }
 
     /**

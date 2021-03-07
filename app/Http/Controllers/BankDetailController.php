@@ -23,7 +23,7 @@ class BankDetailController extends Controller {
 			$pageSize = request()->query('pageSize', 10000000);
 
 			$bankDetails = BankDetail::filter(request()->all())
-				->latest()
+				->orderBy('payment_method', 'asc')
 				->paginate($pageSize);
 
 			$total = $bankDetails->total();

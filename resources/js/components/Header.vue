@@ -67,8 +67,8 @@
                         <div class="nav-right">
                             <ul class="account-menu ml-3">
                                 <li class="icon">
-                                     <a title="logout" v-if="$auth.check()" @click="$auth.logout()"><i class="las la-user"></i>  Login</a>
-                            <a title="login" v-else href="/login"><i class="las la-user"></i> Logout</a>
+                                     <a title="logout" v-if="$auth.check()" @click="$auth.logout()"><i class="las la-user"></i></a>
+                            <a title="login" v-else href="/login"><i class="las la-user"></i></a>
                                 </li>
                             </ul>
                             <select class="select d-inline-block w-auto ml-xl-3">

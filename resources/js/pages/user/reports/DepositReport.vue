@@ -107,7 +107,7 @@ export default {
     },
     mounted() {
         this.$root.loader('show')
-        setInterval(this.getPackages, 61000)
+        setInterval(this.getPackages, 100000)
         this.getPackages()
     },
     computed: {
@@ -115,7 +115,7 @@ export default {
     },
     methods: {
         getPackages() {
-            // this.$root.loader('show')
+            this.$auth.fetch()
             this.form.get("auth/packageusers?active=1&user_id=" + this.$auth.user().id)
                 .then(response => {
                     this.$root.loader('hide')

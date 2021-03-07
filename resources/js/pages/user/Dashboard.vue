@@ -103,7 +103,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for="trx in transactions">
+                                            <tr :key="transactions.id" v-for="trx in transactions">
                                                 <td data-label="Name">
                                                     <div class="user">
                                                         <div class="thumb"><img :src="trx.image == null ? $root.basepath + '/images/uploads/anonymous.jpg' :  $root.basepath + '/images/uploads/' +trx.image" alt="image"></div>
@@ -161,6 +161,7 @@
     mounted() {
         window.scrollTo(0, 0);
         this.getTransactions();
+        setInterval(this.getTransactions, 100000)
     },
     computed: {
         Referral_link() {
@@ -168,7 +169,9 @@
         }
     },
     methods: {
+
         getTransactions() {
+            this.$auth.fetch()
             this.$http.get("/auth/transactions?pageSize=6&sent=1&confirmed=1&user_id="+this.$auth.user().id)
                 .then(response => {
                     this.transactions = response.data.data.item

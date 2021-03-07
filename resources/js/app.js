@@ -230,7 +230,8 @@ const app = new Vue({
            let paymentDetails = this.cryptoFilter(this.$auth.user().bank_details, search)[0]
            if(paymentDetails){
             var address = currencyType == 'fiat' ?  paymentDetails.acc_number : paymentDetails.wallet
-            return address == "Not Set" || address == 0 ? undefined : address
+            var result = address == "Not Set" || address == 0 ? undefined : address
+            return result
            }    
            return undefined       
        },

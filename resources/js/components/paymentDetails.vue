@@ -6,7 +6,7 @@
                 <button class="btn base--color f-size-18 p-0" type="button" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="text-center small">
+                <div  class="text-center small">
                     <div v-if="paymentMethod.currency_type == 'crypto'" class="p-0 m-0">
                         <h3 class="mb-2">Transfer <span class="base--color">{{ paymentMethod.payment_method}} Address </span> </h3>
                         <div class="form-group">
