@@ -39,25 +39,19 @@
                                 </ul>
                             </li>
                         </ul>
-                        <!-- <div class=" nav-right menu_has_children">
-                            <ul class="navbar-nav main-menu account-menu ml-3">
-                                <li class="menu_has_children icon"><a href="#0"><i class="las la-user"></i></a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="login.html">login</a>
-                                        </li>
-                                        <li>
-                                            <a href="login.html">create account</a>
-                                        </li>
-                                    </ul>
-                                      <select class="select d-inline-block w-auto ml-xl-3">
-                                <option>Eng</option>
-                                <option>Ban</option>
-                                <option>Hin</option>
-                            </select>
+                        <div class="nav-right">
+                            <ul class="account-menu ml-3">
+                                <li class="icon">
+                                     <a title="logout" v-if="$auth.check()" @click="$auth.logout()">
+                                        <i class="las la-user"></i></a>
+                                    <a title="login" v-else href="/login">
+                                        <i class="las la-user"></i></a>
                                 </li>
                             </ul>
-                        </div> -->
+                            <select class="select d-inline-block w-auto ml-xl-3">
+                                <option><a href="#">Eng</a></option>
+                            </select>
+                        </div>
                     </div>
                 </nav>
             </div>

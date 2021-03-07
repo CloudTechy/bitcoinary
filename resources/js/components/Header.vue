@@ -38,43 +38,18 @@
                             <li><a href="/#faq">FAQ</a>
                                 <!-- <router-link to="/faq">Faq</router-link> -->
                             </li>
-                            <!-- <li>
-                                <a href="https://tawk.link/5be61a8a70ff5a5a3a717ba7/vc/5c0a5e54af5de8c7a62ef1f4/v/f6499c5fa1bda2dc59c0aaf0ca87fa79564509c1/BitcoinaryFinance">Company Certificate</a>
-                            </li> -->
-                            <!-- <li>
-                                <a href="/news">Blog</a>
-                            </li> -->
-                            <!-- <li>
-                                <a href="/support">Support</a>
-                            </li> -->
-                            <!--  <li> <a href="index.html">Home</a></li>
-                            <li> <a href="about.html">About Us</a></li>
-                            <li> <a href="plan.html">Plan</a></li>
-                            <li><a href="dashboard.html">Dashboard</a></li>
-                            <li class="menu_has_children"><a href="#0">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog.html">Blog Posts</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu_has_children"><a href="#0">Page</a>
-                                <ul class="sub-menu">
-                                    <li><a href="error-404.html">Error - 404</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li> -->
                         </ul>
                         <div class="nav-right">
                             <ul class="account-menu ml-3">
                                 <li class="icon">
-                                     <a title="logout" v-if="$auth.check()" @click="$auth.logout()"><i class="las la-user"></i></a>
-                            <a title="login" v-else href="/login"><i class="las la-user"></i></a>
+                                     <a title="logout" v-if="$auth.check()" @click="$auth.logout()">
+                                        <i class="las la-user"></i></a>
+                                    <a title="login" v-else href="/login">
+                                        <i class="las la-user"></i></a>
                                 </li>
                             </ul>
                             <select class="select d-inline-block w-auto ml-xl-3">
                                 <option><a href="#">Eng</a></option>
-                                <option>Ban</option>
-                                <option>Hin</option>
                             </select>
                         </div>
                     </div>

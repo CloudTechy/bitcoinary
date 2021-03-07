@@ -5884,12 +5884,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -6252,31 +6246,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -62694,7 +62663,43 @@ var render = function() {
               _vm._v(" "),
               _vm._m(0),
               _vm._v(" "),
-              _vm._m(1)
+              _c(
+                "div",
+                {
+                  staticClass: "collapse navbar-collapse",
+                  attrs: { id: "navbarSupportedContent" }
+                },
+                [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "nav-right" }, [
+                    _c("ul", { staticClass: "account-menu ml-3" }, [
+                      _c("li", { staticClass: "icon" }, [
+                        _vm.$auth.check()
+                          ? _c(
+                              "a",
+                              {
+                                attrs: { title: "logout" },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.$auth.logout()
+                                  }
+                                }
+                              },
+                              [_c("i", { staticClass: "las la-user" })]
+                            )
+                          : _c(
+                              "a",
+                              { attrs: { title: "login", href: "/login" } },
+                              [_c("i", { staticClass: "las la-user" })]
+                            )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(2)
+                  ])
+                ]
+              )
             ]
           )
         ])
@@ -62727,69 +62732,70 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "collapse navbar-collapse",
-        attrs: { id: "navbarSupportedContent" }
-      },
-      [
-        _c("ul", { staticClass: "navbar-nav main-menu m-auto" }, [
+    return _c("ul", { staticClass: "navbar-nav main-menu m-auto" }, [
+      _c("li", [
+        _c("a", { attrs: { href: "/dashboard" } }, [_vm._v("Dashboard")])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "/dashboard/deposit" } }, [
+          _vm._v("Make deposit")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "/dashboard/withdraw" } }, [
+          _vm._v("Withdraw")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "/dashboard/plans" } }, [
+          _vm._v("Active plans")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "/dashboard/withdrawal-report" } }, [
+          _vm._v("Withdrawal history")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "/dashboard/referral" } }, [
+          _vm._v("Referrals")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "menu_has_children" }, [
+        _c("a", { attrs: { href: "/dashboard/settings" } }, [
+          _vm._v("Account Setting")
+        ]),
+        _vm._v(" "),
+        _c("ul", { staticClass: "sub-menu" }, [
           _c("li", [
-            _c("a", { attrs: { href: "/dashboard" } }, [_vm._v("Dashboard")])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "/dashboard/deposit" } }, [
-              _vm._v("Make deposit")
+            _c("a", { attrs: { href: "/dashboard/settings/#profile" } }, [
+              _vm._v("Profile setup")
             ])
           ]),
           _vm._v(" "),
           _c("li", [
-            _c("a", { attrs: { href: "/dashboard/withdraw" } }, [
-              _vm._v("Withdraw")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "/dashboard/plans" } }, [
-              _vm._v("Active plans")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "/dashboard/withdrawal-report" } }, [
-              _vm._v("Withdrawal history")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "/dashboard/referral" } }, [
-              _vm._v("Referrals")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "menu_has_children" }, [
-            _c("a", { attrs: { href: "/dashboard/settings" } }, [
-              _vm._v("Account Setting")
-            ]),
-            _vm._v(" "),
-            _c("ul", { staticClass: "sub-menu" }, [
-              _c("li", [
-                _c("a", { attrs: { href: "/dashboard/settings/#profile" } }, [
-                  _vm._v("Profile setup")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "/dashboard/settings/#payment" } }, [
-                  _vm._v("Payment setup")
-                ])
-              ])
+            _c("a", { attrs: { href: "/dashboard/settings/#payment" } }, [
+              _vm._v("Payment setup")
             ])
           ])
         ])
-      ]
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "select",
+      { staticClass: "select d-inline-block w-auto ml-xl-3" },
+      [_c("option", [_c("a", { attrs: { href: "#" } }, [_vm._v("Eng")])])]
     )
   }
 ]
@@ -64158,13 +64164,7 @@ var staticRenderFns = [
     return _c(
       "select",
       { staticClass: "select d-inline-block w-auto ml-xl-3" },
-      [
-        _c("option", [_c("a", { attrs: { href: "#" } }, [_vm._v("Eng")])]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Ban")]),
-        _vm._v(" "),
-        _c("option", [_vm._v("Hin")])
-      ]
+      [_c("option", [_c("a", { attrs: { href: "#" } }, [_vm._v("Eng")])])]
     )
   }
 ]
