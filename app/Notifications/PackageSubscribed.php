@@ -9,16 +9,16 @@ use Illuminate\Notifications\Notification;
 
 class PackageSubscribed extends Notification implements ShouldQueue {
 	use Queueable;
-	protected $package;
+	protected $subscription;
 
 	/**
 	 * Create a new notification instance.
 	 *
 	 * @return void
 	 */
-	public function __construct($package) {
-		$this->package = $package;
-	}
+	public function __construct($subscription) {
+        $this->subscription = $subscription;
+    }
 
 	/**
 	 * Get the notification's delivery channels.
@@ -37,15 +37,15 @@ class PackageSubscribed extends Notification implements ShouldQueue {
 	 * @return \Illuminate\Notifications\Messages\MailMessage
 	 */
 	public function toMail($notifiable) {
-		$package = $this->package;
-		$dashboardPath = $notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/user/dashboard/';
+		$subscription = $this->subscription;
+		$dashboardPath = $notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/';
 		return (new MailMessage)
 			->greeting('Dear ' . $notifiable->username . ',')
 			->subject('Successful Package Subscription')
-			->line('Your subscription was successful and your active account has been credited with $' . $package->deposit)
+			->line('Your subscription was successful and your active account has been credited with $' . $subscription->amount)
 			->action('Goto Dashboard', url($dashboardPath))
 			->line('Thank you for investing with us')
-			->bcc('conyekelu@yahoo.com','BFIN notification');
+			->bcc('conyekelu@yahoo.com','BM notification');
 	}
 
 	/**

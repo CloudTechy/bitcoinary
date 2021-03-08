@@ -36,7 +36,7 @@ class PackageUserResource extends JsonResource {
 			'unsubscribed' => empty($this->expiration) && $this->active == false ? true : false,
 			'date_bad' => Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans(),
 			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->toFormattedDateString(),
-			'created_at' => $this->created_at->format('Y-m-d H:i:s'),
+			'created_at' => empty($this->created_at) ? null : $this->created_at->format('Y-m-d H:i:s'),
 			'updated_at' => $this->updated_at->format('Y-m-d H:i:s'),
 		];
 	}

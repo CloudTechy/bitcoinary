@@ -95,25 +95,23 @@
                                     <table class="table style--two white-space-nowrap">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Date</th>
+                                                <th>Recipient</th>
                                                 <th>Amount</th>
                                                 <th>Details</th>
-                                                <th>Gateway</th>
+                                                <th>Date</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr :key="transactions.id" v-for="trx in transactions">
-                                                <td data-label="Name">
+                                                <td data-label="Recipient">
                                                     <div class="user">
                                                         <div class="thumb"><img :src="trx.image == null ? $root.basepath + '/images/uploads/anonymous.jpg' :  $root.basepath + '/images/uploads/' +trx.image" alt="image"></div>
                                                         <span>{{trx.owner}}</span>
                                                     </div>
                                                 </td>
-                                                <td data-label="Date">{{trx.date}}</td>
-                                                <td data-label="Details">From {{trx.reference}}</td>
                                                 <td class="text-success" data-label="Amount">+ ${{$root.normalNumeral(trx.amount)}}</td>
-                                                <td data-label="Gateway">Bitcoin</td>
+                                                <td data-label="Details">From {{trx.reference}}</td>
+                                                <td data-label="Date">{{trx.date}}</td>
                                             </tr>
                                             <tr v-if="transactions.length == 0">
                                                 <td class="text-center only" colspan="5">

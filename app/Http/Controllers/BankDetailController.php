@@ -58,7 +58,7 @@ class BankDetailController extends Controller {
 
 			"bank_id" => "numeric|exists:banks,id|nullable",
 			"acc_name" => "required_unless:currency_type,crypto|string|nullable",
-			"acc_number" => "required_unless:currency_type,crypto|string|nullable",
+			"acc_number" => "required_unless:currency_type,crypto|nullable",
 			"user_id" => "required|numeric|exists:users,id",
 			'swift_code' => 'nullable|string',
 			'currency_type' => 'required|string|exists:payment_methods,type',
@@ -131,7 +131,7 @@ class BankDetailController extends Controller {
 		$validated = $request->validate([
 			"bank_id" => "numeric|exists:banks,id|nullable",
 			"acc_name" => "required_unless:currency_type,crypto|string|nullable",
-			"acc_number" => "required_unless:currency_type,crypto|string|nullable",
+			"acc_number" => "required_unless:currency_type,crypto|nullable",
 			'swift_code' => 'nullable|string',
 			'currency_type' => 'string|exists:payment_methods,type',
 			'payment_method' => [

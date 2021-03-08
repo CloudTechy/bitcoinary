@@ -10697,8 +10697,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -11591,7 +11589,7 @@ __webpack_require__.r(__webpack_exports__);
 
         _this.message = response.data.message;
 
-        _this.$root.scrollUp();
+        _this.$root.scrollToTop(0, 250);
 
         _this.amount = '';
 
@@ -11599,7 +11597,7 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         _this.$root.loader('hide');
 
-        _this.$root.scrollUp();
+        _this.$root.scrollToTop(0, 250);
 
         if (error.response.status == 422) {
           _this.error = error.response.data.error.pop;
@@ -75190,7 +75188,7 @@ var render = function() {
                                 return _c("tr", { key: _vm.transactions.id }, [
                                   _c(
                                     "td",
-                                    { attrs: { "data-label": "Name" } },
+                                    { attrs: { "data-label": "Recipient" } },
                                     [
                                       _c("div", { staticClass: "user" }, [
                                         _c("div", { staticClass: "thumb" }, [
@@ -75215,18 +75213,6 @@ var render = function() {
                                   _vm._v(" "),
                                   _c(
                                     "td",
-                                    { attrs: { "data-label": "Date" } },
-                                    [_vm._v(_vm._s(trx.date))]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "td",
-                                    { attrs: { "data-label": "Details" } },
-                                    [_vm._v("From " + _vm._s(trx.reference))]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "td",
                                     {
                                       staticClass: "text-success",
                                       attrs: { "data-label": "Amount" }
@@ -75243,8 +75229,14 @@ var render = function() {
                                   _vm._v(" "),
                                   _c(
                                     "td",
-                                    { attrs: { "data-label": "Gateway" } },
-                                    [_vm._v("Bitcoin")]
+                                    { attrs: { "data-label": "Details" } },
+                                    [_vm._v("From " + _vm._s(trx.reference))]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "td",
+                                    { attrs: { "data-label": "Date" } },
+                                    [_vm._v(_vm._s(trx.date))]
                                   )
                                 ])
                               }),
@@ -75420,15 +75412,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("Name")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Date")]),
+        _c("th", [_vm._v("Recipient")]),
         _vm._v(" "),
         _c("th", [_vm._v("Amount")]),
         _vm._v(" "),
         _c("th", [_vm._v("Details")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Gateway")])
+        _c("th", [_vm._v("Date")])
       ])
     ])
   },
@@ -76576,11 +76566,12 @@ var render = function() {
                                                 required: "",
                                                 placeholder:
                                                   py.type == "fiat"
-                                                    ? "Enter Account"
-                                                    : "Enter Wallet"
+                                                    ? "Enter Account No"
+                                                    : "Enter Wallet Address"
                                               },
                                               domProps: {
-                                                value: _vm.$root.getAccountDetails(
+                                                value: _vm.$root.getPaymentAccountDetails(
+                                                  _vm.$auth.user().bank_details,
                                                   py.name,
                                                   py.type
                                                 )
@@ -105846,7 +105837,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       }
     },
     scrollUp: function scrollUp() {
-      window.scrollTo(0, 100);
+      window.scrollTo(0, 0);
     },
     numeral: function (_numeral) {
       function numeral(_x) {
@@ -105948,7 +105939,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
         }
       });
     },
-    getAccountDetails: function getAccountDetails(accounts, search, currencyType) {
+    getAccountDetails: function getAccountDetails(search, currencyType) {
       var paymentDetails = this.cryptoFilter(this.$auth.user().bank_details, search)[0];
 
       if (paymentDetails) {

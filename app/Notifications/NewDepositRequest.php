@@ -46,7 +46,7 @@ class NewDepositRequest extends Notification implements ShouldQueue {
             ->greeting('Dear ' . $notifiable->username . ',')
             ->subject('Subscription Request')
             ->line('A subscription request just occured ')
-            ->line('This is to notify you that the user '.$subscription->user->username.' has indicated interest in $'. $subscription->package->name. ' - '. $subscription->package->portfolio->name . ' - Plan and has claimed deposit in said amount')
+            ->line('This is to notify you that the user '.$subscription->user->username.' has indicated interest in '. $subscription->package->name . ' Plan and has claimed deposit of $' . $subscription->amount) 
             ->line('kindly review this occurence as soon as possible')
             ->action('Review', url($dashboardPath));
 

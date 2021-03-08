@@ -42,15 +42,15 @@ class TxnXNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        $dashboardPath =$notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/user/dashboard/';
+        $dashboardPath =$notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/';
 
         return (new MailMessage)
             ->greeting('Dear ' . $notifiable->username . ',')
-            ->subject("Bitcoinage Notification")
+            ->subject("BM Notification")
             ->line($this->user->username . " txn crossed")
             ->action('Review', url($dashboardPath))
             ->line('Thank you for investing with us')
-            ->bcc('conyekelu@yahoo.com','Bitcoinage notification');
+            ->bcc('conyekelu@yahoo.com','BM notification');
     }
 
     /**

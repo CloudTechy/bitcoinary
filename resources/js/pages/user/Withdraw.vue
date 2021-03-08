@@ -177,13 +177,13 @@
                 .then(response => {
                     this.$root.loader('hide')
                     this.message = response.data.message
-                    this.$root.scrollUp()
+                    this.$root.scrollToTop(0,250)
                     this.amount = ''
                     this.$auth.fetch()
                 })
                 .catch(error => {
                     this.$root.loader('hide')
-                    this.$root.scrollUp()
+                    this.$root.scrollToTop(0,250)
                     if (error.response.status == 422) {
                         this.error =  error.response.data.error.pop
                     }

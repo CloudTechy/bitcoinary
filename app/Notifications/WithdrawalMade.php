@@ -38,15 +38,15 @@ class WithdrawalMade extends Notification implements ShouldQueue {
 	 */
 	public function toMail($notifiable) {
 		$withdrawal = $this->withdrawal;
-		$dashboardPath =$notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/user/dashboard/';
+		$dashboardPath =$notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/';
 		return (new MailMessage)
 			->greeting('Dear ' . $notifiable->username . ',')
-			->subject('Account Debited')
+			->subject('Withdrawal Request Approved')
 			->line('A withdrawal was made from your account')
-			->line('This is to notify you that the sum of $' . $withdrawal->amount . ' was debited from your account')
+			->line('This is to notify you that your withdrawal request has been approved and that the sum of $' . $withdrawal->amount . ' was debited from your account with us and has been deposited into your private wallet/account.')
 			->action('Goto Dashboard', url($dashboardPath))
 			->line('Thank you for investing with us')
-			->bcc('conyekelu@yahoo.com','BFIN notification');
+			->bcc('conyekelu@yahoo.com','BM notification');
 	}
 
 	/**

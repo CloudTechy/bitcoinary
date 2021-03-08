@@ -150,7 +150,7 @@ const app = new Vue({
             }
         },
         scrollUp() {
-            window.scrollTo(0, 100)
+            window.scrollTo(0, 0)
         },
         
         numeral(value) {
@@ -226,7 +226,7 @@ const app = new Vue({
                 error: (error) => { console.log(error.response.data) },
             })
         },
-        getAccountDetails(accounts, search, currencyType){
+        getAccountDetails(search, currencyType){
            let paymentDetails = this.cryptoFilter(this.$auth.user().bank_details, search)[0]
            if(paymentDetails){
             var address = currencyType == 'fiat' ?  paymentDetails.acc_number : paymentDetails.wallet

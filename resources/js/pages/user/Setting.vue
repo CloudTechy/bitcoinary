@@ -134,7 +134,7 @@
                                                     <td class="text-capitalize">{{py.name}}</td>
                                                     <td>
                                                         <div class="form-group">
-                                                            <input @change="updatePaymentDetails(py.name, py.type)" :ref="py.name" :value="$root.getAccountDetails(py.name, py.type) " type="text" required :placeholder="py.type == 'fiat' ? 'Enter Account' :'Enter Wallet'" :class="{'form-control' : true, editbox:true}">
+                                                            <input @change="updatePaymentDetails(py.name, py.type)" :ref="py.name" :value="$root.getPaymentAccountDetails($auth.user().bank_details, py.name, py.type) " type="text" required :placeholder="py.type == 'fiat' ? 'Enter Account No' :'Enter Wallet Address'" :class="{'form-control' : true, editbox:true}">
                                                             <p v-if="errors && errors[py.name]" v-for="err in errors[py.name]" class="small p-1 base--color">{{err}}</p>
                                                             <p v-if="message && message[py.name]" class="text-success small p-1">{{message[py.name]}}</p>
                                                         </div>

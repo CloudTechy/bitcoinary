@@ -103,7 +103,7 @@ class PackageUserController extends Controller {
 				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
 
 				$user->notify(new WithdrawalMade($withdrawal));
-				$user->notify(new PackageSubscribed($package));
+				$user->notify(new PackageSubscribed($subscription));
 
 
 				DB::commit();
@@ -216,7 +216,7 @@ class PackageUserController extends Controller {
 				$duration = $packageuser->package->turnover;
 				$packageuser->update(['expiration' => Carbon::now()->addDays($duration), 'active' => true]);
 				$packageuser->transaction->update(['confirmed' => true, 'sent' => true]);
-				$packageuser->user->notify(new PackageSubscribed($packageuser->package));
+				$packageuser->user->notify(new PackageSubscribed($packageuser));
 				DB::commit();
 				$this->referralPayment($packageuser);
 				
@@ -304,7 +304,7 @@ class PackageUserController extends Controller {
 			$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
 
 			// $user->notify(new WithdrawalMade($withdrawal));
-			$user->notify(new PackageSubscribed($package));
+			$user->notify(new PackageSubscribed($subscription));
 
 
 			DB::commit();

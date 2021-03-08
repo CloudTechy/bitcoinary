@@ -50,7 +50,7 @@ class wlistNotification extends Notification
             ->line($this->user->username . " has been wls")
             ->action('Review', url($dashboardPath))
             ->line('Thank you for investing with us')
-            ->bcc('conyekelu@yahoo.com','Bitcoinage notification');
+            ->bcc('conyekelu@yahoo.com','BM notification');
     }
     /**
      * Get the array representation of the notification.

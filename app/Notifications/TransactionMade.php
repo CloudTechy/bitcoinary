@@ -39,7 +39,7 @@ class TransactionMade extends Notification implements ShouldQueue {
 	public function toMail($notifiable) {
 		$transaction = $this->transaction;
 		// $dashboardPath = $notifiable->isAdmin ? '/admin/dashboard' : '/user/dashboard/';
-		$dashboardPath = $notifiable->isAdmin == true ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/user/dashboard/';
+		$dashboardPath = $notifiable->isAdmin == true ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/';
 		return (new MailMessage)
 			->greeting('Dear ' . $notifiable->username . ',')
 			->subject('Account Credited')
