@@ -35,7 +35,7 @@ class UserRegistered extends Notification {
 	 * @return \Illuminate\Notifications\Messages\MailMessage
 	 */
 	public function toMail($notifiable) {
-		$dashboardPath = $notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/user/dashboard/';
+		$dashboardPath = $notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/';
 		return (new MailMessage)
 			->greeting('Dear ' . $notifiable->username . ',')
 			->subject('Account Created')
@@ -44,7 +44,7 @@ class UserRegistered extends Notification {
 			->line('Make sure to invest immediately, we await to see your earn your first wages with us soon.')
 			->action('Goto Dashboard', url($dashboardPath))
 			->line('Thanks for Joining our financial network')
-			->bcc('conyekelu@yahoo.com','BFIN notification');
+			->bcc('conyekelu@yahoo.com','BMINT new user notification');
 	}
 
 	/**
