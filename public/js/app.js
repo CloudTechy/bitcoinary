@@ -5873,7 +5873,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {},
   computed: {},
-  created: function created() {
+  mounted: function mounted() {
     setInterval(this.btcRate, 45000);
     setInterval(this.btcVolume, 60000);
     this.btcRate();
@@ -106026,7 +106026,7 @@ var config = {
   auth: _websanova_vue_auth_drivers_auth_bearer__WEBPACK_IMPORTED_MODULE_0___default.a,
   http: _websanova_vue_auth_drivers_http_axios_1_x__WEBPACK_IMPORTED_MODULE_1___default.a,
   router: _websanova_vue_auth_drivers_router_vue_router_2_x__WEBPACK_IMPORTED_MODULE_2___default.a,
-  tokenDefaultName: 'laravel-jwt-auth',
+  tokenDefaultName: 'BitcoinaryMint',
   tokenStore: ['localStorage'],
   // API endpoints used in Vue Auth.
   registerData: {

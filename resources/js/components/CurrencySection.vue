@@ -54,7 +54,7 @@
         
 
     },
-    created() {
+    mounted() {
     	setInterval(this.btcRate, 45000)
         setInterval(this.btcVolume, 60000)
         this.btcRate()
