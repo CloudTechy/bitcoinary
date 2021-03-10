@@ -5622,6 +5622,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 //     import Header from './components/Header.vue'
 // import Footer from './components/Footer.vue'
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -5919,6 +5920,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+//
 //
 //
 //
@@ -106043,7 +106045,7 @@ var config = {
   logoutData: {
     url: 'auth/logout',
     method: 'POST',
-    redirect: '/login',
+    redirect: '/',
     makeRequest: true
   },
   fetchData: {

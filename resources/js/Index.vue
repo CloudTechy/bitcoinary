@@ -10,6 +10,7 @@
         <AdminDashboardHeader v-else-if="$route.name == 'adminDashboard'"></AdminDashboardHeader>
         <Header v-else class="p-0 m-0"></Header> -->
         <!-- <div style="min-height: 370px;  position: relative;"> -->
+            <!-- <Header  class="p-0 m-0"></Header>  -->
             <router-view></router-view>
         <!-- </div> -->
         <!-- <Footer></Footer> -->

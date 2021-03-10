@@ -1,4 +1,4 @@
-const version = "v1:1:19" //Change if you want to regenerate cache
+const version = "v1:1:20" //Change if you want to regenerate cache
 const staticCacheName = `${version}static-resources`;
 
 self.addEventListener('install', event => {
@@ -14,6 +14,7 @@ self.addEventListener('install', event => {
                 '/js/wow.min.js.download',
                 '/images/logo.png',
                 '/images/faviconw.png',
+                '/images/favicontp.png',
                 '/images/faviconb.png',
                 '/js/jquery-3.5.1.min.js.download',
                 '/js/k.js',
