@@ -69,6 +69,7 @@ export default {
         }
     },
     mounted() {
+        this.$root.scrollUp()
         window.addEventListener('beforeunload', () => {
             if (!this.$auth.user().isEmailVerified) {
                 this.$auth.logout()

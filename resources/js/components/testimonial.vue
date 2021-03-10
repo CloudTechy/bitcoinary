@@ -90,17 +90,14 @@ export default {
     },
     watch: {
         data(){
-            console.log(this.data)
             return this.key++
         },
         testimonial(){
-            // console.log(this.testimonial)
             return this.key++
         }
     },
     mounted() {
         this.key++
-        console.log(this.data)
     },
     components: { VueSlickCarousel },
     props: ['data'],

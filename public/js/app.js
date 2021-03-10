@@ -5813,6 +5813,101 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CurrencySection.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CurrencySection.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      usd_btc_rate: '-',
+      eur_btc_rate: '-',
+      btc_volume: '-',
+      active_trade: '-'
+    };
+  },
+  watch: {},
+  computed: {},
+  created: function created() {
+    setInterval(this.btcRate, 45000);
+    setInterval(this.btcVolume, 60000);
+    this.btcRate();
+    this.btcVolume();
+  },
+  props: [],
+  // components: { Menu },
+  methods: {
+    btcRate: function btcRate() {
+      var _this = this;
+
+      this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(function (response) {
+        _this.usd_btc_rate = response.data.bpi.USD.rate;
+        _this.eur_btc_rate = response.data.bpi.EUR.rate;
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    },
+    btcVolume: function btcVolume() {
+      var _this2 = this;
+
+      this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT").then(function (response) {
+        var volume = response.data.volume;
+        _this2.btc_volume = parseInt(volume) / 3;
+        _this2.active_trade = volume; // console.log(response.data);
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DashboardHeader.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DashboardHeader.vue?vue&type=script&lang=js& ***!
@@ -7527,17 +7622,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {
     data: function data() {
-      console.log(this.data);
       return this.key++;
     },
     testimonial: function testimonial() {
-      // console.log(this.testimonial)
       return this.key++;
     }
   },
   mounted: function mounted() {
     this.key++;
-    console.log(this.data);
   },
   components: {
     VueSlickCarousel: vue_slick_carousel__WEBPACK_IMPORTED_MODULE_0___default.a
@@ -8123,43 +8215,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8172,11 +8227,7 @@ __webpack_require__.r(__webpack_exports__);
       testimonials: [],
       transactions: [],
       withdrawals: [],
-      teams: [],
-      usd_btc_rate: '-',
-      eur_btc_rate: '-',
-      btc_volume: '-',
-      active_trade: '-'
+      teams: []
     };
   },
   mounted: function mounted() {
@@ -8186,10 +8237,6 @@ __webpack_require__.r(__webpack_exports__);
     this.getTestimonials();
     this.getTransactions();
     this.getWithdrawals();
-    setInterval(this.btcRate, 45000);
-    setInterval(this.btcVolume, 60000);
-    this.btcRate();
-    this.btcVolume();
   },
   methods: {
     submitForm: function submitForm() {
@@ -8247,27 +8294,6 @@ __webpack_require__.r(__webpack_exports__);
 
       this.$http.get("/auth/withdrawalss?pageSize=6&confirmed=1&processed=1").then(function (response) {
         _this6.withdrawals = response.data.data.item;
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    },
-    btcRate: function btcRate() {
-      var _this7 = this;
-
-      this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(function (response) {
-        _this7.usd_btc_rate = response.data.bpi.USD.rate;
-        _this7.eur_btc_rate = response.data.bpi.EUR.rate;
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    },
-    btcVolume: function btcVolume() {
-      var _this8 = this;
-
-      this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT").then(function (response) {
-        var volume = response.data.volume;
-        _this8.btc_volume = parseInt(volume) / 3;
-        _this8.active_trade = volume; // console.log(response.data);
       })["catch"](function (error) {
         console.log(error.response);
       });
@@ -8358,6 +8384,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
+    this.$root.scrollUp();
     window.addEventListener('beforeunload', function () {
       if (!_this.$auth.user().isEmailVerified) {
         _this.$auth.logout();
@@ -18950,7 +18977,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*#testimonial-slider{\r\n    min-height: 40px; \r\n}\r\n.slick-slide .slick-active .slick-current{\r\n    margin : 15px;\r\n}\r\n.slick-slide .slick-active {\r\n    margin : 15px;\r\n}*/\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*#testimonial-slider{\r\n    min-height: 40px; \r\n}\r\n.slick-slide .slick-active .slick-current{\r\n    margin : 15px;\r\n}\r\n.slick-slide .slick-active {\r\n    margin : 15px;\r\n}*/\r\n", ""]);
 
 // exports
 
@@ -62600,6 +62627,110 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CurrencySection.vue?vue&type=template&id=53cb43f9&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CurrencySection.vue?vue&type=template&id=53cb43f9& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "cureency-section" }, [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row mb-none-30" }, [
+        _c("div", { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" }, [
+          _c("div", { staticClass: "cureency-card text-center" }, [
+            _c("h6", { staticClass: "cureency-card__title text-white" }, [
+              _vm._v("BITCOIN PRICE")
+            ]),
+            _vm._v(" "),
+            _c(
+              "span",
+              {
+                staticClass:
+                  "cureency-card__amount h-font-family font-weight-600 base--color"
+              },
+              [
+                _vm._v(
+                  _vm._s(_vm.$root.normalNumeral(_vm.usd_btc_rate)) + " USD"
+                )
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" }, [
+          _c("div", { staticClass: "cureency-card text-center" }, [
+            _c("h6", { staticClass: "cureency-card__title text-white" }, [
+              _vm._v("BITCOIN PRICE")
+            ]),
+            _vm._v(" "),
+            _c(
+              "span",
+              {
+                staticClass:
+                  "cureency-card__amount h-font-family font-weight-600 base--color"
+              },
+              [
+                _vm._v(
+                  _vm._s(_vm.$root.normalNumeral(_vm.eur_btc_rate)) + " EUR"
+                )
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" }, [
+          _c("div", { staticClass: "cureency-card text-center" }, [
+            _c("h6", { staticClass: "cureency-card__title text-white" }, [
+              _vm._v("24HRS VOLUME")
+            ]),
+            _vm._v(" "),
+            _c(
+              "span",
+              {
+                staticClass:
+                  "cureency-card__amount h-font-family font-weight-600 base--color"
+              },
+              [_vm._v(_vm._s(_vm.$root.normalNumeral(_vm.btc_volume)) + " BTC")]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" }, [
+          _c("div", { staticClass: "cureency-card text-center" }, [
+            _c("h6", { staticClass: "cureency-card__title text-white" }, [
+              _vm._v("ACTIVE TRADES")
+            ]),
+            _vm._v(" "),
+            _c(
+              "span",
+              {
+                staticClass:
+                  "cureency-card__amount h-font-family font-weight-600 base--color"
+              },
+              [_vm._v(_vm._s(_vm.$root.normalNumeral(_vm.active_trade)))]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DashboardHeader.vue?vue&type=template&id=ce6b03b4&":
 /*!******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DashboardHeader.vue?vue&type=template&id=ce6b03b4& ***!
@@ -66485,22 +66616,20 @@ var staticRenderFns = [
       },
       [
         _c("div", { staticClass: "row justify-content-center" }, [
-          _c("div", { staticClass: "row justify-content-center" }, [
-            _c("div", { staticClass: "col-lg-7 text-center" }, [
-              _c("div", { staticClass: "section-header" }, [
-                _c("h2", { staticClass: "section-title" }, [
-                  _c("span", { staticClass: "font-weight-normal" }, [
-                    _vm._v("About ")
-                  ]),
-                  _vm._v(" "),
-                  _c("b", { staticClass: "base--color" }, [_vm._v("Us")])
+          _c("div", { staticClass: "col-lg-7 col-md-12 text-center" }, [
+            _c("div", { staticClass: "section-header" }, [
+              _c("h2", { staticClass: "section-title" }, [
+                _c("span", { staticClass: "font-weight-normal" }, [
+                  _vm._v("About ")
                 ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "blog-details__content" }, [
-                  _vm._v(
-                    "\n                                Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits.\n                            "
-                  )
-                ])
+                _c("b", { staticClass: "base--color" }, [_vm._v("Us")])
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "blog-details__content" }, [
+                _vm._v(
+                  "\n                                Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits.\n                            "
+                )
               ])
             ])
           ])
@@ -66516,7 +66645,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("div", { staticClass: "blog-card__content" }, [
                 _vm._v(
-                  "\n                            Bitcoinary Mint was established in 2005 as public relations and communication activities\n                            In 2019 Goldmint was Incorporated into automobiles, real estate, oil and gas, gold and Automated Trading."
+                  "\n                            Bitcoinary Mint was established in 2005 as public relations and communication activities, in 2018 Bitcoinary Mint delved fully into automobiles, real estate, oil and gas, gold, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume."
                 ),
                 _c("br"),
                 _c("br"),
@@ -67347,109 +67476,7 @@ var render = function() {
         [_vm._m(0)]
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "cureency-section" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row mb-none-30" }, [
-            _c(
-              "div",
-              { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" },
-              [
-                _c("div", { staticClass: "cureency-card text-center" }, [
-                  _c("h6", { staticClass: "cureency-card__title text-white" }, [
-                    _vm._v("BITCOIN PRICE")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    {
-                      staticClass:
-                        "cureency-card__amount h-font-family font-weight-600 base--color"
-                    },
-                    [
-                      _vm._v(
-                        _vm._s(_vm.$root.normalNumeral(_vm.usd_btc_rate)) +
-                          " USD"
-                      )
-                    ]
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" },
-              [
-                _c("div", { staticClass: "cureency-card text-center" }, [
-                  _c("h6", { staticClass: "cureency-card__title text-white" }, [
-                    _vm._v("BITCOIN PRICE")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    {
-                      staticClass:
-                        "cureency-card__amount h-font-family font-weight-600 base--color"
-                    },
-                    [
-                      _vm._v(
-                        _vm._s(_vm.$root.normalNumeral(_vm.eur_btc_rate)) +
-                          " EUR"
-                      )
-                    ]
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" },
-              [
-                _c("div", { staticClass: "cureency-card text-center" }, [
-                  _c("h6", { staticClass: "cureency-card__title text-white" }, [
-                    _vm._v("24HRS VOLUME")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    {
-                      staticClass:
-                        "cureency-card__amount h-font-family font-weight-600 base--color"
-                    },
-                    [
-                      _vm._v(
-                        _vm._s(_vm.$root.normalNumeral(_vm.btc_volume)) + " BTC"
-                      )
-                    ]
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-lg-3 col-sm-6 cureency-item mb-30" },
-              [
-                _c("div", { staticClass: "cureency-card text-center" }, [
-                  _c("h6", { staticClass: "cureency-card__title text-white" }, [
-                    _vm._v("ACTIVE TRADES")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    {
-                      staticClass:
-                        "cureency-card__amount h-font-family font-weight-600 base--color"
-                    },
-                    [_vm._v(_vm._s(_vm.$root.normalNumeral(_vm.active_trade)))]
-                  )
-                ])
-              ]
-            )
-          ])
-        ])
-      ]),
+      _c("CurrencySection"),
       _vm._v(" "),
       _c(
         "section",
@@ -105481,6 +105508,7 @@ var map = {
 	"./components/AdminDashboardHeader.vue": "./resources/js/components/AdminDashboardHeader.vue",
 	"./components/AdminDashboardSidebar.vue": "./resources/js/components/AdminDashboardSidebar.vue",
 	"./components/Blog.vue": "./resources/js/components/Blog.vue",
+	"./components/CurrencySection.vue": "./resources/js/components/CurrencySection.vue",
 	"./components/DashboardHeader.vue": "./resources/js/components/DashboardHeader.vue",
 	"./components/DashboardSidebar.vue": "./resources/js/components/DashboardSidebar.vue",
 	"./components/EmailComponent.vue": "./resources/js/components/EmailComponent.vue",
@@ -106217,6 +106245,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Blog_vue_vue_type_template_id_7c31058d___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Blog_vue_vue_type_template_id_7c31058d___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/CurrencySection.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/CurrencySection.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CurrencySection_vue_vue_type_template_id_53cb43f9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CurrencySection.vue?vue&type=template&id=53cb43f9& */ "./resources/js/components/CurrencySection.vue?vue&type=template&id=53cb43f9&");
+/* harmony import */ var _CurrencySection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CurrencySection.vue?vue&type=script&lang=js& */ "./resources/js/components/CurrencySection.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CurrencySection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CurrencySection_vue_vue_type_template_id_53cb43f9___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CurrencySection_vue_vue_type_template_id_53cb43f9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/CurrencySection.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/CurrencySection.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/CurrencySection.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CurrencySection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./CurrencySection.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CurrencySection.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CurrencySection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/CurrencySection.vue?vue&type=template&id=53cb43f9&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/CurrencySection.vue?vue&type=template&id=53cb43f9& ***!
+  \************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CurrencySection_vue_vue_type_template_id_53cb43f9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CurrencySection.vue?vue&type=template&id=53cb43f9& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CurrencySection.vue?vue&type=template&id=53cb43f9&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CurrencySection_vue_vue_type_template_id_53cb43f9___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CurrencySection_vue_vue_type_template_id_53cb43f9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
