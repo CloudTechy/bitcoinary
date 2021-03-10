@@ -8231,12 +8231,15 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.getNews();
-    this.getTeams();
+    this.getNews(); // this.getTeams();
+
     this.getInvestors();
     this.getTestimonials();
     this.getTransactions();
     this.getWithdrawals();
+  },
+  created: function created() {
+    this.$auth.logout();
   },
   methods: {
     submitForm: function submitForm() {

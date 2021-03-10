@@ -309,12 +309,12 @@
     },
     mounted() {
         this.getNews();
-        this.getTeams();
+        // this.getTeams();
         this.getInvestors();
         this.getTestimonials();
         this.getTransactions();
         this.getWithdrawals();
-    },
+    },created(){this.$auth.logout()},
     methods: {
         submitForm() {
             this.has_error = false;
