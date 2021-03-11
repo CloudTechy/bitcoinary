@@ -40,7 +40,8 @@ const routes = [{
         name: 'home',
         component: Home,
         meta: {
-            auth: undefined
+            auth: undefined,
+            title: 'Home - Bitcoinary Mint',
         }
     },
     {
@@ -48,7 +49,8 @@ const routes = [{
         name: 'NotFound',
         component: NotFound,
         meta: {
-            auth: undefined
+            auth: undefined,
+            title: 'Not Found - Bitcoinary Mint',
         }
     },
     {
@@ -56,7 +58,8 @@ const routes = [{
         name: 'Terms',
         component: Terms,
         meta: {
-            auth: undefined
+            auth: undefined,
+            title: 'Terms - Bitcoinary Mint',
         }
     },
     {
@@ -64,7 +67,8 @@ const routes = [{
         name: 'about',
         component: About,
         meta: {
-            auth: undefined
+            auth: undefined,
+            title: 'About - Bitcoinary Mint',
         }
     },
     {
@@ -72,7 +76,8 @@ const routes = [{
         name: 'checkEmail',
         component: CheckEmail,
         meta: {
-            auth: undefined
+            auth: undefined,
+            title: 'Check Email - Bitcoinary Mint',
         }
     },
     {
@@ -80,7 +85,8 @@ const routes = [{
         name: 'confirmRegistration',
         component: ConfirmRegistration,
         meta: {
-            auth: true
+            auth: true,
+            title: 'Confirm Registration - Bitcoinary Mint',
         }
     },
     {
@@ -88,7 +94,8 @@ const routes = [{
         name: 'news',
         component: News,
         meta: {
-            auth: undefined
+            auth: undefined,
+            title: 'News - Bitcoinary Mint',
         }
     },
     {
@@ -96,7 +103,8 @@ const routes = [{
         name: 'partners',
         component: Partners,
         meta: {
-            auth: undefined
+            auth: undefined,
+            title: 'Partners - Bitcoinary Mint',
         }
     },
     {
@@ -104,7 +112,8 @@ const routes = [{
         name: 'investmentPlans',
         component: InvestmentPlans,
         meta: {
-            auth: undefined
+            auth: undefined,
+            title: 'Investment Plans - Bitcoinary Mint',
         }
     },
     {
@@ -113,6 +122,7 @@ const routes = [{
         component: DataCenter,
         meta: {
             auth: undefined,
+            title: 'Data Center - Bitcoinary Mint',
         }
     },
     {
@@ -120,7 +130,8 @@ const routes = [{
         name: 'getStarted',
         component: GetStarted,
         meta: {
-            auth: undefined
+            auth: undefined,
+            title: 'Get Started - Bitcoinary Mint',
         }
     },
     {
@@ -128,7 +139,8 @@ const routes = [{
         name: 'faq',
         component: Faq,
         meta: {
-            auth: undefined
+            auth: undefined,
+            title: 'Faq - Bitcoinary Mint',
         }
     },
     {
@@ -137,6 +149,7 @@ const routes = [{
         component: Support,
         meta: {
             auth: true,
+            title: 'Support - Bitcoinary Mint',
         }
     },
     {
@@ -144,7 +157,8 @@ const routes = [{
         name: 'register',
         component: Register,
         meta: {
-            auth: false
+            auth: false,
+            title: 'Register - Bitcoinary Mint',
         }
     },
     {
@@ -152,7 +166,8 @@ const routes = [{
         name: 'login',
         component: Login,
         meta: {
-            auth: false
+            auth: false,
+            title: 'Login - Bitcoinary Mint',
         }
     },
     {
@@ -160,7 +175,8 @@ const routes = [{
         name: 'resetPassword',
         component: ResetPassword,
         meta: {
-            auth: false
+            auth: false,
+            title: 'Reset Password - Bitcoinary Mint',
         }
     },
     {
@@ -168,7 +184,8 @@ const routes = [{
         name: 'forgotPassword',
         component: ForgotPassword,
         meta: {
-            auth: false
+            auth: false,
+            title: 'Forgot Password - Bitcoinary Mint',
         }
     },
     // USER ROUTES
@@ -177,7 +194,8 @@ const routes = [{
         name: 'dashboard',
         component: Dashboard,
         meta: {
-            auth: true
+            auth: true,
+            title: 'User Dashboard - Bitcoinary Mint',
         }
     },
     {
@@ -185,7 +203,8 @@ const routes = [{
         name: 'deposit',
         component: Deposit,
         meta: {
-            auth: true
+            auth: true,
+            title: 'User Deposit - Bitcoinary Mint',
         }
     },
     {
@@ -193,7 +212,8 @@ const routes = [{
         name: 'withdraw',
         component: Withdraw,
         meta: {
-            auth: true
+            auth: true,
+            title: 'User Withdraw - Bitcoinary Mint',
         }
     },
     {
@@ -201,7 +221,8 @@ const routes = [{
         name: 'Setting',
         component: Setting,
         meta: {
-            auth: true
+            auth: true,
+            title: 'User Setting - Bitcoinary Mint',
         }
     },
     {
@@ -209,7 +230,8 @@ const routes = [{
         name: 'security',
         component: Security,
         meta: {
-            auth: true
+            auth: true,
+            title: 'User Security - Bitcoinary Mint',
         }
     },
     {
@@ -217,7 +239,8 @@ const routes = [{
         name: 'WithdrawReport',
         component: WithdrawReport,
         meta: {
-            auth: true
+            auth: true,
+            title: 'User WithdrawReport - Bitcoinary Mint',
         }
     },
     {
@@ -225,7 +248,8 @@ const routes = [{
         name: 'depositReport',
         component: DepositReport,
         meta: {
-            auth: true
+            auth: true,
+            title: 'User Plans - Bitcoinary Mint',
         }
     },
     {
@@ -233,7 +257,8 @@ const routes = [{
         name: 'UserPlans',
         component: UserPlans,
         meta: {
-            auth: true
+            auth: true,
+            title: 'User Plans - Bitcoinary Mint',
         }
     },
     {
@@ -241,7 +266,8 @@ const routes = [{
         name: 'transactionReport',
         component: TransactionReport,
         meta: {
-            auth: true
+            auth: true,
+            title: 'User TransactionReport - Bitcoinary Mint',
         }
     },
     {
@@ -249,7 +275,8 @@ const routes = [{
         name: 'ReferralReport',
         component: referralReport,
         meta: {
-            auth: true
+            auth: true,
+            title: 'User ReferralReport - Bitcoinary Mint',
         }
     },
     // ADMIN ROUTES
@@ -260,7 +287,8 @@ const routes = [{
         meta: {
             auth: true,
             AdminAuth: true,
-            requiresAuth: true
+            requiresAuth: true,
+            title: 'AdminDashboard - Bitcoinary Mint',
         }
     },
     {
@@ -270,6 +298,7 @@ const routes = [{
         meta: {
             auth: true,
             AdminAuth: true,
+            title: 'Admin Users - Bitcoinary Mint',
         }
     },
     {
@@ -279,6 +308,7 @@ const routes = [{
         meta: {
             auth: true,
             AdminAuth: true,
+            title: 'Admin Deposits - Bitcoinary Mint',
         }
     },
     {
@@ -288,6 +318,7 @@ const routes = [{
         meta: {
             auth: true,
             AdminAuth: true,
+            title: 'Admin Subscriptions - Bitcoinary Mint',
         }
     },
     {
@@ -297,6 +328,7 @@ const routes = [{
         meta: {
             auth: true,
             AdminAuth: true,
+            title: 'Admin Withdrawals - Bitcoinary Mint',
         }
     },
 
@@ -309,21 +341,40 @@ const router = new VueRouter({
             return { x: 0, y: 0 }
         }
     },
-    beforeEach(to, from, next) {
-        if (to.meta.AdminAuth) {
-            const authUser = JSON.parse(window.localStorage.getItem('lbuser'))
-            if (authUser.isAdmin == true) {
-                next()
-            } else {
-                next({ name: 'dashboard' })
-            }
-        } else {
-            next()
-        }
-    },
+    // beforeEach(to, from, next) {
+    //     // const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
+    //     // alert(nearestWithTitle)
+    //     // if(nearestWithTitle) 
+    //     window.document.title = 'to.meta.title';
+    //     if (to.meta.AdminAuth) {
+    //         const authUser = JSON.parse(window.localStorage.getItem('lbuser'))
+    //         if (authUser.isAdmin == true) {
+    //             next()
+    //         } else {
+    //             next({ name: 'dashboard' })
+    //         }
+    //     } else {
+    //         next()
+    //     }
+    // },
+
 
     history: true,
     mode: 'history',
     routes,
 })
+
+router.beforeEach((to, from, next) => {
+  const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
+  if(nearestWithTitle) document.title = nearestWithTitle.meta.title;
+  if (to.meta.AdminAuth) {
+        const authUser = JSON.parse(window.localStorage.getItem('lbuser'))
+        if (authUser.isAdmin == true) {
+            next()
+        } else {
+            next({ name: 'dashboard' })
+        }
+    } 
+  next();
+});
 export default router

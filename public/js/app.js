@@ -110349,119 +110349,136 @@ var routes = [{
   name: 'home',
   component: _pages_Home__WEBPACK_IMPORTED_MODULE_1__["default"],
   meta: {
-    auth: undefined
+    auth: undefined,
+    title: 'Home - Bitcoinary Mint'
   }
 }, {
   path: '/404',
   name: 'NotFound',
   component: _pages_Error404_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
   meta: {
-    auth: undefined
+    auth: undefined,
+    title: 'Not Found - Bitcoinary Mint'
   }
 }, {
   path: '/terms',
   name: 'Terms',
   component: _pages_terms_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
   meta: {
-    auth: undefined
+    auth: undefined,
+    title: 'Terms - Bitcoinary Mint'
   }
 }, {
   path: '/about',
   name: 'about',
   component: _pages_About__WEBPACK_IMPORTED_MODULE_4__["default"],
   meta: {
-    auth: undefined
+    auth: undefined,
+    title: 'About - Bitcoinary Mint'
   }
 }, {
   path: '/checkEmail',
   name: 'checkEmail',
   component: _pages_CheckEmail__WEBPACK_IMPORTED_MODULE_15__["default"],
   meta: {
-    auth: undefined
+    auth: undefined,
+    title: 'Check Email - Bitcoinary Mint'
   }
 }, {
   path: '/confirm-registration',
   name: 'confirmRegistration',
   component: _pages_ConfirmRegistration__WEBPACK_IMPORTED_MODULE_12__["default"],
   meta: {
-    auth: true
+    auth: true,
+    title: 'Confirm Registration - Bitcoinary Mint'
   }
 }, {
   path: '/news',
   name: 'news',
   component: _pages_news__WEBPACK_IMPORTED_MODULE_9__["default"],
   meta: {
-    auth: undefined
+    auth: undefined,
+    title: 'News - Bitcoinary Mint'
   }
 }, {
   path: '/partners',
   name: 'partners',
   component: _pages_partners__WEBPACK_IMPORTED_MODULE_8__["default"],
   meta: {
-    auth: undefined
+    auth: undefined,
+    title: 'Partners - Bitcoinary Mint'
   }
 }, {
   path: '/investmentPlans',
   name: 'investmentPlans',
   component: _pages_investmentPlans__WEBPACK_IMPORTED_MODULE_7__["default"],
   meta: {
-    auth: undefined
+    auth: undefined,
+    title: 'Investment Plans - Bitcoinary Mint'
   }
 }, {
   path: '/dataCenter',
   name: 'dataCenter',
   component: _pages_DataCenter__WEBPACK_IMPORTED_MODULE_10__["default"],
   meta: {
-    auth: undefined
+    auth: undefined,
+    title: 'Data Center - Bitcoinary Mint'
   }
 }, {
   path: '/getStarted',
   name: 'getStarted',
   component: _pages_getStarted__WEBPACK_IMPORTED_MODULE_5__["default"],
   meta: {
-    auth: undefined
+    auth: undefined,
+    title: 'Get Started - Bitcoinary Mint'
   }
 }, {
   path: '/faq',
   name: 'faq',
   component: _pages_faq__WEBPACK_IMPORTED_MODULE_6__["default"],
   meta: {
-    auth: undefined
+    auth: undefined,
+    title: 'Faq - Bitcoinary Mint'
   }
 }, {
   path: '/support',
   name: 'support',
   component: _pages_Support__WEBPACK_IMPORTED_MODULE_11__["default"],
   meta: {
-    auth: true
+    auth: true,
+    title: 'Support - Bitcoinary Mint'
   }
 }, {
   path: '/register',
   name: 'register',
   component: _pages_Register__WEBPACK_IMPORTED_MODULE_13__["default"],
   meta: {
-    auth: false
+    auth: false,
+    title: 'Register - Bitcoinary Mint'
   }
 }, {
   path: '/login',
   name: 'login',
   component: _pages_Login__WEBPACK_IMPORTED_MODULE_14__["default"],
   meta: {
-    auth: false
+    auth: false,
+    title: 'Login - Bitcoinary Mint'
   }
 }, {
   path: '/reset_password',
   name: 'resetPassword',
   component: _pages_ResetPasswordForm__WEBPACK_IMPORTED_MODULE_16__["default"],
   meta: {
-    auth: false
+    auth: false,
+    title: 'Reset Password - Bitcoinary Mint'
   }
 }, {
   path: '/forgot_password',
   name: 'forgotPassword',
   component: _pages_ForgotPassword__WEBPACK_IMPORTED_MODULE_17__["default"],
   meta: {
-    auth: false
+    auth: false,
+    title: 'Forgot Password - Bitcoinary Mint'
   }
 }, // USER ROUTES
 {
@@ -110469,70 +110486,80 @@ var routes = [{
   name: 'dashboard',
   component: _pages_user_Dashboard__WEBPACK_IMPORTED_MODULE_18__["default"],
   meta: {
-    auth: true
+    auth: true,
+    title: 'User Dashboard - Bitcoinary Mint'
   }
 }, {
   path: '/dashboard/deposit',
   name: 'deposit',
   component: _pages_user_Deposit__WEBPACK_IMPORTED_MODULE_19__["default"],
   meta: {
-    auth: true
+    auth: true,
+    title: 'User Deposit - Bitcoinary Mint'
   }
 }, {
   path: '/dashboard/withdraw',
   name: 'withdraw',
   component: _pages_user_Withdraw__WEBPACK_IMPORTED_MODULE_20__["default"],
   meta: {
-    auth: true
+    auth: true,
+    title: 'User Withdraw - Bitcoinary Mint'
   }
 }, {
   path: '/dashboard/settings',
   name: 'Setting',
   component: _pages_user_Setting__WEBPACK_IMPORTED_MODULE_30__["default"],
   meta: {
-    auth: true
+    auth: true,
+    title: 'User Setting - Bitcoinary Mint'
   }
 }, {
   path: '/dashboard/security',
   name: 'security',
   component: _pages_user_Security__WEBPACK_IMPORTED_MODULE_31__["default"],
   meta: {
-    auth: true
+    auth: true,
+    title: 'User Security - Bitcoinary Mint'
   }
 }, {
   path: '/dashboard/withdrawal-report',
   name: 'WithdrawReport',
   component: _pages_user_reports_WithdrawalReport__WEBPACK_IMPORTED_MODULE_26__["default"],
   meta: {
-    auth: true
+    auth: true,
+    title: 'User WithdrawReport - Bitcoinary Mint'
   }
 }, {
   path: '/dashboard/report/deposit',
   name: 'depositReport',
   component: _pages_user_reports_DepositReport__WEBPACK_IMPORTED_MODULE_27__["default"],
   meta: {
-    auth: true
+    auth: true,
+    title: 'User Plans - Bitcoinary Mint'
   }
 }, {
   path: '/dashboard/plans',
   name: 'UserPlans',
   component: _pages_user_reports_DepositReport__WEBPACK_IMPORTED_MODULE_27__["default"],
   meta: {
-    auth: true
+    auth: true,
+    title: 'User Plans - Bitcoinary Mint'
   }
 }, {
   path: '/dashboard/report/transaction',
   name: 'transactionReport',
   component: _pages_user_reports_TransactionReport__WEBPACK_IMPORTED_MODULE_29__["default"],
   meta: {
-    auth: true
+    auth: true,
+    title: 'User TransactionReport - Bitcoinary Mint'
   }
 }, {
   path: '/dashboard/referral',
   name: 'ReferralReport',
   component: _pages_user_reports_ReferralReport__WEBPACK_IMPORTED_MODULE_28__["default"],
   meta: {
-    auth: true
+    auth: true,
+    title: 'User ReferralReport - Bitcoinary Mint'
   }
 }, // ADMIN ROUTES
 {
@@ -110542,7 +110569,8 @@ var routes = [{
   meta: {
     auth: true,
     AdminAuth: true,
-    requiresAuth: true
+    requiresAuth: true,
+    title: 'AdminDashboard - Bitcoinary Mint'
   }
 }, {
   path: '/admin/dashboard/users',
@@ -110550,7 +110578,8 @@ var routes = [{
   component: _pages_admin_Users__WEBPACK_IMPORTED_MODULE_21__["default"],
   meta: {
     auth: true,
-    AdminAuth: true
+    AdminAuth: true,
+    title: 'Admin Users - Bitcoinary Mint'
   }
 }, {
   path: '/admin/dashboard/deposits',
@@ -110558,7 +110587,8 @@ var routes = [{
   component: _pages_admin_Deposits__WEBPACK_IMPORTED_MODULE_22__["default"],
   meta: {
     auth: true,
-    AdminAuth: true
+    AdminAuth: true,
+    title: 'Admin Deposits - Bitcoinary Mint'
   }
 }, {
   path: '/admin/dashboard/subscriptions',
@@ -110566,7 +110596,8 @@ var routes = [{
   component: _pages_admin_Subscriptions__WEBPACK_IMPORTED_MODULE_24__["default"],
   meta: {
     auth: true,
-    AdminAuth: true
+    AdminAuth: true,
+    title: 'Admin Subscriptions - Bitcoinary Mint'
   }
 }, {
   path: '/admin/dashboard/withdrawals',
@@ -110574,7 +110605,8 @@ var routes = [{
   component: _pages_admin_Withdrawals__WEBPACK_IMPORTED_MODULE_23__["default"],
   meta: {
     auth: true,
-    AdminAuth: true
+    AdminAuth: true,
+    title: 'Admin Withdrawals - Bitcoinary Mint'
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
@@ -110588,24 +110620,45 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
       };
     }
   },
-  beforeEach: function beforeEach(to, from, next) {
-    if (to.meta.AdminAuth) {
-      var authUser = JSON.parse(window.localStorage.getItem('lbuser'));
-
-      if (authUser.isAdmin == true) {
-        next();
-      } else {
-        next({
-          name: 'dashboard'
-        });
-      }
-    } else {
-      next();
-    }
-  },
+  // beforeEach(to, from, next) {
+  //     // const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
+  //     // alert(nearestWithTitle)
+  //     // if(nearestWithTitle) 
+  //     window.document.title = 'to.meta.title';
+  //     if (to.meta.AdminAuth) {
+  //         const authUser = JSON.parse(window.localStorage.getItem('lbuser'))
+  //         if (authUser.isAdmin == true) {
+  //             next()
+  //         } else {
+  //             next({ name: 'dashboard' })
+  //         }
+  //     } else {
+  //         next()
+  //     }
+  // },
   history: true,
   mode: 'history',
   routes: routes
+});
+router.beforeEach(function (to, from, next) {
+  var nearestWithTitle = to.matched.slice().reverse().find(function (r) {
+    return r.meta && r.meta.title;
+  });
+  if (nearestWithTitle) document.title = nearestWithTitle.meta.title;
+
+  if (to.meta.AdminAuth) {
+    var authUser = JSON.parse(window.localStorage.getItem('lbuser'));
+
+    if (authUser.isAdmin == true) {
+      next();
+    } else {
+      next({
+        name: 'dashboard'
+      });
+    }
+  }
+
+  next();
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
 
