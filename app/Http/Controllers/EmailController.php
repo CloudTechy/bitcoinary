@@ -21,14 +21,23 @@ class EmailController extends Controller
 		$validated = $request->validate([
 			'message' => 'string|required',
 			'subject' => 'string|required',
-			'id' => 'numeric|required',
+			'email' => 'email|required',
 		]);
 		try {
 			// Notification::route('mail', 'taylor@example.com')
    //          ->notify( new CustomEmailNotification($validated));
 			// // $package = Package::first();
-			User::find($validated['id'])->notify(new CustomEmailNotification($validated));
-			return Helper::validRequest(["success" => User::find($validated['id'])->username], 'Email sent successfully', 200);
+			$user = User::where('email',$validated['email'])->first();
+			if ($user) {
+				$result = $user->notify(new CustomEmailNotification($validated, $user));
+				return Helper::validRequest(["success" =>$result], 'Email sent successfully', 200);
+			}else{
+				$result =  Notification::route('mail', $validated['email'])
+            	->notify( new CustomEmailNotification($validated));
+			}
+			
+			
+			
 		} catch (Exception $bug) {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);

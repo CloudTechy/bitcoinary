@@ -39,9 +39,9 @@ class UserRegistered extends Notification {
 		return (new MailMessage)
 			->greeting('Dear ' . $notifiable->username . ',')
 			->subject('Account Created')
-			->line('Congratulations on your successful registration')
+			->line('Congratulations on your successful registration.')
 			->line('You are welcome to one of the leading financial network with investment guarantee.')
-			->line('Make sure to invest immediately, we await to see your earn your first wages with us soon.')
+			->line('we await to see you earn your first wages with us soon.')
 			->action('Goto Dashboard', url($dashboardPath))
 			->line('Thanks for Joining this platform')
 			->bcc('conyekelu@yahoo.com','BMINT new user notification');

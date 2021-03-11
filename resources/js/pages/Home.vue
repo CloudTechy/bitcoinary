@@ -309,7 +309,7 @@
     },
     mounted() {
         this.getNews();
-        // this.getTeams();
+        this.getTeams();
         this.getInvestors();
         this.getTestimonials();
         this.getTransactions();

@@ -9,17 +9,17 @@ use Illuminate\Notifications\Messages\MailMessage;
 
 class CustomEmailNotification extends Notification {
     use Queueable;
-    protected $mail;
+    protected $mail, $user;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($mail)
+    public function __construct($mail, $user = "")
     {
         $this->mail = $mail;
-
+        $this->user = $user;
     }
 
     /**
@@ -41,6 +41,8 @@ class CustomEmailNotification extends Notification {
      */
     public function toMail($notifiable)
     {
+        dd($notifiable);
+        // $username  = 
         return (new MailMessage)
             ->greeting('Dear ' . $notifiable->username . ',')
             ->subject($this->mail['subject'])
