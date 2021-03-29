@@ -31,7 +31,12 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 		
 	}
 	public function getActiveTransactionsAttribute() {
-		return $this->transactions->where('sent', true)->where('confirmed', true)->where('active', true)->sum('amount');
+		// return $this->transactions->where('sent', true)->where('confirmed', true)->where('active', true)->sum('amount');
+		$total = 0;
+		foreach ($this->activePackages as $key => $package) {
+			$total += (float) $package->subscription->amount;
+		}
+		return $total;
 	}
 	public function getTotalEarnedAttribute() {
 		return $this->confirmedTransactions->where('reference', 'BM')->sum('amount') + $this->confirmedTransactions->where('reference', 'BM first tier commission')->sum('amount') + $this->confirmedTransactions->where('reference', 'BM second tier commission')->sum('amount');
@@ -77,6 +82,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 						$maturePackage->subscription->update(['expiration' => Carbon::now()->addDays($maturePackage->duration), 'loop' => $loop, 'active' => true, 'created_at' => Carbon::now()]);
 						if($loop >= $loop_termination){
 							$maturePackage->subscription->update(['expiration' => null , 'active' => false, 'created_at' => null]);
+							// $maturePackage->transaction->update(['active'=>false]);
 						}
 					$transaction->user->notify(new TransactionMade($transaction));
 					// $transaction = Transaction::where('id', $maturePackage->subscription->transaction_id)->first();
