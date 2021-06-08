@@ -123,7 +123,7 @@ export default {
 
 .dropdown-submenu .dropdown-menu {
     top: 0;
-    left: -100%;
+    left: 100%;
     margin-top: -1px;
 }
 .dropdown-menu{
@@ -153,4 +153,9 @@ export default {
     margin: unset;
 }
 
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+}
 </style>
