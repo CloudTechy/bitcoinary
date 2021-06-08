@@ -187,10 +187,6 @@
     box-shadow: 0 5px 5px 0 rgb(204 163 84 / 25%) !important;
 }
 
-.divider {
-    border-top: 1px solid #cca354 !important
-}
-
 .headeraccount {
     padding: 10px;
     position: relative;

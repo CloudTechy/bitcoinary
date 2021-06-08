@@ -314,7 +314,8 @@
         this.getTestimonials();
         this.getTransactions();
         this.getWithdrawals();
-    },created(){this.$auth.logout()},
+    },
+    // created(){this.$auth.logout()}
     methods: {
         submitForm() {
             this.has_error = false;

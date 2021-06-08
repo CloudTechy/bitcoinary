@@ -1,7 +1,7 @@
 <template>
     <div class="page-wrapper">
         <Header></Header>
-        <section :style="'background:url('+ $root.basepath + '/images/bg/bg-10.jpg'" class="bg_img pt-120 pb-120 border-top-1">
+        <section  class=" pt-120 pb-120 border-top-1">
             <div style="background-color: rgba(0,0,0,0.7);" class="container">
                 <div class="row justify-content-center">
                         <div class="col-lg-7 col-md-12 text-center">
