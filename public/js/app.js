@@ -5998,6 +5998,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -6360,6 +6375,22 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -62925,30 +62956,69 @@ var render = function() {
                   _vm._m(5),
                   _vm._v(" "),
                   _c("div", { staticClass: "nav-right" }, [
-                    _c("ul", { staticClass: "account-menu ml-3" }, [
-                      _c("li", { staticClass: "icon" }, [
-                        _vm.$auth.check()
-                          ? _c(
-                              "a",
+                    _c("div", { staticClass: "account-menu ml-3 dropdown" }, [
+                      _vm._m(6),
+                      _vm._v(" "),
+                      _vm.$auth.check()
+                        ? _c("ul", { staticClass: "dropdown-menu" }, [
+                            _c(
+                              "div",
                               {
-                                attrs: { title: "logout" },
+                                staticClass:
+                                  "font-weight-bold text-center text-capitalize p-1"
+                              },
+                              [
+                                _vm._v(
+                                  "Hi " + _vm._s(_vm.$auth.user().username)
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "dropdown-divider" }),
+                            _vm._v(" "),
+                            _vm._m(7),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "dropdown-divider" }),
+                            _vm._v(" "),
+                            _c(
+                              "li",
+                              {
+                                staticClass: "dropdown-item",
                                 on: {
                                   click: function($event) {
                                     return _vm.$auth.logout()
                                   }
                                 }
                               },
-                              [_c("i", { staticClass: "las la-user" })]
+                              [
+                                _c(
+                                  "a",
+                                  { attrs: { tabindex: "-1", href: "#" } },
+                                  [_vm._v("Sign out")]
+                                )
+                              ]
                             )
-                          : _c(
-                              "a",
-                              { attrs: { title: "login", href: "/login" } },
-                              [_c("i", { staticClass: "las la-user" })]
-                            )
-                      ])
+                          ])
+                        : _c("ul", { staticClass: "dropdown-menu" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "text-center font-weight-bold p-1"
+                              },
+                              [_vm._v("Hello Guest")]
+                            ),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "dropdown-divider" }),
+                            _vm._v(" "),
+                            _vm._m(8),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "dropdown-divider" }),
+                            _vm._v(" "),
+                            _vm._m(9)
+                          ])
                     ]),
                     _vm._v(" "),
-                    _vm._m(6)
+                    _vm._m(10)
                   ])
                 ]
               )
@@ -63079,6 +63149,48 @@ var staticRenderFns = [
             ])
           ])
         ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { attrs: { href: "#", type: "button", "data-toggle": "dropdown" } },
+      [
+        _c("div", { staticClass: "icon" }, [
+          _c("i", { staticClass: "las la-user" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown-item pt-2" }, [
+      _c("a", { attrs: { tabindex: "-1", href: "/dashboard" } }, [
+        _vm._v("Goto Dashboard")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown-item pt-2" }, [
+      _c("a", { attrs: { tabindex: "-1", href: "/login" } }, [_vm._v("Login")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown-item" }, [
+      _c("a", { attrs: { tabindex: "-1", href: "/register" } }, [
+        _vm._v("Register")
       ])
     ])
   },
@@ -64409,30 +64521,69 @@ var render = function() {
                   _vm._m(5),
                   _vm._v(" "),
                   _c("div", { staticClass: "nav-right" }, [
-                    _c("ul", { staticClass: "account-menu ml-3" }, [
-                      _c("li", { staticClass: "icon" }, [
-                        _vm.$auth.check()
-                          ? _c(
-                              "a",
+                    _c("div", { staticClass: "account-menu ml-3 dropdown" }, [
+                      _vm._m(6),
+                      _vm._v(" "),
+                      _vm.$auth.check()
+                        ? _c("ul", { staticClass: "dropdown-menu" }, [
+                            _c(
+                              "div",
                               {
-                                attrs: { title: "logout" },
+                                staticClass:
+                                  "font-weight-bold text-center text-capitalize p-1"
+                              },
+                              [
+                                _vm._v(
+                                  "Hi " + _vm._s(_vm.$auth.user().username)
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "dropdown-divider" }),
+                            _vm._v(" "),
+                            _vm._m(7),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "dropdown-divider" }),
+                            _vm._v(" "),
+                            _c(
+                              "li",
+                              {
+                                staticClass: "dropdown-item",
                                 on: {
                                   click: function($event) {
                                     return _vm.$auth.logout()
                                   }
                                 }
                               },
-                              [_c("i", { staticClass: "las la-user" })]
+                              [
+                                _c(
+                                  "a",
+                                  { attrs: { tabindex: "-1", href: "#" } },
+                                  [_vm._v("Sign out")]
+                                )
+                              ]
                             )
-                          : _c(
-                              "a",
-                              { attrs: { title: "login", href: "/login" } },
-                              [_c("i", { staticClass: "las la-user" })]
-                            )
-                      ])
+                          ])
+                        : _c("ul", { staticClass: "dropdown-menu" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "text-center font-weight-bold p-1"
+                              },
+                              [_vm._v("Hello Guest")]
+                            ),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "dropdown-divider" }),
+                            _vm._v(" "),
+                            _vm._m(8),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "dropdown-divider" }),
+                            _vm._v(" "),
+                            _vm._m(9)
+                          ])
                     ]),
                     _vm._v(" "),
-                    _vm._m(6)
+                    _vm._m(10)
                   ])
                 ]
               )
@@ -64528,6 +64679,48 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("li", [_c("a", { attrs: { href: "/#faq" } }, [_vm._v("FAQ")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { attrs: { href: "#", type: "button", "data-toggle": "dropdown" } },
+      [
+        _c("div", { staticClass: "icon" }, [
+          _c("i", { staticClass: "las la-user" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown-item pt-2" }, [
+      _c("a", { attrs: { tabindex: "-1", href: "/dashboard" } }, [
+        _vm._v("Goto Dashboard")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown-item pt-2" }, [
+      _c("a", { attrs: { tabindex: "-1", href: "/login" } }, [_vm._v("Login")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "dropdown-item" }, [
+      _c("a", { attrs: { tabindex: "-1", href: "/register" } }, [
+        _vm._v("Register")
+      ])
     ])
   },
   function() {

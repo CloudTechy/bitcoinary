@@ -57,14 +57,30 @@
                             </li>
                         </ul>
                         <div class="nav-right">
-                            <ul class="account-menu ml-3">
-                                <li class="icon">
-                                    <a title="logout" v-if="$auth.check()" @click="$auth.logout()">
-                                        <i class="las la-user"></i></a>
-                                    <a title="login" v-else href="/login">
-                                        <i class="las la-user"></i></a>
-                                </li>
-                            </ul>
+
+                            <div class="account-menu ml-3 dropdown">
+                        <a href="#" type="button" data-toggle="dropdown" >
+                            <div class="icon">
+                                <i class="las la-user"></i>
+                            </div>
+                        </a>
+                        <ul v-if="$auth.check()" class="dropdown-menu">
+                            <div class="font-weight-bold text-center text-capitalize p-1">Hi {{$auth.user().username}}</div>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item pt-2"><a tabindex="-1" href="/dashboard">Goto Dashboard</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li @click="$auth.logout()" class="dropdown-item"><a tabindex="-1" href="#">Sign out</a></li>
+                        </ul>
+
+                        <ul v-else class="dropdown-menu">
+                            <div class="text-center font-weight-bold p-1">Hello Guest</div>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item pt-2"><a tabindex="-1" href="/login">Login</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item"><a tabindex="-1" href="/register">Register</a></li>
+                        </ul>
+
+                    </div>
                             <select class="select d-inline-block w-auto ml-xl-3">
                                 <option><a href="#">Eng</a></option>
                             </select>
