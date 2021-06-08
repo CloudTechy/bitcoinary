@@ -106039,7 +106039,7 @@ var config = {
   loginData: {
     url: 'auth/login',
     method: 'POST',
-    redirect: '',
+    redirect: '/dashboard',
     fetchUser: true
   },
   logoutData: {

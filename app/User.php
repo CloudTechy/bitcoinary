@@ -39,12 +39,12 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 		return $total;
 	}
 	public function getTotalEarnedAttribute() {
-		return $this->confirmedTransactions->where('reference', 'BM')->sum('amount') + $this->confirmedTransactions->where('reference', 'BM first tier commission')->sum('amount') + $this->confirmedTransactions->where('reference', 'BM second tier commission')->sum('amount');
+		return (float) $this->confirmedTransactions->where('reference', 'BM')->sum('amount') + (float) $this->confirmedTransactions->where('reference', 'BM first tier commission')->sum('amount') + (float) $this->confirmedTransactions->where('reference', 'BM second tier commission')->sum('amount');
 	}
 	public function getActivePackagesAttribute() {
 		$activePackages = [];
 		foreach ($this->packages as $key => $package) {
-			if ($package->subscription->active && Carbon::now() < $package->subscription->expiration && $package->subscription->expiration != null) {
+			if (!empty($package->subscription->expiration) && $package->subscription->active && Carbon::now() < $package->subscription->expiration) {
 				array_push($activePackages, $package);
 			}
 		}
@@ -53,7 +53,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 	public function getMaturePackagesAttribute() {
 		$maturePackages = [];
 		foreach ($this->packages as $key => $package) {
-			if ($package->subscription->active && Carbon::now() >= $package->subscription->expiration && $package->subscription->expiration != null) {
+			if (!empty($package->subscription->expiration) && $package->subscription->active && Carbon::now() >= $package->subscription->expiration) {
 				array_push($maturePackages, $package);
 			}
 		}
@@ -77,21 +77,15 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 					// global $loop;
 					$loop = $maturePackage->subscription->loop;
 					$loop_termination = $maturePackage->loop_termination;
-					if ($loop != $loop_termination) {
+					if ($loop < $loop_termination) {
 						$loop = $loop + 1;
 						$maturePackage->subscription->update(['expiration' => Carbon::now()->addDays($maturePackage->duration), 'loop' => $loop, 'active' => true, 'created_at' => Carbon::now()]);
-						if($loop >= $loop_termination){
-							$maturePackage->subscription->update(['expiration' => null , 'active' => false, 'created_at' => null]);
+					}
+					else {
+							$maturePackage->subscription->update(['expiration' => null, 'active' => false]);
 							// $maturePackage->transaction->update(['active'=>false]);
 						}
 					$transaction->user->notify(new TransactionMade($transaction));
-					// $transaction = Transaction::where('id', $maturePackage->subscription->transaction_id)->first();
-					}
-					// else {
-					// 	$maturePackage->subscription->update(['expiration' => null , 'active' => false, 'created_at' => null]);
-					// }
-					
-
 				}
 
 			}
