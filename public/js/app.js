@@ -6464,11 +6464,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6513,6 +6508,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -18969,7 +18969,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.icon[data-v-1f42fb90] {\r\n    background-color: unset;\r\n    width: unset;\r\n    height: unset;\n}\n.dropdown-submenu[data-v-1f42fb90] {\r\n    position: relative;\n}\n.dropdown-submenu .dropdown-menu[data-v-1f42fb90] {\r\n    top: 0;\r\n    left: 100%;\r\n    margin-top: -1px;\n}\n.dropdown-menu[data-v-1f42fb90]{\r\n    margin: 1.125rem 0 0;\r\n    color: white;\r\n    background-color:#cca354;\n}\n.divider[data-v-1f42fb90] {\r\n    border-top: 1px solid black !important;\n}\n.icon[data-v-1f42fb90]:hover {\r\n    color: #000000 !important;\r\n    background-color: #b78b36 !important;\n}\n.dropdown-item > a[data-v-1f42fb90] {\r\n    color : black;\n}\n.dropdown-item  > a[data-v-1f42fb90]:hover{\r\n    color : #cca354 !important;\n}\n.dropdown-item[data-v-1f42fb90]:active{\r\n    background-color : #888889 !important;\r\n    color: white !important;\n}\n.dropdown-divider[data-v-1f42fb90] {\r\n    margin: unset;\n}\n.dropdown-menu[data-v-1f42fb90] {\r\n    position: absolute;\r\n    top: 100%;\r\n    left: -100%;\n}\r\n", ""]);
+exports.push([module.i, "\n.icon[data-v-1f42fb90] {\r\n    background-color: unset;\r\n    width: unset;\r\n    height: unset;\n}\n.dropdown-submenu[data-v-1f42fb90] {\r\n    position: relative;\n}\n.dropdown-submenu .dropdown-menu[data-v-1f42fb90] {\r\n    top: 0;\r\n    left: 100%;\r\n    margin-top: -1px;\n}\n.dropdown-menu[data-v-1f42fb90] {\r\n    margin: 1.125rem 0 0;\r\n    color: white;\r\n    background-color: #cca354;\n}\n.divider[data-v-1f42fb90] {\r\n    border-top: 1px solid black !important;\n}\n.icon[data-v-1f42fb90]:hover {\r\n    color: #000000 !important;\r\n    background-color: #b78b36 !important;\n}\n.dropdown-item>a[data-v-1f42fb90] {\r\n    color: black;\n}\n.dropdown-item>a[data-v-1f42fb90]:hover {\r\n    color: #cca354 !important;\n}\n.dropdown-item[data-v-1f42fb90]:active {\r\n    background-color: #888889 !important;\r\n    color: white !important;\n}\n.dropdown-divider[data-v-1f42fb90] {\r\n    margin: unset;\n}\n.dropdown-menu[data-v-1f42fb90] {\r\n    position: absolute;\r\n    top: 100%;\r\n    left: -100%;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -64779,14 +64779,12 @@ var render = function() {
               [_vm._v(_vm._s(plan.name))]
             ),
             _vm._v(" "),
-            plan.name == "Bronze" || plan.name == "Silver"
+            plan.name == "Bronze"
               ? _c("div", [
                   _c("ul", { staticClass: "package-card__features mt-4" }, [
                     _c("li", [_vm._v("Return " + _vm._s(plan.roi) + "%")]),
                     _vm._v(" "),
                     _c("li", [_vm._v("Every " + _vm._s(plan.turnover))]),
-                    _vm._v(" "),
-                    _c("li", [_vm._v("For 6 Days")]),
                     _vm._v(" "),
                     _c("li", [
                       _vm._v("Total " + _vm._s(plan.roi) + "% + "),
@@ -64794,6 +64792,25 @@ var render = function() {
                         _vm._v("Capital")
                       ])
                     ])
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            plan.name == "Silver"
+              ? _c("div", [
+                  _c("ul", { staticClass: "package-card__features mt-4" }, [
+                    _c("li", [_vm._v("Return " + _vm._s(plan.roi) + "%")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Every " + _vm._s(plan.turnover))]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v("Total " + _vm._s(plan.roi) + "% + "),
+                      _c("span", { staticClass: "badge base--bg" }, [
+                        _vm._v("Capital")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Loan Security")])
                   ])
                 ])
               : _vm._e(),
@@ -64805,14 +64822,14 @@ var render = function() {
                     _vm._v(" "),
                     _c("li", [_vm._v("Every " + _vm._s(plan.turnover))]),
                     _vm._v(" "),
-                    _c("li", [_vm._v("For 3x")]),
-                    _vm._v(" "),
                     _c("li", [
                       _vm._v("Total " + _vm._s(plan.roi) + "% + "),
                       _c("span", { staticClass: "badge base--bg" }, [
                         _vm._v("Capital")
                       ])
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Loan Security")])
                   ])
                 ])
               : _vm._e(),
@@ -64824,14 +64841,14 @@ var render = function() {
                     _vm._v(" "),
                     _c("li", [_vm._v("Every " + _vm._s(plan.turnover))]),
                     _vm._v(" "),
-                    _c("li", [_vm._v("For 2x")]),
-                    _vm._v(" "),
                     _c("li", [
                       _vm._v("Total " + _vm._s(plan.roi) + "% + "),
                       _c("span", { staticClass: "badge base--bg" }, [
                         _vm._v("Capital")
                       ])
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Loan Security")])
                   ])
                 ])
               : _vm._e(),
