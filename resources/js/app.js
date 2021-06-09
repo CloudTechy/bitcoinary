@@ -97,6 +97,9 @@ const app = new Vue({
         basepath() {
             return basepath
         },
+        appName(){
+            return process.env.MIX_APP_NAME
+        }
     },
 
     created() {

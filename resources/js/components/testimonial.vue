@@ -5,7 +5,7 @@
                 <div class="col-lg-6 text-center">
                     <div class="section-header">
                         <h2 class="section-title"><span class="font-weight-normal">What Users Say</span> <b class="base--color">About Us</b></h2>
-                        <p>Bitcoinary Mint is a well performing company with many good reviews from our investors.</p>
+                        <p><span>{{$root.appName}}</span> is a well performing company with many good reviews from our investors.</p>
                     </div>
                 </div>
             </div>

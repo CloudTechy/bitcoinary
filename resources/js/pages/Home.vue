@@ -28,7 +28,7 @@
                     <div class="col-lg-6 offset-lg-6">
                         <div class="about-content">
                             <h2 class="section-title mb-3"><span class="font-weight-normal">About</span> <b class="base--color">Us</b></h2>
-                            <p>Bitcoinary Mint is an innovating company diversified in several Investment methods.<br>
+                            <p><span>{{$root.appName}}</span> is an innovating company diversified in several Investment methods.<br>
                                 Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits.</p>
                             <p class="mt-4">Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service, allowing us to automate and simplify the relations between the investors and
                                 the trustees. We work towards increasing your profit margin by profitable investment strategies. We look forward to you being part of our community.</p>
@@ -48,7 +48,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
                         <div class="section-header">
-                            <h2 class="section-title"><span class="font-weight-normal">Why Choose</span> <b class="base--color">Bitcoinary Mint</b></h2>
+                            <h2 class="section-title"><span class="font-weight-normal">Why Choose</span> <b class="base--color"><span>{{$root.appName}}</span></b></h2>
                             <p>Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service.</p>
                         </div>
                     </div>
@@ -201,7 +201,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
                         <div class="section-header">
-                            <h2 class="section-title"><span class="font-weight-normal">How</span> <b class="base--color">Bitcoinary Mint</b> <span class="font-weight-normal">Works</span></h2>
+                            <h2 class="section-title"><span class="font-weight-normal">How</span> <b class="base--color"><span>{{$root.appName}}</span></b> <span class="font-weight-normal">Works</span></h2>
                             <p>Get involved in our tremendous platform and Invest. We will utilize your money and give you profit in your wallet automatically.</p>
                         </div>
                     </div>

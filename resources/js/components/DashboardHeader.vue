@@ -148,7 +148,7 @@ export default {
     color : #cca354 !important;
 }
 .dropdown-item:active{
-    background-color : #888889 !important;
+    background-color : black !important;
     color: white !important;
 }
 .dropdown-divider {

@@ -18930,7 +18930,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.icon[data-v-ce6b03b4] {\r\n    background-color: unset;\r\n    width: unset;\r\n    height: unset;\n}\n.dropdown-submenu[data-v-ce6b03b4] {\r\n    position: relative;\n}\n.dropdown-submenu .dropdown-menu[data-v-ce6b03b4] {\r\n    top: 0;\r\n    left: 100%;\r\n    margin-top: -1px;\n}\n.dropdown-menu[data-v-ce6b03b4]{\r\n    margin: 1.125rem 0 0;\r\n    color: white;\r\n    background-color:#cca354;\n}\n.divider[data-v-ce6b03b4] {\r\n    border-top: 1px solid black !important;\n}\n.icon[data-v-ce6b03b4]:hover {\r\n    color: #000000 !important;\r\n    background-color: #b78b36 !important;\n}\n.dropdown-item > a[data-v-ce6b03b4] {\r\n    color : black;\n}\n.dropdown-item  > a[data-v-ce6b03b4]:hover{\r\n    color : #cca354 !important;\n}\n.dropdown-item[data-v-ce6b03b4]:active{\r\n    background-color : #888889 !important;\r\n    color: white !important;\n}\n.dropdown-divider[data-v-ce6b03b4] {\r\n    margin: unset;\n}\n.dropdown-menu[data-v-ce6b03b4] {\r\n    position: absolute;\r\n    top: 100%;\r\n    left: -100%;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.icon[data-v-ce6b03b4] {\r\n    background-color: unset;\r\n    width: unset;\r\n    height: unset;\n}\n.dropdown-submenu[data-v-ce6b03b4] {\r\n    position: relative;\n}\n.dropdown-submenu .dropdown-menu[data-v-ce6b03b4] {\r\n    top: 0;\r\n    left: 100%;\r\n    margin-top: -1px;\n}\n.dropdown-menu[data-v-ce6b03b4]{\r\n    margin: 1.125rem 0 0;\r\n    color: white;\r\n    background-color:#cca354;\n}\n.divider[data-v-ce6b03b4] {\r\n    border-top: 1px solid black !important;\n}\n.icon[data-v-ce6b03b4]:hover {\r\n    color: #000000 !important;\r\n    background-color: #b78b36 !important;\n}\n.dropdown-item > a[data-v-ce6b03b4] {\r\n    color : black;\n}\n.dropdown-item  > a[data-v-ce6b03b4]:hover{\r\n    color : #cca354 !important;\n}\n.dropdown-item[data-v-ce6b03b4]:active{\r\n    background-color : black !important;\r\n    color: white !important;\n}\n.dropdown-divider[data-v-ce6b03b4] {\r\n    margin: unset;\n}\n.dropdown-menu[data-v-ce6b03b4] {\r\n    position: absolute;\r\n    top: 100%;\r\n    left: -100%;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -64180,8 +64180,13 @@ var render = function() {
                             ),
                             _vm._v(" "),
                             _c("p", [
+                              _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
                               _vm._v(
-                                "Bitcoinary Mint which is based in the United States is a fully registered and licensed company in UK. Bitcoinary Mint is powered by the latest and most secure form of SSL data encryption to keep all your data and information safe and secure."
+                                " which is based in the United States is a fully registered and licensed company in UK. "
+                              ),
+                              _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                              _vm._v(
+                                " is powered by the latest and most secure form of SSL data encryption to keep all your data and information safe and secure."
                               )
                             ])
                           ])
@@ -64224,11 +64229,12 @@ var render = function() {
       _c("div", { staticClass: "footer__bottom" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-6 text-md-right text-center" }, [
+            _c("div", { staticClass: "col-md-7 text-md-right text-center" }, [
               _c("p", [
                 _vm._v(" © " + _vm._s(_vm.fullYear) + " "),
                 _c("a", { staticClass: "base--color", attrs: { href: "/" } }, [
-                  _vm._v("  Bitcoinary Mint. ")
+                  _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                  _vm._v(". ")
                 ]),
                 _vm._v(" All Rights Reserved.\n                    ")
               ])
@@ -64335,7 +64341,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6" }, [
+    return _c("div", { staticClass: "col-md-5" }, [
       _c(
         "ul",
         {
@@ -66898,7 +66904,20 @@ var render = function() {
     },
     [
       _c("div", { staticClass: "container" }, [
-        _vm._m(0),
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-lg-6 text-center" }, [
+            _c("div", { staticClass: "section-header" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("p", [
+                _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                _vm._v(
+                  " is a well performing company with many good reviews from our investors."
+                )
+              ])
+            ])
+          ])
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-lg-12" }, [
@@ -66995,24 +67014,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-lg-6 text-center" }, [
-        _c("div", { staticClass: "section-header" }, [
-          _c("h2", { staticClass: "section-title" }, [
-            _c("span", { staticClass: "font-weight-normal" }, [
-              _vm._v("What Users Say")
-            ]),
-            _vm._v(" "),
-            _c("b", { staticClass: "base--color" }, [_vm._v("About Us")])
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Bitcoinary Mint is a well performing company with many good reviews from our investors."
-            )
-          ])
-        ])
-      ])
+    return _c("h2", { staticClass: "section-title" }, [
+      _c("span", { staticClass: "font-weight-normal" }, [
+        _vm._v("What Users Say")
+      ]),
+      _vm._v(" "),
+      _c("b", { staticClass: "base--color" }, [_vm._v("About Us")])
     ])
   }
 ]
@@ -67040,7 +67047,71 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "page-wrapper" },
-    [_c("Header"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("Footer")],
+    [
+      _c("Header"),
+      _vm._v(" "),
+      _c("section", { staticClass: " pt-120 pb-120 border-top-1" }, [
+        _c(
+          "div",
+          {
+            staticClass: "container",
+            staticStyle: { "background-color": "rgba(0,0,0,0.7)" }
+          },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "row justify-content-center mb-none-30" },
+              [
+                _c("div", { staticClass: "col-lg-10 col-md-12 mb-30" }, [
+                  _c("div", { staticClass: "blog-card" }, [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "blog-card__content" }, [
+                      _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                      _vm._v(
+                        " was established in 2005 as public relations and communication activities, in 2018 "
+                      ),
+                      _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                      _vm._v(
+                        " delved fully into automobiles, real estate, oil and gas, gold, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume."
+                      ),
+                      _c("br"),
+                      _c("br"),
+                      _vm._v(
+                        " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the "
+                      ),
+                      _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                      _vm._v(
+                        " team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
+                      ),
+                      _c("br"),
+                      _c("br"),
+                      _vm._v(
+                        "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of "
+                      ),
+                      _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                      _vm._v(
+                        " Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. "
+                      ),
+                      _c("br"),
+                      _c("br"),
+                      _vm._v(
+                        "We have put great efforts to provide our clients with a user-friendly profit making investment platform. Also, the developers are real technical mavericks, whose vision to create a unique investment system has become successful. Also, you can be sure of security since we ensure that no one will access your data without consent."
+                      ),
+                      _c("br")
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("Footer")
+    ],
     1
   )
 }
@@ -67049,70 +67120,33 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: " pt-120 pb-120 border-top-1" }, [
-      _c(
-        "div",
-        {
-          staticClass: "container",
-          staticStyle: { "background-color": "rgba(0,0,0,0.7)" }
-        },
-        [
-          _c("div", { staticClass: "row justify-content-center" }, [
-            _c("div", { staticClass: "col-lg-7 col-md-12 text-center" }, [
-              _c("div", { staticClass: "section-header" }, [
-                _c("h2", { staticClass: "section-title" }, [
-                  _c("span", { staticClass: "font-weight-normal" }, [
-                    _vm._v("About ")
-                  ]),
-                  _vm._v(" "),
-                  _c("b", { staticClass: "base--color" }, [_vm._v("Us")])
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "blog-details__content" }, [
-                  _vm._v(
-                    "\n                                Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits.\n                            "
-                  )
-                ])
-              ])
-            ])
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-lg-7 col-md-12 text-center" }, [
+        _c("div", { staticClass: "section-header" }, [
+          _c("h2", { staticClass: "section-title" }, [
+            _c("span", { staticClass: "font-weight-normal" }, [
+              _vm._v("About ")
+            ]),
+            _vm._v(" "),
+            _c("b", { staticClass: "base--color" }, [_vm._v("Us")])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "row justify-content-center mb-none-30" }, [
-            _c("div", { staticClass: "col-lg-10 col-md-12 mb-30" }, [
-              _c("div", { staticClass: "blog-card" }, [
-                _c("h4", { staticClass: "blog-card__title mb-4" }, [
-                  _vm._v("Our "),
-                  _c("span", { staticClass: "base--color" }, [
-                    _vm._v("Company")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "blog-card__content" }, [
-                  _vm._v(
-                    "\n                            Bitcoinary Mint was established in 2005 as public relations and communication activities, in 2018 Bitcoinary Mint delved fully into automobiles, real estate, oil and gas, gold, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume."
-                  ),
-                  _c("br"),
-                  _c("br"),
-                  _vm._v(
-                    " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bitcoinary Mint team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
-                  ),
-                  _c("br"),
-                  _c("br"),
-                  _vm._v(
-                    "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of Bitcoinary Mint Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. "
-                  ),
-                  _c("br"),
-                  _c("br"),
-                  _vm._v(
-                    "We have put great efforts to provide our clients with a user-friendly profit making investment platform. Also, the developers are real technical mavericks, whose vision to create a unique investment system has become successful. Also, you can be sure of security since we ensure that no one will access your data without consent."
-                  ),
-                  _c("br")
-                ])
-              ])
-            ])
+          _c("p", { staticClass: "blog-details__content" }, [
+            _vm._v(
+              "\n                                Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits.\n                            "
+            )
           ])
-        ]
-      )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h4", { staticClass: "blog-card__title mb-4" }, [
+      _vm._v("Our "),
+      _c("span", { staticClass: "base--color" }, [_vm._v("Company")])
     ])
   }
 ]
@@ -67159,7 +67193,24 @@ var render = function() {
             _c("div", { staticClass: "container" }, [
               _c("div", { staticClass: "wrapper" }, [
                 _c("div", { staticClass: "text-center" }, [
-                  _vm._m(1),
+                  _c("div", { staticClass: "success-group" }, [
+                    _c("h4", { staticClass: "p-2 m-2" }, [
+                      _vm._v("Verify your email address")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "w-note m-2 p-3" }, [
+                      _vm._v(
+                        "We thank you for showing interest in joining our platform, you are now an email away in becoming an official member of  "
+                      ),
+                      _c("span", [_vm._v(_vm._s(_vm.$root.appName))])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "p-2" }, [
+                      _vm._v(
+                        "An email confirmation link has been sent to your email"
+                      )
+                    ])
+                  ]),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -67196,26 +67247,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row page-title m-3 p-2" }, [
       _c("div", { staticClass: "col-12 col-lg-8 container" }, [
         _c("h1", [_vm._v("Email confirmation link sent")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "success-group" }, [
-      _c("h4", { staticClass: "p-2 m-2" }, [
-        _vm._v("Verify your email address")
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "w-note m-2 p-3" }, [
-        _vm._v(
-          "We thank you for showing interest in joining our platform, you are now an email away in becoming an official member of  Bitcoinary Mint "
-        )
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "p-2" }, [
-        _vm._v("An email confirmation link has been sent to your email")
       ])
     ])
   }
@@ -67264,7 +67295,24 @@ var render = function() {
               _c("div", { staticClass: "wrapper" }, [
                 _vm.success
                   ? _c("div", { staticClass: "text-center" }, [
-                      _vm._m(1),
+                      _c("div", { staticClass: "success-group" }, [
+                        _c("h4", { staticClass: "p-2 m-2" }, [
+                          _vm._v("Registration Completed")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "w-note p-2 m-2" }, [
+                          _vm._v(
+                            "Welcome onboard, you are now an official member of  "
+                          ),
+                          _c("span", [_vm._v(_vm._s(_vm.$root.appName))])
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "p-2" }, [
+                          _vm._v(
+                            "Please login into your account to continue and keep safe your login credentials."
+                          )
+                        ])
+                      ]),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -67289,7 +67337,7 @@ var render = function() {
                   : _vm._e(),
                 _vm._v(" "),
                 !_vm.success && !_vm.has_error && !_vm.message
-                  ? _c("div", [_vm._m(2)])
+                  ? _c("div", [_vm._m(1)])
                   : _vm._e(),
                 _vm._v(" "),
                 _vm.has_error
@@ -67328,26 +67376,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row page-title m-3 p-2" }, [
       _c("div", { staticClass: "col-12 col-lg-8 container" }, [
         _c("h1", [_vm._v("Registration Confirmation")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "success-group" }, [
-      _c("h4", { staticClass: "p-2 m-2" }, [_vm._v("Registration Completed")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "w-note p-2 m-2" }, [
-        _vm._v(
-          "Welcome onboard, you are now an official member of  Bitcoinary Mint "
-        )
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "p-2" }, [
-        _vm._v(
-          "Please login into your account to continue and keep safe your login credentials."
-        )
       ])
     ])
   },
@@ -67687,7 +67715,12 @@ var render = function() {
                         "/images/bg/bg-6.jpg"
                     },
                     [
-                      _vm._m(0),
+                      _c("h2", { staticClass: "section-title text-center" }, [
+                        _vm._v("Welcome to "),
+                        _c("span", { staticClass: "base--color" }, [
+                          _c("span", [_vm._v(_vm._s(_vm.$root.appName))])
+                        ])
+                      ]),
                       _vm._v(" "),
                       _c("h3", { staticClass: "text-center m-3 " }, [
                         _vm._v("Recover your password")
@@ -67702,7 +67735,7 @@ var render = function() {
                         [_vm._v("Steps:")]
                       ),
                       _vm._v(" "),
-                      _vm._m(1)
+                      _vm._m(0)
                     ]
                   ),
                   _vm._v(" "),
@@ -67861,15 +67894,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "section-title text-center" }, [
-      _vm._v("Welcome to "),
-      _c("span", { staticClass: "base--color" }, [_vm._v("Bitcoinary Mint")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("ul", { staticStyle: { "list-style-type": "circle" } }, [
       _c("li", { staticStyle: { "margin-left": "2em" } }, [
         _vm._v("Submit your email address through the form below.")
@@ -67929,7 +67953,40 @@ var render = function() {
           staticClass: "about-section pt-120 pb-120 bg_img",
           style: "background:url(" + _vm.$root.basepath + "/images/bg/bg-2.jpg"
         },
-        [_vm._m(1)]
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-lg-6 offset-lg-6" }, [
+                _c("div", { staticClass: "about-content" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                    _vm._v(
+                      " is an innovating company diversified in several Investment methods."
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "\n                            Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits."
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "mt-4" }, [
+                    _vm._v(
+                      "Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service, allowing us to automate and simplify the relations between the investors and\n                            the trustees. We work towards increasing your profit margin by profitable investment strategies. We look forward to you being part of our community."
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    { staticClass: "cmn-btn mt-4", attrs: { href: "/about" } },
+                    [_vm._v("READ MORE")]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]
       ),
       _vm._v(" "),
       _c(
@@ -67938,7 +67995,33 @@ var render = function() {
           staticClass: "pt-120 pb-120 overlay--radial bg_img",
           style: "background:url(" + _vm.$root.basepath + "/images/bg/bg-3.jpg"
         },
-        [_vm._m(2)]
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row justify-content-center" }, [
+              _c("div", { staticClass: "col-lg-6 text-center" }, [
+                _c("div", { staticClass: "section-header" }, [
+                  _c("h2", { staticClass: "section-title" }, [
+                    _c("span", { staticClass: "font-weight-normal" }, [
+                      _vm._v("Why Choose")
+                    ]),
+                    _vm._v(" "),
+                    _c("b", { staticClass: "base--color" }, [
+                      _c("span", [_vm._v(_vm._s(_vm.$root.appName))])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service."
+                    )
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(2)
+          ])
+        ]
       ),
       _vm._v(" "),
       _c(
@@ -67973,7 +68056,37 @@ var render = function() {
           staticClass: "pt-120 pb-120 bg_img",
           style: "background:url(" + _vm.$root.basepath + "/images/bg/bg-5.jpg"
         },
-        [_vm._m(5)]
+        [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "row justify-content-center" }, [
+              _c("div", { staticClass: "col-lg-6 text-center" }, [
+                _c("div", { staticClass: "section-header" }, [
+                  _c("h2", { staticClass: "section-title" }, [
+                    _c("span", { staticClass: "font-weight-normal" }, [
+                      _vm._v("How")
+                    ]),
+                    _vm._v(" "),
+                    _c("b", { staticClass: "base--color" }, [
+                      _c("span", [_vm._v(_vm._s(_vm.$root.appName))])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "font-weight-normal" }, [
+                      _vm._v("Works")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Get involved in our tremendous platform and Invest. We will utilize your money and give you profit in your wallet automatically."
+                    )
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(5)
+          ])
+        ]
       ),
       _vm._v(" "),
       _c("FaqComponent"),
@@ -68092,249 +68205,193 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-6 offset-lg-6" }, [
-          _c("div", { staticClass: "about-content" }, [
-            _c("h2", { staticClass: "section-title mb-3" }, [
-              _c("span", { staticClass: "font-weight-normal" }, [
-                _vm._v("About")
-              ]),
-              _vm._v(" "),
-              _c("b", { staticClass: "base--color" }, [_vm._v("Us")])
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Bitcoinary Mint is an innovating company diversified in several Investment methods."
-              ),
-              _c("br"),
-              _vm._v(
-                "\n                            Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big investor of digital currencies and has invested in mining & trading of the most popular cryptocurrency by market volume. Our Investment strategies is free from risks and returns accrued profits."
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "mt-4" }, [
-              _vm._v(
-                "Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service, allowing us to automate and simplify the relations between the investors and\n                            the trustees. We work towards increasing your profit margin by profitable investment strategies. We look forward to you being part of our community."
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "a",
-              { staticClass: "cmn-btn mt-4", attrs: { href: "/about" } },
-              [_vm._v("READ MORE")]
-            )
-          ])
-        ])
-      ])
+    return _c("h2", { staticClass: "section-title mb-3" }, [
+      _c("span", { staticClass: "font-weight-normal" }, [_vm._v("About")]),
+      _vm._v(" "),
+      _c("b", { staticClass: "base--color" }, [_vm._v("Us")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-lg-6 text-center" }, [
-          _c("div", { staticClass: "section-header" }, [
-            _c("h2", { staticClass: "section-title" }, [
-              _c("span", { staticClass: "font-weight-normal" }, [
-                _vm._v("Why Choose")
-              ]),
-              _vm._v(" "),
-              _c("b", { staticClass: "base--color" }, [
-                _vm._v("Bitcoinary Mint")
-              ])
+    return _c("div", { staticClass: "row justify-content-center mb-none-30" }, [
+      _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+        _c("div", { staticClass: "choose-card border-radius--5" }, [
+          _c("div", { staticClass: "choose-card__header mb-3" }, [
+            _c("div", { staticClass: "choose-card__icon" }, [
+              _c("i", { staticClass: "lar la-copy" })
             ]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service."
-              )
+            _c("h4", { staticClass: "choose-card__title base--color" }, [
+              _vm._v("Legal Company")
             ])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Our company conducts absolutely legal activities in the legal field. We are certified to operate investment business, we are legal and safe."
+            )
           ])
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row justify-content-center mb-none-30" }, [
-        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
-          _c("div", { staticClass: "choose-card border-radius--5" }, [
-            _c("div", { staticClass: "choose-card__header mb-3" }, [
-              _c("div", { staticClass: "choose-card__icon" }, [
-                _c("i", { staticClass: "lar la-copy" })
-              ]),
-              _vm._v(" "),
-              _c("h4", { staticClass: "choose-card__title base--color" }, [
-                _vm._v("Legal Company")
-              ])
+      _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+        _c("div", { staticClass: "choose-card border-radius--5" }, [
+          _c("div", { staticClass: "choose-card__header mb-3" }, [
+            _c("div", { staticClass: "choose-card__icon" }, [
+              _c("i", { staticClass: "las la-lock" })
             ]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Our company conducts absolutely legal activities in the legal field. We are certified to operate investment business, we are legal and safe."
-              )
+            _c("h4", { staticClass: "choose-card__title base--color" }, [
+              _vm._v("High reliability")
             ])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "We are trusted by a huge number of people. We are working hard constantly to improve the level of our security system and minimize possible risks."
+            )
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
-          _c("div", { staticClass: "choose-card border-radius--5" }, [
-            _c("div", { staticClass: "choose-card__header mb-3" }, [
-              _c("div", { staticClass: "choose-card__icon" }, [
-                _c("i", { staticClass: "las la-lock" })
-              ]),
-              _vm._v(" "),
-              _c("h4", { staticClass: "choose-card__title base--color" }, [
-                _vm._v("High reliability")
-              ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+        _c("div", { staticClass: "choose-card border-radius--5" }, [
+          _c("div", { staticClass: "choose-card__header mb-3" }, [
+            _c("div", { staticClass: "choose-card__icon" }, [
+              _c("i", { staticClass: "las la-user-lock" })
             ]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "We are trusted by a huge number of people. We are working hard constantly to improve the level of our security system and minimize possible risks."
-              )
+            _c("h4", { staticClass: "choose-card__title base--color" }, [
+              _vm._v("Anonymity")
             ])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Anonymity and using cryptocurrency as a payment instrument. In the era of electronic money – this is one of the most convenient ways of cooperation."
+            )
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
-          _c("div", { staticClass: "choose-card border-radius--5" }, [
-            _c("div", { staticClass: "choose-card__header mb-3" }, [
-              _c("div", { staticClass: "choose-card__icon" }, [
-                _c("i", { staticClass: "las la-user-lock" })
-              ]),
-              _vm._v(" "),
-              _c("h4", { staticClass: "choose-card__title base--color" }, [
-                _vm._v("Anonymity")
-              ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+        _c("div", { staticClass: "choose-card border-radius--5" }, [
+          _c("div", { staticClass: "choose-card__header mb-3" }, [
+            _c("div", { staticClass: "choose-card__icon" }, [
+              _c("i", { staticClass: "las la-shipping-fast" })
             ]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Anonymity and using cryptocurrency as a payment instrument. In the era of electronic money – this is one of the most convenient ways of cooperation."
-              )
+            _c("h4", { staticClass: "choose-card__title base--color" }, [
+              _vm._v("Quick Withdrawal")
             ])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Our all retreats are treated spontaneously once requested. There are high maximum limits. The minimum withdrawal amount is only $1."
+            )
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
-          _c("div", { staticClass: "choose-card border-radius--5" }, [
-            _c("div", { staticClass: "choose-card__header mb-3" }, [
-              _c("div", { staticClass: "choose-card__icon" }, [
-                _c("i", { staticClass: "las la-shipping-fast" })
-              ]),
-              _vm._v(" "),
-              _c("h4", { staticClass: "choose-card__title base--color" }, [
-                _vm._v("Quick Withdrawal")
-              ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+        _c("div", { staticClass: "choose-card border-radius--5" }, [
+          _c("div", { staticClass: "choose-card__header mb-3" }, [
+            _c("div", { staticClass: "choose-card__icon" }, [
+              _c("i", { staticClass: "las la-users" })
             ]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Our all retreats are treated spontaneously once requested. There are high maximum limits. The minimum withdrawal amount is only $1."
-              )
+            _c("h4", { staticClass: "choose-card__title base--color" }, [
+              _vm._v("Referral Program")
             ])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "We are offering a certain level of referral income through our referral program. you can increase your income by simply refer a few people."
+            )
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
-          _c("div", { staticClass: "choose-card border-radius--5" }, [
-            _c("div", { staticClass: "choose-card__header mb-3" }, [
-              _c("div", { staticClass: "choose-card__icon" }, [
-                _c("i", { staticClass: "las la-users" })
-              ]),
-              _vm._v(" "),
-              _c("h4", { staticClass: "choose-card__title base--color" }, [
-                _vm._v("Referral Program")
-              ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+        _c("div", { staticClass: "choose-card border-radius--5" }, [
+          _c("div", { staticClass: "choose-card__header mb-3" }, [
+            _c("div", { staticClass: "choose-card__icon" }, [
+              _c("i", { staticClass: "las la-headset" })
             ]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "We are offering a certain level of referral income through our referral program. you can increase your income by simply refer a few people."
-              )
+            _c("h4", { staticClass: "choose-card__title base--color" }, [
+              _vm._v("24/7 Support")
             ])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "We provide 24/7 customer support through e-mail and telegram. Our support representatives are periodically available to elucidate any difficulty.."
+            )
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
-          _c("div", { staticClass: "choose-card border-radius--5" }, [
-            _c("div", { staticClass: "choose-card__header mb-3" }, [
-              _c("div", { staticClass: "choose-card__icon" }, [
-                _c("i", { staticClass: "las la-headset" })
-              ]),
-              _vm._v(" "),
-              _c("h4", { staticClass: "choose-card__title base--color" }, [
-                _vm._v("24/7 Support")
-              ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+        _c("div", { staticClass: "choose-card border-radius--5" }, [
+          _c("div", { staticClass: "choose-card__header mb-3" }, [
+            _c("div", { staticClass: "choose-card__icon" }, [
+              _c("i", { staticClass: "las la-server" })
             ]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "We provide 24/7 customer support through e-mail and telegram. Our support representatives are periodically available to elucidate any difficulty.."
-              )
+            _c("h4", { staticClass: "choose-card__title base--color" }, [
+              _vm._v("Dedicated Server")
             ])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "We are using a dedicated server for the website which allows us exclusive use of the resources of the entire server."
+            )
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
-          _c("div", { staticClass: "choose-card border-radius--5" }, [
-            _c("div", { staticClass: "choose-card__header mb-3" }, [
-              _c("div", { staticClass: "choose-card__icon" }, [
-                _c("i", { staticClass: "las la-server" })
-              ]),
-              _vm._v(" "),
-              _c("h4", { staticClass: "choose-card__title base--color" }, [
-                _vm._v("Dedicated Server")
-              ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+        _c("div", { staticClass: "choose-card border-radius--5" }, [
+          _c("div", { staticClass: "choose-card__header mb-3" }, [
+            _c("div", { staticClass: "choose-card__icon" }, [
+              _c("i", { staticClass: "fab fa-expeditedssl" })
             ]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "We are using a dedicated server for the website which allows us exclusive use of the resources of the entire server."
-              )
+            _c("h4", { staticClass: "choose-card__title base--color" }, [
+              _vm._v("SSL Secured")
             ])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Comodo Essential-SSL Security encryption confirms that the presented content is genuine and legitimate."
+            )
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
-          _c("div", { staticClass: "choose-card border-radius--5" }, [
-            _c("div", { staticClass: "choose-card__header mb-3" }, [
-              _c("div", { staticClass: "choose-card__icon" }, [
-                _c("i", { staticClass: "fab fa-expeditedssl" })
-              ]),
-              _vm._v(" "),
-              _c("h4", { staticClass: "choose-card__title base--color" }, [
-                _vm._v("SSL Secured")
-              ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
+        _c("div", { staticClass: "choose-card border-radius--5" }, [
+          _c("div", { staticClass: "choose-card__header mb-3" }, [
+            _c("div", { staticClass: "choose-card__icon" }, [
+              _c("i", { staticClass: "las la-shield-alt" })
             ]),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Comodo Essential-SSL Security encryption confirms that the presented content is genuine and legitimate."
-              )
+            _c("h4", { staticClass: "choose-card__title base--color" }, [
+              _vm._v("DDOS Protection")
             ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-xl-4 col-md-6 mb-30" }, [
-          _c("div", { staticClass: "choose-card border-radius--5" }, [
-            _c("div", { staticClass: "choose-card__header mb-3" }, [
-              _c("div", { staticClass: "choose-card__icon" }, [
-                _c("i", { staticClass: "las la-shield-alt" })
-              ]),
-              _vm._v(" "),
-              _c("h4", { staticClass: "choose-card__title base--color" }, [
-                _vm._v("DDOS Protection")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "We are using one of the most experienced, professional, and trusted DDoS Protection and mitigation provider."
-              )
-            ])
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "We are using one of the most experienced, professional, and trusted DDoS Protection and mitigation provider."
+            )
           ])
         ])
       ])
@@ -68392,78 +68449,50 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-lg-6 text-center" }, [
-          _c("div", { staticClass: "section-header" }, [
-            _c("h2", { staticClass: "section-title" }, [
-              _c("span", { staticClass: "font-weight-normal" }, [
-                _vm._v("How")
-              ]),
-              _vm._v(" "),
-              _c("b", { staticClass: "base--color" }, [
-                _vm._v("Bitcoinary Mint")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "font-weight-normal" }, [
-                _vm._v("Works")
-              ])
-            ]),
+    return _c("div", { staticClass: "row justify-content-center mb-none-30" }, [
+      _c("div", { staticClass: "col-lg-4 col-md-6 work-item mb-30" }, [
+        _c("div", { staticClass: "work-card text-center" }, [
+          _c("div", { staticClass: "work-card__icon" }, [
+            _c("i", { staticClass: "las la-user base--color" }),
             _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Get involved in our tremendous platform and Invest. We will utilize your money and give you profit in your wallet automatically."
-              )
+            _c("span", { staticClass: "step-number" }, [_vm._v("01")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "work-card__content" }, [
+            _c("h4", { staticClass: "base--color mb-3" }, [
+              _vm._v("Create Account")
             ])
           ])
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row justify-content-center mb-none-30" }, [
-        _c("div", { staticClass: "col-lg-4 col-md-6 work-item mb-30" }, [
-          _c("div", { staticClass: "work-card text-center" }, [
-            _c("div", { staticClass: "work-card__icon" }, [
-              _c("i", { staticClass: "las la-user base--color" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "step-number" }, [_vm._v("01")])
-            ]),
+      _c("div", { staticClass: "col-lg-4 col-md-6 work-item mb-30" }, [
+        _c("div", { staticClass: "work-card text-center" }, [
+          _c("div", { staticClass: "work-card__icon" }, [
+            _c("i", { staticClass: "las la-hand-holding-usd base--color" }),
             _vm._v(" "),
-            _c("div", { staticClass: "work-card__content" }, [
-              _c("h4", { staticClass: "base--color mb-3" }, [
-                _vm._v("Create Account")
-              ])
+            _c("span", { staticClass: "step-number" }, [_vm._v("02")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "work-card__content" }, [
+            _c("h4", { staticClass: "base--color mb-3" }, [
+              _vm._v("Invest To Plan")
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-4 col-md-6 work-item mb-30" }, [
-          _c("div", { staticClass: "work-card text-center" }, [
-            _c("div", { staticClass: "work-card__icon" }, [
-              _c("i", { staticClass: "las la-hand-holding-usd base--color" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "step-number" }, [_vm._v("02")])
-            ]),
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-4 col-md-6 work-item mb-30" }, [
+        _c("div", { staticClass: "work-card text-center" }, [
+          _c("div", { staticClass: "work-card__icon" }, [
+            _c("i", { staticClass: "las la-wallet base--color" }),
             _vm._v(" "),
-            _c("div", { staticClass: "work-card__content" }, [
-              _c("h4", { staticClass: "base--color mb-3" }, [
-                _vm._v("Invest To Plan")
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-4 col-md-6 work-item mb-30" }, [
-          _c("div", { staticClass: "work-card text-center" }, [
-            _c("div", { staticClass: "work-card__icon" }, [
-              _c("i", { staticClass: "las la-wallet base--color" }),
-              _vm._v(" "),
-              _c("span", { staticClass: "step-number" }, [_vm._v("03")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "work-card__content" }, [
-              _c("h4", { staticClass: "base--color mb-3" }, [
-                _vm._v("Get Profit")
-              ])
+            _c("span", { staticClass: "step-number" }, [_vm._v("03")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "work-card__content" }, [
+            _c("h4", { staticClass: "base--color mb-3" }, [
+              _vm._v("Get Profit")
             ])
           ])
         ])
@@ -68518,7 +68547,14 @@ var render = function() {
                         _vm.$root.basepath +
                         "/images/bg/bg-6.jpg"
                     },
-                    [_vm._m(0)]
+                    [
+                      _c("h2", { staticClass: "section-title text-center" }, [
+                        _vm._v("Welcome to "),
+                        _c("span", { staticClass: "base--color" }, [
+                          _c("span", [_vm._v(_vm._s(_vm.$root.appName))])
+                        ])
+                      ])
+                    ]
                   ),
                   _vm._v(" "),
                   _c("div", { staticClass: "account-card__body" }, [
@@ -68683,7 +68719,7 @@ var render = function() {
                           ])
                         ]),
                         _vm._v(" "),
-                        _vm._m(1),
+                        _vm._m(0),
                         _vm._v(" "),
                         _c(
                           "button",
@@ -68710,15 +68746,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "section-title text-center" }, [
-      _vm._v("Welcome to "),
-      _c("span", { staticClass: "base--color" }, [_vm._v("Bitcoinary Mint")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -68797,7 +68824,14 @@ var render = function() {
                         _vm.$root.basepath +
                         "/images/bg/bg-6.jpg"
                     },
-                    [_vm._m(0)]
+                    [
+                      _c("h2", { staticClass: "section-title text-center" }, [
+                        _vm._v("Welcome to "),
+                        _c("span", { staticClass: "base--color" }, [
+                          _c("span", [_vm._v(_vm._s(_vm.$root.appName))])
+                        ])
+                      ])
+                    ]
                   ),
                   _vm._v(" "),
                   _c("div", { staticClass: "account-card__body" }, [
@@ -69279,7 +69313,7 @@ var render = function() {
                                   }
                                 }),
                                 _vm._v(" "),
-                                _vm._m(1),
+                                _vm._m(0),
                                 _vm._v(" "),
                                 _vm.errors.terms && !_vm.terms
                                   ? _c(
@@ -69295,7 +69329,7 @@ var render = function() {
                               ]
                             ),
                             _vm._v(" "),
-                            _vm._m(2),
+                            _vm._m(1),
                             _vm._v(" "),
                             _c("div", { staticClass: "mt-3" }, [
                               _c(
@@ -69332,15 +69366,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "section-title text-center" }, [
-      _vm._v("Welcome to "),
-      _c("span", { staticClass: "base--color" }, [_vm._v("Bitcoinary Mint")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -69438,7 +69463,12 @@ var render = function() {
                         "/images/bg/bg-6.jpg"
                     },
                     [
-                      _vm._m(0),
+                      _c("h2", { staticClass: "section-title text-center" }, [
+                        _vm._v("Welcome to "),
+                        _c("span", { staticClass: "base--color" }, [
+                          _c("span", [_vm._v(_vm._s(_vm.$root.appName))])
+                        ])
+                      ]),
                       _vm._v(" "),
                       _c("h3", { staticClass: "mt-2 text-center" }, [
                         _vm._v("Reset your Password")
@@ -69567,7 +69597,7 @@ var render = function() {
                                       )
                                     : _vm._e(),
                                   _vm._v(" "),
-                                  _vm._m(1)
+                                  _vm._m(0)
                                 ]
                               )
                             : _vm._e()
@@ -69695,15 +69725,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "section-title text-center" }, [
-      _vm._v("Welcome to "),
-      _c("span", { staticClass: "base--color" }, [_vm._v("Bitcoinary Mint")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -73327,7 +73348,19 @@ var render = function() {
     [
       _c("Header"),
       _vm._v(" "),
-      _vm._m(0),
+      _c("div", { staticClass: "row page-title m-3 p-2" }, [
+        _c("div", { staticClass: "col-12 col-lg-8 container" }, [
+          _c("h1", [_vm._v("Frequently Asked Questions")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Please go through the Frequently asked questions. Following are the answers to most common questions that may arise in any investor’s mind to know "
+            ),
+            _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+            _vm._v(" Limited better. ")
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "section",
@@ -73338,7 +73371,506 @@ var render = function() {
             _vm.$root.basepath +
             "/img/home.png) no-repeat 0 0;"
         },
-        [_vm._m(1)]
+        [
+          _c("div", { staticClass: "main" }, [
+            _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "wrapper" }, [
+                _c("div", { staticClass: "row company" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "wrapper",
+                      staticStyle: {
+                        background: "url(images/faq-wrap.png) no-repeat 0 0"
+                      }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "faq-container panel-group",
+                          attrs: { id: "accordion" }
+                        },
+                        [
+                          _c("div", { staticClass: "row" }, [
+                            _c("div", { staticClass: "column" }, [
+                              _c("div", { staticClass: "faq-section" }, [
+                                _c("h3", [_vm._v("General Questions")]),
+                                _vm._v(" "),
+                                _c("ul", { staticClass: "faq" }, [
+                                  _c("li", { staticClass: "panel" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "que",
+                                        attrs: {
+                                          "data-toggle": "collapse",
+                                          "data-parent": "#accordion",
+                                          "aria-expanded": "false",
+                                          href: "#collapse1"
+                                        }
+                                      },
+                                      [
+                                        _vm._v("What is "),
+                                        _c("span", [
+                                          _vm._v(_vm._s(_vm.$root.appName))
+                                        ]),
+                                        _vm._v(" Limited? ")
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "ans panel-body collapse in",
+                                        attrs: { id: "collapse1" }
+                                      },
+                                      [
+                                        _c("p", [
+                                          _c("span", [
+                                            _vm._v(_vm._s(_vm.$root.appName))
+                                          ]),
+                                          _vm._v(
+                                            " is an expert trading company."
+                                          )
+                                        ])
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "panel" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "que collapsed",
+                                        attrs: {
+                                          href: "#collapse2",
+                                          "data-toggle": "collapse",
+                                          "data-parent": "#accordion"
+                                        }
+                                      },
+                                      [
+                                        _vm._v("Is "),
+                                        _c("span", [
+                                          _vm._v(_vm._s(_vm.$root.appName))
+                                        ]),
+                                        _vm._v(" Limited available to public? ")
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "ans panel-body collapse",
+                                        attrs: { id: "collapse2" }
+                                      },
+                                      [
+                                        _c("p", [
+                                          _c("span", [
+                                            _vm._v(_vm._s(_vm.$root.appName))
+                                          ]),
+                                          _vm._v(
+                                            " Limited is open for public who are 18 and fulfill the legal age to take part in our program. "
+                                          )
+                                        ])
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "panel" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "que collapsed",
+                                        attrs: {
+                                          href: "#collapse3",
+                                          "data-toggle": "collapse",
+                                          "data-parent": "#accordion"
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "How can I check the authenticity of BFIN Limited? "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "ans panel-body collapse",
+                                        attrs: { id: "collapse3" }
+                                      },
+                                      [
+                                        _c("p", [
+                                          _c("span", [
+                                            _vm._v(_vm._s(_vm.$root.appName))
+                                          ]),
+                                          _vm._v(
+                                            " (BFIN) is fully regulated by the Financial Industry Regulatory Authority. You can visit to vetrify https://brokercheck.finra.org/firm/summary/282643/"
+                                          )
+                                        ])
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "panel" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "que collapsed",
+                                        attrs: {
+                                          href: "#collapse4",
+                                          "data-toggle": "collapse",
+                                          "data-parent": "#accordion"
+                                        }
+                                      },
+                                      [
+                                        _vm._v("How Does "),
+                                        _c("span", [
+                                          _vm._v(_vm._s(_vm.$root.appName))
+                                        ]),
+                                        _vm._v(" Limited make profit? ")
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "ans panel-body collapse",
+                                        attrs: { id: "collapse4" }
+                                      },
+                                      [
+                                        _c("p", [
+                                          _c("span", [
+                                            _vm._v(_vm._s(_vm.$root.appName))
+                                          ]),
+                                          _vm._v(
+                                            " has been consistent for the past two years, our unique alogrithm remains relevant, this the major secret why we win. "
+                                          )
+                                        ])
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "panel" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "que collapsed",
+                                        attrs: {
+                                          href: "#collapse5",
+                                          "data-toggle": "collapse",
+                                          "data-parent": "#accordion"
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "What are the risks of loss of funds for investors?"
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "ans panel-body collapse",
+                                        attrs: { id: "collapse5" }
+                                      },
+                                      [
+                                        _c("p", [
+                                          _c("span", [
+                                            _vm._v(_vm._s(_vm.$root.appName))
+                                          ]),
+                                          _vm._v(
+                                            " Limited is a platform which is risk-free. However, to avoid unforeseen loss, the company continuously fills in its contingency fund. In the case of force majeure situations, "
+                                          ),
+                                          _c("span", [
+                                            _vm._v(_vm._s(_vm.$root.appName))
+                                          ]),
+                                          _vm._v(
+                                            " Limited's investors can expect to receive money back except the profits they received earlier."
+                                          )
+                                        ])
+                                      ]
+                                    )
+                                  ])
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "faq-section" }, [
+                                _c("h3", [_vm._v("Account questions")]),
+                                _vm._v(" "),
+                                _c("ul", { staticClass: "faq" }, [
+                                  _c("li", { staticClass: "panel" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "que collapsed",
+                                        attrs: {
+                                          href: "#collapse6",
+                                          "data-toggle": "collapse",
+                                          "data-parent": "#accordion"
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "How can I start investing with "
+                                        ),
+                                        _c("span", [
+                                          _vm._v(_vm._s(_vm.$root.appName))
+                                        ]),
+                                        _vm._v(" Limited ? ")
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(0)
+                                  ]),
+                                  _vm._v(" "),
+                                  _vm._m(1),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "panel" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "que collapsed",
+                                        attrs: {
+                                          href: "#collapse8",
+                                          "data-toggle": "collapse",
+                                          "data-parent": "#accordion"
+                                        }
+                                      },
+                                      [
+                                        _vm._v("I wish to invest with "),
+                                        _c("span", [
+                                          _vm._v(_vm._s(_vm.$root.appName))
+                                        ]),
+                                        _vm._v(
+                                          " Limited but I don't have any e-currency account. What should I do? "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(2)
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "panel" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "que collapsed",
+                                        attrs: {
+                                          href: "#collapse9",
+                                          "data-toggle": "collapse",
+                                          "data-parent": "#accordion"
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "Can I have more than one account at "
+                                        ),
+                                        _c("span", [
+                                          _vm._v(_vm._s(_vm.$root.appName))
+                                        ]),
+                                        _vm._v(" ? ")
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "ans panel-body collapse",
+                                        attrs: { id: "collapse9" }
+                                      },
+                                      [
+                                        _c("p", [
+                                          _vm._v(
+                                            "No, each member can have only one account in "
+                                          ),
+                                          _c("span", [
+                                            _vm._v(_vm._s(_vm.$root.appName))
+                                          ]),
+                                          _vm._v(
+                                            " Ltd. Any attempt of fraud will result in permanent blocking of the account & the funds deposited in the account will be frozen. "
+                                          )
+                                        ])
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _vm._m(3),
+                                  _vm._v(" "),
+                                  _vm._m(4),
+                                  _vm._v(" "),
+                                  _vm._m(5),
+                                  _vm._v(" "),
+                                  _vm._m(6),
+                                  _vm._v(" "),
+                                  _vm._m(7),
+                                  _vm._v(" "),
+                                  _vm._m(8),
+                                  _vm._v(" "),
+                                  _vm._m(9)
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "faq-section" }, [
+                                _c("h3", [_vm._v("Withdrawal questions")]),
+                                _vm._v(" "),
+                                _c("ul", { staticClass: "faq" }, [
+                                  _c("li", { staticClass: "panel" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "que collapsed",
+                                        attrs: {
+                                          "data-toggle": "collapse",
+                                          "data-parent": "#accordion",
+                                          href: "#collapse18"
+                                        }
+                                      },
+                                      [_vm._v("How can I withdraw funds? ")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "ans panel-body collapse",
+                                        attrs: { id: "collapse18" }
+                                      },
+                                      [
+                                        _c("p", [
+                                          _vm._v("Just login to your "),
+                                          _c("span", [
+                                            _vm._v(_vm._s(_vm.$root.appName))
+                                          ]),
+                                          _vm._v(
+                                            " Limited account and proceed with your withdrawal at the Withdraw section. "
+                                          )
+                                        ])
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _vm._m(10),
+                                  _vm._v(" "),
+                                  _vm._m(11),
+                                  _vm._v(" "),
+                                  _vm._m(12)
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "faq-section" }, [
+                                _c("h3", [_vm._v("Referral questions")]),
+                                _vm._v(" "),
+                                _c("ul", { staticClass: "faq" }, [
+                                  _c("li", { staticClass: "panel" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "que collapsed",
+                                        attrs: {
+                                          "data-toggle": "collapse",
+                                          "data-parent": "#accordion",
+                                          href: "#collapse22"
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "Do you have a referral program in "
+                                        ),
+                                        _c("span", [
+                                          _vm._v(_vm._s(_vm.$root.appName))
+                                        ]),
+                                        _vm._v(" Limited? ")
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "ans panel-body collapse",
+                                        attrs: { id: "collapse22" }
+                                      },
+                                      [
+                                        _c("p", [
+                                          _vm._v(
+                                            "Yes we have a 5 level referral program in "
+                                          ),
+                                          _c("span", [
+                                            _vm._v(_vm._s(_vm.$root.appName))
+                                          ]),
+                                          _vm._v(" Limited. ")
+                                        ])
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "panel" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "que collapsed",
+                                        attrs: {
+                                          href: "#collapse23",
+                                          "data-toggle": "collapse",
+                                          "data-parent": "#accordion"
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "What are the referral commissions in "
+                                        ),
+                                        _c("span", [
+                                          _vm._v(_vm._s(_vm.$root.appName))
+                                        ]),
+                                        _vm._v(" Limited? ")
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(13)
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("li", { staticClass: "panel" }, [
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "que collapsed",
+                                        attrs: {
+                                          href: "#collapse24",
+                                          "data-toggle": "collapse",
+                                          "data-parent": "#accordion"
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "Do I need to have active investment in order to participate in "
+                                        ),
+                                        _c("span", [
+                                          _vm._v(_vm._s(_vm.$root.appName))
+                                        ]),
+                                        _vm._v(" Limited's referral program ? ")
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._m(14)
+                                  ]),
+                                  _vm._v(" "),
+                                  _vm._m(15)
+                                ])
+                              ])
+                            ])
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]
       ),
       _vm._v(" "),
       _c("Footer")
@@ -73351,884 +73883,424 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row page-title m-3 p-2" }, [
-      _c("div", { staticClass: "col-12 col-lg-8 container" }, [
-        _c("h1", [_vm._v("Frequently Asked Questions")]),
-        _vm._v(" "),
+    return _c(
+      "div",
+      { staticClass: "ans panel-body collapse", attrs: { id: "collapse6" } },
+      [
         _c("p", [
           _vm._v(
-            "Please go through the Frequently asked questions. Following are the answers to most common questions that may arise in any investor’s mind to know Bitcoinary Mint Limited better. "
+            'In order to begin, you should register on our website by filling the registration form. Just click on "Register". After that, you can start investing with us. '
           )
         ])
-      ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "panel" }, [
+      _c(
+        "a",
+        {
+          staticClass: "que collapsed",
+          attrs: {
+            href: "#collapse7",
+            "data-toggle": "collapse",
+            "data-parent": "#accordion"
+          }
+        },
+        [_vm._v("I am having trouble during registering, what should I do? ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "ans panel-body collapse", attrs: { id: "collapse7" } },
+        [
+          _c("p", [
+            _vm._v(
+              "Please check the information you have entered. You may contact our support team at "
+            ),
+            _c("a", { attrs: { href: "mailto:info@Bitcoinaryfinance.com" } }, [
+              _vm._v("info@Bitcoinaryfinance.com ")
+            ]),
+            _vm._v(" if you need our assistance. We will be glad to help you. ")
+          ])
+        ]
+      )
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "wrapper" }, [
-          _c("div", { staticClass: "row company" }, [
-            _c(
-              "div",
-              {
-                staticClass: "wrapper",
-                staticStyle: {
-                  background: "url(images/faq-wrap.png) no-repeat 0 0"
-                }
-              },
-              [
-                _c(
-                  "div",
-                  {
-                    staticClass: "faq-container panel-group",
-                    attrs: { id: "accordion" }
-                  },
-                  [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "column" }, [
-                        _c("div", { staticClass: "faq-section" }, [
-                          _c("h3", [_vm._v("General Questions")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "faq" }, [
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que",
-                                  attrs: {
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion",
-                                    "aria-expanded": "false",
-                                    href: "#collapse1"
-                                  }
-                                },
-                                [_vm._v("What is Bitcoinary Mint Limited? ")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse in",
-                                  attrs: { id: "collapse1" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Bitcoinary Mint is an expert trading company."
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse2",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "Is Bitcoinary Mint Limited available to public? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse2" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Bitcoinary Mint Limited is open for public who are 18 and fulfill the legal age to take part in our program. "
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse3",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "How can I check the authenticity of BFIN Limited? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse3" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Bitcoinary Mint (BFIN) is fully regulated by the Financial Industry Regulatory Authority. You can visit to vetrify https://brokercheck.finra.org/firm/summary/282643/"
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse4",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "How Does Bitcoinary Mint Limited make profit? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse4" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Bitcoinary Mint has been consistent for the past two years, our unique alogrithm remains relevant, this the major secret why we win. "
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse5",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "What are the risks of loss of funds for investors?"
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse5" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Bitcoinary Mint Limited is a platform which is risk-free. However, to avoid unforeseen loss, the company continuously fills in its contingency fund. In the case of force majeure situations, Bitcoinary Mint Limited's investors can expect to receive money back except the profits they received earlier."
-                                    )
-                                  ])
-                                ]
-                              )
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "faq-section" }, [
-                          _c("h3", [_vm._v("Account questions")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "faq" }, [
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse6",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "How can I start investing with Bitcoinary Mint Limited ? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse6" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      'In order to begin, you should register on our website by filling the registration form. Just click on "Register". After that, you can start investing with us. '
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse7",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "I am having trouble during registering, what should I do? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse7" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Please check the information you have entered. You may contact our support team at "
-                                    ),
-                                    _c(
-                                      "a",
-                                      {
-                                        attrs: {
-                                          href:
-                                            "mailto:info@Bitcoinaryfinance.com"
-                                        }
-                                      },
-                                      [_vm._v("info@Bitcoinaryfinance.com ")]
-                                    ),
-                                    _vm._v(
-                                      " if you need our assistance. We will be glad to help you. "
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse8",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "I wish to invest with Bitcoinary Mint Limited but I don't have any e-currency account. What should I do? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse8" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "You can open a free Bitcoin wallet here : www.blockchain.info or coinpayments.net or you can fund your bitcoin wallet through different exchanges you can lookup on internet which is suitable for your country."
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse9",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "Can I have more than one account at Bitcoinary Mint ? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse9" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "No, each member can have only one account in Bitcoinary Mint Ltd. Any attempt of fraud will result in permanent blocking of the account & the funds deposited in the account will be frozen. "
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse10",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "How to make changes in payment data? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse10" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Please contact us at info@Bitcoinaryfinance.com and we will update your account within 24 hours. "
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse11",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "What should I do if I forget account password? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse11" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Click on forgot password link, enter your username or e-mail and follow instruction. You'll receive your account reset information by email. "
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse13",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "How long will it take to my deposit active in my account? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse13" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Your deposit will automatically be active after 3 confirmation on your transaction in bitcoin network. "
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse14",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [_vm._v("Can I make multiple deposits? ")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse14" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Yes you can make multiple deposits at any given time. There is no limit to the amount and the number of transactions you make within our program. "
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse15",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [_vm._v("Can we withdraw our initial deposit")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse15" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "yes you can withdraw your initial deposit."
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse16",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "Is daily profit available all week long?"
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse16" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "No, daily profit is available 7 days a week but withdrawal is strictly after plan end."
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse17",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [_vm._v("Do you offer compounding? ")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse17" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v("Ye, we do offer compounding.")
-                                  ])
-                                ]
-                              )
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "faq-section" }, [
-                          _c("h3", [_vm._v("Withdrawal questions")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "faq" }, [
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion",
-                                    href: "#collapse18"
-                                  }
-                                },
-                                [_vm._v("How can I withdraw funds? ")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse18" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Just login to your Bitcoinary Mint Limited account and proceed with your withdrawal at the Withdraw section. "
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse19",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "Is withdrawal of funds available all week?"
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse19" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Yes withdrawal of funds is available 7 days a week."
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse20",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "How long does it take for a withdrawal request to get processed? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse20" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "All withdrawal requests are processed within 24 hours for crypto and 48 hours maximum for other modes of deposit."
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse21",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "What is the minimum withdrawal amount? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse21" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "The minimum withdrawal amount is 1 USD."
-                                    )
-                                  ])
-                                ]
-                              )
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "faq-section" }, [
-                          _c("h3", [_vm._v("Referral questions")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "faq" }, [
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion",
-                                    href: "#collapse22"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "Do you have a referral program in Bitcoinary Mint Limited? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse22" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Yes we have a 5 level referral program in Bitcoinary Mint Limited. "
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse23",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "What are the referral commissions in Bitcoinary Mint Limited? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse23" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "For direct referrals you will get upto 10% interest on the amount deposited by the referee. It all depends on your plan. SEE: https://www.Bitcoinaryincinvestment.com/partners."
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse24",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "Do I need to have active investment in order to participate in Bitcoinary Mint Limited's referral program ? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse24" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "You do not need to have an active investment in order to participate in the referral program. Anyone registered our site can start benefiting immediately from participating in our referral program by referring others. Referral commissions are paid to referring party when referred party makes an investment deposit. "
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "panel" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "que collapsed",
-                                  attrs: {
-                                    href: "#collapse25",
-                                    "data-toggle": "collapse",
-                                    "data-parent": "#accordion"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "How do I know that someone has become my referral? "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "ans panel-body collapse",
-                                  attrs: { id: "collapse25" }
-                                },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "You will receive email notification. You can check number of your referrals & your referral earnings on the 'Referral' section of your account. "
-                                    )
-                                  ])
-                                ]
-                              )
-                            ])
-                          ])
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ]
+    return _c(
+      "div",
+      { staticClass: "ans panel-body collapse", attrs: { id: "collapse8" } },
+      [
+        _c("p", [
+          _vm._v(
+            "You can open a free Bitcoin wallet here : www.blockchain.info or coinpayments.net or you can fund your bitcoin wallet through different exchanges you can lookup on internet which is suitable for your country."
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "panel" }, [
+      _c(
+        "a",
+        {
+          staticClass: "que collapsed",
+          attrs: {
+            href: "#collapse10",
+            "data-toggle": "collapse",
+            "data-parent": "#accordion"
+          }
+        },
+        [_vm._v("How to make changes in payment data? ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "ans panel-body collapse", attrs: { id: "collapse10" } },
+        [
+          _c("p", [
+            _vm._v(
+              "Please contact us at info@Bitcoinaryfinance.com and we will update your account within 24 hours. "
             )
           ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "panel" }, [
+      _c(
+        "a",
+        {
+          staticClass: "que collapsed",
+          attrs: {
+            href: "#collapse11",
+            "data-toggle": "collapse",
+            "data-parent": "#accordion"
+          }
+        },
+        [_vm._v("What should I do if I forget account password? ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "ans panel-body collapse", attrs: { id: "collapse11" } },
+        [
+          _c("p", [
+            _vm._v(
+              "Click on forgot password link, enter your username or e-mail and follow instruction. You'll receive your account reset information by email. "
+            )
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "panel" }, [
+      _c(
+        "a",
+        {
+          staticClass: "que collapsed",
+          attrs: {
+            href: "#collapse13",
+            "data-toggle": "collapse",
+            "data-parent": "#accordion"
+          }
+        },
+        [_vm._v("How long will it take to my deposit active in my account? ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "ans panel-body collapse", attrs: { id: "collapse13" } },
+        [
+          _c("p", [
+            _vm._v(
+              "Your deposit will automatically be active after 3 confirmation on your transaction in bitcoin network. "
+            )
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "panel" }, [
+      _c(
+        "a",
+        {
+          staticClass: "que collapsed",
+          attrs: {
+            href: "#collapse14",
+            "data-toggle": "collapse",
+            "data-parent": "#accordion"
+          }
+        },
+        [_vm._v("Can I make multiple deposits? ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "ans panel-body collapse", attrs: { id: "collapse14" } },
+        [
+          _c("p", [
+            _vm._v(
+              "Yes you can make multiple deposits at any given time. There is no limit to the amount and the number of transactions you make within our program. "
+            )
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "panel" }, [
+      _c(
+        "a",
+        {
+          staticClass: "que collapsed",
+          attrs: {
+            href: "#collapse15",
+            "data-toggle": "collapse",
+            "data-parent": "#accordion"
+          }
+        },
+        [_vm._v("Can we withdraw our initial deposit")]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "ans panel-body collapse", attrs: { id: "collapse15" } },
+        [_c("p", [_vm._v("yes you can withdraw your initial deposit.")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "panel" }, [
+      _c(
+        "a",
+        {
+          staticClass: "que collapsed",
+          attrs: {
+            href: "#collapse16",
+            "data-toggle": "collapse",
+            "data-parent": "#accordion"
+          }
+        },
+        [_vm._v("Is daily profit available all week long?")]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "ans panel-body collapse", attrs: { id: "collapse16" } },
+        [
+          _c("p", [
+            _vm._v(
+              "No, daily profit is available 7 days a week but withdrawal is strictly after plan end."
+            )
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "panel" }, [
+      _c(
+        "a",
+        {
+          staticClass: "que collapsed",
+          attrs: {
+            href: "#collapse17",
+            "data-toggle": "collapse",
+            "data-parent": "#accordion"
+          }
+        },
+        [_vm._v("Do you offer compounding? ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "ans panel-body collapse", attrs: { id: "collapse17" } },
+        [_c("p", [_vm._v("Ye, we do offer compounding.")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "panel" }, [
+      _c(
+        "a",
+        {
+          staticClass: "que collapsed",
+          attrs: {
+            href: "#collapse19",
+            "data-toggle": "collapse",
+            "data-parent": "#accordion"
+          }
+        },
+        [_vm._v("Is withdrawal of funds available all week?")]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "ans panel-body collapse", attrs: { id: "collapse19" } },
+        [
+          _c("p", [
+            _vm._v("Yes withdrawal of funds is available 7 days a week.")
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "panel" }, [
+      _c(
+        "a",
+        {
+          staticClass: "que collapsed",
+          attrs: {
+            href: "#collapse20",
+            "data-toggle": "collapse",
+            "data-parent": "#accordion"
+          }
+        },
+        [
+          _vm._v(
+            "How long does it take for a withdrawal request to get processed? "
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "ans panel-body collapse", attrs: { id: "collapse20" } },
+        [
+          _c("p", [
+            _vm._v(
+              "All withdrawal requests are processed within 24 hours for crypto and 48 hours maximum for other modes of deposit."
+            )
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "panel" }, [
+      _c(
+        "a",
+        {
+          staticClass: "que collapsed",
+          attrs: {
+            href: "#collapse21",
+            "data-toggle": "collapse",
+            "data-parent": "#accordion"
+          }
+        },
+        [_vm._v("What is the minimum withdrawal amount? ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "ans panel-body collapse", attrs: { id: "collapse21" } },
+        [_c("p", [_vm._v("The minimum withdrawal amount is 1 USD.")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "ans panel-body collapse", attrs: { id: "collapse23" } },
+      [
+        _c("p", [
+          _vm._v(
+            "For direct referrals you will get upto 10% interest on the amount deposited by the referee. It all depends on your plan. SEE: https://www.bmintinvestments.com/partners."
+          )
         ])
-      ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "ans panel-body collapse", attrs: { id: "collapse24" } },
+      [
+        _c("p", [
+          _vm._v(
+            "You do not need to have an active investment in order to participate in the referral program. Anyone registered our site can start benefiting immediately from participating in our referral program by referring others. Referral commissions are paid to referring party when referred party makes an investment deposit. "
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "panel" }, [
+      _c(
+        "a",
+        {
+          staticClass: "que collapsed",
+          attrs: {
+            href: "#collapse25",
+            "data-toggle": "collapse",
+            "data-parent": "#accordion"
+          }
+        },
+        [_vm._v("How do I know that someone has become my referral? ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "ans panel-body collapse", attrs: { id: "collapse25" } },
+        [
+          _c("p", [
+            _vm._v(
+              "You will receive email notification. You can check number of your referrals & your referral earnings on the 'Referral' section of your account. "
+            )
+          ])
+        ]
+      )
     ])
   }
 ]
@@ -74254,7 +74326,19 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c("div", { staticClass: "row page-title m-3 p-2" }, [
+      _c("div", { staticClass: "col-12 col-lg-8 container" }, [
+        _c("h1", [_vm._v("Get Started")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v("To start your investment journey in  "),
+          _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+          _vm._v(
+            " Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal."
+          )
+        ])
+      ])
+    ]),
     _vm._v(" "),
     _c(
       "section",
@@ -74272,7 +74356,7 @@ var render = function() {
               _c("div", { staticClass: "p-1 get-started" }, [
                 _c("ul", [
                   _c("li", [
-                    _vm._m(1),
+                    _vm._m(0),
                     _vm._v(" "),
                     _c(
                       "p",
@@ -74301,13 +74385,33 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
+                  _c("li", [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in  "
+                      ),
+                      _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                      _vm._v(" Limited just click on ‘Make a deposit‘ link. ")
+                    ])
+                  ]),
+                  _vm._v(" "),
                   _vm._m(2),
                   _vm._v(" "),
                   _vm._m(3),
                   _vm._v(" "),
-                  _vm._m(4),
-                  _vm._v(" "),
-                  _vm._m(5)
+                  _c("li", [
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v("All the investment plans in  "),
+                      _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                      _vm._v(
+                        " Limited comes with bit by bit accruals each day your account reads. Once profit is deposited in your account wallet, you may be able to withdraw it. The minimum withdrawal amount is 1 USD. Feel free at any time to withdraw & enjoy your ROI! "
+                      )
+                    ])
+                  ])
                 ])
               ])
             ])
@@ -74322,22 +74426,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row page-title m-3 p-2" }, [
-      _c("div", { staticClass: "col-12 col-lg-8 container" }, [
-        _c("h1", [_vm._v("Get Started")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "To start your investment journey in  Bitcoinary Mint Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal."
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("h3", [
       _c("span", [_vm._v("Step 1: ")]),
       _vm._v("Account Registration")
@@ -74347,14 +74435,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("h3", [_c("span", [_vm._v("Step 2: ")]), _vm._v("Creating Deposit")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in  Bitcoinary Mint Limited just click on ‘Make a deposit‘ link. "
-        )
-      ])
+    return _c("h3", [
+      _c("span", [_vm._v("Step 2: ")]),
+      _vm._v("Creating Deposit")
     ])
   },
   function() {
@@ -74392,14 +74475,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("h3", [_c("span", [_vm._v("Step 5: ")]), _vm._v("Profit Withdrawal")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "All the investment plans in  Bitcoinary Mint Limited comes with bit by bit accruals each day your account reads. Once profit is deposited in your account wallet, you may be able to withdraw it. The minimum withdrawal amount is 1 USD. Feel free at any time to withdraw & enjoy your ROI! "
-        )
-      ])
+    return _c("h3", [
+      _c("span", [_vm._v("Step 5: ")]),
+      _vm._v("Profit Withdrawal")
     ])
   }
 ]
@@ -74430,7 +74508,18 @@ var render = function() {
     [
       _c("Header"),
       _vm._v(" "),
-      _vm._m(0),
+      _c("div", { staticClass: "row page-title m-3 p-2" }, [
+        _c("div", { staticClass: "col-12 col-lg-8 container" }, [
+          _c("h1", [_vm._v("Investment Solutions")]),
+          _vm._v(" "),
+          _c("p", [
+            _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+            _vm._v(
+              " Limited offers two attractive and profitable investment plans for our valuable investors. Our dedicated team has put in a lot of time & effort to present the best possible investment plans for you."
+            )
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "section",
@@ -74445,23 +74534,24 @@ var render = function() {
           _c("div", { staticClass: "main" }, [
             _c("div", { staticClass: "container" }, [
               _c("div", { staticClass: "wrapper" }, [
-                _vm._m(1),
+                _vm._m(0),
                 _vm._v(" "),
                 _c("p", { staticClass: "col mb-2 inv-intro text-center" }, [
+                  _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
                   _vm._v(
-                    " Bitcoinary Mint offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. "
+                    " offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. "
                   )
                 ]),
                 _c("br"),
                 _vm._v(" "),
-                _vm._m(2),
+                _vm._m(1),
                 _vm._v(" "),
                 _c("div", { staticClass: "row inv-plans" }, [
                   _c("div", { staticClass: " col alpha omega" }, [
                     _c("div", { staticClass: "col plan-wrap first" }, [
-                      _vm._m(3),
+                      _vm._m(2),
                       _vm._v(" "),
-                      _vm._m(4),
+                      _vm._m(3),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -74483,9 +74573,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "col alpha omega" }, [
                     _c("div", { staticClass: "col plan-wrap first" }, [
-                      _vm._m(5),
+                      _vm._m(4),
                       _vm._v(" "),
-                      _vm._m(6),
+                      _vm._m(5),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -74517,22 +74607,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row page-title m-3 p-2" }, [
-      _c("div", { staticClass: "col-12 col-lg-8 container" }, [
-        _c("h1", [_vm._v("Investment Solutions")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            " Bitcoinary Mint Limited offers two attractive and profitable investment plans for our valuable investors. Our dedicated team has put in a lot of time & effort to present the best possible investment plans for you."
-          )
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -74717,7 +74791,19 @@ var render = function() {
     [
       _c("Header"),
       _vm._v(" "),
-      _vm._m(0),
+      _c("div", { staticClass: "row page-title m-3 p-2" }, [
+        _c("div", { staticClass: "col-12 col-lg-8 container" }, [
+          _c("h1", [_vm._v("Latest News")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v("In the news section of  "),
+            _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+            _vm._v(
+              " Limited we will report you all important information about the development of the project, the expansion of Bitcoin-farms, as well as various promotions, bonuses, incentives for investors and technical improvements to the site."
+            )
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "section",
@@ -74745,7 +74831,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _vm._m(1)
+                    _vm._m(0)
                   ])
                 ])
               ])
@@ -74760,22 +74846,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row page-title m-3 p-2" }, [
-      _c("div", { staticClass: "col-12 col-lg-8 container" }, [
-        _c("h1", [_vm._v("Latest News")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "In the news section of  Bitcoinary Mint Limited we will report you all important information about the development of the project, the expansion of Bitcoin-farms, as well as various promotions, bonuses, incentives for investors and technical improvements to the site."
-          )
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -74820,7 +74890,21 @@ var render = function() {
         },
         [
           _c("div", { staticClass: "container" }, [
-            _vm._m(0),
+            _c("div", { staticClass: "row justify-content-center" }, [
+              _c("div", { staticClass: "col-lg-6 text-center" }, [
+                _c("div", { staticClass: "section-header" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "blog-details__content" }, [
+                    _vm._v(
+                      "\n                            Enjoy exceptional upto 15% two levels affiliate system structure in "
+                    ),
+                    _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                    _vm._v(" Limited.\n                        ")
+                  ])
+                ])
+              ])
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-lg-12" }, [
               _c("div", { staticClass: "blog-details-wrapper" }, [
@@ -74833,7 +74917,43 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _vm._m(1)
+                _c("div", { staticClass: "blog-details__content" }, [
+                  _c("h4", { staticClass: "blog-details__title" }, [
+                    _vm._v("Partner Incentive System Structure")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", {}, [
+                    _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                    _vm._v(
+                      " has derived a means to support our clients who do not have enough to subscribe for an investment plan through our affiliate program."
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "You can attract any number of new investors, the more your active referrals, the more earnings you have. You are entitled to 15% on every deposit made by your downline.\n                        "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      " You do not need to have an active deposit before you can earn from our investment program."
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      " For first level, you will receive 10% affiliate commission and for second level you will receive 5% affiliate commission."
+                    )
+                  ]),
+                  _c("p", [
+                    _vm._v(
+                      "This multi-tier affiliate program will ensure multiple sources of passive income for you.\n                        "
+                    )
+                  ])
+                ])
               ])
             ])
           ])
@@ -74850,68 +74970,21 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-lg-6 text-center" }, [
-        _c("div", { staticClass: "section-header" }, [
-          _c("h2", { staticClass: "section-title" }, [
-            _c("span", { staticClass: "font-weight-normal" }, [
-              _vm._v("Our Affiliate ")
-            ]),
-            _vm._v(" "),
-            _c("b", { staticClass: "base--color" }, [_vm._v("Program")])
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "blog-details__content" }, [
-            _vm._v(
-              "\n                            Enjoy exceptional upto 15% two levels affiliate system structure in Bitcoinary Mint Limited.\n                        "
-            )
-          ])
-        ])
-      ])
+    return _c("h2", { staticClass: "section-title" }, [
+      _c("span", { staticClass: "font-weight-normal" }, [
+        _vm._v("Our Affiliate ")
+      ]),
+      _vm._v(" "),
+      _c("b", { staticClass: "base--color" }, [_vm._v("Program")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "blog-details__content" }, [
-      _c("h4", { staticClass: "blog-details__title" }, [
-        _vm._v("Partner Incentive System Structure")
-      ]),
-      _vm._v(" "),
-      _c("p", {}, [
-        _vm._v(
-          "Bitcoinary Mint has derived a means to support our clients who do not have enough to subscribe for an investment plan through our affiliate program."
-        )
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(" This is located in your account user dashboard as your "),
-        _c("span", { staticClass: "base--color" }, [_vm._v("affiliate link.")])
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "You can attract any number of new investors, the more your active referrals, the more earnings you have. You are entitled to 15% on every deposit made by your downline.\n                        "
-        )
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          " You do not need to have an active deposit before you can earn from our investment program."
-        )
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          " For first level, you will receive 10% affiliate commission and for second level you will receive 5% affiliate commission."
-        )
-      ]),
-      _c("p", [
-        _vm._v(
-          "This multi-tier affiliate program will ensure multiple sources of passive income for you.\n                        "
-        )
-      ])
+    return _c("p", [
+      _vm._v(" This is located in your account user dashboard as your "),
+      _c("span", { staticClass: "base--color" }, [_vm._v("affiliate link.")])
     ])
   }
 ]
@@ -74939,7 +75012,270 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "page-wrapper" },
-    [_c("Header"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("Footer")],
+    [
+      _c("Header"),
+      _vm._v(" "),
+      _c("section", { staticClass: "bg_img pt-120 pb-120 border-top-1" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-12", attrs: { id: "terms" } }, [
+            _c("div", { staticClass: "blog-details-wrapper" }, [
+              _c("div", { staticClass: "blog-details__content" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-justify" }, [
+                  _vm._v(
+                    "This user agreement (the Agreement) describes the terms and conditions of using the services provided by "
+                  ),
+                  _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                  _vm._v(
+                    " to the registered user (Client), including the access to the personal account and payment operations performed through the "
+                  ),
+                  _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                  _vm._v(" website located at "),
+                  _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                  _vm._v(".\n                            "),
+                  _c("br"),
+                  _vm._v("Using "),
+                  _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                  _vm._v(
+                    " services, you confirm that you have read this Agreement, understood its meaning in full and accept this Agreement.\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "All interested parties are required to read all that is written and stated on this page without skipping even a single word. This acts as the official and binding terms and conditions between You the registrant and our company "
+                  ),
+                  _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                  _vm._v(".\n                            "),
+                  _c("br"),
+                  _vm._v(
+                    "Prior to registration, all interested registrants understand that upon registration, you shall be bound by these terms and conditions without negotiations. If you are not ready to accept the terms written herewith, please do not register for an account.\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    'Upon registration, the user shall be called "member". All members of our company must oblige to follow all the rules written on this page. We stress this multiple times, as our company have very stringent rulings regarding the use of our website and that of our company program.\n                            '
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "All registrants should be of legal ages and must reside in a country where participation in foreign investment programs is not prohibited. If you live within said conditions, then feel free to sign up without worries.\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "All registrants must use a valid e-mail address in order for us to be able to communicate properly when issues arise out of misuse or technical reasons.\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v("When registering, you hold "),
+                  _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                  _vm._v(
+                    " free from any liabilities and losses you may incur in the circumstances unforeseen, such as account compromise, suspension, and or deletion, due to reasons caused by the registrant.\n                            "
+                  ),
+                  _c("br"),
+                  _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                  _vm._v(
+                    " services are not available to the general public and are opened only to the qualified members of "
+                  ),
+                  _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                  _vm._v(
+                    ", the use of this site is restricted to our members and to individuals personally invited by them. Every deposit is considered to be a private transaction between the "
+                  ),
+                  _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                  _vm._v(" and its Member.\n                            "),
+                  _c("br"),
+                  _vm._v(
+                    "We reserve the rights to decline, reject and reverse deposits back to the depositor for reasons we may either disclose publicly or not, and for whatever reason we deem necessary for the better performance of our company.\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "All transactions are final and no refunding possible once a deposit has been made. On special situations where applicable, we will issue refunds."
+                  )
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-lg-12", attrs: { id: "restrictions" } },
+            [
+              _c("div", { staticClass: "blog-details-wrapper" }, [
+                _c("div", { staticClass: "blog-details__content" }, [
+                  _c("h4", { staticClass: "blog-details__title base--color" }, [
+                    _vm._v("Restrictions")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-justify" }, [
+                    _vm._v(
+                      "You may not use the Services if you are located in, or a citizen or resident of any state, country, territory or other jurisdiction that is embargoed by the UNSC or where your use of the Services would be illegal or otherwise violate any applicable law. You represent and warrant that you are not a citizen or resident of any such jurisdiction and that you will not use any Services while located in any such jurisdiction. You also may not use the Services if you are located in, or a citizen or resident of, any other jurisdiction where "
+                    ),
+                    _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                    _vm._v(
+                      " has determined, at its discretion, to prohibit use of the Services (USA etc.). "
+                    ),
+                    _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                    _vm._v(
+                      " may implement controls to restrict access to the Services from any jurisdiction prohibited pursuant to this Section. You will comply with this Section, even if "
+                    ),
+                    _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                    _vm._v(
+                      " methods to prevent use of the Services are not effective or can be bypassed.\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "We reserve the right to use “geo-blocking”, that is, we may block by IP-address the visitors that arrive from the US. Any resident or citizen of the United States of America is prohibited from using the website, making any operations at dashboard. We reserve the right to immediately close any of your accounts and liquidate any operation if it is determined that you have provided false information about your location or place of residence. We also reserve the right to block by IP address the visitors that arrive from countries included in the sanction lists.\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "The Company may at any time institute daily, weekly and/or monthly transactional limits on a Customer's use of the Service. These limits may be changed at any time for any reason by the Company. Each Customer may have different transactional limits for different reasons.\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "If a Customer is suspected of using multiple accounts to override the daily or weekly transactional limits, that shall be reason by the Company to suspend all of implicated accounts from the Service.\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "You are not allowed to use more than one account per IP address. You are not allowed to create multiple accounts. You are not allowed to login more than one account on the same computer. This includes family, friends and using your account on public computers. You may not permit any other person to use your Account. Unless we otherwise permit from time to time, you may not open more than one Account and we may, without notice, close any or all of the Accounts of a Member who has, or whom we reasonably suspect has, unauthorised multiple Accounts.\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "Our company assumes no responsibility for lost, late, incomplete, incorrect, or misdirected registrations. We are not responsible for technical, hardware or software malfunctions, misdirected entries, lost or unavailable network connections, or other communications or other technical problems related to the registration.\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "We do not accept any responsibility to you for:\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "- malfunctions in communications facilities which cannot reasonably be considered to be under our control and that may affect the accuracy or timeliness of messages you send to us;\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "- any losses or delays in transmission of messages arising out of the use of any Internet access service provider or caused by any browser or other software which is not under our control;\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "- the services provided to you by your e-payment issuer or provider (Payeer, PerfectMoney, Blockhain.info, Cryptonator, Coinomi etc), as well as transaction delays due to their fault;\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "- viruses caused by third parties;\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v("- errors on the Site or with the "),
+                    _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                    _vm._v(
+                      " Online Service caused by incomplete or incorrect information provided to us by you or a third party;\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "- any unauthorised use or interception of any message or information before it reaches the Site;\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "- any unauthorised use of or access to data relating to you or your transactions which is held by us (unless such use or access is caused by our negligence, fraud or failure to comply with laws relating to the protection of your data); We have no obligation to you to initiate or perform a money transfer or other transaction as part of the "
+                    ),
+                    _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                    _vm._v(" Online Service if:\n                            "),
+                    _c("br"),
+                    _vm._v(
+                      "- we are unable to obtain satisfactory evidence of your identity;\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "- we have reason to believe that the transaction message is incorrect, unauthorized or forged;\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "- you provide us with incorrect or incomplete information or if your transaction message is not given to us sufficiently in advance to allow for timely provision of the requested transaction;\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "- your e-payment issuer or provider does not authorise your use of your e-payment account for payment of the transaction and our related charges,\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v(
+                      "and we do not accept any liability for damages resulting from 3rd party non-payment or delay in payment of a money transfer to our internal accounts or failure to perform a transaction under the "
+                    ),
+                    _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                    _vm._v(
+                      " Online Service by reason of any of these matters. If you received payment for advertising / listing from our official wallet, which provides for a certain amount of reinvest in the project, it means that you do not can close the deposit and withdraw all funds including deposit, you can only withdraw daily income 5% from the deposit, otherwise we are entitled to suspend payments to you. We may refuse to provide the "
+                    ),
+                    _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                    _vm._v(
+                      " Online Service (in whole or in part) to you if to do so may breach any "
+                    ),
+                    _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                    _vm._v(
+                      " policy (including policies intended to prevent fraud, money laundering or terrorist financing) and/or any applicable law, order of a court or requirement of any regulatory or governmental authority, body or agency having jurisdiction over us, or if we otherwise consider such action necessary to protect our interests.\n                            "
+                    ),
+                    _c("br"),
+                    _vm._v("We may suspend the operation of the "),
+                    _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                    _vm._v(
+                      " Online Service in whole or in part if, in our absolute discretion, we consider it appropriate to do so by reason of any circumstances beyond our control. We shall not be liable to you for any loss or liability which may be suffered or incurred by you as a result of any such interruption, even if caused by our negligence or Force Majeure."
+                    )
+                  ])
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-12", attrs: { id: "privacy" } }, [
+            _c("div", { staticClass: "blog-details-wrapper" }, [
+              _c("div", { staticClass: "blog-details__content" }, [
+                _vm._m(2),
+                _vm._v(" "),
+                _c("p", {}, [
+                  _vm._v(
+                    "Since we conduct business in the UK we have to follow the AML & KYC requirements strictly. As part of our AML policy, we ensure that any client agreeing to use our services, is also agreeing - if it is requested by "
+                  ),
+                  _c("span", [_vm._v(_vm._s(_vm.$root.appName))]),
+                  _vm._v(
+                    " - to provide us with identification documentation, including but not limited to the high resolution (300 DPI) color scan of all sides of the following Personal Identity Documents and/or Proof of Address Documents:\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "1. Personal Identity Documents:\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "- Current valid full EU or non EU Passport;\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "- Current valid National ID card;\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "- Current valid Driving License;\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "2. Proof of Address Documents:\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "- Recent (not more 3 months) Utility Bill — Gas, Electricity, Water, Telephone (Not mobile phones)\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v("- Bank Statement\n                            "),
+                  _c("br"),
+                  _vm._v(
+                    "We require the documents to be sent to us in high quality (300 DPI) colour format. If the documents have more than one side then we require all sides to be sent to us. We reserve the right to reject any documents, which do not comply with the above.\n                            "
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "We reserve the right to require additional information at any time to verify the client's identification and any further information that may be required to satisfy the Money Laundering Regulations."
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("Footer")
+    ],
     1
   )
 }
@@ -74948,224 +75284,36 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "bg_img pt-120 pb-120 border-top-1" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row justify-content-center" }, [
-          _c("div", { staticClass: "col-lg-6 text-center" }, [
-            _c("div", { staticClass: "section-header" }, [
-              _c("h2", { staticClass: "section-title" }, [
-                _c("span", { staticClass: "font-weight-normal" }, [
-                  _vm._v("Our ")
-                ]),
-                _vm._v(" "),
-                _c("b", { staticClass: "base--color" }, [
-                  _vm._v("Terms and Condition ")
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-12", attrs: { id: "terms" } }, [
-          _c("div", { staticClass: "blog-details-wrapper" }, [
-            _c("div", { staticClass: "blog-details__content" }, [
-              _c("h4", { staticClass: "blog-details__title" }, [
-                _vm._v("Terms of "),
-                _c("span", { staticClass: "base--color" }, [_vm._v(" Use ")])
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "text-justify" }, [
-                _vm._v(
-                  "This user agreement (the Agreement) describes the terms and conditions of using the services provided by Bitcoinary Mint to the registered user (Client), including the access to the personal account and payment operations performed through the Bitcoinary Mint website located at Bitcoinary Mint.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "Using Bitcoinary Mint services, you confirm that you have read this Agreement, understood its meaning in full and accept this Agreement.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "All interested parties are required to read all that is written and stated on this page without skipping even a single word. This acts as the official and binding terms and conditions between You the registrant and our company Bitcoinary Mint.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "Prior to registration, all interested registrants understand that upon registration, you shall be bound by these terms and conditions without negotiations. If you are not ready to accept the terms written herewith, please do not register for an account.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  'Upon registration, the user shall be called "member". All members of our company must oblige to follow all the rules written on this page. We stress this multiple times, as our company have very stringent rulings regarding the use of our website and that of our company program.\n                            '
-                ),
-                _c("br"),
-                _vm._v(
-                  "All registrants should be of legal ages and must reside in a country where participation in foreign investment programs is not prohibited. If you live within said conditions, then feel free to sign up without worries.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "All registrants must use a valid e-mail address in order for us to be able to communicate properly when issues arise out of misuse or technical reasons.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "When registering, you hold Bitcoinary Mint free from any liabilities and losses you may incur in the circumstances unforeseen, such as account compromise, suspension, and or deletion, due to reasons caused by the registrant.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "Bitcoinary Mint services are not available to the general public and are opened only to the qualified members of Bitcoinary Mint, the use of this site is restricted to our members and to individuals personally invited by them. Every deposit is considered to be a private transaction between the Bitcoinary Mint and its Member.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "We reserve the rights to decline, reject and reverse deposits back to the depositor for reasons we may either disclose publicly or not, and for whatever reason we deem necessary for the better performance of our company.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "All transactions are final and no refunding possible once a deposit has been made. On special situations where applicable, we will issue refunds."
-                )
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-12", attrs: { id: "restrictions" } }, [
-          _c("div", { staticClass: "blog-details-wrapper" }, [
-            _c("div", { staticClass: "blog-details__content" }, [
-              _c("h4", { staticClass: "blog-details__title base--color" }, [
-                _vm._v("Restrictions")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "text-justify" }, [
-                _vm._v(
-                  "You may not use the Services if you are located in, or a citizen or resident of any state, country, territory or other jurisdiction that is embargoed by the UNSC or where your use of the Services would be illegal or otherwise violate any applicable law. You represent and warrant that you are not a citizen or resident of any such jurisdiction and that you will not use any Services while located in any such jurisdiction. You also may not use the Services if you are located in, or a citizen or resident of, any other jurisdiction where Bitcoinary Mint has determined, at its discretion, to prohibit use of the Services (USA etc.). Bitcoinary Mint may implement controls to restrict access to the Services from any jurisdiction prohibited pursuant to this Section. You will comply with this Section, even if Bitcoinary Mint methods to prevent use of the Services are not effective or can be bypassed.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "We reserve the right to use “geo-blocking”, that is, we may block by IP-address the visitors that arrive from the US. Any resident or citizen of the United States of America is prohibited from using the website, making any operations at dashboard. We reserve the right to immediately close any of your accounts and liquidate any operation if it is determined that you have provided false information about your location or place of residence. We also reserve the right to block by IP address the visitors that arrive from countries included in the sanction lists.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "The Company may at any time institute daily, weekly and/or monthly transactional limits on a Customer's use of the Service. These limits may be changed at any time for any reason by the Company. Each Customer may have different transactional limits for different reasons.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "If a Customer is suspected of using multiple accounts to override the daily or weekly transactional limits, that shall be reason by the Company to suspend all of implicated accounts from the Service.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "You are not allowed to use more than one account per IP address. You are not allowed to create multiple accounts. You are not allowed to login more than one account on the same computer. This includes family, friends and using your account on public computers. You may not permit any other person to use your Account. Unless we otherwise permit from time to time, you may not open more than one Account and we may, without notice, close any or all of the Accounts of a Member who has, or whom we reasonably suspect has, unauthorised multiple Accounts.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "Our company assumes no responsibility for lost, late, incomplete, incorrect, or misdirected registrations. We are not responsible for technical, hardware or software malfunctions, misdirected entries, lost or unavailable network connections, or other communications or other technical problems related to the registration.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "We do not accept any responsibility to you for:\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- malfunctions in communications facilities which cannot reasonably be considered to be under our control and that may affect the accuracy or timeliness of messages you send to us;\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- any losses or delays in transmission of messages arising out of the use of any Internet access service provider or caused by any browser or other software which is not under our control;\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- the services provided to you by your e-payment issuer or provider (Payeer, PerfectMoney, Blockhain.info, Cryptonator, Coinomi etc), as well as transaction delays due to their fault;\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- viruses caused by third parties;\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- errors on the Site or with the Bitcoinary Mint Online Service caused by incomplete or incorrect information provided to us by you or a third party;\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- any unauthorised use or interception of any message or information before it reaches the Site;\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- any unauthorised use of or access to data relating to you or your transactions which is held by us (unless such use or access is caused by our negligence, fraud or failure to comply with laws relating to the protection of your data); We have no obligation to you to initiate or perform a money transfer or other transaction as part of the Bitcoinary Mint Online Service if:\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- we are unable to obtain satisfactory evidence of your identity;\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- we have reason to believe that the transaction message is incorrect, unauthorized or forged;\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- you provide us with incorrect or incomplete information or if your transaction message is not given to us sufficiently in advance to allow for timely provision of the requested transaction;\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- your e-payment issuer or provider does not authorise your use of your e-payment account for payment of the transaction and our related charges,\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "and we do not accept any liability for damages resulting from 3rd party non-payment or delay in payment of a money transfer to our internal accounts or failure to perform a transaction under the Bitcoinary Mint Online Service by reason of any of these matters. If you received payment for advertising / listing from our official wallet, which provides for a certain amount of reinvest in the project, it means that you do not can close the deposit and withdraw all funds including deposit, you can only withdraw daily income 5% from the deposit, otherwise we are entitled to suspend payments to you. We may refuse to provide the Bitcoinary Mint Online Service (in whole or in part) to you if to do so may breach any Bitcoinary Mint policy (including policies intended to prevent fraud, money laundering or terrorist financing) and/or any applicable law, order of a court or requirement of any regulatory or governmental authority, body or agency having jurisdiction over us, or if we otherwise consider such action necessary to protect our interests.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "We may suspend the operation of the Bitcoinary Mint Online Service in whole or in part if, in our absolute discretion, we consider it appropriate to do so by reason of any circumstances beyond our control. We shall not be liable to you for any loss or liability which may be suffered or incurred by you as a result of any such interruption, even if caused by our negligence or Force Majeure."
-                )
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-12", attrs: { id: "privacy" } }, [
-          _c("div", { staticClass: "blog-details-wrapper" }, [
-            _c("div", { staticClass: "blog-details__content" }, [
-              _c("h4", { staticClass: "blog-details__title" }, [
-                _vm._v("Privacy "),
-                _c("span", { staticClass: "base--color" }, [_vm._v(" Policy ")])
-              ]),
-              _vm._v(" "),
-              _c("p", {}, [
-                _vm._v(
-                  "Since we conduct business in the UK we have to follow the AML & KYC requirements strictly. As part of our AML policy, we ensure that any client agreeing to use our services, is also agreeing - if it is requested by Bitcoinary Mint - to provide us with identification documentation, including but not limited to the high resolution (300 DPI) color scan of all sides of the following Personal Identity Documents and/or Proof of Address Documents:\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "1. Personal Identity Documents:\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- Current valid full EU or non EU Passport;\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- Current valid National ID card;\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- Current valid Driving License;\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "2. Proof of Address Documents:\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "- Recent (not more 3 months) Utility Bill — Gas, Electricity, Water, Telephone (Not mobile phones)\n                            "
-                ),
-                _c("br"),
-                _vm._v("- Bank Statement\n                            "),
-                _c("br"),
-                _vm._v(
-                  "We require the documents to be sent to us in high quality (300 DPI) colour format. If the documents have more than one side then we require all sides to be sent to us. We reserve the right to reject any documents, which do not comply with the above.\n                            "
-                ),
-                _c("br"),
-                _vm._v(
-                  "We reserve the right to require additional information at any time to verify the client's identification and any further information that may be required to satisfy the Money Laundering Regulations."
-                )
-              ])
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-lg-6 text-center" }, [
+        _c("div", { staticClass: "section-header" }, [
+          _c("h2", { staticClass: "section-title" }, [
+            _c("span", { staticClass: "font-weight-normal" }, [_vm._v("Our ")]),
+            _vm._v(" "),
+            _c("b", { staticClass: "base--color" }, [
+              _vm._v("Terms and Condition ")
             ])
           ])
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h4", { staticClass: "blog-details__title" }, [
+      _vm._v("Terms of "),
+      _c("span", { staticClass: "base--color" }, [_vm._v(" Use ")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h4", { staticClass: "blog-details__title" }, [
+      _vm._v("Privacy "),
+      _c("span", { staticClass: "base--color" }, [_vm._v(" Policy ")])
     ])
   }
 ]
@@ -106258,7 +106406,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       return basepath;
     }(function () {
       return basepath;
-    })
+    }),
+    appName: function appName() {
+      return "BMint Investments";
+    }
   },
   created: function created() {
     this.getPayments();
@@ -110808,7 +110959,7 @@ var routes = [{
   component: _pages_Home__WEBPACK_IMPORTED_MODULE_1__["default"],
   meta: {
     auth: undefined,
-    title: 'Home - Bitcoinary Mint'
+    title: 'Home'
   }
 }, {
   path: '/404',
@@ -110816,7 +110967,7 @@ var routes = [{
   component: _pages_Error404_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
   meta: {
     auth: undefined,
-    title: 'Not Found - Bitcoinary Mint'
+    title: 'Not Found'
   }
 }, {
   path: '/terms',
@@ -110824,7 +110975,7 @@ var routes = [{
   component: _pages_terms_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
   meta: {
     auth: undefined,
-    title: 'Terms - Bitcoinary Mint'
+    title: 'Terms'
   }
 }, {
   path: '/about',
@@ -110832,7 +110983,7 @@ var routes = [{
   component: _pages_About__WEBPACK_IMPORTED_MODULE_4__["default"],
   meta: {
     auth: undefined,
-    title: 'About - Bitcoinary Mint'
+    title: 'About'
   }
 }, {
   path: '/checkEmail',
@@ -110840,7 +110991,7 @@ var routes = [{
   component: _pages_CheckEmail__WEBPACK_IMPORTED_MODULE_15__["default"],
   meta: {
     auth: undefined,
-    title: 'Check Email - Bitcoinary Mint'
+    title: 'Check Email'
   }
 }, {
   path: '/confirm-registration',
@@ -110848,7 +110999,7 @@ var routes = [{
   component: _pages_ConfirmRegistration__WEBPACK_IMPORTED_MODULE_12__["default"],
   meta: {
     auth: true,
-    title: 'Confirm Registration - Bitcoinary Mint'
+    title: 'Confirm Registration'
   }
 }, {
   path: '/news',
@@ -110856,7 +111007,7 @@ var routes = [{
   component: _pages_news__WEBPACK_IMPORTED_MODULE_9__["default"],
   meta: {
     auth: undefined,
-    title: 'News - Bitcoinary Mint'
+    title: 'News'
   }
 }, {
   path: '/partners',
@@ -110864,7 +111015,7 @@ var routes = [{
   component: _pages_partners__WEBPACK_IMPORTED_MODULE_8__["default"],
   meta: {
     auth: undefined,
-    title: 'Partners - Bitcoinary Mint'
+    title: 'Partners'
   }
 }, {
   path: '/investmentPlans',
@@ -110872,7 +111023,7 @@ var routes = [{
   component: _pages_investmentPlans__WEBPACK_IMPORTED_MODULE_7__["default"],
   meta: {
     auth: undefined,
-    title: 'Investment Plans - Bitcoinary Mint'
+    title: 'Investment Plans'
   }
 }, {
   path: '/dataCenter',
@@ -110880,7 +111031,7 @@ var routes = [{
   component: _pages_DataCenter__WEBPACK_IMPORTED_MODULE_10__["default"],
   meta: {
     auth: undefined,
-    title: 'Data Center - Bitcoinary Mint'
+    title: 'Data Center'
   }
 }, {
   path: '/getStarted',
@@ -110888,7 +111039,7 @@ var routes = [{
   component: _pages_getStarted__WEBPACK_IMPORTED_MODULE_5__["default"],
   meta: {
     auth: undefined,
-    title: 'Get Started - Bitcoinary Mint'
+    title: 'Get Started'
   }
 }, {
   path: '/faq',
@@ -110896,7 +111047,7 @@ var routes = [{
   component: _pages_faq__WEBPACK_IMPORTED_MODULE_6__["default"],
   meta: {
     auth: undefined,
-    title: 'Faq - Bitcoinary Mint'
+    title: 'Faq'
   }
 }, {
   path: '/support',
@@ -110904,7 +111055,7 @@ var routes = [{
   component: _pages_Support__WEBPACK_IMPORTED_MODULE_11__["default"],
   meta: {
     auth: true,
-    title: 'Support - Bitcoinary Mint'
+    title: 'Support'
   }
 }, {
   path: '/register',
@@ -110912,7 +111063,7 @@ var routes = [{
   component: _pages_Register__WEBPACK_IMPORTED_MODULE_13__["default"],
   meta: {
     auth: false,
-    title: 'Register - Bitcoinary Mint'
+    title: 'Register'
   }
 }, {
   path: '/login',
@@ -110920,7 +111071,7 @@ var routes = [{
   component: _pages_Login__WEBPACK_IMPORTED_MODULE_14__["default"],
   meta: {
     auth: false,
-    title: 'Login - Bitcoinary Mint'
+    title: 'Login'
   }
 }, {
   path: '/reset_password',
@@ -110928,7 +111079,7 @@ var routes = [{
   component: _pages_ResetPasswordForm__WEBPACK_IMPORTED_MODULE_16__["default"],
   meta: {
     auth: false,
-    title: 'Reset Password - Bitcoinary Mint'
+    title: 'Reset Password'
   }
 }, {
   path: '/forgot_password',
@@ -110936,7 +111087,7 @@ var routes = [{
   component: _pages_ForgotPassword__WEBPACK_IMPORTED_MODULE_17__["default"],
   meta: {
     auth: false,
-    title: 'Forgot Password - Bitcoinary Mint'
+    title: 'Forgot Password'
   }
 }, // USER ROUTES
 {
@@ -110945,7 +111096,7 @@ var routes = [{
   component: _pages_user_Dashboard__WEBPACK_IMPORTED_MODULE_18__["default"],
   meta: {
     auth: true,
-    title: 'User Dashboard - Bitcoinary Mint'
+    title: 'User Dashboard'
   }
 }, {
   path: '/dashboard/deposit',
@@ -110953,7 +111104,7 @@ var routes = [{
   component: _pages_user_Deposit__WEBPACK_IMPORTED_MODULE_19__["default"],
   meta: {
     auth: true,
-    title: 'User Deposit - Bitcoinary Mint'
+    title: 'User Deposit'
   }
 }, {
   path: '/dashboard/withdraw',
@@ -110961,7 +111112,7 @@ var routes = [{
   component: _pages_user_Withdraw__WEBPACK_IMPORTED_MODULE_20__["default"],
   meta: {
     auth: true,
-    title: 'User Withdraw - Bitcoinary Mint'
+    title: 'User Withdraw'
   }
 }, {
   path: '/dashboard/settings',
@@ -110969,7 +111120,7 @@ var routes = [{
   component: _pages_user_Setting__WEBPACK_IMPORTED_MODULE_30__["default"],
   meta: {
     auth: true,
-    title: 'User Setting - Bitcoinary Mint'
+    title: 'User Setting'
   }
 }, {
   path: '/dashboard/security',
@@ -110977,7 +111128,7 @@ var routes = [{
   component: _pages_user_Security__WEBPACK_IMPORTED_MODULE_31__["default"],
   meta: {
     auth: true,
-    title: 'User Security - Bitcoinary Mint'
+    title: 'User Security'
   }
 }, {
   path: '/dashboard/withdrawal-report',
@@ -110985,7 +111136,7 @@ var routes = [{
   component: _pages_user_reports_WithdrawalReport__WEBPACK_IMPORTED_MODULE_26__["default"],
   meta: {
     auth: true,
-    title: 'User WithdrawReport - Bitcoinary Mint'
+    title: 'User WithdrawReport'
   }
 }, {
   path: '/dashboard/report/deposit',
@@ -110993,7 +111144,7 @@ var routes = [{
   component: _pages_user_reports_DepositReport__WEBPACK_IMPORTED_MODULE_27__["default"],
   meta: {
     auth: true,
-    title: 'User Plans - Bitcoinary Mint'
+    title: 'User Plans'
   }
 }, {
   path: '/dashboard/plans',
@@ -111001,7 +111152,7 @@ var routes = [{
   component: _pages_user_reports_DepositReport__WEBPACK_IMPORTED_MODULE_27__["default"],
   meta: {
     auth: true,
-    title: 'User Plans - Bitcoinary Mint'
+    title: 'User Plans'
   }
 }, {
   path: '/dashboard/report/transaction',
@@ -111009,7 +111160,7 @@ var routes = [{
   component: _pages_user_reports_TransactionReport__WEBPACK_IMPORTED_MODULE_29__["default"],
   meta: {
     auth: true,
-    title: 'User TransactionReport - Bitcoinary Mint'
+    title: 'User TransactionReport'
   }
 }, {
   path: '/dashboard/referral',
@@ -111017,7 +111168,7 @@ var routes = [{
   component: _pages_user_reports_ReferralReport__WEBPACK_IMPORTED_MODULE_28__["default"],
   meta: {
     auth: true,
-    title: 'User ReferralReport - Bitcoinary Mint'
+    title: 'User ReferralReport'
   }
 }, // ADMIN ROUTES
 {
@@ -111028,7 +111179,7 @@ var routes = [{
     auth: true,
     AdminAuth: true,
     requiresAuth: true,
-    title: 'AdminDashboard - Bitcoinary Mint'
+    title: 'AdminDashboard'
   }
 }, {
   path: '/admin/dashboard/users',
@@ -111037,7 +111188,7 @@ var routes = [{
   meta: {
     auth: true,
     AdminAuth: true,
-    title: 'Admin Users - Bitcoinary Mint'
+    title: 'Admin Users'
   }
 }, {
   path: '/admin/dashboard/deposits',
@@ -111046,7 +111197,7 @@ var routes = [{
   meta: {
     auth: true,
     AdminAuth: true,
-    title: 'Admin Deposits - Bitcoinary Mint'
+    title: 'Admin Deposits'
   }
 }, {
   path: '/admin/dashboard/subscriptions',
@@ -111055,7 +111206,7 @@ var routes = [{
   meta: {
     auth: true,
     AdminAuth: true,
-    title: 'Admin Subscriptions - Bitcoinary Mint'
+    title: 'Admin Subscriptions'
   }
 }, {
   path: '/admin/dashboard/withdrawals',
@@ -111064,7 +111215,7 @@ var routes = [{
   meta: {
     auth: true,
     AdminAuth: true,
-    title: 'Admin Withdrawals - Bitcoinary Mint'
+    title: 'Admin Withdrawals'
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({

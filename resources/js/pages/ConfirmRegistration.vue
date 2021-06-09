@@ -14,7 +14,7 @@
                         <div v-if="success" class="text-center">
                             <div class="success-group">
                                 <h4  class="p-2 m-2">Registration Completed</h4>
-                                <p class="w-note p-2 m-2">Welcome onboard, you are now an official member of  Bitcoinary Mint </p>
+                                <p class="w-note p-2 m-2">Welcome onboard, you are now an official member of  <span>{{$root.appName}}</span> </p>
                                 <span class="p-2">Please login into your account to continue and keep safe your login credentials.</span>
                             </div>
                             <div class="text-center">

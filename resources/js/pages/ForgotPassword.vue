@@ -9,7 +9,7 @@
                     <div class="col-xl-7 col-lg-9">
                         <div class="account-card">
                             <div class="account-card__header bg_img overlay--one"  :style="'background:url('+ $root.basepath + '/images/bg/bg-6.jpg'">
-                                <h2 class="section-title text-center">Welcome to <span class="base--color">Bitcoinary Mint</span></h2>
+                                <h2 class="section-title text-center">Welcome to <span class="base--color"><span>{{$root.appName}}</span></span></h2>
                                 <h3 class="text-center m-3 ">Recover your password</h3>
                                 <p class="mt-2 font-weight-bold text-uppercase base--color">Steps:</p>
                                 <ul style="list-style-type: circle;" class="">

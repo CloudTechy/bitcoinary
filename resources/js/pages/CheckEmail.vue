@@ -15,7 +15,7 @@
                         <div class="text-center">
                             <div class="success-group">
                                 <h4 class="p-2 m-2">Verify your email address</h4>
-                                <p class="w-note m-2 p-3">We thank you for showing interest in joining our platform, you are now an email away in becoming an official member of  Bitcoinary Mint </p>
+                                <p class="w-note m-2 p-3">We thank you for showing interest in joining our platform, you are now an email away in becoming an official member of  <span>{{$root.appName}}</span> </p>
                                 <span class="p-2">An email confirmation link has been sent to your email</span>
                             </div>
                             <div class="text-center">

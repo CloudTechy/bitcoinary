@@ -10,7 +10,7 @@
                     <div class="section-header">
                         <h2 class="section-title"><span class="font-weight-normal">Our Affiliate </span> <b class="base--color">Program</b></h2>
                         <p class="blog-details__content">
-                            Enjoy exceptional upto 15% two levels affiliate system structure in Bitcoinary Mint Limited.
+                            Enjoy exceptional upto 15% two levels affiliate system structure in <span>{{$root.appName}}</span> Limited.
                         </p>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="blog-details__content">
                         <h4 class="blog-details__title">Partner Incentive System Structure</h4>
-                        <p class="">Bitcoinary Mint has derived a means to support our clients who do not have enough to subscribe for an investment plan through our affiliate program.</p>
+                        <p class=""><span>{{$root.appName}}</span> has derived a means to support our clients who do not have enough to subscribe for an investment plan through our affiliate program.</p>
                         <p> This is located in your account user dashboard as your <span class="base--color">affiliate link.</span></p>
                         <p>You can attract any number of new investors, the more your active referrals, the more earnings you have. You are entitled to 15% on every deposit made by your downline.
                         </p>

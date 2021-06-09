@@ -11,7 +11,7 @@
                                     <div class="incrop-left-img">
                                         <img :src="$root.basepath + '/images/uploads/uk.png'">
                                         <h4 class="step__title base--color" style="padding-bottom: 15px;">UK Registered &amp; USA Based Company</h4>
-                                        <p>Bitcoinary Mint which is based in the United States is a fully registered and licensed company in UK. Bitcoinary Mint is powered by the latest and most secure form of SSL data encryption to keep all your data and information safe and secure.</p>
+                                        <p><span>{{$root.appName}}</span> which is based in the United States is a fully registered and licensed company in UK. <span>{{$root.appName}}</span> is powered by the latest and most secure form of SSL data encryption to keep all your data and information safe and secure.</p>
                                     </div>
                                 </div>
                             </div>
@@ -42,11 +42,11 @@
         <div class="footer__bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 text-md-right text-center">
-                        <p> © {{fullYear}} <a class="base--color" href="/">  Bitcoinary Mint. </a> All Rights Reserved.
+                    <div class="col-md-7 text-md-right text-center">
+                        <p> © {{fullYear}} <a class="base--color" href="/">  <span>{{$root.appName}}</span>. </a> All Rights Reserved.
                         </p>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <ul class="social-link-list d-flex flex-wrap justify-content-md-end justify-content-center">
                             <li><a href="#0" data-toggle="tooltip" data-placement="top" title="facebook"><i class="lab la-facebook-f"></i></a></li>
                             <li><a href="#0" data-toggle="tooltip" data-placement="top" title="twitter"><i class="lab la-twitter"></i></a></li>

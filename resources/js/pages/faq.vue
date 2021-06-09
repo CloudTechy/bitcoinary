@@ -5,7 +5,7 @@
         <div class="row page-title m-3 p-2">
             <div class="col-12 col-lg-8 container">
                 <h1>Frequently Asked Questions</h1>
-                <p>Please go through the Frequently asked questions. Following are the answers to most common questions that may arise in any investor’s mind to know Bitcoinary Mint Limited better. </p>
+                <p>Please go through the Frequently asked questions. Following are the answers to most common questions that may arise in any investor’s mind to know <span>{{$root.appName}}</span> Limited better. </p>
             </div>
         </div>
         <!--start main container-->
@@ -22,33 +22,33 @@
                                                 <h3>General Questions</h3>
                                                 <ul class="faq">
                                                     <li class="panel">
-                                                        <a class="que" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#collapse1">What is Bitcoinary Mint Limited? </a>
+                                                        <a class="que" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#collapse1">What is <span>{{$root.appName}}</span> Limited? </a>
                                                         <div class="ans panel-body collapse in" id="collapse1">
-                                                            <p>Bitcoinary Mint is an expert trading company.</p>
+                                                            <p><span>{{$root.appName}}</span> is an expert trading company.</p>
                                                         </div>
                                                     </li>
                                                     <li class="panel">
-                                                        <a class="que collapsed" href="#collapse2" data-toggle="collapse" data-parent="#accordion">Is Bitcoinary Mint Limited available to public? </a>
+                                                        <a class="que collapsed" href="#collapse2" data-toggle="collapse" data-parent="#accordion">Is <span>{{$root.appName}}</span> Limited available to public? </a>
                                                         <div class="ans panel-body collapse" id="collapse2">
-                                                            <p>Bitcoinary Mint Limited is open for public who are 18 and fulfill the legal age to take part in our program. </p>
+                                                            <p><span>{{$root.appName}}</span> Limited is open for public who are 18 and fulfill the legal age to take part in our program. </p>
                                                         </div>
                                                     </li>
                                                     <li class="panel">
                                                         <a class="que collapsed" href="#collapse3" data-toggle="collapse" data-parent="#accordion">How can I check the authenticity of BFIN Limited? </a>
                                                         <div class="ans panel-body collapse" id="collapse3">
-                                                            <p>Bitcoinary Mint (BFIN) is fully regulated by the Financial Industry Regulatory Authority. You can visit to vetrify https://brokercheck.finra.org/firm/summary/282643/</p>
+                                                            <p><span>{{$root.appName}}</span> (BFIN) is fully regulated by the Financial Industry Regulatory Authority. You can visit to vetrify https://brokercheck.finra.org/firm/summary/282643/</p>
                                                         </div>
                                                     </li>
                                                     <li class="panel">
-                                                        <a class="que collapsed" href="#collapse4" data-toggle="collapse" data-parent="#accordion">How Does Bitcoinary Mint Limited make profit? </a>
+                                                        <a class="que collapsed" href="#collapse4" data-toggle="collapse" data-parent="#accordion">How Does <span>{{$root.appName}}</span> Limited make profit? </a>
                                                         <div class="ans panel-body collapse" id="collapse4">
-                                                            <p>Bitcoinary Mint has been consistent for the past two years, our unique alogrithm remains relevant, this the major secret why we win. </p>
+                                                            <p><span>{{$root.appName}}</span> has been consistent for the past two years, our unique alogrithm remains relevant, this the major secret why we win. </p>
                                                         </div>
                                                     </li>
                                                     <li class="panel">
                                                         <a class="que collapsed" href="#collapse5" data-toggle="collapse" data-parent="#accordion">What are the risks of loss of funds for investors?</a>
                                                         <div class="ans panel-body collapse" id="collapse5">
-                                                            <p>Bitcoinary Mint Limited is a platform which is risk-free. However, to avoid unforeseen loss, the company continuously fills in its contingency fund. In the case of force majeure situations, Bitcoinary Mint Limited's investors can expect to receive money back except the profits they received earlier.</p>
+                                                            <p><span>{{$root.appName}}</span> Limited is a platform which is risk-free. However, to avoid unforeseen loss, the company continuously fills in its contingency fund. In the case of force majeure situations, <span>{{$root.appName}}</span> Limited's investors can expect to receive money back except the profits they received earlier.</p>
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -57,7 +57,7 @@
                                                 <h3>Account questions</h3>
                                                 <ul class="faq">
                                                     <li class="panel">
-                                                        <a class="que collapsed" href="#collapse6" data-toggle="collapse" data-parent="#accordion">How can I start investing with Bitcoinary Mint Limited ? </a>
+                                                        <a class="que collapsed" href="#collapse6" data-toggle="collapse" data-parent="#accordion">How can I start investing with <span>{{$root.appName}}</span> Limited ? </a>
                                                         <div class="ans panel-body collapse" id="collapse6">
                                                             <p>In order to begin, you should register on our website by filling the registration form. Just click on "Register". After that, you can start investing with us. </p>
                                                         </div>
@@ -69,15 +69,15 @@
                                                         </div>
                                                     </li>
                                                     <li class="panel">
-                                                        <a class="que collapsed" href="#collapse8" data-toggle="collapse" data-parent="#accordion">I wish to invest with Bitcoinary Mint Limited but I don't have any e-currency account. What should I do? </a>
+                                                        <a class="que collapsed" href="#collapse8" data-toggle="collapse" data-parent="#accordion">I wish to invest with <span>{{$root.appName}}</span> Limited but I don't have any e-currency account. What should I do? </a>
                                                         <div class="ans panel-body collapse" id="collapse8">
                                                             <p>You can open a free Bitcoin wallet here : www.blockchain.info or coinpayments.net or you can fund your bitcoin wallet through different exchanges you can lookup on internet which is suitable for your country.</p>
                                                         </div>
                                                     </li>
                                                     <li class="panel">
-                                                        <a class="que collapsed" href="#collapse9" data-toggle="collapse" data-parent="#accordion">Can I have more than one account at Bitcoinary Mint ? </a>
+                                                        <a class="que collapsed" href="#collapse9" data-toggle="collapse" data-parent="#accordion">Can I have more than one account at <span>{{$root.appName}}</span> ? </a>
                                                         <div class="ans panel-body collapse" id="collapse9">
-                                                            <p>No, each member can have only one account in Bitcoinary Mint Ltd. Any attempt of fraud will result in permanent blocking of the account &amp; the funds deposited in the account will be frozen. </p>
+                                                            <p>No, each member can have only one account in <span>{{$root.appName}}</span> Ltd. Any attempt of fraud will result in permanent blocking of the account &amp; the funds deposited in the account will be frozen. </p>
                                                         </div>
                                                     </li>
                                                     <li class="panel">
@@ -130,7 +130,7 @@
                                                     <li class="panel">
                                                         <a class="que collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse18">How can I withdraw funds? </a>
                                                         <div class="ans panel-body collapse" id="collapse18">
-                                                            <p>Just login to your Bitcoinary Mint Limited account and proceed with your withdrawal at the Withdraw section. </p>
+                                                            <p>Just login to your <span>{{$root.appName}}</span> Limited account and proceed with your withdrawal at the Withdraw section. </p>
                                                         </div>
                                                     </li>
                                                     <li class="panel">
@@ -157,19 +157,19 @@
                                                 <h3>Referral questions</h3>
                                                 <ul class="faq">
                                                     <li class="panel">
-                                                        <a class="que collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse22">Do you have a referral program in Bitcoinary Mint Limited? </a>
+                                                        <a class="que collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse22">Do you have a referral program in <span>{{$root.appName}}</span> Limited? </a>
                                                         <div class="ans panel-body collapse" id="collapse22">
-                                                            <p>Yes we have a 5 level referral program in Bitcoinary Mint Limited. </p>
+                                                            <p>Yes we have a 5 level referral program in <span>{{$root.appName}}</span> Limited. </p>
                                                         </div>
                                                     </li>
                                                     <li class="panel">
-                                                        <a class="que collapsed" href="#collapse23" data-toggle="collapse" data-parent="#accordion">What are the referral commissions in Bitcoinary Mint Limited? </a>
+                                                        <a class="que collapsed" href="#collapse23" data-toggle="collapse" data-parent="#accordion">What are the referral commissions in <span>{{$root.appName}}</span> Limited? </a>
                                                         <div class="ans panel-body collapse" id="collapse23">
-                                                            <p>For direct referrals you will get upto 10% interest on the amount deposited by the referee. It all depends on your plan. SEE: https://www.Bitcoinaryincinvestment.com/partners.</p>
+                                                            <p>For direct referrals you will get upto 10% interest on the amount deposited by the referee. It all depends on your plan. SEE: https://www.bmintinvestments.com/partners.</p>
                                                         </div>
                                                     </li>
                                                     <li class="panel">
-                                                        <a class="que collapsed" href="#collapse24" data-toggle="collapse" data-parent="#accordion">Do I need to have active investment in order to participate in Bitcoinary Mint Limited's referral program ? </a>
+                                                        <a class="que collapsed" href="#collapse24" data-toggle="collapse" data-parent="#accordion">Do I need to have active investment in order to participate in <span>{{$root.appName}}</span> Limited's referral program ? </a>
                                                         <div class="ans panel-body collapse" id="collapse24">
                                                             <p>You do not need to have an active investment in order to participate in the referral program. Anyone registered our site can start benefiting immediately from participating in our referral program by referring others. Referral commissions are paid to referring party when referred party makes an investment deposit. </p>
                                                         </div>
