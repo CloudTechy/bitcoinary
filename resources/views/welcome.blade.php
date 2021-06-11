@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title id="title">BMint Investment</title>
+    <title id="title">{{config('app.name')}}</title>
     <meta name="theme-color" content="#cca354"/>
-    <meta name="description" content="BMint Investment is a community of dedicated investors that wants to make a steady extra income. we deal extensively on bitcoin">
-    <meta name="keywords" content=" BMint Investment, Shares, Finance, Bitcoin, Investment">
-    <meta name="author" content=" BMint Investment ICT Team">
+    <meta name="description" content="{{config('app.name')}} is a community of dedicated investors that wants to make a steady extra income. we deal extensively on bitcoin">
+    <meta name="keywords" content=" {{config('app.name')}}, Shares, Finance, Bitcoin, Investment">
+    <meta name="author" content=" {{config('app.name')}} ICT Team">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Fonts -->

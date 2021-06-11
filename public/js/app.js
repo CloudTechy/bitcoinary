@@ -66259,7 +66259,7 @@ var render = function() {
       _c("div", { staticClass: "profit-calculator-wrapper" }, [
         _c("form", { staticClass: "profit-calculator" }, [
           _c("div", { staticClass: "row mb-none-30" }, [
-            _c("div", { staticClass: "col-lg-4 mb-30" }, [
+            _c("div", { staticClass: "col-lg-4 col-md-6 mb-30" }, [
               _c("label", [_vm._v("Choose Plan")]),
               _vm._v(" "),
               _c(
@@ -66312,7 +66312,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-lg-4 mb-30" }, [
+            _c("div", { staticClass: "col-lg-4 col-md-6 mb-30" }, [
               _c("label", [_vm._v("Capital")]),
               _vm._v(" "),
               _c("input", {
@@ -66358,7 +66358,7 @@ var render = function() {
                 : _vm._e()
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-lg-4 mb-30" }, [
+            _c("div", { staticClass: "col-lg-4 col-md-6 mb-30" }, [
               _c("label", [
                 _vm._v(
                   "\n                            " +
@@ -66394,7 +66394,7 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-lg-6 mb-30" }, [
+            _c("div", { staticClass: "col-lg-6 col-md-6 mb-30" }, [
               _c("label", [_vm._v("Profit")]),
               _vm._v(" "),
               _c("input", {

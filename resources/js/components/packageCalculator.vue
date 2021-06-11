@@ -4,25 +4,25 @@
             <div class="profit-calculator-wrapper">
                 <form class="profit-calculator">
                     <div class="row mb-none-30">
-                        <div class="col-lg-4 mb-30">
+                        <div class="col-lg-4 col-md-6 mb-30">
                             <label>Choose Plan</label>
                             <select v-model="plan" class="base--bg">
                                 <option selected v-if="packages == '' ">Fetching Packages...</option>
                                 <option class=" text-capitalize" :value="plan" v-for="plan in packages">{{plan.name}} Package</option>
                             </select>
                         </div>
-                        <div class="col-lg-4 mb-30">
+                        <div class="col-lg-4 col-md-6 mb-30">
                             <label>Capital</label>
                             <input type="text" v-model="invest_amount" name="invest_amount" placeholder="0" :min="plan.min_deposit" :max="plan.max_deposit" id="invest_amount" class="form-control base--bg">
                             <p v-if="plan.name" class="small">{{'Limit: $' + plan.min_deposit + ' - $' + plan.max_deposit}}</p>
                         </div>
-                        <div class="col-lg-4 mb-30">
+                        <div class="col-lg-4 col-md-6 mb-30">
                             <label>
                                 {{plan.name == 'Bronze' ? 'Weekly Duration' : 'Monthly Duration'}}
                             </label>
                             <input v-model="duration" type="number" name="duration" id="duration" class="form-control base--bg">
                         </div>
-                        <div class="col-lg-6 mb-30">
+                        <div class="col-lg-6 col-md-6 mb-30">
                             <label>Profit</label>
                             <input v-model="profit_amount" type="text" name="profit_amount" id="profit_amount" class="form-control base--bg" disabled>
                         </div>
