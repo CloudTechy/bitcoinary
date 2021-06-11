@@ -95,7 +95,7 @@ class PackageUserController extends Controller {
 			// }
 
 
-			if ($user->balance >= $validated['amount'] && $validated['fromWallet']) {
+			if ($user->balance >= $validated['amount'] && !empty($validated['fromWallet'])) {
 				$transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
 
 				$withdrawal = $user->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $validated['amount'], 'reference' => 'BM', 'processed' => true, 'confirmed' => true]);

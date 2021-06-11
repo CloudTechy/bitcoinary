@@ -14,7 +14,7 @@
                                 <h3 class="text-center">Investment Details</h3>
                                 <form class="mt-4" autocomplete="off" @submit.prevent="processInvest" method="post">
                                     <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="success-msg " v-if="message">
-                                        <p class="p-2 m-lg-3 m-sm-1 text-center">{{message}}</p>
+                                        <p class="p-2 m-lg-3 m-sm-1 text-center">{{message.message}}</p>
                                     </div>
                                     <div class="form-group">
                                         <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="error">
@@ -163,7 +163,7 @@
                 form.submit('post', "/auth/packageusers")
                     .then(response => {
                         this.$root.loader('hide')
-                        this.message = response.data.message
+                        this.message.message = response.data.message
                     })
                     .catch(error => {
                         this.$root.loader('hide')

@@ -10649,7 +10649,7 @@ __webpack_require__.r(__webpack_exports__);
         form.submit('post', "/auth/packageusers").then(function (response) {
           _this4.$root.loader('hide');
 
-          _this4.message = response.data.message;
+          _this4.message.message = response.data.message;
         })["catch"](function (error) {
           _this4.$root.loader('hide');
 
@@ -75470,7 +75470,7 @@ var render = function() {
                                 {
                                   staticClass: "p-2 m-lg-3 m-sm-1 text-center"
                                 },
-                                [_vm._v(_vm._s(_vm.message))]
+                                [_vm._v(_vm._s(_vm.message.message))]
                               )
                             ]
                           )
