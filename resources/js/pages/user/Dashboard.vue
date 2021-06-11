@@ -50,7 +50,7 @@
                                 <div class="d-widget d-flex flex-wrap">
                                     <div class="col-8">
                                         <span class="caption">Total Withdraw</span>
-                                        <h4 class="currency-amount">{{$root.numeral($auth.user().totalWithdraw)}}</h4>
+                                        <h4 class="currency-amount">{{$root.numeral($auth.user().totalWithdrawBySelf)}}</h4>
                                     </div>
                                     <div class="col-4">
                                         <div class="icon ml-auto">

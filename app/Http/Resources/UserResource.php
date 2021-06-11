@@ -23,7 +23,7 @@ class UserResource extends JsonResource {
 			}
 		}
 			$this->processMaturePackages;
-
+			$confirmedWithdrawals = $this->confirmedWithdrawals;
 		return [
 			'id' => $this->id,
 			'username' => $this->username,
@@ -56,7 +56,8 @@ class UserResource extends JsonResource {
 			'totalEarned' => $this->totalEarned,
 			'totalCommission' => $this->confirmedTransactions->where('reference', 'BM first tier commission')->sum('amount') + $this->confirmedTransactions->where('reference', 'BM second tier commission')->sum('amount'),
 			// 'totalDeposit' => $this->confirmedTransactions->sum('amount'),
-			'totalWithdraw' => $this->confirmedWithdrawals->sum('amount'),
+			'totalWithdraw' => $confirmedWithdrawals->sum('amount'),
+			'totalWithdrawBySelf' => $confirmedWithdrawals->where('reference', 'SELF')->sum('amount'),
 			// 'lastDeposit' => empty($this->confirmedTransactions->all()) ? 0 : (int) $this->confirmedTransactions->last()->amount,
 			// 'lastWithdraw' => empty($this->confirmedWithdrawals->all()) ? 0 : (int) $this->confirmedWithdrawals->last()->amount,
 			'totalPendingWithdrawal' => empty($this->processedWithdrawals) ? 0 : $this->processedWithdrawals->sum('amount'),

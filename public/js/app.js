@@ -12393,6 +12393,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -75875,7 +75877,9 @@ var render = function() {
                       _c("h4", { staticClass: "currency-amount" }, [
                         _vm._v(
                           _vm._s(
-                            _vm.$root.numeral(_vm.$auth.user().totalWithdraw)
+                            _vm.$root.numeral(
+                              _vm.$auth.user().totalWithdrawBySelf
+                            )
                           )
                         )
                       ])
@@ -78207,13 +78211,7 @@ var render = function() {
                                           _c(
                                             "td",
                                             { attrs: { "data-label": "Plan" } },
-                                            [
-                                              _vm._v(
-                                                _vm._s(
-                                                  _vm.$root.numeral(packag.name)
-                                                )
-                                              )
-                                            ]
+                                            [_vm._v(_vm._s(packag.name))]
                                           ),
                                           _vm._v(" "),
                                           _c(
@@ -78223,11 +78221,12 @@ var render = function() {
                                             },
                                             [
                                               _vm._v(
-                                                _vm._s(
-                                                  _vm.$root.numeral(
-                                                    packag.amount
+                                                "$" +
+                                                  _vm._s(
+                                                    _vm.$root.numeral(
+                                                      packag.amount
+                                                    )
                                                   )
-                                                )
                                               )
                                             ]
                                           ),
@@ -79437,7 +79436,7 @@ var render = function() {
                             _vm._v(
                               _vm._s(
                                 _vm.$root.numeral(
-                                  _vm.$auth.user().totalWithdraw
+                                  _vm.$auth.user().totalWithdrawBySelf
                                 )
                               )
                             )
@@ -79654,22 +79653,30 @@ var render = function() {
                                       )
                                       .slice(0, 20),
                                     function(data) {
-                                      return _vm.withdrawals.length > 0
+                                      return _vm.withdrawals.length > 0 &&
+                                        data.reference == "SELF"
                                         ? _c("tr", [
                                             _c(
                                               "td",
                                               {
+                                                class: {
+                                                  "text-danger":
+                                                    data.reference == "BM",
+                                                  "text-success":
+                                                    data.reference == "SELF"
+                                                },
                                                 attrs: {
                                                   "data-label": "Amount"
                                                 }
                                               },
                                               [
                                                 _vm._v(
-                                                  _vm._s(
-                                                    _vm.$root.numeral(
-                                                      data.amount
+                                                  "-" +
+                                                    _vm._s(
+                                                      _vm.$root.numeral(
+                                                        data.amount
+                                                      )
                                                     )
-                                                  )
                                                 )
                                               ]
                                             ),
@@ -79703,6 +79710,14 @@ var render = function() {
                                               "td",
                                               {
                                                 staticClass: "text-success",
+                                                attrs: { "data-label": "By" }
+                                              },
+                                              [_vm._v(_vm._s(data.reference))]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "td",
+                                              {
                                                 attrs: { "data-label": "Date" }
                                               },
                                               [_vm._v(_vm._s(data.date))]
@@ -79849,6 +79864,8 @@ var staticRenderFns = [
       _c("th", [_vm._v("Amount")]),
       _vm._v(" "),
       _c("th", [_vm._v("Payment Processor")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Reference")]),
       _vm._v(" "),
       _c("th", [_vm._v("Date")])
     ])

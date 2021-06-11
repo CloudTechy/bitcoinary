@@ -67,8 +67,8 @@
                                             </thead>
                                             <tbody>
                                                 <tr v-if="userPackages.length > 0" v-for="packag in userPackages">
-                                                    <td data-label="Plan">{{$root.numeral(packag.name)}}</td>
-                                                    <td data-label="Capital">{{$root.numeral(packag.amount)}}</td>
+                                                    <td data-label="Plan">{{packag.name}}</td>
+                                                    <td data-label="Capital">${{$root.numeral(packag.amount)}}</td>
                                                     <td class="text-success" data-label="Interest">+ ${{$root.normalNumeral(packag.roi)}}</td>
                                                     <td data-label="Activation">{{packag.date}}</td>
                                                     <td data-label="Countdown" class="text-success">{{getDate(packag.expiration)}}</td>

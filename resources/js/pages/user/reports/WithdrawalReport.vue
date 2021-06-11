@@ -41,7 +41,7 @@
                                     <div class="divider pb-3"></div>
                                     <div class="row p-4 pb-2">
                                         <div class="col-9 col-md-10 ">
-                                            <h2 class="mb-1">{{$root.numeral($auth.user().totalWithdraw)}}</h2>
+                                            <h2 class="mb-1">{{$root.numeral($auth.user().totalWithdrawBySelf)}}</h2>
                                             <p class="mb-3">Total Withdrawals</p>
                                         </div>
                                         <div class="col-3 col-md-2 p-0">
@@ -99,14 +99,16 @@
                                                 <tr>
                                                     <th>Amount</th>
                                                     <th>Payment Processor</th>
+                                                    <th>Reference</th>
                                                     <th>Date</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr v-if="withdrawals.length > 0" v-for="data in myFilter(withdrawals,from,to).slice(0,20)">
-                                                    <td data-label="Amount">{{$root.numeral(data.amount)}}</td>
+                                                <tr v-if="withdrawals.length > 0 && data.reference == 'SELF'" v-for="data in myFilter(withdrawals,from,to).slice(0,20)">
+                                                    <td :class="{'text-danger' : data.reference == 'BM', 'text-success' : data.reference == 'SELF' }" data-label="Amount">-{{$root.numeral(data.amount)}}</td>
                                                     <td data-label="Processor"><span class="badge text-dark bg--base">{{data.payment_method}}</span></td>
-                                                    <td class="text-success" data-label="Date">{{data.date}}</td>
+                                                    <td class="text-success" data-label="By">{{data.reference}}</td>
+                                                    <td class="" data-label="Date">{{data.date}}</td>
                                                 </tr>
                                                 <tr v-if="withdrawals.length == 0">
                                                     <td class="text-center only" colspan="4">
