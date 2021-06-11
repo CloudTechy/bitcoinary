@@ -163,7 +163,7 @@
                 form.submit('post', "/auth/packageusers")
                     .then(response => {
                         this.$root.loader('hide')
-                        this.message.message = response.data.message
+                        this.displayMessage({message:response.data.message})
                     })
                     .catch(error => {
                         this.$root.loader('hide')
