@@ -159,9 +159,9 @@ class AuthController extends Controller {
 		event(new PasswordReset($user));
 	}
 	function sendResetResponse(Request $request, $response) {
-		return Helper::validRequest(['success' => 'password reset success'], 'Password updated successfully.', 200);
+		return Helper::validRequest(['success' => 'password reset success'], 'Password updated successfully, ', 200);
 	}
 	function sendResetFailedResponse(Request $request, $response) {
-		return Helper::invalidRequest(['error' => 'Token is Invalid'], 'Failed, Invalid Token.', 401);
+		return Helper::invalidRequest(['error' => 'Validation error'], $response == "passwords.user" ? "User validation error" : "Token validation error", 401);
 	}
 }

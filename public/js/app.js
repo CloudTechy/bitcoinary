@@ -8801,8 +8801,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8837,11 +8835,8 @@ __webpack_require__.r(__webpack_exports__);
 
         _this.processing(false);
 
-        _this.success = true;
-
-        _this.$root.alert('success', '', 'Password Reset Successful!!! Redirecting...'); // this.$router.push({ name: 'login' })
-
-      }, function (error) {
+        _this.success = true; // this.$router.push({ name: 'login' })
+      })["catch"](function (error) {
         _this.$root.loader('hide');
 
         _this.$root.scrollUp();
@@ -69511,7 +69506,8 @@ var render = function() {
                                           _c(
                                             "p",
                                             {
-                                              staticClass: "p-1 m-lg-3 m-sm-1"
+                                              staticClass:
+                                                "text-center p-1 m-lg-3 m-sm-1"
                                             },
                                             [_vm._v(_vm._s(error))]
                                           )
@@ -69527,7 +69523,8 @@ var render = function() {
                                           _c(
                                             "p",
                                             {
-                                              staticClass: "p-1 m-lg-3 m-sm-1"
+                                              staticClass:
+                                                "text-center p-1 m-lg-3 m-sm-1"
                                             },
                                             [_vm._v(_vm._s(error))]
                                           )
@@ -69543,7 +69540,8 @@ var render = function() {
                                           _c(
                                             "p",
                                             {
-                                              staticClass: "p-1 m-lg-3 m-sm-1"
+                                              staticClass:
+                                                "text-center p-1 m-lg-3 m-sm-1"
                                             },
                                             [_vm._v(_vm._s(error))]
                                           )
@@ -69552,8 +69550,8 @@ var render = function() {
                                   }),
                                   _vm._v(" "),
                                   _c("li", [
-                                    _vm.errors.error &&
-                                    typeof _vm.errors.error == "string"
+                                    _vm.errors.error.error &&
+                                    typeof _vm.errors.error.error == "string"
                                       ? _c(
                                           "p",
                                           {
@@ -69564,7 +69562,7 @@ var render = function() {
                                             _vm._v(
                                               _vm._s(
                                                 _vm.errors.message ||
-                                                  _vm.errors.error
+                                                  _vm.errors.error.error
                                               )
                                             )
                                           ]
@@ -69593,11 +69591,12 @@ var render = function() {
                                     ? _c(
                                         "p",
                                         { staticClass: "p-2 m-lg-3 m-sm-1" },
-                                        [_vm._v(_vm._s(_vm.response.message))]
+                                        [
+                                          _vm._v(_vm._s(_vm.response.message)),
+                                          _vm._m(0)
+                                        ]
                                       )
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  _vm._m(0)
+                                    : _vm._e()
                                 ]
                               )
                             : _vm._e()
@@ -69729,9 +69728,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", [
-      _vm._v("Go to "),
-      _c("a", { attrs: { href: "/login" } }, [_vm._v("Login")])
+    return _c("span", [
+      _c("a", { staticClass: "base--color", attrs: { href: "/login" } }, [
+        _vm._v("login")
+      ])
     ])
   }
 ]
