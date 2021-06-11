@@ -35,7 +35,7 @@
                     </ul>
                 </div>
                 <div class="package-card__range mt-5 base--color">{{'$' + plan.min_deposit + ' - ' + '$' + plan.max_deposit}}</div>
-                <a :href="route" class="cmn-btn btn-md mt-4">Invest Now</a>
+                <a href="/dashboard/deposit" class="cmn-btn btn-md mt-4">Invest Now</a>
             </div>
         </div>
         <!-- package-card end -->

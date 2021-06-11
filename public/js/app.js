@@ -10531,6 +10531,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -10576,12 +10586,8 @@ __webpack_require__.r(__webpack_exports__);
       this.message = undefined;
     }
   },
-  props: ['plan', 'user'],
+  props: ['plan'],
   computed: {
-    payment: function payment() {
-      var payment = this.plan.deposit - this.user.balance;
-      return payment;
-    },
     btc: function btc() {
       if (localStorage.rate) {
         var rate = parseFloat(numeral(JSON.parse(localStorage.rate)).format('00.00'));
@@ -10628,6 +10634,36 @@ __webpack_require__.r(__webpack_exports__);
     displayMessage: function displayMessage(msg) {
       this.message = msg;
       window.scrollTo(0, 350);
+    },
+    processInvest: function processInvest() {
+      var _this4 = this;
+
+      if (this.paymentMethod == 'balance') {
+        this.$root.loader('show');
+        var form = new Form();
+        form.fromWallet = true;
+        this.error = undefined;
+        this.message = undefined;
+        form.user_id = this.$auth.user().id;
+        form.amount = this.amount;
+        form.submit('post', "/auth/packageusers").then(function (response) {
+          _this4.$root.loader('hide');
+
+          _this4.message = response.data.message;
+        })["catch"](function (error) {
+          _this4.$root.loader('hide');
+
+          if (error.response.status == 422) {
+            _this4.error = error.response.data.error.pop;
+          } else {
+            _this4.error = error.response.data.message;
+          }
+
+          console.log(error, error.response);
+        });
+      } else {
+        this.$refs.paymentModalbtn.click();
+      }
     }
   }
 });
@@ -18977,7 +19013,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.icon[data-v-1f42fb90] {\r\n    background-color: unset;\r\n    width: unset;\r\n    height: unset;\n}\n.dropdown-submenu[data-v-1f42fb90] {\r\n    position: relative;\n}\n.dropdown-submenu .dropdown-menu[data-v-1f42fb90] {\r\n    top: 0;\r\n    left: 100%;\r\n    margin-top: -1px;\n}\n.dropdown-menu[data-v-1f42fb90] {\r\n    margin: 1.125rem 0 0;\r\n    color: white;\r\n    background-color: #cca354;\n}\n.divider[data-v-1f42fb90] {\r\n    border-top: 1px solid black !important;\n}\n.icon[data-v-1f42fb90]:hover {\r\n    color: #000000 !important;\r\n    background-color: #b78b36 !important;\n}\n.dropdown-item>a[data-v-1f42fb90] {\r\n    color: black;\n}\n.dropdown-item>a[data-v-1f42fb90]:hover {\r\n    color: #cca354 !important;\n}\n.dropdown-item[data-v-1f42fb90]:active {\r\n    background-color: #888889 !important;\r\n    color: white !important;\n}\n.dropdown-divider[data-v-1f42fb90] {\r\n    margin: unset;\n}\n.dropdown-menu[data-v-1f42fb90] {\r\n    position: absolute;\r\n    top: 100%;\r\n    left: -100%;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.icon[data-v-1f42fb90] {\r\n    background-color: unset;\r\n    width: unset;\r\n    height: unset;\n}\n.dropdown-submenu[data-v-1f42fb90] {\r\n    position: relative;\n}\n.dropdown-submenu .dropdown-menu[data-v-1f42fb90] {\r\n    top: 0;\r\n    left: 100%;\r\n    margin-top: -1px;\n}\n.dropdown-menu[data-v-1f42fb90] {\r\n    margin: 1.125rem 0 0;\r\n    color: white;\r\n    background-color: #cca354;\n}\n.divider[data-v-1f42fb90] {\r\n    border-top: 1px solid black !important;\n}\n.icon[data-v-1f42fb90]:hover {\r\n    color: #000000 !important;\r\n    background-color: #b78b36 !important;\n}\n.dropdown-item>a[data-v-1f42fb90] {\r\n    color: black;\n}\n.dropdown-item>a[data-v-1f42fb90]:hover {\r\n    color: #cca354 !important;\n}\n.dropdown-item[data-v-1f42fb90]:active {\r\n    background-color: black !important;\r\n    color: white !important;\n}\n.dropdown-divider[data-v-1f42fb90] {\r\n    margin: unset;\n}\n.dropdown-menu[data-v-1f42fb90] {\r\n    position: absolute;\r\n    top: 100%;\r\n    left: -100%;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -19148,7 +19184,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* .bg_img{\r\n        background-size: cover !important;\r\n        background-position: center !important;\r\n        background-repeat: no-repeat !important;\r\n    }*/\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* .bg_img{\r\n        background-size: cover !important;\r\n        background-position: center !important;\r\n        background-repeat: no-repeat !important;\r\n    }*/\r\n\r\n", ""]);
 
 // exports
 
@@ -64877,7 +64913,7 @@ var render = function() {
               "a",
               {
                 staticClass: "cmn-btn btn-md mt-4",
-                attrs: { href: _vm.route }
+                attrs: { href: "/dashboard/deposit" }
               },
               [_vm._v("Invest Now")]
             )
@@ -69844,12 +69880,12 @@ var render = function() {
                         }),
                         _c(
                           "a",
-                          { attrs: { href: "info@Bitcoinaryfinance.com" } },
-                          [_vm._v("info@Bitcoinaryfinance.com")]
+                          { attrs: { href: "info@Bmintinvestments.com" } },
+                          [_vm._v("info@Bmintinvestments.com")]
                         ),
                         _c("br"),
                         _c("a", {
-                          attrs: { href: "info@Bitcoinaryfinance.com" }
+                          attrs: { href: "info@Bmintinvestments.com" }
                         })
                       ])
                     ]
@@ -75411,7 +75447,7 @@ var render = function() {
                       on: {
                         submit: function($event) {
                           $event.preventDefault()
-                          return _vm.$refs.paymentModalbtn.click($event)
+                          return _vm.processInvest($event)
                         }
                       }
                     },
@@ -75434,11 +75470,50 @@ var render = function() {
                                 {
                                   staticClass: "p-2 m-lg-3 m-sm-1 text-center"
                                 },
-                                [_vm._v(_vm._s(_vm.message.message))]
+                                [_vm._v(_vm._s(_vm.message))]
                               )
                             ]
                           )
                         : _vm._e(),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _vm.error
+                          ? _c(
+                              "div",
+                              {
+                                staticClass: "error-msg  m-3",
+                                style: {
+                                  backgroundImage:
+                                    "url(" +
+                                    _vm.$root.basepath +
+                                    "/images/bg/bg-5.jpg )"
+                                }
+                              },
+                              [
+                                typeof _vm.error == "object"
+                                  ? _c(
+                                      "div",
+                                      _vm._l(_vm.error, function(err) {
+                                        return _c(
+                                          "p",
+                                          { staticClass: "small m-2 m-md-3" },
+                                          [_vm._v(_vm._s(err))]
+                                        )
+                                      }),
+                                      0
+                                    )
+                                  : _c(
+                                      "p",
+                                      {
+                                        staticClass:
+                                          "text-center m-2  m-md-3 small"
+                                      },
+                                      [_vm._v(_vm._s(_vm.error))]
+                                    )
+                              ]
+                            )
+                          : _vm._e()
+                      ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "form-group" }, [
                         _c("label", [_vm._v("Payment method")]),
@@ -75472,30 +75547,47 @@ var render = function() {
                               }
                             }
                           },
-                          _vm._l(_vm.paymentMethods, function(processor) {
-                            return _vm.$root.getPaymentAccountDetails(
-                              _vm.paymentMethods,
-                              processor.payment_method,
-                              processor.currency_type
-                            )
+                          [
+                            _vm.$auth.user().balance >= _vm.plan.min_deposit
                               ? _c(
                                   "option",
                                   {
                                     staticClass: "text-capitalize",
-                                    domProps: { value: processor }
+                                    attrs: { value: "balance" }
                                   },
                                   [
                                     _vm._v(
-                                      _vm._s(
-                                        "Direct Invest " +
-                                          processor.payment_method
-                                      )
+                                      "\n                                            Direct Invest Balance\n                                        "
                                     )
                                   ]
                                 )
-                              : _vm._e()
-                          }),
-                          0
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm._l(_vm.paymentMethods, function(processor) {
+                              return _vm.$root.getPaymentAccountDetails(
+                                _vm.paymentMethods,
+                                processor.payment_method,
+                                processor.currency_type
+                              )
+                                ? _c(
+                                    "option",
+                                    {
+                                      staticClass: "text-capitalize",
+                                      domProps: { value: processor }
+                                    },
+                                    [
+                                      _vm._v(
+                                        _vm._s(
+                                          "Direct Invest " +
+                                            processor.payment_method
+                                        )
+                                      )
+                                    ]
+                                  )
+                                : _vm._e()
+                            })
+                          ],
+                          2
                         )
                       ]),
                       _vm._v(" "),
@@ -75556,11 +75648,27 @@ var render = function() {
                               class: {
                                 "cmn-btn": true,
                                 btn: true,
-                                disabled: false
+                                disabled:
+                                  _vm.paymentMethod == "balance" &&
+                                  _vm.$auth.user().balance < _vm.amount
                               },
-                              attrs: { disabled: false, type: "submit" }
+                              attrs: {
+                                disabled:
+                                  _vm.paymentMethod == "balance" &&
+                                  _vm.$auth.user().balance < _vm.amount,
+                                type: "submit"
+                              }
                             },
-                            [_vm._v("Proceed")]
+                            [
+                              _vm._v(
+                                _vm._s(
+                                  _vm.paymentMethod == "balance" &&
+                                    _vm.$auth.user().balance > _vm.amount
+                                    ? "Invest"
+                                    : "Proceed"
+                                )
+                              )
+                            ]
                           )
                         ]),
                         _vm._v(" "),
@@ -76395,7 +76503,15 @@ var render = function() {
                     "a",
                     {
                       staticClass: "cmn-btn btn-md mt-4",
-                      attrs: { href: _vm.route }
+                      on: {
+                        click: function($event) {
+                          return _vm.$emit(
+                            "changeComponent",
+                            "ConfirmDeposit",
+                            plan
+                          )
+                        }
+                      }
                     },
                     [_vm._v("Invest Now")]
                   )

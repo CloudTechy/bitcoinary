@@ -162,7 +162,7 @@ export default {
 }
 
 .dropdown-item:active {
-    background-color: #888889 !important;
+    background-color: black !important;
     color: white !important;
 }
 

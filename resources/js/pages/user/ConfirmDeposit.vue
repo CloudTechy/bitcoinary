@@ -1,7 +1,6 @@
 <template>
     <div class="page-wrapper">
         <DashboardHeader></DashboardHeader>
-
         <!-- account section start -->
         <div class="account-section p-0">
             <div class="container">
@@ -13,13 +12,24 @@
                             </div>
                             <div class="account-card__body">
                                 <h3 class="text-center">Investment Details</h3>
-                                <form class="mt-4" autocomplete="off" @submit.prevent="$refs.paymentModalbtn.click" method="post">
+                                <form class="mt-4" autocomplete="off" @submit.prevent="processInvest" method="post">
                                     <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="success-msg " v-if="message">
-                                        <p class="p-2 m-lg-3 m-sm-1 text-center">{{message.message}}</p>
+                                        <p class="p-2 m-lg-3 m-sm-1 text-center">{{message}}</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="error">
+                                            <div v-if="typeof error == 'object'">
+                                                <p v-for="err in error" class="small m-2 m-md-3">{{err}}</p>
+                                            </div>
+                                            <p v-else class="text-center m-2  m-md-3 small">{{error}}</p>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Payment method</label>
                                         <select required="" v-model="paymentMethod" class="base--bg">
+                                            <option v-if="$auth.user().balance >= plan.min_deposit" value="balance" class="text-capitalize">
+                                                Direct Invest Balance
+                                            </option>
                                             <option v-if="$root.getPaymentAccountDetails(paymentMethods, processor.payment_method, processor.currency_type)" class="text-capitalize" :value="processor" v-for="processor in paymentMethods">{{'Direct Invest ' + processor.payment_method}}</option>
                                         </select>
                                     </div>
@@ -30,7 +40,7 @@
                                     </div>
                                     <div class="p-0 m-0  row">
                                         <div class="col mt-2 p-0">
-                                            <button :disabled="false" ref="submit" type="submit" :class="{'cmn-btn' : true,'btn' : true, disabled : false}">Proceed</button>
+                                            <button :disabled="paymentMethod == 'balance' && $auth.user().balance <  amount" ref="submit" type="submit" :class="{'cmn-btn' : true,'btn' : true, disabled : paymentMethod == 'balance' && $auth.user().balance <  amount}">{{paymentMethod == 'balance' && $auth.user().balance > amount ? 'Invest' : 'Proceed' }}</button>
                                         </div>
                                         <div class="col mt-2 p-0 ml-1 ml-sm-0 text-left text-sm-right">
                                             <button @click.prevent="$emit('changeComponent', 'DepositPlan', '')" class="cmn-btn btn">Back</button>
@@ -92,12 +102,8 @@
             this.message = undefined
         }
     },
-    props: ['plan', 'user'],
+    props: ['plan'],
     computed: {
-        payment() {
-            var payment = this.plan.deposit - this.user.balance
-            return payment
-        },
         btc() {
             if (localStorage.rate) {
                 var rate = parseFloat(numeral(JSON.parse(localStorage.rate)).format('00.00'))
@@ -142,6 +148,39 @@
         displayMessage(msg){
             this.message = msg
             window.scrollTo(0, 350)
+        },
+        processInvest(){
+            if (this.paymentMethod == 'balance') {
+
+                this.$root.loader('show')
+                let form = new Form()
+                form.fromWallet = true
+                this.error = undefined
+                this.message = undefined
+                form.user_id = this.$auth.user().id
+                form.amount = this.amount
+
+                form.submit('post', "/auth/packageusers")
+                    .then(response => {
+                        this.$root.loader('hide')
+                        this.message = response.data.message
+                    })
+                    .catch(error => {
+                        this.$root.loader('hide')
+                        if (error.response.status == 422) {
+                            this.error =  error.response.data.error.pop
+                        }
+                        else{
+                            this.error = error.response.data.message
+                        }
+                        console.log(error, error.response)
+                        
+                    })  
+        
+            }
+            else {
+                this.$refs.paymentModalbtn.click()
+            }
         }
     },
     

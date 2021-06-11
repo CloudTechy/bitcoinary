@@ -95,7 +95,7 @@ class PackageUserController extends Controller {
 			// }
 
 
-			if ($user->balance >= $validated['amount']) {
+			if ($user->balance >= $validated['amount'] && $validated['fromWallet']) {
 				$transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
 
 				$withdrawal = $user->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $validated['amount'], 'reference' => 'BM', 'processed' => true, 'confirmed' => true]);
@@ -111,7 +111,7 @@ class PackageUserController extends Controller {
 				$this->referralPayment($subscription);
 
 				$subscription = new PackageUserResource($subscription);
-				return Helper::validRequest($subscription, 'Your subscription is now active', 200);
+				return Helper::validRequest($subscription, 'Congratulations!!! your investment is now active', 200);
 			} else {
 		        $pop = Helper::uploadImage($request, 'pop', 'images/pop');
 		        $transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $validated['amount'], 'pop' => $pop]);
@@ -298,8 +298,6 @@ class PackageUserController extends Controller {
 			DB::beginTransaction();
 
 			$transaction = $user->transactions()->create(['reference' =>$validated['reference'] ,'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
-
-			$withdrawal = $user->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $validated['amount'], 'reference' => 'Bitcoinary Finance', 'processed' => true, 'confirmed' => true]);
 
 			$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
 
