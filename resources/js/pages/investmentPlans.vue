@@ -48,7 +48,7 @@
                                     <br><br>
                                 </p>
                             </div>
-                            <div class="col-lg-3 col-sm-6 col-12">
+                            <!-- <div class="col-lg-3 col-sm-6 col-12">
                                 <p class="inv-intro text-left  col">
                                     <span class="font-weight-bold">Platinum account features:</span><br>
                                     Deposit: $60,000 - $200,000
@@ -56,7 +56,7 @@
                                     14 days turnover
                                     10% Referral Commission to the 10th chain.
                                 </p>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="row inv-plans">
                             <div class=" col alpha omega">

@@ -7364,11 +7364,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       plan: {},
-      invest_amount: ''
+      invest_amount: '',
+      duration: 1
     };
   },
   watch: {},
@@ -7379,7 +7386,7 @@ __webpack_require__.r(__webpack_exports__);
       } else if (this.plan.name == undefined || this.invest_amount == "") return '0.00';else return 'input a valid amount for this plan';
     },
     total_earning: function total_earning() {
-      return this.$root.numeral(parseInt(this.profit_amount) + parseInt(this.invest_amount));
+      return this.$root.numeral(parseInt(this.profit_amount) * parseInt(this.duration) + parseInt(this.invest_amount));
     },
     packages: function packages() {
       return this.$root.packages;
@@ -10900,6 +10907,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -19192,7 +19205,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*.btn:focus {\r\n    box-shadow: none !important;\r\n}\r\n\r\n.silver {\r\n    background: linear-gradient(to right, #a7a7a7 0%, #eaeaea 100%);\r\n}\r\n\r\n.gold {\r\n    background: linear-gradient(to right, #e25e5a 0%, #e25e5a 0%, #f8b982 100%, #f8b982 100%, #f8b982 100%);\r\n}*/\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*.btn:focus {\r\n    box-shadow: none !important;\r\n}\r\n\r\n.silver {\r\n    background: linear-gradient(to right, #a7a7a7 0%, #eaeaea 100%);\r\n}\r\n\r\n.gold {\r\n    background: linear-gradient(to right, #e25e5a 0%, #e25e5a 0%, #f8b982 100%, #f8b982 100%, #f8b982 100%);\r\n}*/\r\n\r\n", ""]);
 
 // exports
 
@@ -64811,7 +64824,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("li", [_vm._v("Loan Security")])
+                    _c("li", [_vm._v("With loan Security")])
                   ])
                 ])
               : _vm._e(),
@@ -64830,7 +64843,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("li", [_vm._v("Loan Security")])
+                    _c("li", [_vm._v("With loan Security")])
                   ])
                 ])
               : _vm._e(),
@@ -64849,7 +64862,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("li", [_vm._v("Loan Security")])
+                    _c("li", [_vm._v("With loan Security")])
                   ])
                 ])
               : _vm._e(),
@@ -66246,7 +66259,7 @@ var render = function() {
       _c("div", { staticClass: "profit-calculator-wrapper" }, [
         _c("form", { staticClass: "profit-calculator" }, [
           _c("div", { staticClass: "row mb-none-30" }, [
-            _c("div", { staticClass: "col-lg-6 mb-30" }, [
+            _c("div", { staticClass: "col-lg-4 mb-30" }, [
               _c("label", [_vm._v("Choose Plan")]),
               _vm._v(" "),
               _c(
@@ -66299,7 +66312,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-lg-6 mb-30" }, [
+            _c("div", { staticClass: "col-lg-4 mb-30" }, [
               _c("label", [_vm._v("Capital")]),
               _vm._v(" "),
               _c("input", {
@@ -66343,6 +66356,42 @@ var render = function() {
                     )
                   ])
                 : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-4 mb-30" }, [
+              _c("label", [
+                _vm._v(
+                  "\n                            " +
+                    _vm._s(
+                      _vm.plan.name == "Bronze"
+                        ? "Weekly Duration"
+                        : "Monthly Duration"
+                    ) +
+                    "\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.duration,
+                    expression: "duration"
+                  }
+                ],
+                staticClass: "form-control base--bg",
+                attrs: { type: "number", name: "duration", id: "duration" },
+                domProps: { value: _vm.duration },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.duration = $event.target.value
+                  }
+                }
+              })
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-lg-6 mb-30" }, [
@@ -74660,18 +74709,6 @@ var staticRenderFns = [
           _c("br"),
           _c("br")
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-3 col-sm-6 col-12" }, [
-        _c("p", { staticClass: "inv-intro text-left  col" }, [
-          _c("span", { staticClass: "font-weight-bold" }, [
-            _vm._v("Platinum account features:")
-          ]),
-          _c("br"),
-          _vm._v(
-            "\n                                Deposit: $60,000 - $200,000\n                                Upto 60%\n                                14 days turnover\n                                10% Referral Commission to the 10th chain.\n                            "
-          )
-        ])
       ])
     ])
   },
@@ -76232,7 +76269,7 @@ var render = function() {
                     [_vm._v(_vm._s(plan.name))]
                   ),
                   _vm._v(" "),
-                  plan.name == "Bronze" || plan.name == "Silver"
+                  plan.name == "Bronze"
                     ? _c("div", [
                         _c(
                           "ul",
@@ -76246,14 +76283,39 @@ var render = function() {
                               _vm._v("Every " + _vm._s(plan.turnover))
                             ]),
                             _vm._v(" "),
-                            _c("li", [_vm._v("For 6 Days")]),
-                            _vm._v(" "),
                             _c("li", [
                               _vm._v("Total " + _vm._s(plan.roi) + "% + "),
                               _c("span", { staticClass: "badge base--bg" }, [
                                 _vm._v("Capital")
                               ])
                             ])
+                          ]
+                        )
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  plan.name == "Silver"
+                    ? _c("div", [
+                        _c(
+                          "ul",
+                          { staticClass: "package-card__features mt-4" },
+                          [
+                            _c("li", [
+                              _vm._v("Return " + _vm._s(plan.roi) + "%")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _vm._v("Every " + _vm._s(plan.turnover))
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [
+                              _vm._v("Total " + _vm._s(plan.roi) + "% + "),
+                              _c("span", { staticClass: "badge base--bg" }, [
+                                _vm._v("Capital")
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [_vm._v("With loan Security")])
                           ]
                         )
                       ])
@@ -76273,14 +76335,14 @@ var render = function() {
                               _vm._v("Every " + _vm._s(plan.turnover))
                             ]),
                             _vm._v(" "),
-                            _c("li", [_vm._v("For 3x")]),
-                            _vm._v(" "),
                             _c("li", [
                               _vm._v("Total " + _vm._s(plan.roi) + "% + "),
                               _c("span", { staticClass: "badge base--bg" }, [
                                 _vm._v("Capital")
                               ])
-                            ])
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [_vm._v("With loan Security")])
                           ]
                         )
                       ])
@@ -76300,14 +76362,14 @@ var render = function() {
                               _vm._v("Every " + _vm._s(plan.turnover))
                             ]),
                             _vm._v(" "),
-                            _c("li", [_vm._v("For 2x")]),
-                            _vm._v(" "),
                             _c("li", [
                               _vm._v("Total " + _vm._s(plan.roi) + "% + "),
                               _c("span", { staticClass: "badge base--bg" }, [
                                 _vm._v("Capital")
                               ])
-                            ])
+                            ]),
+                            _vm._v(" "),
+                            _c("li", [_vm._v("With loan Security")])
                           ]
                         )
                       ])
@@ -76333,15 +76395,7 @@ var render = function() {
                     "a",
                     {
                       staticClass: "cmn-btn btn-md mt-4",
-                      on: {
-                        click: function($event) {
-                          return _vm.$emit(
-                            "changeComponent",
-                            "ConfirmDeposit",
-                            plan
-                          )
-                        }
-                      }
+                      attrs: { href: _vm.route }
                     },
                     [_vm._v("Invest Now")]
                   )

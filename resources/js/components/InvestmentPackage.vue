@@ -15,7 +15,7 @@
                         <li>Return {{plan.roi}}%</li>
                         <li>Every {{plan.turnover}}</li>
                         <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span></li>
-                        <li>Loan Security</li>
+                        <li>With loan Security</li>
                     </ul>
                 </div>
                 <div v-if="plan.name == 'Gold'">
@@ -23,7 +23,7 @@
                         <li>Return {{plan.roi}}%</li>
                         <li>Every {{plan.turnover}}</li>
                         <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span></li>
-                        <li>Loan Security</li>
+                        <li>With loan Security</li>
                     </ul>
                 </div>
                 <div v-if="plan.name == 'Premium'">
@@ -31,7 +31,7 @@
                         <li>Return {{plan.roi}}%</li>
                         <li>Every {{plan.turnover}}</li>
                         <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span> </li>
-                        <li>Loan Security</li>
+                        <li>With loan Security</li>
                     </ul>
                 </div>
                 <div class="package-card__range mt-5 base--color">{{'$' + plan.min_deposit + ' - ' + '$' + plan.max_deposit}}</div>
