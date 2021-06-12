@@ -40,12 +40,17 @@
                                         <input type="email" required="" v-model="email" placeholder="Email address" :class="{'form-control' : true, 'error-input': errors.email != undefined}">
                                         <p v-if="errors.email" v-for="error in errors.email" class="base--color m-0 p-2 small">{{error}}</p>
                                     </div>
-                                    <!--     <div class="form-group">
+                                        <div class="form-group">
                                         <label>Phone Number</label>
                                         <vue-tel-input v-model="number" :class="{'form-control' : true, 'error-input': errors.number != undefined}">>
                                         </vue-tel-input>
                                         <p v-if="errors.number" v-for="error in errors.number" class="base--color m-0 p-2 small">{{error}}</p>
-                                    </div> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Referral</label>
+                                        <input type="text" required placeholder="Enter your referral" v-model="referral" :class="{'form-control' : true, 'error-input': errors.referral != undefined}">
+                                        <p v-if="errors.referral" v-for="error in errors.referral" class="base--color m-0 p-2 small">{{error}}</p>
+                                    </div>
                                     <div class="form-group">
                                         <label>BTC Wallet</label>
                                         <input type="text" required v-model="wallet" placeholder="Your Bitcoin wallet address" :class="{'form-control' : true, 'error-input': errors.wallet != undefined}">
@@ -97,7 +102,7 @@
         return {
             first_name: '',
             last_name: '',
-            // number: '',
+            number: '',
             email: '',
             username: '',
             password: '',
@@ -124,7 +129,7 @@
                     first_name: app.first_name,
                     email: app.email,
                     last_name: app.last_name,
-                    // number: app.number,
+                    number: app.number,
                     username: app.username,
                     pm: app.pm,
                     wallet: app.wallet,
@@ -139,18 +144,18 @@
                     this.$root.alert('success', ' ', 'Registration Successful!!! Redirecting...')
                     this.processing(false)
                     app.success = true
-                    window.location.href = this.$root.basepath + '/login'
+                    // window.location.href = this.$root.basepath + '/login'
                     // this.$router.push({ name: 'login', params: { successRegistrationRedirect: true }, base : 'hash' })
 
                 },
                 error: function(res) {
+                    this.processing(false)
                     this.$root.loader('hide')
                     window.scrollTo(0, 180)
                     app.has_error = true
                     app.error = res.response.data.message
                     app.errors = typeof res.response.data.error == 'string' ? {} : res.response.data.error
                     app.unknown_error = typeof res.response.data.error == 'string' ? res.response.data.error : ''
-                    this.processing(false)
                     this.$root.alert('error', ' ', app.error)
                 }
             })
@@ -256,6 +261,9 @@ only screen and (min-resolution: 2dppx) {
     background-color: black;
     font-weight: bold;
     color: white;
+}
+.vti__dropdown.open, .vti__dropdown:hover {
+    background-color: transparent;
 }
 
 .success-group {
@@ -407,4 +415,10 @@ only screen and (min-resolution: 2dppx) {
     color: #cca354;
 }
 
+
+.vti__dropdown-list {
+    background-color: #cca354;
+    border: 1px solid black;
+    color: black;
+}
 </style>

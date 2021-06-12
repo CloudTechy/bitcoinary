@@ -8651,12 +8651,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       first_name: '',
       last_name: '',
-      // number: '',
+      number: '',
       email: '',
       username: '',
       password: '',
@@ -8683,7 +8688,7 @@ __webpack_require__.r(__webpack_exports__);
           first_name: app.first_name,
           email: app.email,
           last_name: app.last_name,
-          // number: app.number,
+          number: app.number,
           username: app.username,
           pm: app.pm,
           wallet: app.wallet,
@@ -8697,17 +8702,17 @@ __webpack_require__.r(__webpack_exports__);
           this.$root.loader('hide');
           this.$root.alert('success', ' ', 'Registration Successful!!! Redirecting...');
           this.processing(false);
-          app.success = true;
-          window.location.href = this.$root.basepath + '/login'; // this.$router.push({ name: 'login', params: { successRegistrationRedirect: true }, base : 'hash' })
+          app.success = true; // window.location.href = this.$root.basepath + '/login'
+          // this.$router.push({ name: 'login', params: { successRegistrationRedirect: true }, base : 'hash' })
         },
         error: function error(res) {
+          this.processing(false);
           this.$root.loader('hide');
           window.scrollTo(0, 180);
           app.has_error = true;
           app.error = res.response.data.message;
           app.errors = typeof res.response.data.error == 'string' ? {} : res.response.data.error;
           app.unknown_error = typeof res.response.data.error == 'string' ? res.response.data.error : '';
-          this.processing(false);
           this.$root.alert('error', ' ', app.error);
         }
       });
@@ -19150,7 +19155,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*    .box {\r\n  background: #666666;\r\n  color: #ffffff;\r\n  width: 250px;\r\n  padding: 10px;\r\n  margin: 1em auto;\r\n}\r\np {\r\n  margin: 1.5em 0;\r\n  padding: 0;\r\n}*/\ninput[type=\"checkbox\"] {\r\n    visibility: hidden;\n}\nlabel {\r\n    cursor: pointer;\n}\ninput[type=\"checkbox\"]+label:before {\r\n    border: 1px solid #cca354;\r\n    content: \"\\A0\";\r\n    display: inline-block;\r\n    font: 16px/1em sans-serif;\r\n    height: 16px;\r\n    margin: 0 .25em 0 0;\r\n    vertical-align: top;\r\n    width: 16px;\n}\ninput[type=\"checkbox\"]:checked+label:before {\r\n    background: #cca354;\r\n    color: #fff;\r\n    content: \"\\2713\";\r\n    text-align: center;\n}\ninput[type=\"checkbox\"]:checked+label:after {\r\n    font-weight: bold;\n}\ninput[type=\"checkbox\"]:focus+label::before {\r\n    outline: rgb(59, 153, 252) auto 5px;\n}\n.iti-flag {\r\n    background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags.png\");\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2),\r\nonly screen and (min-device-pixel-ratio: 2),\r\nonly screen and (min-resolution: 192dpi),\r\nonly screen and (min-resolution: 2dppx) {\n.iti-flag {\r\n        background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags@2x.png\");\n}\n}\n.vue-tel-input {\r\n    width: 100% !important;\r\n    border: 1px solid rgba(204, 163, 84, 0.45) !important;\n}\n.vti__input {\r\n\r\n    background-color: black;\r\n    font-weight: bold;\r\n    color: white;\n}\n.success-group {\r\n    display: inline-block;\r\n    color: #2ee388;\r\n    position: relative;\r\n    padding: 15px 15px 15px 65px;\r\n    margin-bottom: 20px;\r\n    text-align: left;\r\n    border: 1px solid #2ee388;\r\n    border-radius: 6px;\n}\n.success-group.clone {\r\n    padding: 0;\n}\n.success-group h4 {\r\n    font-size: 30px;\r\n    margin-bottom: 8px;\r\n    font-weight: 700;\n}\n.success-group span {\r\n    font-size: 18px;\r\n    color: #fff;\n}\n.success-group:before {\r\n    content: \"\\F058\";\r\n    font-size: 40px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 15px;\r\n    transform: translateY(-50%);\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    font-family: 'fontAwesome';\n}\n.success-group.clone:before {\r\n    display: none;\n}\n.success-group.clone>div:first-child {\r\n    position: relative;\r\n    padding: 15px 15px 15px 65px;\n}\n.success-group.clone>div:first-child:before {\r\n    content: \"\\F058\";\r\n    font-size: 40px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 15px;\r\n    transform: translateY(-50%);\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    font-family: 'fontAwesome';\n}\n.error-group {\r\n    display: inline-block;\r\n    color: #FF9494;\r\n    position: relative;\r\n    padding-left: 50px;\r\n    margin-bottom: 20px;\r\n    text-align: left;\n}\n.error-group h4 {\r\n    font-size: 18px;\r\n    margin-bottom: 8px;\r\n    font-weight: 700;\n}\n.error-group span {\r\n    font-size: 14px;\r\n    color: #fff;\n}\n.error-group:before {\r\n    content: \"\\F00D\";\r\n    font-size: 40px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 0;\r\n    transform: translateY(-50%);\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    font-family: 'fontAwesome';\n}\n.error-msg,\r\n.success-msg {\r\n    margin-bottom: 30px;\r\n    font-size: 15px;\r\n    color: #fff;\r\n    line-height: 22px;\r\n    padding: 5px;\r\n    position: relative;\r\n    border-radius: 6px;\r\n    border: 1px solid transparent;\n}\n.error-msg:before,\r\n.success-msg:before {\r\n    content: \"\";\r\n    font-size: 30px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 10px;\r\n    transform: translateY(-50%);\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    font-family: 'fontAwesome';\n}\n.error-msg li,\r\n.success-msg li {\r\n    margin-bottom: 5px;\n}\n.error-msg li:last-child,\r\n.success-msg li:last-child {\r\n    margin-bottom: 0;\n}\n.success-msg {\r\n    border: 1px solid #cca354;\r\n    border-top-color: green;\n}\n.success-msg p {\r\n    margin: 0;\n}\n.success-msg:before {\r\n    color: #cca354;\n}\n.error-msg {\r\n    border: 1px solid #cca354;\r\n    border-top-color: red;\n}\n.error-msg:before {\r\n    color: #cca354;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*    .box {\r\n  background: #666666;\r\n  color: #ffffff;\r\n  width: 250px;\r\n  padding: 10px;\r\n  margin: 1em auto;\r\n}\r\np {\r\n  margin: 1.5em 0;\r\n  padding: 0;\r\n}*/\ninput[type=\"checkbox\"] {\r\n    visibility: hidden;\n}\nlabel {\r\n    cursor: pointer;\n}\ninput[type=\"checkbox\"]+label:before {\r\n    border: 1px solid #cca354;\r\n    content: \"\\A0\";\r\n    display: inline-block;\r\n    font: 16px/1em sans-serif;\r\n    height: 16px;\r\n    margin: 0 .25em 0 0;\r\n    vertical-align: top;\r\n    width: 16px;\n}\ninput[type=\"checkbox\"]:checked+label:before {\r\n    background: #cca354;\r\n    color: #fff;\r\n    content: \"\\2713\";\r\n    text-align: center;\n}\ninput[type=\"checkbox\"]:checked+label:after {\r\n    font-weight: bold;\n}\ninput[type=\"checkbox\"]:focus+label::before {\r\n    outline: rgb(59, 153, 252) auto 5px;\n}\n.iti-flag {\r\n    background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags.png\");\n}\n@media only screen and (-webkit-min-device-pixel-ratio: 2),\r\nonly screen and (min-device-pixel-ratio: 2),\r\nonly screen and (min-resolution: 192dpi),\r\nonly screen and (min-resolution: 2dppx) {\n.iti-flag {\r\n        background-image: url(\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/img/flags@2x.png\");\n}\n}\n.vue-tel-input {\r\n    width: 100% !important;\r\n    border: 1px solid rgba(204, 163, 84, 0.45) !important;\n}\n.vti__input {\r\n\r\n    background-color: black;\r\n    font-weight: bold;\r\n    color: white;\n}\n.vti__dropdown.open, .vti__dropdown:hover {\r\n    background-color: transparent;\n}\n.success-group {\r\n    display: inline-block;\r\n    color: #2ee388;\r\n    position: relative;\r\n    padding: 15px 15px 15px 65px;\r\n    margin-bottom: 20px;\r\n    text-align: left;\r\n    border: 1px solid #2ee388;\r\n    border-radius: 6px;\n}\n.success-group.clone {\r\n    padding: 0;\n}\n.success-group h4 {\r\n    font-size: 30px;\r\n    margin-bottom: 8px;\r\n    font-weight: 700;\n}\n.success-group span {\r\n    font-size: 18px;\r\n    color: #fff;\n}\n.success-group:before {\r\n    content: \"\\F058\";\r\n    font-size: 40px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 15px;\r\n    transform: translateY(-50%);\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    font-family: 'fontAwesome';\n}\n.success-group.clone:before {\r\n    display: none;\n}\n.success-group.clone>div:first-child {\r\n    position: relative;\r\n    padding: 15px 15px 15px 65px;\n}\n.success-group.clone>div:first-child:before {\r\n    content: \"\\F058\";\r\n    font-size: 40px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 15px;\r\n    transform: translateY(-50%);\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    font-family: 'fontAwesome';\n}\n.error-group {\r\n    display: inline-block;\r\n    color: #FF9494;\r\n    position: relative;\r\n    padding-left: 50px;\r\n    margin-bottom: 20px;\r\n    text-align: left;\n}\n.error-group h4 {\r\n    font-size: 18px;\r\n    margin-bottom: 8px;\r\n    font-weight: 700;\n}\n.error-group span {\r\n    font-size: 14px;\r\n    color: #fff;\n}\n.error-group:before {\r\n    content: \"\\F00D\";\r\n    font-size: 40px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 0;\r\n    transform: translateY(-50%);\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    font-family: 'fontAwesome';\n}\n.error-msg,\r\n.success-msg {\r\n    margin-bottom: 30px;\r\n    font-size: 15px;\r\n    color: #fff;\r\n    line-height: 22px;\r\n    padding: 5px;\r\n    position: relative;\r\n    border-radius: 6px;\r\n    border: 1px solid transparent;\n}\n.error-msg:before,\r\n.success-msg:before {\r\n    content: \"\";\r\n    font-size: 30px;\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 10px;\r\n    transform: translateY(-50%);\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    font-family: 'fontAwesome';\n}\n.error-msg li,\r\n.success-msg li {\r\n    margin-bottom: 5px;\n}\n.error-msg li:last-child,\r\n.success-msg li:last-child {\r\n    margin-bottom: 0;\n}\n.success-msg {\r\n    border: 1px solid #cca354;\r\n    border-top-color: green;\n}\n.success-msg p {\r\n    margin: 0;\n}\n.success-msg:before {\r\n    color: #cca354;\n}\n.error-msg {\r\n    border: 1px solid #cca354;\r\n    border-top-color: red;\n}\n.error-msg:before {\r\n    color: #cca354;\n}\n.vti__dropdown-list {\r\n    background-color: #cca354;\r\n    border: 1px solid black;\r\n    color: black;\n}\r\n", ""]);
 
 // exports
 
@@ -69171,6 +69176,103 @@ var render = function() {
                                 _vm._v(" "),
                                 _vm._l(_vm.errors.email, function(error) {
                                   return _vm.errors.email
+                                    ? _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "base--color m-0 p-2 small"
+                                        },
+                                        [_vm._v(_vm._s(error))]
+                                      )
+                                    : _vm._e()
+                                })
+                              ],
+                              2
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "form-group" },
+                              [
+                                _c("label", [_vm._v("Phone Number")]),
+                                _vm._v(" "),
+                                _c(
+                                  "vue-tel-input",
+                                  {
+                                    class: {
+                                      "form-control": true,
+                                      "error-input":
+                                        _vm.errors.number != undefined
+                                    },
+                                    model: {
+                                      value: _vm.number,
+                                      callback: function($$v) {
+                                        _vm.number = $$v
+                                      },
+                                      expression: "number"
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      ">\n                                    "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _vm._l(_vm.errors.number, function(error) {
+                                  return _vm.errors.number
+                                    ? _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "base--color m-0 p-2 small"
+                                        },
+                                        [_vm._v(_vm._s(error))]
+                                      )
+                                    : _vm._e()
+                                })
+                              ],
+                              2
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "form-group" },
+                              [
+                                _c("label", [_vm._v("Referral")]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.referral,
+                                      expression: "referral"
+                                    }
+                                  ],
+                                  class: {
+                                    "form-control": true,
+                                    "error-input":
+                                      _vm.errors.referral != undefined
+                                  },
+                                  attrs: {
+                                    type: "text",
+                                    required: "",
+                                    placeholder: "Enter your referral"
+                                  },
+                                  domProps: { value: _vm.referral },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.referral = $event.target.value
+                                    }
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _vm._l(_vm.errors.referral, function(error) {
+                                  return _vm.errors.referral
                                     ? _c(
                                         "p",
                                         {
