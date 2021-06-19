@@ -5886,7 +5886,12 @@ __webpack_require__.r(__webpack_exports__);
     btcRate: function btcRate() {
       var _this = this;
 
-      this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(function (response) {
+      this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json", {
+        transformRequest: [function (data, headers) {
+          delete headers.common.Authorization;
+          return data;
+        }]
+      }).then(function (response) {
         _this.usd_btc_rate = response.data.bpi.USD.rate;
         _this.eur_btc_rate = response.data.bpi.EUR.rate;
       })["catch"](function (error) {
@@ -5896,7 +5901,12 @@ __webpack_require__.r(__webpack_exports__);
     btcVolume: function btcVolume() {
       var _this2 = this;
 
-      this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT").then(function (response) {
+      this.$http.get("https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT", {
+        transformRequest: [function (data, headers) {
+          delete headers.common.Authorization;
+          return data;
+        }]
+      }).then(function (response) {
         var volume = response.data.volume;
         _this2.btc_volume = parseInt(volume) / 3;
         _this2.active_trade = volume; // console.log(response.data);

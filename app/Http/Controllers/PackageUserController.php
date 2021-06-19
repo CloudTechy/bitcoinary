@@ -218,7 +218,7 @@ class PackageUserController extends Controller {
 				$packageuser->transaction->update(['confirmed' => true, 'sent' => true]);
 				$packageuser->user->notify(new PackageSubscribed($packageuser));
 				DB::commit();
-				$this->referralPayment($packageuser);
+				$r = $this->referralPayment($packageuser);
 				
 				$data = new PackageUserResource($packageuser);
 				
@@ -243,14 +243,14 @@ class PackageUserController extends Controller {
 			$commission_first_level = $subscription->package->first_level_ref_commission / 100 * $subscription->amount;
 			$commission_second_level = $subscription->package->second_level_ref_commission / 100 * $subscription->amount;
 
-			if ($referrer && $user->user_level_id != 1) {
+			if ($referrer && $user->userLevel->name == "user") {
 				if ($commission_first_level > 0) {
 					$transaction = $referrer->transactions()->create(['reference' => 'BM first tier commission', 'amount' => $commission_first_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
 					$subscription->update(['referral' => $referrer->id]);	
 					$transaction->user->notify(new TransactionMade($transaction));
 				}
 				if ($upline && $commission_second_level > 0) {
-					$transaction = $referrer->transactions()->create(['reference' => 'BM second tier commission', 'amount' => $commission_second_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
+					$transaction = $upline->transactions()->create(['reference' => 'BM second tier commission', 'amount' => $commission_second_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
 					$transaction->user->notify(new TransactionMade($transaction));
 				}
 				DB::commit();
