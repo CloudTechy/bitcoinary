@@ -65,7 +65,8 @@ export default {
             success: false,
             has_error: false,
             error: '',
-            rememberMe: false
+            rememberMe: false,
+            redirectTo: ''
         }
     },
     mounted() {
@@ -92,20 +93,23 @@ export default {
                 success: function(response) {
                     this.processing(false)
                     this.$root.loader('hide')
-                    var redirectTo = 'dashboard'
                     app.success = true
-                    if (redirect && !this.$auth.user().isEmailVerified) {
-                        if (redirect.from.path == "/confirm-registration") {
-                            this.$router.push(redirect.from.fullPath)
-                        }
-                    }
+                    // if (redirect && !this.$auth.user().isEmailVerified) {
+                    //     if (redirect.from.path == "/confirm-registration") {
+                    //         this.$router.push(redirect.from.fullPath)
+                    //     }
+                    // }
+                    console.log(this.$auth.user().isAdmin)
                     if (this.$auth.user().isEmailVerified) {
                         if (redirect) {
-                            redirectTo = redirect.from.name
+                            this.redirectTo = redirect.from.name
                         } else if (this.$auth.user().isAdmin) {
-                            redirectTo = 'adminDashboard'
+                            this.redirectTo = 'adminDashboard'
+                        } else {
+                            this.redirectTo = 'dashboard'
                         }
-                        this.$router.push({ name: redirectTo })
+console.log(this.redirectTo)
+                        this.$router.push({ name: this.redirectTo })
                     }
                 },
                 error: function(res) {

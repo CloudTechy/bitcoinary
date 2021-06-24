@@ -47,7 +47,7 @@ const routes = [{
     {
         path: '/404',
         name: 'NotFound',
-        component: NotFound,
+        component: Home,
         meta: {
             auth: undefined,
             title: 'Not Found',
@@ -288,7 +288,7 @@ const routes = [{
             auth: true,
             AdminAuth: true,
             requiresAuth: true,
-            title: 'AdminDashboard',
+            title: 'Admin Dashboard',
         }
     },
     {
@@ -366,13 +366,16 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
+
   if(nearestWithTitle) document.title = nearestWithTitle.meta.title;
+
   if (to.meta.AdminAuth) {
-        const authUser = JSON.parse(window.localStorage.getItem('lbuser'))
-        if (authUser.isAdmin == true) {
+        const authUser = JSON.parse(window.localStorage.getItem('lbUser'))
+        if (authUser.data.isAdmin == true) {
+            console.log('yeah')
             next()
         } else {
-            next({ name: 'dashboard' })
+            next({ name: 'NotFound' })
         }
     } 
   next();

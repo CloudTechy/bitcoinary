@@ -8463,7 +8463,8 @@ __webpack_require__.r(__webpack_exports__);
       success: false,
       has_error: false,
       error: '',
-      rememberMe: false
+      rememberMe: false,
+      redirectTo: ''
     };
   },
   mounted: function mounted() {
@@ -8491,24 +8492,26 @@ __webpack_require__.r(__webpack_exports__);
         success: function success(response) {
           this.processing(false);
           this.$root.loader('hide');
-          var redirectTo = 'dashboard';
-          app.success = true;
+          app.success = true; // if (redirect && !this.$auth.user().isEmailVerified) {
+          //     if (redirect.from.path == "/confirm-registration") {
+          //         this.$router.push(redirect.from.fullPath)
+          //     }
+          // }
 
-          if (redirect && !this.$auth.user().isEmailVerified) {
-            if (redirect.from.path == "/confirm-registration") {
-              this.$router.push(redirect.from.fullPath);
-            }
-          }
+          console.log(this.$auth.user().isAdmin);
 
           if (this.$auth.user().isEmailVerified) {
             if (redirect) {
-              redirectTo = redirect.from.name;
+              this.redirectTo = redirect.from.name;
             } else if (this.$auth.user().isAdmin) {
-              redirectTo = 'adminDashboard';
+              this.redirectTo = 'adminDashboard';
+            } else {
+              this.redirectTo = 'dashboard';
             }
 
+            console.log(this.redirectTo);
             this.$router.push({
-              name: redirectTo
+              name: this.redirectTo
             });
           }
         },
@@ -106931,8 +106934,8 @@ var config = {
   loginData: {
     url: 'auth/login',
     method: 'POST',
-    redirect: '/dashboard',
-    fetchUser: true
+    redirect: '' // fetchUser: true
+
   },
   logoutData: {
     url: 'auth/logout',
@@ -111265,7 +111268,7 @@ var routes = [{
 }, {
   path: '/404',
   name: 'NotFound',
-  component: _pages_Error404_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+  component: _pages_Home__WEBPACK_IMPORTED_MODULE_1__["default"],
   meta: {
     auth: undefined,
     title: 'Not Found'
@@ -111480,7 +111483,7 @@ var routes = [{
     auth: true,
     AdminAuth: true,
     requiresAuth: true,
-    title: 'AdminDashboard'
+    title: 'Admin Dashboard'
   }
 }, {
   path: '/admin/dashboard/users',
@@ -111554,19 +111557,15 @@ router.beforeEach(function (to, from, next) {
   var nearestWithTitle = to.matched.slice().reverse().find(function (r) {
     return r.meta && r.meta.title;
   });
-  if (nearestWithTitle) document.title = nearestWithTitle.meta.title;
-
-  if (to.meta.AdminAuth) {
-    var authUser = JSON.parse(window.localStorage.getItem('lbuser'));
-
-    if (authUser.isAdmin == true) {
-      next();
-    } else {
-      next({
-        name: 'dashboard'
-      });
-    }
-  }
+  if (nearestWithTitle) document.title = nearestWithTitle.meta.title; // if (to.meta.AdminAuth) {
+  //       const authUser = JSON.parse(window.localStorage.getItem('lbUser'))
+  //       if (authUser.data.isAdmin == true) {
+  //           console.log('yeah')
+  //           next()
+  //       } else {
+  //           next({ name: 'NotFound' })
+  //       }
+  //   } 
 
   next();
 });
