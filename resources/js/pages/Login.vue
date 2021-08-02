@@ -14,8 +14,8 @@
                                 <h3 class="text-center">Login</h3>
                                 <form class="mt-4" autocomplete="off" @submit.prevent="login" method="post">
                                     <div class="form-group">
-                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="has_error && !success  ">
-                                            <p v-if="error.error" class="text-center m-3 small">{{error.message}}</p>
+                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-2" v-if="has_error && !success  ">
+                                            <p v-if="error.error" class="text-center m-2 small">{{error.message}}</p>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -65,7 +65,9 @@ export default {
             success: false,
             has_error: false,
             error: '',
-            rememberMe: false
+            rememberMe: false,
+            redirectTo: '',
+            redirectPath: '',
         }
     },
     mounted() {
@@ -90,31 +92,43 @@ export default {
                     password: app.password
                 },
                 success: function(response) {
-                    this.processing(false)
-                    this.$root.loader('hide')
-                    var redirectTo = 'dashboard'
+                    window.localStorage.setItem('lbUser', JSON.stringify(app.$auth.user()))
                     app.success = true
-                    if (redirect && !this.$auth.user().isEmailVerified) {
-                        if (redirect.from.path == "/confirm-registration") {
-                            this.$router.push(redirect.from.fullPath)
-                        }
-                    }
-                    if (this.$auth.user().isEmailVerified) {
+                    this.$root.alert('success',' ', 'Login successful...')
+                    // if (redirect && !app.$auth.user().isEmailVerified) {
+                    // if (redirect.from.path == "/confirm-registration") {
+                    // app.$router.push(redirect.from.fullPath)
+                    // }
+                    // }
+
+                    
+                    if (app.$auth.user().isEmailVerified) {
                         if (redirect) {
-                            redirectTo = redirect.from.name
-                        } else if (this.$auth.user().isAdmin) {
-                            redirectTo = 'adminDashboard'
-                        }
-                        this.$router.push({ name: redirectTo })
+                            app.redirectTo = redirect.from.name
+                            app.redirectPath = redirect.from.path
+                        } else if (app.$auth.user().isAdmin) {
+                            app.redirectTo = 'adminDashboard'
+                            app.redirectPath = '/admin/dashboard'
+                        } else{
+                            app.redirectTo = 'dashboard'
+                            app.redirectPath = '/dashboard'
+                        } 
+                        console.log(app.redirectPath)
+                        // app.$router.push({ name: 'adminDashboard' })
+                        window.location.assign(basepath + app.redirectPath)
+                        app.processing(false)
+                        app.$root.loader('hide')
                     }
+
+                    
                 },
                 error: function(res) {
-                    this.$root.loader('hide')
+                    app.$root.loader('hide')
                     window.scrollTo(0, 180)
-                    this.processing(false)
+                    app.processing(false)
                     app.has_error = true
                     app.error = res.response ? res.response.data : {}
-                    this.$root.alert('error', ' ', app.error.error ? app.error.error.error : 'An unknown error has occured, please try again later.')
+                    app.$root.alert('error', ' ', app.error.error ? app.error.error.error : 'An unknown error has occured, please try again later.')
                     console.log(res.response.data.error.error)
                 },
                 rememberMe: app.rememberMe,

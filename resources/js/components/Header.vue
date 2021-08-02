@@ -109,6 +109,18 @@ export default {
             rate: ''
         }
     },
+    beforeCreate() {
+        document.querySelector('link[href$="vendors.min.css"]').remove()
+        document.querySelector('link[href$="css2.css"]').remove()
+        document.querySelector('link[href$="bootstrap.min.css"]').remove()
+        document.querySelector('link[href$="bootstrap-extended.min.css"]').remove()
+        document.querySelector('link[href$="colors.min.css"]').remove()
+        document.querySelector('link[href$="components.min.css"]').remove()
+        document.querySelector('link[href$="dark-layout.min.css"]').remove()
+        document.querySelector('link[href$="bordered-layout.min.css"]').remove()
+        document.querySelector('link[href$="semi-dark-layout.min.css"]').remove()
+        document.querySelector('link[href$="vertical-menu.min.css"]').remove()
+    },
     computed: {},
     // components: { Menu },
     methods: {

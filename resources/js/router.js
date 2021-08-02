@@ -47,7 +47,7 @@ const routes = [{
     {
         path: '/404',
         name: 'NotFound',
-        component: NotFound,
+        component: Home,
         meta: {
             auth: undefined,
             title: 'Not Found',
@@ -195,6 +195,8 @@ const routes = [{
         component: Dashboard,
         meta: {
             auth: true,
+            adminAuth: false,
+            requiresAuth: false,
             title: 'User Dashboard',
         }
     },
@@ -204,6 +206,7 @@ const routes = [{
         component: Deposit,
         meta: {
             auth: true,
+            adminAuth: false,
             title: 'User Deposit',
         }
     },
@@ -213,6 +216,7 @@ const routes = [{
         component: Withdraw,
         meta: {
             auth: true,
+            adminAuth: false,
             title: 'User Withdraw',
         }
     },
@@ -222,6 +226,7 @@ const routes = [{
         component: Setting,
         meta: {
             auth: true,
+            adminAuth: false,
             title: 'User Setting',
         }
     },
@@ -231,6 +236,7 @@ const routes = [{
         component: Security,
         meta: {
             auth: true,
+            adminAuth: false,
             title: 'User Security',
         }
     },
@@ -240,6 +246,7 @@ const routes = [{
         component: WithdrawReport,
         meta: {
             auth: true,
+            adminAuth: false,
             title: 'User WithdrawReport',
         }
     },
@@ -249,6 +256,7 @@ const routes = [{
         component: DepositReport,
         meta: {
             auth: true,
+            adminAuth: false,
             title: 'User Plans',
         }
     },
@@ -258,6 +266,7 @@ const routes = [{
         component: UserPlans,
         meta: {
             auth: true,
+            adminAuth: false,
             title: 'User Plans',
         }
     },
@@ -267,6 +276,7 @@ const routes = [{
         component: TransactionReport,
         meta: {
             auth: true,
+            adminAuth: false,
             title: 'User TransactionReport',
         }
     },
@@ -276,6 +286,7 @@ const routes = [{
         component: referralReport,
         meta: {
             auth: true,
+            adminAuth: false,
             title: 'User ReferralReport',
         }
     },
@@ -286,9 +297,9 @@ const routes = [{
         component: AdminDashboard,
         meta: {
             auth: true,
-            AdminAuth: true,
-            requiresAuth: true,
-            title: 'AdminDashboard',
+            adminAuth: true,
+            // requiresAuth: false,
+            title: 'Admin Dashboard',
         }
     },
     {
@@ -297,7 +308,7 @@ const routes = [{
         component: Users,
         meta: {
             auth: true,
-            AdminAuth: true,
+            adminAuth: true,
             title: 'Admin Users',
         }
     },
@@ -307,7 +318,7 @@ const routes = [{
         component: Deposits,
         meta: {
             auth: true,
-            AdminAuth: true,
+            adminAuth: true,
             title: 'Admin Deposits',
         }
     },
@@ -317,7 +328,7 @@ const routes = [{
         component: Subscriptions,
         meta: {
             auth: true,
-            AdminAuth: true,
+            adminAuth: true,
             title: 'Admin Subscriptions',
         }
     },
@@ -327,7 +338,7 @@ const routes = [{
         component: Withdrawals,
         meta: {
             auth: true,
-            AdminAuth: true,
+            adminAuth: true,
             title: 'Admin Withdrawals',
         }
     },
@@ -341,40 +352,46 @@ const router = new VueRouter({
             return { x: 0, y: 0 }
         }
     },
-    // beforeEach(to, from, next) {
-    //     // const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
-    //     // alert(nearestWithTitle)
-    //     // if(nearestWithTitle) 
-    //     window.document.title = 'to.meta.title';
-    //     if (to.meta.AdminAuth) {
-    //         const authUser = JSON.parse(window.localStorage.getItem('lbuser'))
-    //         if (authUser.isAdmin == true) {
-    //             next()
-    //         } else {
-    //             next({ name: 'dashboard' })
-    //         }
-    //     } else {
-    //         next()
-    //     }
-    // },
-
-
     history: true,
     mode: 'history',
     routes,
 })
 
 router.beforeEach((to, from, next) => {
-  const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
-  if(nearestWithTitle) document.title = nearestWithTitle.meta.title;
-  if (to.meta.AdminAuth) {
-        const authUser = JSON.parse(window.localStorage.getItem('lbuser'))
-        if (authUser.isAdmin == true) {
+    const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
+
+    if (nearestWithTitle) document.title = nearestWithTitle.meta.title;
+    const authUser = JSON.parse(window.localStorage.getItem('lbUser'))
+    // if (to.meta.auth === true && to.meta.adminAuth && to.meta.adminAuth == true) {
+    //     if (authUser && authUser.isAdmin == true) {
+    //         next()
+    //     } else {
+    //         next({ name: 'dashboard' })
+    //     }
+    // } else if (to.meta.auth === true && to.meta.adminAuth && to.meta.adminAuth == false) {
+    //     if (authUser && authUser.isAdmin == true) {
+    //         next({ name: 'adminDashboard' })
+
+    //     } else {
+    //         next()
+    //     }
+    // }
+
+    if (to.meta.adminAuth == true) {
+        if (authUser && authUser.isAdmin == true) {
             next()
         } else {
             next({ name: 'dashboard' })
         }
-    } 
-  next();
+    } else if (to.meta.adminAuth == false) {
+        if (authUser && authUser.isAdmin == true) {
+            next({ name: 'adminDashboard' })
+
+        } else {
+            next()
+        }
+    }
+    // next({ name: 'dashboard' })
+    else next()
 });
 export default router

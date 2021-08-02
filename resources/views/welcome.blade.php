@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="dark-layout loaded" data-layout="dark-layout" data-textdirection="ltr" style="--vh:6.38px; " lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,40 +13,45 @@
     <meta name="author" content=" {{config('app.name')}} ICT Team">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <!-- Fonts -->
-<!--   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css"> -->
-  <!-- Styles -->
-
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet"><!-- 
-  <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/main.css') }}"> -->
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link rel="shortcut icon" href="{{asset('images/favicontp.png')}}" type="image/x-icon">
+
+<!-- frontend css -->
   <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
-    <!-- line-awesome webfont -->
-    <link rel="stylesheet" href="{{asset('css/line-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/vendor/animate.min.css')}}">
-    <!-- slick slider css -->
-    <link rel="stylesheet" href="{{asset('css/vendor/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('css/vendor/dots.css')}}">
-    <!-- dashdoard main css -->
-    <link rel="stylesheet" href="{{asset('css/main.css')}}">
-  <!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/themefisher-fonts.css') }}"> -->
+  <link rel="stylesheet" href="{{asset('css/line-awesome.min.css')}}">
+  <link rel="stylesheet" href="{{asset('css/vendor/animate.min.css')}}">
+  <link rel="stylesheet" href="{{asset('css/vendor/slick.css')}}">
+  <link rel="stylesheet" href="{{asset('css/vendor/dots.css')}}">
+  <link rel="stylesheet" href="{{asset('css/main.css')}}">
+
+    <!-- backend css -->
+  <link rel="stylesheet" href="{{asset('pixinvest/css2.css')}}">
+  <link rel="stylesheet" href="{{asset('pixinvest/vendors.min.css')}}">
+  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/bootstrap-extended.min.css')}}">
+  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/colors.min.css')}}">
+  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/components.min.css')}}">
+  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/themes/dark-layout.min.css')}}">
+  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/themes/bordered-layout.min.css')}}">
+  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/themes/semi-dark-layout.min.css')}}">
+  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/core/menu/menu-types/vertical-menu.min.css')}}">
+
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/60bf7da0dd60a20abbe54044/1f7m05fok';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+// var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+// (function(){
+// var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+// s1.async=true;
+// s1.src='https://embed.tawk.to/60bf7da0dd60a20abbe54044/1f7m05fok';
+// s1.charset='UTF-8';
+// s1.setAttribute('crossorigin','*');
+// s0.parentNode.insertBefore(s1,s0);
+// })();
 </script>
 <!--End of Tawk.to Script-->
 </head>
+<body id="body">
    <div>
         <div class="preloader">
             <div class="preloader-container">
@@ -72,21 +77,20 @@ s0.parentNode.insertBefore(s1,s0);
         </div>
     </div>
   <div id="app" >
+    <noscript>
+        <strong>We're sorry but {{config('app.name')}} doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
     <index></index>
   </div>
-  <script src="{{ asset('js/jquery.js') }}"></script>
-  <!-- <script src="{{ asset('js/fancybox.js') }}" defer></script>
-  <script src="{{ asset('js/owl.carousel.min.js') }}" defer></script>
-  <script src="{{ asset('js/clipboard.min.js') }}" defer></script> -->
-      <!-- page-wrapper end -->
-    <!-- jQuery library -->
- <!--    <script src="asset/js/vendor/jquery-3.5.1.min.js"></script>
-    <script src="asset/js/vendor/bootstrap.bundle.min.js"></script> -->
-    <!-- slick slider js -->
+  <script src="{{ asset('pixinvest/app-assets/vendors/js/vendors.min.js') }}" defer></script>
 
+  <script src="{{ asset('pixinvest/app-assets/js/core/app-menu.min.js') }}" defer></script>
+    <script src="{{ asset('pixinvest/app-assets/js/core/app.min.js') }}" defer></script>
     
-    <script src="{{asset('js/jquery-3.5.1.min.js.download')}}" defer></script>
-      <script src="{{asset('js/bootstrap.bundle.js.download')}}" defer></script>
+  <script src="{{ asset('js/jquery.js') }}"></script>
+    <!-- <script src="{{ asset('pixinvest/app-assets/js/customizer.min.js') }}" ></script> -->
+    <!-- <script src="{{asset('js/jquery-3.5.1.min.js.download')}}" defer></script> -->
+      <!-- <script src="{{asset('js/bootstrap.bundle.js.download')}}" defer></script> -->
     <script src="{{asset('js/slick.min.js.download')}}" defer></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{asset('js/wow.min.js.download')}}" defer></script>
@@ -94,9 +98,15 @@ s0.parentNode.insertBefore(s1,s0);
     <script src="{{ asset('js/k.js') }}" defer></script>
 
     <!-- <script src="{{asset('js/dashboard.js.download')}}" defer></script> -->
-
+   
+  <!--   <script src="{{ asset('pixinvest/app-assets/vendors/js/charts/apexcharts.min.js')}}"  defer></script>
+    <script src="{{ asset('pixinvest/app-assets/vendors/js/extensions/toastr.min.js')}}"  defer></script>
+    <script src="{{ asset('pixinvest/app-assets/js/scripts/pages/dashboard-analytics.min.js')}}"  defer></script>
+    <script src="{{ asset('pixinvest/app-assets/js/scripts/pages/card-analytics.min.js')}}"  defer></script>
+ -->
   
   <script src="{{ asset('js/objectdata.js') }}" defer></script>
+  <script src="{{ asset('pixinvest/app-assets/js/scripts/customizer.min.js') }}" defer></script>
   <script>
     if('serviceWorker' in navigator) {
       navigator.serviceWorker
@@ -105,7 +115,9 @@ s0.parentNode.insertBefore(s1,s0);
     }
 
     $(window).load(function(){
-      console.log('window loaded')
+      if (feather) {
+          feather.replace({ width: 14, height: 14 });
+        }
       $(".preloader").delay(300).animate({
        "opacity" : "0"
        }, 300, function() {
