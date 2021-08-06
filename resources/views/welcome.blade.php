@@ -85,7 +85,10 @@
   <script src="{{ asset('pixinvest/app-assets/vendors/js/vendors.min.js') }}" defer></script>
 
   <script src="{{ asset('pixinvest/app-assets/js/core/app-menu.min.js') }}" defer></script>
-    <script src="{{ asset('pixinvest/app-assets/js/core/app.min.js') }}" defer></script>
+  <script src="{{ asset('pixinvest/app-assets/js/core/app.min.js') }}" defer></script>
+
+  <!-- <script src="{{ asset('pixinvest/app-menu.min.js') }}" defer></script>
+  <script src="{{ asset('pixinvest/app.min.js') }}" defer></script> -->
     
   <script src="{{ asset('js/jquery.js') }}"></script>
     <!-- <script src="{{ asset('pixinvest/app-assets/js/customizer.min.js') }}" ></script> -->
@@ -106,7 +109,7 @@
  -->
   
   <script src="{{ asset('js/objectdata.js') }}" defer></script>
-  <script src="{{ asset('pixinvest/app-assets/js/scripts/customizer.min.js') }}" defer></script>
+  <!-- <script src="{{ asset('pixinvest/app-assets/js/scripts/customizer.min.js') }}" defer></script> -->
   <script>
     if('serviceWorker' in navigator) {
       navigator.serviceWorker

@@ -128,7 +128,7 @@ export default {
                     app.processing(false)
                     app.has_error = true
                     app.error = res.response ? res.response.data : {}
-                    app.$root.alert('error', ' ', app.error.error ? app.error.error.error : 'An unknown error has occured, please try again later.')
+                    // app.$root.alert('error', ' ', app.error.error ? app.error.error.error : 'An unknown error has occured, please try again later.')
                     console.log(res.response.data.error.error)
                 },
                 rememberMe: app.rememberMe,

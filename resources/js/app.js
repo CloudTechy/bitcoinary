@@ -15,6 +15,9 @@ import moment from 'moment'
 import fontawesome from '@fortawesome/fontawesome-free'
 import Clipboard from 'v-clipboard'
 import vueTelInput from "vue-tel-input";
+import VueHead from 'vue-head'
+ 
+Vue.use(VueHead)
 
 
 
