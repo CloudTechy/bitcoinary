@@ -19,7 +19,7 @@ class TransactionResource extends JsonResource {
 			'id' => $this->id,
 			'user_id' => $user->id,
 			'username' => $user->username,
-			'image' => $user->image,
+			'image' => empty($user->image) ? 'anonymous.jpg' : $user->image,
 			'owner' => $user->last_name . ' ' . $user->first_name,
 			'amount' => $this->amount,
 			'sent' => $this->sent,

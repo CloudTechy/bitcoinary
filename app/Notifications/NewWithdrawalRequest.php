@@ -10,7 +10,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 class NewWithdrawalRequest extends Notification implements ShouldQueue
 {
     use Queueable;
-protected $withdrawal;
+protected $withdrawal,$dashboardPath;
 
     /**
      * Create a new notification instance.
@@ -19,6 +19,7 @@ protected $withdrawal;
      */
     public function __construct($withdrawal) {
         $this->withdrawal = $withdrawal;
+        $this->dashboardPath = config('frontend.url').'/admin/dashboard/withdrawals?username='.$withdrawal->user->username;
     }
 
     /**
@@ -29,7 +30,7 @@ protected $withdrawal;
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail','database'];
     }
 
     /**
@@ -41,14 +42,14 @@ protected $withdrawal;
     public function toMail($notifiable)
     {
         $withdrawal = $this->withdrawal;
-        $dashboardPath = config('frontend.url').'/admin/dashboard/withdrawals?username='.$withdrawal->user->username;
+        
         return (new MailMessage)
             ->greeting('Dear ' . $notifiable->username . ',')
             ->subject('Withdrawal Request')
             ->line('A withdrawal request just occured ')
             ->line('This is to notify you that the user '.$withdrawal->user->username.' has indicated interest to withdraw the sum of $' . $withdrawal->amount)
             ->line('kindly review this occurence as soon as possible')
-            ->action('Review', url($dashboardPath));
+            ->action('Review', url($this->dashboardPath));
 
             
     }
@@ -63,6 +64,15 @@ protected $withdrawal;
     {
         return [
             //
+        ];
+    }
+    public function toDatabase($notifiable)
+    {
+        return [
+            'model' => 'withdrawal',
+            'message' => $this->withdrawal->user->username .' has requested to withdraw $' . $this->withdrawal->amount . ', kindly review',
+            'path' => $this->dashboardPath,
+            'type' => 'notification',
         ];
     }
 }

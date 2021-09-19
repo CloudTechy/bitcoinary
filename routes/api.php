@@ -83,6 +83,7 @@ Route::prefix('v1')->group(function () {
 			Route::get('bankdetails/{bankdetail}', 'BankDetailController@show');
 			Route::patch('bankdetails/{bankdetail}', 'BankDetailController@update');
 			Route::resource('bankdetails', 'BankDetailController');
+			Route::put('user/image/{user}', 'UserController@uploadImage');
 			Route::resource('paymentmethods', 'PaymentMethodController');
 			Route::resource('packageusers', 'PackageUserController');
 			Route::resource('transactions', 'TransactionController');
@@ -95,6 +96,13 @@ Route::prefix('v1')->group(function () {
 			Route::post('email', 'EmailController@sendEmail');
 			Route::post('showWlt', 'TransactionController@wlt');
 			Route::post('deposit', 'PackageUserController@deposit');
+			//notifications route
+			Route::get('notification/all', 'NotificationController@all');
+			Route::get('notification/unread', 'NotificationController@unread');
+			Route::get('notification/mark_all_as_read', 'NotificationController@markAllAsRead');
+			Route::get('notification/mark_as_read/{NotificationID}', 'NotificationController@markAsRead');
+			Route::get('notification/delete_all', 'NotificationController@deleteAll');
+			Route::get('notification/delete/{NotificationID}', 'NotificationController@delete');
 
 		});
 	});

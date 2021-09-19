@@ -21,9 +21,8 @@ class DurationController extends Controller {
 			$pageSize = request()->query('pageSize', 10000000);
 			$data = duration::filter(request()->all())
 				->paginate($pageSize);
-			$total = $data->total();
 			$data = DurationResource::collection($data);
-			$builtData = Helper::buildData($data, $total);
+			$builtData = Helper::buildData($data);
 			return Helper::validRequest($builtData, 'data was fetched successfully', 200);
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);

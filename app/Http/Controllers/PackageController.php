@@ -23,9 +23,8 @@ class PackageController extends Controller {
 			$data = Package::filter(request()->all())
 				->orderBy('rank', 'asc')
 				->paginate($pageSize);
-			$total = $data->total();
 			$data = PackageResource::collection($data);
-			$builtData = Helper::buildData($data, $total);
+			$builtData = Helper::buildData($data);
 			return Helper::validRequest($builtData, 'data was fetched successfully', 200);
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);

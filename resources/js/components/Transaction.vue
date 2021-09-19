@@ -36,7 +36,7 @@
                                         <tr v-for = "trx in transactions">
                                             <td data-label="Name">
                                                 <div class="user">
-                                                    <div class="thumb"><img :src="trx.image == null ? $root.basepath + '/images/uploads/anonymous.jpg' :  $root.basepath + '/images/uploads/' +trx.image" alt="image"></div>
+                                                    <div class="thumb"><img :src="$root.basepath + '/images/users/' + trx.image" alt="image"></div>
                                                     <span>{{trx.owner}}</span>
                                                 </div>
                                             </td>
@@ -63,7 +63,7 @@
                                         <tr v-for = "wlt in withdrawals">
                                             <td data-label="Name">
                                                 <div class="user">
-                                                    <div class="thumb"><img :src="wlt.image == null ? $root.basepath + '/images/uploads/anonymous.jpg' :  $root.basepath + '/images/uploads/' +wlt.image" alt="image"></div>
+                                                    <div class="thumb"><img :src="$root.basepath + '/images/users/' + wlt.image" alt="image"></div>
                                                     <span>{{wlt.owner}}</span>
                                                 </div>
                                             </td>

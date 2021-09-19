@@ -1,8 +1,6 @@
 <template>
     <div class="page-wrapper">
-    <DashboardHeader></DashboardHeader>
-
-
+        <DashboardHeader></DashboardHeader>
         <section class="inner-hero bg_img" :style="'background:url('+ $root.basepath +'/images/bg/bg-1.jpg)'" :data-background="$root.basepath + '/images/bg/bg-1.jpg'">
             <div class="container">
                 <div class="row">
@@ -29,14 +27,21 @@
                                         <div class="headeraccount base--bg">
                                             <h4 class="m-t-10 text-dark">{{$auth.user().username}}</h4>
                                         </div>
-                                        <div class="member-img">
-                                            <img @click="changeProfilePicture" v-if="$auth.user().image" :src="$root.basepath + '/images/users/'+$auth.user().image" class="rounded-circle" alt="profile-image">
-                                            <img v-else :src="$root.basepath + '/images/uploads/user2.png'" class="rounded-circle" alt="profile-image">
+                                        <div :key="avatarKey" class="member-img">
+                                            <img @click="openFileBrowser" v-if="$auth.user().image" :src="$root.basepath + '/images/users/'+$auth.user().image" class="rounded-circle" alt="profile-image">
+                                            <img v-else @click="openFileBrowser" :src="$root.basepath + '/images/uploads/user2.png'" class="rounded-circle" alt="profile-image">
+                                            <input type="file" @change="changeProfilePicture" ref="fileInput" style="display: none;" />
                                         </div>
                                         <div class="body">
                                             <div class="col-12">
                                                 <p class="text-muted">{{reg_date}}</p>
                                                 <p class="text-muted" style="font-size: 16px">{{$auth.user().email}}</p>
+                                            </div>
+                                            <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="avatar_error">
+                                                <div v-if="typeof avatar_error == 'object'">
+                                                    <p v-for="err in avatar_error" class="small m-2 m-md-3">{{err}}</p>
+                                                </div>
+                                                <p v-else class="text-center m-2  m-md-3 small">{{avatar_error}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -70,15 +75,6 @@
                                                                 </div>
                                                             </td>
                                                         </tr>
-                                                        <!-- <tr>
-                                                            <td>Username:</td>
-                                                            <td>
-                                                                <div class="form-group">
-                                                                    <input disabled="" type="text" v-model="form.username" required placeholder="Enter username" :class="{'form-control' : true, 'error-input': errors.username != undefined, editbox:true}">
-                                                                    <p v-if="errors.username" v-for="error in errors.username" class="base--color m-0 p-2 small">{{error}}</p>
-                                                                </div>
-                                                            </td>
-                                                        </tr> -->
                                                         <tr>
                                                             <td>Email:</td>
                                                             <td>
@@ -92,7 +88,7 @@
                                                             <td>Password:</td>
                                                             <td>
                                                                 <div class="form-group">
-                                                                    <input type="password" v-model="form.password"  placeholder="Enter new password" :class="{'form-control' : true, 'error-input': errors.password != undefined, editbox:true}">
+                                                                    <input type="password" v-model="form.password" placeholder="Enter new password" :class="{'form-control' : true, 'error-input': errors.password != undefined, editbox:true}">
                                                                     <p v-if="errors.password" v-for="error in errors.password" class="base--color m-0 p-2 small">{{error}}</p>
                                                                 </div>
                                                             </td>
@@ -101,7 +97,7 @@
                                                             <td>Confirm Password:</td>
                                                             <td>
                                                                 <div class="form-group">
-                                                                    <input type="password" v-model="form.password_confirmation"  placeholder="Confirm new password" :class="{'form-control' : true, 'error-input': errors.password_confirmation != undefined, editbox:true}">
+                                                                    <input type="password" v-model="form.password_confirmation" placeholder="Confirm new password" :class="{'form-control' : true, 'error-input': errors.password_confirmation != undefined, editbox:true}">
                                                                     <p v-if="errors.password_confirmation" v-for="error in errors.password_confirmation" class="base--color m-0 p-2 small">{{error}}</p>
                                                                 </div>
                                                             </td>
@@ -170,6 +166,9 @@ export default {
             message: '',
             error: '',
             errors: {},
+            avatar_error: '',
+            image:'',
+            avatarKey : 0,
         }
     },
     watch: {
@@ -216,7 +215,50 @@ export default {
                 })
 
         },
+        openFileBrowser(){
+            this.$refs.fileInput.click()
+        },
         changeProfilePicture(){
+            this.$root.loader('show')
+            this.avatar_error = ''
+            let data = new FormData()
+            let file = this.$refs.fileInput.files[0]
+            let form = new Form()
+            form.image = file
+            if(file){
+                if(this.$refs.fileInput.files[0].size > 4000000){
+                this.$root.loader('hide')
+                return this.$root.alert('error', ' ', ' File size is too large.')   
+            }
+                form._method = "PUT"
+                form.submit('post', "/auth/user/image/" + this.$auth.user().id, {
+                    transformRequest: [function(data, headers) {
+                        return objectToFormData(data)
+                    }]
+                })
+                .then(response => {
+                    this.$root.loader('hide')
+                    this.$auth.fetch()
+                    this.$root.alert('success', ' ', response.data.message)
+                })
+                .catch(error => {
+                    
+                    this.$root.loader('hide')
+                    if (error.response.status == 422) {
+                        this.avatar_error =  error.response.data.error.image
+                    }
+                    else{
+                        this.avatar_error = error.response.data.message
+                    }
+                    console.log(error, error.response)
+                })
+            }
+            else{
+                this.$root.loader('hide')
+                this.$root.alert('info', ' ', 'No file choosen.')
+            }
+            this.avatarKey++
+
         }, 
         updatePaymentDetails(ref, type){
             this.$root.loader('show')
@@ -308,9 +350,11 @@ export default {
 }
 
 .member-card .member-img img {
-    width: 150px;
+    width: 220px;
+    height: 220px;
     border: 3px solid #fff;
     box-shadow: 0 10px 25px 0 rgb(0 0 0 / 30%);
+    cursor: pointer;
 }
 
 .blog-card .body {

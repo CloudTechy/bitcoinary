@@ -18,7 +18,7 @@ class WithdrawalResource extends JsonResource {
 		return [
 			'id' => $this->id,
 			'username' => $user->username,
-			'image' => $user->image,
+			'image' => empty($user->image) ? 'anonymous.jpg' : $user->image,
 			'owner' => $user->last_name . ' ' . $user->first_name,
 			'amount' => $this->amount,
 			'processed' => $this->processed,

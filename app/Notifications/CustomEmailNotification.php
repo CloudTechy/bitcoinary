@@ -9,17 +9,16 @@ use Illuminate\Notifications\Messages\MailMessage;
 
 class CustomEmailNotification extends Notification {
     use Queueable;
-    protected $mail, $user;
+    protected $mail;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($mail, $user = "")
+    public function __construct($mail)
     {
         $this->mail = $mail;
-        $this->user = $user;
     }
 
     /**
@@ -33,21 +32,19 @@ class CustomEmailNotification extends Notification {
         return ['mail'];
     }
 
-    /**
-     * Get the mail representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
-     */
+    // *
+    //  * Get the mail representation of the notification.
+    //  *
+    //  * @param  mixed  $notifiable
+    //  * @return \Illuminate\Notifications\Messages\MailMessage
+     
     public function toMail($notifiable)
     {
-        dd($notifiable);
-        // $username  = 
+       $greeting = !empty($notifiable->username) ? 'Hi ' . $notifiable->first_name . ',' : 'Hi there,';
         return (new MailMessage)
-            ->greeting('Dear ' . $notifiable->username . ',')
+            ->greeting($greeting)
             ->subject($this->mail['subject'])
-            ->line($this->mail['message'])
-            ->line('Thank you for investing with us');
+            ->line($this->mail['message']);
     }
 
     /**
@@ -59,7 +56,8 @@ class CustomEmailNotification extends Notification {
     public function toArray($notifiable)
     {
         return [
-            //
+            
         ];
     }
+    
 }

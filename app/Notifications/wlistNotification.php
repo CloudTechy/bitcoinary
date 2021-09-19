@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class wlistNotification extends Notification
+class wlistNotification extends Notification implements ShouldQueue
 {
     use Queueable;
     protected $user;
@@ -59,6 +59,12 @@ class wlistNotification extends Notification
      * @return array
      */
     public function toArray($notifiable)
+    {
+        return [
+            //
+        ];
+    }
+    public function toDatabase($notifiable)
     {
         return [
             //

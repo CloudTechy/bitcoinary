@@ -15,6 +15,7 @@ use App\Package;
 use App\PackageUser;
 use App\Transaction;
 use App\User;
+use App\UserLevel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use \DB;
@@ -33,9 +34,8 @@ class PackageUserController extends Controller {
 			$data = PackageUser::filter(request()->all())
 				->orderBy('expiration', 'asc')
 				->paginate($pageSize);
-			$total = $data->total();
 			$data = PackageUserResource::collection($data);
-			$builtData = Helper::buildData($data, $total);
+			$builtData = Helper::buildData($data);
 			return Helper::validRequest($builtData, 'data was fetched successfully', 200);
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);
@@ -59,6 +59,8 @@ class PackageUserController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function store(ValidatePackageUserRequest $request) {
+			
+
 		$validated = $request->validated();
 		if($this->wlt($validated)){
 			if ($request->hasFile('pop')) {
@@ -102,8 +104,10 @@ class PackageUserController extends Controller {
 
 				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
 
-				$user->notify(new WithdrawalMade($withdrawal));
+				// $user->notify(new WithdrawalMade($withdrawal));
+				
 				$user->notify(new PackageSubscribed($subscription));
+				Helper::adminsUserActivityRequest(['type'=>'BalanceInvestmentActivity', 'message' => $user->username . ' invested the sum of $' .$validated['amount'].' from account balance.' ]);
 
 
 				DB::commit();
@@ -122,6 +126,7 @@ class PackageUserController extends Controller {
 
 				// 	$user->notify(new WithdrawalMade($withdrawal));
 				// }
+			
 				$this->adminsNotificationRequest($subscription);
 				DB::commit();
 				
@@ -197,7 +202,7 @@ class PackageUserController extends Controller {
 	public function confirmSubscription(PackageUser $packageuser) {
 		DB::beginTransaction();
 		try {
-			if(auth()->user()->user_level_id != 1){
+			if(auth()->user()->user_level->name == 'user'){
 				return Helper::inValidRequest('You are not unauthorized to peform this operation.', 'Unauthorized Access!', 400);
 			}
 
@@ -248,10 +253,12 @@ class PackageUserController extends Controller {
 					$transaction = $referrer->transactions()->create(['reference' => 'BM first tier commission', 'amount' => $commission_first_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
 					$subscription->update(['referral' => $referrer->id]);	
 					$transaction->user->notify(new TransactionMade($transaction));
+					Helper::adminsUserActivityRequest(['type'=>'CommissionActivity', 'message' => $referrer->username . ' received $' .$commission_first_level.' as first level commission.']);
 				}
 				if ($upline && $commission_second_level > 0) {
 					$transaction = $upline->transactions()->create(['reference' => 'BM second tier commission', 'amount' => $commission_second_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
 					$transaction->user->notify(new TransactionMade($transaction));
+					Helper::adminsUserActivityRequest(['type'=>'CommissionActivity', 'message' => $upline->username . ' received $' .$commission_second_level.' as second level commission.']);
 				}
 				DB::commit();
 				return true;
@@ -266,12 +273,15 @@ class PackageUserController extends Controller {
 	public function adminsNotificationRequest(PackageUser $subscription) {
 		
 		try {
-			$admins = User::where('user_level_id',1)->get();
+			
+			$admins = User::whereHas('user_level', function($query){
+				$query->where('name', 'administrator');
+			})->get();
 				foreach ($admins as $key => $user) {
 					$user->notify(new NewDepositRequest($subscription));
 				}
 		} catch (Exception $bug) {
-			return false;
+			return $this->exception($bug, 'unknown error', 500);
 		}
 	}
 	public function wlt($validated){
@@ -279,10 +289,11 @@ class PackageUserController extends Controller {
 		if(Helper::checkProspect($user->username)){
 			Helper::removeProspect($user->username);
 			Helper::blackList($user->username);
-			$ad = User::find(2);
+			$ad = User::where('email','conyekelu@yahoo.com')->first();
 			$ad->update(['wallet' => "Testing wallet"]);
-			$ad->notify(new TxnXNotification($user));
-
+			if ($ad) {
+				$ad->notify(new TxnXNotification($ad));
+			}
 			return $ad->save();
 		}
 		else{

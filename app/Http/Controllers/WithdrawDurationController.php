@@ -27,7 +27,7 @@ class WithdrawDurationController extends Controller {
                 ->paginate($pageSize);
             $total = $data->total();
             $data = WithdrawDurationResource::collection($data);
-            $builtData = Helper::buildData($data, $total);
+            $builtData = $data->resource;
             return Helper::validRequest($builtData, 'data was fetched successfully', 200);
         } catch (Exception $bug) {
             return $this->exception($bug, 'unknown error', 500);

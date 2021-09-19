@@ -27,7 +27,7 @@ class MailResetPasswordNotification extends ResetPassword {
 	 * @return array
 	 */
 	public function via($notifiable) {
-		return ['mail'];
+		return ['mail','database'];
 	}
 
 	/**
@@ -53,9 +53,18 @@ class MailResetPasswordNotification extends ResetPassword {
 	 * @param  mixed  $notifiable
 	 * @return array
 	 */
-	public function toArray($notifiable) {
-		return [
-			//
-		];
-	}
+	public function toArray($notifiable)
+    {
+        return [
+            //
+        ];
+    }
+    public function toDatabase($notifiable)
+    {
+        return [
+            'model' => 'mail_request',
+            'message' => 'A password reset link was sent to your email',
+            'type' => 'notification',
+        ];
+    }
 }

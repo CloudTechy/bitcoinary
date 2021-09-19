@@ -6,6 +6,7 @@ use App\Helper;
 use App\Notifications\TransactionMade;
 use App\Notifications\WelcomeEmailSent;
 use App\Transaction;
+use App\UserLevel;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -20,6 +21,9 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 	protected $casts = ['email_verified_at' => 'datetime'];
 	protected $appends = array('processedWithdrawals', 'confirmedWithdrawals', 'nullWithdrawals', 'names', 'balance', 'confirmedTransactions', 'nullTransactions', 'sentTransactions', 'totalEarned', 'activeTransactions', 'activePackages', 'maturePackages', 'processMaturePackages', 'canWithdraw');
 	
+	public function user_level() {
+		return $this->belongsTo(UserLevel::class);
+	}
 	public function getCanWithdrawAttribute() {
 		$w = $this->withdrawDuration->first();
 		if( !empty($w) && Carbon::now() < $w->expiration){
@@ -179,8 +183,10 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 					foreach ($filter as $key => $val) {
 
 						if (in_array($key, $fields)) {
-
-							$query->where($key, $val);
+							if($key=='user_level_id'){
+								$val = UserLevel::where('name','LIKE', '%'.$val. '%')->first()->id;
+							}
+							$query->where($key,'LIKE', '%'.$val. '%');
 
 						}
 					}

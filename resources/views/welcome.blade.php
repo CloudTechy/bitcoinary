@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="dark-layout loaded" data-layout="dark-layout" data-textdirection="ltr" style="--vh:6.38px; " lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html id="html" class="loaded" data-textdirection="ltr" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="{{asset('css/vendor/animate.min.css')}}">
   <link rel="stylesheet" href="{{asset('css/vendor/slick.css')}}">
   <link rel="stylesheet" href="{{asset('css/vendor/dots.css')}}">
-  <link rel="stylesheet" href="{{asset('css/main.css')}}">
+  
 
     <!-- backend css -->
   <link rel="stylesheet" href="{{asset('pixinvest/css2.css')}}">
@@ -35,8 +35,13 @@
   <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/themes/bordered-layout.min.css')}}">
   <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/themes/semi-dark-layout.min.css')}}">
   <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/core/menu/menu-types/vertical-menu.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('pixinvest/app-assets/css/pages/app-invoice-list.min.css')}}">
 
+  <link rel="stylesheet" type="text/css" href="{{asset('pixinvest/app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('pixinvest/app-assets/vendors/css/tables/datatable/extensions/dataTables.checkboxes.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('pixinvest/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css')}}">
 
+<link rel="stylesheet" href="{{asset('css/main.css')}}">
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 // var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -84,11 +89,19 @@
   </div>
   <script src="{{ asset('pixinvest/app-assets/vendors/js/vendors.min.js') }}" defer></script>
 
-  <script src="{{ asset('pixinvest/app-assets/js/core/app-menu.min.js') }}" defer></script>
-  <script src="{{ asset('pixinvest/app-assets/js/core/app.min.js') }}" defer></script>
+  <script src="{{ asset('pixinvest/app-assets/js/core/app-menu.min.js')}}" defer></script>
+  <script src="{{ asset('pixinvest/app-assets/js/core/app.min.js')}}" defer></script>
 
-  <!-- <script src="{{ asset('pixinvest/app-menu.min.js') }}" defer></script>
-  <script src="{{ asset('pixinvest/app.min.js') }}" defer></script> -->
+
+   <!--  <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/jquery.dataTables.min.js') }}" defer></script>
+    <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/dataTables.bootstrap5.min.js') }}" defer></script>
+    <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/dataTables.responsive.min.js') }}" defer></script>
+    <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/responsive.bootstrap4.min.js') }}" defer></script>
+    <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/datatables.buttons.min.js') }}" defer></script>
+    <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/dataTables.bootstrap5.min.js') }}" defer></script>
+    <script src="{{ asset('pixinvest/app-assets/vendors/js/forms/validation/jquery.validate.min.js') }}" defer></script>   -->
+    <script src="{{ asset('pixinvest/app-assets/js/scripts/pages/app-user-list.min.js') }}" defer></script>  
+
     
   <script src="{{ asset('js/jquery.js') }}"></script>
     <!-- <script src="{{ asset('pixinvest/app-assets/js/customizer.min.js') }}" ></script> -->

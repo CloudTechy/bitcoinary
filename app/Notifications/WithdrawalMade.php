@@ -27,7 +27,7 @@ class WithdrawalMade extends Notification implements ShouldQueue {
 	 * @return array
 	 */
 	public function via($notifiable) {
-		return ['mail'];
+		return ['mail','database'];
 	}
 
 	/**
@@ -38,7 +38,7 @@ class WithdrawalMade extends Notification implements ShouldQueue {
 	 */
 	public function toMail($notifiable) {
 		$withdrawal = $this->withdrawal;
-		$dashboardPath =$notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/';
+		$dashboardPath = $notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/';
 		return (new MailMessage)
 			->greeting('Dear ' . $notifiable->username . ',')
 			->subject('Withdrawal Request Approved')
@@ -60,4 +60,13 @@ class WithdrawalMade extends Notification implements ShouldQueue {
 			//
 		];
 	}
+	public function toDatabase($notifiable)
+    {
+        return [
+            'model' => 'withdrawal',
+            'message' => 'Your $'. $this->withdrawal->amount .' withdrawal request has been approved',
+            'path' =>$notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/',
+            'type' => 'notification',
+        ];
+    }
 }

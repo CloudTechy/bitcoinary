@@ -1,12 +1,7 @@
 <template>
     <div>
-        <!-- BEGIN: Header-->
         <AdminDashboardHeader></AdminDashboardHeader>
-        <!-- END: Header-->
-        <!-- BEGIN: Main Menu-->
         <AdminDashboardSidebar></AdminDashboardSidebar>
-        <!-- END: Main Menu-->
-        <!-- BEGIN: Content-->
         <div class="app-content content ">
             <div class="content-overlay"></div>
             <div class="header-navbar-shadow"></div>

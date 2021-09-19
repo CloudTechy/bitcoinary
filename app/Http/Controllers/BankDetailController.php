@@ -25,17 +25,13 @@ class BankDetailController extends Controller {
 			$bankDetails = BankDetail::filter(request()->all())
 				->orderBy('payment_method', 'asc')
 				->paginate($pageSize);
-
-			$total = $bankDetails->total();
 			$data = BankDetailResource::collection($bankDetails);
-
-			$data = Helper::buildData($data, $total);
-
+			$data = Helper::buildData($data);
+			return Helper::validRequest($data, 'bankDetails fetched successfully', 200);
 		} catch (Exception $bug) {
 
 			return $this->exception($bug, 'unknown error', 500);
 		}
-		return Helper::validRequest($data, 'bankDetails fetched successfully', 200);
 	}
 
 	/**
@@ -145,9 +141,10 @@ class BankDetailController extends Controller {
 		]);
 		DB::beginTransaction();
 		try {
-			$bankdetail = $bankdetail->update($validated);
+			$sent = $bankdetail->update($validated);
+			Helper::adminsUserActivityRequest(['type'=>'WalletActivity', 'message' =>  $bankdetail->user->username . ' wallet information is updated.']);
 			DB::commit();
-			return Helper::validRequest(["success" => $bankdetail], 'BankDetail was updated successfully', 200);
+			return Helper::validRequest(["success" => $sent], 'BankDetail was updated successfully', 200);
 		} catch (Exception $bug) {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);

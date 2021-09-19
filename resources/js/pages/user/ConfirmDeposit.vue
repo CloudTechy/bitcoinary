@@ -88,10 +88,10 @@
     },
     watch: {
         error() {
-            setTimeout(() => { this.error = '' }, 5000);
+            setTimeout(() => { this.error = '' }, 15000);
         },
         errors() {
-            setTimeout(() => { this.errors = '' }, 5000);
+            setTimeout(() => { this.errors = '' }, 15000);
         },
         amount(){
             this.key++

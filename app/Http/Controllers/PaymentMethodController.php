@@ -25,16 +25,13 @@ class PaymentMethodController extends Controller
             $paymentmethod = PaymentMethod::filter(request()->all())
                 ->orderBy('rank' , 'desc')
                 ->paginate($pageSize);
-
-            $total = $paymentmethod->total();
-
-            $data = Helper::buildData($paymentmethod, $total);
-
+            $data = Helper::buildData($paymentmethod);
+            return Helper::validRequest($data, 'payment methods fetched successfully', 200);
         } catch (Exception $bug) {
 
             return $this->exception($bug, 'unknown error', 500);
         }
-        return Helper::validRequest($data, 'payment methods fetched successfully', 200);
+        
     }
 
     /**

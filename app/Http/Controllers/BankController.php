@@ -22,16 +22,12 @@ class BankController extends Controller {
 
 			$banks = Bank::filter(request()->all())
 				->paginate($pageSize);
-
-			$total = $banks->total();
-
-			$data = Helper::buildData($banks, $total);
-
+			$data = Helper::buildData($banks);
+			return Helper::validRequest($data, 'banks fetched successfully', 200);
 		} catch (Exception $bug) {
 
 			return $this->exception($bug, 'unknown error', 500);
 		}
-		return Helper::validRequest($data, 'banks fetched successfully', 200);
 	}
 
 	/**

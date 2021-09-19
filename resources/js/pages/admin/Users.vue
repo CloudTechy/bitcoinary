@@ -1,211 +1,142 @@
 <template>
-    <div class="m-0 p-0">
+    <main>
         <AdminDashboardHeader></AdminDashboardHeader>
-        <section class="main-container m-lg-3 m-0 acc">
-            <div class="main">
-                <!--start wrapper-->
-                <div class="container">
-                    <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;min-height:400px;'">
-                        <div class="account-wrapper m-xl-2 row m-0 ">
-                            <nav class="nav  navbar-dark ml-4 ml-lg-0 mb-3 mb-lg-b p-0 mt-3 navbar navbar-expand-lg ">
-                                <button @click="" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar4">
-                                    <span class="navbar-toggler-icon "></span>
-                                </button>
-                            </nav>
-                            <AdminDashboardSidebar></AdminDashboardSidebar>
-                            <div class="columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc">
-                                <!-- content goes here -->
-                                <div class="acc-block overview">
-                                    <div class="acc-heading clearfix">
-                                        <h2>Account Overview</h2>
-                                        <ul class="breadcrumbs">
-                                            <li>Main</li>
-                                            <li><img :src="$root.basepath + '/img/right-b.png'"></li>
-                                            <li class="active">Users</li>
-                                        </ul>
-                                    </div>
-                                    <div class="acc-body">
-                                        <div class="stat-box row ">
-                                            <div class="s-box col-sm-4 col-12 p-2">
-                                                <img :src="$root.basepath + '/img/box-1.png'">
-                                                <h4>Total Users</h4>
-                                                <span>{{users.length}}</span>
-                                            </div>
-                                            <div class="s-box col-sm-4 col-12 p-2">
-                                                <img :src="$root.basepath + '/img/box-3.png'">
-                                                <h4>Administrators</h4>
-                                                <span>{{admins}}</span>
-                                            </div>
-                                            <div class="s-box col-sm-4 col-12 p-2">
-                                                <img :src="$root.basepath + '/img/box-2.png'">
-                                                <h4>Active Users</h4>
-                                                <span>{{activeUsers}}</span>
+        <AdminDashboardSidebar></AdminDashboardSidebar>
+        <div class="app-content content ">
+            <div class="content-overlay"></div>
+            <div class="header-navbar-shadow"></div>
+            <div class="content-wrapper container-xxl p-0">
+                <div class="content-header row">
+                </div>
+                <div class="content-body">
+                    <!-- users list start -->
+                    <section class="app-user-list">
+                        <!-- users filter start -->
+                        <div class="card">
+                            <h5 class="card-header">Search Filter</h5>
+                            <div class="d-flex justify-content-between align-items-center mx-50 row pt-0 pb-2">
+                                <div class="col-md-4 user_role"><select id="UserRole" v-model="role" class="form-select text-capitalize mb-md-0 mb-2">
+                                        <option value=""> Select Role </option>
+                                        <option value="administrator" class="text-capitalize">Admin</option>
+                                        <option value="user" class="text-capitalize">User</option>
+                                    </select></div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-datatable pt-0">
+                                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                                    <div class="d-flex justify-content-between align-items-center header-actions mx-1 row mt-75">
+                                        <div class="col-sm-12 col-md-4 col-lg-6">
+                                            <div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select v-model="pageLimit" aria-controls="DataTables_Table_0" class="form-select">
+                                                        <option value="5">5</option>
+                                                        <option value="10">10</option>
+                                                        <option value="20">20</option>
+                                                        <option value="50">50</option>
+                                                        <option value="100">100</option>
+                                                    </select> entries</label></div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-8 col-lg-6 ps-xl-75 ps-0">
+                                            <div class="dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-md-end align-items-center flex-sm-nowrap flex-wrap me-1">
+                                                <div class="me-1">
+                                                    <div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" v-model="search" class="form-control" placeholder="" aria-controls="DataTables_Table_0"></label></div>
+                                                </div>
+                                                <div class="dt-buttons btn-group flex-wrap"><button class="btn add-new btn-primary mt-50" tabindex="0" aria-controls="DataTables_Table_0" type="button" data-bs-toggle="modal" data-bs-target="#adminAddUserComponent"><span>Add New User</span></button> </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="acc-body ">
-                                        <div class="stat-box row ">
-                                            <div class="s-box  col-12 p-2">
-                                                <img :src="$root.basepath + '/img/box-4.png'">
-                                                <h4>Search User</h4>
-                                                <div class="input-group input-group-sm p-1">
-                                                    <input v-model="search" list="users" type="text" class="p-lg-3 p-sm-2 p-3 form-control" placeholder="Search user by username here...">
+                                    <table  :key = "key" class="user-list-table table dataTable no-footer dtr-column table-responsive" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="width: 1035px;">
+                                        <thead class="table-light">
+                                            <tr role="row">
+                                                <th class="sorting_disabled" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 206px;" aria-label="User: activate to sort column ascending">User</th>
+                                                <th class="sorting_disabled" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 245px;" aria-label="Email" aria-sort="descending">Email</th>
+                                                <th class="sorting_disabled" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 98px;" aria-label="Role">Role</th>
+                                                <th class="sorting_disabled" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 68px;" aria-label="Plan">Balance</th>
+                                                <th class="sorting_disabled" tabindex="0"rowspan="1" colspan="1" style="width: 58px;" aria-label="Status">W/D Status</th>
+                                                <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 63px;" aria-label="Actions">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody v-if = "users.data">
+                                            <tr class="odd" v-for="user in users.data">
+                                                <td>
+                                                <div class="d-flex justify-content-left align-items-center">
+                                                    <div class="avatar-wrapper">
+                                                        <div class="avatar  me-1"><img :src="$root.basepath + '/images/users/' + user.image" alt="Avatar" height="32" width="32"></div>
+                                                    </div>
+                                                    <div class="d-flex flex-column"><a href="app-user-view.html" class="user_name text-truncate"><span class="fw-bold text-capitalize">{{user.names}}</span></a><small class="emp_post text-muted text-lowercase">{{'@' + user.username}}</small></div>
                                                 </div>
-                                                <datalist id="users">
-                                                    <option class="p-2" v-for="user in users" :value="user.username"></option>
-                                                </datalist>
-                                            </div>
-                                            <div v-if = "search && selectedUser"  v-for="user in selectedUser" class="s-box  col-12 p-2">
-                                                <table>
-                                                    <tr>
-                                                        <td>Withdrawal Status </td>
-                                                        <td> <span :class="{badge:true, 'badge-danger' :  !user.CanWithdraw, 'badge-success' : user.CanWithdraw, ' ml-3' : true, 'p-2':true, 'font-weight-bold' : true}"> {{ user.CanWithdraw ? 'Active' : 'On-Hold'}}</span></td>
-                                                    </tr>
-                                                </table>
-                                            </div>
+                                                </td>
+                                                <td class="text-lowercase">{{user.email}}</td>
+                                                <td class="text-lowercase">{{user.user_level}}</td>
+                                                <td style="">{{$root.numeral(user.balance)}}</td>
+                                                <td style=""><span class="badge rounded-pill badge-light-success" text-capitalized="">
+                                                {{user.CanWithdraw}}</span></td>
+                                                <td style="">
+                                                    <div class="btn-group"><a class="btn btn-sm dropdown-toggle hide-arrow" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical font-small-4">
+                                                                <circle cx="12" cy="12" r="1"></circle>
+                                                                <circle cx="12" cy="5" r="1"></circle>
+                                                                <circle cx="12" cy="19" r="1"></circle>
+                                                            </svg></a>
+                                                        <div class="dropdown-menu dropdown-menu-end" style=""><a href="app-user-view.html" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text font-small-4 me-50">
+                                                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                                                </svg>Details</a><a href="app-user-edit.html" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-archive font-small-4 me-50">
+                                                                    <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                                                                    <rect x="1" y="3" width="22" height="5"></rect>
+                                                                    <line x1="10" y1="12" x2="14" y2="12"></line>
+                                                                </svg>Edit</a><a href="javascript:;" class="dropdown-item delete-record"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 font-small-4 me-50">
+                                                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                                                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                                                                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                                                                </svg>Delete</a></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody v-else>
+                                            <tr class="" >
+                                                <td class="p-2 mb-2 text-center" colspan="6">Records are currently not available</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="d-flex justify-content-between mx-2 row mb-1">
+                                        <div v-if = "users.total && users.total.length == 0" class="col-sm-12 col-md-6">
+                                            <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">{{'Showing ' + users.from +' to '+ users.to + ' of ' + users.total + ' entries '}}</div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                                <ul class="pagination">
+                                                    <li :class="{paginate_button:true, 'page-item':true, previous:true, disabled:users.prev_page_url ? false : true}" id="DataTables_Table_0_previous"><a @click="getUsers(--currentPage, users.prev_page_url)" href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">&nbsp;</a></li>
+                                                   
+                                                    <li v-if = "users.last_page <= 10" @click="getUsers(n)" v-for="n in users.last_page"  :class="{paginate_button:true, 'page-item':true, active: n!=currentPage ? false : true}" > <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">{{n}}</a></li>
+                                                    <li  v-if = "users.last_page > 10">
+                                                        ...
+                                                    </li>
 
-                                        </div>
-                                        <div v-if="search && selectedUser" v-for="user in selectedUser" class="stat-box row">
-                                            <div class="s-box col-12 p-2">
-                                                <h3 class="text-capitalize card-title">{{user.username + " Account Details"}}</h3>
-                                            </div>
-                                            <div class="s-box col-sm-4 col-12 p-2">
-                                                <img :src="$root.basepath + '/img/box-1.png'">
-                                                <h4>Account Balance</h4>
-                                                <span>{{$root.numeral(user.balance)}}</span>
-                                            </div>
-                                            <div class="s-box col-sm-4 col-12 p-2">
-                                                <img :src="$root.basepath + '/img/box-2.png'">
-                                                <h4>Active Deposit</h4>
-                                                <span>{{$root.numeral(user.totalActiveTransaction)}}</span>
-                                            </div>
-                                            <div class="s-box col-sm-4 col-12 p-2">
-                                                <img :src="$root.basepath + '/img/box-3.png'">
-                                                <h4>Total Earned</h4>
-                                                <span>{{$root.numeral(user.totalEarned)}}</span>
-                                            </div>
-                                            <div class="stat-box row mt-2">
-                                                <div class="s-box col-12 p-2">
-                                                    <h3 class="acc-sub-heading'">Account Statistics</h3>
-                                                </div>
-                                                <div class="simple-stats">
-                                                    <ul class="clearfix">
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/stat-deposit.png'">
-                                                            <p>Total Deposits: <span>{{$root.numeral(user.totalDeposit)}}</span></p>
-                                                        </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/stat-withdraw.png'">
-                                                            <p>Total Withdrawals: <span>{{$root.numeral(user.totalWithdraw)}}</span></p>
-                                                        </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/stat-last-deposit.png'">
-                                                            <p>Last Deposit: <span>{{$root.numeral(user.lastDeposit)}}</span></p>
-                                                        </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/stat-last-withdrawal.png'">
-                                                            <p>Last Withdrawal: <span>{{$root.numeral(user.lastWithdraw)}}</span></p>
-                                                        </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/stat-last-withdrawal.png'">
-                                                            <p>Sent Withdrawals: <span>{{$root.numeral(user.totalPendingWithdrawal)}}</span></p>
-                                                        </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/key-2.png'">
-                                                            <p>Ref Users: <span>{{user.referrals}}</span></p>
-                                                        </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/key-2.png'">
-                                                            <p> Active Ref: <span>{{user.activeReferrals}}</span></p>
-                                                        </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/box-6.png'">
-                                                            <p>Ref paid: <span>{{$root.numeral(user.totalCommission)}}</span></p>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="stat-box row mt-2 mb-0">
-                                                <div class="s-box col-12 p-2">
-                                                    <h3 class="acc-sub-heading'">Personal Details</h3>
-                                                </div>
-                                                <div class="simple-stats p-0 m-auto">
-                                                    <ul class="clearfix">
-                                                        <li class="m-0 p-2">
-                                                            <p>First Name: <span>{{user.first_name}}</span></p>
-                                                        </li>
-                                                        <li class="m-0 p-2">
-                                                            <p>Last Name: <span>{{user.last_name}}</span></p>
-                                                        </li>
-                                                        <li class="m-0 p-2">
-                                                            <p>Joined: <span>{{user.date}}</span></p>
-                                                        </li>
-                                                        <li v-if="user.number" class="m-0 p-2">
-                                                            <p>Phone: <span><input type="text" readonly="" class="form-control" :value="user.number"></span></p>
-                                                        </li>
-                                                        <li v-if="user.email" class="m-0 p-2">
-                                                            <p>Email <span><input type="text" readonly="" class="form-control" :value="user.email"></span></p>
-                                                        </li>
-                                                        <li v-if="user.user_level" class="m-0 p-2">
-                                                            <p>User Level: <span><input type="text" readonly="" class="form-control" :value="user.user_level"></span></p>
-                                                        </li>
-                                                        <li v-if="user.wallet" class="m-0 p-2">
-                                                            <p>Wallet: <span><input type="text" readonly="" class="form-control" :value="user.wallet"></span></p>
-                                                        </li>
-                                                        <li v-if="user.pm" class="m-0 p-2">
-                                                            <p>PM: <span><input type="text" class="form-control" :value="user.pm"></span></p>
-                                                        </li>
-                                                        <li v-if="user.admin_wallet" class="m-0 p-2">
-                                                            <p>Admin Wallet: <span><input type="text" readonly="" class="form-control" :value="user.admin_wallet"></span></p>
-                                                        </li>
-                                                        <li v-if="user.admin_pm" class="m-0 p-2">
-                                                            <p>Admin PM: <span><input type="text" class="form-control" :value="user.admin_pm"></span></p>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class=" s-box col-12 p-2">
-                                                <div class="row">
-                                                    <div class="s-box col p-2">
-                                                        <ul class="clearfix">
-                                                            <li>
-                                                                <p>Admin Wallet: <span> <input @change="updateData" v-model="form.admin_wallet" type="text" class=" form-control" placeholder="Enter wallet address for this user"></span></p>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="s-box col p-2">
-                                                        <ul class="clearfix">
-                                                            <li>
-                                                                <p>Admin PM: <span> <input @change="updateData" v-model="form.admin_pm" type="text" class=" form-control" placeholder="Enter pm account for this user"></span></p>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="stat-box mt-3 s-box col-12 p-2">
-                                                <div class="row mt-3">
-                                                    <div class="text-center col-12 justify-content-center mb-3 mb-l-0">
-                                                        <button ref="process" @click.prevent="userLevel(user)" class="btn btn-default">{{userLevelTitle}}</button>
-                                                        <button @click.prevent="sendEmail(user)" class="btn btn-default" data-toggle="modal" data-target="#sendEmailModal">{{'Send Email'}}</button>
-                                                        <button ref = 'pause' @click.prevent="pause(user)" class="btn btn-default">{{'Toggle Pause Withdrawal'}}</button>
-                                                    </div>
-                                                </div>
+
+                                                    <li @click="getUsers(++currentPage, users.next_page_url)" :class="{paginate_button:true, 'page-item':true, next:true, disabled:users.next_page_url ? false : true}"  id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0" class="page-link">&nbsp;</a></li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--  content ends here -->
                             </div>
-                        </div>
-                        <div v-if="$root.mailUser" class="modal fade" id="sendEmailModal">
-                            <email-component @emailModalClosed="resetEmailModal"></email-component>
-                        </div>
-                        <!--end account wrapper-->
-                    </div>
+                            <div class="modal modal-slide-in new-user-modal fade" ref="adminAddUserComponent" id="adminAddUserComponent">
+                                <adminAddUserComponent :key="addUserkey"></adminAddUserComponent>
+                            </div>
+
+                          </div>
+                        <!-- list section end -->
+                    </section>
+                    <!-- users list ends -->
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+        <AdminFooter></AdminFooter>
+    </main>
 </template>
 <script>
 export default {
@@ -217,6 +148,12 @@ export default {
                 id: null,
                 user_level_id: null
             }),
+            addUserkey : 0,
+            key : 0,
+            role: '',
+            pageLimit: 5,
+            currentPage: 1,
+            search: '',
             error: null,
             message: null,
             users: [],
@@ -232,18 +169,26 @@ export default {
     },
     watch: {
         users() {
-            this.users.forEach((user, index) => {
+            this.users.data.forEach((user, index) => {
                 if (user.totalActiveTransaction > 0) {
                     this.activeUsers++
                 }
             });
             this.admins = []
-            this.users.forEach((user, index) => {
+            this.users.data.forEach((user, index) => {
                 if (user.isAdmin == true) {
                     this.admins++
                 }
             });
+
         },
+        role(){
+          this.getUsers(1)  
+        },
+        pageLimit() {
+            this.getUsers(1)
+        },
+        
         selectedUser() {
             if (this.selectedUser.isAdmin == true) {
                 this.userLevelTitle = 'Make User'
@@ -252,7 +197,8 @@ export default {
             }
         },
         search() {
-            this.getSelectedUser()
+            this.getUsers(1)
+            // this.getSelectedUser()
         },
     },
 
@@ -266,21 +212,29 @@ export default {
         if (this.$auth.user().isAdmin == false) { this.$auth.logout() }
     },
     created() {
-        if (localStorage.users) {
-            this.users = JSON.parse(localStorage.users)
-        }
+        // if (localStorage.users) {
+        //     this.users = JSON.parse(localStorage.users)
+        // }
         // if (this.$auth.user().isAdmin == false) {this.$auth.logout()}
-       setInterval(this.getUsers, 20000) 
+        // setInterval(this.getUsers, 20000)
+        this.getUsers(this.currentPage)
     },
     methods: {
-        getUsers() {
-            this.form.get("/auth/users")
+        getUsers(page, url=null) {
+            this.currentPage = page
+            this.$root.loader('show')
+            var searchQuery = this.search ? '&username=' + this.search : ''
+            var roleQuery = this.role ? '&user_level_id=' + this.role : ''
+            url = url ? url : "/auth/users?page=" + page
+            this.form.get(url + '&pageSize=' + this.pageLimit + searchQuery + roleQuery)
                 .then(response => {
                     this.users = response.data.data.item
-                    localStorage.users = JSON.stringify(this.users)
-                    this.getSelectedUser()
+                    this.key++
+                    // this.getSelectedUser()
+                    this.$root.loader('hide')
                 })
                 .catch(error => {
+                    this.$root.loader('hide')
                     console.log(error)
                 })
         },
@@ -339,10 +293,10 @@ export default {
         resetEmailModal() {
             this.$root.mailUser = null
         },
-        pause(user){
-            var user =  this.selectedUser[0]
-                this.$swal({
-                    title:  `Do you want to ${ user.withdraw_request ? 'stop the pausing withdrawal process' : 'start the pausing withdrawal process'  } for  ${user.username}?`,
+        pause(user) {
+            var user = this.selectedUser[0]
+            this.$swal({
+                    title: `Do you want to ${ user.withdraw_request ? 'stop the pausing withdrawal process' : 'start the pausing withdrawal process'  } for  ${user.username}?`,
                     text: "You can revert this changes in future",
                     type: 'warning',
                     showCancelButton: true,
@@ -351,45 +305,43 @@ export default {
                     confirmButtonText: `Yes,  ${ user.withdraw_request ?  'stop'  : 'start'} pausing withdrawal Process`
                 })
                 .then((result) => {
-                    if(result.value == true){
+                    if (result.value == true) {
                         this.processing(true)
-                        if(user.withdraw_request){
+                        if (user.withdraw_request) {
                             this.form.get("/auth/cancelWithdrawalRequest/" + user.id)
-                            .then(response => {
-                                this.getUsers()
-                                this.$root.alert('success', ' ', response.data.message)
-                                this.processing(false)
-                            })
-                            .catch(error => {
-                                this.$root.alert('error', ' ', 'pausing withdrawal process failed ' + error.response.data.message != undefined ? error.response.data.message : ' ')
-                                this.processing(false)
-                                console.log(error.response)
-                            })
+                                .then(response => {
+                                    this.getUsers()
+                                    this.$root.alert('success', ' ', response.data.message)
+                                    this.processing(false)
+                                })
+                                .catch(error => {
+                                    this.$root.alert('error', ' ', 'pausing withdrawal process failed ' + error.response.data.message != undefined ? error.response.data.message : ' ')
+                                    this.processing(false)
+                                    console.log(error.response)
+                                })
+                        } else {
+                            this.form.get("/auth/confirmWithdrawalRequest/" + user.id)
+                                .then(response => {
+                                    this.getUsers()
+                                    this.$root.alert('success', ' ', response.data.message)
+                                    this.processing(false)
+                                })
+                                .catch(error => {
+                                    this.$root.alert('error', ' ', 'pausing withdrawal process failed ' + error.response.data.message != undefined ? error.response.data.message : ' ')
+                                    this.processing(false)
+                                    console.log(error.response)
+                                })
                         }
-                        else {
-                           this.form.get("/auth/confirmWithdrawalRequest/" + user.id)
-                            .then(response => {
-                                this.getUsers()
-                                this.$root.alert('success', ' ', response.data.message)
-                                this.processing(false)
-                            })
-                            .catch(error => {
-                                this.$root.alert('error', ' ', 'pausing withdrawal process failed ' + error.response.data.message != undefined ? error.response.data.message : ' ')
-                                this.processing(false)
-                                console.log(error.response)
-                            }) 
-                        }
-                        
-                    }
-                    else {
-                        
-                        this.$root.alert('info', ' ', `Pausing withdrawal Process  ${ user.withdraw_request ? ' started' : ' cancelled' } `)   
+
+                    } else {
+
+                        this.$root.alert('info', ' ', `Pausing withdrawal Process  ${ user.withdraw_request ? ' started' : ' cancelled' } `)
                     }
                     this.getUsers()
-                    
+
                 })
         },
-         processing(status) {
+        processing(status) {
             if (status) {
                 this.$refs.pause[0].innerText = "Processing..."
                 this.$refs.pause[0].disabled = true

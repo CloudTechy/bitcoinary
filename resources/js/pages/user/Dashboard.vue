@@ -105,7 +105,7 @@
                                             <tr :key="transactions.id" v-for="trx in transactions">
                                                 <td data-label="Recipient">
                                                     <div class="user">
-                                                        <div class="thumb"><img :src="trx.image == null ? $root.basepath + '/images/uploads/anonymous.jpg' :  $root.basepath + '/images/uploads/' +trx.image" alt="image"></div>
+                                                        <div class="thumb"><img :src="$root.basepath + '/images/users/' + trx.image" alt="image"></div>
                                                         <span>{{trx.owner}}</span>
                                                     </div>
                                                 </td>

@@ -22,10 +22,13 @@ import Dashboard from './pages/user/Dashboard'
 import Deposit from './pages/user/Deposit'
 import Withdraw from './pages/user/Withdraw'
 import Users from './pages/admin/Users'
+import UserView from './pages/admin/UserView'
+import UserEdit from './pages/admin/Edit'
 import Deposits from './pages/admin/Deposits'
 import Withdrawals from './pages/admin/Withdrawals'
 import Subscriptions from './pages/admin/Subscriptions'
 import AdminDashboard from './pages/admin/Dashboard'
+import Settings from './pages/admin/AdminSettings'
 import WithdrawReport from './pages/user/reports/WithdrawalReport'
 import DepositReport from './pages/user/reports/DepositReport'
 import UserPlans from './pages/user/reports/DepositReport'
@@ -310,6 +313,36 @@ const routes = [{
             auth: true,
             adminAuth: true,
             title: 'Admin Users',
+        }
+    },
+    {
+        path: '/admin/dashboard/settings',
+        name: 'adminSetting',
+        component: Settings,
+        meta: {
+            auth: true,
+            adminAuth: true,
+            title: 'Admin Settings',
+        }
+    },
+    {
+        path: '/admin/dashboard/user-view',
+        name: 'user-view',
+        component: UserView,
+        meta: {
+            auth: true,
+            adminAuth: true,
+            title: 'Admin user preview',
+        }
+    },
+    {
+        path: '/admin/dashboard/user-edit',
+        name: 'user-edit',
+        component: UserEdit,
+        meta: {
+            auth: true,
+            adminAuth: true,
+            title: 'Admin Edit user',
         }
     },
     {

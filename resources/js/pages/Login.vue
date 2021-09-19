@@ -94,7 +94,7 @@ export default {
                 success: function(response) {
                     window.localStorage.setItem('lbUser', JSON.stringify(app.$auth.user()))
                     app.success = true
-                    this.$root.alert('success',' ', 'Login successful...')
+                    this.$root.alert('success',' ', 'Login successful, redirecting...')
                     // if (redirect && !app.$auth.user().isEmailVerified) {
                     // if (redirect.from.path == "/confirm-registration") {
                     // app.$router.push(redirect.from.fullPath)
@@ -116,8 +116,8 @@ export default {
                         console.log(app.redirectPath)
                         // app.$router.push({ name: 'adminDashboard' })
                         window.location.assign(basepath + app.redirectPath)
-                        app.processing(false)
-                        app.$root.loader('hide')
+                        // app.processing(false)
+                        // app.$root.loader('hide')
                     }
 
                     

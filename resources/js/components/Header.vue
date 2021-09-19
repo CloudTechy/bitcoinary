@@ -110,16 +110,45 @@ export default {
         }
     },
     beforeCreate() {
-        document.querySelector('link[href$="vendors.min.css"]').remove()
-        document.querySelector('link[href$="css2.css"]').remove()
-        document.querySelector('link[href$="bootstrap.min.css"]').remove()
-        document.querySelector('link[href$="bootstrap-extended.min.css"]').remove()
-        document.querySelector('link[href$="colors.min.css"]').remove()
-        document.querySelector('link[href$="components.min.css"]').remove()
-        document.querySelector('link[href$="dark-layout.min.css"]').remove()
-        document.querySelector('link[href$="bordered-layout.min.css"]').remove()
-        document.querySelector('link[href$="semi-dark-layout.min.css"]').remove()
-        document.querySelector('link[href$="vertical-menu.min.css"]').remove()
+        let componentsCSS = document.querySelector('link[href$="components.min.css"]')
+        let body = document.getElementById("body")
+        if (componentsCSS != null) {
+            document.querySelector('link[href$="vendors.min.css"]').remove()
+            document.querySelector('link[href$="css2.css"]').remove()
+            document.querySelector('link[href$="bootstrap.min.css"]').remove()
+            document.querySelector('link[href$="bootstrap-extended.min.css"]').remove()
+            document.querySelector('link[href$="colors.min.css"]').remove()
+            document.querySelector('link[href$="dark-layout.min.css"]').remove()
+            document.querySelector('link[href$="bordered-layout.min.css"]').remove()
+            document.querySelector('link[href$="semi-dark-layout.min.css"]').remove()
+            document.querySelector('link[href$="vertical-menu.min.css"]').remove()
+            componentsCSS.remove()
+            body.removeAttribute("data-open");
+            body.removeAttribute("data-menu");
+            body.removeAttribute("class");
+        }
+        else {
+           let style = document.createElement('link')
+            style.href = "./css/main.css"
+            style.rel = "stylesheet"
+            style.type = "text/css"
+            document.head.appendChild(style)
+            style = document.createElement('link')
+            style.href = "./css/all.min.css"
+            style.rel = "stylesheet"
+            style.type = "text/css"
+            document.head.appendChild(style)
+            style = document.createElement('link')
+            style.href = "./css/line-awesome.min.css"
+            style.rel = "stylesheet"
+            style.type = "text/css"
+            document.head.appendChild(style)
+            style = document.createElement('link')
+            style.href = "./css/slick.css"
+            style.rel = "stylesheet"
+            style.type = "text/css"
+            document.head.appendChild(style) 
+        }
     },
     computed: {},
     // components: { Menu },

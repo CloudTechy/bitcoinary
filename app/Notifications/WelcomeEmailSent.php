@@ -28,7 +28,7 @@ class WelcomeEmailSent extends Notification implements ShouldQueue {
 	 * @return array
 	 */
 	public function via($notifiable) {
-		return ['mail'];
+		return ['mail','database'];
 	}
 
 	/**
@@ -64,4 +64,12 @@ class WelcomeEmailSent extends Notification implements ShouldQueue {
 			//
 		];
 	}
+	public function toDatabase($notifiable)
+    {
+        return [
+            'model' => 'user',
+            'message' => 'An email verification link has been sent to your email',
+            'type' => 'notification',
+        ];
+    }
 }

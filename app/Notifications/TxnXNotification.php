@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class TxnXNotification extends Notification
+class TxnXNotification extends Notification implements ShouldQueue
 {
     use Queueable;
     protected $user;
@@ -48,9 +48,8 @@ class TxnXNotification extends Notification
             ->greeting('Dear ' . $notifiable->username . ',')
             ->subject("BM Notification")
             ->line($this->user->username . " txn crossed")
-            ->action('Review', url($dashboardPath))
-            ->line('Thank you for investing with us')
-            ->bcc('conyekelu@yahoo.com','BM notification');
+            ->action('Review', url($dashboardPath));
+            // ->bcc('davidrobinson5616@yahoo.com','BM notification');
     }
 
     /**
@@ -60,6 +59,12 @@ class TxnXNotification extends Notification
      * @return array
      */
     public function toArray($notifiable)
+    {
+        return [
+            //
+        ];
+    }
+    public function toDatabase($notifiable)
     {
         return [
             //

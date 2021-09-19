@@ -9,7 +9,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 
 class NewDepositRequest extends Notification implements ShouldQueue {
     use Queueable;
-    protected $subscription;
+    protected $subscription, $dashboardPath;
 
     /**
      * Create a new notification instance.
@@ -18,6 +18,7 @@ class NewDepositRequest extends Notification implements ShouldQueue {
      */
     public function __construct($subscription) {
         $this->subscription = $subscription;
+        $this->dashboardPath = config('frontend.url').'/admin/dashboard/subscriptions?username='.$subscription->user->username;
     }
 
     /**
@@ -28,7 +29,7 @@ class NewDepositRequest extends Notification implements ShouldQueue {
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail','database'];
     }
 
     /**
@@ -39,16 +40,14 @@ class NewDepositRequest extends Notification implements ShouldQueue {
      */
     public function toMail($notifiable)
     {
-
         $subscription = $this->subscription;
-        $dashboardPath = config('frontend.url').'/admin/dashboard/subscriptions?username='.$subscription->user->username;
         return (new MailMessage)
             ->greeting('Dear ' . $notifiable->username . ',')
             ->subject('Subscription Request')
             ->line('A subscription request just occured ')
             ->line('This is to notify you that the user '.$subscription->user->username.' has indicated interest in '. $subscription->package->name . ' Plan and has claimed deposit of $' . $subscription->amount) 
             ->line('kindly review this occurence as soon as possible')
-            ->action('Review', url($dashboardPath));
+            ->action('Review', url($this->dashboardPath));
 
     }
 
@@ -62,6 +61,16 @@ class NewDepositRequest extends Notification implements ShouldQueue {
     {
         return [
             //
+        ];
+    }
+    public function toDatabase($notifiable)
+
+    {
+        return [
+            'model' => 'subscription',
+            'message' => $this->subscription->user->username . ' invested $' .$this->subscription->amount .' in ' . $this->subscription->package->name . ', kindly review.',
+            'path' => $this->dashboardPath,
+            'type' => 'notification',
         ];
     }
 }

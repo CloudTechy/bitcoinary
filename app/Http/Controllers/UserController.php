@@ -7,6 +7,7 @@ use App\Http\Requests\ValidateUserRequest;
 use App\Http\Resources\UserResource;
 use App\Http\Resources\ReferralResource;
 use App\User;
+use App\UserLevel;
 use App\Package;
 use Illuminate\Http\Request;
 use \DB;
@@ -27,9 +28,8 @@ class UserController extends Controller {
 			$data = User::filter(request()->all())
 				->latest()
 				->paginate($pageSize);
-			$total = $data->total();
 			$data = UserResource::collection($data);
-			$builtData = Helper::buildData($data, $total);
+			$builtData = Helper::buildData($data);
 			return Helper::validRequest($builtData, 'data was fetched successfully', 200);
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);
@@ -54,6 +54,8 @@ class UserController extends Controller {
 	 */
 	public function store(ValidateUserRequest $request) {
 		$validated = $request->validated();
+		$user_level_id = UserLevel::where('name','user')->first()->id;
+		$validated['user_level_id'] = '$user_level_id';
 		DB::beginTransaction();
 		try
 		{
@@ -120,6 +122,7 @@ class UserController extends Controller {
 				$validated['password'] = bcrypt($validated['password']);
 			}
 			$data = $user->update($validated);
+			Helper::adminsUserActivityRequest(['type'=>'ProfileActivity', 'message' => $user->username . ' updated the profile data.']);
 			DB::commit();
 			return Helper::validRequest(["success" => $data], 'Updated successfully', 200);
 		} catch (Exception $bug) {
@@ -160,8 +163,6 @@ class UserController extends Controller {
 				$user['referral_level']  = 1;
 				return $user;
 			}, $firstLevelReferrers );
-
-
 			global $secondLevelReferrers;
 			$secondLevelReferrers = [];
 			for ($i=0; $i < count($firstLevelReferrers)  ; $i++) { 
@@ -182,10 +183,24 @@ class UserController extends Controller {
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);
 		}
-
-
-
-		
-
 	}
+
+	public function uploadImage(Request $request, User $user)
+    {
+        $validated = $request->validate([
+            "image" => 'required|mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
+        ]);
+        DB::beginTransaction();
+         $validated['image'] = Helper::uploadImage($request, 'image', 'images/users');
+        try
+        {
+            $result = $user->update(['image' => $validated['image']]);
+            DB::commit();
+            Helper::adminsUserActivityRequest(['type'=>'AvatarActivity', 'message' =>  $user->username . ' updated the profile avatar.']);
+            return Helper::validRequest($result, 'User avatar updated successfully', 200);
+        } catch (Exception $bug) {
+            DB::rollback();
+            return $this->exception($bug, 'unknown error', 500);
+        }
+    }
 }

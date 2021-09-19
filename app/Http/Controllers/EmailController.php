@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Notifications\CustomEmailNotification;
 use App\Notifications\PackageSubscribed;
-use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Notification;
+use App\Http\Requests\ValidateEmailRequest;
 use \DB;
 use App\Helper;
 use App\Package;
@@ -15,31 +16,29 @@ use \Exception;
 
 class EmailController extends Controller
 {
- 	public function sendEmail(Request $request)
+ 	public function sendEmail(ValidateEmailRequest $request)
     {
-       DB::beginTransaction();
-		$validated = $request->validate([
-			'message' => 'string|required',
-			'subject' => 'string|required',
-			'email' => 'email|required',
-		]);
+		$validated = $request->validated();
 		try {
-			// Notification::route('mail', 'taylor@example.com')
-   //          ->notify( new CustomEmailNotification($validated));
-			// // $package = Package::first();
-			$user = User::where('email',$validated['email'])->first();
-			if ($user) {
-				$result = $user->notify(new CustomEmailNotification($validated, $user));
-				return Helper::validRequest(["success" =>$result], 'Email sent successfully', 200);
-			}else{
-				$result =  Notification::route('mail', $validated['email'])
+			$validated['emails'] = array_unique($validated['emails']);
+			$users = [];
+			foreach ($validated['emails'] as $email => $value) {
+				$user = User::where('email',$value)->first();
+				if ($user) {
+					array_push($users, $user);
+					unset($validated['emails'][$email] );
+				}
+			}
+			if ( count($users) > 0) {
+				$users = collect($users);
+				Notification::send($users, new CustomEmailNotification($validated));
+			}
+			if(count($validated['emails']) > 0){
+				Notification::route('mail', $validated['emails'])
             	->notify( new CustomEmailNotification($validated));
 			}
-			
-			
-			
+			return Helper::validRequest(["success" => true], 'Email sent successfully', 200);
 		} catch (Exception $bug) {
-			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);
 		}
     }

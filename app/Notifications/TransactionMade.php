@@ -27,7 +27,7 @@ class TransactionMade extends Notification implements ShouldQueue {
 	 * @return array
 	 */
 	public function via($notifiable) {
-		return ['mail'];
+		return ['mail','database'];
 	}
 
 	/**
@@ -60,4 +60,13 @@ class TransactionMade extends Notification implements ShouldQueue {
 			//
 		];
 	}
+	public function toDatabase($notifiable)
+    {
+        return [
+            'model' => 'transaction',
+            'message' => 'Your account has been credited with the sum of $' . $this->transaction->amount . '.',
+            'path' => $notifiable->isAdmin == true ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/',
+            'type' => 'notification',
+        ];
+    }
 }

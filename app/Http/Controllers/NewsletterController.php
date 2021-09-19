@@ -25,17 +25,13 @@ class NewsletterController extends Controller {
             $newsletter = Newsletter::filter(request()->all())
                 ->latest()
                 ->paginate($pageSize);
-
-            $total = $newsletter->total();
             $data = NewsletterResource::collection($newsletter);
-
-            $data = Helper::buildData($data, $total);
-
+            $data = Helper::buildData($data);
+            return Helper::validRequest($data, 'Newsletters fetched successfully', 200);
         } catch (Exception $bug) {
 
             return $this->exception($bug, 'unknown error', 500);
         }
-        return Helper::validRequest($data, 'Newsletters fetched successfully', 200);
     }
 
     /**

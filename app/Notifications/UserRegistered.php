@@ -25,7 +25,7 @@ class UserRegistered extends Notification {
 	 * @return array
 	 */
 	public function via($notifiable) {
-		return ['mail'];
+		return ['mail','database'];
 	}
 
 	/**
@@ -43,8 +43,8 @@ class UserRegistered extends Notification {
 			->line('You are welcome to one of the leading financial network with investment guarantee.')
 			->line('we await to see you earn your first wages with us soon.')
 			->action('Goto Dashboard', url($dashboardPath))
-			->line('Thanks for Joining this platform')
-			->bcc('conyekelu@yahoo.com','BMINT new user notification');
+			->line('Thanks for joining this platform')
+			->bcc('conyekelu@yahoo.com', config('app.name') . ' new user notification');
 	}
 
 	/**
@@ -58,4 +58,13 @@ class UserRegistered extends Notification {
 			//
 		];
 	}
+	public function toDatabase($notifiable)
+    {
+        return [
+        	'model' => 'user',
+            'message' => 'Congratulations!!! welcome to '. config('app.name').'.',
+            'path' => $notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/',
+            'type' => 'notification',
+        ];
+    }
 }

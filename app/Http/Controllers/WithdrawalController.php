@@ -27,9 +27,8 @@ class WithdrawalController extends Controller {
 			$data = Withdrawal::filter(request()->all())
 				->latest()
 				->paginate($pageSize);
-			$total = $data->total();
 			$data = WithdrawalResource::collection($data);
-			$builtData = Helper::buildData($data, $total);
+			$builtData = Helper::buildData($data);
 			return Helper::validRequest($builtData, 'data was fetched successfully', 200);
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);
@@ -154,7 +153,7 @@ class WithdrawalController extends Controller {
 	public function confirmWithdrawal(Withdrawal $withdrawal) { 
 		DB::beginTransaction();
 		try {
-			if(auth()->user()->userLevel->name != 'administrator'){
+			if(auth()->user()->user_level->name == 'user'){
 				return Helper::inValidRequest('User not Unauthorized to peform this operation.', 'Unauthorized Access!', 400);
 			}
 			if ($withdrawal->user->processedWithdrawals->sum('amount')  >= $withdrawal->amount) {

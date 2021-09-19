@@ -25,17 +25,14 @@ class TeamController extends Controller {
             $team = Team::filter(request()->all())
                 ->orderBy('rank' , 'desc')
                 ->paginate($pageSize);
-
-            $total = $team->total();
             $data = TeamResource::collection($team);
-
-            $data = Helper::buildData($data, $total);
-
+            $data = Helper::buildData($data);
+            return Helper::validRequest($data, 'Teams fetched successfully', 200);
         } catch (Exception $bug) {
 
             return $this->exception($bug, 'unknown error', 500);
         }
-        return Helper::validRequest($data, 'Teams fetched successfully', 200);
+        
     }
 
     /**

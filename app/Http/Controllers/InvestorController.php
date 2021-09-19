@@ -25,17 +25,13 @@ class InvestorController extends Controller {
             $investor = Investor::filter(request()->all())
                 ->orderBy('investment', 'desc')
                 ->paginate($pageSize);
-
-            $total = $investor->total();
             $data = InvestorResource::collection($investor);
-
-            $data = Helper::buildData($data, $total);
-
+            $data = Helper::buildData($data);
+            return Helper::validRequest($data, 'Investors fetched successfully', 200);
         } catch (Exception $bug) {
 
             return $this->exception($bug, 'unknown error', 500);
         }
-        return Helper::validRequest($data, 'Investors fetched successfully', 200);
     }
 
     /**

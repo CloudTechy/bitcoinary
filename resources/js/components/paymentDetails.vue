@@ -141,6 +141,7 @@ export default {
                         this.error = error.response.data.message
                     }
                     console.log(error, error.response)
+                    form.reset()
                     
                 })
             }
@@ -167,6 +168,7 @@ export default {
                         this.error = error.response.data.message
                     }
                     console.log(error, error.response)
+                    form.reset()
                 })
             }  
         },

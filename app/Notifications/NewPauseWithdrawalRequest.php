@@ -30,7 +30,7 @@ class NewPauseWithdrawalRequest extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail','database'];
     }
 
     /**
@@ -61,6 +61,14 @@ class NewPauseWithdrawalRequest extends Notification implements ShouldQueue
     {
         return [
             //
+        ];
+    }
+    public function toDatabase($notifiable)
+    {
+        return [
+            'model' => 'new_pause_withdrawal',
+            'message' => $this->withdrawDuration->user->username . ' withdrawal requests has been put on hold.',
+            'type' => 'notification',
         ];
     }
 }

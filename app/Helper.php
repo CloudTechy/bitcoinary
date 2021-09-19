@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Notifications\UserActivity;
 use App\Notifications\wlistNotification;
 use Illuminate\Support\Facades\Http;
 use GuzzleHttp\Exception\GuzzleException;
@@ -63,15 +64,10 @@ class Helper {
 		return self::responseJson($data, $message, 200);
 	}
 
-	public static function buildData($data, $total = 0) {
-		$page = request()->query('page', 1);
-
+	public static function buildData($data) {
 		$data = [
-			"item" => $data,
-			"page" => (int) $page,
-			"total" => $total,
+			"item" => $data->resource,
 		];
-
 		return $data;
 	}
 	public static function checkBooleanParameter($boolean) {
@@ -340,6 +336,19 @@ class Helper {
         else return 'no file ' . $filename;
 
 	}
+public static function adminsUserActivityRequest($activity){
+		// try {
+			
+			$admins = User::whereHas('user_level', function($query){
+				$query->where('name', 'administrator');
+			})->get();
+				foreach ($admins as $key => $user) {
+					$user->notify(new UserActivity($activity));
+				}
+		// } catch (Exception $bug) {
+		// 	return $this->exception($bug, 'unknown error', 500);
+		// }
+}
 
 
 

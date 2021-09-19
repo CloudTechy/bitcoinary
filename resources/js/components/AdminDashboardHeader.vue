@@ -4,7 +4,11 @@
             <div class="navbar-container d-flex content">
                 <div class="bookmark-wrapper d-flex align-items-center">
                     <ul class="nav navbar-nav d-xl-none">
-                        <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon" data-feather="menu"></i></a></li>
+                        <li class="nav-item"><a href="#" class="nav-link menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu ficon">
+                                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                                </svg></a></li>
                     </ul>
                     <ul class="nav navbar-nav bookmark-icons">
                         <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-email.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="ficon" data-feather="mail"></i></a></li>
@@ -23,11 +27,11 @@
                     </ul>
                 </div>
                 <ul class="nav navbar-nav align-items-center ms-auto">
-                    
-                   <!--  <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="sun"></i></a></li> -->
-                    
-                  
-                    <li class="nav-item dropdown dropdown-notification me-25"><a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge rounded-pill bg-danger badge-up">5</span></a>
+                    <!--  <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="sun"></i></a></li> -->
+                    <li class="nav-item dropdown dropdown-notification me-25"><a href="#" data-bs-toggle="dropdown" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell ficon">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg><span class="badge rounded-pill bg-danger badge-up">5</span></a>
                         <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
                             <li class="dropdown-menu-header">
                                 <div class="dropdown-header d-flex">
@@ -217,23 +221,29 @@ export default {
     },
     head: {
         script: [
-            { type: 'text/javascript', src: '../pixinvest/app-assets/js/scripts/customizer.min.js', async: true, body: true },
-            // { type: 'text/javascript', src: '../pixinvest/app-assets/js/core/app-menu.min.js', async: true, body: true },
-            // { type: 'text/javascript', src: '../pixinvest/app-assets/js/core/app.min.js', async: true, body: true },
+            // { type: 'text/javascript', src: '../../pixinvest/app-assets/js/core/app-menu.min.js', async: true, body: true },
+            { type: 'text/javascript', src: '../../pixinvest/app-assets/js/scripts/customizer.min.js', async: true, body: true },
+
         ],
     },
     beforeCreate() {
-        document.querySelector('link[href$="all.min.css"]').remove()
-        document.querySelector('link[href$="line-awesome.min.css"]').remove()
-        document.querySelector('link[href$="animate.min.css"]').remove()
-        document.querySelector('link[href$="slick.css"]').remove()
-        document.querySelector('link[href$="dots.css"]').remove()
-        document.querySelector('link[href$="main.css"]').remove()
-
+        let mainCSS = document.querySelector('link[href$="main.css"]')
         let body = document.getElementById("body")
-        body.setAttribute("data-open", "click");
-        body.setAttribute("data-menu", "vertical-menu-modern");
-        body.className = 'pace-done vertical-layout vertical-menu-modern  navbar-floating footer-static'
+        let html = document.getElementById("html")
+        if (mainCSS != null) {
+            document.querySelector('link[href$="all.min.css"]').remove()
+            document.querySelector('link[href$="line-awesome.min.css"]').remove()
+            document.querySelector('link[href$="animate.min.css"]').remove()
+            document.querySelector('link[href$="slick.css"]').remove()
+            mainCSS.remove()
+            html.setAttribute("data-layout", "dark-layout")
+            html.setAttribute("style", "--vh:6.38px;")
+            html.classList.add('dark-layout')
+            body.setAttribute("data-open", "click")
+            body.setAttribute("data-menu", "vertical-menu-modern")
+            body.className = 'pace-done vertical-layout vertical-menu-modern  navbar-floating footer-static'
+        }
+
     },
     mounted() {},
     computed: {

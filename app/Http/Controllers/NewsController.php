@@ -25,17 +25,13 @@ class NewsController extends Controller {
             $news = News::filter(request()->all())
                 ->orderBy('rank' , 'desc')
                 ->paginate($pageSize);
-
-            $total = $news->total();
             $data = NewsResource::collection($news);
-
-            $data = Helper::buildData($data, $total);
-
+            $data = Helper::buildData($data);
+            return Helper::validRequest($data, 'Newss fetched successfully', 200);
         } catch (Exception $bug) {
 
             return $this->exception($bug, 'unknown error', 500);
         }
-        return Helper::validRequest($data, 'Newss fetched successfully', 200);
     }
 
     /**

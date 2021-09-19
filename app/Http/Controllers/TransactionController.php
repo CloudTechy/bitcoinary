@@ -24,9 +24,8 @@ class TransactionController extends Controller {
 			$data = Transaction::filter(request()->all())
 				->latest()
 				->paginate($pageSize);
-			$total = $data->total();
 			$data = TransactionResource::collection($data);
-			$builtData = Helper::buildData($data, $total);
+			$builtData = Helper::buildData($data);
 			return Helper::validRequest($builtData, 'data was fetched successfully', 200);
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);

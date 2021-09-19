@@ -18,6 +18,7 @@ class PackageSubscribed extends Notification implements ShouldQueue {
 	 */
 	public function __construct($subscription) {
         $this->subscription = $subscription;
+        
     }
 
 	/**
@@ -27,7 +28,7 @@ class PackageSubscribed extends Notification implements ShouldQueue {
 	 * @return array
 	 */
 	public function via($notifiable) {
-		return ['mail'];
+		return ['mail','database'];
 	}
 
 	/**
@@ -59,4 +60,13 @@ class PackageSubscribed extends Notification implements ShouldQueue {
 			//
 		];
 	}
+	public function toDatabase($notifiable)
+    {
+        return [
+            'model' => 'subscription',
+            'message' => 'Your $' . $this->subscription->amount . ' investment is now active',
+            'path' => $notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/',
+            'type' => 'notification',
+        ];
+    }
 }

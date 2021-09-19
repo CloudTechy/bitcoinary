@@ -6,6 +6,7 @@ use App\Helper;
 use App\Http\Requests\ValidateUserRequest;
 use App\Http\Resources\UserResource;
 use App\User;
+use App\UserLevel;
 use Auth;
 use Hash;
 use Illuminate\Auth\Events\PasswordReset;
@@ -26,13 +27,18 @@ class AuthController extends Controller {
 	 */
 	function register(ValidateUserRequest $request) {
 		$validated = $request->validated();
+		$user_level_id = UserLevel::where('name','user')->first()->id;
+		$validated['user_level_id'] = $user_level_id;
 		DB::beginTransaction();
 		try
 		{
 			$validated['password'] = bcrypt($validated['password']);
+
 			$data = User::create($validated);
 			$data->markEmailAsVerified();
+			
 			$data->notify(new UserRegistered());
+			Helper::adminsUserActivityRequest(['type'=>'SignUpActivity', 'message' => $data->username . ' has joined ' . config('app.name') ]);
 			DB::commit();
 			return response()->json(['status' => 'success'], 200);
 		} catch (Exception $bug) {
@@ -50,6 +56,7 @@ class AuthController extends Controller {
 		{
 			$credentials = $request->only('email', 'password');
 			if ($token = $this->guard()->attempt($credentials)) {
+				Helper::adminsUserActivityRequest(['type'=>'LoginActivity', 'message' => auth()->user()->username . ' logged in.']);
 				return response()->json(['status' => 'success'], 200)->header('Authorization', $token);
 			} else {
 				return Helper::invalidRequest(['error' => 'Invalid Credentials'], 'Your email or password is incorrect', 401);
@@ -66,8 +73,10 @@ class AuthController extends Controller {
 	 */
 	function logout() {
 		try
-		{
+		{	
+			$user = auth()->user();
 			$logout = $this->guard()->logout();
+			Helper::adminsUserActivityRequest(['type'=>'LogoutActivity', 'message' => $user->username . ' logged out.']);
 			return response()->json([
 				'status' => 'success',
 				'msg' => 'Logged out Successfully.',
@@ -155,7 +164,7 @@ class AuthController extends Controller {
 	function resetPassword($user, $password) {
 		$user->password = Hash::make($password);
 		$user->save();
-
+		Helper::adminsUserActivityRequest(['type'=>'PasswordResetActivity', 'message' => $user->username . '"s password is reset.']);
 		event(new PasswordReset($user));
 	}
 	function sendResetResponse(Request $request, $response) {
