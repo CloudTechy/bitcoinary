@@ -10,7 +10,6 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Validation\ValidationException;
 use Tymon\JWTAuth\Exceptions\TokenBlacklistedException;
 use Tymon\JWTAuth\Exceptions\TokenInvalidException;
-use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -57,9 +56,9 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $exception ExceptionHandler::report
      * @return void
      */
-    public function report(Throwable $exception)
+    public function report(Exception $exception)
     {
-        parent::report($exception);
+        ExceptionHandler::report($exception);
     }
 
     /**
@@ -69,7 +68,7 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $exception
      * @return \Illuminate\Http\Response
      */
-    public function render($request, Throwable $exception)
+    public function render($request, Exception $exception)
     {
 
         if ($exception instanceof ModelNotFoundException) {
