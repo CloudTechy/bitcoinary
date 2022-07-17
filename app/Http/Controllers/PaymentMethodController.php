@@ -26,6 +26,7 @@ class PaymentMethodController extends Controller
                 ->orderBy('rank' , 'desc')
                 ->paginate($pageSize);
             $data = Helper::buildData($paymentmethod);
+            // $data = 'hello';
             return Helper::validRequest($data, 'payment methods fetched successfully', 200);
         } catch (Exception $bug) {
 

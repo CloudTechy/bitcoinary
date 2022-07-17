@@ -66,7 +66,7 @@ class Helper {
 
 	public static function buildData($data) {
 		$data = [
-			"item" => $data->resource,
+			"item" => $data,
 		];
 		return $data;
 	}
