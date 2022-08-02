@@ -5,7 +5,7 @@
                 <ul class="nav navbar-nav flex-row">
                     <li class="nav-item me-auto"><a class="navbar-brand" :href="$root.basepath"><span class="brand-logo"><img :src="$root.basepath + '/images/adminlogo.png'" alt="admin-logo">
                             </span>
-                            <h2 class="brand-text">{{'Bmint Inv.'}}</h2>
+                            <h2 class="brand-text">{{'Admin'}}</h2>
                         </a></li>
                     <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x d-block d-xl-none text-primary toggle-icon font-medium-4">
                                 <line x1="18" y1="6" x2="6" y2="18"></line>

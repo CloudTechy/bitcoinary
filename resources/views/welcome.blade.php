@@ -25,7 +25,7 @@
   
 
     <!-- backend css -->
-  <link rel="stylesheet" href="{{asset('pixinvest/css2.css')}}">
+  <link rel="stylesheet" href="{{asset('pixinvest/css/css2.css')}}">
   <link rel="stylesheet" href="{{asset('pixinvest/vendors.min.css')}}">
   <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/bootstrap-extended.min.css')}}">
@@ -89,6 +89,7 @@
   </div>
   <script src="{{ asset('pixinvest/app-assets/vendors/js/vendors.min.js') }}" defer></script>
 
+ 
   <script src="{{ asset('pixinvest/app-assets/js/core/app-menu.min.js')}}" defer></script>
   <script src="{{ asset('pixinvest/app-assets/js/core/app.min.js')}}" defer></script>
 
@@ -112,6 +113,7 @@
     <script src="{{asset('js/wow.min.js.download')}}" defer></script>
     <script src="{{asset('js/contact.js.download')}}" defer></script>
     <script src="{{ asset('js/k.js') }}" defer></script>
+     
 
     <!-- <script src="{{asset('js/dashboard.js.download')}}" defer></script> -->
    
@@ -124,11 +126,11 @@
   <script src="{{ asset('js/objectdata.js') }}" defer></script>
   <!-- <script src="{{ asset('pixinvest/app-assets/js/scripts/customizer.min.js') }}" defer></script> -->
   <script>
-    if('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('/sw.js')
-        .then(function() { console.log("Service Worker Registered"); });
-    }
+    // if('serviceWorker' in navigator) {
+    //   navigator.serviceWorker
+    //     .register('/sw.js')
+    //     .then(function() { console.log("Service Worker Registered"); });
+    // }
 
     $(window).load(function(){
       if (feather) {

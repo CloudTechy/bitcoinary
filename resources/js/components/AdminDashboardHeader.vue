@@ -221,8 +221,7 @@ export default {
     },
     head: {
         script: [
-            // { type: 'text/javascript', src: '../../pixinvest/app-assets/js/core/app-menu.min.js', async: true, body: true },
-            { type: 'text/javascript', src: '../../pixinvest/app-assets/js/scripts/customizer.min.js', async: true, body: true },
+            { type: 'text/javascript', src: '../../pixinvest/js/customizer.min.js', async: true, body: true },
 
         ],
     },
