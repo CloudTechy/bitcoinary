@@ -17,15 +17,15 @@
   <link rel="shortcut icon" href="{{asset('images/favicontp.png')}}" type="image/x-icon">
 
 <!-- frontend css -->
-  <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
+  <!-- <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
   <link rel="stylesheet" href="{{asset('css/line-awesome.min.css')}}">
   <link rel="stylesheet" href="{{asset('css/vendor/animate.min.css')}}">
   <link rel="stylesheet" href="{{asset('css/vendor/slick.css')}}">
-  <link rel="stylesheet" href="{{asset('css/vendor/dots.css')}}">
+  <link rel="stylesheet" href="{{asset('css/vendor/dots.css')}}"> -->
   
 
     <!-- backend css -->
-  <link rel="stylesheet" href="{{asset('pixinvest/css/css2.css')}}">
+  <!-- <link rel="stylesheet" href="{{asset('pixinvest/css/css2.css')}}">
   <link rel="stylesheet" href="{{asset('pixinvest/vendors.min.css')}}">
   <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/bootstrap-extended.min.css')}}">
@@ -41,7 +41,7 @@
   <link rel="stylesheet" type="text/css" href="{{asset('pixinvest/app-assets/vendors/css/tables/datatable/extensions/dataTables.checkboxes.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('pixinvest/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css')}}">
 
-<link rel="stylesheet" href="{{asset('css/main.css')}}">
+<link rel="stylesheet" href="{{asset('css/main.css')}}"> -->
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 // var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -64,11 +64,11 @@
             </div>
         </div>
         <!-- scroll-to-top start -->
-        <div class="scroll-to-top">
+        <!-- <div class="scroll-to-top">
             <span class="scroll-icon">
                 <i class="fa fa-rocket" aria-hidden="true"></i>
             </span>
-        </div>
+        </div> -->
         <!-- scroll-to-top end -->
         <div class="full-wh">
             <!-- STAR ANIMATION -->
@@ -87,11 +87,10 @@
     </noscript>
     <index></index>
   </div>
-  <script src="{{ asset('pixinvest/app-assets/vendors/js/vendors.min.js') }}" defer></script>
 
- 
+  <!-- <script src="{{ asset('pixinvest/app-assets/vendors/js/vendors.min.js') }}" defer></script>
   <script src="{{ asset('pixinvest/app-assets/js/core/app-menu.min.js')}}" defer></script>
-  <script src="{{ asset('pixinvest/app-assets/js/core/app.min.js')}}" defer></script>
+  <script src="{{ asset('pixinvest/app-assets/js/core/app.min.js')}}" defer></script> -->
 
 
    <!--  <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/jquery.dataTables.min.js') }}" defer></script>
@@ -101,18 +100,19 @@
     <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/datatables.buttons.min.js') }}" defer></script>
     <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/dataTables.bootstrap5.min.js') }}" defer></script>
     <script src="{{ asset('pixinvest/app-assets/vendors/js/forms/validation/jquery.validate.min.js') }}" defer></script>   -->
-    <script src="{{ asset('pixinvest/app-assets/js/scripts/pages/app-user-list.min.js') }}" defer></script>  
+    <!-- <script src="{{ asset('pixinvest/app-assets/js/scripts/pages/app-user-list.min.js') }}" defer></script>   -->
 
     
   <script src="{{ asset('js/jquery.js') }}"></script>
+  <!-- <script src="./assets/js/jquery.bgscroll.js" defer></script> -->
     <!-- <script src="{{ asset('pixinvest/app-assets/js/customizer.min.js') }}" ></script> -->
     <!-- <script src="{{asset('js/jquery-3.5.1.min.js.download')}}" defer></script> -->
       <!-- <script src="{{asset('js/bootstrap.bundle.js.download')}}" defer></script> -->
-    <script src="{{asset('js/slick.min.js.download')}}" defer></script>
+    <!-- <script src="{{asset('js/slick.min.js.download')}}" defer></script> -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{asset('js/wow.min.js.download')}}" defer></script>
+    <!-- <script src="{{asset('js/wow.min.js.download')}}" defer></script>
     <script src="{{asset('js/contact.js.download')}}" defer></script>
-    <script src="{{ asset('js/k.js') }}" defer></script>
+    <script src="{{ asset('js/k.js') }}" defer></script> -->
      
 
     <!-- <script src="{{asset('js/dashboard.js.download')}}" defer></script> -->
@@ -131,11 +131,20 @@
     //     .register('/sw.js')
     //     .then(function() { console.log("Service Worker Registered"); });
     // }
-
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+    
+          jQuery(".goog-logo-link").empty();
+          jQuery(".goog-te-gadget").html(jQuery(".goog-te-gadget").children());
+   
+      }
     $(window).load(function(){
-      if (feather) {
-          feather.replace({ width: 14, height: 14 });
-        }
+      // if (feather) {
+      //     feather.replace({ width: 14, height: 14 });
+      //   }
       $(".preloader").delay(300).animate({
        "opacity" : "0"
        }, 300, function() {
@@ -143,5 +152,24 @@
       });
     })
 </script>
+<style>
+   .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+      }
+      .goog-te-gadget .goog-te-combo {
+        margin: 4px 0;
+        padding: 9px 12px;
+      }
+      .mgm a {
+        font-weight: 700;
+        display: block;
+        color: #ff5722;
+      }
+
+      .mgm a:active {
+        transition: all 0.2s ease;
+        color: #ff5722;
+      }
+</style>
 </body>
 </html>

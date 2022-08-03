@@ -40,7 +40,7 @@
                             <p v-if="paymentMethod.swift_code"><b>Swift Code:</b> <span>{{paymentMethod.swift_code}}</span></p>
                         </div>
                         <div class="m-3">
-                            <vue-qrcode :quality="1" :value="'' + paymentMethod.acc_number" />
+                            <VueQrcode :quality="1" :value="'' + paymentMethod.acc_number" />
                         </div>
                         <div class="input-group mb-3">
                             <input type="text" v-model="paymentMethod.acc_number" disabled="" id="acc_number" class="text-center form-control">

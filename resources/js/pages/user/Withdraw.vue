@@ -105,7 +105,7 @@
                                             </table>
                                         </div>
                                         <div class="mt-4 p-3">
-                                            <h6 class="text-center p-2 base--color"">Withdrawal Amount</h6>
+                                            <h6 class="text-center p-2 base--color">Withdrawal Amount</h6>
                                             <div v-if=" $auth.user().balance> 1" class="form-group">
                                                 <div class="input-group">
                                                     <div style="border-radius: 0px 5px" class="input-group-prepend">

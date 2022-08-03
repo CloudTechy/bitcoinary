@@ -25,7 +25,7 @@
   
 
     <!-- backend css -->
-  <link rel="stylesheet" href="{{asset('pixinvest/css/css2.css')}}">
+  <!-- <link rel="stylesheet" href="{{asset('pixinvest/css/css2.css')}}">
   <link rel="stylesheet" href="{{asset('pixinvest/css/vendors.min.css')}}">
   <link rel="stylesheet" href="{{asset('pixinvest/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('pixinvest/css/bootstrap-extended.min.css')}}">
@@ -39,7 +39,7 @@
 
   <link rel="stylesheet" href="{{asset('pixinvest/css/dataTables.bootstrap5.min.css')}}">
   <link rel="stylesheet" href="{{asset('pixinvest/css/dataTables.checkboxes.css')}}">
-  <link rel="stylesheet" href="{{asset('pixinvest/css/responsive.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('pixinvest/css/responsive.bootstrap4.min.css')}}"> -->
 
 <link rel="stylesheet" href="{{asset('css/main.css')}}">
 <!--Start of Tawk.to Script-->

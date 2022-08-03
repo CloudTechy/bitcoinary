@@ -94,96 +94,116 @@ const app = new Vue({
         payments: [],
         packages: [],
     },
-    el: '#app',
+    el: "#app",
     router,
     computed: {
         basepath() {
-            return basepath
+            return basepath;
         },
-        appName(){
-            return process.env.MIX_APP_NAME
-        }
+        appName() {
+            return process.env.MIX_APP_NAME;
+        },
+        appDomain() {
+            return process.env.MIX_APP_DOMAIN;
+        },
     },
 
     created() {
         this.getPayments();
         this.getPackages();
-        
     },
     methods: {
         alert(type, title, message) {
             this.$swal({
                 toast: true,
-                position: 'top-end',
+                position: "top-end",
                 type,
                 title,
                 text: message,
                 showConfirmButton: false,
-                timer: 5000
-            })
+                timer: 5000,
+            });
         },
         getPayments() {
-            this.$http.get("/auth/paymentss")
-                .then(response => {
-                    this.payments = response.data.data.item.data
+            this.$http
+                .get("/auth/paymentss")
+                .then((response) => {
+                    this.payments = response.data.data.item.data;
                 })
-                .catch(error => {
-                    console.log(error.response)
-                })
+                .catch((error) => {
+                    console.log(error.response);
+                });
         },
         getPackages() {
-            this.$http.get("/auth/packagess")
-                .then(response => {
-                    this.packages = response.data.data.item
+            this.$http
+                .get("/auth/packagess")
+                .then((response) => {
+                    this.packages = response.data.data.item;
                 })
-                .catch(error => {
-                    console.log(error.response)
-                })
+                .catch((error) => {
+                    console.log(error.response);
+                });
         },
         loader(action) {
-            if (action == 'show') {
-                $(".preloader").animate({
-                    "opacity": "0.7"
-                }, 10, function() {
-                    $(".preloader").css("display", "flex");
-                });
+            if (action == "show") {
+                $(".preloader").animate(
+                    {
+                        opacity: "0.7",
+                    },
+                    10,
+                    function () {
+                        $(".preloader").css("display", "flex");
+                    }
+                );
             } else {
-                $(".preloader").delay(200).animate({
-                    "opacity": "0"
-                }, 10, function() {
-                    $(".preloader").css("display", "none");
-                });
+                $(".preloader")
+                    .delay(200)
+                    .animate(
+                        {
+                            opacity: "0",
+                        },
+                        10,
+                        function () {
+                            $(".preloader").css("display", "none");
+                        }
+                    );
             }
         },
         scrollUp() {
-            window.scrollTo(0, 0)
+            window.scrollTo(0, 0);
         },
-        
+
         numeral(value) {
-            if (typeof value == 'string') {
-                return value
+            if (typeof value == "string") {
+                return value;
             }
-            return '$' + numeral(value).format('0,0.00')
+            return "$" + numeral(value).format("0,0.00");
         },
         normalNumeral(value) {
-            return numeral(value).format('0,0.00')
+            return numeral(value).format("0,0.00");
         },
         myFilter(list, search) {
             var data = [];
             if (search) {
                 data = list.filter((item) => {
-                    var keys = Object.values(item)
-                    var boolean = false
+                    var keys = Object.values(item);
+                    var boolean = false;
                     if (item == undefined) {
-                        return false
+                        return false;
                     }
                     var bool = keys.forEach((key) => {
-                        if (key != null && key.toString().toLowerCase().includes(search.toLowerCase())) {
-                            boolean = true
+                        if (
+                            key != null &&
+                            key
+                                .toString()
+                                .toLowerCase()
+                                .includes(search.toLowerCase())
+                        ) {
+                            boolean = true;
                         }
-                    })
-                    return boolean
-                })
+                    });
+                    return boolean;
+                });
             } else {
                 data = list;
             }
@@ -193,8 +213,10 @@ const app = new Vue({
             var data = [];
             if (search) {
                 data = list.filter((item) => {
-                    return item.username.toLowerCase().includes(search.toLowerCase());
-                })
+                    return item.username
+                        .toLowerCase()
+                        .includes(search.toLowerCase());
+                });
             } else {
                 data = [];
             }
@@ -204,8 +226,10 @@ const app = new Vue({
             var data = [];
             if (search) {
                 data = list.filter((item) => {
-                    return item.payment_method.toLowerCase().includes(search.toLowerCase());
-                })
+                    return item.payment_method
+                        .toLowerCase()
+                        .includes(search.toLowerCase());
+                });
             } else {
                 data = [];
             }
@@ -215,44 +239,58 @@ const app = new Vue({
             window.scrollTo(x, y);
         },
         getIp() {
-            var form = new Form()
+            var form = new Form();
             form.get("https://api.ipify.org?format=json")
-                .then(response => {
-                    this.ip = response.data.ip
-                    localStorage.ip = JSON.stringify(response.data.ip)
+                .then((response) => {
+                    this.ip = response.data.ip;
+                    localStorage.ip = JSON.stringify(response.data.ip);
                 })
-                .catch(error => {
-                    console.log(error.response)
-                })
+                .catch((error) => {
+                    console.log(error.response);
+                });
         },
         refreshUser() {
             this.$auth.fetch({
                 params: {},
-                success: (response) => { this.user = this.$auth.user() },
-                error: (error) => { console.log(error.response.data) },
-            })
+                success: (response) => {
+                    this.user = this.$auth.user();
+                },
+                error: (error) => {
+                    console.log(error.response.data);
+                },
+            });
         },
-        getAccountDetails(search, currencyType){
-           let paymentDetails = this.cryptoFilter(this.$auth.user().bank_details, search)[0]
-           if(paymentDetails){
-            var address = currencyType == 'fiat' ?  paymentDetails.acc_number : paymentDetails.wallet
-            var result = address == "Not Set" || address == 0 ? undefined : address
-            return result
-           }    
-           return undefined       
-       },
-       getPaymentAccountDetails(accounts, search, currencyType){
-           let paymentDetails = this.cryptoFilter(accounts, search)[0]
-           if(paymentDetails){
-            var address = currencyType == 'fiat' ?  paymentDetails.acc_number : paymentDetails.wallet
-            var result = address == "Not Set" || address == 0 ? undefined : address
-            return result
-           }    
-           return undefined       
-       },
+        getAccountDetails(search, currencyType) {
+            let paymentDetails = this.cryptoFilter(
+                this.$auth.user().bank_details,
+                search
+            )[0];
+            if (paymentDetails) {
+                var address =
+                    currencyType == "fiat"
+                        ? paymentDetails.acc_number
+                        : paymentDetails.wallet;
+                var result =
+                    address == "Not Set" || address == 0 ? undefined : address;
+                return result;
+            }
+            return undefined;
+        },
+        getPaymentAccountDetails(accounts, search, currencyType) {
+            let paymentDetails = this.cryptoFilter(accounts, search)[0];
+            if (paymentDetails) {
+                var address =
+                    currencyType == "fiat"
+                        ? paymentDetails.acc_number
+                        : paymentDetails.wallet;
+                var result =
+                    address == "Not Set" || address == 0 ? undefined : address;
+                return result;
+            }
+            return undefined;
+        },
     },
     beforeDestroy() {
-        clearInterval(this.timer)
+        clearInterval(this.timer);
     },
-
 });
