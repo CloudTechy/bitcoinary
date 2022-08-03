@@ -41,7 +41,7 @@ import Security from './pages/user/Security'
 const routes = [{
         path: '/',
         name: 'home',
-        component: Home,
+        component: () => import("./pages/Home"),
         meta: {
             auth: undefined,
             title: 'Home',

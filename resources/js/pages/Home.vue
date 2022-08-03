@@ -98,7 +98,7 @@ export default {
 <template>
     <div class="m-0 p-0">
         <div class="page-wraper">
-            <HomeHeader :domain="$root.domain"></HomeHeader>
+            <HomeHeader :domain="domain"></HomeHeader>
             <div class="page-content">
                 <div class="main-slider style-two default-banner">
                     <div class="tp-banner-container">
@@ -2274,7 +2274,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <AboutUs :domain="$root.domain"></AboutUs>
+                <AboutUs :domain="domain"></AboutUs>
                 <br />
                 <br />
                 <div
@@ -2322,7 +2322,7 @@ export default {
                         </div>
                     </div>
 
-                    <WhyChooseUs :company="$root.company"></WhyChooseUs>
+                    <WhyChooseUs :company="company"></WhyChooseUs>
 
                     <HowItWorks></HowItWorks>
                     <div class="section-full p-t10 p-b10 bg-gray">
@@ -2540,8 +2540,8 @@ export default {
                 </div>
             </div>
             <HomeFooter
-                :company="$root.company"
-                :domain="$root.domain"
+                :company="company"
+                :domain="domain"
             ></HomeFooter>
             <button class="scroltop">
                 <span class="iconmoon-house relative" id="btn-vibrate"></span

@@ -14,7 +14,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home,
+    component: () => import("./pages/Home"),
     meta: {
       auth: undefined
     }
@@ -58,7 +58,7 @@ const routes = [
     meta: { 
       auth:false 
     } 
-  }
+  },
   // USER ROUTES
   {
     path: '/dashboard',

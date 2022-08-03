@@ -9,8 +9,8 @@ import auth from './auth'
 import router from './router'
 import jQuery from 'jquery'
 import $ from 'jquery'
-import bootstrap from 'bootstrap'
-import popper from 'popper.js'
+// import bootstrap from 'bootstrap'
+// import popper from 'popper.js'
 import moment from 'moment'
 import fontawesome from '@fortawesome/fontawesome-free'
 import Clipboard from 'v-clipboard'
@@ -20,7 +20,7 @@ import VueHead from 'vue-head'
 Vue.use(VueHead)
 
 
-
+window.jQuery = jQuery
 Vue.use(Clipboard)
 Vue.use(fontawesome)
 

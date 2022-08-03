@@ -56,7 +56,12 @@ export default {
     style.href = this.$root.basepath + "/assets/css/bootstrap-select.min.css"
     style.rel = "stylesheet"
     style.type = "text/css"
-document.head.appendChild(style)
+    document.head.appendChild(style)
+style = document.createElement('link')
+    style.href = this.$root.basepath + "/assets/css/skin/skin-25b275b27.css"
+    style.rel = "stylesheet"
+    style.type = "text/css"
+    document.head.appendChild(style)
    var js = document.createElement("script");
 js.setAttribute("src", "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
 document.body.appendChild(js);
