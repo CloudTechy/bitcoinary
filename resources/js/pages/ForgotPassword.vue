@@ -1,51 +1,67 @@
 <template>
-    <div class="page-wrapper">
-        <Header></Header>
-
-        <!-- account section start -->
-        <div class="account-section bg_img"  :style="'background:url('+ $root.basepath + '/images/bg/bg-5.jpg'">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-9">
-                        <div class="account-card">
-                            <div class="account-card__header bg_img overlay--one"  :style="'background:url('+ $root.basepath + '/images/bg/bg-6.jpg'">
-                                <h2 class="section-title text-center">Welcome to <span class="base--color"><span>{{$root.appName}}</span></span></h2>
-                                <h3 class="text-center m-3 ">Recover your password</h3>
-                                <p class="mt-2 font-weight-bold text-uppercase base--color">Steps:</p>
-                                <ul style="list-style-type: circle;" class="">
-                                 <li style="margin-left: 2em;">Submit your email address through the form below.</li>  
-                                 <li style="margin-left: 2em;">A reset password link will be sent to your email address.</li> 
-                                 <li style="margin-left: 2em;">click on the reset link and change your password.</li>
-                                </ul>
-                                
-                            </div>
-                            <div class="account-card__body">
-                                <form autocomplete="off" @submit.prevent="requestResetPassword" method="post">
-
-                                    <div class="form-group">
-                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg  m-3" v-if="has_error && !success  ">
-                                            <p class="p-2 m-lg-3 m-sm-2" v-if="errors.error.email" v-for="error in errors.error.email">{{error}}</p>
-                                            <p v-if = "errors.error && typeof errors.error == 'string' " class="text-center p-2 m-lg-3 m-sm-1">{{errors.message || errors.error}}</p>
+  <div class="main">
+    <h1>
+      <div
+        class="sitelogo"
+        style="background: rgba(1, 0, 21, 0.66); padding: 15px 0 5px"
+      >
+        <a href="/"
+          ><img
+            :src= '$root.basepath + "/assets/images/logo2.png"'
+            width="230"
+            height=""
+            alt="site logo"
+        /></a>
+      </div>
+    </h1>
+    <div class="w3_agile_main_grids">
+      <form
+        method="POST"
+        class="agile_form"
+        autocomplete="off" @submit.prevent="requestResetPassword"
+      >
+      
+        <div class="row">
+             <div class="col-12">
+                                        <div class="alert alert-danger  mb-3" v-if="has_error && !success  ">
+                                            <p class="m-sm-1" v-if="errors.error.email" v-for="error in errors.error.email">{{error}}</p>
+                                            <p v-if = "errors.error && typeof errors.error == 'string' " class="text-center m-sm-1">{{errors.message || errors.error}}</p>
                                         </div>
-                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="success-msg " v-if="success && !has_error">
-                                             <p class="p-2 m-lg-3 m-sm-1" v-if="response != undefined">{{response.message == "The selected email is invalid." ? "Invalid email" : response.message}}</p>
+                                        <div class="alert alert-success " v-if="success && !has_error">
+                                             <p class="m-sm-1" v-if="response != undefined">{{response.message == "The selected email is invalid." ? "Invalid email" : response.message}}</p>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Email Address</label>
-                                        <input type="email" placeholder="Enter email address" required="" v-model="email" class="form-control">
-                                    </div>
-                                    <button ref="process" type="submit" class="cmn-btn m-2">Submit</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <h3 class="col-sm-12 col-md-12">Reset Password</h3>
+         
+          <div class="col-md-6 col-sm-12 form-group">
+            <div class="wthree_input">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <input type="email" placeholder="Enter email address" required="" v-model="email" class="form-control">
+                                    
             </div>
+          </div>
+          <div class="col-md-6 col-sm-12 form-group">
+            <div class="wthree_input">
+                <button ref="process" type="submit" class="cbtn btn-primary agileinfo_primary submit">Send Reset Link</button>
+             
+            </div>
+          </div>
+          <div class="clear"></div>
         </div>
-        <Footer></Footer>
+      </form>
+      <div id="progress">
+        Don't have an account? <a class="base--color" href="/register">Register</a>
+      </div>
+      <div class="mt-5 agileits_copyright">
+        <span class="copyrights-text text-white"
+          >© {{$root.fullYearTemplate}} <a href="/" class="base--color">{{company }}</a
+          >. All rights reserved</span
+        >
+      </div>
     </div>
+  </div>
 </template>
+
 <script>
 export default {
     data() {
@@ -54,8 +70,28 @@ export default {
             has_error: false,
             response: '',
             success: false,
-            errors: ''
+            errors: '',
+            company: this.$root.appName,
+            domain: this.$root.appDomain,
         }
+    },
+    created() {
+        var css = document.createElement("link");
+        css.setAttribute(
+            "href",
+            this.$root.basepath + "/assets/css/bootstrap.css"
+        );
+        css.setAttribute("type", "text/css");
+        css.setAttribute("rel", "stylesheet");
+        document.head.appendChild(css);
+        var css = document.createElement("link");
+        css.setAttribute(
+            "href",
+            this.$root.basepath + "/assets/css/stylec31c.css"
+        );
+        css.setAttribute("type", "text/css");
+        css.setAttribute("rel", "stylesheet");
+        document.head.appendChild(css);
     },
     methods: {
         requestResetPassword() {
@@ -83,7 +119,7 @@ export default {
                 this.$refs.process.innerText = "processing..."
                 this.$refs.process.disabled = true
             } else {
-                this.$refs.process.innerText = "Send Password Reset Link"
+                this.$refs.process.innerText = "Send Reset Link"
                 this.$refs.process.disabled = false
             }
         },
@@ -97,3 +133,4 @@ export default {
 }
 
 </script>
+

@@ -106,6 +106,9 @@ const app = new Vue({
         appDomain() {
             return process.env.MIX_APP_DOMAIN;
         },
+        fullYearTemplate() {
+            return  '2016 - ' + moment().get("year");
+        },
     },
 
     created() {

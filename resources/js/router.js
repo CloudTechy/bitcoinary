@@ -1,20 +1,20 @@
 import VueRouter from 'vue-router'
 
 // Pages
-import Home from './pages/Home'
-import NotFound from './pages/Error404.vue'
+// import Home from './pages/Home'
+// import NotFound from './pages/Error404.vue'
 import Terms from './pages/terms.vue'
-import About from './pages/About'
+// import About from './pages/About'
 import GetStarted from './pages/getStarted'
-import Faq from './pages/faq'
-import InvestmentPlans from './pages/investmentPlans'
+// import Faq from './pages/faq'
+// import InvestmentPlans from './pages/investmentPlans'
 import Partners from './pages/partners'
 import News from './pages/news'
 import DataCenter from './pages/DataCenter'
-import Support from './pages/Support'
+// import Support from './pages/Support'
 import ConfirmRegistration from './pages/ConfirmRegistration'
 import Register from './pages/Register'
-import Login from './pages/Login'
+// import Login from './pages/Login'
 import CheckEmail from './pages/CheckEmail'
 import ResetPassword from './pages/ResetPasswordForm'
 import ForgotPassword from './pages/ForgotPassword'
@@ -38,345 +38,345 @@ import Setting from './pages/user/Setting'
 import Security from './pages/user/Security'
 
 // Routes
-const routes = [{
-        path: '/',
-        name: 'home',
+const routes = [
+    {
+        path: "/",
+        name: "home",
         component: () => import("./pages/Home"),
         meta: {
             auth: undefined,
-            title: 'Home',
-        }
+            title: "Home",
+        },
     },
     {
-        path: '/404',
-        name: 'NotFound',
-        component: Home,
+        path: "/404",
+        name: "NotFound",
+        component: () => import("./pages/Error404"),
         meta: {
             auth: undefined,
-            title: 'Not Found',
-        }
+            title: "Not Found",
+        },
     },
     {
-        path: '/terms',
-        name: 'Terms',
+        path: "/terms",
+        name: "Terms",
         component: Terms,
         meta: {
             auth: undefined,
-            title: 'Terms',
-        }
+            title: "Terms",
+        },
     },
     {
-        path: '/about',
-        name: 'about',
-        component: About,
+        path: "/about",
+        name: "about",
+        component: () => import("./pages/About"),
         meta: {
             auth: undefined,
-            title: 'About',
-        }
+            title: "About",
+        },
     },
     {
-        path: '/checkEmail',
-        name: 'checkEmail',
+        path: "/checkEmail",
+        name: "checkEmail",
         component: CheckEmail,
         meta: {
             auth: undefined,
-            title: 'Check Email',
-        }
+            title: "Check Email",
+        },
     },
     {
-        path: '/confirm-registration',
-        name: 'confirmRegistration',
+        path: "/confirm-registration",
+        name: "confirmRegistration",
         component: ConfirmRegistration,
         meta: {
             auth: true,
-            title: 'Confirm Registration',
-        }
+            title: "Confirm Registration",
+        },
     },
     {
-        path: '/news',
-        name: 'news',
+        path: "/news",
+        name: "news",
         component: News,
         meta: {
             auth: undefined,
-            title: 'News',
-        }
+            title: "News",
+        },
     },
     {
-        path: '/partners',
-        name: 'partners',
+        path: "/partners",
+        name: "partners",
         component: Partners,
         meta: {
             auth: undefined,
-            title: 'Partners',
-        }
+            title: "Partners",
+        },
     },
     {
-        path: '/investmentPlans',
-        name: 'investmentPlans',
-        component: InvestmentPlans,
+        path: "/plan",
+        name: "investmentPlans",
+        component: () => import("./pages/investmentPlans"),
         meta: {
             auth: undefined,
-            title: 'Investment Plans',
-        }
+            title: "Investment Plans",
+        },
     },
     {
-        path: '/dataCenter',
-        name: 'dataCenter',
+        path: "/dataCenter",
+        name: "dataCenter",
         component: DataCenter,
         meta: {
             auth: undefined,
-            title: 'Data Center',
-        }
+            title: "Data Center",
+        },
     },
     {
-        path: '/getStarted',
-        name: 'getStarted',
+        path: "/getStarted",
+        name: "getStarted",
         component: GetStarted,
         meta: {
             auth: undefined,
-            title: 'Get Started',
-        }
+            title: "Get Started",
+        },
     },
     {
-        path: '/faq',
-        name: 'faq',
-        component: Faq,
+        path: "/faq",
+        name: "faq",
+        component: () => import("./pages/faq"),
         meta: {
             auth: undefined,
-            title: 'Faq',
-        }
+            title: "Faq",
+        },
     },
     {
-        path: '/support',
-        name: 'support',
-        component: Support,
+        path: "/contact",
+        name: "support",
+        component: () => import("./pages/Support"),
         meta: {
-            auth: true,
-            title: 'Support',
-        }
+            auth: undefined,
+            title: "Support",
+        },
     },
     {
-        path: '/register',
-        name: 'register',
+        path: "/register",
+        name: "register",
         component: Register,
         meta: {
-            auth: false,
-            title: 'Register',
-        }
+            auth: undefined,
+            title: "Register",
+        },
     },
     {
-        path: '/login',
-        name: 'login',
-        component: Login,
+        path: "/login",
+        name: "login",
+        component: () => import("./pages/Login"),
         meta: {
             auth: false,
-            title: 'Login',
-        }
+            title: "Login",
+        },
     },
     {
-        path: '/reset_password',
-        name: 'resetPassword',
+        path: "/reset_password",
+        name: "resetPassword",
         component: ResetPassword,
         meta: {
             auth: false,
-            title: 'Reset Password',
-        }
+            title: "Reset Password",
+        },
     },
     {
-        path: '/forgot_password',
-        name: 'forgotPassword',
-        component: ForgotPassword,
+        path: "/forgot_password",
+        name: "forgotPassword",
+        component: () => import("./pages/ForgotPassword"),
         meta: {
             auth: false,
-            title: 'Forgot Password',
-        }
+            title: "Forgot Password",
+        },
     },
     // USER ROUTES
     {
-        path: '/dashboard',
-        name: 'dashboard',
-        component: Dashboard,
+        path: "/dashboard",
+        name: "dashboard",
+        component: () => import("./pages/user/Dashboard"),
         meta: {
             auth: true,
             adminAuth: false,
             requiresAuth: false,
-            title: 'User Dashboard',
-        }
+            title: "User Dashboard",
+        },
     },
     {
-        path: '/dashboard/deposit',
-        name: 'deposit',
+        path: "/dashboard/deposit",
+        name: "deposit",
         component: Deposit,
         meta: {
             auth: true,
             adminAuth: false,
-            title: 'User Deposit',
-        }
+            title: "User Deposit",
+        },
     },
     {
-        path: '/dashboard/withdraw',
-        name: 'withdraw',
+        path: "/dashboard/withdraw",
+        name: "withdraw",
         component: Withdraw,
         meta: {
             auth: true,
             adminAuth: false,
-            title: 'User Withdraw',
-        }
+            title: "User Withdraw",
+        },
     },
     {
-        path: '/dashboard/settings',
-        name: 'Setting',
+        path: "/dashboard/settings",
+        name: "Setting",
         component: Setting,
         meta: {
             auth: true,
             adminAuth: false,
-            title: 'User Setting',
-        }
+            title: "User Setting",
+        },
     },
     {
-        path: '/dashboard/security',
-        name: 'security',
+        path: "/dashboard/security",
+        name: "security",
         component: Security,
         meta: {
             auth: true,
             adminAuth: false,
-            title: 'User Security',
-        }
+            title: "User Security",
+        },
     },
     {
-        path: '/dashboard/withdrawal-report',
-        name: 'WithdrawReport',
+        path: "/dashboard/withdrawal-report",
+        name: "WithdrawReport",
         component: WithdrawReport,
         meta: {
             auth: true,
             adminAuth: false,
-            title: 'User WithdrawReport',
-        }
+            title: "User WithdrawReport",
+        },
     },
     {
-        path: '/dashboard/report/deposit',
-        name: 'depositReport',
+        path: "/dashboard/report/deposit",
+        name: "depositReport",
         component: DepositReport,
         meta: {
             auth: true,
             adminAuth: false,
-            title: 'User Plans',
-        }
+            title: "User Plans",
+        },
     },
     {
-        path: '/dashboard/plans',
-        name: 'UserPlans',
+        path: "/dashboard/plans",
+        name: "UserPlans",
         component: UserPlans,
         meta: {
             auth: true,
             adminAuth: false,
-            title: 'User Plans',
-        }
+            title: "User Plans",
+        },
     },
     {
-        path: '/dashboard/report/transaction',
-        name: 'transactionReport',
+        path: "/dashboard/report/transaction",
+        name: "transactionReport",
         component: TransactionReport,
         meta: {
             auth: true,
             adminAuth: false,
-            title: 'User TransactionReport',
-        }
+            title: "User TransactionReport",
+        },
     },
     {
-        path: '/dashboard/referral',
-        name: 'ReferralReport',
+        path: "/dashboard/referral",
+        name: "ReferralReport",
         component: referralReport,
         meta: {
             auth: true,
             adminAuth: false,
-            title: 'User ReferralReport',
-        }
+            title: "User ReferralReport",
+        },
     },
     // ADMIN ROUTES
     {
-        path: '/admin/dashboard',
-        name: 'adminDashboard',
+        path: "/admin/dashboard",
+        name: "adminDashboard",
         component: AdminDashboard,
         meta: {
             auth: true,
             adminAuth: true,
             // requiresAuth: false,
-            title: 'Admin Dashboard',
-        }
+            title: "Admin Dashboard",
+        },
     },
     {
-        path: '/admin/dashboard/users',
-        name: 'users',
+        path: "/admin/dashboard/users",
+        name: "users",
         component: Users,
         meta: {
             auth: true,
             adminAuth: true,
-            title: 'Admin Users',
-        }
+            title: "Admin Users",
+        },
     },
     {
-        path: '/admin/dashboard/settings',
-        name: 'adminSetting',
+        path: "/admin/dashboard/settings",
+        name: "adminSetting",
         component: Settings,
         meta: {
             auth: true,
             adminAuth: true,
-            title: 'Admin Settings',
-        }
+            title: "Admin Settings",
+        },
     },
     {
-        path: '/admin/dashboard/user-view',
-        name: 'user-view',
+        path: "/admin/dashboard/user-view",
+        name: "user-view",
         component: UserView,
         meta: {
             auth: true,
             adminAuth: true,
-            title: 'Admin user preview',
-        }
+            title: "Admin user preview",
+        },
     },
     {
-        path: '/admin/dashboard/user-edit',
-        name: 'user-edit',
+        path: "/admin/dashboard/user-edit",
+        name: "user-edit",
         component: UserEdit,
         meta: {
             auth: true,
             adminAuth: true,
-            title: 'Admin Edit user',
-        }
+            title: "Admin Edit user",
+        },
     },
     {
-        path: '/admin/dashboard/deposits',
-        name: 'deposits',
+        path: "/admin/dashboard/deposits",
+        name: "deposits",
         component: Deposits,
         meta: {
             auth: true,
             adminAuth: true,
-            title: 'Admin Deposits',
-        }
+            title: "Admin Deposits",
+        },
     },
     {
-        path: '/admin/dashboard/subscriptions',
-        name: 'subscriptions',
+        path: "/admin/dashboard/subscriptions",
+        name: "subscriptions",
         component: Subscriptions,
         meta: {
             auth: true,
             adminAuth: true,
-            title: 'Admin Subscriptions',
-        }
+            title: "Admin Subscriptions",
+        },
     },
     {
-        path: '/admin/dashboard/withdrawals',
-        name: 'withdrawals',
+        path: "/admin/dashboard/withdrawals",
+        name: "withdrawals",
         component: Withdrawals,
         meta: {
             auth: true,
             adminAuth: true,
-            title: 'Admin Withdrawals',
-        }
+            title: "Admin Withdrawals",
+        },
     },
-
-]
+];
 const router = new VueRouter({
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {

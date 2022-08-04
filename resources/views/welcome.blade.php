@@ -103,7 +103,7 @@
     <!-- <script src="{{ asset('pixinvest/app-assets/js/scripts/pages/app-user-list.min.js') }}" defer></script>   -->
 
     
-  <script async src="{{ asset('assets/js/jquery-1.12.4.min.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery-1.12.4.min.js') }}"></script>
   <!-- <script src="./assets/js/jquery.bgscroll.js" defer></script> -->
     <!-- <script src="{{ asset('pixinvest/app-assets/js/customizer.min.js') }}" ></script> -->
     <!-- <script src="{{asset('js/jquery-3.5.1.min.js.download')}}" defer></script> -->

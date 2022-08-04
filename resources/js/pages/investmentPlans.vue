@@ -1,109 +1,183 @@
-<template>
-    <div class="page-wrapper">
-        <Header></Header>
+<script>
+export default {
+    data() {
+        return {
+            company: this.$root.appName,
+            domain: this.$root.appDomain,
+        };
+    },
+    created() {
+        let jquery = document.querySelector('script[src$="pace.js"]');
+        if (jquery == null) {
+            var js = document.createElement("script");
+            js.setAttribute("src", "assets/plugins/pace/pace.js");
+            document.head.appendChild(js);
+        }
+    },
 
-        <div class="row page-title m-3 p-2">
-            <div class="col-12 col-lg-8 container">
-                <h1>Investment Solutions</h1>
-                <p> <span>{{$root.appName}}</span> Limited offers two attractive and profitable investment plans for our valuable investors. Our dedicated team has put in a lot of time &amp; effort to present the best possible investment plans for you.</p>
+    mounted() {
+        let magnific = document.querySelector(
+            'script[src$="magnific-popup.min.js"]'
+        );
+        if (magnific == null) {
+            var js = document.createElement("script");
+            js.setAttribute("src", "assets/js/jquery-1.12.4.min.js");
+            js.setAttribute("async", true);
+            document.body.appendChild(js);
+            var js = document.createElement("script");
+            js.setAttribute("src", "assets/js/bootstrap.min.js");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/bootstrap-select.min.js");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute(
+                "src",
+                "assets/js/jquery.bootstrap-touchspin.min.js"
+            );
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/magnific-popup.min.js");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/waypoints.min.js");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/counterup.min.js");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/owl.carousel.min.js");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/waypoints-sticky.min.js");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/isotope.pkgd.min.js");
+            document.body.appendChild(js);
+
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/stellar.min.js");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/scrolla.min.js");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/custom.js");
+            js.setAttribute("defer", "");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/shortcode.js");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/jquery.bgscroll.js");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/tickerNews.min.js");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/ebuka.js");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute(
+                "src",
+                "assets/plugins/revolution/revolution/js/jquery.themepunch.tools.min.js"
+            );
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute(
+                "src",
+                "assets/plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js"
+            );
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute(
+                "src",
+                "assets/plugins/revolution/revolution/js/extensions/revolution-plugin.js"
+            );
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/rev-script-1.js");
+            document.body.appendChild(js);
+            js = document.createElement("script");
+            js.setAttribute("src", "assets/js/iziToast.min.js");
+            document.body.appendChild(js);
+        }
+    },
+};
+</script>
+<template>
+  <div class="m-0 p-0">
+    <div class="page-wraper">
+      <HomeHeader :domain=" domain"></HomeHeader>
+      <div class="page-content">
+        <div
+          class="wt-bnr-inr overlay-wraper"
+          style="background-image: url('assets/images/banner/banner2.jpg')"
+        >
+          <div class="overlay-main bg-black opacity-07"></div>
+          <div class="container">
+            <div class="wt-bnr-inr-entry">
+              <h1 class="text-white">Our Investment Plans</h1>
             </div>
+          </div>
         </div>
-        <!--start main container-->
-        <section class="main-container" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
-            <div class="main">
-                <div class="container">
-                    <div class="wrapper">
-                        <div class="page-heading text-center">
-                            <h2>Our Investment Plans</h2>
-                        </div>
-                        <p class="col mb-2 inv-intro text-center"> <span>{{$root.appName}}</span> offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. </p><br>
-                        <div class="row p-2">
-                            <div class="col-lg-3 col-sm-6 col-12">
-                                <p class="inv-intro text-left  col">
-                                    <span class="font-weight-bold">Bronze account features:</span><br>
-                                    Deposit: $20 - $150
-                                    Up to 5% R.O.I in 72 Hours minimum
-                                    Eligibility: A New User Can Only Use This Plan Twice
-                                    No Referral Commission
-                                    <br><br>
-                                </p>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 col-12">
-                                <p class="inv-intro text-left  col">
-                                    <span class="font-weight-bold">Silver account features:</span><br>
-                                    Deposit: $200 - $2,000
-                                    Up to 20%
-                                    30 Days minimum turnover
-                                    5% One time Referral Commission
-                                    <br><br>
-                                </p>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 col-12">
-                                <p class="inv-intro text-left  col">
-                                    <span class="font-weight-bold">Gold account features:</span><br>
-                                    Deposit: $5,000 - $30,000
-                                    Up to 40%
-                                    30 Days turnover
-                                    10% Referral Commission to the 5th chain
-                                    <br><br>
-                                </p>
-                            </div>
-                            <!-- <div class="col-lg-3 col-sm-6 col-12">
-                                <p class="inv-intro text-left  col">
-                                    <span class="font-weight-bold">Platinum account features:</span><br>
-                                    Deposit: $60,000 - $200,000
-                                    Upto 60%
-                                    14 days turnover
-                                    10% Referral Commission to the 10th chain.
-                                </p>
-                            </div> -->
-                        </div>
-                        <div class="row inv-plans">
-                            <div class=" col alpha omega">
-                                <div class="col plan-wrap first">
-                                    <div class="plan-sticker">
-                                        <div class="plan-inner">
-                                            <div class="plan-in">
-                                                <h3>5%</h3>
-                                                <p>72<span> hours turnover</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <ul class="plan-det">
-                                        <li><i aria-hidden="true" class="fa fa-check"></i> 5% 72 hours turnover</li>
-                                        <li><i aria-hidden="true" class="fa fa-check"></i> Min: 20 USD - Max: 150 USD</li>
-                                        <li><i aria-hidden="true" class="fa fa-check"></i> instant withdraw</li>
-                                    </ul>
-                                    <div class="inv-button">
-                                        <router-link to="/user/dashboard/deposit" class="btn btn-inverse">Make Investment</router-link>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col alpha omega">
-                                <div class="col plan-wrap first">
-                                    <div class="plan-sticker">
-                                        <div class="plan-inner">
-                                            <div class="plan-in">
-                                                <h3>60%</h3>
-                                                <p>30<span> days turnover</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <ul class="plan-det">
-                                        <li><i aria-hidden="true" class="fa fa-check"></i> 60% 14 days turnover</li>
-                                        <li><i aria-hidden="true" class="fa fa-check"></i> Min: 60,000 USD - Max: 200,000</li>
-                                        <li><i aria-hidden="true" class="fa fa-check"></i> instant withdraw</li>
-                                    </ul>
-                                    <div class="inv-button mt-5 p-0 pt-5">
-                                        <router-link to="/user/dashboard/deposit" class="btn btn-inverse">Make Investment</router-link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="bg-white marquee">
+          <div class="TickerNews" id="T1">
+            <!-- TradingView Widget BEGIN -->
+            <div
+              class="tradingview-widget-container"
+              style="width: 100%; height: 76px"
+            >
+              <iframe
+                scrolling="no"
+                allowtransparency="true"
+                frameborder="0"
+                src="//s.tradingview.com/embed-widget/ticker-tape/?locale=en&amp;page-uri=https%3A%2F%2Feurogg.com%2Fabout#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22FOREXCOM%3ASPXUSD%22%2C%22title%22%3A%22S%26P%20500%22%7D%2C%7B%22proName%22%3A%22FOREXCOM%3ANSXUSD%22%2C%22title%22%3A%22Nasdaq%20100%22%7D%2C%7B%22proName%22%3A%22FX_IDC%3AEURUSD%22%2C%22title%22%3A%22EUR%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22BTC%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22ETH%2FUSD%22%7D%2C%7B%22description%22%3A%22DOGE%2FUSDT%22%2C%22proName%22%3A%22BINGBON%3ADOGEUSDT%22%7D%2C%7B%22description%22%3A%22XRP%2FUSDT%22%2C%22proName%22%3A%22BINANCE%3AXRPUSDT%22%7D%2C%7B%22description%22%3A%22BCH%2FUSDT%22%2C%22proName%22%3A%22KRAKEN%3ABCHUSDT%22%7D%2C%7B%22description%22%3A%22KISHU%2FUSDT%22%2C%22proName%22%3A%22OKEX%3AKISHUUSDT%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22light%22%2C%22isTransparent%22%3Atrue%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A76%2C%22utm_source%22%3A%22fxtradingmax.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%7D"
+                style="box-sizing: border-box; height: 44px; width: 100%"
+              ></iframe>
+              <div class="tradingview-widget-copyright">
+                <a href="#" rel="noopener" target="_blank"
+                  ><span class="blue-text">Ticker Tape</span></a
+                >
+                by {{  company }}
+              </div>
             </div>
-        </section>
-        <Footer></Footer>
+            <!-- TradingView Widget END -->
+          </div>
+        </div>
+       <InvestmentPlan></InvestmentPlan>
+       <HowItWorks></HowItWorks>
+        <AboutUs :company=" company"></AboutUs>
+        <WhyChooseUs :company=" company"></WhyChooseUs>
+        <HomeFooter
+          :company=" company"
+          :domain=" domain"
+        ></HomeFooter>
+      </div>
+      <button class="scroltop">
+        <span class="iconmoon-house relative" id="btn-vibrate"></span>Top
+      </button>
+      <div class="mgm" style="display: none; opacity: 1"></div>
     </div>
+  </div>
 </template>
+
+<style scoped>
+@import "../assets/ebuka.css";
+@import "../assets/css/style37913791.css";
+@import "../assets/css/skin/skin-25b275b27.css";
+@import "../assets/plugins/pace/pace.css";
+@import "../assets/plugins/revolution/revolution/css/settings.css";
+@import "../assets/plugins/revolution/revolution/css/navigation.css";
+
+.mgm {
+  border-radius: 7px;
+  position: fixed;
+  z-index: 90;
+  bottom: 45%;
+  right: 50px;
+  background: #fff;
+  padding: 10px 27px;
+  box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.3);
+}
+</style>
