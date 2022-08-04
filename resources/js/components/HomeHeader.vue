@@ -57,7 +57,13 @@ export default {
     style.rel = "stylesheet"
     style.type = "text/css"
     document.head.appendChild(style)
-style = document.createElement('link')
+
+    style = document.createElement('link')
+    style.href = this.$root.basepath + "/assets/css/style37913791.css"
+    style.rel = "stylesheet"
+    style.type = "text/css"
+    document.head.appendChild(style)
+    style = document.createElement('link')
     style.href = this.$root.basepath + "/assets/css/skin/skin-25b275b27.css"
     style.rel = "stylesheet"
     style.type = "text/css"
@@ -152,7 +158,7 @@ document.body.appendChild(js);
 </template>
 <style scoped>
 @import "../assets/ebuka.css";
-@import "../assets/css/style37913791.css";
+/* @import "../assets/css/style37913791.css"; */
 @import "../assets/css/skin/skin-25b275b27.css";
 @import "../assets/plugins/pace/pace.css";
 @import "../assets/plugins/revolution/revolution/css/settings.css";
