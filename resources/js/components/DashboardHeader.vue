@@ -160,6 +160,7 @@
 </template>
 <script>
 import moment from "moment";
+
 export default {
     data() {
         return {};
@@ -171,6 +172,14 @@ export default {
             "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
         );
         document.body.appendChild(js);
+        var css = document.createElement("link");
+        css.setAttribute(
+            "href",
+            this.$root.basepath + "/css/vendor/bootstrap.min.css"
+        );
+        css.setAttribute("type", "text/css");
+        css.setAttribute("rel", "stylesheet");
+        document.head.appendChild(css);
 
         let style = document.createElement("link");
         style.href = "../css/all.min.css";
@@ -202,6 +211,9 @@ export default {
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
+        js = document.createElement("script");
+        js.setAttribute("src", this.$root.basepath + "/js/vendor/bootstrap.bundle.min.js");
+        document.body.appendChild(js);
 
         js = document.createElement("script");
         js.setAttribute("src", this.$root.basepath + "/js/slick.min.js.download");
@@ -231,6 +243,7 @@ export default {
 };
 </script>
 <style scoped="">
+
 .icon {
     background-color: unset;
     width: unset;

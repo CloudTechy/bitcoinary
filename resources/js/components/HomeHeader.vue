@@ -2,41 +2,6 @@
 export default {
   props: ['domain'],
   created() {
-           
-            // js = document.createElement("script");
-            // js.setAttribute("src", "assets/js/jquery-1.12.4.min.js");
-            // js.setAttribute("async", "");
-            // document.body.appendChild(js);
-            // var js = document.createElement("script");
-            // js.setAttribute("src", "assets/js/bootstrap.min.js");
-            // document.body.appendChild(js);
-            // js = document.createElement("script");
-            // js.setAttribute("src", "assets/js/bootstrap-select.min.js");
-            // document.body.appendChild(js);
-            // js = document.createElement("script");
-            // js.setAttribute(
-            //     "src",
-            //     "assets/js/jquery.bootstrap-touchspin.min.js"
-            // );
-            // document.body.appendChild(js);
-            // js = document.createElement("script");
-            // js.setAttribute("src", "assets/js/magnific-popup.min.js");
-            // document.body.appendChild(js);
-            // js = document.createElement("script");
-            // js.setAttribute("src", "assets/js/waypoints.min.js");
-            // document.body.appendChild(js);
-            // js = document.createElement("script");
-            // js.setAttribute("src", "assets/js/counterup.min.js");
-            // document.body.appendChild(js);
-            // js = document.createElement("script");
-            // js.setAttribute("src", "assets/js/owl.carousel.min.js");
-            // document.body.appendChild(js);
-            // js = document.createElement("script");
-            // js.setAttribute("src", "assets/js/waypoints-sticky.min.js");
-            // document.body.appendChild(js);
-            // js = document.createElement("script");
-            // js.setAttribute("src", "assets/js/isotope.pkgd.min.js");
-            // document.body.appendChild(js);
     let style = document.createElement('link')
     style.href = this.$root.basepath + "/assets/css/bootstrap.min.css"
     style.rel = "stylesheet"
@@ -59,15 +24,48 @@ export default {
     document.head.appendChild(style)
 
     style = document.createElement('link')
+    style.href = this.$root.basepath + "/assets/css/loader.min.css"
+    style.rel = "stylesheet"
+    style.type = "text/css"
+    document.head.appendChild(style)
+
+    style = document.createElement('link')
+    style.href = this.$root.basepath + "/assets/css/plugins/pace/pace.css"
+    style.rel = "stylesheet"
+    style.type = "text/css"
+    document.head.appendChild(style)
+
+    style = document.createElement('link')
     style.href = this.$root.basepath + "/assets/css/style37913791.css"
     style.rel = "stylesheet"
     style.type = "text/css"
     document.head.appendChild(style)
+    
     style = document.createElement('link')
     style.href = this.$root.basepath + "/assets/css/skin/skin-25b275b27.css"
     style.rel = "stylesheet"
     style.type = "text/css"
     document.head.appendChild(style)
+
+style = document.createElement('link')
+    style.href = this.$root.basepath + "/assets/css/custom.css"
+    style.rel = "stylesheet"
+    style.type = "text/css"
+    document.head.appendChild(style)
+
+        style = document.createElement('link')
+    style.href = this.$root.basepath + "/assets/css/plugins/revolution/revolution/css/settings.css"
+    style.rel = "stylesheet"
+    style.type = "text/css"
+    document.head.appendChild(style)
+
+          style = document.createElement('link')
+    style.href = this.$root.basepath + "/assets/css/plugins/revolution/revolution/css/navigation.css"
+    style.rel = "stylesheet"
+    style.type = "text/css"
+    document.head.appendChild(style)
+
+
    var js = document.createElement("script");
 js.setAttribute("src", "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
 document.body.appendChild(js);
@@ -96,7 +94,17 @@ document.body.appendChild(js);
               </ul>
             </div>
             <div class="wt-topbar-right">
-              <ul class="list-unstyled e-p-bx pull-right">
+              <ul v-if="$auth.check()" class="list-unstyled e-p-bx pull-right">
+                <li><div id="google_translate_element"></div></li>
+
+                <li>
+                  <a @click = "$auth.logout()" href=""><i class="fa fa-sign-in"></i>Log out</a>
+                </li>
+                <li>
+                  <a href="/dashboard"><i class="fa fa-user"></i> Dashboard</a>
+                </li>
+              </ul>
+              <ul v-else class="list-unstyled e-p-bx pull-right">
                 <li><div id="google_translate_element"></div></li>
 
                 <li>
@@ -158,7 +166,7 @@ document.body.appendChild(js);
 </template>
 <style scoped>
 @import "../assets/ebuka.css";
-/* @import "../assets/css/style37913791.css"; */
+@import "../assets/css/style37913791.css"; 
 @import "../assets/css/skin/skin-25b275b27.css";
 @import "../assets/plugins/pace/pace.css";
 @import "../assets/plugins/revolution/revolution/css/settings.css";
