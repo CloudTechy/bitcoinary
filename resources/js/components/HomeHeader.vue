@@ -64,7 +64,11 @@ style = document.createElement('link')
     style.rel = "stylesheet"
     style.type = "text/css"
     document.head.appendChild(style)
-
+style = document.createElement('link')
+    style.href = this.$root.basepath + "/assets/ebuka.css"
+    style.rel = "stylesheet"
+    style.type = "text/css"
+    document.head.appendChild(style)
 
    var js = document.createElement("script");
 js.setAttribute("src", "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");

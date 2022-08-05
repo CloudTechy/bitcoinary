@@ -142,9 +142,9 @@
       src="assets/plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js"
       defer
     ></script>
-    <script defer>
-      jQuery(document).ready(() => {
-       if ($( "#chartdiv" ).length) {
+    <script>
+      jQuery(window).load(() => {
+       if (jQuery( "#chartdiv" ).length) {
      am4core.ready(function () {
           // Themes begin
           am4core.useTheme(am4themes_dark);
