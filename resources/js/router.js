@@ -13,12 +13,12 @@ import News from './pages/news'
 import DataCenter from './pages/DataCenter'
 // import Support from './pages/Support'
 import ConfirmRegistration from './pages/ConfirmRegistration'
-import Register from './pages/Register'
+// import Register from './pages/Register'
 // import Login from './pages/Login'
 import CheckEmail from './pages/CheckEmail'
 import ResetPassword from './pages/ResetPasswordForm'
-import ForgotPassword from './pages/ForgotPassword'
-import Dashboard from './pages/user/Dashboard'
+// import ForgotPassword from './pages/ForgotPassword'
+// import Dashboard from './pages/user/Dashboard'
 import Deposit from './pages/user/Deposit'
 import Withdraw from './pages/user/Withdraw'
 import Users from './pages/admin/Users'
@@ -159,9 +159,9 @@ const routes = [
     {
         path: "/register",
         name: "register",
-        component: Register,
+        component: () => import("./pages/Register"),
         meta: {
-            auth: undefined,
+            auth: false,
             title: "Register",
         },
     },

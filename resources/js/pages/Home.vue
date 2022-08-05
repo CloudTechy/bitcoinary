@@ -2561,7 +2561,7 @@ export default {
 @import "../assets/css/bootstrap-select.min.css";
 @import "../assets/css/magnific-popup.min.css"; */
 /* @import "../assets/css/loader.min.css"; */
-@import "../assets/css/style37913791.css";
+/* @import "../assets/css/style37913791.css"; */
 @import "../assets/css/skin/skin-25b275b27.css";
 @import "../assets/plugins/pace/pace.css";
 @import "../assets/plugins/revolution/revolution/css/settings.css";

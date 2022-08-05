@@ -2458,7 +2458,9 @@ input[type="email"]:disabled {
 }
 
 .header .site-logo img {
-    width: 175px;
+    max-width: 100%;
+    width: auto;
+    height:80px
 }
 
 @media (max-width: 1199px) {
@@ -4317,7 +4319,7 @@ blockquote {
 }
 
 .footer-logo img {
-    max-height: 50px;
+    max-height: 70px;
 }
 
 /* footer end */
@@ -4546,6 +4548,29 @@ only screen and (min-resolution: 2dppx) {
 
 .navbar-collapse.collapse.show {
     display: block !important;
+}
+
+.equal {
+    box-shadow: 0 5px 5px 0 rgb(204 163 84 / 25%) !important;
+}
+
+.headeraccount {
+    padding: 10px;
+    position: relative;
+    box-shadow: none;
+    color: black;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #000000;
+    color: #cca354;
+    font-size: 32px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
 
 

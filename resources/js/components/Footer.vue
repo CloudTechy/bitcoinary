@@ -41,11 +41,11 @@ company: this.$root.appName,
         <div class="footer__bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-7 text-md-right text-center">
+                    <div class="col-lg-7 text-lg-right text-center">
                         <p> © {{fullYear}} <a class="base--color" href="/">  <span>{{company}}</span>. </a> All Rights Reserved.
                         </p>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-lg-5">
                         <ul class="social-link-list d-flex flex-wrap justify-content-md-end justify-content-center">
                             <li><a href="#0" data-toggle="tooltip" data-placement="top" title="facebook"><i class="lab la-facebook-f"></i></a></li>
                             <li><a href="#0" data-toggle="tooltip" data-placement="top" title="twitter"><i class="lab la-twitter"></i></a></li>

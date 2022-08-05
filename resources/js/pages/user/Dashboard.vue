@@ -127,10 +127,10 @@
                                     <div class="container equal blog-card">
                                         <div class="row justify-content-center ">
                                             <div :data-background="$root.basepath + '/images/bg/bg-5.jpg'" class="col-md-12 no-padding wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-                                                <h3 class="row m-2">Your&nbsp;<span class="base--color"> Affiliate Link</span></h3>
+                                                <h3 class="row m-2">Your&nbsp;<span class="base--color"> affiliate link</span></h3>
                                                 <div class="row">
                                                     <div class="col-lg-8 col-md-7 col-sm-8 m-2">
-                                                        <div id="link">https://bitcoinarymint.com/?ref=bitcoinary</div>
+                                                        <div id="link">{{Referral_link}}</div>
                                                     </div>
                                                     <div class="col-lg-3 col-md-4 col-sm-3 m-2 text-md-right">
                                                         <button @click="$root.alert('success',' ', 'copied')" v-clipboard="Referral_link" class="cmn-btn" data-clipboard-target="#link">COPY LINK</button>
@@ -146,7 +146,7 @@
                 </div>
             </div>
         </div>
-        <<Footer></Footer>>
+        <Footer></Footer>>
     </div>
 </template>
 <script>
@@ -182,28 +182,9 @@
 }
 
 </script>
-<style type="text/css">
-.equal {
-    box-shadow: 0 5px 5px 0 rgb(204 163 84 / 25%) !important;
-}
+<style lang="scss" scoped>
+// @import "../../assets/css/main.css";
+// @import "../../assets/css/slick.css";
 
-.headeraccount {
-    padding: 10px;
-    position: relative;
-    box-shadow: none;
-    color: black;
-}
-
-.icon {
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    background-color: #000000;
-    color: #cca354;
-    font-size: 32px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-}
 
 </style>
