@@ -5,7 +5,7 @@
                 <nav class="navbar navbar-expand-xl p-0 align-items-center">
                     <a class="site-logo site-title" href="/"
                         ><img
-                            :src="$root.basepath + '/images/logo.png'"
+                            :src="$root.basepath + '/assets/images/logo2.png'"
                             alt="site-logo"
                     /></a>
                     <div class="account-menu mobile-acc-menu dropdown">

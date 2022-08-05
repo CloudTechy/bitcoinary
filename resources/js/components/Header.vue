@@ -1,12 +1,11 @@
 <template>
-    <!-- header-section start  -->
     <header class="header animated fadeInDown menu-fixed">
         <div class="header__bottom">
             <div class="container">
                 <nav class="navbar navbar-expand-xl p-0 align-items-center">
                     <a class="site-logo site-title" href="/"
                         ><img
-                            :src="$root.basepath + '/images/logo.png'"
+                            :src="$root.basepath + '/assets/images/logo2.png'"
                             alt="site-logo"
                     /></a>
                     <div class="account-menu mobile-acc-menu dropdown">
@@ -63,27 +62,39 @@
                     >
                         <ul class="navbar-nav main-menu m-auto">
                             <li>
-                                <!-- <router-link to="/">Home</router-link> -->
-                                <a href="/">Home</a>
+                                <a href="/dashboard">Dashboard</a>
                             </li>
                             <li>
-                                <a href="/about">About</a>
-                                <!-- <router-link to="/about">About</router-link> -->
+                                <a href="/dashboard/deposit">Make deposit</a>
                             </li>
                             <li>
-                                <a href="/register">Get Started</a>
-                                <!-- <router-link to="/register">Get Started</router-link> -->
+                                <a href="/dashboard/withdraw">Withdraw</a>
                             </li>
                             <li>
-                                <a href="/#packages">Investment plans</a>
-                                <!-- <router-link to="/investmentPlans">Investment plans</router-link> -->
+                                <a href="/dashboard/plans">Active plans</a>
                             </li>
                             <li>
-                                <a href="/partners">Partners</a>
+                                <a href="/dashboard/withdrawal-report"
+                                    >Withdrawal history</a
+                                >
                             </li>
-                            <li>
-                                <a href="/#faq">FAQ</a>
-                                <!-- <router-link to="/faq">Faq</router-link> -->
+                            <li><a href="/dashboard/referral">Referrals</a></li>
+                            <li class="menu_has_children">
+                                <a href="/dashboard/settings"
+                                    >Account Setting</a
+                                >
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="/dashboard/settings/#profile"
+                                            >Profile setup</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a href="/dashboard/settings/#payment"
+                                            >Payment setup</a
+                                        >
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                         <div class="nav-right">
@@ -148,22 +159,11 @@
     </header>
 </template>
 <script>
+import moment from "moment";
+
 export default {
     data() {
-        return {
-            routes: {
-                // UNLOGGED
-                unlogged: [
-                    { name: "Register", path: "/register" },
-                    { name: "Login", path: "/login" },
-                ],
-                // LOGGED USER
-                user: [{ name: "Dashboard", path: "/dashboard" }],
-                // LOGGED ADMIN
-                admin: [{ name: "AdminDashboard", path: "/admin/dashboard" }],
-            },
-            rate: "",
-        };
+        return {};
     },
     beforeCreate() {
         let js = document.createElement("script");
@@ -172,60 +172,79 @@ export default {
             "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
         );
         document.body.appendChild(js);
+        var css = document.createElement("link");
+        css.setAttribute(
+            "href",
+            this.$root.basepath + "/css/vendor/bootstrap.min.css"
+        );
+        css.setAttribute("type", "text/css");
+        css.setAttribute("rel", "stylesheet");
+        document.head.appendChild(css);
 
         let style = document.createElement("link");
-        style.href = "../css/all.min.css";
+        style.href =this.$root.basepath +  "/css/all.min.css";
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
         style = document.createElement("link");
-        style.href = "../css/line-awesome.min.css";
+        style.href =this.$root.basepath +  "/css/line-awesome.min.css";
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
         style = document.createElement("link");
-        style.href = "../css/vendor/animate.min.css";
+        style.href =this.$root.basepath +  "/css/vendor/animate.min.css";
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
         style = document.createElement("link");
-        style.href = "../css/vendor/slick.css";
+        style.href =this.$root.basepath +  "/css/vendor/slick.css";
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
         style = document.createElement("link");
-        style.href = "../css/vendor/dots.css";
+        style.href =this.$root.basepath +  "/css/vendor/dots.css";
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
         style = document.createElement("link");
-        style.href = "../css/main.css";
+        style.href =this.$root.basepath +  "/css/main.css";
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
+        js = document.createElement("script");
+        js.setAttribute("src", this.$root.basepath + "/js/vendor/bootstrap.bundle.min.js");
+        // js.setAttribute("async", "");
+        document.body.appendChild(js);
 
         js = document.createElement("script");
-        js.setAttribute("src", $root.basepath + "/js/slick.min.js.download");
+        js.setAttribute("src", this.$root.basepath + "/js/slick.min.js.download");
         document.body.appendChild(js);
         js = document.createElement("script");
-        js.setAttribute("src", $root.basepath + "/js/wow.min.js.download");
+        js.setAttribute("src", this.$root.basepath + "/js/wow.min.js.download");
         document.body.appendChild(js);
         js = document.createElement("script");
-        js.setAttribute("src", $root.basepath + "/js/contact.js.download");
+        js.setAttribute("src", this.$root.basepath + "/js/contact.js.download");
         document.body.appendChild(js);
         js = document.createElement("script");
-        js.setAttribute("src", $root.basepath + "/js/k.js");
+        js.setAttribute("src", this.$root.basepath + "/js/k.js");
         document.body.appendChild(js);
     },
-    computed: {},
-    // components: { Menu },
+    computed: {
+        getIp() {
+            return this.$auth.user().ip != undefined
+                ? this.$auth.user().ip
+                : this.$root.ip;
+        },
+        time() {
+            return moment(this.$auth.user().created_at).format("MMM Do YYYY");
+        },
+    },
+    mounted() {},
     methods: {},
-    mounted() {
-        // console.log(this.$auth)
-    },
 };
 </script>
 <style scoped="">
+
 .icon {
     background-color: unset;
     width: unset;
@@ -278,5 +297,25 @@ export default {
     position: absolute;
     top: 100%;
     left: -100%;
+}
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+body {
+    top: 0px !important;
+}
+.goog-te-gadget .goog-te-combo {
+    margin: 4px 0;
+    padding: 9px 12px;
+}
+.mgm a {
+    font-weight: 700;
+    display: block;
+    color: #ff5722;
+}
+
+.mgm a:active {
+    transition: all 0.2s ease;
+    color: #ff5722;
 }
 </style>

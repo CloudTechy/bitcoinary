@@ -1,70 +1,11 @@
-<template>
-    <!-- footer section start -->
-    <footer class="footer bg_img" :data-background="$root.basepath + '/images/bg/bg-7.jpg'">
-        <div class="footer__top">
-            <div class="container">
-                <div class="row" style="margin-top:50px;">
-                    <div class="col-md-12">
-                        <div class="row equal">
-                            <div :data-background="$root.basepath + '/images/bg/bg-5.jpg'" class="col-md-8 no-padding wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;min-height: 180px;">
-                                <div class="incrop-left" style="min-height: 100%;">
-                                    <div class="incrop-left-img">
-                                        <img :src="$root.basepath + '/images/uploads/uk.png'">
-                                        <h4 class="step__title base--color" style="padding-bottom: 15px;">UK Registered &amp; USA Based Company</h4>
-                                        <p><span>{{$root.appName}}</span> which is based in the United States is a fully registered and licensed company in UK. <span>{{$root.appName}}</span> is powered by the latest and most secure form of SSL data encryption to keep all your data and information safe and secure.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 no-padding wow fadeInRight" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInRight;min-height: 180px;">
-                                <div class="incrop-right" style="min-height: 100%;">
-                                    <div class="incorp-inner">
-                                        <h4 class="step__title pb-sm-0" style="padding-bottom: 15px;color:#2f2e2e;">12019970</h4>
-                                        <p style="color:#2f2e2e;">Official Registered Company</p>
-                                        <a target="_blank" title="Read more about us" href="/about" style="padding-left:20px;margin-top: 0px;display: block;font-size: 0.8rem;" class="btn btn-black-warning section-home__btn textsite truncate" data-pjax="">Of Companies House</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-5 justify-content-center">
-                    <div class="col-lg-12 text-center">
-                        <a style="max-height: 200px;" href="#" class="footer-logo"><img :src="$root.basepath + '/images/logo.png'" alt="image"></a>
-                        <ul class="footer-short-menu d-flex flex-wrap justify-content-center mt-4">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/terms#privacy">Privacy & Policy</a></li>
-                            <li><a href="/terms">Terms & Conditions</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7 text-md-right text-center">
-                        <p> © {{fullYear}} <a class="base--color" href="/">  <span>{{$root.appName}}</span>. </a> All Rights Reserved.
-                        </p>
-                    </div>
-                    <div class="col-md-5">
-                        <ul class="social-link-list d-flex flex-wrap justify-content-md-end justify-content-center">
-                            <li><a href="#0" data-toggle="tooltip" data-placement="top" title="facebook"><i class="lab la-facebook-f"></i></a></li>
-                            <li><a href="#0" data-toggle="tooltip" data-placement="top" title="twitter"><i class="lab la-twitter"></i></a></li>
-                            <li><a href="#0" data-toggle="tooltip" data-placement="top" title="pinterest"><i class="lab la-pinterest-p"></i></a></li>
-                            <li><a href="#0" data-toggle="tooltip" data-placement="top" title="pinterest"><i class="lab la-pinterest-in"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-</template>
 <script>
-import moment from 'moment'
+import moment from "moment";
+
+
 export default {
     data() {
         return {
-
+company: this.$root.appName,
         }
     },
     computed: {
@@ -80,7 +21,49 @@ export default {
 }
 
 </script>
+<template>
+    <!-- footer section start -->
+    <footer class="footer bg_img" :data-background="$root.basepath + '/assets/images/bg/bg-7.jpg'">
+        <div class="footer__top">
+            <div class="container">
+                <div class="row mt-5 justify-content-center">
+                    <div class="col-lg-12 text-center">
+                        <a style="max-height: 200px;" href="#" class="footer-logo"><img :src="$root.basepath + '/assets/images/logo2.png'" alt="image"></a>
+                        <ul class="footer-short-menu d-flex flex-wrap justify-content-center mt-4">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/terms#privacy">Privacy & Policy</a></li>
+                            <li><a href="/terms">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 text-md-right text-center">
+                        <p> © {{fullYear}} <a class="base--color" href="/">  <span>{{company}}</span>. </a> All Rights Reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-5">
+                        <ul class="social-link-list d-flex flex-wrap justify-content-md-end justify-content-center">
+                            <li><a href="#0" data-toggle="tooltip" data-placement="top" title="facebook"><i class="lab la-facebook-f"></i></a></li>
+                            <li><a href="#0" data-toggle="tooltip" data-placement="top" title="twitter"><i class="lab la-twitter"></i></a></li>
+                            <li><a href="#0" data-toggle="tooltip" data-placement="top" title="pinterest"><i class="lab la-pinterest-p"></i></a></li>
+                            <li><a href="#0" data-toggle="tooltip" data-placement="top" title="pinterest"><i class="lab la-pinterest-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</template>
+
 <style scoped="">
+.footer::before {
+    content: none;
+ 
+}
 ._text_1nv7e_24 {
     font-family: Sailec-Regular, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
