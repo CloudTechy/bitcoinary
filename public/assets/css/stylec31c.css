@@ -167,7 +167,9 @@ nav.horizontal ul li {
     display: inline-block;
 } /* horizontal menu */
 img {
-    max-width: 100%;
+    max-width:100%; 
+	width:auto; 
+	height:80px; 
 }
 /*end reset*/
 html,
@@ -307,8 +309,7 @@ a {
     background: rgba(29, 28, 47, 0.66);
 }
 
-form.agile_form {
-}
+
 .w3_agile_main_grids h3 {
     margin-bottom: 2em;
     font-size: 1.5em;

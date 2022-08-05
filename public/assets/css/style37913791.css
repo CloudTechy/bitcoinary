@@ -7868,7 +7868,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 .logo-footer img { 
 	max-width:100%; 
 	width:auto; 
-	height:auto; 
+	height:80px; 
 	vertical-align:middle;
 }
 .logo-header span,
@@ -9085,7 +9085,7 @@ header .logo{
 }
 .wt-bnr-inr-entry { 
 	display:table-cell;
-	vertical-align:middle;
+	vertical-align:bottom;
 }
 
 
