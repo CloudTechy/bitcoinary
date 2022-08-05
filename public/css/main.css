@@ -4544,6 +4544,8 @@ only screen and (min-resolution: 2dppx) {
     color: black;
 }
 
-
+.navbar-collapse.collapse.show {
+    display: block !important;
+}
 
 

@@ -51,7 +51,7 @@
                         data-toggle="collapse"
                         data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent"
-                        aria-expanded="true"
+                        aria-expanded="false"
                         aria-label="Toggle navigation"
                     >
                         <span class="menu-toggle"></span>
@@ -182,37 +182,38 @@ export default {
         document.head.appendChild(css);
 
         let style = document.createElement("link");
-        style.href = "../css/all.min.css";
+        style.href =this.$root.basepath +  "/css/all.min.css";
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
         style = document.createElement("link");
-        style.href = "../css/line-awesome.min.css";
+        style.href =this.$root.basepath +  "/css/line-awesome.min.css";
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
         style = document.createElement("link");
-        style.href = "../css/vendor/animate.min.css";
+        style.href =this.$root.basepath +  "/css/vendor/animate.min.css";
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
         style = document.createElement("link");
-        style.href = "../css/vendor/slick.css";
+        style.href =this.$root.basepath +  "/css/vendor/slick.css";
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
         style = document.createElement("link");
-        style.href = "../css/vendor/dots.css";
+        style.href =this.$root.basepath +  "/css/vendor/dots.css";
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
         style = document.createElement("link");
-        style.href = "../css/main.css";
+        style.href =this.$root.basepath +  "/css/main.css";
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
         js = document.createElement("script");
         js.setAttribute("src", this.$root.basepath + "/js/vendor/bootstrap.bundle.min.js");
+        // js.setAttribute("async", "");
         document.body.appendChild(js);
 
         js = document.createElement("script");
