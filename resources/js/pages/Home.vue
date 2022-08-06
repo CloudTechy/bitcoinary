@@ -2573,7 +2573,7 @@ export default {
     position: fixed;
     z-index: 90;
     bottom: 45%;
-    right: 50px;
+    right: 10px;
     background: #fff;
     padding: 10px 27px;
     box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.3);
