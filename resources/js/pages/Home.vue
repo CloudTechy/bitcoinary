@@ -2274,7 +2274,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <AboutUs :domain="domain"></AboutUs>
+                <AboutUs :company="company"></AboutUs>
                 <br />
                 <br />
                 <div

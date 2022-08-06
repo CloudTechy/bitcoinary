@@ -28,7 +28,7 @@ export default {
                   style="
                     box-sizing: border-box;
                     height: calc(628px);
-                    width: 500px;
+                    width: 100%;
                   "
                 ></iframe>
               </div>

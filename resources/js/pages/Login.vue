@@ -96,11 +96,13 @@
                     </div>
                 </div>
             </div>
+            
             <div class="mt-5 agileits_copyright">
                 <span class="copyrights-text text-white"
+               
                     >© {{$root.fullYearTemplate}}
                     <a href="/" class="base--color">{{ company }}</a
-                    >. All rights reserved</span
+                    > <br><br>All rights reserved</span
                 >
             </div>
         </div>

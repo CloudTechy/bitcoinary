@@ -12,7 +12,7 @@ export default {
           <div class="overlay-main bg-black opacity-05"></div>
           <div class="container">
             <div class="row">
-              <div class="col-md-4 col-sm-6">
+              <div class="col-md-6 col-sm-6">
                 <div class="widget widget_about">
                   <div class="logo-footer clearfix p-b15">
                     <a href="/"
@@ -46,19 +46,8 @@ export default {
                 </div>
               </div>
 
-              <div class="col-md-4 col-sm-6">
-                <div class="widget widget_services">
-                  <h4 class="widget-title text-white">Quick links</h4>
-                  <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/faq">FAQ</a></li>
-                    <li><a href="/terms">Terms</a></li>
-                    <li><a href="/plan">Plan</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
+              
+              <div class="col-md-6 col-sm-6">
                 <div class="widget widget_services">
                   <h4 class="widget-title text-white">Contact Information</h4>
                   <ul>
@@ -119,7 +108,54 @@ export default {
             </div>
           </div>
         </div>
-
+<div class="row" style="color:white; margin-left:30px; margin-right:30px; margin-top:10px;">
+                    <div class="col-md-4 col-sm-4 footer-about footer-col ">
+                           <div class="sec-title">
+                            <h4 class="widget-title" style="color:white;">Quick Links To Buy Bitcoin In EUROPE</h4>
+                        </div>
+                         
+                        <ul class="footer-nav" style="padding-left:20px; color:white;">
+                            <li><a href="https://coinmama.com/">Coin Mama</a></li>
+                            <li><a href="https://coinfxinvestment.com/en/https/paybis.html">PayBis</a></li>
+                            <li><a href="https://coinbase.com/">Coin Base</a></li>
+                            <li><a href="https://luno.com/">Luno</a></li>
+                            <li><a href="https://xcoin.com/">Xcoin</a></li>
+                            <li><a href="https://kraken.com/">kraken</a></li>
+                            <li><a href="https://binance.com/">Binance</a></li>
+                            <li><a href="https://bit2me.com/">Bit2me</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-4 footer-about footer-col">
+                           <div class="sec-title">
+                            <h4 class="widget-title" style="color:white;">Quick Links To Buy Bitcoin In AMERICA</h4>
+                        </div>
+                        
+                        <ul class="footer-nav" style="padding-left:20px;">
+                            <li><a href="https://coinmama.com/">Coin Mama</a></li>
+                            <li><a href="https://coinfxinvestment.com/en/https/paybis.html">PayBis</a></li>
+                            <li><a href="https://coinbase.com/">Coin Base</a></li>
+                            <li><a href="https://luno.com/">Luno</a></li>
+                            <li><a href="https://xcoin.com/">Xcoin</a></li>
+                            <li><a href="https://localbitcoins.com/">Local Bitcoins</a></li>
+                            <li><a href="https://cex.io/">cex</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-4 footer-about footer-col ">
+                        <div class="sec-title">
+                            <h4 class="widget-title" style="color:white;">Quick Links To Buy Bitcoin In OTHERS</h4>
+                        </div>
+                        
+                        <ul class="footer-nav" style="padding-left:20px;">
+                            <li><a href="https://indodax.com/">Indodax</a></li>
+                            <li><a href="https://coinfxinvestment.com/en/https/coinhako.html">Coinhako</a></li>
+                            <li><a href="https://wazirx.com/">Wazirx</a></li>
+                            <li><a href="https://zebpay.com/">Zebpay</a></li>
+                            <li><a href="https://Ramzinex.com">Ramzinex</a></li>
+                            <li><a href="https://nobitex.ir/">Nobitex</a></li>
+                            <li><a href="https://wallex.ir/">Wallex</a></li>
+                        </ul>
+                    </div>
+        </div>
         <div class="footer-bottom overlay-wraper">
           <div class="overlay-main"></div>
           <div class="constrot-strip"></div>

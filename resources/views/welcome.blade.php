@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <title id="title">{{config('app.name')}}</title>
-    <meta name="theme-color" content="#cca354"/>
+    <!-- <meta name="theme-color" content="#cca354"/> -->
     <meta name="description" content="{{config('app.name')}} is a community of dedicated investors that wants to make a steady extra income. we deal extensively on bitcoin">
     <meta name="keywords" content=" {{config('app.name')}}, Shares, Finance, Bitcoin, Investment">
     <meta name="author" content=" {{config('app.name')}} ICT Team">
@@ -144,9 +144,7 @@
     ></script>
     <script>
       jQuery(window).load(() => {
-        console.log('yeah')
        if (jQuery( "#chartdiv" ).length) {
-        console.log('yeah yeah')
      am4core.ready(function () {
           // Themes begin
           am4core.useTheme(am4themes_dark);
@@ -614,6 +612,7 @@
       });
     })
 </script>
+
 <style>
    .goog-te-banner-frame.skiptranslate {
         display: none !important;
