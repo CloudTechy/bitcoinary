@@ -28,7 +28,7 @@
                             </li>
                             <li class="dropdown-divider"></li>
                             <li @click="$auth.logout()" class="dropdown-item">
-                                <a tabindex="-1" href="#">Sign out</a>
+                                <a tabindex="-1" href="">Sign out</a>
                             </li>
                         </ul>
                         <ul v-else class="dropdown-menu">
@@ -125,7 +125,7 @@
                                         @click="$auth.logout()"
                                         class="dropdown-item"
                                     >
-                                        <a tabindex="-1" href="#">Sign out</a>
+                                        <a tabindex="-1" href="">Sign out</a>
                                     </li>
                                 </ul>
                                 <ul v-else class="dropdown-menu">

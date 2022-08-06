@@ -337,10 +337,10 @@ a {
 }
 
 .base--color {
-    color: #ff5722;
+    color: #ff5722 !important;
 }
 a.base--color:hover {
-    color: #ff1744;
+    color: #ff1744 !important;
 }
 .wthree_input input[type="text"]:hover, .wthree_input input[type="email"]:hover, .vue-tel-input:hover, .wthree_input input[type="password"]:hover {
 
@@ -536,10 +536,10 @@ label.radio {
     .wthree_input input[type="password"] {
         width: 83%;
     }
-    #progress,
+    /* #progress,
     #progress-complete {
         height: 10px;
-    }
+    } */
     .radio i {
         left: 33.5%;
     }
@@ -689,10 +689,10 @@ label.radio {
         font-size: 1.8em;
         letter-spacing: 2px;
     }
-    #progress,
+    /* #progress,
     #progress-complete {
         height: 5px;
-    }
+    } */
     .agile_form {
         padding: 1.5em;
     }

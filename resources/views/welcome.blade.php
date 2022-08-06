@@ -144,7 +144,9 @@
     ></script>
     <script>
       jQuery(window).load(() => {
+        console.log('yeah')
        if (jQuery( "#chartdiv" ).length) {
+        console.log('yeah yeah')
      am4core.ready(function () {
           // Themes begin
           am4core.useTheme(am4themes_dark);

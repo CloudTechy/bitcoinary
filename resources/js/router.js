@@ -3,39 +3,41 @@ import VueRouter from 'vue-router'
 // Pages
 // import Home from './pages/Home'
 // import NotFound from './pages/Error404.vue'
-import Terms from './pages/terms.vue'
+// import Terms from './pages/terms.vue'
 // import About from './pages/About'
-import GetStarted from './pages/getStarted'
+// import GetStarted from './pages/getStarted'
 // import Faq from './pages/faq'
 // import InvestmentPlans from './pages/investmentPlans'
-import Partners from './pages/partners'
-import News from './pages/news'
-import DataCenter from './pages/DataCenter'
+// import Partners from './pages/partners'
+// import News from './pages/news'
+// import DataCenter from './pages/DataCenter'
 // import Support from './pages/Support'
-import ConfirmRegistration from './pages/ConfirmRegistration'
+// import ConfirmRegistration from './pages/ConfirmRegistration'
 // import Register from './pages/Register'
 // import Login from './pages/Login'
-import CheckEmail from './pages/CheckEmail'
-import ResetPassword from './pages/ResetPasswordForm'
+// import CheckEmail from './pages/CheckEmail'
+// import ResetPassword from './pages/ResetPasswordForm'
 // import ForgotPassword from './pages/ForgotPassword'
+
 // import Dashboard from './pages/user/Dashboard'
-import Deposit from './pages/user/Deposit'
-import Withdraw from './pages/user/Withdraw'
-import Users from './pages/admin/Users'
-import UserView from './pages/admin/UserView'
-import UserEdit from './pages/admin/Edit'
-import Deposits from './pages/admin/Deposits'
-import Withdrawals from './pages/admin/Withdrawals'
-import Subscriptions from './pages/admin/Subscriptions'
-import AdminDashboard from './pages/admin/Dashboard'
-import Settings from './pages/admin/AdminSettings'
-import WithdrawReport from './pages/user/reports/WithdrawalReport'
-import DepositReport from './pages/user/reports/DepositReport'
-import UserPlans from './pages/user/reports/DepositReport'
-import referralReport from './pages/user/reports/ReferralReport'
-import TransactionReport from './pages/user/reports/TransactionReport'
-import Setting from './pages/user/Setting'
-import Security from './pages/user/Security'
+// import Deposit from './pages/user/Deposit'
+// import Withdraw from './pages/user/Withdraw'
+// import WithdrawReport from './pages/user/reports/WithdrawalReport'
+// import DepositReport from './pages/user/reports/DepositReport'
+// import UserPlans from './pages/user/reports/DepositReport'
+// import referralReport from './pages/user/reports/ReferralReport'
+// import TransactionReport from './pages/user/reports/TransactionReport'
+// import Setting from './pages/user/Setting'
+// import Security from './pages/user/Security'
+
+import Users from "./pages/admin/Users";
+import UserView from "./pages/admin/UserView";
+import UserEdit from "./pages/admin/Edit";
+import Deposits from "./pages/admin/Deposits";
+import Withdrawals from "./pages/admin/Withdrawals";
+import Subscriptions from "./pages/admin/Subscriptions";
+import AdminDashboard from "./pages/admin/Dashboard";
+import Settings from "./pages/admin/AdminSettings";
 
 // Routes
 const routes = [
@@ -60,7 +62,7 @@ const routes = [
     {
         path: "/terms",
         name: "Terms",
-        component: Terms,
+        component: () => import("./pages/Error404"),
         meta: {
             auth: undefined,
             title: "Terms",
@@ -75,42 +77,42 @@ const routes = [
             title: "About",
         },
     },
-    {
-        path: "/checkEmail",
-        name: "checkEmail",
-        component: CheckEmail,
-        meta: {
-            auth: undefined,
-            title: "Check Email",
-        },
-    },
-    {
-        path: "/confirm-registration",
-        name: "confirmRegistration",
-        component: ConfirmRegistration,
-        meta: {
-            auth: true,
-            title: "Confirm Registration",
-        },
-    },
-    {
-        path: "/news",
-        name: "news",
-        component: News,
-        meta: {
-            auth: undefined,
-            title: "News",
-        },
-    },
-    {
-        path: "/partners",
-        name: "partners",
-        component: Partners,
-        meta: {
-            auth: undefined,
-            title: "Partners",
-        },
-    },
+    // {
+    //     path: "/checkEmail",
+    //     name: "checkEmail",
+    //     component: CheckEmail,
+    //     meta: {
+    //         auth: undefined,
+    //         title: "Check Email",
+    //     },
+    // },
+    // {
+    //     path: "/confirm-registration",
+    //     name: "confirmRegistration",
+    //     component: ConfirmRegistration,
+    //     meta: {
+    //         auth: true,
+    //         title: "Confirm Registration",
+    //     },
+    // },
+    // {
+    //     path: "/news",
+    //     name: "news",
+    //     component: News,
+    //     meta: {
+    //         auth: undefined,
+    //         title: "News",
+    //     },
+    // },
+    // {
+    //     path: "/partners",
+    //     name: "partners",
+    //     component: Partners,
+    //     meta: {
+    //         auth: undefined,
+    //         title: "Partners",
+    //     },
+    // },
     {
         path: "/plan",
         name: "investmentPlans",
@@ -120,28 +122,29 @@ const routes = [
             title: "Investment Plans",
         },
     },
-    {
-        path: "/dataCenter",
-        name: "dataCenter",
-        component: DataCenter,
-        meta: {
-            auth: undefined,
-            title: "Data Center",
-        },
-    },
-    {
-        path: "/getStarted",
-        name: "getStarted",
-        component: GetStarted,
-        meta: {
-            auth: undefined,
-            title: "Get Started",
-        },
-    },
+    // {
+    //     path: "/dataCenter",
+    //     name: "dataCenter",
+    //     component: DataCenter,
+    //     meta: {
+    //         auth: undefined,
+    //         title: "Data Center",
+    //     },
+    // },
+    // {
+    //     path: "/getStarted",
+    //     name: "getStarted",
+    //     component: GetStarted,
+    //     meta: {
+    //         auth: undefined,
+    //         title: "Get Started",
+    //     },
+    // },
     {
         path: "/faq",
         name: "faq",
-        component: () => import("./pages/faq"),
+        // component: () => import("./pages/faq"),
+        component: () => import("./pages/Error404"),
         meta: {
             auth: undefined,
             title: "Faq",
@@ -177,7 +180,7 @@ const routes = [
     {
         path: "/reset_password",
         name: "resetPassword",
-        component: ResetPassword,
+        component: () => import("./pages/ResetPasswordForm"),
         meta: {
             auth: false,
             title: "Reset Password",
@@ -207,7 +210,7 @@ const routes = [
     {
         path: "/dashboard/deposit",
         name: "deposit",
-        component: Deposit,
+        component:  () => import("./pages/user/Deposit"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -217,7 +220,7 @@ const routes = [
     {
         path: "/dashboard/withdraw",
         name: "withdraw",
-        component: Withdraw,
+        component:  () => import("./pages/user/Withdraw"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -227,7 +230,7 @@ const routes = [
     {
         path: "/dashboard/settings",
         name: "Setting",
-        component: Setting,
+        component:  () => import("./pages/user/Setting"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -237,7 +240,7 @@ const routes = [
     {
         path: "/dashboard/security",
         name: "security",
-        component: Security,
+        component:  () => import("./pages/user/Security"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -247,7 +250,7 @@ const routes = [
     {
         path: "/dashboard/withdrawal-report",
         name: "WithdrawReport",
-        component: WithdrawReport,
+        component: () => import("./pages/user/reports/WithdrawalReport"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -257,7 +260,7 @@ const routes = [
     {
         path: "/dashboard/report/deposit",
         name: "depositReport",
-        component: DepositReport,
+        component:  () => import("./pages/user/reports/DepositReport"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -267,7 +270,7 @@ const routes = [
     {
         path: "/dashboard/plans",
         name: "UserPlans",
-        component: UserPlans,
+        component:  () => import("./pages/user/reports/DepositReport"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -277,7 +280,7 @@ const routes = [
     {
         path: "/dashboard/report/transaction",
         name: "transactionReport",
-        component: TransactionReport,
+        component:  () => import("./pages/user/reports/TransactionReport"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -287,7 +290,7 @@ const routes = [
     {
         path: "/dashboard/referral",
         name: "ReferralReport",
-        component: referralReport,
+        component:  () => import("./pages/user/reports/ReferralReport"),
         meta: {
             auth: true,
             adminAuth: false,

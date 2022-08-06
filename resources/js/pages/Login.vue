@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12 form-group">
                         <div class="wthree_input">
-                            <i style = "left:2%" class="fa fa-user" aria-hidden="true"></i>
+                            <i style = "left:2%" class="fa fa-envelope" aria-hidden="true"></i>
                             <input
                                 type="email"
                                 v-model="email"
@@ -242,13 +242,6 @@ export default {
 };
 </script>
 <style scoped>
-/* @import "../assets/css/bootstrap.css"; */
-@import "../assets/ebuka.css";
-@import "../assets/css/style37913791.css";
-@import "../assets/css/skin/skin-25b275b27.css";
-@import "../assets/plugins/pace/pace.css";
-@import "../assets/plugins/revolution/revolution/css/settings.css";
-@import "../assets/plugins/revolution/revolution/css/navigation.css";
-/* @import "../assets/css/stylec31c.css"; */
+
 
 </style>

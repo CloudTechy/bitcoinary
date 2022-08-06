@@ -1,19 +1,29 @@
 <template>
-    <div class="page-wrapper">
-        <Header></Header>
-        <div class="account-section bg_img" :style="'background:url('+ $root.basepath + '/images/bg/bg-5.jpg'">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-7 col-lg-9">
-                        <div class="account-card">
-                            <div class="account-card__header bg_img overlay--one" :style="'background:url('+ $root.basepath + '/images/bg/bg-6.jpg'">
-                                <h2 class="section-title text-center">Welcome to <span class="base--color"><span>{{$root.appName}}</span></span></h2>
-                                <h3 class="mt-2 text-center">Reset your Password</h3>
-                            </div>
-                            <div class="account-card__body">
-                                <form autocomplete="off" @submit.prevent="resetPassword" method="post">
-                                    <div class="form-group">
-                                        <ul :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="error-msg " v-if="errors.error">
+    <div class="main">
+        <h1>
+            <div
+                class="sitelogo"
+                style="background: rgba(1, 0, 21, 0.66); padding: 15px 0 5px"
+            >
+                <a href="/"
+                    ><img
+                        :src= '$root.basepath +"/assets/images/logo2.png"'
+                        width="230"
+                        height=""
+                        alt="site logo"
+                /></a>
+            </div>
+        </h1>
+        <div class="w3_agile_main_grids">
+            
+            <form
+                autocomplete="off"
+                @submit.prevent="resetPassword"
+                class="agile_form"
+                method="post"
+            >
+                <div class="form-group">
+                                        <ul class="alert alert-danger " v-if="errors.error">
                                             <li v-if="errors.error.token" v-for="error in errors.error.token">
                                                 <p class="text-center p-1 m-lg-3 m-sm-1">{{ error }}</p>
                                             </li>
@@ -27,31 +37,57 @@
                                                 <p v-if="errors.error.error && typeof errors.error.error == 'string' " class="text-center p-1 m-lg-3 m-sm-1">{{errors.message || errors.error.error}}</p>
                                             </li>
                                         </ul>
-                                        <div :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-5.jpg )'}" class="success-msg " v-if="success && !has_error">
-                                            <p class="p-2 m-lg-3 m-sm-1" v-if="response != undefined">{{response.message}}<span><a class="base--color"" href="/login">login</a></span></p>
+                                        <div class="alert alert-success" v-if="success && !has_error">
+                                            <p class="p-2 m-lg-3 m-sm-1" v-if="response != undefined">{{response.message}}<span><a class="base--color" href="/login">login</a></span></p>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Email</label>
-                                        <input type="email" id="email" class="form-control" placeholder="user@example.com" v-model="email" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Password</label>
-                                        <input type="password" id="password" class="form-control" placeholder="" v-model="password" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password_confirmation">Confirm Password</label>
-                                        <input type="password" id="password_confirmation" class="form-control" placeholder="" v-model="password_confirmation" required>
-                                    </div>
-                                    <button ref="process" type="submit" class="cmn-btn m-2">Submit</button>
-                                </form>
-                            </div>
+                <h3>Reset your Password</h3>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 form-group">
+                        <div class="wthree_input">
+                            <i style = "left:2%" class="fa fa-envelope" aria-hidden="true"></i>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" v-model="email" required>
+                                    
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 form-group">
+                        <div class="wthree_input">
+                            <i style = "left:2%" class="fa fa-lock" aria-hidden="true"></i>
+                            <input type="password" id="password" class="form-control" placeholder="Enter new password" v-model="password" required>
+                                   
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 form-group">
+                        <div class="wthree_input">
+                            <i style = "left:2%" class="fa fa-lock" aria-hidden="true"></i>
+                           <input type="password" id="password_confirmation" class="form-control" placeholder="Renter new password" v-model="password_confirmation" required>
+                                              
                         </div>
                     </div>
                 </div>
+                <div class="row form-group">
+                    <div class="col-md-12 col-sm-12">
+                        <button
+                            type="submit"
+                            ref="process"
+                            class="btn btn-primary"
+                            style="margin-top: 10px; width: 100%"
+                        >
+                            Reset
+                        </button>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </form>
+           
+            <div class="mt-5 agileits_copyright">
+                <span class="copyrights-text text-white"
+                    >© {{$root.fullYearTemplate}}
+                    <a href="/" class="base--color">{{ company }}</a
+                    >. All rights reserved</span
+                >
             </div>
         </div>
-        <Footer></Footer>
     </div>
 </template>
 <script>
@@ -67,6 +103,24 @@ export default {
             response: '',
             success: false,
         }
+    },
+    created() {
+        var css = document.createElement("link");
+        css.setAttribute(
+            "href",
+            this.$root.basepath + "/assets/css/bootstrap.css"
+        );
+        css.setAttribute("type", "text/css");
+        css.setAttribute("rel", "stylesheet");
+        document.head.appendChild(css);
+        var css = document.createElement("link");
+        css.setAttribute(
+            "href",
+            this.$root.basepath + "/assets/css/stylec31c.css"
+        );
+        css.setAttribute("type", "text/css");
+        css.setAttribute("rel", "stylesheet");
+        document.head.appendChild(css);
     },
     methods: {
         resetPassword() {
@@ -106,7 +160,7 @@ export default {
                 this.$refs.process.innerText = "processing..."
                 this.$refs.process.disabled = true
             } else {
-                this.$refs.process.innerText = "Update"
+                this.$refs.process.innerText = "Reset"
                 this.$refs.process.disabled = false
             }
         }
