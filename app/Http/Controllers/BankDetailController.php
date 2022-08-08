@@ -57,6 +57,8 @@ class BankDetailController extends Controller {
 			"acc_number" => "required_unless:currency_type,crypto|nullable",
 			"user_id" => "required|numeric|exists:users,id",
 			'swift_code' => 'nullable|string',
+			'crypto_memo' => 'nullable|string',
+			'crypto_standard' => 'nullable|string',
 			'currency_type' => 'required|string|exists:payment_methods,type',
 			'payment_method' => [
 				'required',

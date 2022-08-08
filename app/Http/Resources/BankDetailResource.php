@@ -24,6 +24,8 @@ class BankDetailResource extends JsonResource
             'currency_type' => $this->currency_type,
             'wallet' =>  $this->wallet,
             'swift_code' =>  $this->swift_code,
+            'crypto_standard' =>  $this->crypto_standard,
+            'crypto_memo' =>  $this->crypto_memo,
             'acc_name' =>  $this->acc_name,
             'acc_number' =>  $this->acc_number,
             'bank_name' => empty($this->bank) ? null : $this->bank->name,

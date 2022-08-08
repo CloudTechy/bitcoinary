@@ -61,39 +61,53 @@
                             making a deposit of
                             {{ $root.normalNumeral(amount) }} USD
                         </p>
-                        <p class="base--color font-weight-bold m-2">
-                            scan wallet address
-                        </p>
-                        <div class="m-3 qrcode">
+                        
+                        <div class="p-0 mt-3">
+                            <h4>
+                               Payment <span class="base--color">Details</span>
+                            </h4>
+                            <div class="m-3 qrcode">
                             <VueQRCodeComponent
                                 :size="150"
                                 :text="paymentMethod.wallet"
                             ></VueQRCodeComponent>
                         </div>
-                        <p class="base--color m-2 font-weight-bold">
-                            or copy wallet address
-                        </p>
-                        <div class="input-group mb-3">
-                            <input
-                                type="text"
-                                v-model="paymentMethod.wallet"
-                                disabled=""
-                                id="wallet"
-                                class="text-center form-control"
-                            />
-                            <div class="input-group-append">
-                                <button
-                                    @click="
+                            <table class="table table-sm">
+                                <tr v-if="paymentMethod.wallet">
+                                    <td class ="text-center base--color font-weight-bold">Wallet:</td>
+                                    <td id = "wallet" class = "text-center text-white">{{ paymentMethod.wallet }}
+                                    </td>
+                                    <td class = "text-left"><i class="fas fa-copy base--color " title ='copy' data-toggle="tooltip" data-placement="right"  @click="
                                         $root.alert('success', ' ', 'copied')
                                     "
                                     v-clipboard="paymentMethod.wallet"
                                     style="border-radius: 0px"
-                                    class="cmn-btn"
-                                    data-clipboard-target="#wallet"
-                                >
-                                    Copy
-                                </button>
-                            </div>
+                                    data-clipboard-target="#wallet"></i></td>
+                                </tr>
+                            <tr v-if="paymentMethod.crypto_memo">
+                                    <td class ="text-center base--color font-weight-bold">Memo:</td>
+                                    <td id = "memo" class = "text-center text-white">{{ paymentMethod.crypto_memo }}
+                                   </td>
+                                    <td class = "text-left"> <i class="fas fa-copy base--color" title ='copy' data-toggle="tooltip" data-placement="right"  @click="
+                                        $root.alert('success', ' ', 'copied')
+                                    "
+                                    v-clipboard="paymentMethod.wallet"
+                                    style="border-radius: 0px"
+                                    data-clipboard-target="#memo"></i></td>
+                                </tr>
+                                 <tr v-if="paymentMethod.crypto_standard">
+                                    <td class ="text-center base--color font-weight-bold">Blockchain:</td>
+                                    <td id = "standard" class = "text-center text-white text-uppercase">{{ paymentMethod.crypto_standard }}
+                                    </td>
+                                    <td class = "text-left"><i class="fas fa-copy base--color" title ='copy' data-toggle="tooltip" data-placement="right"  @click="
+                                        $root.alert('success', ' ', 'copied')
+                                    "
+                                    v-clipboard="paymentMethod.wallet"
+                                    style="border-radius: 0px"
+                                    data-clipboard-target="#standard"></i></td>
+                                </tr>
+
+                            </table>
                         </div>
                         <p v-if="!subscribed_plan" class="f-size-14 m-2">
                             If you do not know where to buy

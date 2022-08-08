@@ -24,6 +24,8 @@ class CreateBankDetailsTable extends Migration
             $table->string('acc_number')->nullable();
             $table->string('acc_name')->nullable();
             $table->string('swift_code')->nullable();
+            $table->string('crypto_memo')->nullable();
+            $table->string('crypto_standard')->nullable();
             $table->timestamps();
             $table->foreign('bank_id')->references('id')->on('banks');
             $table->foreign('user_id')->references('id')->on('users');

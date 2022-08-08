@@ -1,6 +1,6 @@
 <template>
     <div class="page-wrapper">
-        <DashboardHeader></DashboardHeader>
+        <!-- <DashboardHeader></DashboardHeader> -->
         <!-- account section start -->
         <div class="account-section p-0">
             <div class="container">
@@ -58,7 +58,7 @@
             </div>
         </div>
         <!-- account section end -->
-        <Footer></Footer>
+        <!-- <Footer></Footer> -->
     </div>
 </template>
 <script>
