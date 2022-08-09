@@ -16,9 +16,10 @@
                             <input type="text" v-model="invest_amount" name="invest_amount" placeholder="0" :min="plan.min_deposit" :max="plan.max_deposit" id="invest_amount" class="form-control base--bg">
                             <p v-if="plan.name" class="small">{{'Limit: $' + plan.min_deposit + ' - $' + plan.max_deposit}}</p>
                         </div>
-                        <div class="col-lg-4 col-md-6 mb-30">
+                        <div v-if="plan.turnover" class="col-lg-4 col-md-6 mb-30">
                             <label>
-                                {{plan.name == 'Bronze' ? 'Weekly Duration' : 'Monthly Duration'}}
+                                <!-- {{plan.name == 'Bronze' ? 'Weekly Duration' : 'Monthly Duration'}} -->
+                                {{plan.turnover + ' Duration'}}
                             </label>
                             <input v-model="duration" type="number" name="duration" id="duration" class="form-control base--bg">
                         </div>
@@ -50,7 +51,7 @@
     computed: {
         profit_amount() {
             if (parseInt(this.invest_amount) >= this.plan.min_deposit && parseInt(this.invest_amount) <= this.plan.max_deposit) {
-                return (parseInt(this.plan.roi) / 100) * parseInt(this.invest_amount)
+                return (parseInt(this.plan.roi) / 100) * parseInt(this.invest_amount) * parseInt(this.plan.duration)
             } else if (this.plan.name == undefined || this.invest_amount == "") return '0.00'
             else return 'input a valid amount for this plan'
         },
