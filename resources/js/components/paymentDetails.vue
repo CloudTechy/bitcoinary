@@ -96,7 +96,7 @@
                                     data-clipboard-target="#memo"></i></td>
                                 </tr>
                                  <tr v-if="paymentMethod.crypto_standard">
-                                    <td class ="text-center base--color font-weight-bold">Blockchain:</td>
+                                    <td class ="text-center base--color font-weight-bold">Standard:</td>
                                     <td id = "standard" class = "text-center text-white text-uppercase">{{ paymentMethod.crypto_standard }}
                                     </td>
                                     <td class = "text-left"><i class="fas fa-copy base--color" title ='copy' data-toggle="tooltip" data-placement="right"  @click="
