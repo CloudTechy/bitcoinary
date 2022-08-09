@@ -45,7 +45,6 @@
                         <li>Return {{plan.roi}}%</li>
                         <li>Matures in a {{plan.turnover}}</li>
                         <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span></li>
-                        <li>With loan Security</li>
                     </ul>
                 </div>
                 <div v-if="plan.name == 'Premium'">
