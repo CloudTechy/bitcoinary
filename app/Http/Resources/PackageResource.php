@@ -18,7 +18,7 @@ class PackageResource extends JsonResource {
 			'id' => $this->id,
 			'name' => $this->name,
 			'min_deposit' => $this->min_deposit,
-			'max_deposit' => $this->max_deposit,
+			'max_deposit' => $this->max_deposit == 1000000 ? 'Unlimited' : $this->max_deposit,
 			'roi' => $this->roi,
 			'turnover' => $duration->description,
 			'loop_termination' => $this->loop_termination,

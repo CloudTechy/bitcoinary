@@ -10,33 +10,24 @@
         <div  v-for = "plan in $root.packages" class="col-xl-3 col-lg-4 col-md-6 mb-30">
             <div class="package-card text-center bg_img" :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-4.png )'}">
                 <h4 class="package-card__title base--color text-capitalize mb-2">{{plan.name}}</h4>
-                <div v-if="plan.name == 'Bronze'">
+                <div v-if="plan.name == 'Starter'">
                     <ul class="package-card__features mt-4">
                         <li>Return {{plan.roi}}%</li>
-                        <li>Every {{plan.turnover}}</li>
+                        <li>Matures in a {{plan.turnover}}</li>
                         <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span></li>
                     </ul>
                 </div>
-                <div v-if="plan.name == 'Silver'">
+                <div v-if="plan.name == 'Basic'">
                     <ul class="package-card__features mt-4">
                         <li>Return {{plan.roi}}%</li>
-                        <li>Every {{plan.turnover}}</li>
+                        <li>Matures in a {{plan.turnover}}</li>
                         <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span></li>
-                        <li>With loan Security</li>
-                    </ul>
-                </div>
-                <div v-if="plan.name == 'Gold'">
-                    <ul class="package-card__features mt-4">
-                        <li>Return {{plan.roi}}%</li>
-                        <li>Every {{plan.turnover}}</li>
-                        <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span></li>
-                        <li>With loan Security</li>
                     </ul>
                 </div>
                 <div v-if="plan.name == 'Premium'">
                     <ul class="package-card__features mt-4">
                         <li>Return {{plan.roi}}%</li>
-                        <li>Every {{plan.turnover}}</li>
+                        <li>Matures in a {{plan.turnover}}</li>
                         <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span> </li>
                         <li>With loan Security</li>
                     </ul>
