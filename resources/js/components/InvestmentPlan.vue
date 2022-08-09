@@ -30,7 +30,7 @@
                                         class="row mb-none-30 justify-content-center"
                                     >
                                      
-                                        <div v-for="plan in $root.packages" class="col-xl-3 col-lg-4 col-md-6 mb-30">
+        <div v-for="plan in $root.packages" class="col-xl-3 col-lg-4 col-md-6 mb-30">
             <div class="package-card text-center bg_img" :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-4.png )'}">
                 <h4 class="package-card__title text-white text-capitalize mb-2">{{plan.name}}</h4>
                 <div v-if="plan.name == 'Starter'">
