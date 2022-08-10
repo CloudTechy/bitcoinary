@@ -146,7 +146,7 @@ export default {
             <div class="row">
               <div class="wt-footer-bot-left">
                 <span class="copyrights-text"
-                  >&copy; 2016 - 2022
+                  >&copy;{{$root.fullYearTemplate}}
                   <a href="/" class="base--color">{{company}}</a>. All rights
                   reserved</span
                 >

@@ -2438,7 +2438,7 @@ export default {
                                                     <a
                                                         href="/contact"
                                                         class="text-white"
-                                                        >here</a
+                                                        >click here</a
                                                     >
                                                 </h4>
                                             </div>
