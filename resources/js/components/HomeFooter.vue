@@ -77,23 +77,6 @@ export default {
                       class="wt-icon-box-wraper left bdr-1 bdr-gray-dark p-tb15 p-lr10 clearfix"
                     >
                       <div class="icon-md text-primary">
-                        <span class="fa fa-whatsapp fa-4x"></span>
-                      </div>
-                      <div class="icon-content text-white">
-                        <h5 class="wt-tilte text-uppercase m-b0">
-                          <a
-                            href="https://api.whatsapp.com/send?phone=17692030556&amp;text=Hello%20I%20want%20to%20know%20more%20about%20"
-                            class="text-white"
-                            >1-7692030556</a
-                          >
-                        </h5>
-                      </div>
-                    </div>
-                    <br />
-                    <div
-                      class="wt-icon-box-wraper left bdr-1 bdr-gray-dark p-tb15 p-lr10 clearfix"
-                    >
-                      <div class="icon-md text-primary">
                         <span class="iconmoon-travel"></span>
                       </div>
                       <div class="icon-content text-white">

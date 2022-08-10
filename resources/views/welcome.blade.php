@@ -8,7 +8,7 @@
 
     <title id="title">{{config('app.name')}}</title>
     <!-- <meta name="theme-color" content="#cca354"/> -->
-    <meta name="description" content="{{config('app.name')}} is a community of dedicated investors that wants to make a steady extra income. we deal extensively on bitcoin">
+    <meta name="description" content="{{config('app.name')}} has shown commendably successful and consistent performance and trading history. Currently, it is regarded as one of the best, most beneficial, brilliantly successful companies in the industry of forex trading and investing.">
     <meta name="keywords" content=" {{config('app.name')}}, Shares, Finance, Bitcoin, Investment">
     <meta name="author" content=" {{config('app.name')}} ICT Team">
   <!-- CSRF Token -->
