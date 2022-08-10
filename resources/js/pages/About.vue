@@ -219,8 +219,34 @@ export default {
                         </div>
                     </div>
                 </div>
-                <AboutUs :company="company"></AboutUs>
+                <div class="section-full p-tb20">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="section-head text-left p-3">
+                                    <span
+                                        class="wt-title-subline text-gray-dark font-16 m-b15"
+                                    ></span>
+                                    <h2 class="text-uppercase">Our Registration Certificate</h2>
+                                    <div class="wt-separator-outer">
+                                        <div
+                                            class="wt-separator bg-primary"
+                                        ></div>
+                                    </div>
+                                    <p>{{company}} is duly registered by the registrar of companies in Sweden.</p>
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class = "embed-responsive-item" :src="$root.basepath + '/assets/cert%20of%20Allied%20european%20crypto%20company.pdf#toolbar=0'" >
+                                     </iframe>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <WhyChooseUs :company="company"></WhyChooseUs>
+                
                 <HomeFooter :company="company" :domain="domain"></HomeFooter>
             </div>
             <button class="scroltop">
