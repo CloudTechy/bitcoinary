@@ -133,15 +133,10 @@
     <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
     <script src="//cdn.amcharts.com/lib/4/themes/dark.js"></script>
     <script src="//cdn.amcharts.com/lib/4/themes/animated.js"></script>
-    <script src="./assets/js/jquery.bgscroll.js" defer></script>
-    <script
-      src="assets/plugins/revolution/revolution/js/jquery.themepunch.tools.min.js"
-      defer
-    ></script>
-    <script
-      src="assets/plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js"
-      defer
-    ></script>
+    <script src="{{ asset('assets/js/jquery.bgscroll.js') }} " defer></script>
+    <script src="{{ asset('assets/plugins/revolution/revolution/js/jquery.themepunch.tools.min.js) }} " defer></script>
+    <script src="{{ asset('assets/plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js') }} " defer></script>
+   
     <script>
       jQuery(window).load(() => {
        if (jQuery( "#chartdiv" ).length) {
