@@ -104,19 +104,6 @@ export default {
         }
     },
 };
-// import { onMounted, onBeforeMount, reactive } from "vue";
-// import HomeFooter from "../components/HomeFooter.vue";
-// import HomeHeader from "../components/HomeHeader.vue";
-// import AboutUs from "../components/AboutUs.vue";
-// import WhyChooseUs from "../components/WhyChooseUs.vue";
-// const state = reactive({
-//   domain: import.meta.env.VITE_APP_DOMAIN,
-//   company: import.meta.env.VITE_COMPANY_NAME,
-// });
-
-// function increment() {
-//   count++
-// }
 </script>
 <template>
     <div class="m-0 p-0">
@@ -154,14 +141,7 @@ export default {
                                     width: 100%;
                                 "
                             ></iframe>
-                            <div class="tradingview-widget-copyright">
-                                <a href="#" rel="noopener" target="_blank"
-                                    ><span class="blue-text"
-                                        >Ticker Tape</span
-                                    ></a
-                                >
-                                by {{ company }}
-                            </div>
+                          
                         </div>
                         <!-- TradingView Widget END -->
                     </div>

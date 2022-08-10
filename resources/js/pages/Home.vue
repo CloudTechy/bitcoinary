@@ -2432,14 +2432,13 @@ export default {
                                                     Any Question?
                                                 </h3>
                                                 <p class="text-white">
-                                                    Contact our whatsapp
-                                                    customer support
+                                                    Contact our support
                                                 </p>
                                                 <h4 class="text-primary">
                                                     <a
-                                                        href="//api.whatsapp.com/send?phone=17692030556&amp;text=Hello%20I%20want%20to%20know%20more%20about%20FxTradingMax"
+                                                        href="/contact"
                                                         class="text-white"
-                                                        >1-7692030556</a
+                                                        >here</a
                                                     >
                                                 </h4>
                                             </div>
