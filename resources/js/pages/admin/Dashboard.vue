@@ -1,245 +1,719 @@
 <template>
-    <div>
-        <AdminDashboardHeader></AdminDashboardHeader>
-        <AdminDashboardSidebar></AdminDashboardSidebar>
-        <div class="app-content content ">
-            <div class="content-overlay"></div>
-            <div class="header-navbar-shadow"></div>
-            <div class="content-wrapper container-xxl p-0">
-                <div class="content-body">
-                    <section id="dashboard-analytics">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card invoice-list-wrapper">
-                                    <div class="card-datatable table-responsive">
-                                        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
-                                            <h3 class="p-2">Recent Investments</h3>
-                                            <table class="invoice-list-table table dataTable no-footer dtr-column" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
-                                                <thead>
-                                                    <tr role="row">
-                                                        <th class="control sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="display: none;"></th>
-                                                        <th class="sorting sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 88;" aria-label="Plan: activate to sort column ascending" aria-sort="descending">Plan</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 270px;" aria-label="Client: activate to sort column ascending">Investor</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 73px;" aria-label="Total: activate to sort column ascending">Amount</th>
-                                                        <th class="text-truncate sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 130px;" aria-label="Issued Date: activate to sort column ascending">Date</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 98px;" aria-label="Balance: activate to sort column ascending">Status</th>
-                                                        <th class="cell-fit sorting_disabled" rowspan="1" colspan="1" style="width: 80px;" aria-label="Actions">Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="odd">
-                                                        <td class=" control" tabindex="0" style="display: none;"></td>
-                                                        <td class="sorting_1"><a class="fw-bold" href="app-invoice-preview.html"> Dimond - Daily 8.52% for 14 Days</a></td>
-                                                        <td>
-                                                            <div class="d-flex justify-content-left align-items-center">
-                                                                <div class="avatar-wrapper">
-                                                                    <div class="avatar bg-light-success me-50">
-                                                                        <div class="avatar-content">JK</div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="d-flex flex-column">
-                                                                    <h6 class="user-name text-truncate mb-0">Jamal Kerrod</h6><small class="text-truncate text-muted">jamalkerrod@email.com</small>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td><span class="d-none">3077</span>$3077</td>
-                                                        <td style=""><span class="d-none">20190509</span>09 May 2019</td>
-                                                        <td style=""><span class="badge rounded-pill badge-light-success" text-capitalized=""> Paid </span></td>
-                                                        <td style="">
-                                                            <div class="d-flex align-items-center col-actions"><a class="me-1" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Send Mail" aria-label="Send Mail"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send font-medium-2">
-                                                                        <line x1="22" y1="2" x2="11" y2="13"></line>
-                                                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                                                                    </svg></a><a class="me-1" href="app-invoice-preview.html" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Preview Invoice" aria-label="Preview Invoice"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye font-medium-2">
-                                                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                                                        <circle cx="12" cy="12" r="3"></circle>
-                                                                    </svg></a>
-                                                                <div class="dropdown"><a class="btn btn-sm btn-icon px-0" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical font-medium-2">
-                                                                            <circle cx="12" cy="12" r="1"></circle>
-                                                                            <circle cx="12" cy="5" r="1"></circle>
-                                                                            <circle cx="12" cy="19" r="1"></circle>
-                                                                        </svg></a>
-                                                                    <div class="dropdown-menu dropdown-menu-end" style=""><a href="#" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download font-small-4 me-50">
-                                                                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                                                                <polyline points="7 10 12 15 17 10"></polyline>
-                                                                                <line x1="12" y1="15" x2="12" y2="3"></line>
-                                                                            </svg>Download</a><a href="app-invoice-edit.html" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-small-4 me-50">
-                                                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                                                            </svg>Edit</a><a href="#" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash font-small-4 me-50">
-                                                                                <polyline points="3 6 5 6 21 6"></polyline>
-                                                                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                                                            </svg>Delete</a><a href="#" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy font-small-4 me-50">
-                                                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                                                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                                                            </svg>Duplicate</a></div>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="even">
-                                                        <td class=" control" tabindex="0" style="display: none;"></td>
-                                                        <td class="sorting_1"><a class="fw-bold" href=""> Platinam - Daily 14.82% for 7 Days</a></td>
-                                                        <td>
-                                                            <div class="d-flex justify-content-left align-items-center">
-                                                                <div class="avatar-wrapper">
-                                                                    <div class="avatar me-50"><img :src="$root.basepath + '/pixinvest/avatar-s-1.jpg'" width="32" height="32"></div>
-                                                                </div>
-                                                                <div class="d-flex flex-column">
-                                                                    <h6 class="user-name text-truncate mb-0">Shamus Tuttle</h6><small class="text-truncate text-muted">shamustuttle@email.com</small>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td><span class="d-none">2230</span>$2230</td>
-                                                        <td style=""><span class="d-none">20191119</span>19 Nov 2019</td>
-                                                        <td style=""><span class="badge rounded-pill badge-light-success" text-capitalized=""> Paid </span></td>
-                                                        <td style="">
-                                                            <div class="d-flex align-items-center col-actions"><a class="me-1" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Send Mail" aria-label="Send Mail"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send font-medium-2">
-                                                                        <line x1="22" y1="2" x2="11" y2="13"></line>
-                                                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                                                                    </svg></a><a class="me-1" href="" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Preview Invoice" aria-label="Preview Invoice"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye font-medium-2">
-                                                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                                                        <circle cx="12" cy="12" r="3"></circle>
-                                                                    </svg></a>
-                                                                <div class="dropdown"><a class="btn btn-sm btn-icon px-0" data-bs-toggle="dropdown"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical font-medium-2">
-                                                                            <circle cx="12" cy="12" r="1"></circle>
-                                                                            <circle cx="12" cy="5" r="1"></circle>
-                                                                            <circle cx="12" cy="19" r="1"></circle>
-                                                                        </svg></a>
-                                                                    <div class="dropdown-menu dropdown-menu-end"><a href="#" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download font-small-4 me-50">
-                                                                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                                                                <polyline points="7 10 12 15 17 10"></polyline>
-                                                                                <line x1="12" y1="15" x2="12" y2="3"></line>
-                                                                            </svg>Download</a><a href="app-invoice-edit.html" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-small-4 me-50">
-                                                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                                                            </svg>Edit</a><a href="#" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash font-small-4 me-50">
-                                                                                <polyline points="3 6 5 6 21 6"></polyline>
-                                                                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                                                            </svg>Delete</a><a href="#" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy font-small-4 me-50">
-                                                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                                                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                                                            </svg>Duplicate</a></div>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div class="d-flex justify-content-between mx-2 row">
-                                                <div class="col-sm-12 col-md-6">
-                                                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 41 to 50 of 50 entries</div>
-                                                </div>
-                                                <div class="col-sm-12 col-md-6">
-                                                    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-                                                        <ul class="pagination">
-                                                            <li class="paginate_button page-item previous" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">&nbsp;</a></li>
-                                                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                                                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
-                                                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
-                                                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
-                                                            <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">5</a></li>
-                                                            <li class="paginate_button page-item next disabled" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0" class="page-link">&nbsp;</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+    <div class="page-wrapper default-version">
+       <AdminDashboardSidebar></AdminDashboardSidebar>
+        <!-- sidebar end -->
+        <!-- navbar-wrapper start -->
+       <AdminDashboardHeader></AdminDashboardHeader> 
+        <!-- navbar-wrapper end -->
+
+         <!-- 
+       -->
+
+        <div class="body-wrapper">
+            <div class="bodywrapper__inner">
+                <div
+                    class="row align-items-center mb-30 justify-content-between"
+                >
+                    <div class="col-lg-6 col-sm-6">
+                        <h6 class="page-title">Dashboard</h6>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 text-sm-right mt-sm-0 mt-3">
+                        <span class="text--info"
+                            >Last Cron Run <strong>2 minutes ago</strong></span
+                        >
+                    </div>
+                </div>
+
+                <div class="row mb-none-30">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                        <div class="dashboard-w1 bg--4 b-radius--10 box-shadow">
+                            <div class="icon">
+                                <i class="fa fa-users"></i>
+                            </div>
+                            <div class="details">
+                                <div class="numbers">
+                                    <span class="amount">5028</span>
+                                </div>
+                                <div class="desciption">
+                                    <span class="text--small">Total Users</span>
+                                </div>
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/users"
+                                    class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
+                                    >View All</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <!-- dashboard-w1 end -->
+                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                        <div class="dashboard-w1 bg--8 b-radius--10 box-shadow">
+                            <div class="icon">
+                                <i class="fa fa-users"></i>
+                            </div>
+                            <div class="details">
+                                <div class="numbers">
+                                    <span class="amount">5028</span>
+                                </div>
+                                <div class="desciption">
+                                    <span class="text--small"
+                                        >Total Verified Users</span
+                                    >
+                                </div>
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/users/active"
+                                    class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
+                                    >View All</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                        <div
+                            class="dashboard-w1 bg--red b-radius--10 box-shadow"
+                        >
+                            <div class="icon">
+                                <i class="la la-ban"></i>
+                            </div>
+                            <div class="details">
+                                <div class="numbers">
+                                    <span class="amount">3</span>
+                                </div>
+                                <div class="desciption">
+                                    <span class="text--small"
+                                        >Total Email Unverified Users</span
+                                    >
+                                </div>
+
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/users/email-unverified"
+                                    class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
+                                    >View All</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <!-- dashboard-w1 end -->
+                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                        <div class="dashboard-w1 bg--9 b-radius--10 box-shadow">
+                            <div class="icon">
+                                <i class="la la-ban"></i>
+                            </div>
+                            <div class="details">
+                                <div class="numbers">
+                                    <span class="amount">1</span>
+                                </div>
+                                <div class="desciption">
+                                    <span class="text--small"
+                                        >Total SMS Unverified Users</span
+                                    >
+                                </div>
+
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/users/sms-unverified"
+                                    class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
+                                    >View All</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <!-- dashboard-w1 end -->
+
+                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                        <div class="dashboard-w1 bg--2 b-radius--10 box-shadow">
+                            <div class="icon">
+                                <i class="fa fa-wallet"></i>
+                            </div>
+                            <div class="details">
+                                <div class="numbers">
+                                    <span class="amount">100,358,174.81</span>
+                                    <span class="currency-sign">$</span>
+                                </div>
+                                <div class="desciption">
+                                    <span class="text--small"
+                                        >User Deposit Wallet
+                                    </span>
+                                </div>
+
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/user/with-deposit-balance"
+                                    class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
+                                    >View All</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <!-- dashboard-w1 end -->
+
+                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                        <div class="dashboard-w1 bg--3 b-radius--10 box-shadow">
+                            <div class="icon">
+                                <i class="las la-dollar-sign"></i>
+                            </div>
+                            <div class="details">
+                                <div class="numbers">
+                                    <span class="amount">112,533,411.58</span>
+                                    <span class="currency-sign">$</span>
+                                </div>
+                                <div class="desciption">
+                                    <span class="text--small"
+                                        >User Interest Wallet</span
+                                    >
+                                </div>
+
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/user/with-interest-balance"
+                                    class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
+                                    >View All</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <!-- dashboard-w1 end -->
+
+                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                        <div
+                            class="dashboard-w1 bg--17 b-radius--10 box-shadow"
+                        >
+                            <div class="icon">
+                                <i class="las la-clipboard-check"></i>
+                            </div>
+                            <div class="details">
+                                <div class="numbers">
+                                    <span class="amount">9</span>
+                                </div>
+                                <div class="desciption">
+                                    <span class="text--small">Total Plan</span>
+                                </div>
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/plan-setting"
+                                    class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
+                                    >View All</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <!-- dashboard-w1 end -->
+                    <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
+                        <div
+                            class="dashboard-w1 bg--11 b-radius--10 box-shadow"
+                        >
+                            <div class="icon">
+                                <i class="las la-hand-holding-usd"></i>
+                            </div>
+                            <div class="details">
+                                <div class="numbers">
+                                    <span class="amount">135,491.00</span>
+                                    <span class="currency-sign">$</span>
+                                </div>
+                                <div class="desciption">
+                                    <span class="text--small"
+                                        >Total Investment</span
+                                    >
+                                </div>
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/report/plan"
+                                    class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
+                                    >View All</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <!-- dashboard-w1 end -->
+                </div>
+                <!-- row end-->
+
+                <div class="row mt-50 mb-none-30">
+                    <div class="col-xl-6 mb-30">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Monthly Deposit & Withdraw Report
+                                </h5>
+                                <div id="apex-bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 mb-30">
+                        <div class="row mb-none-30">
+                            <div class="col-lg-6 col-sm-6 mb-30">
+                                <div
+                                    class="widget-three box--shadow2 b-radius--5 bg--white"
+                                >
+                                    <div
+                                        class="widget-three__icon b-radius--rounded bg--primary box--shadow2"
+                                    >
+                                        <i class="las la-wallet"></i>
+                                    </div>
+                                    <div class="widget-three__content">
+                                        <h2 class="numbers">136</h2>
+                                        <p class="text--small">Total Deposit</p>
+                                    </div>
+                                </div>
+                                <!-- widget-two end -->
+                            </div>
+                            <div class="col-lg-6 col-sm-6 mb-30">
+                                <div
+                                    class="widget-three box--shadow2 b-radius--5 bg--white"
+                                >
+                                    <div
+                                        class="widget-three__icon b-radius--rounded bg--pink box--shadow2"
+                                    >
+                                        <i class="las la-money-bill"></i>
+                                    </div>
+                                    <div class="widget-three__content">
+                                        <h2 class="numbers">337985 USD</h2>
+                                        <p class="text--small">
+                                            Total Deposit Amount
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- widget-two end -->
+                            </div>
+                            <div class="col-lg-6 col-sm-6 mb-30">
+                                <div
+                                    class="widget-three box--shadow2 b-radius--5 bg--white"
+                                >
+                                    <div
+                                        class="widget-three__icon b-radius--rounded bg--teal box--shadow2"
+                                    >
+                                        <i class="las la-money-check"></i>
+                                    </div>
+                                    <div class="widget-three__content">
+                                        <h2 class="numbers">8618.06 USD</h2>
+                                        <p class="text--small">
+                                            Total Deposit Charge
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- widget-two end -->
+                            </div>
+                            <div class="col-lg-6 col-sm-6 mb-30">
+                                <div
+                                    class="widget-three box--shadow2 b-radius--5 bg--white"
+                                >
+                                    <div
+                                        class="widget-three__icon b-radius--rounded bg--green box--shadow2"
+                                    >
+                                        <i class="las la-money-bill-wave"></i>
+                                    </div>
+                                    <div class="widget-three__content">
+                                        <h2 class="numbers">359</h2>
+                                        <p class="text--small">
+                                            Pending Deposit
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- widget-two end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- row end -->
+
+                <div class="row mt-50 mb-none-30">
+                    <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
+                        <div class="dashboard-w1 bg--4 b-radius--10 box-shadow">
+                            <div class="icon">
+                                <i class="fa fa-wallet"></i>
+                            </div>
+                            <div class="details">
+                                <div class="numbers">
+                                    <span class="amount">1</span>
+                                </div>
+                                <div class="desciption">
+                                    <span>Total Withdraw</span>
+                                </div>
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/withdraw/method"
+                                    class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
+                                    >View All</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
+                        <div class="dashboard-w1 bg--7 b-radius--10 box-shadow">
+                            <div class="icon">
+                                <i class="fa fa-hand-holding-usd"></i>
+                            </div>
+                            <div class="details">
+                                <div class="numbers">
+                                    <span class="amount">100</span>
+                                    <span class="currency-sign">USD</span>
+                                </div>
+                                <div class="desciption">
+                                    <span>Total Withdraw Amount</span>
+                                </div>
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/withdraw/approved"
+                                    class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
+                                    >View All</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
+                        <div class="dashboard-w1 bg--9 b-radius--10 box-shadow">
+                            <div class="icon">
+                                <i class="fa fa-money-bill-alt"></i>
+                            </div>
+                            <div class="details">
+                                <div class="numbers">
+                                    <span class="amount">0.01 </span>
+                                    <span class="currency-sign">USD</span>
+                                </div>
+                                <div class="desciption">
+                                    <span>Total Withdraw Charge</span>
+                                </div>
+
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/withdraw/approved"
+                                    class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
+                                    >View All</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-6 col-sm-6 mb-30">
+                        <div
+                            class="dashboard-w1 bg--primary b-radius--10 box-shadow"
+                        >
+                            <div class="icon">
+                                <i class="fa fa-spinner"></i>
+                            </div>
+                            <div class="details">
+                                <div class="numbers">
+                                    <span class="amount">28</span>
+                                </div>
+                                <div class="desciption">
+                                    <span>Withdraw Pending</span>
+                                </div>
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/withdraw/pending"
+                                    class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
+                                    >View All</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-none-30 mt-5">
+                    <div class="col-xl-6 mb-30">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Last 30 days Deposit History
+                                </h5>
+                                <div id="deposit-line"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 mb-30">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Last 30 days Withdraw History
+                                </h5>
+                                <div id="withdraw-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alert -->
+                <div
+                    class="modal fade"
+                    id="cronModal"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-hidden="true"
+                >
+                    <div
+                        class="modal-dialog modal-dialog-centered modal-lg"
+                        role="document"
+                    >
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5
+                                    class="modal-title"
+                                    id="exampleModalLongTitle"
+                                >
+                                    Cron Job Setting Instruction
+                                </h5>
+                                <button
+                                    type="button"
+                                    class="close"
+                                    data-dismiss="modal"
+                                    aria-label="Close"
+                                >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h3 class="text--danger text-center">
+                                    Please Set Cron Job Now
+                                </h3>
+                                <p class="lead">
+                                    To automate the return interest, we need to
+                                    set the cron job and make sure the cron job
+                                    is running properly. Set the Cron time as
+                                    minimum as possible. Once per 5-15 minutes
+                                    is ideal while once every minute is the best
+                                    option.
+                                </p>
+
+                                <label class="font-weight-bold"
+                                    >Cron Command</label
+                                >
+                                <div class="input-group">
+                                    <input
+                                        type="text"
+                                        name="text"
+                                        class="form-control form-control-lg"
+                                        id="referralURL"
+                                        value="curl -s https://script.viserlab.com/hyiplab/demo/cron"
+                                        readonly
+                                    />
+                                    <div class="input-group-append">
+                                        <span
+                                            class="input-group-text copytext btn--primary copyBoard"
+                                            id="copyBoard"
+                                        >
+                                            Copy
+                                        </span>
                                     </div>
                                 </div>
                             </div>
+                            <div class="modal-footer">
+                                <button
+                                    type="button"
+                                    class="btn btn-secondary"
+                                    data-dismiss="modal"
+                                >
+                                    Close
+                                </button>
+                            </div>
                         </div>
-                    </section>
+                    </div>
                 </div>
             </div>
+            <!-- bodywrapper__inner end -->
         </div>
-        <!-- END: Content-->
-        <!-- BEGIN: Footer-->
-        <AdminFooter></AdminFooter>
-        <!-- END: Footer-->
+        <!-- body-wrapper end -->
     </div>
 </template>
 <script>
-    export default {
+export default {
     data() {
         return {
             error: null,
             message: null,
-            users: []
-        }
+            users: [],
+        };
     },
     computed: {
         user() {
-            return this.$auth.user()
+            return this.$auth.user();
         },
         Referral_link() {
-            return this.$root.basepath + '/register?ref=' + this.user.username
-        }
+            return this.$root.basepath + "/register?ref=" + this.user.username;
+        },
     },
-    beforeCreate: function() {
-        // if (this.$auth.user().isAdmin == false) { this.$auth.logout() }
+    mounted() {
+        var script = document.createElement("script");
+        script.src = this.$root.basepath + "/assets/admin/js/app.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src = this.$root.basepath + "/assets/admin/js/admin.js";
+        document.body.appendChild(script);
+    },
+    beforeCreate() {
+        let js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        );
+        document.body.appendChild(js);
+
+        var style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/bootstrap.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/bootstrap-toggle.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/admin/css/all.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/css/line-awesome.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/nice-select.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/admin/css/vendor/prism.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/select2.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/datatables.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/jquery-jvectormap-2.0.5.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/datepicker.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/jquery-timepicky.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/bootstrap-clockpicker.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/bootstrap-pincode-input.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/admin/css/app.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        var script = document.createElement("script");
+        script.src =
+            this.$root.basepath + "/assets/admin/js/vendor/jquery-3.5.1.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath +
+            "/assets/admin/js/vendor/bootstrap.bundle.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath +
+            "/assets/admin/js/vendor/bootstrap-toggle.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath +
+            "/assets/admin/js/vendor/jquery.slimscroll.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath +
+            "/assets/admin/js/vendor/jquery.nice-select.min.js";
+        document.body.appendChild(script);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/admin/css/iziToast.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        script = document.createElement("script");
+        script.src = this.$root.basepath + "/assets/admin/js/iziToast.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src = this.$root.basepath + "/assets/admin/js/nicEdit.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src = this.$root.basepath + "/assets/admin/js/vendor/prism.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath + "/assets/admin/js/vendor/select2.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath + "/assets/admin/js/vendor/datatables.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath + "/assets/admin/js/vendor/apexcharts.min.js";
+        document.body.appendChild(script);
+        // script = document.createElement("script");
+        // script.src = this.$root.basepath + "/assets/admin/js/app.js";
+        // document.body.appendChild(script);
+        // script = document.createElement("script");
+        // script.src = this.$root.basepath + "/assets/admin/js/admin.js";
+        // document.body.appendChild(script);
     },
     created() {
-
         // let body = document.getElementById("body")
         // body.setAttribute("data-open", "open");
         // body.setAttribute("data-menu", "vertical-menu-modern");
         // body.className = 'pace-done vertical-layout navbar-floating footer-static menu-hide vertical-overlay-menu'
         if (localStorage.users) {
-            this.users = JSON.parse(localStorage.users)
+            this.users = JSON.parse(localStorage.users);
         }
         // this.getUsers()
-
     },
     methods: {
         getUsers() {
-            var form = new Form
+            var form = new Form();
             form.get("/auth/users")
-                .then(response => {
-                    this.users = response.data.data.item
-                    localStorage.users = JSON.stringify(this.users)
+                .then((response) => {
+                    this.users = response.data.data.item;
+                    localStorage.users = JSON.stringify(this.users);
                 })
-                .catch(error => {
-                    console.log(error)
-                })
+                .catch((error) => {
+                    console.log(error);
+                });
         },
-
-    }
-}
-
+    },
+};
 </script>
 <style type="text/css" scoped="">
-.link-act-check:after,
-.link-check li.active>a:after,
-.link-check li a.active:after,
-.link-list-opt li.active>a:after,
-.dropdown-menu>a.dropdown-item.active:after {
-    content: "\2714";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 1rem;
-    font-family: "Nioicon";
-}
-
-.dropdown-toggle::after {
-    content: unset
-}
-
-.nav-vertical .nav.nav-tabs.nav-left~.tab-content .tab-pane {
-    overflow-y: hidden;
-}
-
-.preloader .animated-preloader::after {
-    background: #161D31;
-}
-
-.preloader .animated-preloader {
-    background: #7367F0 !important;
-}
-
-.g-2>li,
-.g-2>div {
-    padding: .585rem !important;
-}
-
+/* @import "../../assets/css/app.css"; */
 </style>

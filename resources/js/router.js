@@ -36,7 +36,7 @@ import UserEdit from "./pages/admin/Edit";
 import Deposits from "./pages/admin/Deposits";
 import Withdrawals from "./pages/admin/Withdrawals";
 import Subscriptions from "./pages/admin/Subscriptions";
-import AdminDashboard from "./pages/admin/Dashboard";
+// import AdminDashboard from "./pages/admin/Dashboard";
 import Settings from "./pages/admin/AdminSettings";
 
 // Routes
@@ -301,7 +301,7 @@ const routes = [
     {
         path: "/admin/dashboard",
         name: "adminDashboard",
-        component: AdminDashboard,
+        component: () => import("./pages/admin/Dashboard"),
         meta: {
             auth: true,
             adminAuth: true,
