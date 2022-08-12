@@ -23,7 +23,14 @@
                         >
                             <div class="card-body p-0">
                                 <div class="p-3 bg--white">
-                                    <div class="">
+                                    <div v-if = "user.image" class="">
+                                        <img
+										 :src="$root.basepath + '/images/users/' + user.image"
+                                            alt="profile-image"
+                                            class="b-radius--10 w-100"
+                                        />
+                                    </div>
+									 <div v-else>
                                         <img
                                             src="https://script.viserlab.com/hyiplab/demo/placeholder-image/undefined"
                                             alt="profile-image"
@@ -31,10 +38,10 @@
                                         />
                                     </div>
                                     <div class="mt-15">
-                                        <h4 class="">James G</h4>
+                                        <h4 class="">{{user.names}}</h4>
                                         <span class="text--small"
-                                            >Joined At<strong
-                                                >14 Dec, 2020 09:21 PM</strong
+                                            >Joined @ <strong
+                                                > {{user.created_at}}</strong
                                             ></span
                                         >
                                     </div>
@@ -55,17 +62,21 @@
                                     >
                                         Username
                                         <span class="font-weight-bold"
-                                            >jamesg</span
+                                            >{{user.username}}</span
                                         >
                                     </li>
 
                                     <li
                                         class="list-group-item d-flex justify-content-between align-items-center"
                                     >
-                                        Status
-                                        <span
+                                        Withdrawal Status
+                                        <span v-if = "user.CanWithdraw"
                                             class="badge badge-pill bg--success"
                                             >Active</span
+                                        >
+										<span v-else
+                                            class="badge badge-pill bg--danger"
+                                            >On Hold</span
                                         >
                                     </li>
 
@@ -74,7 +85,7 @@
                                     >
                                         Deposit Wallet
                                         <span class="font-weight-bold"
-                                            >$10</span
+                                            >${{$root.normalNumeral(user.balance)}}</span
                                         >
                                     </li>
 
@@ -100,19 +111,19 @@
                                     Add/Subtract Balance
                                 </a>
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/users/login/history/243"
+                                    :href="'/login/history/'+ user.id"
                                     class="btn btn--primary btn--shadow btn-block btn-lg"
                                 >
                                     Login Logs
                                 </a>
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/user/send-email/243"
+                                    :href="'/send-email/' + user.id"
                                     class="btn btn--danger btn--shadow btn-block btn-lg"
                                 >
                                     Send Email
                                 </a>
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/users/email-log/243"
+                                    :href="'/email-log/'+ user.id"
                                     class="btn btn--dark btn--shadow btn-block btn-lg"
                                 >
                                     Email Log
@@ -136,7 +147,7 @@
                                     </div>
                                     <div class="details">
                                         <div class="numbers">
-                                            <span class="amount">0.00</span>
+                                            <span class="amount">{{$root.normalNumeral(user.totalActiveTransaction)}}</span>
                                             <span class="currency-sign">
                                                 $</span
                                             >
@@ -162,7 +173,7 @@
                                     </div>
                                     <div class="details">
                                         <div class="numbers">
-                                            <span class="amount">0.00</span>
+                                            <span class="amount">{{$root.normalNumeral(user.totalWithdrawBySelf)}}</span>
                                             <span class="currency-sign">$</span>
                                         </div>
                                         <div class="desciption">
@@ -186,10 +197,12 @@
                                     </div>
                                     <div class="details">
                                         <div class="numbers">
-                                            <span class="amount">1</span>
+                                            <span class="amount">{{$root.normalNumeral(user.totalEarned)}}</span>
+											<span class="currency-sign">
+                                                $</span>
                                         </div>
                                         <div class="desciption">
-                                            <span>Total Transaction</span>
+                                            <span>Total Earned</span>
                                         </div>
                                     </div>
                                 </div>
@@ -209,10 +222,12 @@
                                     </div>
                                     <div class="details">
                                         <div class="numbers">
-                                            <span class="amount">0</span>
+                                            <span class="amount">{{$root.normalNumeral(user.totalPendingWithdrawal)}}</span>
+											<span class="currency-sign">
+                                                $</span>
                                         </div>
                                         <div class="desciption">
-                                            <span>Total Invest</span>
+                                            <span>Total Pending Withdarals</span>
                                         </div>
                                     </div>
                                 </div>
@@ -232,7 +247,7 @@
                                     </div>
                                     <div class="details">
                                         <div class="numbers">
-                                            <span class="amount">0</span>
+                                            <span class="amount">{{user.referrals}}</span>
                                         </div>
                                         <div class="desciption">
                                             <span>Total Referral</span>
@@ -255,7 +270,7 @@
                                     </div>
                                     <div class="details">
                                         <div class="numbers">
-                                            <span class="amount">0.00</span>
+                                            <span class="amount">{{$root.normalNumeral(user.totalCommission)}}</span>
                                             <span class="currency-sign">$</span>
                                         </div>
                                         <div class="desciption">
@@ -270,7 +285,7 @@
                         <div class="card mt-50">
                             <div class="card-body">
                                 <h5 class="card-title mb-50 border-bottom pb-2">
-                                    James G Information
+                                    {{user.names }} Information
                                 </h5>
 
                                 <form
