@@ -1645,6 +1645,11 @@
   dependencies:
     "follow-redirects" "^1.14.0"
 
+"babel-helper-vue-jsx-merge-props@^2.0.3":
+  "integrity" "sha512-gsLiKK7Qrb7zYJNgiXKpXblxbV5ffSwR0f5whkPAaBAR4fhi6bwRZxX9wBlIc5M/v8CCkXUbXZL4N/nSE97cqg=="
+  "resolved" "https://registry.npmjs.org/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-2.0.3.tgz"
+  "version" "2.0.3"
+
 "babel-loader@^8.2.3":
   "integrity" "sha512-OSiFfH89LrEMiWd4pLNqGz4CwJDtbs2ZVc+iGu2HrkRfPxId9F2anQj38IxWpmRfsUY0aBZYi1EFcd3mhtRMLQ=="
   "resolved" "https://registry.npmjs.org/babel-loader/-/babel-loader-8.2.5.tgz"
@@ -5831,6 +5836,13 @@
   "integrity" "sha512-DS8Q+WFT3i7nS0aZ/NMmTPf2yhbtlXhj4QEZmY69au/BshsGzGjC6dXaniZaPQlErP3J3Sv1HtQ4RVrXaUTkxA=="
   "resolved" "https://registry.npmjs.org/vue-axios/-/vue-axios-2.1.4.tgz"
   "version" "2.1.4"
+
+"vue-content-loader@^0.2.3":
+  "integrity" "sha512-gJlNEdXkuHGvgnyY0lBMsrSsOMk+TTog5uNAil5MSLv08f/mE7Apag0VavpxJ6ieb4P5J1iVKEIhHI41HQNq9Q=="
+  "resolved" "https://registry.npmjs.org/vue-content-loader/-/vue-content-loader-0.2.3.tgz"
+  "version" "0.2.3"
+  dependencies:
+    "babel-helper-vue-jsx-merge-props" "^2.0.3"
 
 "vue-cookies@^1.5.13":
   "integrity" "sha512-8pjpXnvbNWx1Lft0t3MJnW+ylv0Wa2Tb6Ch617u/pQah3+SfXUZZdkh3EL3bSpe/Sw2Wdw3+DhycgQsKANSxXg=="

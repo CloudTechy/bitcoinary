@@ -1,526 +1,1612 @@
 <template>
-    <main>
-        <AdminDashboardHeader></AdminDashboardHeader>
+    <div class="page-wrapper default-version">
         <AdminDashboardSidebar></AdminDashboardSidebar>
-        <div class="app-content content ">
-		      <div class="content-overlay"></div>
-		   <div class="header-navbar-shadow"></div>
-		     <div class="content-wrapper container-xxl p-0">
-		        <div class="content-header row">
-		        </div>
-				<div class="content-body">
-		            <section class="app-user-view">
-		                <!-- User Card & Plan Starts -->
-		                <div class="row">
-		                    <!-- User Card starts-->
-		                    <div class="col-xl-9 col-lg-8 col-md-7">
-		                        <div class="card user-card">
-		                            <div class="card-body">
-		                                <div class="row">
-		                                    <div class="col-xl-6 col-lg-12 d-flex flex-column justify-content-between border-container-lg">
-		                                        <div class="user-avatar-section">
-		                                            <div class="d-flex justify-content-start">
-		                                                <img class="img-fluid rounded"  :src="$root.basepath + '/pixinvest/app-assets/images/avatars/7.png'" height="104" width="104" alt="User avatar">
-		                                                <div class="d-flex flex-column ms-1">
-		                                                    <div class="user-info mb-1">
-		                                                        <h4 class="mb-0">Eleanor Aguilar</h4>
-		                                                        <span class="card-text">eleanor.aguilar@gmail.com</span>
-		                                                    </div>
-		                                                    <div class="d-flex flex-wrap">
-		                                                        <a href="./app-user-edit.html" class="btn btn-primary waves-effect waves-float waves-light">Edit</a>
-		                                                        <button class="btn btn-outline-danger ms-1 waves-effect">Delete</button>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                        </div>
-		                                        <div class="d-flex align-items-center user-total-numbers">
-		                                            <div class="d-flex align-items-center me-2">
-		                                                <div class="color-box bg-light-primary">
-		                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign text-primary">
-		                                                        <line x1="12" y1="1" x2="12" y2="23"></line>
-		                                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-		                                                    </svg>
-		                                                </div>
-		                                                <div class="ms-1">
-		                                                    <h5 class="mb-0">23.3k</h5>
-		                                                    <small>Monthly Sales</small>
-		                                                </div>
-		                                            </div>
-		                                            <div class="d-flex align-items-center">
-		                                                <div class="color-box bg-light-success">
-		                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trending-up text-success">
-		                                                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-		                                                        <polyline points="17 6 23 6 23 12"></polyline>
-		                                                    </svg>
-		                                                </div>
-		                                                <div class="ms-1">
-		                                                    <h5 class="mb-0">$99.87K</h5>
-		                                                    <small>Annual Profit</small>
-		                                                </div>
-		                                            </div>
-		                                        </div>
-		                                    </div>
-		                                    <div class="col-xl-6 col-lg-12 mt-2 mt-xl-0">
-		                                        <div class="user-info-wrapper">
-		                                            <div class="d-flex flex-wrap">
-		                                                <div class="user-info-title">
-		                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user me-1">
-		                                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-		                                                        <circle cx="12" cy="7" r="4"></circle>
-		                                                    </svg>
-		                                                    <span class="card-text user-info-title fw-bold mb-0">Username</span>
-		                                                </div>
-		                                                <p class="card-text mb-0">eleanor.aguilar</p>
-		                                            </div>
-		                                            <div class="d-flex flex-wrap my-50">
-		                                                <div class="user-info-title">
-		                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check me-1">
-		                                                        <polyline points="20 6 9 17 4 12"></polyline>
-		                                                    </svg>
-		                                                    <span class="card-text user-info-title fw-bold mb-0">Status</span>
-		                                                </div>
-		                                                <p class="card-text mb-0">Active</p>
-		                                            </div>
-		                                            <div class="d-flex flex-wrap my-50">
-		                                                <div class="user-info-title">
-		                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star me-1">
-		                                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-		                                                    </svg>
-		                                                    <span class="card-text user-info-title fw-bold mb-0">Role</span>
-		                                                </div>
-		                                                <p class="card-text mb-0">Admin</p>
-		                                            </div>
-		                                            <div class="d-flex flex-wrap my-50">
-		                                                <div class="user-info-title">
-		                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-flag me-1">
-		                                                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
-		                                                        <line x1="4" y1="22" x2="4" y2="15"></line>
-		                                                    </svg>
-		                                                    <span class="card-text user-info-title fw-bold mb-0">Country</span>
-		                                                </div>
-		                                                <p class="card-text mb-0">England</p>
-		                                            </div>
-		                                            <div class="d-flex flex-wrap">
-		                                                <div class="user-info-title">
-		                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone me-1">
-		                                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-		                                                    </svg>
-		                                                    <span class="card-text user-info-title fw-bold mb-0">Contact</span>
-		                                                </div>
-		                                                <p class="card-text mb-0">(123) 456-7890</p>
-		                                            </div>
-		                                        </div>
-		                                    </div>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!-- /User Card Ends-->
-		                    <!-- Plan Card starts-->
-		                    <div class="col-xl-3 col-lg-4 col-md-5">
-		                        <div class="card plan-card border-primary">
-		                            <div class="card-header d-flex justify-content-between align-items-center pt-75 pb-1">
-		                                <h5 class="mb-0">Current Plan</h5>
-		                                <span class="badge badge-light-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Expiry Date">July 22, <span class="nextYear">2022</span>
-		                                </span>
-		                            </div>
-		                            <div class="card-body">
-		                                <span class="badge badge-light-primary">Basic</span>
-		                                <ul class="list-unstyled my-1">
-		                                    <li>
-		                                        <span class="align-middle">5 Users</span>
-		                                    </li>
-		                                    <li class="my-25">
-		                                        <span class="align-middle">10 GB storage</span>
-		                                    </li>
-		                                    <li>
-		                                        <span class="align-middle">Basic Support</span>
-		                                    </li>
-		                                </ul>
-		                                <button class="btn btn-primary text-center w-100 waves-effect waves-float waves-light">Add Plan</button>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!-- /Plan CardEnds -->
-		                </div>
-		                <!-- User Card & Plan Ends -->
-		                <!-- User Timeline & Permissions Starts -->
-		                <div class="row">
-		                    <!-- information starts -->
-		                    <div class="col-md-6">
-		                        <div class="card">
-		                            <div class="card-header">
-		                                <h4 class="card-title mb-2">User Timeline</h4>
-		                            </div>
-		                            <div class="card-body">
-		                                <ul class="timeline">
-		                                    <li class="timeline-item">
-		                                        <span class="timeline-point timeline-point-indicator"></span>
-		                                        <div class="timeline-event">
-		                                            <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
-		                                                <h6>12 Invoices have been paid</h6>
-		                                                <span class="timeline-event-time">12 min ago</span>
-		                                            </div>
-		                                            <p>Invoices have been paid to the company.</p>
-		                                            <div class="d-flex align-items-center">
-		                                                <img class="me-1"  :src="$root.basepath + '/pixinvest/app-assets/images/icons/file-icons/pdf.png'" alt="invoice" height="23">
-		                                                <div class="invoice-name">invoice.pdf</div>
-		                                            </div>
-		                                        </div>
-		                                    </li>
-		                                    <li class="timeline-item">
-		                                        <span class="timeline-point timeline-point-warning timeline-point-indicator"></span>
-		                                        <div class="timeline-event">
-		                                            <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
-		                                                <h6>Client Meeting</h6>
-		                                                <span class="timeline-event-time">45 min ago</span>
-		                                            </div>
-		                                            <p>Project meeting with john @10:15am.</p>
-		                                            <div class="d-flex align-items-center">
-		                                                <div class="avatar">
-		                                                    <img  :src="$root.basepath + '/pixinvest/app-assets/images/avatars/12-small.png'" alt="avatar" height="38" width="38">
-		                                                </div>
-		                                                <div class="user-info ms-50">
-		                                                    <h6 class="mb-0">John Doe (Client)</h6>
-		                                                    <span>CEO of Infibeam</span>
-		                                                </div>
-		                                            </div>
-		                                        </div>
-		                                    </li>
-		                                    <li class="timeline-item">
-		                                        <span class="timeline-point timeline-point-info timeline-point-indicator"></span>
-		                                        <div class="timeline-event">
-		                                            <div class="d-flex justify-content-between flex-sm-row flex-column mb-sm-0 mb-1">
-		                                                <h6>Create a new project for client</h6>
-		                                                <span class="timeline-event-time">2 days ago</span>
-		                                            </div>
-		                                            <p class="mb-0">Add files to new design folder</p>
-		                                        </div>
-		                                    </li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!-- information Ends -->
-		                    <!-- User Permissions Starts -->
-		                    <div class="col-md-6">
-		                        <!-- User Permissions -->
-		                        <div class="card">
-		                            <div class="card-header">
-		                                <h4 class="card-title">Permissions</h4>
-		                            </div>
-		                            <p class="card-text ms-2">Permission according to roles</p>
-		                            <div class="table-responsive">
-		                                <table class="table table-striped table-borderless">
-		                                    <thead class="table-light">
-		                                        <tr>
-		                                            <th>Module</th>
-		                                            <th>Read</th>
-		                                            <th>Write</th>
-		                                            <th>Create</th>
-		                                            <th>Delete</th>
-		                                        </tr>
-		                                    </thead>
-		                                    <tbody>
-		                                        <tr>
-		                                            <td>Admin</td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="admin-read" checked="" disabled="">
-		                                                    <label class="form-check-label" for="admin-read"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="admin-write" disabled="">
-		                                                    <label class="form-check-label" for="admin-write"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="admin-create" disabled="">
-		                                                    <label class="form-check-label" for="admin-create"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="admin-delete" disabled="">
-		                                                    <label class="form-check-label" for="admin-delete"></label>
-		                                                </div>
-		                                            </td>
-		                                        </tr>
-		                                        <tr>
-		                                            <td>Staff</td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="staff-read" disabled="">
-		                                                    <label class="form-check-label" for="staff-read"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="staff-write" checked="" disabled="">
-		                                                    <label class="form-check-label" for="staff-write"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="staff-create" disabled="">
-		                                                    <label class="form-check-label" for="staff-create"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="staff-delete" disabled="">
-		                                                    <label class="form-check-label" for="staff-delete"></label>
-		                                                </div>
-		                                            </td>
-		                                        </tr>
-		                                        <tr>
-		                                            <td>Author</td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="author-read" checked="" disabled="">
-		                                                    <label class="form-check-label" for="author-read"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="author-write" disabled="">
-		                                                    <label class="form-check-label" for="author-write"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="author-create" checked="" disabled="">
-		                                                    <label class="form-check-label" for="author-create"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="author-delete" disabled="">
-		                                                    <label class="form-check-label" for="author-delete"></label>
-		                                                </div>
-		                                            </td>
-		                                        </tr>
-		                                        <tr>
-		                                            <td>Contributor</td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="contributor-read" disabled="">
-		                                                    <label class="form-check-label" for="contributor-read"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="contributor-write" disabled="">
-		                                                    <label class="form-check-label" for="contributor-write"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="contributor-create" disabled="">
-		                                                    <label class="form-check-label" for="contributor-create"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="contributor-delete" disabled="">
-		                                                    <label class="form-check-label" for="contributor-delete"></label>
-		                                                </div>
-		                                            </td>
-		                                        </tr>
-		                                        <tr>
-		                                            <td>User</td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="user-read" disabled="">
-		                                                    <label class="form-check-label" for="user-read"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="user-create" disabled="">
-		                                                    <label class="form-check-label" for="user-create"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="user-write" disabled="">
-		                                                    <label class="form-check-label" for="user-write"></label>
-		                                                </div>
-		                                            </td>
-		                                            <td>
-		                                                <div class="form-check">
-		                                                    <input type="checkbox" class="form-check-input" id="user-delete" checked="" disabled="">
-		                                                    <label class="form-check-label" for="user-delete"></label>
-		                                                </div>
-		                                            </td>
-		                                        </tr>
-		                                    </tbody>
-		                                </table>
-		                            </div>
-		                        </div>
-		                        <!-- /User Permissions -->
-		                    </div>
-		                    <!-- User Permissions Ends -->
-		                </div>
-		                <!-- User Timeline & Permissions Ends -->
-		                <!-- User Invoice Starts-->
-		                <div class="row invoice-list-wrapper">
-		                    <div class="col-12">
-		                        <div class="card">
-		                            <div class="card-datatable table-responsive">
-		                                        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
-		                                            <h3 class="p-2">Recent Investments</h3>
-		                                            <table class="invoice-list-table table dataTable no-footer dtr-column" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
-		                                                <thead>
-		                                                    <tr role="row">
-		                                                        <th class="control sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="display: none;"></th>
-		                                                        <th class="sorting sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 88;" aria-label="Plan: activate to sort column ascending" aria-sort="descending">Plan</th>
-		                                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 270px;" aria-label="Client: activate to sort column ascending">Investor</th>
-		                                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 73px;" aria-label="Total: activate to sort column ascending">Amount</th>
-		                                                        <th class="text-truncate sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 130px;" aria-label="Issued Date: activate to sort column ascending">Date</th>
-		                                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 98px;" aria-label="Balance: activate to sort column ascending">Status</th>
-		                                                        <th class="cell-fit sorting_disabled" rowspan="1" colspan="1" style="width: 80px;" aria-label="Actions">Actions</th>
-		                                                    </tr>
-		                                                </thead>
-		                                                <tbody>
-		                                                    <tr class="odd">
-		                                                        <td class=" control" tabindex="0" style="display: none;"></td>
-		                                                        <td class="sorting_1"><a class="fw-bold" href="app-invoice-preview.html"> Dimond - Daily 8.52% for 14 Days</a></td>
-		                                                        <td>
-		                                                            <div class="d-flex justify-content-left align-items-center">
-		                                                                <div class="avatar-wrapper">
-		                                                                    <div class="avatar bg-light-success me-50">
-		                                                                        <div class="avatar-content">JK</div>
-		                                                                    </div>
-		                                                                </div>
-		                                                                <div class="d-flex flex-column">
-		                                                                    <h6 class="user-name text-truncate mb-0">Jamal Kerrod</h6><small class="text-truncate text-muted">jamalkerrod@email.com</small>
-		                                                                </div>
-		                                                            </div>
-		                                                        </td>
-		                                                        <td><span class="d-none">3077</span>$3077</td>
-		                                                        <td style=""><span class="d-none">20190509</span>09 May 2019</td>
-		                                                        <td style=""><span class="badge rounded-pill badge-light-success" text-capitalized=""> Paid </span></td>
-		                                                        <td style="">
-		                                                            <div class="d-flex align-items-center col-actions"><a class="me-1" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Send Mail" aria-label="Send Mail"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send font-medium-2">
-		                                                                        <line x1="22" y1="2" x2="11" y2="13"></line>
-		                                                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-		                                                                    </svg></a><a class="me-1" href="app-invoice-preview.html" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Preview Invoice" aria-label="Preview Invoice"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye font-medium-2">
-		                                                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-		                                                                        <circle cx="12" cy="12" r="3"></circle>
-		                                                                    </svg></a>
-		                                                                <div class="dropdown"><a class="btn btn-sm btn-icon px-0" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical font-medium-2">
-		                                                                            <circle cx="12" cy="12" r="1"></circle>
-		                                                                            <circle cx="12" cy="5" r="1"></circle>
-		                                                                            <circle cx="12" cy="19" r="1"></circle>
-		                                                                        </svg></a>
-		                                                                    <div class="dropdown-menu dropdown-menu-end" style=""><a href="#" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download font-small-4 me-50">
-		                                                                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-		                                                                                <polyline points="7 10 12 15 17 10"></polyline>
-		                                                                                <line x1="12" y1="15" x2="12" y2="3"></line>
-		                                                                            </svg>Download</a><a href="app-invoice-edit.html" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-small-4 me-50">
-		                                                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-		                                                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-		                                                                            </svg>Edit</a><a href="#" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash font-small-4 me-50">
-		                                                                                <polyline points="3 6 5 6 21 6"></polyline>
-		                                                                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-		                                                                            </svg>Delete</a><a href="#" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy font-small-4 me-50">
-		                                                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-		                                                                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-		                                                                            </svg>Duplicate</a></div>
-		                                                                </div>
-		                                                            </div>
-		                                                        </td>
-		                                                    </tr>
-		                                                    <tr class="even">
-		                                                        <td class=" control" tabindex="0" style="display: none;"></td>
-		                                                        <td class="sorting_1"><a class="fw-bold" href=""> Platinam - Daily 14.82% for 7 Days</a></td>
-		                                                        <td>
-		                                                            <div class="d-flex justify-content-left align-items-center">
-		                                                                <div class="avatar-wrapper">
-		                                                                    <div class="avatar me-50"><img  :src="$root.basepath + '/pixinvest/avatar-s-1.jpg'" width="32" height="32"></div>
-		                                                                </div>
-		                                                                <div class="d-flex flex-column">
-		                                                                    <h6 class="user-name text-truncate mb-0">Shamus Tuttle</h6><small class="text-truncate text-muted">shamustuttle@email.com</small>
-		                                                                </div>
-		                                                            </div>
-		                                                        </td>
-		                                                        <td><span class="d-none">2230</span>$2230</td>
-		                                                        <td style=""><span class="d-none">20191119</span>19 Nov 2019</td>
-		                                                        <td style=""><span class="badge rounded-pill badge-light-success" text-capitalized=""> Paid </span></td>
-		                                                        <td style="">
-		                                                            <div class="d-flex align-items-center col-actions"><a class="me-1" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Send Mail" aria-label="Send Mail"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send font-medium-2">
-		                                                                        <line x1="22" y1="2" x2="11" y2="13"></line>
-		                                                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-		                                                                    </svg></a><a class="me-1" href="" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Preview Invoice" aria-label="Preview Invoice"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye font-medium-2">
-		                                                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-		                                                                        <circle cx="12" cy="12" r="3"></circle>
-		                                                                    </svg></a>
-		                                                                <div class="dropdown"><a class="btn btn-sm btn-icon px-0" data-bs-toggle="dropdown"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical font-medium-2">
-		                                                                            <circle cx="12" cy="12" r="1"></circle>
-		                                                                            <circle cx="12" cy="5" r="1"></circle>
-		                                                                            <circle cx="12" cy="19" r="1"></circle>
-		                                                                        </svg></a>
-		                                                                    <div class="dropdown-menu dropdown-menu-end"><a href="#" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download font-small-4 me-50">
-		                                                                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-		                                                                                <polyline points="7 10 12 15 17 10"></polyline>
-		                                                                                <line x1="12" y1="15" x2="12" y2="3"></line>
-		                                                                            </svg>Download</a><a href="app-invoice-edit.html" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit font-small-4 me-50">
-		                                                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-		                                                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-		                                                                            </svg>Edit</a><a href="#" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash font-small-4 me-50">
-		                                                                                <polyline points="3 6 5 6 21 6"></polyline>
-		                                                                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-		                                                                            </svg>Delete</a><a href="#" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy font-small-4 me-50">
-		                                                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-		                                                                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-		                                                                            </svg>Duplicate</a></div>
-		                                                                </div>
-		                                                            </div>
-		                                                        </td>
-		                                                    </tr>
-		                                                </tbody>
-		                                            </table>
-		                                            <div class="d-flex justify-content-between mx-2 row">
-		                                                <div class="col-sm-12 col-md-6">
-		                                                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 41 to 50 of 50 entries</div>
-		                                                </div>
-		                                                <div class="col-sm-12 col-md-6">
-		                                                    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-		                                                        <ul class="pagination">
-		                                                            <li class="paginate_button page-item previous" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">&nbsp;</a></li>
-		                                                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-		                                                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
-		                                                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
-		                                                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
-		                                                            <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">5</a></li>
-		                                                            <li class="paginate_button page-item next disabled" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0" class="page-link">&nbsp;</a></li>
-		                                                        </ul>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                        </div>
-		                                    </div>
-		                        </div>
-		                    </div>
-		                </div>
-		                <!-- /User Invoice Ends-->
-		            </section>
-        		</div>
-        	</div>
-          </div>
-        <AdminFooter></AdminFooter>
-</main>
+        <AdminDashboardHeader></AdminDashboardHeader>
 
+        <div class="body-wrapper">
+            <div class="bodywrapper__inner">
+                <div
+                    class="row align-items-center mb-30 justify-content-between"
+                >
+                    <div class="col-lg-6 col-sm-6">
+                        <h6 class="page-title">User Detail</h6>
+                    </div>
+                    <div
+                        class="col-lg-6 col-sm-6 text-sm-right mt-sm-0 mt-3"
+                    ></div>
+                </div>
+
+                <div class="row mb-none-30">
+                    <div class="col-xl-3 col-lg-5 col-md-5 mb-30">
+                        <div
+                            class="card b-radius--10 overflow-hidden box--shadow1"
+                        >
+                            <div class="card-body p-0">
+                                <div class="p-3 bg--white">
+                                    <div class="">
+                                        <img
+                                            src="https://script.viserlab.com/hyiplab/demo/placeholder-image/undefined"
+                                            alt="profile-image"
+                                            class="b-radius--10 w-100"
+                                        />
+                                    </div>
+                                    <div class="mt-15">
+                                        <h4 class="">James G</h4>
+                                        <span class="text--small"
+                                            >Joined At<strong
+                                                >14 Dec, 2020 09:21 PM</strong
+                                            ></span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="card b-radius--10 overflow-hidden mt-30 box--shadow1"
+                        >
+                            <div class="card-body">
+                                <h5 class="mb-20 text-muted">
+                                    User information
+                                </h5>
+                                <ul class="list-group">
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center"
+                                    >
+                                        Username
+                                        <span class="font-weight-bold"
+                                            >jamesg</span
+                                        >
+                                    </li>
+
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center"
+                                    >
+                                        Status
+                                        <span
+                                            class="badge badge-pill bg--success"
+                                            >Active</span
+                                        >
+                                    </li>
+
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center"
+                                    >
+                                        Deposit Wallet
+                                        <span class="font-weight-bold"
+                                            >$10</span
+                                        >
+                                    </li>
+
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center"
+                                    >
+                                        Interest Wallet
+                                        <span class="font-weight-bold">$0</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div
+                            class="card b-radius--10 overflow-hidden mt-30 box--shadow1"
+                        >
+                            <div class="card-body">
+                                <h5 class="mb-20 text-muted">User action</h5>
+                                <a
+                                    data-toggle="modal"
+                                    href="#addSubModal"
+                                    class="btn btn--success btn--shadow btn-block btn-lg"
+                                >
+                                    Add/Subtract Balance
+                                </a>
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/users/login/history/243"
+                                    class="btn btn--primary btn--shadow btn-block btn-lg"
+                                >
+                                    Login Logs
+                                </a>
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/user/send-email/243"
+                                    class="btn btn--danger btn--shadow btn-block btn-lg"
+                                >
+                                    Send Email
+                                </a>
+                                <a
+                                    href="https://script.viserlab.com/hyiplab/demo/admin/users/email-log/243"
+                                    class="btn btn--dark btn--shadow btn-block btn-lg"
+                                >
+                                    Email Log
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-9 col-lg-7 col-md-7 mb-30">
+                        <div class="row mb-none-30">
+                            <div class="col-xl-4 col-lg-6 col-sm-6 mb-30">
+                                <div
+                                    class="dashboard-w1 bg--1 b-radius--10 box-shadow has--link"
+                                >
+                                    <a
+                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/deposits/243"
+                                        class="item--link"
+                                    ></a>
+                                    <div class="icon">
+                                        <i class="fa fa-credit-card"></i>
+                                    </div>
+                                    <div class="details">
+                                        <div class="numbers">
+                                            <span class="amount">0.00</span>
+                                            <span class="currency-sign">
+                                                $</span
+                                            >
+                                        </div>
+                                        <div class="desciption">
+                                            <span>Total Deposit</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard-w1 end -->
+
+                            <div class="col-xl-4 col-lg-6 col-sm-6 mb-30">
+                                <div
+                                    class="dashboard-w1 bg--15 b-radius--10 box-shadow has--link"
+                                >
+                                    <a
+                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/withdrawals/243"
+                                        class="item--link"
+                                    ></a>
+                                    <div class="icon">
+                                        <i class="fa fa-wallet"></i>
+                                    </div>
+                                    <div class="details">
+                                        <div class="numbers">
+                                            <span class="amount">0.00</span>
+                                            <span class="currency-sign">$</span>
+                                        </div>
+                                        <div class="desciption">
+                                            <span>Total Withdraw</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard-w1 end -->
+
+                            <div class="col-xl-4 col-lg-6 col-sm-6 mb-30">
+                                <div
+                                    class="dashboard-w1 bg--20 b-radius--10 box-shadow has--link"
+                                >
+                                    <a
+                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/transactions/243"
+                                        class="item--link"
+                                    ></a>
+                                    <div class="icon">
+                                        <i class="la la-exchange-alt"></i>
+                                    </div>
+                                    <div class="details">
+                                        <div class="numbers">
+                                            <span class="amount">1</span>
+                                        </div>
+                                        <div class="desciption">
+                                            <span>Total Transaction</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard-w1 end -->
+
+                            <div class="col-xl-4 col-lg-6 col-sm-6 mb-30">
+                                <div
+                                    class="dashboard-w1 bg--11 b-radius--10 box-shadow has--link"
+                                >
+                                    <a
+                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/invests/243"
+                                        class="item--link"
+                                    ></a>
+                                    <div class="icon">
+                                        <i class="la la-money-bill"></i>
+                                    </div>
+                                    <div class="details">
+                                        <div class="numbers">
+                                            <span class="amount">0</span>
+                                        </div>
+                                        <div class="desciption">
+                                            <span>Total Invest</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard-w1 end -->
+
+                            <div class="col-xl-4 col-lg-6 col-sm-6 mb-30">
+                                <div
+                                    class="dashboard-w1 bg--18 b-radius--10 box-shadow has--link"
+                                >
+                                    <a
+                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/referrals/243"
+                                        class="item--link"
+                                    ></a>
+                                    <div class="icon">
+                                        <i class="la la-users"></i>
+                                    </div>
+                                    <div class="details">
+                                        <div class="numbers">
+                                            <span class="amount">0</span>
+                                        </div>
+                                        <div class="desciption">
+                                            <span>Total Referral</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard-w1 end -->
+
+                            <div class="col-xl-4 col-lg-6 col-sm-6 mb-30">
+                                <div
+                                    class="dashboard-w1 bg--12 b-radius--10 box-shadow has--link"
+                                >
+                                    <a
+                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/commissions/deposit/243"
+                                        class="item--link"
+                                    ></a>
+                                    <div class="icon">
+                                        <i class="la la-money"></i>
+                                    </div>
+                                    <div class="details">
+                                        <div class="numbers">
+                                            <span class="amount">0.00</span>
+                                            <span class="currency-sign">$</span>
+                                        </div>
+                                        <div class="desciption">
+                                            <span>Referral Commission</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard-w1 end -->
+                        </div>
+
+                        <div class="card mt-50">
+                            <div class="card-body">
+                                <h5 class="card-title mb-50 border-bottom pb-2">
+                                    James G Information
+                                </h5>
+
+                                <form
+                                    action="https://script.viserlab.com/hyiplab/demo/admin/user/update/243"
+                                    method="POST"
+                                    enctype="multipart/form-data"
+                                >
+                                    <input
+                                        type="hidden"
+                                        name="_token"
+                                        value="RgcPyegaILDSesIQWfFRWWkp5JugsZ0TvYurJD0q"
+                                    />
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label
+                                                    class="form-control-label font-weight-bold"
+                                                    >First Name
+                                                    <span class="text-danger"
+                                                        >*</span
+                                                    ></label
+                                                >
+                                                <input
+                                                    class="form-control"
+                                                    type="text"
+                                                    name="firstname"
+                                                    value="James"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label
+                                                    class="form-control-label font-weight-bold"
+                                                    >Last Name
+                                                    <span class="text-danger"
+                                                        >*</span
+                                                    ></label
+                                                >
+                                                <input
+                                                    class="form-control"
+                                                    type="text"
+                                                    name="lastname"
+                                                    value="G"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label
+                                                    class="form-control-label font-weight-bold"
+                                                    >Email
+                                                    <span class="text-danger"
+                                                        >*</span
+                                                    ></label
+                                                >
+                                                <input
+                                                    class="form-control"
+                                                    type="email"
+                                                    name="email"
+                                                    value="[Email Protected For Demo]"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label
+                                                    class="form-control-label font-weight-bold"
+                                                    >Mobile Number
+                                                    <span class="text-danger"
+                                                        >*</span
+                                                    ></label
+                                                >
+                                                <input
+                                                    class="form-control"
+                                                    type="text"
+                                                    name="mobile"
+                                                    value="[Mobile Number Protected For Demo]"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-4">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label
+                                                    class="form-control-label font-weight-bold"
+                                                    >Address
+                                                </label>
+                                                <input
+                                                    class="form-control"
+                                                    type="text"
+                                                    name="address"
+                                                    value=""
+                                                />
+                                                <small
+                                                    class="form-text text-muted"
+                                                    ><i
+                                                        class="las la-info-circle"
+                                                    ></i>
+                                                    House number, street address
+                                                </small>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="form-group">
+                                                <label
+                                                    class="form-control-label font-weight-bold"
+                                                    >City
+                                                </label>
+                                                <input
+                                                    class="form-control"
+                                                    type="text"
+                                                    name="city"
+                                                    value=""
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="form-group">
+                                                <label
+                                                    class="form-control-label font-weight-bold"
+                                                    >State
+                                                </label>
+                                                <input
+                                                    class="form-control"
+                                                    type="text"
+                                                    name="state"
+                                                    value=""
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="form-group">
+                                                <label
+                                                    class="form-control-label font-weight-bold"
+                                                    >Zip/Postal
+                                                </label>
+                                                <input
+                                                    class="form-control"
+                                                    type="text"
+                                                    name="state"
+                                                    value=""
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-3 col-md-6">
+                                            <div class="form-group">
+                                                <label
+                                                    class="form-control-label font-weight-bold"
+                                                    >Country
+                                                </label>
+                                                <select
+                                                    name="country"
+                                                    class="form-control"
+                                                >
+                                                    <option value="AF">
+                                                        Afghanistan
+                                                    </option>
+                                                    <option value="AX">
+                                                        Aland Islands
+                                                    </option>
+                                                    <option value="AL">
+                                                        Albania
+                                                    </option>
+                                                    <option value="DZ">
+                                                        Algeria
+                                                    </option>
+                                                    <option value="AS">
+                                                        AmericanSamoa
+                                                    </option>
+                                                    <option value="AD">
+                                                        Andorra
+                                                    </option>
+                                                    <option value="AO">
+                                                        Angola
+                                                    </option>
+                                                    <option value="AI">
+                                                        Anguilla
+                                                    </option>
+                                                    <option value="AQ">
+                                                        Antarctica
+                                                    </option>
+                                                    <option value="AG">
+                                                        Antigua and Barbuda
+                                                    </option>
+                                                    <option value="AR">
+                                                        Argentina
+                                                    </option>
+                                                    <option value="AM">
+                                                        Armenia
+                                                    </option>
+                                                    <option value="AW">
+                                                        Aruba
+                                                    </option>
+                                                    <option value="AU">
+                                                        Australia
+                                                    </option>
+                                                    <option value="AT">
+                                                        Austria
+                                                    </option>
+                                                    <option value="AZ">
+                                                        Azerbaijan
+                                                    </option>
+                                                    <option value="BS">
+                                                        Bahamas
+                                                    </option>
+                                                    <option value="BH">
+                                                        Bahrain
+                                                    </option>
+                                                    <option value="BD">
+                                                        Bangladesh
+                                                    </option>
+                                                    <option value="BB">
+                                                        Barbados
+                                                    </option>
+                                                    <option value="BY">
+                                                        Belarus
+                                                    </option>
+                                                    <option value="BE">
+                                                        Belgium
+                                                    </option>
+                                                    <option value="BZ">
+                                                        Belize
+                                                    </option>
+                                                    <option value="BJ">
+                                                        Benin
+                                                    </option>
+                                                    <option value="BM">
+                                                        Bermuda
+                                                    </option>
+                                                    <option value="BT">
+                                                        Bhutan
+                                                    </option>
+                                                    <option value="BO">
+                                                        Bolivia, Plurinational
+                                                        State of
+                                                    </option>
+                                                    <option value="BA">
+                                                        Bosnia and Herzegovina
+                                                    </option>
+                                                    <option value="BW">
+                                                        Botswana
+                                                    </option>
+                                                    <option value="BR">
+                                                        Brazil
+                                                    </option>
+                                                    <option value="IO">
+                                                        British Indian Ocean
+                                                        Territory
+                                                    </option>
+                                                    <option value="BN">
+                                                        Brunei Darussalam
+                                                    </option>
+                                                    <option value="BG">
+                                                        Bulgaria
+                                                    </option>
+                                                    <option value="BF">
+                                                        Burkina Faso
+                                                    </option>
+                                                    <option value="BI">
+                                                        Burundi
+                                                    </option>
+                                                    <option value="KH">
+                                                        Cambodia
+                                                    </option>
+                                                    <option value="CM">
+                                                        Cameroon
+                                                    </option>
+                                                    <option value="CA">
+                                                        Canada
+                                                    </option>
+                                                    <option value="CV">
+                                                        Cape Verde
+                                                    </option>
+                                                    <option value="KY">
+                                                        Cayman Islands
+                                                    </option>
+                                                    <option value="CF">
+                                                        Central African Republic
+                                                    </option>
+                                                    <option value="TD">
+                                                        Chad
+                                                    </option>
+                                                    <option value="CL">
+                                                        Chile
+                                                    </option>
+                                                    <option value="CN">
+                                                        China
+                                                    </option>
+                                                    <option value="CX">
+                                                        Christmas Island
+                                                    </option>
+                                                    <option value="CC">
+                                                        Cocos (Keeling) Islands
+                                                    </option>
+                                                    <option value="CO">
+                                                        Colombia
+                                                    </option>
+                                                    <option value="KM">
+                                                        Comoros
+                                                    </option>
+                                                    <option value="CG">
+                                                        Congo
+                                                    </option>
+                                                    <option value="CD">
+                                                        Congo, The Democratic
+                                                        Republic of the Congo
+                                                    </option>
+                                                    <option value="CK">
+                                                        Cook Islands
+                                                    </option>
+                                                    <option value="CR">
+                                                        Costa Rica
+                                                    </option>
+                                                    <option value="CI">
+                                                        Cote d&#039;Ivoire
+                                                    </option>
+                                                    <option value="HR">
+                                                        Croatia
+                                                    </option>
+                                                    <option value="CU">
+                                                        Cuba
+                                                    </option>
+                                                    <option value="CY">
+                                                        Cyprus
+                                                    </option>
+                                                    <option value="CZ">
+                                                        Czech Republic
+                                                    </option>
+                                                    <option value="DK">
+                                                        Denmark
+                                                    </option>
+                                                    <option value="DJ">
+                                                        Djibouti
+                                                    </option>
+                                                    <option value="DM">
+                                                        Dominica
+                                                    </option>
+                                                    <option value="DO">
+                                                        Dominican Republic
+                                                    </option>
+                                                    <option value="EC">
+                                                        Ecuador
+                                                    </option>
+                                                    <option value="EG">
+                                                        Egypt
+                                                    </option>
+                                                    <option value="SV">
+                                                        El Salvador
+                                                    </option>
+                                                    <option value="GQ">
+                                                        Equatorial Guinea
+                                                    </option>
+                                                    <option value="ER">
+                                                        Eritrea
+                                                    </option>
+                                                    <option value="EE">
+                                                        Estonia
+                                                    </option>
+                                                    <option value="ET">
+                                                        Ethiopia
+                                                    </option>
+                                                    <option value="FK">
+                                                        Falkland Islands
+                                                        (Malvinas)
+                                                    </option>
+                                                    <option value="FO">
+                                                        Faroe Islands
+                                                    </option>
+                                                    <option value="FJ">
+                                                        Fiji
+                                                    </option>
+                                                    <option value="FI">
+                                                        Finland
+                                                    </option>
+                                                    <option value="FR">
+                                                        France
+                                                    </option>
+                                                    <option value="GF">
+                                                        French Guiana
+                                                    </option>
+                                                    <option value="PF">
+                                                        French Polynesia
+                                                    </option>
+                                                    <option value="GA">
+                                                        Gabon
+                                                    </option>
+                                                    <option value="GM">
+                                                        Gambia
+                                                    </option>
+                                                    <option value="GE">
+                                                        Georgia
+                                                    </option>
+                                                    <option value="DE">
+                                                        Germany
+                                                    </option>
+                                                    <option value="GH">
+                                                        Ghana
+                                                    </option>
+                                                    <option value="GI">
+                                                        Gibraltar
+                                                    </option>
+                                                    <option value="GR">
+                                                        Greece
+                                                    </option>
+                                                    <option value="GL">
+                                                        Greenland
+                                                    </option>
+                                                    <option value="GD">
+                                                        Grenada
+                                                    </option>
+                                                    <option value="GP">
+                                                        Guadeloupe
+                                                    </option>
+                                                    <option value="GU">
+                                                        Guam
+                                                    </option>
+                                                    <option value="GT">
+                                                        Guatemala
+                                                    </option>
+                                                    <option value="GG">
+                                                        Guernsey
+                                                    </option>
+                                                    <option value="GN">
+                                                        Guinea
+                                                    </option>
+                                                    <option value="GW">
+                                                        Guinea-Bissau
+                                                    </option>
+                                                    <option value="GY">
+                                                        Guyana
+                                                    </option>
+                                                    <option value="HT">
+                                                        Haiti
+                                                    </option>
+                                                    <option value="VA">
+                                                        Holy See (Vatican City
+                                                        State)
+                                                    </option>
+                                                    <option value="HN">
+                                                        Honduras
+                                                    </option>
+                                                    <option value="HK">
+                                                        Hong Kong
+                                                    </option>
+                                                    <option value="HU">
+                                                        Hungary
+                                                    </option>
+                                                    <option value="IS">
+                                                        Iceland
+                                                    </option>
+                                                    <option value="IN">
+                                                        India
+                                                    </option>
+                                                    <option value="ID">
+                                                        Indonesia
+                                                    </option>
+                                                    <option value="IR">
+                                                        Iran, Islamic Republic
+                                                        of Persian Gulf
+                                                    </option>
+                                                    <option value="IQ">
+                                                        Iraq
+                                                    </option>
+                                                    <option value="IE">
+                                                        Ireland
+                                                    </option>
+                                                    <option value="IM">
+                                                        Isle of Man
+                                                    </option>
+                                                    <option value="IL">
+                                                        Israel
+                                                    </option>
+                                                    <option value="IT">
+                                                        Italy
+                                                    </option>
+                                                    <option value="JM">
+                                                        Jamaica
+                                                    </option>
+                                                    <option value="JP">
+                                                        Japan
+                                                    </option>
+                                                    <option value="JE">
+                                                        Jersey
+                                                    </option>
+                                                    <option value="JO">
+                                                        Jordan
+                                                    </option>
+                                                    <option value="KZ">
+                                                        Kazakhstan
+                                                    </option>
+                                                    <option value="KE">
+                                                        Kenya
+                                                    </option>
+                                                    <option value="KI">
+                                                        Kiribati
+                                                    </option>
+                                                    <option value="KP">
+                                                        Korea, Democratic
+                                                        People&#039;s Republic
+                                                        of Korea
+                                                    </option>
+                                                    <option value="KR">
+                                                        Korea, Republic of South
+                                                        Korea
+                                                    </option>
+                                                    <option value="KW">
+                                                        Kuwait
+                                                    </option>
+                                                    <option value="KG">
+                                                        Kyrgyzstan
+                                                    </option>
+                                                    <option value="LA">
+                                                        Laos
+                                                    </option>
+                                                    <option value="LV">
+                                                        Latvia
+                                                    </option>
+                                                    <option value="LB">
+                                                        Lebanon
+                                                    </option>
+                                                    <option value="LS">
+                                                        Lesotho
+                                                    </option>
+                                                    <option value="LR">
+                                                        Liberia
+                                                    </option>
+                                                    <option value="LY">
+                                                        Libyan Arab Jamahiriya
+                                                    </option>
+                                                    <option value="LI">
+                                                        Liechtenstein
+                                                    </option>
+                                                    <option value="LT">
+                                                        Lithuania
+                                                    </option>
+                                                    <option value="LU">
+                                                        Luxembourg
+                                                    </option>
+                                                    <option value="MO">
+                                                        Macao
+                                                    </option>
+                                                    <option value="MK">
+                                                        Macedonia
+                                                    </option>
+                                                    <option value="MG">
+                                                        Madagascar
+                                                    </option>
+                                                    <option value="MW">
+                                                        Malawi
+                                                    </option>
+                                                    <option value="MY">
+                                                        Malaysia
+                                                    </option>
+                                                    <option value="MV">
+                                                        Maldives
+                                                    </option>
+                                                    <option value="ML">
+                                                        Mali
+                                                    </option>
+                                                    <option value="MT">
+                                                        Malta
+                                                    </option>
+                                                    <option value="MH">
+                                                        Marshall Islands
+                                                    </option>
+                                                    <option value="MQ">
+                                                        Martinique
+                                                    </option>
+                                                    <option value="MR">
+                                                        Mauritania
+                                                    </option>
+                                                    <option value="MU">
+                                                        Mauritius
+                                                    </option>
+                                                    <option value="YT">
+                                                        Mayotte
+                                                    </option>
+                                                    <option value="MX">
+                                                        Mexico
+                                                    </option>
+                                                    <option value="FM">
+                                                        Micronesia, Federated
+                                                        States of Micronesia
+                                                    </option>
+                                                    <option value="MD">
+                                                        Moldova
+                                                    </option>
+                                                    <option value="MC">
+                                                        Monaco
+                                                    </option>
+                                                    <option value="MN">
+                                                        Mongolia
+                                                    </option>
+                                                    <option value="ME">
+                                                        Montenegro
+                                                    </option>
+                                                    <option value="MS">
+                                                        Montserrat
+                                                    </option>
+                                                    <option value="MA">
+                                                        Morocco
+                                                    </option>
+                                                    <option value="MZ">
+                                                        Mozambique
+                                                    </option>
+                                                    <option value="MM">
+                                                        Myanmar
+                                                    </option>
+                                                    <option value="NA">
+                                                        Namibia
+                                                    </option>
+                                                    <option value="NR">
+                                                        Nauru
+                                                    </option>
+                                                    <option value="NP">
+                                                        Nepal
+                                                    </option>
+                                                    <option value="NL">
+                                                        Netherlands
+                                                    </option>
+                                                    <option value="AN">
+                                                        Netherlands Antilles
+                                                    </option>
+                                                    <option value="NC">
+                                                        New Caledonia
+                                                    </option>
+                                                    <option value="NZ">
+                                                        New Zealand
+                                                    </option>
+                                                    <option value="NI">
+                                                        Nicaragua
+                                                    </option>
+                                                    <option value="NE">
+                                                        Niger
+                                                    </option>
+                                                    <option value="NG" selected>
+                                                        Nigeria
+                                                    </option>
+                                                    <option value="NU">
+                                                        Niue
+                                                    </option>
+                                                    <option value="NF">
+                                                        Norfolk Island
+                                                    </option>
+                                                    <option value="MP">
+                                                        Northern Mariana Islands
+                                                    </option>
+                                                    <option value="NO">
+                                                        Norway
+                                                    </option>
+                                                    <option value="OM">
+                                                        Oman
+                                                    </option>
+                                                    <option value="PK">
+                                                        Pakistan
+                                                    </option>
+                                                    <option value="PW">
+                                                        Palau
+                                                    </option>
+                                                    <option value="PS">
+                                                        Palestinian Territory,
+                                                        Occupied
+                                                    </option>
+                                                    <option value="PA">
+                                                        Panama
+                                                    </option>
+                                                    <option value="PG">
+                                                        Papua New Guinea
+                                                    </option>
+                                                    <option value="PY">
+                                                        Paraguay
+                                                    </option>
+                                                    <option value="PE">
+                                                        Peru
+                                                    </option>
+                                                    <option value="PH">
+                                                        Philippines
+                                                    </option>
+                                                    <option value="PN">
+                                                        Pitcairn
+                                                    </option>
+                                                    <option value="PL">
+                                                        Poland
+                                                    </option>
+                                                    <option value="PT">
+                                                        Portugal
+                                                    </option>
+                                                    <option value="PR">
+                                                        Puerto Rico
+                                                    </option>
+                                                    <option value="QA">
+                                                        Qatar
+                                                    </option>
+                                                    <option value="RO">
+                                                        Romania
+                                                    </option>
+                                                    <option value="RU">
+                                                        Russia
+                                                    </option>
+                                                    <option value="RW">
+                                                        Rwanda
+                                                    </option>
+                                                    <option value="RE">
+                                                        Reunion
+                                                    </option>
+                                                    <option value="BL">
+                                                        Saint Barthelemy
+                                                    </option>
+                                                    <option value="SH">
+                                                        Saint Helena, Ascension
+                                                        and Tristan Da Cunha
+                                                    </option>
+                                                    <option value="KN">
+                                                        Saint Kitts and Nevis
+                                                    </option>
+                                                    <option value="LC">
+                                                        Saint Lucia
+                                                    </option>
+                                                    <option value="MF">
+                                                        Saint Martin
+                                                    </option>
+                                                    <option value="PM">
+                                                        Saint Pierre and
+                                                        Miquelon
+                                                    </option>
+                                                    <option value="VC">
+                                                        Saint Vincent and the
+                                                        Grenadines
+                                                    </option>
+                                                    <option value="WS">
+                                                        Samoa
+                                                    </option>
+                                                    <option value="SM">
+                                                        San Marino
+                                                    </option>
+                                                    <option value="ST">
+                                                        Sao Tome and Principe
+                                                    </option>
+                                                    <option value="SA">
+                                                        Saudi Arabia
+                                                    </option>
+                                                    <option value="SN">
+                                                        Senegal
+                                                    </option>
+                                                    <option value="RS">
+                                                        Serbia
+                                                    </option>
+                                                    <option value="SC">
+                                                        Seychelles
+                                                    </option>
+                                                    <option value="SL">
+                                                        Sierra Leone
+                                                    </option>
+                                                    <option value="SG">
+                                                        Singapore
+                                                    </option>
+                                                    <option value="SK">
+                                                        Slovakia
+                                                    </option>
+                                                    <option value="SI">
+                                                        Slovenia
+                                                    </option>
+                                                    <option value="SB">
+                                                        Solomon Islands
+                                                    </option>
+                                                    <option value="SO">
+                                                        Somalia
+                                                    </option>
+                                                    <option value="ZA">
+                                                        South Africa
+                                                    </option>
+                                                    <option value="SS">
+                                                        South Sudan
+                                                    </option>
+                                                    <option value="GS">
+                                                        South Georgia and the
+                                                        South Sandwich Islands
+                                                    </option>
+                                                    <option value="ES">
+                                                        Spain
+                                                    </option>
+                                                    <option value="LK">
+                                                        Sri Lanka
+                                                    </option>
+                                                    <option value="SD">
+                                                        Sudan
+                                                    </option>
+                                                    <option value="SR">
+                                                        Suricountry
+                                                    </option>
+                                                    <option value="SJ">
+                                                        Svalbard and Jan Mayen
+                                                    </option>
+                                                    <option value="SZ">
+                                                        Swaziland
+                                                    </option>
+                                                    <option value="SE">
+                                                        Sweden
+                                                    </option>
+                                                    <option value="CH">
+                                                        Switzerland
+                                                    </option>
+                                                    <option value="SY">
+                                                        Syrian Arab Republic
+                                                    </option>
+                                                    <option value="TW">
+                                                        Taiwan
+                                                    </option>
+                                                    <option value="TJ">
+                                                        Tajikistan
+                                                    </option>
+                                                    <option value="TZ">
+                                                        Tanzania, United
+                                                        Republic of Tanzania
+                                                    </option>
+                                                    <option value="TH">
+                                                        Thailand
+                                                    </option>
+                                                    <option value="TL">
+                                                        Timor-Leste
+                                                    </option>
+                                                    <option value="TG">
+                                                        Togo
+                                                    </option>
+                                                    <option value="TK">
+                                                        Tokelau
+                                                    </option>
+                                                    <option value="TO">
+                                                        Tonga
+                                                    </option>
+                                                    <option value="TT">
+                                                        Trinidad and Tobago
+                                                    </option>
+                                                    <option value="TN">
+                                                        Tunisia
+                                                    </option>
+                                                    <option value="TR">
+                                                        Turkey
+                                                    </option>
+                                                    <option value="TM">
+                                                        Turkmenistan
+                                                    </option>
+                                                    <option value="TC">
+                                                        Turks and Caicos Islands
+                                                    </option>
+                                                    <option value="TV">
+                                                        Tuvalu
+                                                    </option>
+                                                    <option value="UG">
+                                                        Uganda
+                                                    </option>
+                                                    <option value="UA">
+                                                        Ukraine
+                                                    </option>
+                                                    <option value="AE">
+                                                        United Arab Emirates
+                                                    </option>
+                                                    <option value="GB">
+                                                        United Kingdom
+                                                    </option>
+                                                    <option value="US">
+                                                        United States
+                                                    </option>
+                                                    <option value="UY">
+                                                        Uruguay
+                                                    </option>
+                                                    <option value="UZ">
+                                                        Uzbekistan
+                                                    </option>
+                                                    <option value="VU">
+                                                        Vanuatu
+                                                    </option>
+                                                    <option value="VE">
+                                                        Venezuela, Bolivarian
+                                                        Republic of Venezuela
+                                                    </option>
+                                                    <option value="VN">
+                                                        Vietnam
+                                                    </option>
+                                                    <option value="VG">
+                                                        Virgin Islands, British
+                                                    </option>
+                                                    <option value="VI">
+                                                        Virgin Islands, U.S.
+                                                    </option>
+                                                    <option value="WF">
+                                                        Wallis and Futuna
+                                                    </option>
+                                                    <option value="YE">
+                                                        Yemen
+                                                    </option>
+                                                    <option value="ZM">
+                                                        Zambia
+                                                    </option>
+                                                    <option value="ZW">
+                                                        Zimbabwe
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div
+                                            class="form-group col-xl-4 col-md-6 col-sm-3 col-12"
+                                        >
+                                            <label
+                                                class="form-control-label font-weight-bold"
+                                                >Status
+                                            </label>
+                                            <input
+                                                type="checkbox"
+                                                data-width="100%"
+                                                data-onstyle="-success"
+                                                data-offstyle="-danger"
+                                                data-toggle="toggle"
+                                                data-on="Active"
+                                                data-off="Banned"
+                                                name="status"
+                                                checked
+                                            />
+                                        </div>
+
+                                        <div
+                                            class="form-group col-xl-4 col-md-6 col-sm-3 col-12"
+                                        >
+                                            <label
+                                                class="form-control-label font-weight-bold"
+                                                >Email Verification
+                                            </label>
+                                            <input
+                                                type="checkbox"
+                                                data-width="100%"
+                                                data-onstyle="-success"
+                                                data-offstyle="-danger"
+                                                data-toggle="toggle"
+                                                data-on="Verified"
+                                                data-off="Unverified"
+                                                name="ev"
+                                                checked
+                                            />
+                                        </div>
+
+                                        <div
+                                            class="form-group col-xl-4 col-md-6 col-sm-3 col-12"
+                                        >
+                                            <label
+                                                class="form-control-label font-weight-bold"
+                                                >SMS Verification
+                                            </label>
+                                            <input
+                                                type="checkbox"
+                                                data-width="100%"
+                                                data-onstyle="-success"
+                                                data-offstyle="-danger"
+                                                data-toggle="toggle"
+                                                data-on="Verified"
+                                                data-off="Unverified"
+                                                name="sv"
+                                                checked
+                                            />
+                                        </div>
+                                        <div
+                                            class="form-group col-md-6 col-sm-3 col-12"
+                                        >
+                                            <label
+                                                class="form-control-label font-weight-bold"
+                                                >2FA Status
+                                            </label>
+                                            <input
+                                                type="checkbox"
+                                                data-width="100%"
+                                                data-onstyle="-success"
+                                                data-offstyle="-danger"
+                                                data-toggle="toggle"
+                                                data-on="Verified"
+                                                data-off="Unverified"
+                                                name="ts"
+                                            />
+                                        </div>
+
+                                        <div
+                                            class="form-group col-md-6 col-sm-3 col-12"
+                                        >
+                                            <label
+                                                class="form-control-label font-weight-bold"
+                                                >2FA Verification
+                                            </label>
+                                            <input
+                                                type="checkbox"
+                                                data-width="100%"
+                                                data-onstyle="-success"
+                                                data-offstyle="-danger"
+                                                data-toggle="toggle"
+                                                data-on="Verified"
+                                                data-off="Unverified"
+                                                name="tv"
+                                                checked
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-4">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <button
+                                                    type="submit"
+                                                    class="btn btn--primary btn-block btn-lg"
+                                                >
+                                                    Save Changes
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    id="addSubModal"
+                    class="modal fade"
+                    tabindex="-1"
+                    role="dialog"
+                >
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">
+                                    Add / Subtract Balance
+                                </h5>
+                                <button
+                                    type="button"
+                                    class="close"
+                                    data-dismiss="modal"
+                                    aria-label="Close"
+                                >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form
+                                action="https://script.viserlab.com/hyiplab/demo/admin/user/add-sub-balance/243"
+                                method="POST"
+                            >
+                                <input
+                                    type="hidden"
+                                    name="_token"
+                                    value="RgcPyegaILDSesIQWfFRWWkp5JugsZ0TvYurJD0q"
+                                />
+                                <div class="modal-body">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <input
+                                                type="checkbox"
+                                                data-width="100%"
+                                                data-height="44px"
+                                                data-onstyle="-success"
+                                                data-offstyle="-danger"
+                                                data-toggle="toggle"
+                                                data-on="Add Balance"
+                                                data-off="Subtract Balance"
+                                                name="act"
+                                                checked
+                                            />
+                                        </div>
+
+                                        <div class="form-group col-md-12">
+                                            <label class="font-weight-bold"
+                                                >Select Wallet<span
+                                                    class="text-danger"
+                                                    >*</span
+                                                ></label
+                                            >
+                                            <select
+                                                name="wallet"
+                                                class="form-control"
+                                                required
+                                            >
+                                                <option value="deposit_wallet">
+                                                    Deposit Wallet
+                                                </option>
+                                                <option value="interest_wallet">
+                                                    Interest Wallet
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-md-12">
+                                            <label
+                                                >Amount<span class="text-danger"
+                                                    >*</span
+                                                ></label
+                                            >
+                                            <div class="input-group has_append">
+                                                <input
+                                                    type="text"
+                                                    name="amount"
+                                                    class="form-control"
+                                                    placeholder="Please provide positive amount"
+                                                />
+                                                <div class="input-group-append">
+                                                    <div
+                                                        class="input-group-text"
+                                                    >
+                                                        $
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button
+                                        type="button"
+                                        class="btn btn--dark"
+                                        data-dismiss="modal"
+                                    >
+                                        Close
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        class="btn btn--success"
+                                    >
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- bodywrapper__inner end -->
+        </div>
+    </div>
 </template>
 <script>
+import { ContentLoader, ListLoader } from "vue-content-loader";
 export default {
     data() {
-        return {}
-    }
-}
+        return {
+            user: {},
+            loading: false,
+            key: 0,
+        };
+    },
+    created() {
+        this.fetchUser(this.$route.params.id);
+    },
+	mounted() {
+        var script = document.createElement("script");
+        script.src = this.$root.basepath + "/assets/admin/js/app.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src = this.$root.basepath + "/assets/admin/js/admin.js";
+        document.body.appendChild(script);
+    },
+    beforeCreate() {
+        let js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        );
+        document.body.appendChild(js);
 
+        var style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/bootstrap.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/bootstrap-toggle.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/admin/css/all.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/css/line-awesome.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/nice-select.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/admin/css/vendor/prism.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/select2.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/datatables.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/jquery-jvectormap-2.0.5.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/datepicker.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/jquery-timepicky.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/bootstrap-clockpicker.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/bootstrap-pincode-input.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/admin/css/app.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        var script = document.createElement("script");
+        script.src =
+            this.$root.basepath + "/assets/admin/js/vendor/jquery-3.5.1.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath +
+            "/assets/admin/js/vendor/bootstrap.bundle.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath +
+            "/assets/admin/js/vendor/bootstrap-toggle.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath +
+            "/assets/admin/js/vendor/jquery.slimscroll.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath +
+            "/assets/admin/js/vendor/jquery.nice-select.min.js";
+        document.body.appendChild(script);
+        style = document.createElement("link");
+        script = document.createElement("script");
+        script.src = this.$root.basepath + "/assets/admin/js/nicEdit.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src = this.$root.basepath + "/assets/admin/js/vendor/prism.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath + "/assets/admin/js/vendor/select2.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath + "/assets/admin/js/vendor/datatables.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath + "/assets/admin/js/vendor/apexcharts.min.js";
+        document.body.appendChild(script);
+    },
+
+    components: {
+        ContentLoader,
+        ListLoader,
+    },
+    methods: {
+        fetchUser(id) {
+            this.loading = true;
+            var form = new Form();
+            form.get("/auth/users?id=" + id)
+                .then((response) => {
+                    this.loading = false;
+                    this.user = response.data.data.item[0];
+                    this.key++;
+                })
+                .catch((error) => {
+                    this.loading = false;
+                    this.$root.alert(
+                        "error",
+                        "",
+                        "An error occured when fetching data"
+                    );
+                    console.log(error);
+                });
+        },
+    },
+};
 </script>

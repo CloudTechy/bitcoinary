@@ -2,241 +2,250 @@
     <div class="page-wrapper default-version">
         <AdminDashboardSidebar></AdminDashboardSidebar>
         <AdminDashboardHeader></AdminDashboardHeader>
-            <div class="body-wrapper">
-                <div class="bodywrapper__inner">
-                    <div
-                        class="row align-items-center mb-30 justify-content-between"
-                    >
-                        <div class="col-lg-6 col-sm-6">
-                            <h6 class="page-title">Manage Users</h6>
-                        </div>
-                        <div
-                            class="col-lg-6 col-sm-6 text-sm-right mt-sm-0 mt-3"
-                        >
-                            <form
-                                action="https://script.viserlab.com/hyiplab/demo/admin/users/all/search"
-                                method="GET"
-                                class="form-inline float-sm-right bg--white"
-                            >
-                                <div class="input-group has_append">
-                                    <input
-                                        type="text"
-                                        name="search"
-                                        class="form-control"
-                                        placeholder="Username or email"
-                                        value=""
-                                    />
-                                    <div class="input-group-append">
-                                        <button
-                                            class="btn btn--primary"
-                                            type="submit"
-                                        >
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+        <div class="body-wrapper">
+            <div class="bodywrapper__inner">
+                <div
+                    class="row align-items-center mb-30 justify-content-between"
+                >
+                    <div class="col-lg-6 col-sm-6">
+                        <h6 class="page-title">Manage Users</h6>
                     </div>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card b-radius--10">
-                                <div class="card-body p-0">
-                                    <div
-                                        class="table-responsive--md table-responsive"
+                    <div class="col-lg-6 col-sm-6 text-sm-right mt-sm-0 mt-3">
+                        <form
+                            action=""
+                            method="GET"
+                            class="form-inline float-sm-right bg--white"
+                        >
+                            <div class="input-group has_append">
+                                <input
+                                    type="text"
+                                    v-model="search"
+                                    class="form-control"
+                                    placeholder="email"
+                                />
+                                <div class="input-group-append">
+                                    <button
+                                        class="btn btn--primary"
+                                        @click.prevent="searchUser"
                                     >
-                                        <table
-                                            class="table table--light style--two"
-                                        >
-                                            <thead>
-                                                <tr>
-                                                    <th>User</th>
-                                                    <th>Email-Phone</th>
-                                                    <th>Country</th>
-                                                    <th>Joined At</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr v-if = "users" v-for="user in users">
-                                                    <td data-label="User">
-                                                        <span
-                                                            class="font-weight-bold"
-                                                            >{{user.names}}</span
-                                                        >
-                                                        <br />
-                                                        <span class="small">
-                                                            <a
-                                                                href="https://script.viserlab.com/hyiplab/demo/admin/user/detail/5124"
-                                                                ><span>@</span
-                                                                >{{user.username}}</a
-                                                            >
-                                                        </span>
-                                                    </td>
-                                                    <td
-                                                        data-label="Email-Phone"
-                                                    >
-                                                       {{user.email}} <br />[Mobile
-                                                        Number Protected For
-                                                        Demo]
-                                                    </td>
-                                                    <td data-label="Country">
-                                                        <span
-                                                            class="font-weight-bold"
-                                                            data-toggle="tooltip"
-                                                            >Egypt</span
-                                                        >
-                                                    </td>
-                                                    <td data-label="Joined At">
-                                                        11 Aug, 2022 09:59 PM
-                                                        <br />
-                                                        3 hours ago
-                                                    </td>
-                                                    <td data-label="Action">
-                                                        <a
-                                                            href="https://script.viserlab.com/hyiplab/demo/admin/user/detail/5124"
-                                                            class="icon-btn"
-                                                            data-toggle="tooltip"
-                                                            title=""
-                                                            data-original-title="Details"
-                                                        >
-                                                            <i
-                                                                class="las la-desktop text--shadow"
-                                                            ></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                           
-                                            </tbody>
-                                        </table>
-                                        <!-- table end -->
-                                    </div>
-                                </div>
-                                <div class="card-footer py-4">
-                                    <nav aria-label="...">
-                                        <ul
-                                            class="pagination justify-content-end mb-0"
-                                        >
-                                            <li class="page-item active">
-                                                <a
-                                                    class="page-link"
-                                                    href="javascript:void(0)"
-                                                    >1</a
-                                                >
-                                            </li>
-                                            <li class="page-item">
-                                                <a
-                                                    class="page-link"
-                                                    href="https://script.viserlab.com/hyiplab/demo/admin/users?page=2"
-                                                    >2</a
-                                                >
-                                            </li>
-                                            <li class="page-item">
-                                                <a
-                                                    class="page-link"
-                                                    href="https://script.viserlab.com/hyiplab/demo/admin/users?page=3"
-                                                    >3</a
-                                                >
-                                            </li>
-                                            <li class="page-item">
-                                                <a
-                                                    class="page-link"
-                                                    href="https://script.viserlab.com/hyiplab/demo/admin/users?page=4"
-                                                    >4</a
-                                                >
-                                            </li>
-                                            <li class="page-item">
-                                                <a
-                                                    class="page-link"
-                                                    href="https://script.viserlab.com/hyiplab/demo/admin/users?page=5"
-                                                    >5</a
-                                                >
-                                            </li>
-                                            <li class="page-item">
-                                                <a
-                                                    class="page-link"
-                                                    href="https://script.viserlab.com/hyiplab/demo/admin/users?page=6"
-                                                    >6</a
-                                                >
-                                            </li>
-                                            <li class="page-item">
-                                                <a
-                                                    class="page-link"
-                                                    href="https://script.viserlab.com/hyiplab/demo/admin/users?page=7"
-                                                    >7</a
-                                                >
-                                            </li>
-                                            <li class="page-item">
-                                                <a
-                                                    class="page-link"
-                                                    href="https://script.viserlab.com/hyiplab/demo/admin/users?page=8"
-                                                    >8</a
-                                                >
-                                            </li>
-                                            <li class="page-item">
-                                                <a
-                                                    class="page-link"
-                                                    href="https://script.viserlab.com/hyiplab/demo/admin/users?page=9"
-                                                    >9</a
-                                                >
-                                            </li>
-                                            <li class="page-item">
-                                                <a
-                                                    class="page-link"
-                                                    href="https://script.viserlab.com/hyiplab/demo/admin/users?page=10"
-                                                    >10</a
-                                                >
-                                            </li>
-                                            <li class="page-item disabled">
-                                                <a
-                                                    class="page-link"
-                                                    href="javascript:void(0)"
-                                                >
-                                                    ...
-                                                </a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a
-                                                    class="page-link"
-                                                    href="https://script.viserlab.com/hyiplab/demo/admin/users?page=251"
-                                                    >251</a
-                                                >
-                                            </li>
-                                            <li class="page-item">
-                                                <a
-                                                    class="page-link"
-                                                    href="https://script.viserlab.com/hyiplab/demo/admin/users?page=252"
-                                                    >252</a
-                                                >
-                                            </li>
-                                            <li class="page-item">
-                                                <a
-                                                    class="page-link"
-                                                    href="https://script.viserlab.com/hyiplab/demo/admin/users?page=2"
-                                                >
-                                                    <i
-                                                        class="fa fa-angle-right"
-                                                    ></i>
-                                                    <span class="sr-only"
-                                                        >Next</span
-                                                    >
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
+                                        <i class="fa fa-search"></i>
+                                    </button>
                                 </div>
                             </div>
-                            <!-- card end -->
-                        </div>
+                        </form>
                     </div>
                 </div>
-                <!-- bodywrapper__inner end -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card b-radius--10">
+                            <div class="card-body p-0">
+                                <div
+                                    class="table-responsive--md table-responsive"
+                                >
+                                    <table
+                                        class="table table--light style--two"
+                                    >
+                                        <thead>
+                                            <tr>
+                                                <th>User</th>
+                                                <th>Email-Phone</th>
+                                                <th>Country</th>
+                                                <th>Joined At</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr
+                                                v-if="users && !loading"
+                                                v-for="user in users"
+                                            >
+                                                <td data-label="User">
+                                                    <span
+                                                        class="font-weight-bold text-capitalize"
+                                                        >{{ user.names }}</span
+                                                    >
+                                                    <br />
+                                                    <span class="small">
+                                                        <a
+                                                            class="text-lowercase"
+                                                            href="https://script.viserlab.com/hyiplab/demo/admin/user/detail/5124"
+                                                            ><span>@</span
+                                                            >{{
+                                                                user.username
+                                                            }}</a
+                                                        >
+                                                    </span>
+                                                </td>
+                                                <td
+                                                    class="text-lowercase"
+                                                    data-label="Email-Phone"
+                                                >
+                                                    {{ user.email }} <br />{{
+                                                        user.number
+                                                    }}
+                                                </td>
+                                                <td data-label="Country">
+                                                    <span
+                                                        class="font-weight-bold text-capitalize"
+                                                        data-toggle="tooltip"
+                                                        >{{
+                                                            user.country
+                                                        }}</span
+                                                    >
+                                                </td>
+                                                <td data-label="Joined At">
+                                                    {{ user.created_at }}
+                                                    <br />
+                                                    {{ user.date }}
+                                                </td>
+                                                <td data-label="Action">
+                                                    <a
+                                                        :href="
+                                                            '../admin/users/' +
+                                                            user.id
+                                                        "
+                                                        class="icon-btn"
+                                                        data-toggle="tooltip"
+                                                        title=""
+                                                        data-original-title="Details"
+                                                    >
+                                                        <i
+                                                            class="las la-desktop text--shadow"
+                                                        ></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr v-if="loading">
+                                                <td colspan="5">
+                                                    <!-- <content-loader></content-loader> -->
+                                                    <list-loader></list-loader>
+                                                </td>
+                                            </tr>
+                                            <tr
+                                                v-if="
+                                                    users.length === 0 &&
+                                                    !loading
+                                                "
+                                            >
+                                                <td
+                                                    class="text-center"
+                                                    data-label="Users"
+                                                    colspan="5"
+                                                >
+                                                    <div class="icon">
+                                                        <i
+                                                            class="fa fa-search"
+                                                        ></i>
+                                                    </div>
+                                                    <div class="details">
+                                                        <div class="desciption">
+                                                            <span class=""
+                                                                >Nothing found
+                                                                here</span
+                                                            >
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- table end -->
+                                </div>
+                            </div>
+                            <div
+                                v-if="paging.total_pages > 1"
+                                class="card-footer py-4"
+                            >
+                                <nav aria-label="...">
+                                    <ul
+                                        class="pagination justify-content-end mb-0"
+                                    >
+                                        <li
+                                            v-if="paging.current_page > 1"
+                                            class="page-item"
+                                        >
+                                            <a
+                                                class="page-link"
+                                                @click.prevent="
+                                                    getUsers(
+                                                        --paging.current_page
+                                                    )
+                                                "
+                                            >
+                                                <i class="fa fa-angle-left"></i>
+                                                <span class="sr-only"
+                                                    >Prev</span
+                                                >
+                                            </a>
+                                        </li>
+                                        <li
+                                            v-for="num in paging.total_pages"
+                                            :class="{
+                                                'page-item': true,
+                                                active:
+                                                    num == paging.current_page,
+                                            }"
+                                        >
+                                            <a
+                                                class="page-link"
+                                                @click.prevent="getUsers(num)"
+                                                >{{ num }}</a
+                                            >
+                                        </li>
+                                        <!-- <li class="page-item disabled">
+                                            <a
+                                                class="page-link"
+                                                href="javascript:void(0)"
+                                            >
+                                                ...
+                                            </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a
+                                                class="page-link"
+                                                href="https://script.viserlab.com/hyiplab/demo/admin/users?page=251"
+                                                >251</a
+                                            >
+                                        </li> -->
+                                        <li
+                                            v-if="
+                                                paging.total_pages !=
+                                                paging.current_page
+                                            "
+                                            class="page-item"
+                                        >
+                                            <a
+                                                class="page-link"
+                                                @click.prevent="
+                                                    getUsers(
+                                                        ++paging.current_page
+                                                    )
+                                                "
+                                            >
+                                                <i
+                                                    class="fa fa-angle-right"
+                                                ></i>
+                                                <span class="sr-only"
+                                                    >Next</span
+                                                >
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- card end -->
+                    </div>
+                </div>
             </div>
-         
+            <!-- bodywrapper__inner end -->
+        </div>
     </div>
 </template>
 <script>
+import { ContentLoader, ListLoader } from "vue-content-loader";
+
 export default {
     data() {
         return {
@@ -249,35 +258,30 @@ export default {
             addUserkey: 0,
             key: 0,
             role: "",
-            pageLimit: 5,
+            pageLimit: 20,
             currentPage: 1,
             search: "",
+            loading: false,
             error: null,
             message: null,
             users: [],
+            paging: [],
             activeUsers: 0,
             admins: 0,
             selectedUser: [],
-            search: "",
             userLevelTitle:
                 this.selectedUser && this.selectedUser.isAdmin == true
                     ? "Make User"
                     : "Make Admin",
         };
     },
+    components: {
+        ContentLoader,
+        ListLoader,
+    },
     watch: {
         users() {
-            this.users.data.forEach((user, index) => {
-                if (user.totalActiveTransaction > 0) {
-                    this.activeUsers++;
-                }
-            });
-            this.admins = [];
-            this.users.data.forEach((user, index) => {
-                if (user.isAdmin == true) {
-                    this.admins++;
-                }
-            });
+       
         },
         role() {
             this.getUsers(1);
@@ -292,10 +296,6 @@ export default {
             } else {
                 this.userLevelTitle = "Make Admin";
             }
-        },
-        search() {
-            this.getUsers(1);
-            // this.getSelectedUser()
         },
     },
 
@@ -340,8 +340,7 @@ export default {
         style.type = "text/css";
         document.head.appendChild(style);
         style = document.createElement("link");
-        style.href =
-            this.$root.basepath + "/css/line-awesome.min.css";
+        style.href = this.$root.basepath + "/css/line-awesome.min.css";
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
@@ -461,9 +460,10 @@ export default {
     },
     methods: {
         getUsers(page, url = null) {
+            this.loading = true;
             this.currentPage = page;
             this.$root.loader("show");
-            var searchQuery = this.search ? "&username=" + this.search : "";
+            var searchQuery = this.search ? "&email=" + this.search : "";
             var roleQuery = this.role ? "&user_level_id=" + this.role : "";
             url = url ? url : "/auth/users?page=" + page;
             this.form
@@ -475,12 +475,15 @@ export default {
                         roleQuery
                 )
                 .then((response) => {
+                    this.loading = false;
                     this.users = response.data.data.item;
+                    this.paging = response.data.data.pagination;
                     this.key++;
                     // this.getSelectedUser()
                     this.$root.loader("hide");
                 })
                 .catch((error) => {
+                    this.loading = false;
                     this.$root.loader("hide");
                     console.log(error);
                 });
@@ -557,6 +560,10 @@ export default {
         },
         sendEmail($user) {
             this.$root.mailUser = $user;
+        },
+        searchUser() {
+            this.getUsers(1);
+            // this.getSelectedUser()
         },
         resetEmailModal() {
             this.$root.mailUser = null;
@@ -652,6 +659,7 @@ export default {
                 this.$refs.pause[0].disabled = false;
             }
         },
+        
     },
 };
 </script>

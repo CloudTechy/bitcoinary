@@ -64,11 +64,14 @@ class Helper {
 		return self::responseJson($data, $message, 200);
 	}
 
-	public static function buildData($data) {
-		$data = [
-			"item" => $data,
-		];
-		return $data;
+	public static function buildData($data, $pagination = []) {
+		$page = request()->query('page', 1);
+        // $pageSize = request()->query('pageSize') == 0 ? $total : request()->query('pageSize');
+        $data = [
+            "item" => $data,
+            "pagination" => $pagination,
+        ];
+        return $data;
 	}
 	public static function checkBooleanParameter($boolean) {
 

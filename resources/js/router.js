@@ -31,7 +31,7 @@ import VueRouter from 'vue-router'
 // import Security from './pages/user/Security'
 
 // import Users from "./pages/admin/Users";
-import UserView from "./pages/admin/UserView";
+// import UserView from "./pages/admin/Users";
 import UserEdit from "./pages/admin/Edit";
 import Deposits from "./pages/admin/Deposits";
 import Withdrawals from "./pages/admin/Withdrawals";
@@ -210,7 +210,7 @@ const routes = [
     {
         path: "/dashboard/deposit",
         name: "deposit",
-        component:  () => import("./pages/user/Deposit"),
+        component: () => import("./pages/user/Deposit"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -220,7 +220,7 @@ const routes = [
     {
         path: "/dashboard/withdraw",
         name: "withdraw",
-        component:  () => import("./pages/user/Withdraw"),
+        component: () => import("./pages/user/Withdraw"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -230,7 +230,7 @@ const routes = [
     {
         path: "/dashboard/settings",
         name: "Setting",
-        component:  () => import("./pages/user/Setting"),
+        component: () => import("./pages/user/Setting"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -240,7 +240,7 @@ const routes = [
     {
         path: "/dashboard/security",
         name: "security",
-        component:  () => import("./pages/user/Security"),
+        component: () => import("./pages/user/Security"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -260,7 +260,7 @@ const routes = [
     {
         path: "/dashboard/report/deposit",
         name: "depositReport",
-        component:  () => import("./pages/user/reports/DepositReport"),
+        component: () => import("./pages/user/reports/DepositReport"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -270,7 +270,7 @@ const routes = [
     {
         path: "/dashboard/plans",
         name: "UserPlans",
-        component:  () => import("./pages/user/reports/DepositReport"),
+        component: () => import("./pages/user/reports/DepositReport"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -280,7 +280,7 @@ const routes = [
     {
         path: "/dashboard/report/transaction",
         name: "transactionReport",
-        component:  () => import("./pages/user/reports/TransactionReport"),
+        component: () => import("./pages/user/reports/TransactionReport"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -290,7 +290,7 @@ const routes = [
     {
         path: "/dashboard/referral",
         name: "ReferralReport",
-        component:  () => import("./pages/user/reports/ReferralReport"),
+        component: () => import("./pages/user/reports/ReferralReport"),
         meta: {
             auth: true,
             adminAuth: false,
@@ -330,9 +330,9 @@ const routes = [
         },
     },
     {
-        path: "/admin/dashboard/user-view",
+        path: "/admin/users/:id",
         name: "user-view",
-        component: UserView,
+        component: () => import("./pages/admin/UserView"),
         meta: {
             auth: true,
             adminAuth: true,

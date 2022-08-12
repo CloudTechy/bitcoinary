@@ -7172,3 +7172,19 @@ a.icon-btn {
     opacity: 0.78;
     cursor:auto !important;
 }
+
+
+.pagination .page-item .page-link:hover, .pagination .page-item span:hover {
+   background-color: #e9ecef;
+   cursor: pointer;
+}
+.disabled:hover {
+    cursor: not-allowed;
+    background-color: transparent !important;
+}
+.pagination .page-item.active .page-link:hover {
+    background-color: #7367f0;
+    border-color: #7367f0;
+    color: #ffffff;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 25%);
+}

@@ -351,7 +351,7 @@ export default {
                     ip: this.$root.ip,
                     password: app.password,
                     password_confirmation: app.password_confirmation,
-                    county : app.country
+                    country : app.country
                 },
                 success: function () {
                     this.$root.loader("hide");

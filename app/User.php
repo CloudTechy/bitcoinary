@@ -180,7 +180,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 	public function scopeFilter($query, $filter) {
 
 		try {
-			$fields = ['first_name', 'withdraw_request', 'secret_question', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
+			$fields = ['id','first_name', 'withdraw_request', 'secret_question', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
 
 			return $query->where(
 				function ($query) use ($filter, $fields) {

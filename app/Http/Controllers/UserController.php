@@ -24,12 +24,19 @@ class UserController extends Controller {
 
 		try {
 			$page = request()->query('page', 1);
-			$pageSize = request()->query('pageSize', 10000000);
+			$pageSize = request()->query('pageSize', 20);
 			$data = User::filter(request()->all())
 				->latest()
 				->paginate($pageSize);
+				$pagination = [
+					'total' => $data->total(),
+					'count' => $data->count(),
+					'per_page' => $data->perPage(),
+					'current_page' => $data->currentPage(),
+					'total_pages' => $data->lastPage()
+				];
 			$data = UserResource::collection($data);
-			$builtData = Helper::buildData($data);
+			$builtData = Helper::buildData($data, $pagination);
 			return Helper::validRequest($builtData, 'data was fetched successfully', 200);
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);
