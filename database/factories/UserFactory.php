@@ -25,6 +25,7 @@ class UserFactory extends Factory
 			'last_name' =>  $this->faker->lastName,
 			'username' =>  $this->faker->firstName. $this->faker->lastName,
 			'wallet' =>  $this->faker->creditCardNumber,
+			'number' =>  $this->faker->phoneNumber,
 			'email' =>  $this->faker->unique()->safeEmail,
 			'country' =>  $this->faker->country,
 			'user_level_id' =>  $this->faker->numberBetween(1, 2),
