@@ -1,13 +1,7 @@
 <template>
     <div class="page-wrapper default-version">
        <AdminDashboardSidebar></AdminDashboardSidebar>
-        <!-- sidebar end -->
-        <!-- navbar-wrapper start -->
        <AdminDashboardHeader></AdminDashboardHeader> 
-        <!-- navbar-wrapper end -->
-
-         <!-- 
-       -->
 
         <div class="body-wrapper">
             <div class="bodywrapper__inner">
@@ -16,11 +10,6 @@
                 >
                     <div class="col-lg-6 col-sm-6">
                         <h6 class="page-title">Dashboard</h6>
-                    </div>
-                    <div class="col-lg-6 col-sm-6 text-sm-right mt-sm-0 mt-3">
-                        <span class="text--info"
-                            >Last Cron Run <strong>2 minutes ago</strong></span
-                        >
                     </div>
                 </div>
 
@@ -32,13 +21,13 @@
                             </div>
                             <div class="details">
                                 <div class="numbers">
-                                    <span class="amount">5028</span>
+                                    <span class="amount">{{users.length}}</span>
                                 </div>
                                 <div class="desciption">
                                     <span class="text--small">Total Users</span>
                                 </div>
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/users"
+                                    href="/admin/users"
                                     class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
                                     >View All</a
                                 >
@@ -53,7 +42,7 @@
                             </div>
                             <div class="details">
                                 <div class="numbers">
-                                    <span class="amount">5028</span>
+                                    <span class="amount">{{verifiedUsers}}</span>
                                 </div>
                                 <div class="desciption">
                                     <span class="text--small"
@@ -61,7 +50,7 @@
                                     >
                                 </div>
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/users/active"
+                                    href="/admin/users/active"
                                     class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
                                     >View All</a
                                 >
@@ -77,7 +66,7 @@
                             </div>
                             <div class="details">
                                 <div class="numbers">
-                                    <span class="amount">3</span>
+                                    <span class="amount">{{unverifiedUsers}}</span>
                                 </div>
                                 <div class="desciption">
                                     <span class="text--small"
@@ -86,7 +75,7 @@
                                 </div>
 
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/users/email-unverified"
+                                    href="/admin/users/email-unverified"
                                     class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
                                     >View All</a
                                 >
@@ -101,7 +90,7 @@
                             </div>
                             <div class="details">
                                 <div class="numbers">
-                                    <span class="amount">1</span>
+                                    <span class="amount">0</span>
                                 </div>
                                 <div class="desciption">
                                     <span class="text--small"
@@ -110,7 +99,7 @@
                                 </div>
 
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/users/sms-unverified"
+                                    href="/admin/users/sms-unverified"
                                     class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
                                     >View All</a
                                 >
@@ -126,7 +115,7 @@
                             </div>
                             <div class="details">
                                 <div class="numbers">
-                                    <span class="amount">100,358,174.81</span>
+                                    <span class="amount">{{$root.normalNumeral(users.sum('balance'))}}</span>
                                     <span class="currency-sign">$</span>
                                 </div>
                                 <div class="desciption">
@@ -136,7 +125,7 @@
                                 </div>
 
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/user/with-deposit-balance"
+                                    href="/admin/user/with-deposit-balance"
                                     class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
                                     >View All</a
                                 >
@@ -152,7 +141,7 @@
                             </div>
                             <div class="details">
                                 <div class="numbers">
-                                    <span class="amount">112,533,411.58</span>
+                                    <span class="amount">{{$root.normalNumeral(users.sum('totalEarned'))}}</span>
                                     <span class="currency-sign">$</span>
                                 </div>
                                 <div class="desciption">
@@ -162,7 +151,7 @@
                                 </div>
 
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/user/with-interest-balance"
+                                    href="/admin/user/with-interest-balance"
                                     class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
                                     >View All</a
                                 >
@@ -180,13 +169,13 @@
                             </div>
                             <div class="details">
                                 <div class="numbers">
-                                    <span class="amount">9</span>
+                                    <span class="amount">{{$root.packages.length}}</span>
                                 </div>
                                 <div class="desciption">
                                     <span class="text--small">Total Plan</span>
                                 </div>
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/plan-setting"
+                                    href="/admin/plan-setting"
                                     class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
                                     >View All</a
                                 >
@@ -203,7 +192,7 @@
                             </div>
                             <div class="details">
                                 <div class="numbers">
-                                    <span class="amount">135,491.00</span>
+                                    <span class="amount">{{$root.normalNumeral(users.sum('totalActiveTransaction'))}}</span>
                                     <span class="currency-sign">$</span>
                                 </div>
                                 <div class="desciption">
@@ -212,7 +201,7 @@
                                     >
                                 </div>
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/report/plan"
+                                    href="/admin/report/plan"
                                     class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
                                     >View All</a
                                 >
@@ -246,7 +235,7 @@
                                         <i class="las la-wallet"></i>
                                     </div>
                                     <div class="widget-three__content">
-                                        <h2 class="numbers">136</h2>
+                                        <h2 class="numbers">{{totalDeposit.length}}</h2>
                                         <p class="text--small">Total Deposit</p>
                                     </div>
                                 </div>
@@ -262,7 +251,7 @@
                                         <i class="las la-money-bill"></i>
                                     </div>
                                     <div class="widget-three__content">
-                                        <h2 class="numbers">337985 USD</h2>
+                                        <h2 class="numbers">{{$root.normalNumeral(totalDeposit.sum('amount'))}} USD</h2>
                                         <p class="text--small">
                                             Total Deposit Amount
                                         </p>
@@ -280,7 +269,7 @@
                                         <i class="las la-money-check"></i>
                                     </div>
                                     <div class="widget-three__content">
-                                        <h2 class="numbers">8618.06 USD</h2>
+                                        <h2 class="numbers">0.00 USD</h2>
                                         <p class="text--small">
                                             Total Deposit Charge
                                         </p>
@@ -298,7 +287,7 @@
                                         <i class="las la-money-bill-wave"></i>
                                     </div>
                                     <div class="widget-three__content">
-                                        <h2 class="numbers">359</h2>
+                                        <h2 class="numbers">{{totalPendingDeposit}}</h2>
                                         <p class="text--small">
                                             Pending Deposit
                                         </p>
@@ -319,13 +308,13 @@
                             </div>
                             <div class="details">
                                 <div class="numbers">
-                                    <span class="amount">1</span>
+                                    <span class="amount">{{totalWithdrawals.length}}</span>
                                 </div>
                                 <div class="desciption">
                                     <span>Total Withdraw</span>
                                 </div>
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/withdraw/method"
+                                    href="/admin/withdraw/method"
                                     class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
                                     >View All</a
                                 >
@@ -340,14 +329,14 @@
                             </div>
                             <div class="details">
                                 <div class="numbers">
-                                    <span class="amount">100</span>
+                                    <span class="amount">{{$root.normalNumeral(totalWithdrawals.sum('amount'))}}</span>
                                     <span class="currency-sign">USD</span>
                                 </div>
                                 <div class="desciption">
                                     <span>Total Withdraw Amount</span>
                                 </div>
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/withdraw/approved"
+                                    href="/admin/withdraw/approved"
                                     class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
                                     >View All</a
                                 >
@@ -362,7 +351,7 @@
                             </div>
                             <div class="details">
                                 <div class="numbers">
-                                    <span class="amount">0.01 </span>
+                                    <span class="amount">0.00</span>
                                     <span class="currency-sign">USD</span>
                                 </div>
                                 <div class="desciption">
@@ -370,7 +359,7 @@
                                 </div>
 
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/withdraw/approved"
+                                    href="/admin/withdraw/approved"
                                     class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
                                     >View All</a
                                 >
@@ -387,13 +376,13 @@
                             </div>
                             <div class="details">
                                 <div class="numbers">
-                                    <span class="amount">28</span>
+                                    <span class="amount">{{totalPendingWithdrawals}}</span>
                                 </div>
                                 <div class="desciption">
                                     <span>Withdraw Pending</span>
                                 </div>
                                 <a
-                                    href="https://script.viserlab.com/hyiplab/demo/admin/withdraw/pending"
+                                    href="/admin/withdraw/pending"
                                     class="btn btn-sm text--small bg--white text--black box--shadow3 mt-3"
                                     >View All</a
                                 >
@@ -505,16 +494,19 @@
             </div>
             <!-- bodywrapper__inner end -->
         </div>
-        <!-- body-wrapper end -->
     </div>
 </template>
 <script>
+
+
 export default {
     data() {
         return {
             error: null,
             message: null,
             users: [],
+            transactions: [],
+            withdrawals: [],
         };
     },
     computed: {
@@ -524,6 +516,36 @@ export default {
         Referral_link() {
             return this.$root.basepath + "/register?ref=" + this.user.username;
         },
+        verifiedUsers() {
+            return this.users.filter((user) => {
+                    return user.isEmailVerified == true
+            }).length
+        },
+        unverifiedUsers() {
+            return this.users.filter((user) => {
+                    return user.isEmailVerified == false
+            }).length
+        },
+        totalDeposit() {
+           return this.transactions.filter((trx) => {
+                return trx.reference == 'SELF' &&  trx.confirmed == true &&  trx.sent == true
+            })
+        },
+        totalPendingDeposit() {
+            return this.transactions.filter((trx) => {
+                return trx.reference == 'SELF' &&  trx.confirmed == false ||  trx.sent == false
+            }).length
+        },
+        totalWithdrawals() {
+           return this.withdrawals.filter((wtdl) => {
+                return wtdl.confirmed == true &&  wtdl.processed == true
+            })
+        },
+        totalPendingWithdrawals() {
+            return this.withdrawals.filter((wtdl) => {
+                return wtdl.confirmed == false ||  wtdl.processed == false
+            }).length
+        }
     },
     mounted() {
         var script = document.createElement("script");
@@ -657,13 +679,6 @@ export default {
             "/assets/admin/js/vendor/jquery.nice-select.min.js";
         document.body.appendChild(script);
         style = document.createElement("link");
-        style.href = this.$root.basepath + "/assets/admin/css/iziToast.min.css";
-        style.rel = "stylesheet";
-        style.type = "text/css";
-        document.head.appendChild(style);
-        script = document.createElement("script");
-        script.src = this.$root.basepath + "/assets/admin/js/iziToast.min.js";
-        document.body.appendChild(script);
         script = document.createElement("script");
         script.src = this.$root.basepath + "/assets/admin/js/nicEdit.js";
         document.body.appendChild(script);
@@ -690,30 +705,50 @@ export default {
         // document.body.appendChild(script);
     },
     created() {
-        // let body = document.getElementById("body")
-        // body.setAttribute("data-open", "open");
-        // body.setAttribute("data-menu", "vertical-menu-modern");
-        // body.className = 'pace-done vertical-layout navbar-floating footer-static menu-hide vertical-overlay-menu'
-        if (localStorage.users) {
-            this.users = JSON.parse(localStorage.users);
-        }
-        // this.getUsers()
+        this.bootstrap()
     },
     methods: {
+        bootstrap() {
+            this.getUsers()
+            this.getTransactions()
+            this.getWithdrawals()  
+        },
         getUsers() {
             var form = new Form();
             form.get("/auth/users")
                 .then((response) => {
                     this.users = response.data.data.item;
-                    localStorage.users = JSON.stringify(this.users);
                 })
                 .catch((error) => {
                     console.log(error);
+                    this.$root.alert('error', 'users could not be fetched')
+                });
+        },
+        getTransactions() {
+            var form = new Form();
+            form.get("/auth/transactions")
+                .then((response) => {
+                    this.transactions = response.data.data.item;
+                })
+                .catch((error) => {
+                    console.log(error);
+                    this.$root.alert('error', 'transactions could not be fetched')
+                });
+        },
+        getWithdrawals() {
+            var form = new Form();
+            form.get("/auth/withdrawals")
+                .then((response) => {
+                    this.withdrawals = response.data.data.item;
+                })
+                .catch((error) => {
+                    console.log(error);
+                    this.$root.alert('error', 'withdrawals could not be fetched')
                 });
         },
     },
 };
 </script>
 <style type="text/css" scoped="">
-/* @import "../../assets/css/app.css"; */
+@import "../../assets/css/app.css";
 </style>

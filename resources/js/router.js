@@ -30,7 +30,7 @@ import VueRouter from 'vue-router'
 // import Setting from './pages/user/Setting'
 // import Security from './pages/user/Security'
 
-import Users from "./pages/admin/Users";
+// import Users from "./pages/admin/Users";
 import UserView from "./pages/admin/UserView";
 import UserEdit from "./pages/admin/Edit";
 import Deposits from "./pages/admin/Deposits";
@@ -310,13 +310,13 @@ const routes = [
         },
     },
     {
-        path: "/admin/dashboard/users",
+        path: "/admin/users",
         name: "users",
-        component: Users,
+        component: () => import("./pages/admin/Users"),
         meta: {
             auth: true,
             adminAuth: true,
-            title: "Admin Users",
+            title: "Admin user manager",
         },
     },
     {

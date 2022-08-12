@@ -99,7 +99,7 @@
                                 <ul>
                                     <li class="sidebar-menu-item">
                                         <a
-                                            href="https://script.viserlab.com/hyiplab/demo/admin/users"
+                                            href="../admin/users"
                                             class="nav-link"
                                         >
                                             <i

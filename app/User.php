@@ -13,14 +13,19 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use \DB;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 	use Notifiable;
+	use HasFactory;
 	protected $fillable = ['first_name','image', 'withdraw_request', 'secret_question', 'created_at', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
 	protected $hidden = ['password', 'remember_token'];
 	protected $casts = ['email_verified_at' => 'datetime'];
 	protected $appends = array('processedWithdrawals', 'confirmedWithdrawals', 'nullWithdrawals', 'names', 'balance', 'confirmedTransactions', 'nullTransactions', 'sentTransactions', 'totalEarned', 'activeTransactions', 'activePackages', 'maturePackages', 'processMaturePackages', 'canWithdraw');
-	
+	 
+	// protected static function newFactory()
+    // {
+    //     return new UserFactory();
+    // }	
 	public function user_level() {
 		return $this->belongsTo(UserLevel::class);
 	}

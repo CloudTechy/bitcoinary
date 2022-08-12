@@ -1,11 +1,3 @@
-
-function notify(status, message) {
-    iziToast[status]({
-        message: message,
-        position: "topRight",
-    });
-}
-
  $(document).ready(function () {
      "use strict";
      bkLib.onDomLoaded(function () {

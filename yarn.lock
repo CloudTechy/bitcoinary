@@ -3590,6 +3590,11 @@
   "resolved" "https://registry.npmjs.org/isobject/-/isobject-3.0.1.tgz"
   "version" "3.0.1"
 
+"izitoast@^1.4.0":
+  "integrity" "sha512-Oc1X2wiQtPp39i5VpIjf3GJf5sfCtHKXZ5szx7RareyEeFLUlcEW0FSfBni28+Ul6KNKZRKzhVuWzSP4Xngh0w=="
+  "resolved" "https://registry.npmjs.org/izitoast/-/izitoast-1.4.0.tgz"
+  "version" "1.4.0"
+
 "jest-worker@^27.4.5":
   "integrity" "sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg=="
   "resolved" "https://registry.npmjs.org/jest-worker/-/jest-worker-27.5.1.tgz"
@@ -5842,6 +5847,13 @@
   "resolved" "https://registry.npmjs.org/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz"
   "version" "2.3.4"
 
+"vue-izitoast@^1.2.1":
+  "integrity" "sha512-5krrKyAftSR3TnnO3zhMihYCSt0Lay4SBO1AWWKD3jhTErJrR+q9kOKyuAYhn1SttNER87hpnRKqdvLjzjHWQQ=="
+  "resolved" "https://registry.npmjs.org/vue-izitoast/-/vue-izitoast-1.2.1.tgz"
+  "version" "1.2.1"
+  dependencies:
+    "izitoast" "^1.4.0"
+
 "vue-loader@^15.9.8":
   "integrity" "sha512-GwSkxPrihfLR69/dSV3+5CdMQ0D+jXg8Ma1S4nQXKJAznYFX14vHdc/NetQc34Dw+rBbIJyP7JOuVb9Fhprvog=="
   "resolved" "https://registry.npmjs.org/vue-loader/-/vue-loader-15.9.8.tgz"
@@ -5917,7 +5929,7 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@^2.0.1", "vue@^2.6.10", "vue@^2.6.11":
+"vue@^2.0.1", "vue@^2.6.10", "vue@^2.6.11", "vue@^2.6.x":
   "integrity" "sha512-osfkncsGCWqtch+YWYxbqTNQ9hl/UQ6TFRkdmK/VqAjuMpxzr5QotFsYpmJ1AB1ez2LJeIKXDmtMkXUotMOTsA=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.7.7.tgz"
   "version" "2.7.7"

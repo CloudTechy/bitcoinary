@@ -250,13 +250,13 @@ class PackageUserController extends Controller {
 
 			if ($referrer && $user->userLevel->name == "user") {
 				if ($commission_first_level > 0) {
-					$transaction = $referrer->transactions()->create(['reference' => 'BM first tier commission', 'amount' => $commission_first_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
+					$transaction = $referrer->transactions()->create(['reference' => 'first tier commission', 'amount' => $commission_first_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
 					$subscription->update(['referral' => $referrer->id]);	
 					$transaction->user->notify(new TransactionMade($transaction));
 					Helper::adminsUserActivityRequest(['type'=>'CommissionActivity', 'message' => $referrer->username . ' received $' .$commission_first_level.' as first level commission.']);
 				}
 				if ($upline && $commission_second_level > 0) {
-					$transaction = $upline->transactions()->create(['reference' => 'BM second tier commission', 'amount' => $commission_second_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
+					$transaction = $upline->transactions()->create(['reference' => 'second tier commission', 'amount' => $commission_second_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
 					$transaction->user->notify(new TransactionMade($transaction));
 					Helper::adminsUserActivityRequest(['type'=>'CommissionActivity', 'message' => $upline->username . ' received $' .$commission_second_level.' as second level commission.']);
 				}
@@ -308,7 +308,7 @@ class PackageUserController extends Controller {
 			$package = Package::whereRaw('? >= min_deposit  and ? <= max_deposit',[$validated['amount'],$validated['amount']])->firstOrFail();
 			DB::beginTransaction();
 
-			$transaction = $user->transactions()->create(['reference' =>$validated['reference'] ,'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
+			$transaction = $user->transactions()->create(['reference' =>'SELF' ,'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
 
 			$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
 

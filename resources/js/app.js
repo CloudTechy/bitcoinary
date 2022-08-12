@@ -16,8 +16,11 @@ import fontawesome from '@fortawesome/fontawesome-free'
 import Clipboard from 'v-clipboard'
 import vueTelInput from "vue-tel-input";
 import VueHead from 'vue-head'
+import VueIziToast from "vue-izitoast";
+import "izitoast/dist/css/iziToast.min.css";
  
 Vue.use(VueHead)
+Vue.use(VueIziToast);
 
 
 window.jQuery = jQuery
@@ -116,16 +119,18 @@ const app = new Vue({
         this.getPackages();
     },
     methods: {
-        alert(type, title, message) {
-            this.$swal({
-                toast: true,
-                position: "top-end",
-                type,
-                title,
-                text: message,
-                showConfirmButton: false,
-                timer: 5000,
-            });
+        alert(type, message, title = "") {
+            if ((type = "success")) {
+                this.$toast.success(message, title, { position: "topRight" });
+            } else if ((type = "error")) {
+                this.$toast.error(message, title, { position: "topRight" });
+            } else if ((type = "info")) {
+                this.$toast.info(message, title, { position: "topRight" });
+            } else if ((type = "warning")) {
+                this.$toast.warning(message, title, { position: "topRight" });
+            } else if ((type = "question")) {
+                this.$toast.question(message, title, { position: "topRight" });
+            } else this.$toast.show(message, title, { position: "topRight" });
         },
         getPayments() {
             this.$http
@@ -294,6 +299,6 @@ const app = new Vue({
         },
     },
     beforeDestroy() {
-        clearInterval(this.timer);
+        // clearInterval(this.timer);
     },
 });
