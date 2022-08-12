@@ -59,27 +59,25 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
+                                                <tr v-if = "users" v-for="user in users">
                                                     <td data-label="User">
                                                         <span
                                                             class="font-weight-bold"
-                                                            >Mostafa
-                                                            Mahmoud</span
+                                                            >{{user.names}}</span
                                                         >
                                                         <br />
                                                         <span class="small">
                                                             <a
                                                                 href="https://script.viserlab.com/hyiplab/demo/admin/user/detail/5124"
                                                                 ><span>@</span
-                                                                >Mostafa19080</a
+                                                                >{{user.username}}</a
                                                             >
                                                         </span>
                                                     </td>
                                                     <td
                                                         data-label="Email-Phone"
                                                     >
-                                                        [Email Protected For
-                                                        Demo] <br />[Mobile
+                                                       {{user.email}} <br />[Mobile
                                                         Number Protected For
                                                         Demo]
                                                     </td>

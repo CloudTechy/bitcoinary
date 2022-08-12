@@ -534,7 +534,7 @@ label.radio {
     .wthree_input select,
     .wthree_input input[type="email"],
     .wthree_input input[type="password"] {
-        width: 83%;
+        width: 100%;
     }
     /* #progress,
     #progress-complete {
@@ -601,7 +601,7 @@ label.radio {
     .wthree_input select,
     .wthree_input input[type="email"],
     .wthree_input input[type="password"] {
-        width: 80%;
+        width: 100%;
     }
     .radio i {
         left: 31.5%;
@@ -626,7 +626,7 @@ label.radio {
     .wthree_input select,
     .wthree_input input[type="email"],
     .wthree_input input[type="password"] {
-        width: 78.5%;
+        width: 100%;
     }
     .agileits_copyright p {
         font-size: 14px;
@@ -662,7 +662,7 @@ label.radio {
     .wthree_input select,
     .wthree_input input[type="email"],
     .wthree_input input[type="password"] {
-        width: 75.5%;
+        width: 100%;
     }
     .wthree_input i {
         font-size: 14px;
@@ -841,4 +841,10 @@ a {
 
 ::placeholder {
     color: #ffffff !important;
+}
+.vti__dropdown-item{
+    color: white;
+}
+.vti__dropdown-item > span {
+    color: floralwhite;
 }

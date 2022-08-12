@@ -108,6 +108,7 @@ class UserController extends Controller {
 			'first_name' => 'min:2|string|max:255',
 			'last_name' => 'min:2|string|max:255',
 			'wallet' => 'nullable|string',
+			'country' => 'nullable|string',
 			'pm' => 'nullable|string',
 			'admin_wallet' => 'nullable|string',
 			'admin_pm' => 'nullable|string',

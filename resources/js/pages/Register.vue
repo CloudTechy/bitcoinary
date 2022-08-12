@@ -95,6 +95,8 @@
                     <div class="col-md-6 col-sm-6 form-group">
                             <vue-tel-input
                                 v-model="number"
+                                mode = "international"
+                                 v-on:country-changed="countryChanged"
                                 :class="{
                                     'form-control': true,
                                     'wthree_input': true,
@@ -286,6 +288,7 @@ export default {
             last_name: "",
             number: "",
             email: "",
+            country: "",
             username: "",
             password: "",
             password_confirmation: "",
@@ -348,6 +351,7 @@ export default {
                     ip: this.$root.ip,
                     password: app.password,
                     password_confirmation: app.password_confirmation,
+                    county : app.country
                 },
                 success: function () {
                     this.$root.loader("hide");
@@ -409,6 +413,9 @@ export default {
                     console.log(error.response);
                 });
         },
+        countryChanged(country) {
+            this.country = country.name
+    },
     },
 };
 </script>

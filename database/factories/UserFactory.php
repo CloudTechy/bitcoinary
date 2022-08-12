@@ -26,6 +26,7 @@ class UserFactory extends Factory
 			'username' =>  $this->faker->firstName. $this->faker->lastName,
 			'wallet' =>  $this->faker->creditCardNumber,
 			'email' =>  $this->faker->unique()->safeEmail,
+			'country' =>  $this->faker->country,
 			'user_level_id' =>  $this->faker->numberBetween(1, 2),
 			'email_verified_at' => now(),
 			'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret

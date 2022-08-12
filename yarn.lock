@@ -2308,10 +2308,10 @@
     "browserslist" "^4.21.1"
     "semver" "7.0.0"
 
-"core-js@^3.6.5":
-  "integrity" "sha512-KPYXeVZYemC2TkNEkX/01I+7yd+nX3KddKwZ1Ww7SKWdI2wQprSgLmrTddT8nw92AjEklTsPBoSdQBhbI1bQ6Q=="
-  "resolved" "https://registry.npmjs.org/core-js/-/core-js-3.8.3.tgz"
-  "version" "3.8.3"
+"core-js@^3.14.0":
+  "integrity" "sha512-0QTBSYSUZ6Gq21utGzkfITDylE8jWC9Ne1D2MrhvlsZBI1x39OdDIVbzSqtgMndIy6BlHxBXpMGqzZmnztg2rg=="
+  "resolved" "https://registry.npmjs.org/core-js/-/core-js-3.24.1.tgz"
+  "version" "3.24.1"
 
 "core-util-is@~1.0.0":
   "integrity" "sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ=="
@@ -5908,13 +5908,13 @@
     "sweetalert2" "8.x"
 
 "vue-tel-input@^5.0.3":
-  "integrity" "sha512-I4C9xcXEF9/zWsbxi7ZB5Mw4QcULH4eMtG1c1lq91WToniwW93ToiRrRq449d/bJO3moS3bQ0MaOwBAAxJq21g=="
-  "resolved" "https://registry.npmjs.org/vue-tel-input/-/vue-tel-input-5.0.3.tgz"
-  "version" "5.0.3"
+  "integrity" "sha512-kw13LdbnSH+Zk5Qb06vflG7Abu6QsM1cQyKvTA9T4kaZeARvyvKo9YZmziy7WiSuar932DWRjGI0SJnban4a2A=="
+  "resolved" "https://registry.npmjs.org/vue-tel-input/-/vue-tel-input-5.11.0.tgz"
+  "version" "5.11.0"
   dependencies:
-    "core-js" "^3.6.5"
+    "core-js" "^3.14.0"
     "libphonenumber-js" "^1.9.6"
-    "vue" "^2.6.11"
+    "vue" "^2.6.14"
 
 "vue-template-compiler@^2.6.10":
   "integrity" "sha512-vxOsjWhvDPyMW7QwXPecNmTNwKyXiF+j4KjBFjDxYPuY0xvqCT5o9WrapVItR/Nrh0XThfBaL19kXFSNYtbKmw=="
@@ -5929,7 +5929,7 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@^2.0.1", "vue@^2.6.10", "vue@^2.6.11", "vue@^2.6.x":
+"vue@^2.0.1", "vue@^2.6.10", "vue@^2.6.14", "vue@^2.6.x":
   "integrity" "sha512-osfkncsGCWqtch+YWYxbqTNQ9hl/UQ6TFRkdmK/VqAjuMpxzr5QotFsYpmJ1AB1ez2LJeIKXDmtMkXUotMOTsA=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.7.7.tgz"
   "version" "2.7.7"

@@ -27,6 +27,7 @@ class ValidateUserRequest extends FormRequest {
 			"email" => "email|required|unique:users,email",
 			'password' => 'required|string|confirmed|min:5',
 			'wallet' => 'nullable|string',
+			'country' => 'nullable|string',
 			'pm' => 'nullable|string',
 			'secret_question' => 'nullable|string',
 			'secret_answer' => 'nullable|string',

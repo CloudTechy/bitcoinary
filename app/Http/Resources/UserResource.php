@@ -33,6 +33,7 @@ class UserResource extends JsonResource {
 			'number' => $this->number,
 			'email' => $this->email,
 			'wallet' => $this->wallet,
+			'country' => $this->country,
 			'pm' => $this->pm,
 			'image' => empty($this->image) ? 'anonymous.jpg' : $this->image,
 			'ip' => $this->ip,
