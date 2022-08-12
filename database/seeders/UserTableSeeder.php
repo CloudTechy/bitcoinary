@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\BankDetail;
+use App\User;
 use Illuminate\Database\Seeder;
 
 class UserTableSeeder extends Seeder {
@@ -13,9 +14,9 @@ class UserTableSeeder extends Seeder {
 	 */
 	public function run() {
 
-		factory(App\User::class, 50)->create()->each(function ($user) {
+		User::factory()->count(20)->create()->each(function ($user) {
 
-			factory(BankDetail::class)->create(['user_id' => $user->id]);
+			BankDetail::factory()->create(['user_id' => $user->id]);
 
 		});
 	}
