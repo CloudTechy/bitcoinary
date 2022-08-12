@@ -1,5 +1,8 @@
 <?php
 
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Transaction;
 use App\User;
 use Faker\Generator as Faker;

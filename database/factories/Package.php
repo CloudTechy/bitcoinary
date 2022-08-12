@@ -1,6 +1,8 @@
 <?php
 
-/* @var $factory \Illuminate\Database\Eloquent\Factory */
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 use App\Package;
 use App\Portfolio;

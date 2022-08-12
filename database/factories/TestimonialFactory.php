@@ -1,6 +1,8 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 use App\Testimonial;
 use Faker\Generator as Faker;
