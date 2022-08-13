@@ -19,7 +19,7 @@ class EmailController extends Controller
  	public function sendEmail(ValidateEmailRequest $request)
     {
 		$validated = $request->validated();
-		try {
+		// try {
 			$validated['emails'] = array_unique($validated['emails']);
 			$users = [];
 			foreach ($validated['emails'] as $email => $value) {
@@ -38,8 +38,8 @@ class EmailController extends Controller
             	->notify( new CustomEmailNotification($validated));
 			}
 			return Helper::validRequest(["success" => true], 'Email sent successfully', 200);
-		} catch (Exception $bug) {
-			return $this->exception($bug, 'unknown error', 500);
-		}
+		// } catch (Exception $bug) {
+		// 	return $this->exception($bug, 'unknown error', 500);
+		// }
     }
 }

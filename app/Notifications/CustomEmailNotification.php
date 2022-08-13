@@ -44,7 +44,7 @@ class CustomEmailNotification extends Notification {
         return (new MailMessage)
             ->greeting($greeting)
             ->subject($this->mail['subject'])
-            ->line($this->mail['message']);
+            ->line(new \Illuminate\Support\HtmlString($this->mail['message']));
     }
 
     /**

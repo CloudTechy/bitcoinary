@@ -47,13 +47,14 @@
                                                 <span class="text-danger"
                                                     >*</span
                                                 ></label
-                                            >
-                                            <textarea
-                                                v-model="email_form.message"
-                                                rows="10"
-                                                class="form-control nicEdit"
-                                                placeholder="Your message"
-                                            ></textarea>
+                                            > <VueTrix 
+                                            :localStorage="true"
+                                            inputId="editor1" 
+                                            autofocus
+                                            class="form-control"
+                                            rows="10"
+                                            v-model="email_form.message" 
+                                            placeholder="Write your message"/>
                                         </div>
                                     </div>
                                 </div>
@@ -86,6 +87,7 @@
 </template>
 <script>
 import VueLoadingButton from "vue-loading-button";
+import VueTrix from "vue-trix";
 export default {
     data() {
         return {
@@ -108,6 +110,7 @@ export default {
     },
     components: {
         VueLoadingButton,
+        VueTrix,
     },
     mounted() {
         var script = document.createElement("script");
