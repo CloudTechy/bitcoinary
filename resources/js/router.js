@@ -336,9 +336,20 @@ const routes = [
         meta: {
             auth: true,
             adminAuth: true,
-            title: "Admin mailer",
+            title: "Admin payment setup",
         },
     },
+    {
+        path: "/admin/payment/manual/add",
+        name: "add_payment",
+        component: () => import("./pages/admin/AddManualPayment"),
+        meta: {
+            auth: true,
+            adminAuth: true,
+            title: "Admin add new payment method",
+        },
+    },
+    
     {
         path: "/admin/dashboard/settings",
         name: "adminSetting",

@@ -14,7 +14,7 @@
                     <div class="col-lg-6 col-sm-6 text-sm-right mt-sm-0 mt-3">
                         <a
                             class="btn btn-sm btn--primary box--shadow1 text--small"
-                            :href="$root.basepath + '/admin/payment/new'"
+                            :href="$root.basepath + '/admin/payment/manual/add'"
                             ><i class="fa fa-fw fa-plus"></i>Add New</a
                         >
                     </div>
@@ -23,110 +23,117 @@
                     <div class="col-lg-12">
                         <div class="card b-radius--10">
                             <div class="card-body p-0">
-                                <div
-                                    class="table-responsive--md"
-                                >
-                                <div class = "row align-items-right mb-30 justify-content-between">
-                                    <div class="col-lg-12 col-sm-12 text-sm-right mt-sm-0 mt-3">
-                        <form
-                            action=""
-                            method="GET"
-                            class="form-inline float-sm-right bg--white"
-                        >
-                            <div class="input-group has_append">
-                                <input
-                                    type="text"
-                                    v-model="search"
-                                    class="form-control"
-                                    placeholder="name"
-                                />
-                                <div class="input-group-append">
-                                    <button
-                                        class="btn btn--primary"
-                                        @click.prevent="searchItem"
+                                <div class="table-responsive--md">
+                                    <div
+                                        class="row align-items-right mb-30 justify-content-between"
                                     >
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                                </div>
+                                        <div
+                                            class="col-lg-12 col-sm-12 text-sm-right mt-sm-0 mt-3"
+                                        >
+                                            <form
+                                                action=""
+                                                method="GET"
+                                                class="form-inline float-sm-right bg--white"
+                                            >
+                                                <div
+                                                    class="input-group has_append"
+                                                >
+                                                    <input
+                                                        type="text"
+                                                        v-model="search"
+                                                        class="form-control"
+                                                        placeholder="name"
+                                                    />
+                                                    <div
+                                                        class="input-group-append"
+                                                    >
+                                                        <button
+                                                            class="btn btn--primary"
+                                                            @click.prevent="
+                                                                searchItem
+                                                            "
+                                                        >
+                                                            <i
+                                                                class="fa fa-search"
+                                                            ></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                     <table
                                         class="table table--light style--two"
                                     >
-                                         <thead>
-                                                <tr>
-                                                    <th scope="col">Gateway</th>
-                                                    <th scope="col">Status</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                            </thead>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Gateway</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
                                         <tbody>
-                                             <tr>
-                                                    
-
-                                                    
-                                                   
-                                                </tr>
-
                                             <tr
                                                 v-if="payments"
                                                 v-for="py in payments"
                                             >
                                                 <td data-label="Gateway">
-                                                        <div class="user">
-                                                            <div class="thumb">
-                                                                <img
-                                                                   :src="$root.basepath + '/images/uploads/' + py.image"
-                                                                    :alt="py.image"
-                                                                />
-                                                            </div>
-                                                            <span class="name"
-                                                                >{{py.name}}</span
-                                                            >
+                                                    <div class="user">
+                                                        <div class="thumb">
+                                                            <img
+                                                                :src="
+                                                                    $root.basepath +
+                                                                    '/images/uploads/' +
+                                                                    py.image
+                                                                "
+                                                                :alt="py.image"
+                                                            />
                                                         </div>
-                                                    </td>
-                                                    <td data-label="Status">
-                                                        <span
-                                                            class="text--small badge font-weight-normal badge--success"
-                                                            >Active</span
-                                                        >
-                                                    </td>
-                                                     <td data-label="Action">
-                                                        <a
-                                                            :href="$root.basepath + '/admin/payment/manual/' + py.name"
-                                                            class="icon-btn editGatewayBtn"
-                                                            data-toggle="tooltip"
-                                                            title=""
-                                                            data-original-title="Edit"
-                                                        >
-                                                            <i
-                                                                class="la la-pencil"
-                                                            ></i>
-                                                        </a>
+                                                        <span class="name">{{
+                                                            py.name
+                                                        }}</span>
+                                                    </div>
+                                                </td>
+                                                <td data-label="Status">
+                                                    <span
+                                                        class="text--small badge font-weight-normal badge--success"
+                                                        >Active</span
+                                                    >
+                                                </td>
+                                                <td data-label="Action">
+                                                    <a
+                                                        :href="
+                                                            $root.basepath +
+                                                            '/admin/payment/manual/' +
+                                                            py.name
+                                                        "
+                                                        class="icon-btn editGatewayBtn"
+                                                        data-toggle="tooltip"
+                                                        title=""
+                                                        data-original-title="Edit"
+                                                    >
+                                                        <i
+                                                            class="la la-pencil"
+                                                        ></i>
+                                                    </a>
 
-                                                        <a
-                                                            data-toggle="modal"
-                                                            href="#deactivateModal"
-                                                            class="icon-btn bg--danger disabled ml-1 deactivateBtn"
-                                                            data-code="1002"
-                                                            data-name="Mobile Money"
-                                                            data-original-title="Disable"
-                                                            disabled
-                                                        >
-                                                            <i
-                                                                class="la la-eye-slash"
-                                                            ></i>
-                                                        </a>
-                                                    </td>
+                                                    <a
+                                                        data-toggle="modal"
+                                                        href="#deactivateModal"
+                                                        class="icon-btn bg--danger disabled ml-1 deactivateBtn"
+                                                        data-code="1002"
+                                                        data-name="Mobile Money"
+                                                        data-original-title="Disable"
+                                                        disabled
+                                                    >
+                                                        <i
+                                                            class="la la-eye-slash"
+                                                        ></i>
+                                                    </a>
+                                                </td>
                                             </tr>
-                                          
-                                            <tr
-                                                v-if="
-                                                    payments.length === 0 
-                                                "
-                                            >
+
+                                            <tr v-if="payments.length === 0">
                                                 <td
                                                     class="text-center"
                                                     data-label="Users"
@@ -222,10 +229,6 @@
                         <!-- card end -->
                     </div>
                 </div>
-
-                
-                                      
-                                       
 
                 <div
                     id="activateModal"
@@ -367,7 +370,7 @@ export default {
         };
     },
     created() {
-     this.payments = this.$root.payments   
+        this.payments = this.$root.payments;
     },
     mounted() {
         var script = document.createElement("script");
@@ -544,8 +547,6 @@ export default {
             }
             this.payments = data;
         },
-       
-    }
-
+    },
 };
 </script>
