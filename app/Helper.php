@@ -340,7 +340,7 @@ class Helper {
 
 	}
 public static function adminsUserActivityRequest($activity){
-		// try {
+		try {
 			
 			$admins = User::whereHas('user_level', function($query){
 				$query->where('name', 'administrator');
@@ -348,11 +348,21 @@ public static function adminsUserActivityRequest($activity){
 				foreach ($admins as $key => $user) {
 					$user->notify(new UserActivity($activity));
 				}
-		// } catch (Exception $bug) {
-		// 	return $this->exception($bug, 'unknown error', 500);
-		// }
+		} catch (Exception $bug) {
+			return $this->exception($bug, 'unknown error', 500);
+		}
 }
 
+ 
+public static function userIsSuperAdmin()
+    {
 
+        if (!auth()->user()->activated || !auth()->user()->isSuperAdmin) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
 
 }

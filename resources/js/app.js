@@ -121,15 +121,15 @@ const app = new Vue({
     },
     methods: {
         alert(type, message, title = "") {
-            if ((type = "success")) {
+            if (type == "success") {
                 this.$toast.success(message, title, { position: "topRight" });
-            } else if ((type = "error")) {
+            } else if (type == "error") {
                 this.$toast.error(message, title, { position: "topRight" });
-            } else if ((type = "info")) {
+            } else if (type == "info") {
                 this.$toast.info(message, title, { position: "topRight" });
-            } else if ((type = "warning")) {
+            } else if (type == "warning") {
                 this.$toast.warning(message, title, { position: "topRight" });
-            } else if ((type = "question")) {
+            } else if (type == "question") {
                 this.$toast.question(message, title, { position: "topRight" });
             } else this.$toast.show(message, title, { position: "topRight" });
         },

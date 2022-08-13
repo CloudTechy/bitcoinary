@@ -6,6 +6,7 @@ use App\Helper;
 use App\Http\Requests\ValidatePackageUserRequest;
 use App\Http\Requests\ValidateTransactionRequest;
 use App\Http\Resources\PackageUserResource;
+use App\Http\Resources\UserResource;
 use App\Notifications\PackageSubscribed;
 use App\Notifications\NewDepositRequest;
 use App\Notifications\TransactionMade; 
@@ -120,12 +121,6 @@ class PackageUserController extends Controller {
 		        $pop = Helper::uploadImage($request, 'pop', 'images/pop');
 		        $transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $validated['amount'], 'pop' => $pop]);
 				$subscription = PackageUser::create(['transaction_id' => $transaction->id, 'user_id' => $user->id, 'package_id' => $package->id, 'roi' => $package->roi, 'pop' => $pop, 'amount' => $validated['amount'],  'active' => false]);
-
-				// if ($user->balance > 0) {
-				// 	$withdrawal = $user->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $user->balance, 'reference' => 'BM', 'processed' => true, 'confirmed' => true]);
-
-				// 	$user->notify(new WithdrawalMade($withdrawal));
-				// }
 			
 				$this->adminsNotificationRequest($subscription);
 				DB::commit();
@@ -303,25 +298,35 @@ class PackageUserController extends Controller {
 	public function deposit(ValidateTransactionRequest $request){
 		$validated = $request->validated();
 		try
-		{
+		{DB::beginTransaction();
 			$user = User::find($validated['user_id']);
-			$package = Package::whereRaw('? >= min_deposit  and ? <= max_deposit',[$validated['amount'],$validated['amount']])->firstOrFail();
-			DB::beginTransaction();
-
-			$transaction = $user->transactions()->create(['reference' =>'SELF' ,'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
-
-			$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
-
-			// $user->notify(new WithdrawalMade($withdrawal));
-			$user->notify(new PackageSubscribed($subscription));
-
-
-			DB::commit();
-
-			$this->referralPayment($subscription);
-
-			$subscription = new PackageUserResource($subscription);
-			return Helper::validRequest($subscription, 'Your subscription has been activated successfully', 200);
+			if($validated['type'] == 'investment'){
+				$package = Package::whereRaw('? >= min_deposit  and ? <= max_deposit',[$validated['amount'],$validated['amount']])->first();
+				if(empty($package)){
+					return Helper::invalidRequest(['This subscription is invalid'], 'No package matched the amount', 400);
+				}
+				$transaction = $user->transactions()->create(['reference' =>'SELF' ,'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
+				$transaction->user->notify(new TransactionMade($transaction));
+				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
+				DB::commit();
+				// $user->notify(new WithdrawalMade($withdrawal));
+				$user->notify(new PackageSubscribed($subscription));
+				Helper::adminsUserActivityRequest(['type'=>'TransactionActivity', 'message' =>  $user->username .'\'s account balance was credited $'. $validated['amount']]);
+				$this->referralPayment($subscription);
+				$subscription = new PackageUserResource($subscription);
+				$user = User::find($validated['user_id']);
+				$user = new UserResource($user);
+				return Helper::validRequest($user, 'subscription activated', 200);
+			}
+			elseif($validated['type'] == 'balance'){
+				$transaction = $user->transactions()->create(['reference' =>'SELF' ,'amount' => $validated['amount'], 'sent' => true, 'active' => false, 'confirmed' => true]);
+				DB::commit();
+				$transaction->user->notify(new TransactionMade($transaction));
+				Helper::adminsUserActivityRequest(['type'=>'TransactionActivity', 'message' =>  $user->username .'\'s account balance was credited $'. $validated['amount']]);
+				$user = User::find($validated['user_id']);
+				$user = new UserResource($user);
+				return Helper::validRequest($user, 'Account balance credited', 200);
+			}
 		} catch (Exception $bug) {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);

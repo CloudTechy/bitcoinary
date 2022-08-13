@@ -122,7 +122,7 @@
                                         <!-- Third Section -->
                                         <h2><strong>Payment</strong> Details</h2>
                                     </div>
-                                    <div class="card"">
+                                    <div class="card">
                                         <div class=" body">
                                         <table cellspacing="0" cellpadding="2" border="0" style="width: 100%">
                                             <tbody>

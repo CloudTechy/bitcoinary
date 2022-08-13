@@ -38,11 +38,6 @@
                         </p>
                     </div>
                 </div>
-                <input
-                    type="hidden"
-                    name="_token"
-                    value="xpWr6vXT9IWQ3A6oIZ0P0qYFFCiLgZjh8MJtWq5p"
-                />
                 <h3>Account Signup</h3>
                 <div class="row">
                     <div class="col-md-6 col-sm-12 form-group">
@@ -420,12 +415,12 @@ export default {
 };
 </script>
 <style type="text/css">
-@import "../assets/ebuka.css";
+/* @import "../assets/ebuka.css";
 @import "../assets/css/style37913791.css";
 @import "../assets/css/skin/skin-25b275b27.css";
 @import "../assets/plugins/pace/pace.css";
 @import "../assets/plugins/revolution/revolution/css/settings.css";
-@import "../assets/plugins/revolution/revolution/css/navigation.css";
+@import "../assets/plugins/revolution/revolution/css/navigation.css"; */
 
 
 

@@ -130,9 +130,9 @@ class UserController extends Controller {
 				$validated['password'] = bcrypt($validated['password']);
 			}
 			$data = $user->update($validated);
-			Helper::adminsUserActivityRequest(['type'=>'ProfileActivity', 'message' => $user->username . ' updated the profile data.']);
+			 Helper::adminsUserActivityRequest(['type'=>'ProfileActivity', 'message' => auth()->user()->username . ' updated '. $user->username .'\'s profile data.']);
 			DB::commit();
-			return Helper::validRequest(["success" => $data], 'Updated successfully', 200);
+			return Helper::validRequest(new UserResource($user), 'Updated successfully', 200);
 		} catch (Exception $bug) {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);
@@ -204,7 +204,7 @@ class UserController extends Controller {
         {
             $result = $user->update(['image' => $validated['image']]);
             DB::commit();
-            Helper::adminsUserActivityRequest(['type'=>'AvatarActivity', 'message' =>  $user->username . ' updated the profile avatar.']);
+            Helper::adminsUserActivityRequest(['type'=>'AvatarActivity', 'message' =>  auth()->user()->username . ' updated '. $user->username .'\'s profile avatar.']);
             return Helper::validRequest($result, 'User avatar updated successfully', 200);
         } catch (Exception $bug) {
             DB::rollback();

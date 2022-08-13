@@ -1,0 +1,51 @@
+
+.vue-tel-input {
+    border: 1px solid #bbb;
+    text-align: left;
+    background: none;
+}
+.vti__dropdown {
+    padding: 0px;
+}
+.vti__input {
+    padding: 10px 4px !important;
+    background: none;
+    border: none;
+    border-radius: 0 2px 2px 0;
+    width: 100%;
+    outline: none;
+    padding-left: 7px;
+    color: inherit;
+    font-weight: normal;
+}
+.vti__dropdown-item.highlighted {
+    background-color: #7367f0 !important;
+    color : white;
+}
+.vti__dropdown-list {
+    background-color: #fff;
+    border: none;
+    color: black;
+}
+.vti__dropdown-item b, .vti__dropdown-item strong {
+    font-weight: bold;
+}
+.vti__dropdown-item.highlighted span{
+    color : white;
+}
+.vue-loading-button {
+    font-size: 0.875rem !important;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    /* padding: .375rem .75rem; */
+    line-height: 1.5 !important;
+    border-radius: .25rem;
+}
+
+
