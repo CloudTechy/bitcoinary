@@ -330,6 +330,16 @@ const routes = [
         },
     },
     {
+        path: "/admin/payment/manual",
+        name: "manual_payment",
+        component: () => import("./pages/admin/ManualPaymentSetup"),
+        meta: {
+            auth: true,
+            adminAuth: true,
+            title: "Admin mailer",
+        },
+    },
+    {
         path: "/admin/dashboard/settings",
         name: "adminSetting",
         component: Settings,

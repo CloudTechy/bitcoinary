@@ -112,6 +112,11 @@ export default {
         VueLoadingButton,
         VueTrix,
     },
+    beforeDestroy() {
+        if (this.email_form.subject == undefined) {
+        this.email_form.message = ""
+      }  
+    },
     mounted() {
         var script = document.createElement("script");
         script.src = this.$root.basepath + "/assets/admin/js/app.js";

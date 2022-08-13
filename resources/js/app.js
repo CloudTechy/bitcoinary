@@ -17,9 +17,10 @@ import Clipboard from 'v-clipboard'
 import vueTelInput from "vue-tel-input";
 import VueHead from 'vue-head'
 import VueIziToast from "vue-izitoast";
+
 import "izitoast/dist/css/iziToast.min.css";
 
- 
+
 Vue.use(VueHead)
 Vue.use(VueIziToast);
 
