@@ -122,19 +122,19 @@
                                     Add Deposit
                                 </a>
                                 <a
-                                    :href="'admin/users/login/history/' + user.id"
+                                    :href="$root.basepath + '/admin/login/history/' + user.id"
                                     class="btn btn--primary btn--shadow btn-block btn-lg"
                                 >
                                     Login Logs
                                 </a>
                                 <a
-                                    :href="'admin/users/send-email/' + user.id"
+                                    :href="$root.basepath + '/admin/send-email/' + user.id"
                                     class="btn btn--danger btn--shadow btn-block btn-lg"
                                 >
                                     Send Email
                                 </a>
                                 <a
-                                    :href="'admin/users/email-log/' + user.id"
+                                    :href="$root.basepath + '/admin/email-log/' + user.id"
                                     class="btn btn--dark btn--shadow btn-block btn-lg"
                                 >
                                     Email Log

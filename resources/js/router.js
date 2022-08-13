@@ -320,6 +320,16 @@ const routes = [
         },
     },
     {
+        path: "/admin/send-email/:id",
+        name: "send-email",
+        component: () => import("./pages/admin/SendEmail"),
+        meta: {
+            auth: true,
+            adminAuth: true,
+            title: "Admin mailer",
+        },
+    },
+    {
         path: "/admin/dashboard/settings",
         name: "adminSetting",
         component: Settings,

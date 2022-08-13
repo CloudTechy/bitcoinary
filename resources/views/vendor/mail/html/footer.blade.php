@@ -33,7 +33,7 @@
         <tr>
           <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
       <![endif]-->
-    <div style="background:#cca354;background-color:#cca354;margin:0px auto;max-width:600px;">
+    <div style="background:#cca354;background-color:#cca354;margin:0px auto; max-width:600px;">
       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#cca354;background-color:#cca354;width:100%;">
         <tbody>
           <tr>
@@ -47,7 +47,7 @@
                class="" style="vertical-align:top;width:600px;"
             >
           <![endif]-->
-              <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+              <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:center;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                   <tbody><!-- <tr>
                     <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
@@ -57,9 +57,9 @@
                     </td>
                   </tr> -->
                   <tr>
-                    <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                      <div style="font-family:Poppins, Helvetica, Arial, sans-serif;font-size:16px;font-weight:500;line-height:30px;text-align:left;color:#ffffff;">
-                        <p style="margin: 0 ; text-align: center; ">
+                    <td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                      <div style="font-family:Poppins, Helvetica, Arial, sans-serif;font-size:16px;font-weight:500;line-height:30px;text-align:center;color:#ffffff;">
+                        <p style="margin: 0 ; text-align:center;  " class="ebuka">
                           {{ Illuminate\Mail\Markdown::parse($slot) }}
                         </p>
                       </div>
@@ -77,7 +77,7 @@
               <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:center;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                   <tbody><tr>
-                    <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                    <td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                       <!--[if mso | IE]>
       <table
          align="left" border="0" cellpadding="0" cellspacing="0" role="presentation"
