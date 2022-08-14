@@ -336,7 +336,7 @@
                                 <ul>
                                     <li class="sidebar-menu-item">
                                         <a
-                                            href="https://script.viserlab.com/hyiplab/demo/admin/withdraw/method"
+                                            :href="$root.basepath + '/admin/withdrawals'"
                                             class="nav-link"
                                         >
                                             <i

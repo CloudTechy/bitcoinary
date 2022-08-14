@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Withdrawal extends Model
 {
@@ -53,6 +54,17 @@ class Withdrawal extends Model
                                 $query->where("created_at", ">=", $val);
                                 continue;
                             }
+                            if ($key == 'username') {
+								$users = User::where('username','LIKE', '%'.$val. '%')->get();
+								$userID = [];
+
+								foreach($users as $user){
+									array_push($userID, $user->id);	
+								}
+								$query->whereIn("user_id", $userID);
+								
+								continue;
+							};
 
                             $query->where($key, $val);
 

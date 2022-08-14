@@ -129,7 +129,7 @@
                                                     'copied'
                                                 )
                                             "
-                                            v-clipboard="paymentMethod.wallet"
+                                            v-clipboard="paymentMethod.crypto_memo"
                                             style="border-radius: 0px"
                                             data-clipboard-target="#memo"
                                         ></i>
@@ -160,7 +160,7 @@
                                                     'copied'
                                                 )
                                             "
-                                            v-clipboard="paymentMethod.wallet"
+                                            v-clipboard="paymentMethod.crypto_standard"
                                             style="border-radius: 0px"
                                             data-clipboard-target="#standard"
                                         ></i>

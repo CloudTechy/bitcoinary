@@ -27,8 +27,15 @@ class WithdrawalController extends Controller {
 			$data = Withdrawal::filter(request()->all())
 				->latest()
 				->paginate($pageSize);
+				$pagination = [
+					'total' => $data->total(),
+					'count' => $data->count(),
+					'per_page' => $data->perPage(),
+					'current_page' => $data->currentPage(),
+					'total_pages' => $data->lastPage()
+				];
 			$data = WithdrawalResource::collection($data);
-			$builtData = Helper::buildData($data);
+			$builtData = Helper::buildData($data, $pagination);
 			return Helper::validRequest($builtData, 'data was fetched successfully', 200);
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);
@@ -150,18 +157,28 @@ class WithdrawalController extends Controller {
 		}
 	}
 
-	public function confirmWithdrawal(Withdrawal $withdrawal) { 
+	public function confirmWithdrawal(Request $request, Withdrawal $withdrawal) {
+		$validated = $request->validate([
+            "pop" => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
+        ]);
+
 		DB::beginTransaction();
 		try {
 			if(auth()->user()->user_level->name == 'user'){
-				return Helper::inValidRequest('User not Unauthorized to peform this operation.', 'Unauthorized Access!', 400);
+				return Helper::inValidRequest('User not authorized to peform this operation.', 'Unauthorized Access!', 400);
+			}
+			if($withdrawal->confirmed && $withdrawal->processed){
+				return Helper::invalidRequest('Multiple Confirmation', 'Transaction has already been approved', 400);
 			}
 			if ($withdrawal->user->processedWithdrawals->sum('amount')  >= $withdrawal->amount) {
-				$data = $withdrawal->update(['confirmed' => true, 'processed' => true]);
+				$pop = $request->hasFile('pop') ? Helper::uploadImage($request, 'pop', 'images/pop') : $withdrawal->pop;
+				
+				$data = $withdrawal->update(['confirmed' => true, 'pop' => $pop, 'processed' => true]);
 				DB::commit();
 				$withdrawal->user->notify(new WithdrawalMade($withdrawal));
 				return Helper::validRequest(["success" => $data], 'withdrawal confirmed successfully', 200);
-			} else {
+			} 
+			else {
 				return Helper::invalidRequest('Insufficient funds', 'Your account is low for this transaction', 400);
 			}
 

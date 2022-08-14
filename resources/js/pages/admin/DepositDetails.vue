@@ -8,655 +8,219 @@
                 <div
                     class="row align-items-center mb-30 justify-content-between"
                 >
-                    <div class="col-lg-6 col-sm-6">
-                        <h6 class="page-title">User Detail</h6>
+                    <div  v-if="deposit" class="col-lg-6 col-sm-6">
+                        <h6  class="page-title">
+                            {{
+                                deposit.username +
+                                " requested " +
+                                $root.normalNumeral(deposit.amount) +
+                                " USD " +
+                                deposit.name +
+                                " plan"
+                            }}
+                        </h6>
+                       
                     </div>
+                     <content-loader v-else></content-loader> 
                     <div
                         class="col-lg-6 col-sm-6 text-sm-right mt-sm-0 mt-3"
                     ></div>
                 </div>
 
                 <div class="row mb-none-30">
-                    <div class="col-xl-3 col-lg-5 col-md-5 mb-30">
-                        <div
+                    <div class="col-lg-5 col-md-5 mb-30">
+                        <div v-if = "deposit"
                             class="card b-radius--10 overflow-hidden box--shadow1"
-                        >
-                            <div class="card-body p-0">
-                                <div class="p-3 bg--white">
-                                    <div v-if="user.image" class="">
-                                        <img
-                                            :src="
-                                                $root.basepath +
-                                                '/images/users/' +
-                                                user.image
-                                            "
-                                            alt="profile-image"
-                                            class="b-radius--10 w-100"
-                                        />
-                                    </div>
-                                    <div v-else>
-                                        <img
-                                            src="https://script.viserlab.com/hyiplab/demo/placeholder-image/undefined"
-                                            alt="profile-image"
-                                            class="b-radius--10 w-100"
-                                        />
-                                    </div>
-                                    <div class="mt-15">
-                                        <h4 class="">{{ user.names }}</h4>
-                                        <span class="text--small"
-                                            >Joined @
-                                            <strong>
-                                                {{ user.created_at }}</strong
-                                            ></span
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="card b-radius--10 overflow-hidden mt-30 box--shadow1"
                         >
                             <div class="card-body">
                                 <h5 class="mb-20 text-muted">
-                                    User information
+                                    {{'Deposit Via ' + deposit.transaction.payment_method}}
                                 </h5>
+
+                                <div class="p-3 bg--white">
+                                    <div class="">
+                                        <img
+                                        :src="
+                                                                    $root.basepath +
+                                                                    '/images/uploads/' +
+                                                                    cryptoFilter($root.payments, deposit.transaction.payment_method)[0].image
+                                                                "
+                                            alt="profile-image"
+                                            class="b-radius--10 deposit-imgView"
+                                        />
+                                    </div>
+                                </div>
+
                                 <ul class="list-group">
                                     <li
                                         class="list-group-item d-flex justify-content-between align-items-center"
                                     >
-                                        Username
-                                        <span class="font-weight-bold">{{
-                                            user.username
-                                        }}</span>
-                                    </li>
-
-                                    <li
-                                        class="list-group-item d-flex justify-content-between align-items-center"
-                                    >
-                                        Withdrawal Status
-                                        <span
-                                            v-if="user.CanWithdraw"
-                                            class="badge badge-pill bg--success"
-                                            >Active</span
-                                        >
-                                        <span
-                                            v-else
-                                            class="badge badge-pill bg--danger"
-                                            >On Hold</span
-                                        >
-                                    </li>
-
-                                    <li
-                                        class="list-group-item d-flex justify-content-between align-items-center"
-                                    >
-                                        Deposit Wallet
+                                        Date
                                         <span class="font-weight-bold"
-                                            >${{
-                                                $root.normalNumeral(
-                                                    user.balance
-                                                )
-                                            }}</span
+                                            >{{deposit.created_at}}</span
                                         >
                                     </li>
 
                                     <li
                                         class="list-group-item d-flex justify-content-between align-items-center"
                                     >
-                                        Interest Wallet
-                                        <span class="font-weight-bold">$0</span>
+                                        Trx Number
+                                        <span class="font-weight-bold"
+                                            >{{deposit.transaction_id}}</span
+                                        >
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center"
+                                    >
+                                        Username
+                                        <span class="font-weight-bold">
+                                            <a
+                                               :href="
+                                                                $root.basepath +
+                                                                '/admin/users/' +
+                                                                deposit.user_id
+                                                            "
+                                                >{{deposit.username}}</a
+                                            >
+                                        </span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center"
+                                    >
+                                        Method
+                                        <span class="font-weight-bold"
+                                            >{{deposit.transaction.payment_method}}</span
+                                        >
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center"
+                                    >
+                                        Amount
+                                        <span class="font-weight-bold"
+                                            >{{$root.normalNumeral(deposit.amount)}} USD</span
+                                        >
+                                    </li>
+
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center"
+                                    >
+                                        Charge
+                                        <span class="font-weight-bold"
+                                            >0 USD</span
+                                        >
+                                    </li>
+
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center"
+                                    >
+                                        After Charge
+                                        <span class="font-weight-bold"
+                                            >{{$root.normalNumeral(deposit.amount)}} USD</span
+                                        >
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center"
+                                    >
+                                        Rate
+                                        <span class="font-weight-bold"
+                                            >1 USD = 1 USD</span
+                                        >
+                                    </li>
+
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center"
+                                    >
+                                        Payable
+                                        <span class="font-weight-bold"
+                                            >{{$root.normalNumeral(deposit.amount)}} USD</span
+                                        >
+                                    </li>
+
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center"
+                                    >
+                                        Status
+                                         <span
+                                                        :class="{
+                                                            badge: true,
+                                                            'badge--warning':
+                                                                !deposit.active,
+                                                            'badge--success':
+                                                                deposit.active,
+                                                        }"
+                                                        >{{
+                                                            deposit.active
+                                                                ? "Active"
+                                                                : "Pending"
+                                                        }}</span
+                                                    >
+                                                    
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div
-                            class="card b-radius--10 overflow-hidden mt-30 box--shadow1"
+                        <list-loader v-else></list-loader> 
+                    </div>
+                    <div class="col-lg-7 col-md-7 mb-30">
+                        <div v-if = "deposit"
+                            class="card b-radius--10 overflow-hidden box--shadow1"
                         >
                             <div class="card-body">
-                                <h5 class="mb-20 text-muted">User action</h5>
-                                <a
-                                    data-toggle="modal"
-                                    href="#addSubModal"
-                                    class="btn btn--success btn--shadow btn-block btn-lg"
-                                >
-                                    Add Deposit
-                                </a>
-                                <a
-                                    :href="$root.basepath + '/admin/login/history/' + user.id"
-                                    class="btn btn--primary btn--shadow btn-block btn-lg"
-                                >
-                                    Login Logs
-                                </a>
-                                <a
-                                    :href="$root.basepath + '/admin/send-email/' + user.id"
-                                    class="btn btn--danger btn--shadow btn-block btn-lg"
-                                >
-                                    Send Email
-                                </a>
-                                <a
-                                    :href="$root.basepath + '/admin/email-log/' + user.id"
-                                    class="btn btn--dark btn--shadow btn-block btn-lg"
-                                >
-                                    Email Log
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-9 col-lg-7 col-md-7 mb-30">
-                        <div class="row mb-none-30">
-                            <div class="col-xl-4 col-lg-6 col-sm-6 mb-30">
-                                <div
-                                    class="dashboard-w1 bg--1 b-radius--10 box-shadow has--link"
-                                >
-                                    <a
-                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/deposits/243"
-                                        class="item--link"
-                                    ></a>
-                                    <div class="icon">
-                                        <i class="fa fa-credit-card"></i>
-                                    </div>
-                                    <div class="details">
-                                        <div class="numbers">
-                                            <span class="amount">{{
-                                                $root.normalNumeral(
-                                                    user.totalActiveTransaction
-                                                )
-                                            }}</span>
-                                            <span class="currency-sign">
-                                                $</span
-                                            >
-                                        </div>
-                                        <div class="desciption">
-                                            <span>Total Deposit</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- dashboard-w1 end -->
-
-                            <div class="col-xl-4 col-lg-6 col-sm-6 mb-30">
-                                <div
-                                    class="dashboard-w1 bg--15 b-radius--10 box-shadow has--link"
-                                >
-                                    <a
-                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/withdrawals/243"
-                                        class="item--link"
-                                    ></a>
-                                    <div class="icon">
-                                        <i class="fa fa-wallet"></i>
-                                    </div>
-                                    <div class="details">
-                                        <div class="numbers">
-                                            <span class="amount">{{
-                                                $root.normalNumeral(
-                                                    user.totalWithdrawBySelf
-                                                )
-                                            }}</span>
-                                            <span class="currency-sign">$</span>
-                                        </div>
-                                        <div class="desciption">
-                                            <span>Total Withdraw</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- dashboard-w1 end -->
-
-                            <div class="col-xl-4 col-lg-6 col-sm-6 mb-30">
-                                <div
-                                    class="dashboard-w1 bg--20 b-radius--10 box-shadow has--link"
-                                >
-                                    <a
-                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/transactions/243"
-                                        class="item--link"
-                                    ></a>
-                                    <div class="icon">
-                                        <i class="la la-exchange-alt"></i>
-                                    </div>
-                                    <div class="details">
-                                        <div class="numbers">
-                                            <span class="amount">{{
-                                                $root.normalNumeral(
-                                                    user.totalEarned
-                                                )
-                                            }}</span>
-                                            <span class="currency-sign">
-                                                $</span
-                                            >
-                                        </div>
-                                        <div class="desciption">
-                                            <span>Total Earned</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- dashboard-w1 end -->
-
-                            <div class="col-xl-4 col-lg-6 col-sm-6 mb-30">
-                                <div
-                                    class="dashboard-w1 bg--11 b-radius--10 box-shadow has--link"
-                                >
-                                    <a
-                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/invests/243"
-                                        class="item--link"
-                                    ></a>
-                                    <div class="icon">
-                                        <i class="la la-money-bill"></i>
-                                    </div>
-                                    <div class="details">
-                                        <div class="numbers">
-                                            <span class="amount">{{
-                                                $root.normalNumeral(
-                                                    user.totalPendingWithdrawal
-                                                )
-                                            }}</span>
-                                            <span class="currency-sign">
-                                                $</span
-                                            >
-                                        </div>
-                                        <div class="desciption">
-                                            <span
-                                                >Total Pending Withdarals</span
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- dashboard-w1 end -->
-
-                            <div class="col-xl-4 col-lg-6 col-sm-6 mb-30">
-                                <div
-                                    class="dashboard-w1 bg--18 b-radius--10 box-shadow has--link"
-                                >
-                                    <a
-                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/referrals/243"
-                                        class="item--link"
-                                    ></a>
-                                    <div class="icon">
-                                        <i class="la la-users"></i>
-                                    </div>
-                                    <div class="details">
-                                        <div class="numbers">
-                                            <span class="amount">{{
-                                                user.referrals
-                                            }}</span>
-                                        </div>
-                                        <div class="desciption">
-                                            <span>Total Referral</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- dashboard-w1 end -->
-
-                            <div class="col-xl-4 col-lg-6 col-sm-6 mb-30">
-                                <div
-                                    class="dashboard-w1 bg--12 b-radius--10 box-shadow has--link"
-                                >
-                                    <a
-                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/commissions/deposit/243"
-                                        class="item--link"
-                                    ></a>
-                                    <div class="icon">
-                                        <i class="la la-money"></i>
-                                    </div>
-                                    <div class="details">
-                                        <div class="numbers">
-                                            <span class="amount">{{
-                                                $root.normalNumeral(
-                                                    user.totalCommission
-                                                )
-                                            }}</span>
-                                            <span class="currency-sign">$</span>
-                                        </div>
-                                        <div class="desciption">
-                                            <span>Referral Commission</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- dashboard-w1 end -->
-                        </div>
-
-                        <div class="card mt-50">
-                            <div class="card-body">
                                 <h5 class="card-title mb-50 border-bottom pb-2">
-                                    {{ user.names }} Information
+                                    User Deposit Information
                                 </h5>
 
-                                <form
-                                    action=""
-                                    method="POST"
-                                    @submit.prevent="editProfile()"
-                                >
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label
-                                                    class="form-control-label font-weight-bold"
-                                                    >First Name
-                                                    <span class="text-danger"
-                                                        >*</span
-                                                    ></label
-                                                >
-                                                <input
-                                                    :class="{
-                                                        'form-control': true,
-                                                        'error-input':
-                                                            errors.first_name !=
-                                                            undefined,
-                                                    }"
-                                                    type="text"
-                                                    v-model="form.first_name"
-                                                />
-                                                <p
-                                                    v-if="errors.first_name"
-                                                    v-for="error in errors.first_name"
-                                                    class="m-0 p-2 small"
-                                                >
-                                                    {{ error }}
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label
-                                                    class="form-control-label font-weight-bold"
-                                                    >Last Name
-                                                    <span class="text-danger"
-                                                        >*</span
-                                                    ></label
-                                                >
-                                                <input
-                                                    :class="{
-                                                        'form-control': true,
-                                                        'error-input':
-                                                            errors.last_name !=
-                                                            undefined,
-                                                    }"
-                                                    type="text"
-                                                    v-model="form.last_name"
-                                                />
-                                                <p
-                                                    v-if="errors.last_name"
-                                                    v-for="error in errors.last_name"
-                                                    class="m-0 p-2 small"
-                                                >
-                                                    {{ error }}
-                                                </p>
-                                            </div>
-                                        </div>
+                                <div class="row mt-4">
+                                    <div class="col-md-12">
+                                        <h6>Transaction number</h6>
+                                        <p v-if = "deposit.transaction.transaction_ref">{{deposit.transaction.transaction_ref}}</p>
+                                        <p v-else> NIL</p>
                                     </div>
+                                </div>
+                                <div class = "divider"></div>
 
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label
-                                                    class="form-control-label font-weight-bold"
-                                                    >Mobile Number
-                                                    <span class="text-danger"
-                                                        >*</span
-                                                    ></label
-                                                >
-                                                <vue-tel-input
-                                                    v-model="form.number"
-                                                    mode="international"
-                                                    v-on:country-changed="
-                                                        countryChanged
-                                                    "
-                                                    :class="{
-                                                        'form-control': true,
-                                                        'error-input':
-                                                            errors.number !=
-                                                            undefined,
-                                                    }"
-                                                    >>
-                                                </vue-tel-input>
-                                                <p
-                                                    v-if="errors.number"
-                                                    v-for="error in errors.number"
-                                                    class="base--color m-0 p-2 small"
-                                                >
-                                                    {{ error }}
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label
-                                                    class="form-control-label font-weight-bold"
-                                                    >Email
-                                                    <span class="text-danger"
-                                                        >*</span
-                                                    ></label
-                                                >
-                                                <input
-                                                    :class="{
-                                                        'form-control': true,
-                                                        'error-input':
-                                                            errors.email !=
-                                                            undefined,
-                                                    }"
-                                                    type="email"
-                                                    v-model="form.email"
-                                                />
-                                                <p
-                                                    v-if="errors.email"
-                                                    v-for="error in errors.email"
-                                                    class="m-0 p-2 small"
-                                                >
-                                                    {{ error }}
-                                                </p>
-                                            </div>
-                                        </div>
+                                <div class="row mt-4">
+                                    <div class="col-md-12">
+                                        <h6>Screenshot POP</h6>
+                                        <p v-if = "deposit.pop"><img 
+                                        :src="
+                                                                    $root.basepath +
+                                                                    '/images/pop/' +
+                                                                    deposit.pop "
+                                        /></p>
+                                        <p v-else> No PoP uploaded yet</p>
                                     </div>
+                                </div>
 
-                                    <div class="row mt-4">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label
-                                                    class="form-control-label font-weight-bold"
-                                                    >Address
-                                                </label>
-                                                <input
-                                                    class="form-control"
-                                                    type="text"
-                                                    name="address"
-                                                    value=""
-                                                />
-                                                <small
-                                                    class="form-text text-muted"
-                                                    ><i
-                                                        class="las la-info-circle"
-                                                    ></i>
-                                                    House number, street address
-                                                </small>
-                                            </div>
-                                        </div>
+                                <div class="row mt-4">
+                                    <div class="col-md-12">
+                                        <button
+                                        v-if = "!deposit.active"
+                                            class="btn btn--success ml-1 approveBtn"
+                                           data-original-title="Approve"
+                                            data-toggle="modal" data-target="#approveModal"
+                                        >
+                                            <i class="fas fa-check"></i> Approve
+                                        </button>
 
-                                        <div class="col-xl-3 col-md-6">
-                                            <div class="form-group">
-                                                <label
-                                                    class="form-control-label font-weight-bold"
-                                                    >City
-                                                </label>
-                                                <input
-                                                    class="form-control"
-                                                    type="text"
-                                                    name="city"
-                                                    value=""
-                                                />
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-3 col-md-6">
-                                            <div class="form-group">
-                                                <label
-                                                    class="form-control-label font-weight-bold"
-                                                    >State
-                                                </label>
-                                                <input
-                                                    class="form-control"
-                                                    type="text"
-                                                    name="state"
-                                                    value=""
-                                                />
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-3 col-md-6">
-                                            <div class="form-group">
-                                                <label
-                                                    class="form-control-label font-weight-bold"
-                                                    >Zip/Postal
-                                                </label>
-                                                <input
-                                                    class="form-control"
-                                                    type="text"
-                                                    name="state"
-                                                    value=""
-                                                />
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-3 col-md-6">
-                                            <div class="form-group">
-                                                <label
-                                                    class="form-control-label font-weight-bold"
-                                                    >Country
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    v-model="form.country"
-                                                    class="form-control"
-                                                />
-                                            </div>
-                                        </div>
+                                        <button
+                                        v-else
+                                            class="btn btn--danger ml-1 rejectBtn"
+                                            data-toggle="modal" data-target="#rejectModal"
+                                            data-original-title="Reject"
+                                        >
+                                            <i class="fas fa-ban"></i> Terminate
+                                        </button>
                                     </div>
-
-                                    <div class="row">
-                                        <div
-                                            class="form-group col-xl-4 col-md-6 col-sm-3 col-12"
-                                        >
-                                            <label
-                                                class="form-control-label font-weight-bold"
-                                                >Status
-                                            </label>
-                                            <input
-                                                type="checkbox"
-                                                data-width="100%"
-                                                data-onstyle="-success"
-                                                data-offstyle="-danger"
-                                                data-toggle="toggle"
-                                                data-on="Active"
-                                                data-off="Banned"
-                                                name="status"
-                                                checked
-                                            />
-                                        </div>
-
-                                        <div
-                                            class="form-group col-xl-4 col-md-6 col-sm-3 col-12"
-                                        >
-                                            <label
-                                                class="form-control-label font-weight-bold"
-                                                >Email Verification
-                                            </label>
-                                            <input
-                                                type="checkbox"
-                                                data-width="100%"
-                                                data-onstyle="-success"
-                                                data-offstyle="-danger"
-                                                data-toggle="toggle"
-                                                data-on="Verified"
-                                                data-off="Unverified"
-                                                name="ev"
-                                                checked
-                                            />
-                                        </div>
-
-                                        <div
-                                            class="form-group col-xl-4 col-md-6 col-sm-3 col-12"
-                                        >
-                                            <label
-                                                class="form-control-label font-weight-bold"
-                                                >SMS Verification
-                                            </label>
-                                            <input
-                                                type="checkbox"
-                                                data-width="100%"
-                                                data-onstyle="-success"
-                                                data-offstyle="-danger"
-                                                data-toggle="toggle"
-                                                data-on="Verified"
-                                                data-off="Unverified"
-                                                name="sv"
-                                                checked
-                                            />
-                                        </div>
-                                        <div
-                                            class="form-group col-md-6 col-sm-3 col-12"
-                                        >
-                                            <label
-                                                class="form-control-label font-weight-bold"
-                                                >2FA Status
-                                            </label>
-                                            <input
-                                                type="checkbox"
-                                                data-width="100%"
-                                                data-onstyle="-success"
-                                                data-offstyle="-danger"
-                                                data-toggle="toggle"
-                                                data-on="Verified"
-                                                data-off="Unverified"
-                                                name="ts"
-                                            />
-                                        </div>
-
-                                        <div
-                                            class="form-group col-md-6 col-sm-3 col-12"
-                                        >
-                                            <label
-                                                class="form-control-label font-weight-bold"
-                                                >2FA Verification
-                                            </label>
-                                            <input
-                                                type="checkbox"
-                                                data-width="100%"
-                                                data-onstyle="-success"
-                                                data-offstyle="-danger"
-                                                data-toggle="toggle"
-                                                data-on="Verified"
-                                                data-off="Unverified"
-                                                name="tv"
-                                                checked
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-4">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <VueLoadingButton
-                                                    class="btn btn--primary btn-block btn-lg"
-													type = "submit"
-                                                    :loading="form.busy"
-                                                    aria-label="Save Changes"
-                                                 >
-												Save Changes</VueLoadingButton>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
+                        <list-loader v-else></list-loader> 
                     </div>
                 </div>
 
                 <div
-                    id="addSubModal"
+                    id="approveModal"
                     class="modal fade"
                     tabindex="-1"
                     role="dialog"
@@ -665,7 +229,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">
-                                    Add Balance / Investment
+                                    Approve Deposit Confirmation
                                 </h5>
                                 <button
                                     type="button"
@@ -679,89 +243,120 @@
                             <form
                                 action=""
                                 method="POST"
-								@submit.prevent = "makeDeposit()"
+                                @submit.prevent = "approveSubscription(deposit.id)"
                             >
+                               
+                                <input type="hidden" name="id" />
                                 <div class="modal-body">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-12">
-                                            <input
-                                                type="checkbox"
-                                                data-width="100%"
-                                                data-height="44px"
-                                                data-onstyle="-success"
-                                                data-offstyle="-danger"
-                                                data-toggle="toggle"
-                                                data-on="Add Balance"
-                                                data-off="Subtract Balance"
-                                                name="act"
-                                                checked
-                                            />
-                                        </div>
+                                    <p>
+                                        Are you sure to
+                                        <span class="font-weight-bold"
+                                            >approve</span
+                                        >
+                                        <span
+                                            class="font-weight-bold withdraw-amount text-success"
+                                        ></span>
+                                        this subscription plan of
+                                        <span
+                                            class="font-weight-bold withdraw-user"
+                                        >{{$root.normalNumeral(deposit.amount)}} USD</span
+                                        >?
 
-                                        <div class="form-group col-md-12">
-                                            <label class="font-weight-bold"
-                                                >To<span
-                                                    class="text-danger"
-                                                    >*</span
-                                                ></label
-                                            >
-                                            <select
-                                                v-model="deposit_form.type"
-                                                class="form-control"
-                                                required
-                                            >
-                                                <option value="investment">
-                                                    Investment
-                                                </option>
-                                                <option value="balance">
-                                                    Balance
-                                                </option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group col-md-12">
-                                            <label
-                                                >Amount<span class="text-danger"
-                                                    >*</span
-                                                ></label
-                                            >
-                                            <div class="input-group has_append">
-                                                <input
-                                                    type="number"
-                                                    v-model="deposit_form.amount"
-													min="0"
-													required
-                                                    class="form-control"
-                                                    placeholder="Please provide positive amount"
-                                                />
-                                                <div class="input-group-append">
-                                                    <div
-                                                        class="input-group-text"
-                                                    >
-                                                        $
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </p>
                                 </div>
                                 <div class="modal-footer">
                                     <button
+                                        ref = "subscription_modal_button"
                                         type="button"
                                         class="btn btn--dark"
                                         data-dismiss="modal"
                                     >
                                         Close
                                     </button>
-									<VueLoadingButton
+                                      <VueLoadingButton
                                                     class="btn btn--success"
 													type = "submit"
-                                                    :loading="deposit_form.busy"
-                                                    aria-label="Submit"
-													 :styled="false"
-                                                >
-												Submit</VueLoadingButton>
-    
+                                                    :loading="form.busy"
+                                                    aria-label="Approve"
+                                                 >
+												Approve</VueLoadingButton>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    id="rejectModal"
+                    class="modal fade"
+                    tabindex="-1"
+                    role="dialog"
+                >
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">
+                                    Stop Subscription Confirmation
+                                </h5>
+                                <button
+                                    type="button"
+                                    class="close"
+                                    data-dismiss="modal"
+                                    aria-label="Close"
+                                >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form
+                                
+                                method="POST"
+                                @submit.prevent = "approveSubscription(deposit.id)"
+                            >
+                                <input type="hidden" name="id" />
+                                <div class="modal-body">
+                                    <p>
+                                        Are you sure to
+                                        <span class="font-weight-bold"
+                                            >terminate</span
+                                        >
+                                        <span
+                                            class="font-weight-bold withdraw-amount text-success"
+                                        ></span>
+                                        this subscription plan of 
+                                        <span
+                                            class="font-weight-bold withdraw-user"
+                                        >{{$root.normalNumeral(deposit.amount)}} USD</span
+                                        >?
+                                    </p>
+
+                                    <div class="form-group">
+                                        <label class="font-weight-bold mt-2"
+                                            >Reason for Termination</label
+                                        >
+                                        <textarea
+                                            name="message"
+                                            id="message"
+                                            class="form-control"
+                                            rows="5"
+                                        ></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button
+                                        ref = "subscription_modal_button2"
+                                        type="button"
+                                        class="btn btn--dark"
+                                        data-dismiss="modal"
+                                    >
+                                        Close
+                                    </button>
+                                    <VueLoadingButton
+                                                    class="btn btn--danger"
+													type = "submit"
+                                                    :loading="form.busy"
+                                                    aria-label="Reject"
+                                                 >
+												Terminate</VueLoadingButton>
                                 </div>
                             </form>
                         </div>
@@ -773,28 +368,13 @@
     </div>
 </template>
 <script>
-import { ContentLoader, ListLoader } from "vue-content-loader";
 import VueLoadingButton from "vue-loading-button";
+import { ContentLoader, ListLoader } from "vue-content-loader";
 export default {
     data() {
         return {
-            form: new Form({
-                first_name: "",
-                last_name: "",
-                email: "",
-                country: "",
-				number: "",
-                // username : '',
-                // password : '',
-                // password_confirmation : '',
-			}),
-			deposit_form: new Form({
-				type: "",
-				amount: "",
-				user_id: "",
-				reference: "SELF",
-			}),
-            user: {},
+            form: new Form({}),
+            deposit: "",
             loading: false,
             key: 0,
             errors: "",
@@ -805,14 +385,10 @@ export default {
         };
     },
     created() {
-        this.fetchUser(this.$route.params.id);
+        this.fetchDeposits(this.$route.params.id);
     },
     watch: {
-        user() {
-			this.form.fill(this.user);
-			this.deposit_form.user_id = this.user.id
-			this.deposit_form.reference = "SELF"
-        },
+  
     },
     mounted() {
         var script = document.createElement("script");
@@ -977,18 +553,17 @@ export default {
     },
 
     components: {
-        ContentLoader,
-        ListLoader,
         VueLoadingButton,
+        ContentLoader, ListLoader,
     },
     methods: {
-        fetchUser(id) {
+        fetchDeposits(id) {
             this.loading = true;
-            var form = new Form();
-            form.get("/auth/users?id=" + id)
+            this.form
+                .get("/auth/packageusers/" + id)
                 .then((response) => {
                     this.loading = false;
-                    this.user = response.data.data.item[0];
+                    this.deposit = response.data.data;
                     this.key++;
                 })
                 .catch((error) => {
@@ -1001,56 +576,44 @@ export default {
                     console.log(error);
                 });
         },
-        editProfile() {
-            this.loading = true
-            this.message = "";
-            this.error = "";
-            this.errors = {};
+        cryptoFilter(list, search) {
+            var data = [];
+            if (search) {
+                data = list.filter((item) => {
+                    return item.name == search;
+                });
+            } else {
+                data = [];
+            }
+            return data;
+            
+        },
+        approveSubscription(id) {
+            this.loading = true;
             this.form
-                .patch("/auth/users/" + this.user.id)
-				.then((response) => {
-					this.user = response.data.data
-                    this.$root.alert("success", " ", " Updated");
+                .get("/auth/subscribe/" + id)
+                .then((response) => {
+                    this.fetchDeposits(this.$route.params.id)
+                    this.loading = false;
+                    console.log(response.data.message)
+                    this.$root.alert(
+                        "success",
+                        response.data.message
+                    );
+                    this.$refs.subscription_modal_button.click()
+                    this.$refs.subscription_modal_button2.click()
+                    this.$root.scrollUp()
                 })
                 .catch((error) => {
-                    if (error.response.status == 422) {
-                        this.errors = {};
-                        this.errors = error.response.data.error;
-                    } else {
-                        this.error = error.response.data.message;
-                        this.$root.alert("error", " ", this.error);
-                    }
+                    this.loading = false;
+                    this.$root.alert(
+                        "error",
+                        error.response.data.message
+                    );
+                    console.log(error);
                 });
         },
-        countryChanged(country) {
-            this.form.country = country.name;
-		},
-		makeDeposit() {
-            this.message = "";
-            this.error = "";
-            this.errors = {};
-            this.deposit_form
-                .post("/auth/deposit/")
-				.then((response) => {
-					this.user = response.data.data
-					console.log(response.data)
-                    this.$root.alert("success", " ", response.data.message);
-                })
-                .catch((error) => {
-					console.log(error.response.data)
-
-                    if (error.response.status == 422) {
-						this.errors = {};
-					this.$root.alert("error", " ", error.response.data.message);
-                        this.errors = error.response.data.error;
-                    } else {
-                        this.error = error.response.data.message;
-                        this.$root.alert("error", " ", this.error);
-                    }
-                });
-		}
     },
 };
 </script>
-<style scoped>
-</style>
+<style scoped></style>

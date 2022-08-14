@@ -392,7 +392,7 @@ const routes = [
         },
     },
     {
-        path: "admin/deposit/details/:id",
+        path: "/admin/deposit/details/:id",
         name: "deposit-details",
         component: () => import("./pages/admin/DepositDetails"),
         meta: {
@@ -402,6 +402,16 @@ const routes = [
         },
     },
 
+    {
+        path: "/admin/withdrawals/details/:id",
+        name: "withdrawal-details",
+        component: () => import("./pages/admin/WithdrawalDetails"),
+        meta: {
+            auth: true,
+            adminAuth: true,
+            title: "Admin user preview",
+        },
+    },
     // {
     //     path: "/admin/dashboard/subscriptions",
     //     name: "subscriptions",
@@ -413,9 +423,9 @@ const routes = [
     //     },
     // },
     {
-        path: "/admin/dashboard/withdrawals",
+        path: "/admin/withdrawals",
         name: "withdrawals",
-        component: Withdrawals,
+        component: () => import("./pages/admin/Withdrawals"),
         meta: {
             auth: true,
             adminAuth: true,

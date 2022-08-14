@@ -687,7 +687,7 @@ export default {
         document.body.appendChild(script);
     },
     methods: {
-        addPaymentMethod(id) {
+        addPaymentMethod() {
             this.loading = true;
             this.has_error = false;
             this.errors = "";
@@ -710,6 +710,7 @@ export default {
                     this.$root.alert("success", response.data.message);
                     this.payment_form.reset()
                     this.$root.getPayments();
+                    this.$root.scrollUp()
                 })
                 .catch((error) => {
                     this.loading = false;
@@ -725,7 +726,9 @@ export default {
                         typeof error.response.data.error == "string"
                             ? error.response.data.error
                             : "";
+                    this.$root.scrollUp()
                 });
+
         },
         changeProfilePicture() {
             this.$root.loader("show");

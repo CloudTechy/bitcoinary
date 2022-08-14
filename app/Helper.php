@@ -322,7 +322,7 @@ class Helper {
 		}
 	}
 	public static function uploadImage(Request $request, $filename = 'image', $path = 'image'){
-		
+	
 		if ($request->hasFile($filename)) {
 
             if ($request->file($filename)->isValid()) {

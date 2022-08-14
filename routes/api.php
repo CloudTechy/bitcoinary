@@ -79,9 +79,9 @@ Route::prefix('v1')->group(function () {
 			Route::resource('testimonials', 'TestimonialController');
 			Route::resource('news', 'NewsController');
 
-			Route::delete('bankdetails/{bankdetail}', 'BankDetailController@destroy');
-			Route::get('bankdetails/{bankdetail}', 'BankDetailController@show');
-			Route::patch('bankdetails/{bankdetail}', 'BankDetailController@update');
+			// Route::delete('bankdetails/{bankdetail}', 'BankDetailController@destroy');
+			// Route::get('bankdetails/{bankdetail}', 'BankDetailController@show');
+			// Route::patch('bankdetails/{bankdetail}', 'BankDetailController@update');
 			Route::resource('bankdetails', 'BankDetailController');
 			Route::put('user/image/{user}', 'UserController@uploadImage');
 			Route::resource('paymentmethods', 'PaymentMethodController');
@@ -89,7 +89,7 @@ Route::prefix('v1')->group(function () {
 			Route::resource('transactions', 'TransactionController');
 			Route::resource('withdrawals', 'WithdrawalController');
 			Route::get('subscribe/{packageuser}', 'PackageUserController@confirmSubscription');
-			Route::get('confirm_withdrawal/{withdrawal}', 'WithdrawalController@confirmWithdrawal');
+			Route::post('confirm_withdrawal/{withdrawal}', 'WithdrawalController@confirmWithdrawal');
 			Route::get('confirmWithdrawalRequest/{user}', 'WithdrawalController@ConfirmWithdrawalRequest');
 			Route::get('cancelWithdrawalRequest/{user}', 'WithdrawalController@CancelWithdrawalRequest');
 			Route::post('pop', 'WithdrawalController@popUpload');
