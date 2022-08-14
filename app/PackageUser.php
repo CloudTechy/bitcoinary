@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class PackageUser extends Model {
 	protected $table = 'package_user';
@@ -28,7 +29,7 @@ class PackageUser extends Model {
 
 		try {
 
-			$fields = [ 'user_id', 'pop', 'loop', 'roi',  'transaction_id', 'package_id', 'referral', 'amount', 'expiration', 'active'];
+			$fields = [ 'user_id', 'username', 'pop', 'loop', 'roi',  'transaction_id', 'package_id', 'referral', 'amount', 'expiration', 'active'];
 
 			return $query->where(
 				function ($query) use ($filter, $fields) {
@@ -46,6 +47,17 @@ class PackageUser extends Model {
 								$query->where("created_at", ">=", $val);
 								continue;
 							}
+							if ($key == 'username') {
+								$users = User::where('username','LIKE', '%'.$val. '%')->get();
+								$userID = [];
+
+								foreach($users as $user){
+									array_push($userID, $user->id);	
+								}
+								$query->whereIn("user_id", $userID);
+								
+								continue;
+							};
 
 							$query->where($key, $val);
 

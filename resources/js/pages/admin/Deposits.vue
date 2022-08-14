@@ -1,173 +1,530 @@
 <template>
-    <div class="m-0 p-0">
+    <div class="page-wrapper default-version">
+        <AdminDashboardSidebar></AdminDashboardSidebar>
         <AdminDashboardHeader></AdminDashboardHeader>
-        <section class="main-container m-lg-3 m-0 acc">
-            <div class="main">
-                <!--start wrapper-->
-                <div class="container">
-                    <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;min-height:400px;'">
-                        <div class="account-wrapper m-xl-2 row m-0 ">
-                            <nav class="nav  navbar-dark ml-4 ml-lg-0 mb-3 mb-lg-b p-0 mt-3 navbar navbar-expand-lg ">
-                                <button @click="" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar4">
-                                    <span class="navbar-toggler-icon "></span>
-                                </button>
-                            </nav>
-                            <AdminDashboardSidebar></AdminDashboardSidebar>
-                            <div class="columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc">
-                                <div class="acc-block">
-                                    <div class="acc-heading clearfix">
-                                        <h2>Transactions</h2>
-                                        <ul class="breadcrumbs">
-                                            <li>Main</li>
-                                            <li><img :src="$root.basepath + '/img/right-b.png'"></li>
-                                            <li class="active">Transactions</li>
-                                        </ul>
-                                    </div>
-                                    <div class="acc-body m-0 p-2 transactions">
-                                        <form @submit.prevent="getTransactions" class="date-from" method="post" name="opts">
-                                            <div class="row text-center justify-content-center form-list">
-                                                    <div class="form-group col-6">
-                                                        <label>From</label>
-                                                        <div class="iconed">
-                                                            <span class="icon"><i class="fas fa-calendar" aria-hidden="true"></i></span>
-                                                            <input type="date" placeholder="select from date" v-model="from" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-6">
-                                                        <label>To</label>
-                                                        <div class="iconed">
-                                                            <span class="icon"><i class="fas fa-calendar" aria-hidden="true"></i></span>
-                                                            <input type="date" placeholder="select to date" v-model="to" required class="form-control">
-                                                        </div>
-                                                    </div>
-                                           
-                                                <div class="form-group col-12">
-                                                    <div class="p-2 m-2">
-                                                        <div id="example1_filter" class="dataTables_filter">
-                                                            <label>Search:<input v-model="search" type="search" class="form-control form-control-lg" placeholder="search">
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <h4 class="text-center">List of all Transactions</h4>
-                                            <p class="small p-2">Total of {{myFilter($root.myFilter(transactions,search),from,to).length
-                                                }} entries</p>
-                                        <div style="max-height: 500px ; overflow: auto" class="stat-table  m-0 p-0 table-responsive">
-                                            
-                                            <table class="stat">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center">Username</th>
-                                                        <th class="text-center">Reference</th>
-                                                        <th class="text-center">Amount</th>
-                                                        <th class="text-center">Payment</th>
-                                                        <th class="text-center">Date</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr v-if="user" v-for="transaction in myFilter($root.myFilter(transactions,search),from,to)">
-                                                        <td class="text-center">{{transaction.username}}</td>
-                                                        <td class="text-center">{{transaction.reference}}</td>
-                                                        <td class="text-center">${{$root.normalNumeral(transaction.amount)}}</td>
-                                                        <td class="text-center">${{$root.normalNumeral(transaction.payment)}}</td>
-                                                        <td class="text-center">{{createDate(transaction.created_at)}}</td>
-                                                    </tr>
-                                                    <tr v-if="myFilter($root.myFilter(transactions,search),from,to).slice(0,20).length == 0">
-                                                        <th colspan="5" class="p-4" align="center" style="text-align: center;">No transactions found.</th>
-                                                    </tr>
-                                                    <tr v-if="transactions" class="mt-4 p-2 m-2">
-                                                        <td colspan="1"  class="text-center font-weight-bold">Total:</td>
-                                                        <td  class="text-center font-weight-bold text-success" colspan="4" align="right">
-                                                            <b>{{$root.numeral(myFilter($root.myFilter(transactions,search),from,to).sum('amount'))}}
-                                                            </b>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
+        <div class="body-wrapper">
+            <div class="bodywrapper__inner">
+                <div
+                    class="row align-items-center mb-30 justify-content-between"
+                >
+                    <div class="col-lg-6 col-sm-6">
+                        <h6 class="page-title">Deposit History</h6>
+                    </div>
+                    <div
+                        class="col-lg-6 col-sm-6 offset-6 text-sm-right mt-sm-0 mt-3"
+                    >
+                        <form
+                            action=""
+                            method="GET"
+                            class="form-inline float-sm-right bg--white"
+                        >
+                            <div class="input-group has_append">
+                                <input
+                                    type="text"
+                                    v-model="search"
+                                    class="form-control"
+                                    placeholder="username"
+                                />
+                                <div class="input-group-append">
+                                    <button
+                                        class="btn btn--primary"
+                                        @click.prevent="searchTransactions"
+                                    >
+                                        <i class="fa fa-search"></i>
+                                    </button>
                                 </div>
                             </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card b-radius--10">
+                            <div class="card-body p-0">
+                                <div
+                                    class="table-responsive--md table-responsive"
+                                >
+                                    <table
+                                        class="table table--light style--two"
+                                    >
+                                        <thead>
+                                            <tr>
+                                                <th>Gateway | Trx</th>
+                                                <th>Initiated</th>
+                                                <th>User</th>
+                                                <th>Amount</th>
+                                                <th>Conversion</th>
+                                                <th>package</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr
+                                                v-if="deposits && !loading"
+                                                v-for="dp in deposits"
+                                            >
+                                                <td data-label="Gateway | Trx">
+                                                    <span
+                                                        class="font-weight-bold"
+                                                    >
+                                                        {{
+                                                            dp.transaction
+                                                                .payment_method
+                                                        }}
+                                                    </span>
+                                                    <br />
+                                                    <small>
+                                                        {{
+                                                            dp.transaction
+                                                                .transaction_ref
+                                                                ? dp.transaction
+                                                                      .id
+                                                                : dp.transaction
+                                                                      .transaction_ref
+                                                        }}
+                                                    </small>
+                                                </td>
+
+                                                <td data-label="Date">
+                                                    {{ dp.date }}<br />{{
+                                                        dp.date_bad
+                                                    }}
+                                                </td>
+
+                                                <td data-label="User">
+                                                    <span
+                                                        class="font-weight-bold"
+                                                        >{{ dp.owner }}</span
+                                                    >
+                                                    <br />
+                                                    <span class="small">
+                                                        <a
+                                                            :href="
+                                                                $root.basepath +
+                                                                '/admin/users/' +
+                                                                dp.user_id
+                                                            "
+                                                            ><span>@</span
+                                                            >{{
+                                                                dp.username
+                                                            }}</a
+                                                        >
+                                                    </span>
+                                                </td>
+
+                                                <td data-label="Amount">
+                                                    ${{
+                                                        $root.normalNumeral(
+                                                            dp.amount
+                                                        )
+                                                    }}
+                                                    +
+                                                    <span
+                                                        class="text-danger"
+                                                        data-toggle="tooltip"
+                                                        data-original-title="charge"
+                                                        >0
+                                                    </span>
+                                                    <br />
+                                                    <strong
+                                                        data-toggle="tooltip"
+                                                        data-original-title="Amount with charge"
+                                                    >
+                                                        {{
+                                                            $root.normalNumeral(
+                                                                dp.amount
+                                                            )
+                                                        }}
+                                                        USD
+                                                    </strong>
+                                                </td>
+
+                                                <td data-label="Conversion">
+                                                    1 USD = 1 USD
+                                                    <br />
+                                                    <strong
+                                                        >{{
+                                                            $root.normalNumeral(
+                                                                dp.amount
+                                                            )
+                                                        }}
+                                                        USD</strong
+                                                    >
+                                                </td>
+                                                <td
+                                                    data-label="Package"
+                                                    
+                                                >
+                                                  <span class="badge badge--primary">{{ dp.name }}</span>  
+                                                </td>
+                                                <td data-label="Status">
+                                                    <span
+                                                        :class="{
+                                                            badge: true,
+                                                            'badge--warning':
+                                                                !dp.active,
+                                                            'badge--success':
+                                                                dp.active,
+                                                        }"
+                                                        >{{
+                                                            dp.active
+                                                                ? "Active"
+                                                                : "Pending"
+                                                        }}</span
+                                                    >
+                                                </td>
+                                                <td data-label="Action">
+                                        <a  :href="$root.basepath + '/admin/deposit/details/' + dp.id" class="icon-btn ml-1 " data-toggle="tooltip" title="" data-original-title="Detail">
+                                            <i class="la la-desktop"></i>
+                                        </a>
+                                    </td>
+                                                
+                                            </tr>
+                                            <tr v-if="loading">
+                                                <td colspan="7">
+                                                    <!-- <content-loader></content-loader> -->
+                                                    <list-loader></list-loader>
+                                                </td>
+                                            </tr>
+                                            <tr
+                                                v-if="
+                                                    deposits.length === 0 &&
+                                                    !loading
+                                                "
+                                            >
+                                                <td
+                                                    class="text-center"
+                                                    data-label="deposits"
+                                                    colspan="5"
+                                                >
+                                                    <div class="icon">
+                                                        <i
+                                                            class="fa fa-search"
+                                                        ></i>
+                                                    </div>
+                                                    <div class="details">
+                                                        <div class="desciption">
+                                                            <span class=""
+                                                                >Nothing found
+                                                                here</span
+                                                            >
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- table end -->
+                                </div>
+                            </div>
+                            <div
+                                v-if="paging.total_pages > 1"
+                                class="card-footer py-4"
+                            >
+                                <nav aria-label="...">
+                                    <ul
+                                        class="pagination justify-content-end mb-0"
+                                    >
+                                        <li
+                                            v-if="paging.current_page > 1"
+                                            class="page-item"
+                                        >
+                                            <a
+                                                class="page-link"
+                                                @click.prevent="
+                                                    getDeposits(
+                                                        --paging.current_page
+                                                    )
+                                                "
+                                            >
+                                                <i class="fa fa-angle-left"></i>
+                                                <span class="sr-only"
+                                                    >Prev</span
+                                                >
+                                            </a>
+                                        </li>
+                                        <li
+                                            v-for="num in paging.total_pages"
+                                            :class="{
+                                                'page-item': true,
+                                                active:
+                                                    num == paging.current_page,
+                                            }"
+                                        >
+                                            <a
+                                                class="page-link"
+                                                @click.prevent="
+                                                    getDeposits(num)
+                                                "
+                                                >{{ num }}</a
+                                            >
+                                        </li>
+                                        <!-- <li class="page-item disabled">
+                                            <a
+                                                class="page-link"
+                                                href="javascript:void(0)"
+                                            >
+                                                ...
+                                            </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a
+                                                class="page-link"
+                                                href="https://script.viserlab.com/hyiplab/demo/admin/deposits?page=251"
+                                                >251</a
+                                            >
+                                        </li> -->
+                                        <li
+                                            v-if="
+                                                paging.total_pages !=
+                                                paging.current_page
+                                            "
+                                            class="page-item"
+                                        >
+                                            <a
+                                                class="page-link"
+                                                @click.prevent="
+                                                    getDeposits(
+                                                        ++paging.current_page
+                                                    )
+                                                "
+                                            >
+                                                <i
+                                                    class="fa fa-angle-right"
+                                                ></i>
+                                                <span class="sr-only"
+                                                    >Next</span
+                                                >
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
-                        <!--end account wrapper-->
+                        <!-- card end -->
                     </div>
                 </div>
             </div>
-        </section>
+            <!-- bodywrapper__inner end -->
+        </div>
     </div>
 </template>
 <script>
-import moment from 'moment'
+import { ContentLoader, ListLoader } from "vue-content-loader";
+
 export default {
     data() {
         return {
-            from: '',
-            to: '',
-            search: '',
-            transactions: '',
-            form: new Form({})
-        }
+            deposit_form: new Form({}),
+            key: 0,
+            pageLimit: 18,
+            currentPage: 1,
+            search: "",
+            loading: false,
+            error: null,
+            message: null,
+            deposits: [],
+            paging: [],
+        };
     },
-    mounted() {
-        if (localStorage.transactions) {
-            this.transactions = JSON.parse(localStorage.transactions)
-        }
-        setInterval(this.getTransactions, 61000)
-        this.getTransactions()
+    components: {
+        ContentLoader,
+        ListLoader,
     },
-    beforeCreate: function () {
-    if (this.$auth.user().isAdmin == false) {this.$auth.logout()}
+    watch: {
+        pageLimit() {
+            this.getDeposits(1);
+        },
     },
+
     computed: {
         user() {
-            return this.$auth.user()
+            return this.$auth.user();
         },
     },
+    mounted() {
+        var script = document.createElement("script");
+        script.src = this.$root.basepath + "/assets/admin/js/app.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src = this.$root.basepath + "/assets/admin/js/admin.js";
+        document.body.appendChild(script);
+    },
+    beforeCreate() {
+        var style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/bootstrap.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/bootstrap-toggle.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/admin/css/all.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/css/line-awesome.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/nice-select.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/admin/css/vendor/prism.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/select2.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/datatables.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/jquery-jvectormap-2.0.5.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/admin/css/vendor/datepicker.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/jquery-timepicky.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/bootstrap-clockpicker.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath +
+            "/assets/admin/css/vendor/bootstrap-pincode-input.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/admin/css/app.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+
+        var script = document.createElement("script");
+        script.src =
+            this.$root.basepath + "/assets/admin/js/vendor/jquery-3.5.1.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath +
+            "/assets/admin/js/vendor/bootstrap.bundle.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath +
+            "/assets/admin/js/vendor/bootstrap-toggle.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath +
+            "/assets/admin/js/vendor/jquery.slimscroll.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath +
+            "/assets/admin/js/vendor/jquery.nice-select.min.js";
+        document.body.appendChild(script);
+        style = document.createElement("link");
+        script = document.createElement("script");
+        script.src = this.$root.basepath + "/assets/admin/js/nicEdit.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src = this.$root.basepath + "/assets/admin/js/vendor/prism.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath + "/assets/admin/js/vendor/select2.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath + "/assets/admin/js/vendor/datatables.min.js";
+        document.body.appendChild(script);
+        script = document.createElement("script");
+        script.src =
+            this.$root.basepath + "/assets/admin/js/vendor/apexcharts.min.js";
+        document.body.appendChild(script);
+    },
+
+    created() {
+        this.getDeposits(this.currentPage);
+    },
     methods: {
-        getTransactions() {
-            this.form.get("auth/transactions")
-                .then(response => {
-                    this.transactions = response.data.data.item
-                    localStorage.transactions = JSON.stringify(response.data.data.item)
+        getDeposits(page, url = null) {
+            this.loading = true;
+            this.currentPage = page;
+            var searchQuery = this.search ? "&username=" + this.search : "";
+            url = url ? url : "/auth/packageusers?page=" + page;
+            this.deposit_form
+                .get(url + "&pageSize=" + this.pageLimit + searchQuery)
+                .then((response) => {
+                    this.loading = false;
+                    this.deposits = response.data.data.item;
+                    this.paging = response.data.data.pagination;
+                    this.key++;
                 })
-                .catch(error => {
-                    console.log(error.response)
+                .catch((error) => {
+                    this.loading = false;
+                    console.log(error);
+                });
+        },
+        updateData() {
+            this.form
+                .put("/auth/users/" + this.form.id)
+                .then((response) => {
+                    this.$root.alert("success", " ", "update successful");
+                    this.getDeposits();
                 })
+                .catch((error) => {
+                    this.$root.alert("error", " ", "update not successful");
+                    console.log(error.response);
+                });
         },
-        createDate(createDate) {
-            return moment(createDate).format("MMM Do YYYY")
+        searchTransactions() {
+            this.getDeposits(1);
         },
-        myFilter(list, fromDate, toDate) {
-            var data = [];
-
-            if (fromDate) {
-                data = list.filter((item) => {
-                    var keys = []
-                    keys.push(item.created_at)
-                    var boolean = false
-                    if (item == undefined) {
-                        return false
-                    }
-                    var bool = keys.forEach((item) => {
-                        var created_at = new moment(item)
-                        var fromDate = this.from != '' ? new moment(this.from.toString()) : new moment().subtract(1, 'd')
-                        var toDate = this.to != '' ? new moment(this.to.toString()).add(1, 'd') : new moment().add(1, 'd')
-                        if (created_at != null && fromDate <= created_at && toDate >= created_at) {
-                            boolean = true
-                        }
-
-                    })
-                    return boolean
-
-                })
-            } else {
-                data = list;
-            }
-            return data;
-        },
-    }
-}
-
+    },
+};
 </script>

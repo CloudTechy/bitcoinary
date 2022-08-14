@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model {
-	protected $fillable = ['user_id', 'amount', 'pop', 'reference', 'active', 'sent', 'confirmed', 'reference', 'currency_code'];
+	protected $fillable = ['user_id', 'amount', 'pop','transaction_ref','payment_method', 'reference', 'active', 'sent', 'confirmed', 'reference', 'currency_code'];
 	protected $appends = array('confirmedTransaction', 'nullTransaction', 'sentTransaction');
 
 	public function getConfirmedTransactionAttribute() {

@@ -35,8 +35,15 @@ class PackageUserController extends Controller {
 			$data = PackageUser::filter(request()->all())
 				->orderBy('expiration', 'asc')
 				->paginate($pageSize);
+				$pagination = [
+					'total' => $data->total(),
+					'count' => $data->count(),
+					'per_page' => $data->perPage(),
+					'current_page' => $data->currentPage(),
+					'total_pages' => $data->lastPage()
+				];
 			$data = PackageUserResource::collection($data);
-			$builtData = Helper::buildData($data);
+			$builtData = Helper::buildData($data, $pagination);
 			return Helper::validRequest($builtData, 'data was fetched successfully', 200);
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);
@@ -99,7 +106,7 @@ class PackageUserController extends Controller {
 
 
 			if ($user->balance >= $validated['amount'] && !empty($validated['fromWallet'])) {
-				$transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
+				$transaction = $user->transactions()->create(['reference' => 'SELF','transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
 
 				$withdrawal = $user->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $validated['amount'], 'reference' => 'BM', 'processed' => true, 'confirmed' => true]);
 
@@ -119,7 +126,7 @@ class PackageUserController extends Controller {
 				return Helper::validRequest($subscription, 'Congratulations!!! your investment is now active', 200);
 			} else {
 		        $pop = Helper::uploadImage($request, 'pop', 'images/pop');
-		        $transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $validated['amount'], 'pop' => $pop]);
+		        $transaction = $user->transactions()->create(['reference' => 'SELF','transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'pop' => $pop]);
 				$subscription = PackageUser::create(['transaction_id' => $transaction->id, 'user_id' => $user->id, 'package_id' => $package->id, 'roi' => $package->roi, 'pop' => $pop, 'amount' => $validated['amount'],  'active' => false]);
 			
 				$this->adminsNotificationRequest($subscription);
@@ -319,7 +326,7 @@ class PackageUserController extends Controller {
 				return Helper::validRequest($user, 'subscription activated', 200);
 			}
 			elseif($validated['type'] == 'balance'){
-				$transaction = $user->transactions()->create(['reference' =>'SELF' ,'amount' => $validated['amount'], 'sent' => true, 'active' => false, 'confirmed' => true]);
+				$transaction = $user->transactions()->create(['reference' =>'SELF' ,'transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'sent' => true, 'active' => false, 'confirmed' => true]);
 				DB::commit();
 				$transaction->user->notify(new TransactionMade($transaction));
 				Helper::adminsUserActivityRequest(['type'=>'TransactionActivity', 'message' =>  $user->username .'\'s account balance was credited $'. $validated['amount']]);

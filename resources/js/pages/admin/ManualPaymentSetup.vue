@@ -79,16 +79,19 @@
                                             >
                                                 <td data-label="Gateway">
                                                     <div class="user">
-                                                        <div class="thumb">
+                                                        <div
+                                                            class="thumb"
+                                                        >
                                                             <img
                                                                 :src="
                                                                     $root.basepath +
                                                                     '/images/uploads/' +
                                                                     py.image
                                                                 "
-                                                                :alt="py.image"
+                                                                alt="image"
                                                             />
                                                         </div>
+                                                      
                                                         <span class="name">{{
                                                             py.name
                                                         }}</span>
@@ -121,7 +124,11 @@
                                                     <a
                                                         data-toggle="modal"
                                                         href="#deactivateModal"
-                                                        @click.prevent = "selectPayment(py.name)"
+                                                        @click.prevent="
+                                                            selectPayment(
+                                                                py.name
+                                                            )
+                                                        "
                                                         class="icon-btn bg--danger ml-1 deactivateBtn disabled"
                                                         :data-name="py.name"
                                                         data-original-title="Disable"
@@ -354,7 +361,7 @@ export default {
     data() {
         return {
             delete_form: new Form({
-                id : ''
+                id: "",
             }),
             pageLimit: 20,
             currentPage: 1,
@@ -544,7 +551,8 @@ export default {
             this.payments = data;
         },
         deactivateCrypto() {
-            this.delete_form.delete("/auth/paymentmethods/" + this.delete_form.id )
+            this.delete_form
+                .delete("/auth/paymentmethods/" + this.delete_form.id)
                 .then((response) => {
                     this.$root.alert("success", response.data.message);
                     this.$root.getPayments();
@@ -552,12 +560,11 @@ export default {
                 .catch((error) => {
                     this.$root.alert("error", error.response.data.message);
                     console.log(error);
-                    
                 });
         },
         selectPayment(id) {
-            this.delete_form.id
-        }
+            this.delete_form.id;
+        },
     },
 };
 </script>

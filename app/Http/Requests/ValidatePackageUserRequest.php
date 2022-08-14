@@ -24,6 +24,8 @@ class ValidatePackageUserRequest extends FormRequest {
 			'user_id' => 'required|numeric|exists:users,id',
 			'pop' => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048|required_unless:fromWallet,true',
 			'amount' => 'required|numeric|min:50',
+			'transaction_ref' => 'nullable|string',
+			'payment_method' => 'required|exists:payment_methods,name',
 			'fromWallet' => 'boolean',
 		];
 	}

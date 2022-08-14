@@ -334,9 +334,9 @@ class Helper {
                 $imagePath = $file->getClientOriginalName();
                   return $imagePath;
             }
-            else return 'not valid';
+            else return 'undefined.jpg';
         }
-        else return 'no file ' . $filename;
+        else return 'undefined.jpg';
 
 	}
 public static function adminsUserActivityRequest($activity){

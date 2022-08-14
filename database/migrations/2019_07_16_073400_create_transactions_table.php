@@ -18,6 +18,8 @@ class CreateTransactionsTable extends Migration {
 			$table->boolean('sent')->default(false);
 			$table->boolean('confirmed')->default(false);
 			$table->string('reference')->nullable();
+			$table->string('payment_method')->nullable()->index();
+			$table->string('transaction_ref')->nullable();
 			$table->string('pop')->nullable();
 			$table->boolean('active')->default(true);
 			$table->string('currency_code')->index()->default('USD');

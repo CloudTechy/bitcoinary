@@ -307,7 +307,7 @@
 
                                     <li class="sidebar-menu-item">
                                         <a
-                                            href="https://script.viserlab.com/hyiplab/demo/admin/deposit"
+                                            :href="$root.basepath + '/admin/deposits'"
                                             class="nav-link"
                                         >
                                             <i

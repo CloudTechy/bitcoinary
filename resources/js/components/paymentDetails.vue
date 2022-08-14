@@ -61,52 +61,111 @@
                             making a deposit of
                             {{ $root.normalNumeral(amount) }} USD
                         </p>
-                        
+
                         <div class="p-0 mt-3">
                             <h4>
-                               Payment <span class="base--color">Details</span>
+                                Payment <span class="base--color">Details</span>
                             </h4>
                             <div class="m-3 qrcode">
-                            <VueQRCodeComponent
-                                :size="150"
-                                :text="paymentMethod.wallet"
-                            ></VueQRCodeComponent>
-                        </div>
+                                <VueQRCodeComponent
+                                    :size="150"
+                                    :text="paymentMethod.wallet"
+                                ></VueQRCodeComponent>
+                            </div>
                             <table class="table table-sm">
                                 <tr v-if="paymentMethod.wallet">
-                                    <td class ="text-center base--color font-weight-bold">Wallet:</td>
-                                    <td id = "wallet" class = "text-center text-white">{{ paymentMethod.wallet }}
+                                    <td
+                                        class="text-center base--color font-weight-bold"
+                                    >
+                                        Wallet:
                                     </td>
-                                    <td class = "text-left"><i class="fas fa-copy base--color " title ='copy' data-toggle="tooltip" data-placement="right"  @click="
-                                        $root.alert('success', ' ', 'copied')
-                                    "
-                                    v-clipboard="paymentMethod.wallet"
-                                    style="border-radius: 0px"
-                                    data-clipboard-target="#wallet"></i></td>
-                                </tr>
-                            <tr v-if="paymentMethod.crypto_memo">
-                                    <td class ="text-center base--color font-weight-bold">Memo:</td>
-                                    <td id = "memo" class = "text-center text-white">{{ paymentMethod.crypto_memo }}
-                                   </td>
-                                    <td class = "text-left"> <i class="fas fa-copy base--color" title ='copy' data-toggle="tooltip" data-placement="right"  @click="
-                                        $root.alert('success', ' ', 'copied')
-                                    "
-                                    v-clipboard="paymentMethod.wallet"
-                                    style="border-radius: 0px"
-                                    data-clipboard-target="#memo"></i></td>
-                                </tr>
-                                 <tr v-if="paymentMethod.crypto_standard">
-                                    <td class ="text-center base--color font-weight-bold">Standard:</td>
-                                    <td id = "standard" class = "text-center text-white text-uppercase">{{ paymentMethod.crypto_standard }}
+                                    <td
+                                        id="wallet"
+                                        class="text-center text-white"
+                                    >
+                                        {{ paymentMethod.wallet }}
                                     </td>
-                                    <td class = "text-left"><i class="fas fa-copy base--color" title ='copy' data-toggle="tooltip" data-placement="right"  @click="
-                                        $root.alert('success', ' ', 'copied')
-                                    "
-                                    v-clipboard="paymentMethod.wallet"
-                                    style="border-radius: 0px"
-                                    data-clipboard-target="#standard"></i></td>
+                                    <td class="text-left">
+                                        <i
+                                            class="fas fa-copy base--color"
+                                            title="copy"
+                                            data-toggle="tooltip"
+                                            data-placement="right"
+                                            @click="
+                                                $root.alert(
+                                                    'success',
+                                                    ' ',
+                                                    'copied'
+                                                )
+                                            "
+                                            v-clipboard="paymentMethod.wallet"
+                                            style="border-radius: 0px"
+                                            data-clipboard-target="#wallet"
+                                        ></i>
+                                    </td>
                                 </tr>
-
+                                <tr v-if="paymentMethod.crypto_memo">
+                                    <td
+                                        class="text-center base--color font-weight-bold"
+                                    >
+                                        Memo:
+                                    </td>
+                                    <td
+                                        id="memo"
+                                        class="text-center text-white"
+                                    >
+                                        {{ paymentMethod.crypto_memo }}
+                                    </td>
+                                    <td class="text-left">
+                                        <i
+                                            class="fas fa-copy base--color"
+                                            title="copy"
+                                            data-toggle="tooltip"
+                                            data-placement="right"
+                                            @click="
+                                                $root.alert(
+                                                    'success',
+                                                    ' ',
+                                                    'copied'
+                                                )
+                                            "
+                                            v-clipboard="paymentMethod.wallet"
+                                            style="border-radius: 0px"
+                                            data-clipboard-target="#memo"
+                                        ></i>
+                                    </td>
+                                </tr>
+                                <tr v-if="paymentMethod.crypto_standard">
+                                    <td
+                                        class="text-center base--color font-weight-bold"
+                                    >
+                                        Standard:
+                                    </td>
+                                    <td
+                                        id="standard"
+                                        class="text-center text-white text-uppercase"
+                                    >
+                                        {{ paymentMethod.crypto_standard }}
+                                    </td>
+                                    <td class="text-left">
+                                        <i
+                                            class="fas fa-copy base--color"
+                                            title="copy"
+                                            data-toggle="tooltip"
+                                            data-placement="right"
+                                            @click="
+                                                $root.alert(
+                                                    'success',
+                                                    ' ',
+                                                    'copied'
+                                                )
+                                            "
+                                            v-clipboard="paymentMethod.wallet"
+                                            style="border-radius: 0px"
+                                            data-clipboard-target="#standard"
+                                        ></i>
+                                    </td>
+                                </tr>
                             </table>
                         </div>
                         <p v-if="!subscribed_plan" class="f-size-14 m-2">
@@ -218,6 +277,26 @@
                         />
                     </div>
                     <form class="mt-2" @submit.prevent="subscribe">
+                     <div class="input-group">
+                            <div
+                                style="border-radius: 0px 5px"
+                                class="input-group p-3"
+                            >
+                                <span class="icon bg--base text-white"
+                                    ><i
+                                        class="fas fa-pen"
+                                        aria-hidden="true"
+                                    ></i
+                                ></span>
+                                <input
+                                type="text"
+                                placeholder="Paste or enter transaction ref"
+                                v-model="form.transaction_ref"
+                                class="form-control"
+                            />
+                            </div>
+                            
+                        </div>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <button
@@ -227,6 +306,7 @@
                                     {{ !subscribed_plan ? "Upload" : "Update" }}
                                 </button>
                             </div>
+
                             <div class="custom-file">
                                 <input
                                     required=""
@@ -250,6 +330,8 @@
                         >
                             {{ err }}
                         </p>
+
+                       
                     </form>
                 </div>
             </div>
@@ -272,7 +354,9 @@ export default {
     mounted() {},
     data() {
         return {
-            form: new Form({}),
+            form: new Form({
+                transaction_ref: "",
+            }),
             label: "Choose pop file",
             subscribed_plan: undefined,
             error: undefined,
@@ -292,11 +376,14 @@ export default {
             this.$root.loader("show");
             let data = new FormData();
             let file = this.$refs.fileInput.files[0];
-            let form = new Form();
+            let form = this.form;
             form.pop = file;
             this.error = undefined;
             form.user_id = this.$auth.user().id;
             form.amount = this.amount;
+            form.payment_method = this.paymentMethod.payment_method;
+
+            form.reference;
             if (this.$refs.fileInput.files[0].size > 4000000) {
                 this.$root.loader("hide");
                 return this.$root.alert(

@@ -32,10 +32,10 @@ import VueRouter from 'vue-router'
 
 // import Users from "./pages/admin/Users";
 // import UserView from "./pages/admin/Users";
-import UserEdit from "./pages/admin/Edit";
-import Deposits from "./pages/admin/Deposits";
+// import UserEdit from "./pages/admin/Edit";
+// import Deposits from "./pages/admin/Deposits";
 import Withdrawals from "./pages/admin/Withdrawals";
-import Subscriptions from "./pages/admin/Subscriptions";
+// import Subscriptions from "./pages/admin/Subscriptions";
 // import AdminDashboard from "./pages/admin/Dashboard";
 import Settings from "./pages/admin/AdminSettings";
 
@@ -349,7 +349,7 @@ const routes = [
             title: "Admin add new payment method",
         },
     },
-    
+
     {
         path: "/admin/dashboard/settings",
         name: "adminSetting",
@@ -370,36 +370,48 @@ const routes = [
             title: "Admin user preview",
         },
     },
+    // {
+    //     path: "/admin/dashboard/user-edit",
+    //     name: "user-edit",
+    //     component: UserEdit,
+    //     meta: {
+    //         auth: true,
+    //         adminAuth: true,
+    //         title: "Admin Edit user",
+    //     },
+    // },
     {
-        path: "/admin/dashboard/user-edit",
-        name: "user-edit",
-        component: UserEdit,
-        meta: {
-            auth: true,
-            adminAuth: true,
-            title: "Admin Edit user",
-        },
-    },
-    {
-        path: "/admin/dashboard/deposits",
+        path: "/admin/deposits",
         name: "deposits",
-        component: Deposits,
+        component: () => import("./pages/admin/Deposits"),
+
         meta: {
             auth: true,
             adminAuth: true,
-            title: "Admin Deposits",
+            title: "Admin Deposits Manager",
         },
     },
     {
-        path: "/admin/dashboard/subscriptions",
-        name: "subscriptions",
-        component: Subscriptions,
+        path: "admin/deposit/details/:id",
+        name: "deposit-details",
+        component: () => import("./pages/admin/DepositDetails"),
         meta: {
             auth: true,
             adminAuth: true,
-            title: "Admin Subscriptions",
+            title: "Admin user preview",
         },
     },
+
+    // {
+    //     path: "/admin/dashboard/subscriptions",
+    //     name: "subscriptions",
+    //     component: Subscriptions,
+    //     meta: {
+    //         auth: true,
+    //         adminAuth: true,
+    //         title: "Admin Subscriptions",
+    //     },
+    // },
     {
         path: "/admin/dashboard/withdrawals",
         name: "withdrawals",
