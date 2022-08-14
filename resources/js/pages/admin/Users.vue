@@ -107,8 +107,9 @@
                                                         "
                                                         class="icon-btn"
                                                         data-toggle="tooltip"
-                                                        title=""
                                                         data-original-title="Details"
+                                                        title=""
+                                                        
                                                     >
                                                         <i
                                                             class="las la-desktop text--shadow"

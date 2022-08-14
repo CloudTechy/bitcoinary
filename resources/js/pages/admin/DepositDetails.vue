@@ -399,12 +399,7 @@ export default {
         document.body.appendChild(script);
     },
     beforeCreate() {
-        let js = document.createElement("script");
-        js.setAttribute(
-            "src",
-            "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-        );
-        document.body.appendChild(js);
+       
 
         var style = document.createElement("link");
         style.href =

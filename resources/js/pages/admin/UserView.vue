@@ -22,7 +22,7 @@
                             class="card b-radius--10 overflow-hidden box--shadow1"
                         >
                             <div class="card-body p-0">
-                                <div class="p-3 bg--white">
+                                <div v-if = "user" class="p-3 bg--white">
                                     <div v-if="user.image" class="">
                                         <img
                                             :src="
@@ -36,7 +36,7 @@
                                     </div>
                                     <div v-else>
                                         <img
-                                            src="https://script.viserlab.com/hyiplab/demo/placeholder-image/undefined"
+                                            src="/placeholder-image/undefined"
                                             alt="profile-image"
                                             class="b-radius--10 w-100"
                                         />
@@ -51,13 +51,14 @@
                                         >
                                     </div>
                                 </div>
+                                 <content-loader v-else></content-loader>
                             </div>
                         </div>
 
                         <div
                             class="card b-radius--10 overflow-hidden mt-30 box--shadow1"
                         >
-                            <div class="card-body">
+                            <div v-if = "user" class="card-body">
                                 <h5 class="mb-20 text-muted">
                                     User information
                                 </h5>
@@ -68,6 +69,14 @@
                                         Username
                                         <span class="font-weight-bold">{{
                                             user.username
+                                        }}</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center"
+                                    >
+                                        Role
+                                        <span class="font-weight-bold text-uppercase">{{
+                                            user.user_level
                                         }}</span>
                                     </li>
 
@@ -108,11 +117,12 @@
                                     </li>
                                 </ul>
                             </div>
+                             <content-loader v-else></content-loader>
                         </div>
                         <div
                             class="card b-radius--10 overflow-hidden mt-30 box--shadow1"
                         >
-                            <div class="card-body">
+                            <div v-if = "user" class="card-body">
                                 <h5 class="mb-20 text-muted">User action</h5>
                                 <a
                                     data-toggle="modal"
@@ -121,9 +131,9 @@
                                 >
                                     Add Deposit
                                 </a>
-                                <a
+                                <a onclick = "return false"
                                     :href="$root.basepath + '/admin/login/history/' + user.id"
-                                    class="btn btn--primary btn--shadow btn-block btn-lg"
+                                    class="btn btn--primary btn--shadow btn-block disabled btn-lg"
                                 >
                                     Login Logs
                                 </a>
@@ -134,24 +144,27 @@
                                     Send Email
                                 </a>
                                 <a
+                                onclick = "return false"
                                     :href="$root.basepath + '/admin/email-log/' + user.id"
-                                    class="btn btn--dark btn--shadow btn-block btn-lg"
+                                    class="btn btn--dark btn--shadow btn-block disabled btn-lg"
                                 >
                                     Email Log
                                 </a>
                             </div>
+                            <content-loader v-else></content-loader>
                         </div>
                     </div>
 
                     <div class="col-xl-9 col-lg-7 col-md-7 mb-30">
-                        <div class="row mb-none-30">
+                        <div v-if = "user" class="row mb-none-30">
                             <div class="col-xl-4 col-lg-6 col-sm-6 mb-30">
                                 <div
                                     class="dashboard-w1 bg--1 b-radius--10 box-shadow has--link"
                                 >
                                     <a
-                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/deposits/243"
-                                        class="item--link"
+                                        href=""
+                                        onclick = "return false"
+                                        class="item--link "
                                     ></a>
                                     <div class="icon">
                                         <i class="fa fa-credit-card"></i>
@@ -179,8 +192,8 @@
                                 <div
                                     class="dashboard-w1 bg--15 b-radius--10 box-shadow has--link"
                                 >
-                                    <a
-                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/withdrawals/243"
+                                    <a onclick = "return false"
+                                        href="demo/admin/user/withdrawals/243"
                                         class="item--link"
                                     ></a>
                                     <div class="icon">
@@ -208,8 +221,9 @@
                                     class="dashboard-w1 bg--20 b-radius--10 box-shadow has--link"
                                 >
                                     <a
-                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/transactions/243"
+                                        href="/admin/user/transactions/243"
                                         class="item--link"
+                                        onclick = "return false"
                                     ></a>
                                     <div class="icon">
                                         <i class="la la-exchange-alt"></i>
@@ -238,8 +252,9 @@
                                     class="dashboard-w1 bg--11 b-radius--10 box-shadow has--link"
                                 >
                                     <a
-                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/invests/243"
+                                        href="/admin/user/invests/243"
                                         class="item--link"
+                                        onclick = "return false"
                                     ></a>
                                     <div class="icon">
                                         <i class="la la-money-bill"></i>
@@ -270,8 +285,9 @@
                                     class="dashboard-w1 bg--18 b-radius--10 box-shadow has--link"
                                 >
                                     <a
-                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/referrals/243"
+                                        href="/admin/user/referrals/243"
                                         class="item--link"
+                                        onclick = "return false"
                                     ></a>
                                     <div class="icon">
                                         <i class="la la-users"></i>
@@ -295,8 +311,9 @@
                                     class="dashboard-w1 bg--12 b-radius--10 box-shadow has--link"
                                 >
                                     <a
-                                        href="https://script.viserlab.com/hyiplab/demo/admin/user/commissions/deposit/243"
+                                        href="/admin/user/commissions/deposit/243"
                                         class="item--link"
+                                        onclick = "return false"
                                     ></a>
                                     <div class="icon">
                                         <i class="la la-money"></i>
@@ -318,9 +335,9 @@
                             </div>
                             <!-- dashboard-w1 end -->
                         </div>
-
+                            <content-loader v-else></content-loader>
                         <div class="card mt-50">
-                            <div class="card-body">
+                            <div v-if = "user" class="card-body">
                                 <h5 class="card-title mb-50 border-bottom pb-2">
                                     {{ user.names }} Information
                                 </h5>
@@ -465,6 +482,7 @@
                                                     type="text"
                                                     name="address"
                                                     value=""
+                                                    disabled
                                                 />
                                                 <small
                                                     class="form-text text-muted"
@@ -487,6 +505,7 @@
                                                     type="text"
                                                     name="city"
                                                     value=""
+                                                    disabled
                                                 />
                                             </div>
                                         </div>
@@ -517,6 +536,7 @@
                                                     type="text"
                                                     name="state"
                                                     value=""
+                                                    disabled
                                                 />
                                             </div>
                                         </div>
@@ -554,6 +574,7 @@
                                                 data-off="Banned"
                                                 name="status"
                                                 checked
+                                                disabled
                                             />
                                         </div>
 
@@ -574,6 +595,7 @@
                                                 data-off="Unverified"
                                                 name="ev"
                                                 checked
+                                                disabled
                                             />
                                         </div>
 
@@ -594,6 +616,7 @@
                                                 data-off="Unverified"
                                                 name="sv"
                                                 checked
+                                                disabled
                                             />
                                         </div>
                                         <div
@@ -612,6 +635,8 @@
                                                 data-on="Verified"
                                                 data-off="Unverified"
                                                 name="ts"
+                                                checked
+                                                disabled
                                             />
                                         </div>
 
@@ -632,6 +657,7 @@
                                                 data-off="Unverified"
                                                 name="tv"
                                                 checked
+                                                disabled
                                             />
                                         </div>
                                     </div>
@@ -651,6 +677,8 @@
                                     </div>
                                 </form>
                             </div>
+                            <list-loader v-else></list-loader>
+                            
                         </div>
                     </div>
                 </div>
@@ -794,7 +822,7 @@ export default {
 				user_id: "",
 				reference: "SELF",
 			}),
-            user: {},
+            user:"",
             loading: false,
             key: 0,
             errors: "",
@@ -823,12 +851,7 @@ export default {
         document.body.appendChild(script);
     },
     beforeCreate() {
-        let js = document.createElement("script");
-        js.setAttribute(
-            "src",
-            "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-        );
-        document.body.appendChild(js);
+       
 
         var style = document.createElement("link");
         style.href =
