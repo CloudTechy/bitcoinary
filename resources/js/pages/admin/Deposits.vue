@@ -8,8 +8,11 @@
                     class="row align-items-center mb-30 justify-content-between"
                 >
                     <div class="col-lg-6 col-sm-6">
-                        <h6 class="page-title">Deposit History</h6>
+                        <h6 class="page-title">Deposit History </h6>
+                        <i data-toggle="tooltip"
+                                                        data-original-title="refresh" @click = "getDeposits(1)" style="cursor:pointer" :class="{'text--primary':true, fa:true, 'fa-circle-notch':true, 'fa-spin':loading}"></i>
                     </div>
+                    
                     <div
                         class="col-lg-6 col-sm-6 offset-6 text-sm-right mt-sm-0 mt-3"
                     >
