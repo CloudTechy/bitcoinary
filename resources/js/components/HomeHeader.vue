@@ -154,8 +154,8 @@ document.body.appendChild(js);
               <ul class="nav navbar-nav">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About Us</a></li>
-                <li><a href="/faq">FAQ</a></li>
-                <li><a href="/terms">Terms</a></li>
+                <!-- <li><a href="/faq">FAQ</a></li>
+                <li><a href="/terms">Terms</a></li> -->
                 <li><a href="/plan">Plan</a></li>
                 <li>
                   <a href="/contact">Contact Us</a>
