@@ -58,7 +58,8 @@ class PaymentMethodController extends Controller
             "name" => "required|unique:payment_methods,name|string",
             "show_on" => 'required|string|in:both,withdrawal,deposit',
             "type" => 'required|string|in:crypto,fiat',
-            "image" => 'required|mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
+            // "image" => 'required|mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
+            "image" => 'nullable',
             'rank' => 'numeric',
 
         ]);

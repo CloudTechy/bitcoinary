@@ -1,9 +1,9 @@
 <template>
-<div class="page-wrapper default-version">
+    <div class="page-wrapper default-version">
         <AdminDashboardSidebar></AdminDashboardSidebar>
         <AdminDashboardHeader></AdminDashboardHeader>
 
-<div class="body-wrapper">
+        <div class="body-wrapper">
             <div class="bodywrapper__inner">
                 <div
                     class="row align-items-center mb-30 justify-content-between"
@@ -13,7 +13,7 @@
                     </div>
                     <div class="col-lg-6 col-sm-6 text-sm-right mt-sm-0 mt-3">
                         <a
-                            href="https://script.viserlab.com/hyiplab/demo/admin/deposit/gateway/manual"
+                            :href="$root.basepath + '/admin/payment/manual'"
                             class="btn btn-sm btn--primary box--shadow1 text--small"
                             ><i class="la la-fw la-backward"></i> Go Back
                         </a>
@@ -24,33 +24,59 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <form
-                                action="https://script.viserlab.com/hyiplab/demo/admin/deposit/gateway/manual/new"
+                                @submit.prevent="addPaymentMethod()"
                                 method="POST"
                                 enctype="multipart/form-data"
                             >
-                                <input
-                                    type="hidden"
-                                    name="_token"
-                                    value="aDVW0n1TMZAu54ecSR89YzLyNLjSoVoiHjiqrqrr"
-                                />
+                                <div class="form-group">
+                                    <div
+                                        class="alert alert-danger m-3"
+                                        v-if="has_error"
+                                    >
+                                        <p
+                                            v-if="!unknown_error && errors"
+                                            class="text-center m-3"
+                                        >
+                                            You have some errors in your form
+                                        </p>
+                                        <p
+                                            class="m-3 small"
+                                            v-if="unknown_error"
+                                        >
+                                            {{ unknown_error }}
+                                        </p>
+                                    </div>
+                                </div>
+
                                 <div class="card-body">
                                     <div class="payment-method-item">
                                         <div
                                             class="payment-method-header d-flex flex-wrap"
                                         >
                                             <div class="thumb">
+                                                <p
+                                                    v-if="errors.image"
+                                                    v-for="error in errors.image"
+                                                    class="text-danger m-0 p-2 small"
+                                                >
+                                                    {{ error }}
+                                                </p>
                                                 <div class="avatar-preview">
                                                     <div
                                                         class="profilePicPreview"
-                                                        style="
-                                                            background-image: url('https://script.viserlab.com/hyiplab/demo/placeholder-image/undefined');
-                                                        "
+                                                        :style="{
+                                                            'background-image':
+                                                                'url(' +
+                                                                $root.basepath +
+                                                                '/assets/images/undefined.jpg )',
+                                                        }"
                                                     ></div>
                                                 </div>
                                                 <div class="avatar-edit">
                                                     <input
+                                                        ref="image"
                                                         type="file"
-                                                        name="image"
+                                                        @change="updatePic"
                                                         class="profilePicUpload"
                                                         id="image"
                                                         accept=".png, .jpg, .jpeg"
@@ -87,10 +113,18 @@
                                                                 type="text"
                                                                 class="form-control"
                                                                 placeholder="Method Name"
-                                                                name="name"
-                                                                value=""
+                                                                v-model="
+                                                                    payment_form.name
+                                                                "
                                                             />
                                                         </div>
+                                                        <p
+                                                            v-if="errors.name"
+                                                            v-for="error in errors.name"
+                                                            class="text-danger m-0 p-2 small"
+                                                        >
+                                                            {{ error }}
+                                                        </p>
                                                     </div>
                                                     <div
                                                         class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15"
@@ -108,60 +142,129 @@
                                                             >
                                                             <input
                                                                 type="text"
+                                                                readonly
                                                                 name="currency"
                                                                 class="form-control border-radius-5"
-                                                                value=""
+                                                                value="USD"
                                                             />
                                                         </div>
                                                     </div>
                                                     <div
                                                         class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15"
                                                     >
-                                                        <label
-                                                            class="w-100 font-weight-bold"
-                                                            >Rate
-                                                            <span
-                                                                class="text-danger"
-                                                                >*</span
-                                                            ></label
-                                                        >
-
                                                         <div
-                                                            class="input-group has_append"
+                                                            class="input-group"
                                                         >
-                                                            <div
-                                                                class="input-group-prepend"
+                                                            <label
+                                                                class="w-100 font-weight-bold"
+                                                                >Type<span
+                                                                    class="text-danger"
+                                                                    >*</span
+                                                                ></label
                                                             >
-                                                                <div
-                                                                    class="input-group-text"
-                                                                >
-                                                                    1 USD =
-                                                                </div>
-                                                            </div>
-                                                            <input
-                                                                type="text"
-                                                                class="form-control"
-                                                                placeholder="0"
-                                                                name="rate"
-                                                                value=""
-                                                            />
-                                                            <div
-                                                                class="input-group-append"
+                                                            <select
+                                                                v-model="
+                                                                    payment_form.type
+                                                                "
+                                                                class="form-control border-radius-5"
+                                                                required
                                                             >
-                                                                <div
-                                                                    class="input-group-text"
+                                                                <option
+                                                                    value="crypto"
                                                                 >
-                                                                    <span
-                                                                        class="currency_symbol"
-                                                                    ></span>
-                                                                </div>
-                                                            </div>
+                                                                    Cryptocurrency
+                                                                </option>
+                                                                <option
+                                                                    value="fiat"
+                                                                >
+                                                                    Fiat
+                                                                </option>
+                                                            </select>
                                                         </div>
+                                                    </div>
+                                                    <div
+                                                        class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15"
+                                                    >
+                                                        <div
+                                                            class="input-group"
+                                                        >
+                                                            <label
+                                                                class="w-100 font-weight-bold"
+                                                                >Display<span
+                                                                    class="text-danger"
+                                                                    >*</span
+                                                                ></label
+                                                            >
+                                                            <select
+                                                                v-model="
+                                                                    payment_form.show_on
+                                                                "
+                                                                class="form-control border-radius-5"
+                                                                required
+                                                            >
+                                                                <option
+                                                                    value="deposit"
+                                                                >
+                                                                    User Deposit
+                                                                    Page
+                                                                </option>
+                                                                <option
+                                                                    value="withdrawal"
+                                                                >
+                                                                    User
+                                                                    Withdrawal
+                                                                    Page
+                                                                </option>
+                                                                <option
+                                                                    value="both"
+                                                                >
+                                                                    Both Deposit
+                                                                    and
+                                                                    Withdrawal
+                                                                    Page
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15"
+                                                    >
+                                                        <div
+                                                            class="input-group"
+                                                        >
+                                                            <label
+                                                                title="Payment methods will be sorted by rank number in descending order"
+                                                                class="w-100 font-weight-bold"
+                                                                >Display Rank
+                                                                <span
+                                                                    class="text-danger"
+                                                                    >*</span
+                                                                ></label
+                                                            >
+                                                            <input
+                                                                title="Payment methods will be sorted by rank number in descending order"
+                                                                type="number"
+                                                                v-model="
+                                                                    payment_form.rank
+                                                                "
+                                                                class="form-control border-radius-5"
+                                                            />
+                                                        </div>
+                                                        <p
+                                                            v-if="errors.rank"
+                                                            v-for="error in errors.rank"
+                                                            class="text-danger m-0 p-2 small"
+                                                        >
+                                                            {{ error }}
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="payment-method-body">
+                                        <div
+                                            aria-readonly="true"
+                                            class="payment-method-body disabled"
+                                        >
                                             <div class="row">
                                                 <div
                                                     class="col-sm-12 col-md-6 col-lg-6 col-xl-6"
@@ -198,7 +301,8 @@
                                                                 </div>
                                                                 <input
                                                                     type="text"
-                                                                    class="form-control"
+                                                                    readonly
+                                                                    class="form-control disabled"
                                                                     name="min_limit"
                                                                     placeholder="0"
                                                                     value=""
@@ -227,7 +331,8 @@
                                                                 </div>
                                                                 <input
                                                                     type="text"
-                                                                    class="form-control"
+                                                                    readonly
+                                                                    class="form-control disabled"
                                                                     placeholder="0"
                                                                     name="max_limit"
                                                                     value=""
@@ -271,7 +376,8 @@
                                                                 </div>
                                                                 <input
                                                                     type="text"
-                                                                    class="form-control"
+                                                                    readonly
+                                                                    class="form-control disabled"
                                                                     placeholder="0"
                                                                     name="fixed_charge"
                                                                     value=""
@@ -300,7 +406,8 @@
                                                                 </div>
                                                                 <input
                                                                     type="text"
-                                                                    class="form-control"
+                                                                    readonly
+                                                                    class="form-control disabled"
                                                                     placeholder="0"
                                                                     name="percent_charge"
                                                                     value=""
@@ -325,11 +432,17 @@
                                                             <div
                                                                 class="form-group"
                                                             >
-                                                                <textarea
-                                                                    rows="8"
+                                                                <VueTrix
+                                                                    :localStorage="
+                                                                        false
+                                                                    "
+                                                                    inputId="editor1"
+                                                                    autofocus
                                                                     class="form-control border-radius-5 nicEdit"
+                                                                    rows="8"
                                                                     name="instruction"
-                                                                ></textarea>
+                                                                    disabledEditor
+                                                                />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -344,8 +457,9 @@
                                                         >
                                                             User data
                                                             <button
+                                                                disabled
                                                                 type="button"
-                                                                class="btn btn-sm btn-outline-light float-right addUserData"
+                                                                class="disabled btn btn-sm btn-outline-light float-right addUserData"
                                                             >
                                                                 <i
                                                                     class="la la-fw la-plus"
@@ -366,12 +480,15 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button
-                                        type="submit"
+                                    <VueLoadingButton
                                         class="btn btn--primary btn-block"
+                                        type="submit"
+                                        :loading="payment_form.busy"
+                                        aria-label="Save Method"
+                                        :styled="false"
                                     >
-                                        Save Method
-                                    </button>
+                                        Save Method</VueLoadingButton
+                                    >
                                 </div>
                             </form>
                         </div>
@@ -380,28 +497,33 @@
             </div>
             <!-- bodywrapper__inner end -->
         </div>
-        </div>
+    </div>
 </template>
 <script>
 import VueLoadingButton from "vue-loading-button";
+import VueTrix from "vue-trix";
 export default {
     data() {
         return {
             payment_form: new Form({
-                subject: '',
-                message: '',  
+                name: "",
+                show_on: "both",
+                type: "crypto",
+                image: "",
+                rank: ++this.$root.payments.length,
             }),
-            loading:false,
-        }
+            loading: false,
+            has_error: false,
+            error: "",
+            errors: {},
+            unknown_error: "",
+        };
     },
-    watch: {
-      
-    },
-    created() {
-  
-    },
+    watch: {},
+    created() {},
     components: {
         VueLoadingButton,
+        VueTrix,
     },
     mounted() {
         var script = document.createElement("script");
@@ -565,24 +687,103 @@ export default {
         document.body.appendChild(script);
     },
     methods: {
-        fetchUser(id) {
+        addPaymentMethod(id) {
             this.loading = true;
-            var form = new Form()
-            form.get("/auth/users?id=" + id)
+            this.has_error = false;
+            this.errors = "";
+            this.error = "";
+            this.unknown_error =""
+            if (this.$refs.image.files[0] && this.$refs.image.files[0].size > 4000000) {
+                return this.$root.alert("error", " ","image size is too large. make sure it's less than 4mb"
+                );
+            }
+            this.payment_form
+                .post("/auth/paymentmethods",  {
+                    transformRequest: [
+                        function (data, headers) {
+                            return objectToFormData(data);
+                        },
+                    ],
+                })
                 .then((response) => {
                     this.loading = false;
-                    this.user = response.data.data.item[0];
+                    this.$root.alert("success", response.data.message);
+                    this.payment_form.reset()
+                    this.$root.getPayments();
                 })
                 .catch((error) => {
                     this.loading = false;
-                    this.$root.alert(
-                        "error",
-                         error.response.data.message
-                    );
+                    this.$root.alert("error", error.response.data.message);
                     console.log(error);
+                    this.has_error = true;
+                    this.error = error.response.data.message;
+                    this.errors =
+                        typeof error.response.data.error == "string"
+                            ? {}
+                            : error.response.data.error;
+                    this.unknown_error =
+                        typeof error.response.data.error == "string"
+                            ? error.response.data.error
+                            : "";
                 });
         },
-      
-    }
-}
+        changeProfilePicture() {
+            this.$root.loader("show");
+            this.avatar_error = "";
+            let data = new FormData();
+            let file = this.$refs.fileInput.files[0];
+            let form = new Form();
+            form.image = file;
+            if (file) {
+                if (this.$refs.fileInput.files[0].size > 4000000) {
+                    this.$root.loader("hide");
+                    return this.$root.alert(
+                        "error",
+                        " ",
+                        " File size is too large."
+                    );
+                }
+                form._method = "PUT";
+                form.submit(
+                    "post",
+                    "/auth/user/image/" + this.$auth.user().id,
+                    {
+                        transformRequest: [
+                            function (data, headers) {
+                                return objectToFormData(data);
+                            },
+                        ],
+                    }
+                )
+                    .then((response) => {
+                        this.$root.loader("hide");
+                        this.$auth.fetch();
+                        this.$root.alert("success", " ", response.data.message);
+                    })
+                    .catch((error) => {
+                        this.$root.loader("hide");
+                        if (error.response.status == 422) {
+                            this.avatar_error = error.response.data.error.image;
+                        } else {
+                            this.avatar_error = error.response.data.message;
+                        }
+                        console.log(error, error.response);
+                    });
+            } else {
+                this.$root.loader("hide");
+                this.$root.alert("info", " ", "No file choosen.");
+            }
+            this.avatarKey++;
+        },
+        updatePic() {
+            payment_form.image = this.$refs.image.files[0];
+        },
+        updateLabel() {
+            this.label = this.$refs.fileInput.files[0].name;
+            if (this.$refs.fileInput.files[0].size > 4000000) {
+                this.$root.alert("warning", " ", " File size is too large.");
+            }
+        },
+    },
+};
 </script>

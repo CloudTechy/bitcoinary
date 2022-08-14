@@ -107,10 +107,11 @@
                                                             '/admin/payment/manual/' +
                                                             py.name
                                                         "
-                                                        class="icon-btn editGatewayBtn"
+                                                        class="icon-btn editGatewayBtn disabled"
                                                         data-toggle="tooltip"
                                                         title=""
                                                         data-original-title="Edit"
+                                                        disabled
                                                     >
                                                         <i
                                                             class="la la-pencil"
@@ -120,9 +121,9 @@
                                                     <a
                                                         data-toggle="modal"
                                                         href="#deactivateModal"
-                                                        class="icon-btn bg--danger disabled ml-1 deactivateBtn"
-                                                        data-code="1002"
-                                                        data-name="Mobile Money"
+                                                        @click.prevent = "selectPayment(py.name)"
+                                                        class="icon-btn bg--danger ml-1 deactivateBtn disabled"
+                                                        :data-name="py.name"
                                                         data-original-title="Disable"
                                                         disabled
                                                     >
@@ -252,14 +253,10 @@
                                 </button>
                             </div>
                             <form
-                                action="https://script.viserlab.com/hyiplab/demo/admin/deposit/gateway/manual/activate"
+                                action=""
                                 method="POST"
+                                @submit.prevent="deactivateCrypto()"
                             >
-                                <input
-                                    type="hidden"
-                                    name="_token"
-                                    value="3OYLUW4gdsDIxLUKILV0HTrClR3v0BiB4bV2cqdf"
-                                />
                                 <input type="hidden" name="code" />
                                 <div class="modal-body">
                                     <p>
@@ -313,14 +310,10 @@
                             </div>
 
                             <form
-                                action="https://script.viserlab.com/hyiplab/demo/admin/deposit/gateway/manual/deactivate"
+                                action=""
                                 method="POST"
+                                @submit.prevent="deactivateCrypto()"
                             >
-                                <input
-                                    type="hidden"
-                                    name="_token"
-                                    value="3OYLUW4gdsDIxLUKILV0HTrClR3v0BiB4bV2cqdf"
-                                />
                                 <input type="hidden" name="code" />
                                 <div class="modal-body">
                                     <p>
@@ -360,6 +353,9 @@
 export default {
     data() {
         return {
+            delete_form: new Form({
+                id : ''
+            }),
             pageLimit: 20,
             currentPage: 1,
             search: "",
@@ -547,6 +543,21 @@ export default {
             }
             this.payments = data;
         },
+        deactivateCrypto() {
+            this.delete_form.delete("/auth/paymentmethods/" + this.delete_form.id )
+                .then((response) => {
+                    this.$root.alert("success", response.data.message);
+                    this.$root.getPayments();
+                })
+                .catch((error) => {
+                    this.$root.alert("error", error.response.data.message);
+                    console.log(error);
+                    
+                });
+        },
+        selectPayment(id) {
+            this.delete_form.id
+        }
     },
 };
 </script>
