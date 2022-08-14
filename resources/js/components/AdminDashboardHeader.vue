@@ -9,6 +9,9 @@
                     name="navbar-search__field"
                     id="navbar-search__field"
                     placeholder="Search..."
+                    disabled
+                    data-toggle="tooltip"
+                            data-original-title="Not currently unavailable"
                 />
                 <button type="button" class="navbar-search__close">
                     <i class="las la-times"></i>
@@ -38,7 +41,8 @@
             <div class="navbar__right">
                 <ul class="navbar__action-list">
                     <li>
-                        <button type="button" class="navbar-search__btn-open">
+                        <button type="button" class="disabled navbar-search__btn-open" data-toggle="tooltip"
+                            data-original-title="currently unavailable">
                             <i class="las la-search"></i>
                         </button>
                     </li>
@@ -159,11 +163,11 @@
                             aria-expanded="false"
                         >
                             <span class="navbar-user">
-                                <span class="navbar-user__thumb"
+                                <!-- <span class="navbar-user__thumb"
                                     ><img
                                         src="https://script.viserlab.com/hyiplab/demo/assets/admin/images/profile/5eea09e65cefb1592396262.jpg"
                                         alt="image"
-                                /></span>
+                                /></span> -->
 
                                 <span class="navbar-user__info">
                                     <span class="navbar-user__name">admin</span>
@@ -177,7 +181,8 @@
                             class="dropdown-menu dropdown-menu--sm p-0 border-0 box--shadow1 dropdown-menu-right"
                         >
                             <a
-                                href="https://script.viserlab.com/hyiplab/demo/admin/profile"
+                                href="/admin/profile"
+                                onclick = "return false"
                                 class="dropdown-menu__item d-flex align-items-center px-3 py-2"
                             >
                                 <i
@@ -189,7 +194,8 @@
                             </a>
 
                             <a
-                                href="https://script.viserlab.com/hyiplab/demo/admin/password"
+                                href="/admin/password"
+                                onclick = "return false"
                                 class="dropdown-menu__item d-flex align-items-center px-3 py-2"
                             >
                                 <i class="dropdown-menu__icon las la-key"></i>
@@ -199,7 +205,8 @@
                             </a>
 
                             <a
-                                href="https://script.viserlab.com/hyiplab/demo/admin/logout"
+                                href=""
+                                @click = "$auth.logout()"
                                 class="dropdown-menu__item d-flex align-items-center px-3 py-2"
                             >
                                 <i
