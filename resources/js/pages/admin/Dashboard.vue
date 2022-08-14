@@ -743,5 +743,5 @@ export default {
 };
 </script>
 <style type="text/css" scoped="">
-@import "../../assets/css/app.css";
+/* @import "../../assets/css/app.css"; */
 </style>
