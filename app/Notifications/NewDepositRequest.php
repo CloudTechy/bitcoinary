@@ -18,7 +18,7 @@ class NewDepositRequest extends Notification implements ShouldQueue {
      */
     public function __construct($subscription) {
         $this->subscription = $subscription;
-        $this->dashboardPath = config('frontend.url').'/admin/dashboard/subscriptions?username='.$subscription->user->username;
+        $this->dashboardPath = config('frontend.url').'/admin/deposit/details/'.$subscription->id;
     }
 
     /**

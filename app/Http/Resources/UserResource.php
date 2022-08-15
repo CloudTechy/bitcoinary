@@ -46,6 +46,7 @@ class UserResource extends JsonResource {
 			'activeReferrals' => $activeReferrals,
 			'referral_count' => $this->referral_count,
 			'balance' => $this->balance,
+			'user_level_id' => $this->user_level_id,
 			'withdraw_request' => intval($this->withdraw_request),
 			'CanWithdraw' => $this->canWithdraw,
 			'bank_details' => $this->bankDetails,

@@ -34,10 +34,10 @@ import VueRouter from 'vue-router'
 // import UserView from "./pages/admin/Users";
 // import UserEdit from "./pages/admin/Edit";
 // import Deposits from "./pages/admin/Deposits";
-import Withdrawals from "./pages/admin/Withdrawals";
+// import Withdrawals from "./pages/admin/Withdrawals";
 // import Subscriptions from "./pages/admin/Subscriptions";
 // import AdminDashboard from "./pages/admin/Dashboard";
-import Settings from "./pages/admin/AdminSettings";
+// import Settings from "./pages/admin/AdminSettings";
 
 // Routes
 const routes = [
@@ -350,16 +350,16 @@ const routes = [
         },
     },
 
-    {
-        path: "/admin/dashboard/settings",
-        name: "adminSetting",
-        component: Settings,
-        meta: {
-            auth: true,
-            adminAuth: true,
-            title: "Admin Settings",
-        },
-    },
+    // {
+    //     path: "/admin/dashboard/settings",
+    //     name: "adminSetting",
+    //     component: Settings,
+    //     meta: {
+    //         auth: true,
+    //         adminAuth: true,
+    //         title: "Admin Settings",
+    //     },
+    // },
     {
         path: "/admin/users/:id",
         name: "user-view",

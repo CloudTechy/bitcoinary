@@ -190,9 +190,10 @@ class WithdrawalController extends Controller {
 	}
 
 	public function notificationRequest(Withdrawal $withdrawal) {
-		
 		try {
-			$admins = User::where('user_level_id',1)->get();
+			$admins = User::whereHas('user_level', function($query){
+				$query->where('name', 'administrator');
+			})->get();
 				foreach ($admins as $key => $user) {
 					$user->notify(new NewWithdrawalRequest($withdrawal));
 				}

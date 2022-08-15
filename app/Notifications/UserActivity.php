@@ -55,7 +55,6 @@ class UserActivity extends Notification implements ShouldQueue
      */
     public function toDatabase($notifiable)
     {
-        dd($notifiable);
         return [
             'model' => $this->activity['type'],
             'message' => $this->activity['message'],

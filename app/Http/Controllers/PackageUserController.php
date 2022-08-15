@@ -275,7 +275,6 @@ class PackageUserController extends Controller {
 	public function adminsNotificationRequest(PackageUser $subscription) {
 		
 		try {
-			
 			$admins = User::whereHas('user_level', function($query){
 				$query->where('name', 'administrator');
 			})->get();
@@ -312,7 +311,7 @@ class PackageUserController extends Controller {
 				if(empty($package)){
 					return Helper::invalidRequest(['This subscription is invalid'], 'No package matched the amount', 400);
 				}
-				$transaction = $user->transactions()->create(['reference' =>'SELF' ,'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
+				$transaction = $user->transactions()->create(['reference' =>'SELF', 'transaction_ref' => $validated['transaction_ref'],'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
 				$transaction->user->notify(new TransactionMade($transaction));
 				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
 				DB::commit();

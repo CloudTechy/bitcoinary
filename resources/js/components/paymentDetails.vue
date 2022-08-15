@@ -315,6 +315,7 @@
                                     type="file"
                                     class="custom-file-input"
                                     id="inputGroupFile03"
+                                    accept=".png, .jpg, .jpeg"
                                 />
                                 <label
                                     class="custom-file-label text-left"

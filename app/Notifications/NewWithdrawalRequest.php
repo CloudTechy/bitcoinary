@@ -19,7 +19,7 @@ protected $withdrawal,$dashboardPath;
      */
     public function __construct($withdrawal) {
         $this->withdrawal = $withdrawal;
-        $this->dashboardPath = config('frontend.url').'/admin/dashboard/withdrawals?username='.$withdrawal->user->username;
+        $this->dashboardPath = config('frontend.url').'/admin/withdrawals/details/'.$withdrawal->id;
     }
 
     /**

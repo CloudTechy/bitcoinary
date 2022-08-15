@@ -360,6 +360,7 @@
                                                 <input
                                                     :class="{
                                                         'form-control': true,
+                                                        'text-capitalize': true,
                                                         'error-input':
                                                             errors.first_name !=
                                                             undefined,
@@ -388,7 +389,8 @@
                                                 >
                                                 <input
                                                     :class="{
-                                                        'form-control': true,
+    'form-control': true,
+                                                        'text-capitalize': true,
                                                         'error-input':
                                                             errors.last_name !=
                                                             undefined,
@@ -468,6 +470,43 @@
                                                 </p>
                                             </div>
                                         </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label
+                                                    class="form-control-label font-weight-bold"
+                                                    >Role
+                                                    <span class="text-danger"
+                                                        >*</span
+                                                    ></label
+                                                >
+                                                <select
+                                                v-model="form.user_level_id"
+                                                :class="{
+                                                        'form-control': true,
+                                                        'error-input':
+                                                            errors.user_level_id !=
+                                                            undefined,
+                                                    }"
+                                                required
+                                            >
+                                                <option value="1">
+                                                    User
+                                                </option>
+                                                <option value="2">
+                                                    Administrator
+                                                </option>
+                                            </select> <p
+                                                    v-if="errors.user_level_id"
+                                                    v-for="error in errors.user_level_id"
+                                                    class="m-0 p-2 small"
+                                                >
+                                                    {{ error }}
+                                                </p>
+
+                                              
+                                               
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="row mt-4">
@@ -521,6 +560,7 @@
                                                     type="text"
                                                     name="state"
                                                     value=""
+                                                    disabled
                                                 />
                                             </div>
                                         </div>
@@ -693,7 +733,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">
-                                    Add Balance / Investment
+                                    Post Deposit Payment
                                 </h5>
                                 <button
                                     type="button"
@@ -728,7 +768,7 @@
 
                                         <div class="form-group col-md-12">
                                             <label class="font-weight-bold"
-                                                >To<span
+                                                >As<span
                                                     class="text-danger"
                                                     >*</span
                                                 ></label
@@ -771,10 +811,42 @@
                                                 </div>
                                             </div>
                                         </div>
+                                         <div class="form-group col-md-12">
+                                            <label class="font-weight-bold"
+                                                >Payment Gateway<span
+                                                    class="text-danger"
+                                                    >*</span
+                                                ></label
+                                            >
+                                            <select
+                                                v-model="deposit_form.payment_method"
+                                                class="form-control"
+                                                required
+                                            >
+                                                <option class = "text-capitalize" v-for = "py in $root.payments" :value="py.name">
+                                                    {{py.name}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label
+                                                >Reference
+                                                </label
+                                            >
+                                            <div class="input-group">
+                                                <input
+                                                    type="text"
+                                                    v-model="deposit_form.transaction_ref"
+                                                    class="form-control"
+                                                    placeholder="Provide transaction reference"
+                                                />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button
+                                        ref = "deposit_modal_button"
                                         type="button"
                                         class="btn btn--dark"
                                         data-dismiss="modal"
@@ -811,7 +883,8 @@ export default {
                 last_name: "",
                 email: "",
                 country: "",
-				number: "",
+                number: "",
+                user_level_id : "",
                 // username : '',
                 // password : '',
                 // password_confirmation : '',
@@ -820,7 +893,9 @@ export default {
 				type: "",
 				amount: "",
 				user_id: "",
-				reference: "SELF",
+                reference: "SELF",
+                transaction_ref: "",
+                payment_method : "",
 			}),
             user:"",
             loading: false,
@@ -1053,11 +1128,13 @@ export default {
             this.error = "";
             this.errors = {};
             this.deposit_form
-                .post("/auth/deposit/")
+                .post("/auth/deposit")
 				.then((response) => {
 					this.user = response.data.data
-					console.log(response.data)
                     this.$root.alert("success", " ", response.data.message);
+                    this.deposit_form.reset()
+                    this.$refs.deposit_modal_button.click()
+                    this.$root.scrollUp()
                 })
                 .catch((error) => {
 					console.log(error.response.data)

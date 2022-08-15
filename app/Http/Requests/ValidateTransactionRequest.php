@@ -25,6 +25,8 @@ class ValidateTransactionRequest extends FormRequest {
 			'amount' => 'required|numeric',
 			'type' => 'required',
 			'reference' => 'required|string',
+			'transaction_ref' => 'nullable|string',
+			'payment_method' => 'required|exists:payment_methods,name',
 		];
 	}
 }
