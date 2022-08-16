@@ -16,45 +16,18 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link rel="shortcut icon" href="{{asset('images/favicontp.png')}}" type="image/x-icon">
 
-<!-- frontend css -->
-  <!-- <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
-  <link rel="stylesheet" href="{{asset('css/line-awesome.min.css')}}">
-  <link rel="stylesheet" href="{{asset('css/vendor/animate.min.css')}}">
-  <link rel="stylesheet" href="{{asset('css/vendor/slick.css')}}">
-  <link rel="stylesheet" href="{{asset('css/vendor/dots.css')}}"> -->
-  
-
-    <!-- backend css -->
-  <!-- <link rel="stylesheet" href="{{asset('pixinvest/css/css2.css')}}">
-  <link rel="stylesheet" href="{{asset('pixinvest/vendors.min.css')}}">
-  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/bootstrap-extended.min.css')}}">
-  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/colors.min.css')}}">
-  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/components.min.css')}}">
-  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/themes/dark-layout.min.css')}}">
-  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/themes/bordered-layout.min.css')}}">
-  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/themes/semi-dark-layout.min.css')}}">
-  <link rel="stylesheet" href="{{asset('pixinvest/app-assets/css/core/menu/menu-types/vertical-menu.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('pixinvest/app-assets/css/pages/app-invoice-list.min.css')}}">
-
-  <link rel="stylesheet" type="text/css" href="{{asset('pixinvest/app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('pixinvest/app-assets/vendors/css/tables/datatable/extensions/dataTables.checkboxes.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('pixinvest/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css')}}">
-
-<link rel="stylesheet" href="{{asset('css/main.css')}}"> -->
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-// var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-// (function(){
-// var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-// s1.async=true;
-// s1.src='https://embed.tawk.to/60bf7da0dd60a20abbe54044/1f7m05fok';
-// s1.charset='UTF-8';
-// s1.setAttribute('crossorigin','*');
-// s0.parentNode.insertBefore(s1,s0);
-// })();
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/62fad66037898912e96331cd/1gahtar36';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
 </script>
-<!--End of Tawk.to Script-->
 </head>
 <body id="body">
    <div>
@@ -88,40 +61,13 @@
     <index></index>
   </div>
 
-  <!-- <script src="{{ asset('pixinvest/app-assets/vendors/js/vendors.min.js') }}" defer></script>
-  <script src="{{ asset('pixinvest/app-assets/js/core/app-menu.min.js')}}" defer></script>
-  <script src="{{ asset('pixinvest/app-assets/js/core/app.min.js')}}" defer></script> -->
-
-
-   <!--  <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/jquery.dataTables.min.js') }}" defer></script>
-    <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/dataTables.bootstrap5.min.js') }}" defer></script>
-    <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/dataTables.responsive.min.js') }}" defer></script>
-    <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/responsive.bootstrap4.min.js') }}" defer></script>
-    <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/datatables.buttons.min.js') }}" defer></script>
-    <script src="{{ asset('pixinvest/app-assets/js/tables/datatable/dataTables.bootstrap5.min.js') }}" defer></script>
-    <script src="{{ asset('pixinvest/app-assets/vendors/js/forms/validation/jquery.validate.min.js') }}" defer></script>   -->
-    <!-- <script src="{{ asset('pixinvest/app-assets/js/scripts/pages/app-user-list.min.js') }}" defer></script>   -->
+  
 
     
   <script src="{{ asset('assets/js/jquery-1.12.4.min.js') }}"></script>
-  <!-- <script src="./assets/js/jquery.bgscroll.js" defer></script> -->
-    <!-- <script src="{{ asset('pixinvest/app-assets/js/customizer.min.js') }}" ></script> -->
-    <!-- <script src="{{asset('js/jquery-3.5.1.min.js.download')}}" defer></script> -->
-      <!-- <script src="{{asset('js/bootstrap.bundle.js.download')}}" defer></script> -->
-    <!-- <script src="{{asset('js/slick.min.js.download')}}" defer></script> -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <!-- <script src="{{asset('js/wow.min.js.download')}}" defer></script>
-    <script src="{{asset('js/contact.js.download')}}" defer></script>
-    <script src="{{ asset('js/k.js') }}" defer></script> -->
-     
 
-    <!-- <script src="{{asset('js/dashboard.js.download')}}" defer></script> -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
    
-  <!--   <script src="{{ asset('pixinvest/app-assets/vendors/js/charts/apexcharts.min.js')}}"  defer></script>
-    <script src="{{ asset('pixinvest/app-assets/vendors/js/extensions/toastr.min.js')}}"  defer></script>
-    <script src="{{ asset('pixinvest/app-assets/js/scripts/pages/dashboard-analytics.min.js')}}"  defer></script>
-    <script src="{{ asset('pixinvest/app-assets/js/scripts/pages/card-analytics.min.js')}}"  defer></script>
- -->
   
   <script src="{{ asset('js/objectdata.js') }}" defer></script>
    <script
@@ -166,12 +112,7 @@
           series.tooltipText =
             "Open:${openValueY.value}\nLow:${lowValueY.value}\nHigh:${highValueY.value}\nClose:${valueY.value}";
 
-          // important!
-          // candlestick series colors are set in states.
-          // series.riseFromOpenState.properties.fill = am4core.color("#00ff00");
-          // series.dropFromOpenState.properties.fill = am4core.color("#FF0000");
-          // series.riseFromOpenState.properties.stroke = am4core.color("#00ff00");
-          // series.dropFromOpenState.properties.stroke = am4core.color("#FF0000");
+     
 
           series.riseFromPreviousState.properties.fillOpacity = 1;
           series.dropFromPreviousState.properties.fillOpacity = 0;
@@ -579,7 +520,6 @@
 }
       });
     </script>
-  <!-- <script src="{{ asset('pixinvest/app-assets/js/scripts/customizer.min.js') }}" defer></script> -->
   <script>
     // if('serviceWorker' in navigator) {
     //   navigator.serviceWorker

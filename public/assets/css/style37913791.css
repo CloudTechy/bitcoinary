@@ -9699,7 +9699,7 @@ button.scroltop {
 	background:#161616;  
 	border:3px solid;
 	position: fixed;   
-	right: 15px;   
+	left: 15px;   
 	bottom:15px;
 	font-size:11px;
 	line-height:16px;

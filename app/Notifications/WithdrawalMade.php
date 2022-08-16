@@ -45,8 +45,7 @@ class WithdrawalMade extends Notification implements ShouldQueue {
 			->line('A withdrawal was made from your account')
 			->line('This is to notify you that your withdrawal request has been approved and that the sum of $' . $withdrawal->amount . ' was debited from your account with us and has been credited into your '.$withdrawal->payment_method.' wallet/account.')
 			->action('Goto Dashboard', url($dashboardPath))
-			->line('Thank you for investing with us')
-			->bcc('conyekelu@yahoo.com','BM notification');
+			->line('Thank you for investing with us');
 	}
 
 	/**

@@ -60,6 +60,17 @@
                                             >{{deposit.created_at}}</span
                                         >
                                     </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center"
+                                    >
+                                        Turnover
+                                        <span v-if = "deposit.expiration" class="font-weight-bold badge badge--success"
+                                            >{{getDate(deposit.expiration)}}</span
+                                        >
+                                        <span v-else class="font-weight-bold badge badge--warning"
+                                            >Pending</span
+                                        >
+                                    </li>
 
                                     <li
                                         class="list-group-item d-flex justify-content-between align-items-center"
@@ -100,6 +111,7 @@
                                             >{{$root.normalNumeral(deposit.amount)}} USD</span
                                         >
                                     </li>
+                                    
 
                                     <li
                                         class="list-group-item d-flex justify-content-between align-items-center"
@@ -370,6 +382,7 @@
 <script>
 import VueLoadingButton from "vue-loading-button";
 import { ContentLoader, ListLoader } from "vue-content-loader";
+ import moment from 'moment'
 export default {
     data() {
         return {
@@ -607,7 +620,11 @@ export default {
                     );
                     console.log(error);
                 });
+                
         },
+        getDate(to) {
+            return moment().to(moment(to))
+        }
     },
 };
 </script>

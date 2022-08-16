@@ -8,11 +8,21 @@
                     class="row align-items-center mb-30 justify-content-between"
                 >
                     <div class="col-lg-6 col-sm-6">
-                        <h6 class="page-title">Deposit History </h6>
-                        <i data-toggle="tooltip"
-                                                        data-original-title="refresh" @click = "getDeposits(1)" style="cursor:pointer" :class="{'text--primary':true, fa:true, 'fa-circle-notch':true, 'fa-spin':loading}"></i>
+                        <h6 class="page-title">Deposit History</h6>
+                        <i
+                            data-toggle="tooltip"
+                            data-original-title="refresh"
+                            @click="getDeposits(1)"
+                            style="cursor: pointer"
+                            :class="{
+                                'text--primary': true,
+                                fa: true,
+                                'fa-circle-notch': true,
+                                'fa-spin': loading,
+                            }"
+                        ></i>
                     </div>
-                    
+
                     <div
                         class="col-lg-6 col-sm-6 offset-6 text-sm-right mt-sm-0 mt-3"
                     >
@@ -57,7 +67,7 @@
                                                 <th>Initiated</th>
                                                 <th>User</th>
                                                 <th>Amount</th>
-                                                <th>Conversion</th>
+                                                <th>Turnover</th>
                                                 <th>package</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
@@ -144,23 +154,29 @@
                                                     </strong>
                                                 </td>
 
-                                                <td data-label="Conversion">
-                                                    1 USD = 1 USD
-                                                    <br />
-                                                    <strong
+                                                <td data-label="Turnover">
+                                                    <span
+                                                        v-if="
+                                                            dp.expiration
+                                                        "
+                                                        class="font-weight-bold badge badge--success"
                                                         >{{
-                                                            $root.normalNumeral(
-                                                                dp.amount
+                                                            getDate(
+                                                                dp.expiration
                                                             )
-                                                        }}
-                                                        USD</strong
+                                                        }}</span
+                                                    >
+                                                    <span
+                                                        v-else
+                                                        class="font-weight-bold badge badge--warning"
+                                                        >Pending</span
                                                     >
                                                 </td>
-                                                <td
-                                                    data-label="Package"
-                                                    
-                                                >
-                                                  <span class="badge badge--primary">{{ dp.name }}</span>  
+                                                <td data-label="Package">
+                                                    <span
+                                                        class="badge badge--primary"
+                                                        >{{ dp.name }}</span
+                                                    >
                                                 </td>
                                                 <td data-label="Status">
                                                     <span
@@ -179,11 +195,22 @@
                                                     >
                                                 </td>
                                                 <td data-label="Action">
-                                        <a  :href="$root.basepath + '/admin/deposit/details/' + dp.id" class="icon-btn ml-1 " data-toggle="tooltip" title="" data-original-title="Detail">
-                                            <i class="la la-desktop"></i>
-                                        </a>
-                                    </td>
-                                                
+                                                    <a
+                                                        :href="
+                                                            $root.basepath +
+                                                            '/admin/deposit/details/' +
+                                                            dp.id
+                                                        "
+                                                        class="icon-btn ml-1"
+                                                        data-toggle="tooltip"
+                                                        title=""
+                                                        data-original-title="Detail"
+                                                    >
+                                                        <i
+                                                            class="la la-desktop"
+                                                        ></i>
+                                                    </a>
+                                                </td>
                                             </tr>
                                             <tr v-if="loading">
                                                 <td colspan="7">
@@ -316,6 +343,7 @@
 </template>
 <script>
 import { ContentLoader, ListLoader } from "vue-content-loader";
+import moment from "moment";
 
 export default {
     data() {
@@ -527,6 +555,9 @@ export default {
         },
         searchTransactions() {
             this.getDeposits(1);
+        },
+        getDate(to) {
+            return moment().to(moment(to));
         },
     },
 };
