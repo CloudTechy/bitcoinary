@@ -1083,10 +1083,10 @@ export default {
         fetchUser(id) {
             this.loading = true;
             var form = new Form();
-            form.get("/auth/users?id=" + id)
+            form.get("/auth/users/" + id)
                 .then((response) => {
                     this.loading = false;
-                    this.user = response.data.data.item[0];
+                    this.user = response.data.data;
                     this.key++;
                 })
                 .catch((error) => {

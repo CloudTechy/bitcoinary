@@ -392,6 +392,39 @@ const routes = [
         },
     },
     {
+        path: "/admin/packages/edit/:id",
+        name: "edit_oackage",
+        component: () => import("./pages/admin/PackageEdit"),
+
+        meta: {
+            auth: true,
+            adminAuth: true,
+            title: "Admin | Edit Plan",
+        },
+    },
+    {
+        path: "/admin/packages/add",
+        name: "add_package",
+        component: () => import("./pages/admin/PackageAdd"),
+
+        meta: {
+            auth: true,
+            adminAuth: true,
+            title: "Admin | Add Plan",
+        },
+    },
+    {
+        path: "/admin/packages",
+        name: "packages",
+        component: () => import("./pages/admin/Packages"),
+
+        meta: {
+            auth: true,
+            adminAuth: true,
+            title: "Admin Package Manager",
+        },
+    },
+    {
         path: "/admin/deposit/details/:id",
         name: "deposit-details",
         component: () => import("./pages/admin/DepositDetails"),

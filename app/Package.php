@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Package extends Model {
-	protected $fillable = ['name', 'roi', 'min_deposit', 'max_deposit', 'turnover', 'first_level_ref_commission', 'loop_termination', 'second_level_ref_commission'];
+	protected $fillable = ['name', 'roi', 'status' , 'amount','capital_back' ,'return_for' ,'amount_type' , 'min_deposit', 'max_deposit', 'turnover', 'first_level_ref_commission', 'loop_termination', 'second_level_ref_commission'];
 
 	public function portfolio() {
 		return $this->belongsTo(Portfolio::class);
@@ -18,7 +18,7 @@ class Package extends Model {
 	public function scopeFilter($query, $filter) {
 
 		try {
-			$fields = ['name', 'roi', 'min_deposit', 'max_deposit', 'turnover', 'first_level_ref_commission', 'loop_termination', 'second_level_ref_commission'];
+			$fields = ['name', 'roi', 'min_deposit', 'status' , 'amount','capital_back' ,'return_for' ,'amount_type' , 'max_deposit', 'turnover', 'first_level_ref_commission', 'loop_termination', 'second_level_ref_commission'];
 
 			return $query->where(
 				function ($query) use ($filter, $fields) {

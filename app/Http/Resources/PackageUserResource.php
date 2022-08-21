@@ -35,7 +35,7 @@ class PackageUserResource extends JsonResource {
 			'transaction' => $this->transaction,
 			'transaction_id' => $this->transaction_id,
 			'expired' => !empty($this->expiration) && $this->active == false ? true : false,
-			'active' => $this->active,
+			'active' => (bool) $this->active,
 			'unsubscribed' => empty($this->expiration) && $this->active == false ? true : false,
 			'date_bad' => Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans(),
 			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->toFormattedDateString(),

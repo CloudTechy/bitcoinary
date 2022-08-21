@@ -12,6 +12,7 @@ class PackageResource extends JsonResource {
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return array
 	 */
+
 	public function toArray($request) {
 		$duration = duration::findOrFail($this->turnover);
 		return [
@@ -21,6 +22,12 @@ class PackageResource extends JsonResource {
 			'max_deposit' => $this->max_deposit,
 			'roi' => $this->roi,
 			'duration' => $this->turnover,
+			'status' => (bool) $this->status,
+			'capital_back' => (bool) $this->capital_back,
+			'return_for' => $this->return_for,
+			'amount_type' => $this->amount_type,
+			'amount' => $this->amount,
+			'rank' => $this->rank,
 			'turnover' => $duration->description,
 			'loop_termination' => $this->loop_termination,
 			'first_level_ref_commission' => $this->first_level_ref_commission,

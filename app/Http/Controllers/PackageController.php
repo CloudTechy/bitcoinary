@@ -23,8 +23,15 @@ class PackageController extends Controller {
 			$data = Package::filter(request()->all())
 				->orderBy('rank', 'asc')
 				->paginate($pageSize);
+				$pagination = [
+					'total' => $data->total(),
+					'count' => $data->count(),
+					'per_page' => $data->perPage(),
+					'current_page' => $data->currentPage(),
+					'total_pages' => $data->lastPage()
+				];
 			$data = PackageResource::collection($data);
-			$builtData = Helper::buildData($data);
+			$builtData = Helper::buildData($data, $pagination);
 			return Helper::validRequest($builtData, 'data was fetched successfully', 200);
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);
@@ -97,8 +104,14 @@ class PackageController extends Controller {
 		$validated = $request->validate([
 			'min_deposit' => 'numeric',
 			'max_deposit' => 'numeric',
+			'amount' => 'numeric',
 			'roi' => 'numeric',
 			'turnover' => 'numeric',
+			'status' => 'boolean',
+			'capital_back' => 'boolean',
+			'loop_termination' => 'required|numeric',
+			'return_for' => 'string|in:period,lifetime',
+			'amount_type' => 'string|in:fixed,range',
 			'name' => 'string|min:2|max:255|unique:' . Package::class . ',name',
 			'first_level_ref_commission' => 'numeric',
 			'second_level_ref_commission' => 'numeric',

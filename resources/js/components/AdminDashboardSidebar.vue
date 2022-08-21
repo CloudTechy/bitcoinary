@@ -78,10 +78,9 @@
                                     <a
                                         :href="
                                             $root.basepath +
-                                            '/admin/plan-setting'
+                                            '/admin/packages'
                                         "
-                                        class="nav-link disabled"
-                                        onclick="return false"
+                                        class="nav-link"
                                         data-toggle="tooltip"
                                                         data-original-title="Link currently unavailable"
                                     >
