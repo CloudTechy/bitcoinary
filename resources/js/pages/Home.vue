@@ -2432,12 +2432,13 @@ export default {
                                                     Any Question?
                                                 </h3>
                                                 <p class="text-white">
-                                                    Contact our support
+                                                    Whatsapp support
                                                 </p>
                                                 <h4 class="text-primary">
                                                     <a
-                                                        href="/contact"
+                                                        href="https://wa.link/fdz6au"
                                                         class="text-white"
+                                                        target="_blank"
                                                         >click here</a
                                                     >
                                                 </h4>

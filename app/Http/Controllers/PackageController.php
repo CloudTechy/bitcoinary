@@ -112,7 +112,7 @@ class PackageController extends Controller {
 			'loop_termination' => 'required|numeric',
 			'return_for' => 'string|in:period,lifetime',
 			'amount_type' => 'string|in:fixed,range',
-			'name' => 'string|min:2|max:255|unique:' . Package::class . ',name',
+			'name' => 'string|min:2|max:255',
 			'first_level_ref_commission' => 'numeric',
 			'second_level_ref_commission' => 'numeric',
 		]);
