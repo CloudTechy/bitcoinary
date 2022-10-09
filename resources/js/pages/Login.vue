@@ -1,112 +1,67 @@
 <template>
-    <div class="main">
-        <h1>
-            <div
-                class="sitelogo"
-                style="background: rgba(1, 0, 21, 0.66); padding: 15px 0 5px"
-            >
-                <a href="/"
-                    ><img
-                        :src= '$root.basepath +"/assets/images/logo2.png"'
-                        width="230"
-                        height=""
-                        alt="site logo"
-                /></a>
+    
+    <div class="">
+        <div class="appHeader no-border transparent position-absolute">
+            <div class="left"> Login
             </div>
-        </h1>
-        <div class="w3_agile_main_grids">
-            <form
-                autocomplete="off"
+            <div class="pageTitle"></div>
+            <div class="right">
+                <div class="top-bar-item top-bar-item-full" id="id_100">
+                    <div id="google_translate_element"></div>
+                </div>
+            </div>
+        </div>
+       
+        <div id="appCapsule" class="cap">
+            <div class="section mt-2 text-center">
+                <a href="/">
+                    <img :src="$root.basepath + '/assets/images/home/logo.png'" width="150px" />
+                </a>
+        
+            </div>
+            <div class="section mb-5 p-2">
+                <form autocomplete="off"
                 @submit.prevent="login"
                 class="agile_form"
-                method="post"
-            >
+                method="post">
+
                 <div class="form-group">
-                    <div class="alert alert-danger m-2"
-                        v-if="has_error && !success"
-                    >
+                    <div class="alert alert-danger m-2" v-if="has_error && !success">
                         <p v-if="error.error" class="text-center m-2">
                             {{ error.message }}
                         </p>
                     </div>
                 </div>
-                <h3>Account Login</h3>
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 form-group">
-                        <div class="wthree_input">
-                            <i style = "left:2%" class="fa fa-envelope" aria-hidden="true"></i>
-                            <input
-                                type="email"
-                                v-model="email"
-                                class="form-control"
-                                placeholder="Enter your email"
-                                size="30"
-                                autofocus="autofocus"
-                                required=""
-                                style="width: 100%"
-                            />
+
+                    <div class="card">
+                        <div class="card-body pb-1">
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label" for="email">Email or Username</label>
+                                    <input type="text" v-model="email" class="form-control" name="email" required>
+                                </div>
+                            </div>
+        
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label" for="password1">Password</label>
+                                    <input type="password" v-model="password" class="form-control" name="password" required>
+                                </div>
+                            </div>
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <a href="/forgot_password" class="text-primary">Need some help?</a> | <a
+                                        href="/register" class="text-primary">Register</a>
+                                </div>
+                            </div>
+                            <input type="submit" ref="signin" class="btn btn-secondary btn-block btn-lg" name="user_login" value="Sign In">
                         </div>
                     </div>
-                    <div class="col-md-12 col-sm-12 form-group">
-                        <div class="wthree_input">
-                            <i style = "left:2%" class="fa fa-lock" aria-hidden="true"></i>
-                            <input
-                                type="password"
-                                v-model="password"
-                                class="form-control"
-                                size="30"
-                                placeholder="Enter password"
-                                required=""
-                                style="width: 100%"
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-md-12 col-sm-12">
-                        <button
-                            type="submit"
-                            ref="signin"
-                            class="btn btn-primary"
-                            style="margin-top: 10px; width: 100%"
-                        >
-                            Login Now
-                        </button>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </form>
-            <div class="form-row mt-2">
-                <div class="col-sm-6">
-                    <div id="progress">
-                        <p class="f-size-14">
-                            Forgot Password?
-                            <a href="/forgot_password" class="base--color"
-                                >Reset Now</a
-                            >
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div id="progress">
-                        <p class="f-size-14">
-                            Don't have an account?
-                            <a href="/register" class="base--color">Sign Up</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-5 agileits_copyright">
-                <span class="copyrights-text text-white"
-               
-                    >© {{$root.fullYearTemplate}}
-                    <a href="/" class="base--color">{{ company }}</a
-                    > <br><br>All rights reserved</span
-                >
+                </form>
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
@@ -126,30 +81,105 @@ export default {
         };
     },
     mounted() {
+        document.body.classList.add("authbody")
         this.$root.scrollUp();
         window.addEventListener("beforeunload", () => {
             if (!this.$auth.user().isEmailVerified) {
                 this.$auth.logout();
             }
         });
+
+        var js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/splide.min.js"
+        );
+        document.body.appendChild(js);
+
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/fontawesome.min.js"
+        );
+        document.body.appendChild(js);
+
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/all.min.js"
+        );
+        document.body.appendChild(js);
+        
     },
     created() {
         var css = document.createElement("link");
         css.setAttribute(
             "href",
-            this.$root.basepath + "/assets/css/bootstrap.css"
+            this.$root.basepath + "/assets/css/home/bootstrap.min.css"
         );
         css.setAttribute("type", "text/css");
         css.setAttribute("rel", "stylesheet");
         document.head.appendChild(css);
-        var css = document.createElement("link");
+
+        css = document.createElement("link");
         css.setAttribute(
             "href",
-            this.$root.basepath + "/assets/css/stylec31c.css"
+            this.$root.basepath + "/assets/css/home/font-awesome.min.css"
         );
         css.setAttribute("type", "text/css");
         css.setAttribute("rel", "stylesheet");
         document.head.appendChild(css);
+
+
+        css = document.createElement("link");
+        css.setAttribute(
+            "href",
+            this.$root.basepath + "/assets/css/home/login-style.css"
+        );
+        css.setAttribute("type", "text/css");
+        css.setAttribute("rel", "stylesheet");
+        document.head.appendChild(css);
+
+        css = document.createElement("link");
+        css.setAttribute(
+            "href",
+            this.$root.basepath + "/assets/css/home/others.css"
+        );
+        css.setAttribute("type", "text/css");
+        css.setAttribute("rel", "stylesheet");
+        document.head.appendChild(css);
+
+        css = document.createElement("link");
+        css.setAttribute(
+            "href",
+            this.$root.basepath + "/assets/css/home/custom.css"
+        );
+        css.setAttribute("type", "text/css");
+        css.setAttribute("rel", "stylesheet");
+        document.head.appendChild(css);
+
+        var js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        );
+        js.setAttribute("async", true);
+        document.body.appendChild(js);
+    },
+    beforeMount() {
+        var js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/jquery.min.js"
+        );
+        js.setAttribute("async", true);
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/bootstrap.bundle.min.js"
+        );
+        document.body.appendChild(js);
     },
     methods: {
         login() {
@@ -218,10 +248,10 @@ export default {
         },
         processing(status) {
             if (status) {
-                this.$refs.signin.innerText = "Signing in...";
+                this.$refs.signin.value = "Signing in...";
                 this.$refs.signin.disabled = true;
             } else {
-                this.$refs.signin.innerText = "Login Now";
+                this.$refs.signin.value = "Login Now";
                 this.$refs.signin.disabled = false;
             }
         },
@@ -244,6 +274,22 @@ export default {
 };
 </script>
 <style scoped>
-
-
+    .cap {
+      left: 0;
+      right: 0;
+      top: 15%;
+      width: 480px;
+      margin: 0 auto
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .cap {
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+        margin: 0 auto
+      }
+    }
+    
 </style>

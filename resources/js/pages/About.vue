@@ -6,276 +6,417 @@ export default {
             domain: this.$root.appDomain,
         };
     },
-    created() {
-        let jquery = document.querySelector('script[src$="pace.js"]');
-        if (jquery == null) {
-            var js = document.createElement("script");
-            js.setAttribute("src", "assets/plugins/pace/pace.js");
-            document.head.appendChild(js);
-        }
-    },
-
-    mounted() {
-        let magnific = document.querySelector(
-            'script[src$="magnific-popup.min.js"]'
+    beforeMount() {
+        var js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/jquery.min.js"
         );
-        if (magnific == null) {
-            var js = document.createElement("script");
-            js.setAttribute("src", "assets/js/jquery-1.12.4.min.js");
-            js.setAttribute("async", true);
-            document.body.appendChild(js);
-            var js = document.createElement("script");
-            js.setAttribute("src", "assets/js/bootstrap.min.js");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/bootstrap-select.min.js");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute(
-                "src",
-                "assets/js/jquery.bootstrap-touchspin.min.js"
-            );
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/magnific-popup.min.js");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/waypoints.min.js");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/counterup.min.js");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/owl.carousel.min.js");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/waypoints-sticky.min.js");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/isotope.pkgd.min.js");
-            document.body.appendChild(js);
-
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/stellar.min.js");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/scrolla.min.js");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/custom.js");
-            js.setAttribute("defer", "");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/shortcode.js");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/jquery.bgscroll.js");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/tickerNews.min.js");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/ebuka.js");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute(
-                "src",
-                "assets/plugins/revolution/revolution/js/jquery.themepunch.tools.min.js"
-            );
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute(
-                "src",
-                "assets/plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js"
-            );
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute(
-                "src",
-                "assets/plugins/revolution/revolution/js/extensions/revolution-plugin.js"
-            );
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/rev-script-1.js");
-            document.body.appendChild(js);
-            js = document.createElement("script");
-            js.setAttribute("src", "assets/js/iziToast.min.js");
-            document.body.appendChild(js);
-        }
+        js.setAttribute("async", true);
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/bootstrap.min.js"
+        );
+        document.body.appendChild(js);
     },
 };
 </script>
 <template>
-    <div class="m-0 p-0">
-        <div class="page-wraper">
-            <HomeHeader :domain="domain"></HomeHeader>
-            <div class="page-content">
-                <div
-                    class="wt-bnr-inr overlay-wraper"
-                    style="
-                        background-image: url('assets/images/banner/about-banner.jpg');
-                    "
-                >
-                    <div class="overlay-main bg-black opacity-07"></div>
-                    <div class="container">
-                        <div class="wt-bnr-inr-entry">
-                            <h1 class="text-white">ABOUT {{ company }}</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white marquee">
-                    <div class="TickerNews" id="T1">
-                        <!-- TradingView Widget BEGIN -->
-                        <div
-                            class="tradingview-widget-container"
-                            style="width: 100%; height: 76px"
-                        >
-                            <iframe
-                                scrolling="no"
-                                allowtransparency="true"
-                                frameborder="0"
-                                src="//s.tradingview.com/embed-widget/ticker-tape/?locale=en&amp;page-uri=https%3A%2F%2Feurogg.com%2Fabout#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22FOREXCOM%3ASPXUSD%22%2C%22title%22%3A%22S%26P%20500%22%7D%2C%7B%22proName%22%3A%22FOREXCOM%3ANSXUSD%22%2C%22title%22%3A%22Nasdaq%20100%22%7D%2C%7B%22proName%22%3A%22FX_IDC%3AEURUSD%22%2C%22title%22%3A%22EUR%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22BTC%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22ETH%2FUSD%22%7D%2C%7B%22description%22%3A%22DOGE%2FUSDT%22%2C%22proName%22%3A%22BINGBON%3ADOGEUSDT%22%7D%2C%7B%22description%22%3A%22XRP%2FUSDT%22%2C%22proName%22%3A%22BINANCE%3AXRPUSDT%22%7D%2C%7B%22description%22%3A%22BCH%2FUSDT%22%2C%22proName%22%3A%22KRAKEN%3ABCHUSDT%22%7D%2C%7B%22description%22%3A%22KISHU%2FUSDT%22%2C%22proName%22%3A%22OKEX%3AKISHUUSDT%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22light%22%2C%22isTransparent%22%3Atrue%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A76%2C%22utm_source%22%3A%22fxtradingmax.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%7D"
-                                style="
-                                    box-sizing: border-box;
-                                    height: 44px;
-                                    width: 100%;
-                                "
-                            ></iframe>
-                          
-                        </div>
-                        <!-- TradingView Widget END -->
-                    </div>
-                </div>
-                <div class="bg-gray-light p-tb20">
-                    <div class="container">
-                        <ul class="wt-breadcrumb breadcrumb-style-2">
-                            <li>
-                                <a href="/"> <i class="fa fa-home"></i> Home</a>
-                            </li>
-                            <li>About US</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="section-full p-tb20">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="section-head text-left">
-                                    <span
-                                        class="wt-title-subline text-gray-dark font-16 m-b15"
-                                    ></span>
-                                    <h2 class="text-uppercase">ABOUT US</h2>
-                                    <div class="wt-separator-outer">
-                                        <div
-                                            class="wt-separator bg-primary"
-                                        ></div>
-                                    </div>
-                                    <p>
-                                        <!--<strong>-->
-                                        {{ company }} is one of the most
-                                        efficient and reliable financial
-                                        investment service provider in the
-                                        world. Our fundamental mission is to
-                                        help clients and customers achieve their
-                                        financial objectives. {{ company }} have
-                                        staffs with over 20 years’ experience in
-                                        combining financial development and
-                                        trades. We are committed to pushing the
-                                        boundaries of what constitutes the
-                                        highest standards in trades and asset
-                                        management.
-                                        <br />
-                                        <br />
-                                        With over $5.3 Trillion traded daily in
-                                        the market, we are dedicated to giving
-                                        our clients their own share of the
-                                        profit daily. As a leading global market
-                                        maker,
-                                        {{ company }} has one of the World’s
-                                        Largest Independent traders and fund
-                                        managers with clients from different
-                                        parts of the World. Today, as a
-                                        successful trade investment and asset
-                                        management company, we are trusted by
-                                        thousands of clients. Our sterling
-                                        reputation, dedication to meeting our
-                                        clients’ needs and innovative approach
-                                        to business development are some driving
-                                        forces behind our success.
-                                        <!--</strong>-->
-                                    </p>
-                                </div>
-                            </div>
+    <div class="page-wraper">
+        <HomeHeader :domain="domain"></HomeHeader>
+        <div class="no-bottom no-top" id="content">
 
-                            <div class="col-md-6 col-sm-6">
-                                <div class="wt-media">
-                                    <img
-                                        src="/assets/images/rocket.png"
-                                        alt=""
-                                        class="img-responsive"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-full p-tb20">
+            <!-- section begin -->
+
+            <section
+                aria-label="section"
+                class="text-light"
+                id="subheader"
+                 :style="
+                        'background:url(' +
+                        $root.basepath +
+                        '/assets/images/home/bg2.jpg) center top;'
+                    "
+            >
+                <div class="center-y relative text-center">
                     <div class="container">
                         <div class="row">
-                            <div class="col">
-                                <div class="section-head text-left p-3">
+                            <div class="col text-center">
+                                <div class="spacer-single"></div>
+                                <h1 style="color: #ffcc29">
+                                    Sustainable Bitcoin Mining.<br />It’s just
+                                    the start.
+                                </h1>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section aria-label="section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="theme-row-zero">
+                                <h2 style="text-align: center; color: #377dff">
+                                    At West Exchange, we believe technology can,
+                                    and will, change the world.
+                                </h2>
+                                <p style="text-align: center">
+                                    We believe The Fourth Industrial Revolution
+                                    will improve the quality of life of all.
+                                </p>
+                                <p style="text-align: center">
+                                    So long as we do it right.
+                                </p>
+                                <p style="text-align: center">
+                                    Doing it right means starting and scaling
+                                    <strong>sustainably </strong>from the
+                                    start.<br />
+                                    Not bolting it on as an afterthought.
+                                </p>
+                                <p style="text-align: center">
+                                    Doing it right means leaving green
+                                    footprints wherever we go,<br />
+                                    and looking ahead so we’re proud of what we
+                                    leave behind.
+                                </p>
+                                <p style="text-align: center">
+                                    At West Exchange, we’re committed to getting
+                                    it right. Starting with sustainably-mined
+                                    bitcoin.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                aria-label="section"
+                data-bgimage="url(assets/images/home/Layer-4.jpg) top"
+                class="text-light"
+            >
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="theme-row-zero">
+                                <center>
+                                    <h2 style="text-align: center">
+                                        We are a visionary,<br />scalable
+                                        infrastructure company
+                                    </h2>
+                                </center>
+                                <p style="text-align: center">
+                                    We are a Bitcoin mining company that builds,
+                                    owns and operates data<br />
+                                    center infrastructure with a focus on entry
+                                    into regions where we can access<br />
+                                    abundant and/or under-utilised renewable
+                                    energy to power our operations.<br />
+                                    We support local communities, as well as the
+                                    decarbonisation<br />
+                                    of energy markets and the global Bitcoin
+                                    network.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-label="section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="theme-row-zero">
+                                <center>
+                                    <h2 style="text-align: center">
+                                        We are global leaders in sustainable
+                                        bitcoin mining
+                                    </h2>
+                                </center>
+                                <p style="text-align: center">
                                     <span
-                                        class="wt-title-subline text-gray-dark font-16 m-b15"
-                                    ></span>
-                                    <h2 class="text-uppercase">Our Registration Certificate</h2>
-                                    <div class="wt-separator-outer">
-                                        <div
-                                            class="wt-separator bg-primary"
-                                        ></div>
+                                        style="color: #1ca94b; font-weight: 600"
+                                        >We’re focussed on low-cost
+                                        renewables</span
+                                    ><br />
+                                    <span
+                                        style="
+                                            font-size: 24px;
+                                            line-height: 1.2;
+                                        "
+                                        >We target entry into regions where
+                                        there are low-cost, abundant and
+                                        attractive<br />
+                                        renewable energy sources, and where we
+                                        can support local communities.</span
+                                    >
+                                </p>
+                                <p style="text-align: center">
+                                    <span
+                                        style="color: #1ca94b; font-weight: 600"
+                                        >We have long-term security over
+                                        infrastructure, land and power
+                                        supply</span
+                                    ><br />
+                                    <span
+                                        style="
+                                            font-size: 24px;
+                                            line-height: 1.2;
+                                        "
+                                        >We own our electrical infrastructure
+                                        and data centers.<br />
+                                        This provides us with security and
+                                        operational control over our assets.<br />
+                                        We also focus on grid-connected power
+                                        access which help to ensure we are<br />
+                                        able to utilize a reliable, long-term
+                                        supply of power.</span
+                                    >
+                                </p>
+                                <p style="text-align: center">
+                                    <span
+                                        style="color: #1ca94b; font-weight: 600"
+                                        >We mitigate the downside</span
+                                    ><br />
+                                    <span
+                                        style="
+                                            font-size: 24px;
+                                            line-height: 1.2;
+                                        "
+                                        >We deliberately positioned ourselves at
+                                        the lower end of the bitcoin mining cost
+                                        curve.<br />
+                                        This allows us to benefit if high-cost
+                                        producers become uneconomic if the
+                                        bitcoin price falls.</span
+                                    >
+                                </p>
+                                <p style="text-align: center">
+                                    <span
+                                        style="color: #1ca94b; font-weight: 600"
+                                        >Our management team is
+                                        well-seasoned</span
+                                    ><br />
+                                    <span
+                                        style="
+                                            font-size: 24px;
+                                            line-height: 1.2;
+                                        "
+                                        >We are a team with an unrivaled track
+                                        record of success across energy,
+                                        infrastructure,<br />
+                                        renewables, finance, digital assets and
+                                        data centers.</span
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-banner" data-bgcolor="#377dff">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="theme-row-zero">
+                                <center>
+                                    <h2 style="text-align: center">
+                                        <span style="color: #ffffff"
+                                            >We operate in regional and remote
+                                            locations</span
+                                        >
+                                    </h2>
+                                </center>
+
+                                <p
+                                    style="
+                                        text-align: center;
+                                        font-size: 24px;
+                                        line-height: 1.2;
+                                    "
+                                >
+                                    <span style="color: #ffffff"
+                                        >We target development in regions where
+                                        we can access abundant and/or
+                                        under-utilised<br />
+                                        renewable energy. In the case of our
+                                        flagship data center operation </span
+                                    ><br />
+                                    <span style="color: #ffffff"
+                                        >in British Columbia, Canada, this is
+                                        hydroelectricity.</span
+                                    >
+                                </p>
+                                <p
+                                    style="
+                                        text-align: center;
+                                        font-size: 24px;
+                                        line-height: 1.2;
+                                    "
+                                >
+                                    <span style="color: #ffffff"
+                                        >Because our operations are naturally
+                                        geographically flexible it means we are
+                                        able to offer<br />
+                                        the (re)introduction of local employment
+                                        and economic activity to regional and
+                                        remote<br />
+                                        areas and communities that are often
+                                        experiencing financial hardship due </span
+                                    ><br />
+                                    <span style="color: #ffffff"
+                                        >to declining manufacturing or
+                                        industrial operations.</span
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-banner" data-bgcolor="#fff">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="capabilities">
+                                <div class="capabilities-title">
+                                    <center><h2>Key Figures</h2></center>
+                                </div>
+                                <div class="row" style="margin-top: 20px">
+                                    <div
+                                        class="col-md-6"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4">
+                                                <img
+                                                    :src="$root.basepath + '/assets/images/home/STATS_1.svg'"
+                                                    width="100%"
+                                                />
+                                            </div>
+                                            <div class="col-md-8 col-sm-8">
+                                                data centre in <br />
+                                                British Columbia, Canada.
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p>{{company}} is duly registered by the registrar of companies in Sweden.</p>
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe class = "embed-responsive-item" :src="$root.basepath + '/assets/cert%20of%20Allied%20european%20crypto%20company.pdf#toolbar=0'" >
-                                     </iframe>
+                                    <div
+                                        class="col-md-6"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4">
+                                                <img
+                                                    :src="$root.basepath + '/assets/images/home/STATS_2.svg'"
+                                                    width="100%"
+                                                />
+                                            </div>
+                                            <div class="col-md-8 col-sm-8">
+                                                of operating and contracted
+                                                nameplate<br />
+                                                hashrate capacity
+                                            </div>
+                                        </div>
                                     </div>
-                                    
-                                    
+                                    <div
+                                        class="col-md-6"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4">
+                                                <img
+                                                    :src="$root.basepath + '/assets/images/home/STATS_2.svg'"
+                                                    width="100%"
+                                                />
+                                            </div>
+                                            <div class="col-md-8 col-sm-8">
+                                                near-term growth pipeline <br />
+                                                across Western Canada, <br />
+                                                Central USA and Asia-Pacific.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="col-md-6"
+                                        style="margin-bottom: 20px"
+                                    >
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4">
+                                                <img
+                                                    :src="$root.basepath + '/assets/images/home/STATS_4.svg'"
+                                                    width="100%"
+                                                />
+                                            </div>
+                                            <div class="col-md-8 col-sm-8">
+                                                nameplate hardware efficiency
+                                                <br />
+                                                upon deployment of contracted
+                                                hardware
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <WhyChooseUs :company="company"></WhyChooseUs>
-                
-                <HomeFooter :company="company" :domain="domain"></HomeFooter>
-            </div>
-            <button class="scroltop">
-                <span class="iconmoon-house relative" id="btn-vibrate"></span
-                >Top
-            </button>
-            <div class="mgm" style="display: none; opacity: 1"></div>
+            </section>
+            <section
+                aria-label="section"
+                data-bgimage="url(assets/images/home/bg_05-2.jpg) top"
+                class="text-light"
+                id="home"
+            >
+                <div class="container">
+                    <center>
+                        <div class="row align-items-center">
+                            <div
+                                class="col-lg-12 wow fadeInRight"
+                                data-wow-delay=".0s"
+                            >
+                                <div class="spacer-10"></div>
+                                <h2>
+                                    We own and operate a 30MW Bitcoin mining
+                                    data centre project in British Columbia,
+                                    Canada.
+                                </h2>
+                                <div class="spacer-20"></div>
+                                <a
+                                    class="btn-custom"
+                                    href="our-team.php"
+                                    style="
+                                        background-color: #ffcc29;
+                                        color: #000;
+                                    "
+                                    >OUR MANAGEMENT BOARD</a
+                                >
+                                <div class="mb-sm-30"></div>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </section>
         </div>
+        <!-- content close -->
+
+        <HomeFooter :company="company" :domain="domain"></HomeFooter>
     </div>
 </template>
 
 <style scoped>
+.whited {
+    color: #fff;
+}
 
-
-@import "../assets/ebuka.css";
-@import "../assets/css/style37913791.css";
-@import "../assets/css/skin/skin-25b275b27.css";
-@import "../assets/plugins/pace/pace.css";
-@import "../assets/plugins/revolution/revolution/css/settings.css";
-@import "../assets/plugins/revolution/revolution/css/navigation.css";
-
-.mgm {
-    border-radius: 7px;
-    position: fixed;
-    z-index: 90;
-    bottom: 45%;
-    right: 50px;
-    background: #fff;
-    padding: 10px 27px;
-    box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.3);
+.orange {
+    color: #ffcc29;
 }
 </style>

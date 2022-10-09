@@ -1,183 +1,185 @@
 <script>
 export default {
     props: ["domain"],
-    // mounted() {
-    //     var js = document.createElement("script");
-    //     js.setAttribute(
-    //         "src",
-    //         this.$root.basepath + "/assets/js/home/wow.min.js"
-    //     );
-    //     document.body.appendChild(js);
+     mounted() {
+        var js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/wow.min.js"
+        );
+        document.body.appendChild(js);
 
-    //     js = document.createElement("script");
-    //     js.setAttribute(
-    //         "src",
-    //         this.$root.basepath + "/assets/js/home/jquery.isotope.min.js"
-    //     );
-    //     document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/jquery.isotope.min.js"
+        );
+        document.body.appendChild(js);
 
-    //     js = document.createElement("script");
-    //     js.setAttribute(
-    //         "src",
-    //         this.$root.basepath + "/assets/js/home/easing.js"
-    //     );
-    //     document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/easing.js"
+        );
+        document.body.appendChild(js);
 
-    //     js = document.createElement("script");
-    //     js.setAttribute(
-    //         "src",
-    //         this.$root.basepath + "/assets/js/home/owl.carousel.js"
-    //     );
-    //     document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/owl.carousel.js"
+        );
+        document.body.appendChild(js);
 
-    //     js = document.createElement("script");
-    //     js.setAttribute(
-    //         "src",
-    //         this.$root.basepath + "/assets/js/home/validation.js"
-    //     );
-    //     document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/validation.js"
+        );
+        document.body.appendChild(js);
 
-    //     js = document.createElement("script");
-    //     js.setAttribute(
-    //         "src",
-    //         this.$root.basepath + "/assets/js/home/jquery.magnific-popup.min.js"
-    //     );
-    //     document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/jquery.magnific-popup.min.js"
+        );
+        document.body.appendChild(js);
 
-    //     js = document.createElement("script");
-    //     js.setAttribute(
-    //         "src",
-    //         this.$root.basepath + "/assets/js/home/enquire.min.js"
-    //     );
-    //     document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/enquire.min.js"
+        );
+        document.body.appendChild(js);
 
-    //     js = document.createElement("script");
-    //     js.setAttribute(
-    //         "src",
-    //         this.$root.basepath + "/assets/js/home/jquery.stellar.min.js"
-    //     );
-    //     document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/jquery.stellar.min.js"
+        );
+        document.body.appendChild(js);
 
-    //     js = document.createElement("script");
-    //     js.setAttribute(
-    //         "src",
-    //         this.$root.basepath + "/assets/js/home/jquery.plugin.js"
-    //     );
-    //     document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/jquery.plugin.js"
+        );
+        document.body.appendChild(js);
 
-    //     js = document.createElement("script");
-    //     js.setAttribute("src", this.$root.basepath + "/assets/js/home/typed.js");
-    //     document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", this.$root.basepath + "/assets/js/home/typed.js");
+        document.body.appendChild(js);
 
-    //     js = document.createElement("script");
-    //     js.setAttribute(
-    //         "src",
-    //         this.$root.basepath + "/assets/js/home/jquery.countTo.js"
-    //     );
-    //     document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/jquery.countTo.js"
+        );
+        document.body.appendChild(js);
 
-    //     js = document.createElement("script");
-    //     js.setAttribute(
-    //         "src",
-    //         this.$root.basepath + "/assets/js/home/jquery.countdown.js"
-    //     );
-    //     document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/jquery.countdown.js"
+        );
+        document.body.appendChild(js);
 
-    //     js = document.createElement("script");
-    //     js.setAttribute(
-    //         "src",
-    //         this.$root.basepath + "/assets/js/home/designesia.js"
-    //     );
-    //     document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/designesia.js"
+        );
+        document.body.appendChild(js);
 
-    //     js = document.createElement("script");
-    //     js.setAttribute("src", this.$root.basepath + "/assets/js/home/ebuka.js");
-    //     document.body.appendChild(js);
-    // },
+        js = document.createElement("script");
+        js.setAttribute("src", this.$root.basepath + "/assets/js/home/ebuka.js");
+        document.body.appendChild(js);
+    },
 
     created() {
-        //   let style = document.createElement("link");
-        //   style.href = this.$root.basepath + "/assets/css/home/coloring.css";
-        //   style.rel = "stylesheet";
-        //   style.type = "text/css";
-        //   document.head.appendChild(style);
+        let style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/css/home/coloring.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
 
-        //   style = document.createElement("link");
-        //   style.href = this.$root.basepath + "/assets/css/home/style.css";
-        //   style.rel = "stylesheet";
-        //   style.type = "text/css";
-        //   document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/css/home/style.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
 
-        //   style = document.createElement("link");
-        //   style.href = this.$root.basepath + "/assets/css/home/bootstrap.min.css";
-        //   style.rel = "stylesheet";
-        //   style.type = "text/css";
-        //   document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/css/home/bootstrap.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
 
-        //   style = document.createElement("link");
-        //   style.href =
-        //       this.$root.basepath + "/assets/css/home/bootstrap-grid.min.css";
-        //   style.rel = "stylesheet";
-        //   style.type = "text/css";
-        //   document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/css/home/bootstrap-grid.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
 
-        //   style = document.createElement("link");
-        //   style.href =
-        //       this.$root.basepath + "/assets/css/home/bootstrap-reboot.min.css";
-        //   style.rel = "stylesheet";
-        //   style.type = "text/css";
-        //   document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/css/home/bootstrap-reboot.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
 
-        //   style = document.createElement("link");
-        //   style.href = this.$root.basepath + "/assets/css/home/animate.css";
-        //   style.rel = "stylesheet";
-        //   style.type = "text/css";
-        //   document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/css/home/animate.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
 
-        //   style = document.createElement("link");
-        //   style.href = this.$root.basepath + "/assets/css/home/owl.carousel.css";
-        //   style.rel = "stylesheet";
-        //   style.type = "text/css";
-        //   document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/css/home/owl.carousel.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
 
-        //   style = document.createElement("link");
-        //   style.href = this.$root.basepath + "/assets/css/home/owl.theme.css";
-        //   style.rel = "stylesheet";
-        //   style.type = "text/css";
-        //   document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/css/home/owl.theme.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
 
-        //   style = document.createElement("link");
-        //   style.href =
-        //       this.$root.basepath + "/assets/css/home/owl.transitions.css";
-        //   style.rel = "stylesheet";
-        //   style.type = "text/css";
-        //   document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/css/home/owl.transitions.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
 
-        //   style = document.createElement("link");
-        //   style.href =
-        //       this.$root.basepath + "/assets/css/home/magnific-popup.css";
-        //   style.rel = "stylesheet";
-        //   style.type = "text/css";
-        //   document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/css/home/magnific-popup.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
 
-        //   style = document.createElement("link");
-        //   style.href =
-        //       this.$root.basepath + "/assets/css/home/jquery.countdown.css";
-        //   style.rel = "stylesheet";
-        //   style.type = "text/css";
-        //   document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href =
+            this.$root.basepath + "/assets/css/home/jquery.countdown.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
 
-        //   style = document.createElement("link");
-        //   style.href = this.$root.basepath + "/assets/css/home/others.css";
-        //   style.rel = "stylesheet";
-        //   style.type = "text/css";
-        //   document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/css/home/others.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
 
-        //   style = document.createElement("link");
-        //   style.href = this.$root.basepath + "/assets/css/fontawesome/css/font-awesome.min.css";
-        //   style.rel = "stylesheet";
-        //   style.type = "text/css";
-        // document.head.appendChild(style);
+        style = document.createElement("link");
+        style.href = this.$root.basepath + "/assets/css/fontawesome/css/font-awesome.min.css";
+        style.rel = "stylesheet";
+        style.type = "text/css";
+        document.head.appendChild(style);
+    
+      
 
         var js = document.createElement("script");
         js.setAttribute(
@@ -190,95 +192,7 @@ export default {
 };
 </script>
 <template>
-    <!-- <header class="site-header header-style-3 topbar-transparent">
-    <div class="top-bar">
-      <div class="container">
-        <div class="row">
-          <div class="clearfix">
-            <div class="wt-topbar-left">
-              <ul class="list-unstyled e-p-bx pull-left">
-                <li>
-                  <i class="fa fa-envelope"></i>
-                  <a
-                    style="font-weight: 500; font-size: 16px"
-                    href="mailto:support@gmail.com"
-                    ><span class="" data-cfemail=""
-                      >support@{{domain}}</span
-                    ></a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="wt-topbar-right">
-              <ul v-if="$auth.check()" class="list-unstyled e-p-bx pull-right">
-                <li><div id="google_translate_element"></div></li>
-
-                <li>
-                  <a @click = "$auth.logout()" href=""><i class="fa fa-sign-in"></i>Log out</a>
-                </li>
-                <li>
-                  <a href="/dashboard"><i class="fa fa-user"></i> Dashboard</a>
-                </li>
-              </ul>
-              <ul v-else class="list-unstyled e-p-bx pull-right">
-                <li><div id="google_translate_element"></div></li>
-
-                <li>
-                  <a href="/login"><i class="fa fa-user"></i>Sign in</a>
-                </li>
-                <li>
-                  <a href="/register"><i class="fa fa-sign-in"></i>Sign up</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sticky-wrapper">
-      <div class="sticky-header main-bar-wraper">
-        <div class="main-bar">
-          <div class="container">
-            <div class="logo-header mostion">
-              <a href="/">
-                <img
-                  src="assets/images/logo2.png"
-                  width="230"
-                  height="67"
-                  alt=""
-                />
-              </a>
-            </div>
-
-            <button
-              data-target=".header-nav"
-              data-toggle="collapse"
-              type="button"
-              class="navbar-toggle collapsed"
-            >
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <div class="header-nav navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/plan">Plan</a></li>
-                <li>
-                  <a href="/contact">Contact Us</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header> -->
-
-    <!-- header begin -->
+  
     <div>
         <div
             id="topbar"
@@ -396,13 +310,13 @@ export default {
                                         <img
                                             alt=""
                                             class="logo"
-                                            src="https://west-exchange.com/account/upload/we_logo.png"
+                                            :src="$root.basepath + '/assets/images/home/logo.png'"
                                             style="width: 100px"
                                         />
                                         <img
                                             alt=""
                                             class="logo-2"
-                                            src="https://west-exchange.com/account/upload/we_logo.png"
+                                            :src="$root.basepath + '/assets/images/home/logo.png'"
                                             style="width: 40%"
                                         />
                                     </a>
@@ -418,14 +332,14 @@ export default {
                                         ></a>
                                     </li>
                                     <li>
-                                        <a href="about.php" class="nnav"
+                                        <a href="/about" class="nnav"
                                             >About<span></span
                                         ></a>
                                     </li>
 
                                     <li>
                                         <a
-                                            href="https://west-exchange.com#plans"
+                                            href="/#plans"
                                             class="nnav"
                                             >Investment<span></span
                                         ></a>
@@ -439,14 +353,14 @@ export default {
                                     </li>
                                     <li>
                                         <a
-                                            href="https://west-exchange.com#testimonials"
+                                            href="/#testimonials"
                                             class="nnav"
                                             >Testimonies<span></span
                                         ></a>
                                     </li>
                                     <li>
                                         <a
-                                            href="https://west-exchange.com#contact"
+                                            href="/#contact"
                                             class="nnav"
                                             >Contact<span></span
                                         ></a>
@@ -465,7 +379,7 @@ export default {
                             <div class="de-flex-col">
                                 <a
                                     class="btn-custom"
-                                    href="account/login.php"
+                                    href="/login"
                                     style="
                                         background-color: #ffcc29;
                                         color: #000;

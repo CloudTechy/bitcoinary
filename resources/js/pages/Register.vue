@@ -1,277 +1,183 @@
 <template>
-    <div class="main">
-        <h1>
-            <div
-                class="sitelogo"
-                style="background: rgba(1, 0, 21, 0.66); padding: 15px 0 5px"
-            >
-                <a href="/"
-                    ><img
-                        src="assets/images/logo2.png"
-                        width="230"
-                        height=""
-                        alt="site logo"
-                /></a>
-            </div>
-        </h1>
-        <div class="w3_agile_main_grids">
-            <form
-                class="agile_form"
-                method="post"
-                autocomplete="off"
-                @submit.prevent="register"
-                v-if="!success"
-            >
-                <div class="form-group">
-                    <div 
-                        class="alert alert-danger m-3"
-                        v-if="has_error && !success"
-                    >
-                        <p
-                            v-if="!unknown_error && errors"
-                            class="text-center m-3"
-                        >
-                            You have some errors in your form
-                        </p>
-                        <p class="m-3 small" v-if="unknown_error">
-                            {{ unknown_error }}
-                        </p>
-                    </div>
-                </div>
-                <h3>Account Signup</h3>
-                <div class="row">
-                    <div class="col-md-6 col-sm-12 form-group">
-                        <div class="wthree_input">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            <input
-                                type="text"
-                                v-model="first_name"
-                                :class="{
-                                    'form-control': true,
-                                    'error-input':
-                                        errors.first_name != undefined,
-                                }"
-                                placeholder="Enter first name"
-                                size="30"
-                                value=""
-                                autofocus="autofocus"
-                                required=""
-                            />
-                            <p
-                                v-if="errors.first_name"
-                                v-for="error in errors.first_name"
-                                class="base--color m-0 p-2 small"
-                            >
-                                {{ error }}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 form-group">
-                        <div class="wthree_input">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            <input
-                                type="text"
-                                v-model="last_name"
-                                :class="{
-                                    'form-control': true,
-                                    'error-input':
-                                        errors.last_name != undefined,
-                                }"
-                                size="30"
-                                placeholder="Enter last name"
-                                value=""
-                                required=""
-                            />
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 form-group">
-                            <vue-tel-input
-                                v-model="number"
-                                mode = "international"
-                                 v-on:country-changed="countryChanged"
-                                :class="{
-                                    'form-control': true,
-                                    'wthree_input': true,
-                                    'error-input': errors.number != undefined,
-                                }"
-                                >>
-                            </vue-tel-input>
-                            <p
-                                v-if="errors.number"
-                                v-for="error in errors.number"
-                                class="base--color m-0 p-2 small"
-                            >
-                                {{ error }}
-                            </p>
-                    </div>
-                    <div class="col-md-6 col-sm-6 form-group">
-                        <div class="wthree_input">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                            <input
-                                type="email"
-                                required=""
-                                v-model="email"
-                                placeholder="Email address"
-                                :class="{
-                                    'form-control': true,
-                                    'error-input': errors.email != undefined,
-                                }"
-                            />
-                            <p
-                                v-if="errors.email"
-                                v-for="error in errors.email"
-                                class="base--color m-0 p-2 small"
-                            >
-                                {{ error }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-sm-12 form-group">
-                        <div class="wthree_input">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            <input
-                                type="text"
-                                required
-                                v-model="username"
-                                placeholder="Username"
-                                :class="{
-                                    'form-control': true,
-                                    'error-input': errors.username != undefined,
-                                }"
-                            />
-                            <p
-                                v-if="errors.username"
-                                v-for="error in errors.username"
-                                class="base--color m-0 p-2 small"
-                            >
-                                {{ error }}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 form-group">
-                        <div class="wthree_input">
-                            <i class="fa fa-lock" aria-hidden="true"></i>
-                            <input
-                                type="password"
-                                required
-                                min="4"
-                                v-model="password"
-                                placeholder="password"
-                                :class="{
-                                    'form-control': true,
-                                    'error-input': errors.password != undefined,
-                                }"
-                            />
-                            <p
-                                v-if="errors.password"
-                                v-for="error in errors.password"
-                                class="base--color m-0 p-2 small"
-                            >
-                                {{ error }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 form-group">
-                        <div class="wthree_input">
-                            <i style="left: 2%;" class="fa fa-lock fas" aria-hidden="true"></i> 
-                            <input
-                                type="password"
-                                min="4"
-                                required
-                                placeholder="Confirm Password"
-                                v-model="password_confirmation"
-                                :class="{
-                                    'form-control': true,
-                                    'error-input':
-                                        errors.password_confirmation !=
-                                        undefined,
-                                }"
-                            />
-                            <p
-                                v-if="errors.password_confirmation"
-                                v-for="error in errors.password_confirmation"
-                                class="base--color m-0 p-2 small"
-                            >
-                                {{ error }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <input
-                            style="opacity: 1"
-                            checked
-                            v-model="terms"
-                            type="checkbox"
-                            class="form-check-input"
-                            id="terms"
-                        />
-                        <span class="f-size-14 ml-4 text-white"
-                            >I agree with
-                            <a class="base--color" href="/terms">
-                                Terms &amp; Conditions</a
-                            >
-                        </span>
-                        <p
-                            v-if="errors.terms && !terms"
-                            class="text-danger m-0 p-2"
-                        >
-                            You will need to accept the terms to proceed.
-                        </p>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-md-12 col-sm-12">
-                        <button
-                            :disabled="!terms"
-                            ref="signup"
-                            type="submit"
-                            :class="{
-                                'btn-primary': true,
-                                btn: true,
-                                disabled: !terms,
-                            }"
-                            style="margin-top: 10px; width: 100%"
-                        >
-                            Signup Now
-                        </button>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </form>
-            <div class="form-row mt-2">
-                <div class="col-sm-6">
-                    <div id="progress">
-                        <p class="f-size-14">
-                            Forgot Password?
-                            <a href="/forgot_password" class="base--color">Reset Now</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div id="progress">
-                        <p class="f-size-14">
-                            Already have an account?
-                            <a href="/login" class="base--color">Sign In</a>
-                        </p>
-                    </div>
+    <div class="">
+        <div class="appHeader no-border transparent position-absolute">
+            <div class="left"> Create Account
+            </div>
+            <div class="pageTitle"></div>
+            <div class="right">
+                <div class="top-bar-item top-bar-item-full" id="id_100">
+                    <div id="google_translate_element"></div>
                 </div>
             </div>
-            <div class="mt-5 agileits_copyright">
-                <span class="copyrights-text text-white"
-                    >© {{$root.fullYearTemplate}}
-                    <a href="/" class="base--color">{{ company }}</a
-                    >. All rights reserved</span
-                >
+        </div>
+
+        <div id="appCapsule" class="cap mb-5">
+            <div class="section mt-0 text-center">
+                <a href="/">
+                    <img :src="$root.basepath + '/assets/images/home/logo.png'" width="150px" />
+                </a>
+
             </div>
+            <div class="section mb-5 p-2">
+
+                <form method="post" autocomplete="off" @submit.prevent="register" v-if="!success">
+                    <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+                    <input type="hidden" name="action" value="validate_captcha">
+                    <div class="card">
+                        <div class="card-body pb-1">
+                            <div class="form-group basic">
+                                <div class="form-group">
+                                    <div class="alert alert-danger m-3" v-if="has_error && !success">
+                                        <p v-if="!unknown_error && errors" class="text-center m-3">
+                                            You have some errors in your form
+                                        </p>
+                                        <p class="m-3 small" v-if="unknown_error">
+                                            {{ unknown_error }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class=" col  input-wrapper">
+                                        <label class="label" for="">Last Name</label>
+                                        <input type="text" v-model="last_name" :class="{
+                                            'form-control': true,
+                                            'error-input':
+                                                errors.last_name != undefined,
+                                        }" name="name"
+                                            required>
+                                        <p v-if="errors.last_name" v-for="error in errors.last_name"
+                                            class="base--color m-0 p-1 pt-0 small">
+                                            {{ error }}
+                                        </p>
+                                    </div>
+                                    <div class="col input-wrapper">
+                                        <label class="label" for="">First Name</label>
+                                        <input type="text" v-model="first_name" :class="{
+                                            'form-control': true,
+                                            'error-input':
+                                                errors.first_name != undefined,
+                                        }" name="name" required>
+                                        <p v-if="errors.first_name" v-for="error in errors.first_name"
+                                            class="base--color m-0 p-1 pt-0 small">
+                                            {{ error }}
+                                        </p>
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                            <div class="form-group basic">
+                                <div class="row ">
+                                    <div class="col input-wrapper">
+                                        <label class="label" for="email1">Email</label>
+                                        <input type="email" v-model="email" :class="{
+                                            'form-control': true,
+                                            'error-input': errors.email != undefined,
+                                        }" name="email" required>
+                                        <p v-if="errors.email" v-for="error in errors.email"
+                                            class="base--color m-0 p-1 pt-0 small">
+                                            {{ error }}
+                                        </p>
+                                    </div>
+                                    <div class="col input-wrapper">
+                                        <label class="label" for="">Username</label>
+                                        <input type="text" v-model="username" :class="{
+                                            'form-control': true,
+                                            'error-input': errors.username != undefined,
+                                        }" name="username"
+                                            required>
+
+                                        <p v-if="errors.username" v-for="error in errors.username"
+                                            class="base--color m-0 p-1 pt-0 small">
+                                            {{ error }}
+                                        </p>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label" for="password1">Phone number</label>
+                                    <vue-tel-input v-model="number" mode="international"
+                                        v-on:country-changed="countryChanged" :class="{
+                                            'form-control': true,
+                                            'wthree_input': true,
+                                            'error-input': errors.number != undefined,
+                                        }">>
+                                    </vue-tel-input>
+                                    <p v-if="errors.number" v-for="error in errors.number"
+                                        class="base--color m-0 p-1 pt-0 small">
+                                        {{ error }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="form-group basic">
+                                <div class=" row ">
+                                    <div class="col input-wrapper">
+                                        <label class="label" for="password1">Password</label>
+                                        <input type="password" :class="{
+                                            'form-control': true,
+                                            'error-input': errors.password != undefined,
+                                        }" v-model="password" name="password" required>
+                                        <p v-if="errors.password" v-for="error in errors.password"
+                                            class="base--color m-0 p-1 pt-0 small">
+                                            {{ error }}
+                                        </p>
+                                    </div>
+                                    <div class="col input-wrapper">
+                                        <label class="label" for="password1">Confirm Password</label>
+                                        <input type="password" v-model="password_confirmation" :class="{
+                                            'form-control': true,
+                                            'error-input':
+                                                errors.password_confirmation !=
+                                                undefined,
+                                        }" name="password2"
+                                            required>
+                                        <p v-if="errors.password_confirmation"
+                                            v-for="error in errors.password_confirmation"
+                                            class="base--color m-0 p-1 pt-0 small">
+                                            {{ error }}
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label" for="password1">Referred By</label>
+                                    <input type="text" v-model="referral" name="upline_username" :class="{
+                                        'form-control': true,
+                                        'error-input':
+                                            errors.referral !=
+                                            undefined,
+                                    }" readonly>
+                                    <p v-if="errors.referral" v-for="error in errors.referral"
+                                        class="base--color m-0 p-1 pt-0 small">
+                                        {{ error }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    Have an account? <a href="/login" class="text-primary">Login</a>
+                                </div>
+                            </div>
+                            <input type="submit" ref="signup" class="btn btn-secondary btn-block btn-lg"
+                                value="SignUp Now">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+
         </div>
     </div>
 </template>
@@ -299,32 +205,133 @@ export default {
             domain: this.$root.appDomain,
         };
     },
-    mounted() {},
+    mounted() {
+        document.body.classList.add("authbody")
+        this.$root.scrollUp();
+        window.addEventListener("beforeunload", () => {
+            if (!this.$auth.user().isEmailVerified) {
+                this.$auth.logout();
+            }
+        });
+
+        var js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/splide.min.js"
+        );
+        document.body.appendChild(js);
+
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/ebuka.js"
+        );
+        document.body.appendChild(js);
+
+
+
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/fontawesome.min.js"
+        );
+        document.body.appendChild(js);
+
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/all.min.js"
+        );
+        document.body.appendChild(js);
+    },
     created() {
         var css = document.createElement("link");
         css.setAttribute(
             "href",
-            this.$root.basepath + "/assets/css/bootstrap.css"
+            this.$root.basepath + "/assets/css/home/bootstrap.min.css"
         );
         css.setAttribute("type", "text/css");
         css.setAttribute("rel", "stylesheet");
         document.head.appendChild(css);
-        var css = document.createElement("link");
+
+        css = document.createElement("link");
         css.setAttribute(
             "href",
-            this.$root.basepath + "/assets/css/stylec31c.css"
+            this.$root.basepath + "/assets/css/home/font-awesome.min.css"
         );
         css.setAttribute("type", "text/css");
         css.setAttribute("rel", "stylesheet");
         document.head.appendChild(css);
-        var css = document.createElement("link");
+
+
+        css = document.createElement("link");
         css.setAttribute(
             "href",
-            this.$root.basepath + "/assets/css/vue-input.css"
+            this.$root.basepath + "/assets/css/home/login-style.css"
         );
         css.setAttribute("type", "text/css");
         css.setAttribute("rel", "stylesheet");
         document.head.appendChild(css);
+
+        css = document.createElement("link");
+        css.setAttribute(
+            "href",
+            this.$root.basepath + "/assets/css/home/others.css"
+        );
+        css.setAttribute("type", "text/css");
+        css.setAttribute("rel", "stylesheet");
+        document.head.appendChild(css);
+
+        css = document.createElement("link");
+        css.setAttribute(
+            "href",
+            this.$root.basepath + "/assets/css/home/custom.css"
+        );
+        css.setAttribute("type", "text/css");
+        css.setAttribute("rel", "stylesheet");
+        document.head.appendChild(css);
+
+        css = document.createElement("link");
+        css.setAttribute(
+            "href",
+            this.$root.basepath + "/assets/css/home/vue-input.css"
+        );
+        css.setAttribute("type", "text/css");
+        css.setAttribute("rel", "stylesheet");
+        document.head.appendChild(css);
+
+        var js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        );
+        js.setAttribute("async", true);
+        document.body.appendChild(js);
+
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            "https://www.google.com/recaptcha/api.js?render=6LfVOFIcAAAAAJNh1Oa3oAU3PDrLxwNJhWonFUtA"
+        );
+        js.setAttribute("async", true);
+        document.body.appendChild(js);
+
+     
+    },
+    beforeMount() {
+        var js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/jquery.min.js"
+        );
+        js.setAttribute("async", true);
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/bootstrap.bundle.min.js"
+        );
+        document.body.appendChild(js);
     },
     methods: {
         register() {
@@ -346,7 +353,7 @@ export default {
                     ip: this.$root.ip,
                     password: app.password,
                     password_confirmation: app.password_confirmation,
-                    country : app.country
+                    country: app.country,
                 },
                 success: function () {
                     this.$root.loader("hide");
@@ -386,10 +393,10 @@ export default {
         },
         processing(status) {
             if (status) {
-                this.$refs.signup.innerText = "processing...";
+                this.$refs.signup.value = "processing...";
                 this.$refs.signup.disabled = true;
             } else {
-                this.$refs.signup.innerText = "SignUp Now";
+                this.$refs.signup.value = "SignUp Now";
                 this.$refs.signup.disabled = false;
             }
         },
@@ -409,49 +416,33 @@ export default {
                 });
         },
         countryChanged(country) {
-            this.country = country.name
-    },
+            this.country = country.name;
+        },
     },
 };
 </script>
 <style type="text/css">
-/* @import "../assets/ebuka.css";
-@import "../assets/css/style37913791.css";
-@import "../assets/css/skin/skin-25b275b27.css";
-@import "../assets/plugins/pace/pace.css";
-@import "../assets/plugins/revolution/revolution/css/settings.css";
-@import "../assets/plugins/revolution/revolution/css/navigation.css"; */
-
-
-
-/* .vue-tel-input {
-    border-radius: 3px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    border: 1px solid #bbb;
-    text-align: left;
-    
+.cap {
+    left: 0;
+    right: 0;
+    top: 15%;
+    width: 480px;
+    margin: 0 auto
 }
-.vti__selection {
-    font-size: .8em;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    overflow : auto;
-} */
-/*    .box {
-  background: #666666;
-  color: #ffffff;
-  width: 250px;
-  padding: 10px;
-  margin: 1em auto;
+
+@media only screen and (max-width: 600px) {
+    .cap {
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+        margin: 0 auto
+    }
 }
-p {
-  margin: 1.5em 0;
-  padding: 0;
-}*/
+
+.base--color {
+    color: #FF396F;
+    padding: 0px;
+}
+
 </style>

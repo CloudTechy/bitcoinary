@@ -1,21 +1,24 @@
 // new script goes here
 $(function () {
     // jquery typed plugin
-    $(".typed").typed({
-        stringsElement: $(".typed-strings"),
-        typeSpeed: 100,
-        backDelay: 1500,
-        loop: true,
-        contentType: "html", // or text
-        // defaults to false for infinite loop
-        loopCount: false,
-        callback: function () {
-            null;
-        },
-        resetCallback: function () {
-            newTyped();
-        },
-    });
+  if ($(".typed").length) {
+       $(".typed").typed({
+           stringsElement: $(".typed-strings"),
+           typeSpeed: 100,
+           backDelay: 1500,
+           loop: true,
+           contentType: "html", // or text
+           // defaults to false for infinite loop
+           loopCount: false,
+           callback: function () {
+               null;
+           },
+           resetCallback: function () {
+               newTyped();
+           },
+       });
+   }
+   
 });
 
 function multiply() {
@@ -32,6 +35,24 @@ function multiply() {
   document.getElementById("netProfit").innerHTML = thousands_separators(amount * percent);
 
 }
+
+
+
+jQuery(window).load(function () {
+  if (typeof grecaptcha != "undefined") {
+      grecaptcha.ready(() => {
+          grecaptcha
+              .execute("6LfVOFIcAAAAAJNh1Oa3oAU3PDrLxwNJhWonFUtA", {
+                  action: "validate_captcha",
+              })
+              .then((token) => {
+                  document.querySelector("#recaptchaResponse").value = token;
+              });
+      });
+  }
+
+ 
+});
 
   // (function () {
   //     var options = {
