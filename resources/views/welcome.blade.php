@@ -109,8 +109,15 @@
           jQuery(".goog-te-gadget").html(jQuery(".goog-te-gadget").children());
    
       }
-    $(window).load(function(){
-     
+  $(window).load(function(){
+      // if (feather) {
+      //     feather.replace({ width: 14, height: 14 });
+      //   }
+      $(".preloader").delay(300).animate({
+       "opacity" : "0"
+       }, 300, function() {
+       $(".preloader").css("display","none");
+      });
     })
 </script>
 

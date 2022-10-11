@@ -43,8 +43,7 @@ class UserRegistered extends Notification {
 			->line('You are welcome to one of the leading financial network with investment guarantee.')
 			->line('we await to see you earn your first wages with us soon.')
 			->action('Goto Dashboard', url($dashboardPath))
-			->line('Thanks for joining this platform')
-			->bcc('conyekelu@yahoo.com', config('app.name') . ' new user notification');
+			->line('Thanks for joining this platform');
 	}
 
 	/**

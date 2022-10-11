@@ -42,12 +42,16 @@ class VerificationController extends Controller {
 	public function verify(Request $request) {
 		// ->route('id') gets route user id and getKey() gets current user id()
 		// do not forget that you must send Authorization header to get the user from the request
-		if ($request->route('id') == $request->user()->getKey() &&
-			$request->user()->markEmailAsVerified()) {
-			// $request->user()->notify(new UserRegistered());
-			//event(new Verified($request->user()));
+		if ($request->route('id') == $request->user()->getKey() && $request->user()->markEmailAsVerified() ) {
+			$request->user()->notify(new UserRegistered()) ;
+			event(new Verified($request->user()));
+		return Helper::validRequest(["verified" => true], 'Email has been verified successfully', 200);
 		}
-		return response()->json('Email verified!');
+		else{
+
+		}
+		
+		
 //        return redirect($this->redirectPath());
 	}
 	/**

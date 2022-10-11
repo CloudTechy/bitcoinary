@@ -179,7 +179,32 @@
 
 
         </div>
+ 
+        
+  
+        
+<div class="modal dialogbox fade" id="checkemailmodal" role="dialog" data-bs-keyboard="true" data-bs-backdrop="static"
+    tabindex="-1" aria-labelledby="vLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                &nbsp;
+            </div>
+            <div class="modal-body">
+                <b>Registration Successfull!</b><br><a href="/login" class="btn btn-primary btn-block btn-lg">Please
+                    check your email for verification link</a>
+            </div>
+            <div class="modal-footer">
+                <div class="btn-inline">
+                    <button type="button" class="btn btn-text-secondary disabled" disabled data-bs-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+
+    </div>
+  
 </template>
 <script>
 export default {
@@ -333,6 +358,8 @@ export default {
         );
         document.body.appendChild(js);
     },
+
+    // beforeDestroy(){this.},
     methods: {
         register() {
             this.$root.loader("show");
@@ -355,15 +382,19 @@ export default {
                     password_confirmation: app.password_confirmation,
                     country: app.country,
                 },
-                success: function () {
+                success: function (res) {
                     this.$root.loader("hide");
-                    this.$root.alert(
-                        "success",
-                        " ",
-                        "Registration Successful!!! Redirecting..."
-                    );
+                    // this.$root.alert(
+                    //     "success",
+                    //     " ",
+                    //     "Registration Successful!!! Redirecting..."
+                    // );
+                    // this.$refs.checkemailmodal.click()
                     this.processing(false);
                     app.success = true;
+                    var myModal = new bootstrap.Modal(document.getElementById('checkemailmodal'))
+                    myModal.show()
+                
                     // window.location.href = this.$root.basepath + '/login'
                     // this.$router.push({ name: 'login', params: { successRegistrationRedirect: true }, base : 'hash' })
                 },

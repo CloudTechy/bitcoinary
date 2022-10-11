@@ -80,7 +80,7 @@ class Helper {
 		} else if ($boolean == "false") {
 			return 0;
 		} else if ($boolean > 1 || $boolean < 0 || !is_numeric($boolean)) {
-			return Helper::inValidRequest('wrong parameter: sent parameter value must be boolean', 'Bad Request', 400);
+			return static::invalidRequest('wrong parameter: sent parameter value must be boolean', 'Bad Request', 400);
 			//throw new Exception("wrong parameter: sent parameter value must be boolean");
 
 		} else {
@@ -95,11 +95,11 @@ class Helper {
 			$packageUser->update(['expiration' => Carbon::now()->addDays($duration), 'active' => true]);
 			$transaction->update(['confirmed' => true, 'payment' => $packageUser->account, 'sent' => true]);
 			DB::commit();
-			return Helper::validRequest($data, 'subscription successful', 200);
+			return static::validRequest($data, 'subscription successful', 200);
 
 		} catch (Exception $bug) {
 			DB::rollback();
-			return $this->exception($bug, 'unknown error', 500);
+			return static::invalidRequest($bug, 'unknown error', 500);
 		}
 
 	}
@@ -349,7 +349,7 @@ public static function adminsUserActivityRequest($activity){
 					$user->notify(new UserActivity($activity));
 				}
 		} catch (Exception $bug) {
-			return $this->exception($bug, 'unknown error', 500);
+			return static::invalidRequest($bug, 'unknown error', 500);
 		}
 }
 

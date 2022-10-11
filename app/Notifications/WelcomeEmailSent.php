@@ -39,7 +39,6 @@ class WelcomeEmailSent extends Notification implements ShouldQueue {
 	 */
 	public function toMail($notifiable) {
 
-		//$prefix = '/confirm-registration?url=';
 		$prefix = config('frontend.url') . config('frontend.email_verify_url');
 		$temporarySignedURL = URL::temporarySignedRoute(
 			'verification.verify', Carbon::now()->addMinutes(60), ['id' => $notifiable->getKey()]

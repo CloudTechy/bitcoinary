@@ -35,12 +35,17 @@ class AuthController extends Controller {
 			$validated['password'] = bcrypt($validated['password']);
 
 			$data = User::create($validated);
-			$data->markEmailAsVerified();
+			// $data->markEmailAsVerified();
+			$data->sendEmailVerificationNotification();
 			
-			$data->notify(new UserRegistered());
+			// $data->notify(new UserRegistered());
 			Helper::adminsUserActivityRequest(['type'=>'SignUpActivity', 'message' => $data->username . ' has joined ' . config('app.name') ]);
 			DB::commit();
 			return response()->json(['status' => 'success'], 200);
+
+			// 
+			// DB::commit();
+			// return Helper::validRequest(new UserResource($data), 'data was sent successfully', 200);
 		} catch (Exception $bug) {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);

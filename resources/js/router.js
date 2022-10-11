@@ -86,15 +86,15 @@ const routes = [
     //         title: "Check Email",
     //     },
     // },
-    // {
-    //     path: "/confirm-registration",
-    //     name: "confirmRegistration",
-    //     component: ConfirmRegistration,
-    //     meta: {
-    //         auth: true,
-    //         title: "Confirm Registration",
-    //     },
-    // },
+    {
+        path: "/confirm-registration",
+        name: "confirmRegistration",
+        component: () => import("./pages/ConfirmRegistration"),
+        meta: {
+            auth: true,
+            title: "Confirm Registration",
+        },
+    },
     // {
     //     path: "/news",
     //     name: "news",
