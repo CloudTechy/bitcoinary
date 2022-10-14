@@ -5,7 +5,7 @@ import moment from "moment";
 export default {
     data() {
         return {
-company: this.$root.appName,
+            company: this.$root.appName,
         }
     },
     computed: {
@@ -23,7 +23,7 @@ company: this.$root.appName,
 </script>
 <template>
     <!-- footer section start -->
-    <footer class="footer bg_img" :data-background="$root.basepath + '/assets/images/bg/bg-7.jpg'">
+    <!-- <footer class="footer bg_img" :data-background="$root.basepath + '/assets/images/bg/bg-7.jpg'">
         <div class="footer__top">
             <div class="container">
                 <div class="row mt-5 justify-content-center">
@@ -56,96 +56,49 @@ company: this.$root.appName,
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
+
+ <footer>
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="Profile.php" class="item">
+            <div class="col">
+                <i class="fas fa-user-cog fa-2x"></i>
+                <strong>Settings</strong>
+            </div>
+        </a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#deposit" class="item">
+            <div class="col">
+                <i class="fas fa-credit-card fa-2x"></i>
+                <strong>Add Funds</strong>
+            </div>
+        </a>
+    
+        <a href="index.php" class="item active">
+            <div class="col">
+                <i class="fas fa-house-user fa-2x"></i>
+                <strong>Dashboard</strong>
+            </div>
+        </a>
+        <a data-bs-toggle="modal" data-bs-target="#withdraw" class="item">
+            <div class="col">
+                <i class="fas fa-wallet fa-2x"></i>
+                <strong>Withdraw</strong>
+            </div>
+        </a>
+        <a href="Support.php" class="item">
+            <div class="col">
+                <i class="fas fa-comment-dots fa-2x"></i>
+                <strong>Support</strong>
+            </div>
+        </a>
+    </div>
+   
+    <!-- * App Bottom Menu -->
+ </footer>
+
 </template>
 
 <style scoped="">
-.footer::before {
-    content: none;
- 
-}
-._text_1nv7e_24 {
-    font-family: Sailec-Regular, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.6;
-    margin: 0
-}
-
-.incrop-left {
-    background-color: #171717;
-    background-size: 100%;
-    background-position: 0 100%;
-    padding: 30px;
-    border-radius: 10px 0 0 10px;
-    box-shadow: -3px 0px 10px 1px rgba(0, 0, 0, 0.3);
-}
-
-.incrop-left img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-width: 90px;
-}
-
-@media screen and (max-width: 991px) {
-    .incrop-left {
-        border-radius: initial;
-    }
-}
-
-.incrop-left-img {
-    position: relative;
-    padding-left: 100px;
-}
-
-.incorp-inner {
-    padding-left: 90px;
-    background: url(../../../public/images/uploads/company-logo.png) no-repeat 0 0;
-    background-size: 80px auto;
-}
-
-.step__title {
-    font-weight: 500;
-    font-size: 22px;
-    font-size: 1.57rem;
-    color: #2e3035;
-}
-
-.no-padding {
-    padding: 0 !important;
-}
-
-.incrop-right {
-    background-color: #cca354;
-    padding: 30px;
-    border-radius: 0 10px 10px 0;
-}
-
-@media screen and (max-width: 991px) {
-    .incrop-right {
-        border-radius: initial;
-    }
-}
-
-.section-home__btn {
-    margin-top: 25px;
-    text-transform: uppercase;
-}
-
-.textsite {
-    color: rgba(255, 255, 255, 0.8) !important;
-}
-
-.btn-black-warning {
-    color: #4f4f4f;
-    background-color: #171717;
-    border-color: #171717;
-}
-
-.section-home__btn:hover {
-    background-color: black !important;
-    border-color: #cca354;
-}
 
 </style>

@@ -471,9 +471,6 @@ export default {
     }
 }
 
-.base--color {
-    color: #FF396F;
-    padding: 0px;
-}
+
 
 </style>

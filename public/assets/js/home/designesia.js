@@ -1,6 +1,7 @@
  /* --------------------------------------------------
   * © Copyright 2020 - Elaxo by Designesia
   * --------------------------------------------------*/
+//  jQuery(window).load(() => { 
 (function($) {
 	'use strict';
 
@@ -1472,6 +1473,8 @@
         });
 		grid_gallery();
 		
-         });
+        });
+         
+         console.log('designesia...')
      });
  })(jQuery);

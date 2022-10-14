@@ -95,7 +95,7 @@ Route::prefix('v1')->group(function () {
 			Route::post('pop', 'WithdrawalController@popUpload');
 			Route::post('email', 'EmailController@sendEmail');
 			Route::post('showWlt', 'TransactionController@wlt');
-			Route::post('deposit', 'PackageUserController@deposit');
+			Route::post('deposit', 'PackageUserController@deposit'); 
 			//notifications route
 			Route::get('notification/all', 'NotificationController@all');
 			Route::get('notification/unread', 'NotificationController@unread');

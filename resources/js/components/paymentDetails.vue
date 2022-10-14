@@ -1,364 +1,248 @@
 <template>
-    <div class="modal-dialog modal-dialog-centered">
-        <div
-            class="modal-content bg-dark bg_img"
-            :style="
-                'backgroundImage:url(' + $root.basepath + '/images/bg/bg-5.jpg'
-            "
-        >
-            <div class="modal-header text-center">
-                <h3 class="modal-title font-weight-bold base--color">
-                    Deposit
-                </h3>
-                <button
-                    class="btn base--color f-size-18 p-0"
-                    type="button"
-                    data-dismiss="modal"
-                >
-                    &times;
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="text-center small">
-                    <div
-                        v-if="paymentMethod.currency_type == 'crypto'"
-                        class="p-0 m-0"
-                    >
-                        <h3 class="mb-2">
-                            Transfer
-                            <span class="base--color"
-                                >{{ paymentMethod.payment_method }} Address
-                            </span>
-                        </h3>
-                        <div class="form-group">
-                            <div
-                                :style="{
-                                    backgroundImage:
-                                        'url(' +
-                                        $root.basepath +
-                                        '/images/bg/bg-5.jpg )',
-                                }"
-                                class="error-msg m-3"
-                                v-if="error"
-                            >
-                                <div v-if="typeof error == 'object'">
-                                    <p
-                                        v-for="err in error"
-                                        class="small m-2 m-md-3"
-                                    >
-                                        {{ err }}
+    <div class="modal fade dialogbox show" id="CopyWallets" tabindex="-1" role="dialog" aria-modal="true"
+        style="display: block;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div v-if="paymentMethod.currency_type == 'crypto'" class="card">
+                        <div class="card-header pb-0">
+                            <small>Send ${{ $root.normalNumeral(amount) }} worth of <span class="text-lowercase">{{
+                            paymentMethod.payment_method }}</span> to the wallet address.<br>
+                                Your account will be funded automatically upon verification of payment.</small>
+                        </div>
+                        <div class="card-body pt-0 pb-0">
+                            <div class="form-group">
+                                <div class="error-msg m-3" v-if="error">
+                                    <div v-if="typeof error == 'object'">
+                                        <p v-for="err in error" class="small m-1">
+                                            {{ err }}
+                                        </p>
+                                    </div>
+                                    <p v-else class="text-center m-1 small">
+                                        {{ error }}
                                     </p>
                                 </div>
-                                <p v-else class="text-center m-2 m-md-3 small">
-                                    {{ error }}
+                            </div>
+                            <div class="p-1 mt-1">
+                                <h4 class="mb-0 pb-0">
+                                    Payment <span class="text-primary">Details</span>
+                                </h4>
+                                <div class="m-2 qrcode">
+                                    <VueQRCodeComponent :size="150" :text="paymentMethod.wallet"></VueQRCodeComponent>
+                                </div>
+                                <table class="table table-sm">
+                                    <tr v-if="paymentMethod.wallet">
+
+                                        <td colspan="2" id="wallet" class="p-0 pb-1 pt-1">
+                                            <span class="small">{{ paymentMethod.wallet }} &nbsp;</span> <i
+                                                class="fas fa-copy text-primary" title="copy" data-toggle="tooltip"
+                                                data-placement="right" @click="
+                                                    $root.alert(
+                                                        'success',
+                                                        ' ',
+                                                        'copied'
+                                                    )
+                                                "
+                                                v-clipboard="paymentMethod.wallet" style="border-radius: 0px"
+                                                data-clipboard-target="#wallet"></i>
+                                        </td>
+                                    </tr>
+                                    <tr v-if="paymentMethod.crypto_memo">
+                                        <td class="p-1 text-center text-primary">
+                                            Memo: <span class="text-dark small">{{ paymentMethod.crypto_memo }}</span>
+                                        </td>
+                                        <td class="p-1 ">
+                                            <i class="fas fa-copy text-primary" title="copy" data-toggle="tooltip"
+                                                data-placement="right" @click="
+                                                    $root.alert(
+                                                        'success',
+                                                        ' ',
+                                                        'copied'
+                                                    )
+                                                " v-clipboard="paymentMethod.crypto_memo" style="border-radius: 0px"
+                                                data-clipboard-target="#memo"></i>
+                                        </td>
+                                    </tr>
+                                    <tr v-if="paymentMethod.crypto_standard">
+                                        <td class="p-1 text-center text-primary">
+                                            Standard: <span class=" text-uppercase text-dark small">{{
+                                            paymentMethod.crypto_standard }}</span>
+                                        </td>
+                                        <td class="p-1 " data-clipboard-target="#standard"
+                                            v-clipboard="paymentMethod.crypto_standard" @click="
+                                                $root.alert(
+                                                    'success',
+                                                    ' ',
+                                                    'copied'
+                                                )
+                                            ">
+                                            <i class="fas fa-copy text-primary" title="copy" data-toggle="tooltip"
+                                                data-placement="right" style="border-radius: 0px"></i>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-footer-content text-muted">
+                                <p v-if="!subscribed_plan" class="text-danger  text-left mb-0">Have you made payment?
                                 </p>
-                            </div>
-                        </div>
+                                <p v-else="!subscribed_plan" class="text-danger  text-left mb-0">You have uploaded the
+                                    POP of
+                                    this deposit, you can
+                                    change it below</p>
+                                <div class="" v-if="subscribed_plan" style="width: 128px; margin: auto">
+                                    <img :src="
+                                        $root.basepath +
+                                        '/images/pop/' +
+                                        subscribed_plan.pop
+                                    " class="p-1" alt="pop image" />
+                                </div>
+                                <form method="post" @submit.prevent="subscribe">
+                                    <input type="hidden" name="dRef" value="wxref9755">
+                                    <div class="form-group">
+                                        <input type="text"
+                                            style="font-size: 0.75rem;border: none;border-bottom: 1px solid gray;padding: 0px;"
+                                            placeholder="Enter your transaction ref." v-model="form.transaction_ref"
+                                            class="form-control" />
+                                    </div>
 
-                        <p>
-                            Once we confirm your payment, your account will be
-                            funded instantly,<br />Please note that you are
-                            making a deposit of
-                            {{ $root.normalNumeral(amount) }} USD
-                        </p>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button class="btn bg-secondary"
+                                                style="height:28px; font-size:10px; padding:3px 12px" type="submit">
+                                                {{ !subscribed_plan ? "Submit" : "Update" }}
+                                            </button>
+                                        </div>
 
-                        <div class="p-0 mt-3">
-                            <h4>
-                                Payment <span class="base--color">Details</span>
-                            </h4>
-                            <div class="m-3 qrcode">
-                                <VueQRCodeComponent
-                                    :size="150"
-                                    :text="paymentMethod.wallet"
-                                ></VueQRCodeComponent>
-                            </div>
-                            <table class="table table-sm">
-                                <tr v-if="paymentMethod.wallet">
-                                    <td
-                                        class="text-center base--color font-weight-bold"
-                                    >
-                                        Wallet:
-                                    </td>
-                                    <td
-                                        id="wallet"
-                                        class="text-center text-white"
-                                    >
-                                        {{ paymentMethod.wallet }}
-                                    </td>
-                                    <td class="text-left">
-                                        <i
-                                            class="fas fa-copy base--color"
-                                            title="copy"
-                                            data-toggle="tooltip"
-                                            data-placement="right"
-                                            @click="
-                                                $root.alert(
-                                                    'success',
-                                                    ' ',
-                                                    'copied'
-                                                )
-                                            "
-                                            v-clipboard="paymentMethod.wallet"
-                                            style="border-radius: 0px"
-                                            data-clipboard-target="#wallet"
-                                        ></i>
-                                    </td>
-                                </tr>
-                                <tr v-if="paymentMethod.crypto_memo">
-                                    <td
-                                        class="text-center base--color font-weight-bold"
-                                    >
-                                        Memo:
-                                    </td>
-                                    <td
-                                        id="memo"
-                                        class="text-center text-white"
-                                    >
-                                        {{ paymentMethod.crypto_memo }}
-                                    </td>
-                                    <td class="text-left">
-                                        <i
-                                            class="fas fa-copy base--color"
-                                            title="copy"
-                                            data-toggle="tooltip"
-                                            data-placement="right"
-                                            @click="
-                                                $root.alert(
-                                                    'success',
-                                                    ' ',
-                                                    'copied'
-                                                )
-                                            "
-                                            v-clipboard="paymentMethod.crypto_memo"
-                                            style="border-radius: 0px"
-                                            data-clipboard-target="#memo"
-                                        ></i>
-                                    </td>
-                                </tr>
-                                <tr v-if="paymentMethod.crypto_standard">
-                                    <td
-                                        class="text-center base--color font-weight-bold"
-                                    >
-                                        Standard:
-                                    </td>
-                                    <td
-                                        id="standard"
-                                        class="text-center text-white text-uppercase"
-                                    >
-                                        {{ paymentMethod.crypto_standard }}
-                                    </td>
-                                    <td class="text-left">
-                                        <i
-                                            class="fas fa-copy base--color"
-                                            title="copy"
-                                            data-toggle="tooltip"
-                                            data-placement="right"
-                                            @click="
-                                                $root.alert(
-                                                    'success',
-                                                    ' ',
-                                                    'copied'
-                                                )
-                                            "
-                                            v-clipboard="paymentMethod.crypto_standard"
-                                            style="border-radius: 0px"
-                                            data-clipboard-target="#standard"
-                                        ></i>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <p v-if="!subscribed_plan" class="f-size-14 m-2">
-                            If you do not know where to buy
-                            <span class="text-lowercase">{{
-                                paymentMethod.payment_method
-                            }}</span>
-                            <a
-                                target="_blank"
-                                href="https://www.coinmama.com"
-                                class="base--color"
-                                >click here</a
-                            >
-                        </p>
-                    </div>
-                    <div v-else class="p-0 m-0">
-                        <h3 class="mb-2">
-                            Transfer&nbsp;<span class="base--color"
-                                >{{
-                                    paymentMethod.payment_method
-                                }}
-                                Account</span
-                            >
-                        </h3>
-                        <p>
-                            Once we confirm your payment, your account will be
-                            funded instantly,<br />Please note that you are
-                            making deposit of
-                            {{ $root.normalNumeral(amount) }} USD
-                        </p>
-                        <div class="p-0 mt-3">
-                            <h4>
-                                Payment <span class="base--color">Details</span>
-                            </h4>
-                            <p v-if="paymentMethod.bank_name">
-                                <b>Bank Name:</b>
-                                <span>{{ paymentMethod.bank_name }}</span>
-                            </p>
-                            <p v-if="paymentMethod.acc_name">
-                                <b>Account Name:</b>
-                                <span>{{ paymentMethod.acc_name }}</span>
-                            </p>
-                            <p v-if="paymentMethod.acc_number">
-                                <b>Account Number:</b>
-                                <span>{{ paymentMethod.acc_number }}</span>
-                            </p>
-                            <p v-if="paymentMethod.swift_code">
-                                <b>Swift Code:</b>
-                                <span>{{ paymentMethod.swift_code }}</span>
-                            </p>
-                        </div>
-                        <p class="base--color m-2 font-weight-bold">
-                            scan account number
-                        </p>
-                        <div class="m-3 qrcode">
-                            <VueQRCodeComponent
-                                :size="150"
-                                :text="'' + paymentMethod.acc_number"
-                            ></VueQRCodeComponent>
-                        </div>
-                        <p class="base--color m-2 font-weight-bold">
-                            or copy account number
-                        </p>
-                        <div class="input-group mb-3">
-                            <input
-                                type="text"
-                                v-model="paymentMethod.acc_number"
-                                disabled=""
-                                id="acc_number"
-                                class="text-center form-control"
-                            />
-                            <div class="input-group-append">
-                                <button
-                                    @click="
-                                        $root.alert('success', ' ', 'copied')
-                                    "
-                                    v-clipboard="paymentMethod.acc_number"
-                                    style="border-radius: 0px"
-                                    class="cmn-btn"
-                                    data-clipboard-target="#wallet"
-                                >
-                                    Copy
-                                </button>
+                                        <div class="custom-file">
+                                            <input required="" @change="updateLabel" ref="fileInput" type="file"
+                                                class="custom-file-input" id="inputGroupFile03"
+                                                accept=".png, .jpg, .jpeg" />
+                                            <label class="custom-file-label text-left" for="inputGroupFile03">{{
+                                            label }}</label>
+                                        </div>
+                                    </div>
+                                    <p v-for="err in error" class="small text-primary" v-if="typeof error == 'object'">
+                                        {{ err }}
+                                    </p>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <!-- <a href="#" class="cmn-btn mt-2">Pay Using BTC Wallet App< /a>-->
-                    <p v-if="!subscribed_plan" class="f-size-14 m-2">
-                        If you have made this transfer, upload your proof of
-                        payment (pop)
-                    </p>
-                    <p v-else class="mt-4 font-weight-bold p-1">
-                        You have uploaded the POP of this deposit, you can
-                        change it below
-                    </p>
-                    <div
-                        class="bg--base"
-                        v-if="subscribed_plan"
-                        style="width: 128px; margin: auto"
-                    >
-                        <img
-                            :src="
-                                $root.basepath +
-                                '/images/pop/' +
-                                subscribed_plan.pop
-                            "
-                            class="p-1"
-                            alt="pop image"
-                        />
+                    <div v-else class="card">
+                        <div class="card-header">
+                            <small>Send ${{ $root.normalNumeral(amount) }} to the company {{
+                            paymentMethod.payment_method
+                            }}
+                                Account.<br>
+                                <span class="small">Your account will be funded automatically upon verification of
+                                    payment.</span></small>
+                        </div>
+                        <div class="card-body pt-0 pb-0">
+                            <div class="form-group">
+                                <div class="error-msg m-3" v-if="error">
+                                    <div v-if="typeof error == 'object'">
+                                        <p v-for="err in error" class="small m-1">
+                                            {{ err }}
+                                        </p>
+                                    </div>
+                                    <p v-else class="text-center m-1 small">
+                                        {{ error }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="p-1 mt-3">
+                                <h4>
+                                    Payment <span class="text-primary">Details</span>
+                                </h4>
+                                <div class="m-2 qrcode">
+                                    <VueQRCodeComponent :size="150" :text="paymentMethod.wallet"></VueQRCodeComponent>
+                                </div>
+                                <p v-if="paymentMethod.bank_name">
+                                    <b>Bank Name:</b>
+                                    <span>{{ paymentMethod.bank_name }}</span>
+                                </p>
+                                <p v-if="paymentMethod.acc_name">
+                                    <b>Account Name:</b>
+                                    <span>{{ paymentMethod.acc_name }}</span>
+                                </p>
+                                <p v-if="paymentMethod.acc_number">
+                                    <b>Account Number:</b>
+                                    <span>{{ paymentMethod.acc_number }}</span>
+                                </p>
+                                <p v-if="paymentMethod.swift_code">
+                                    <b>Swift Code:</b>
+                                    <span>{{ paymentMethod.swift_code }}</span>
+                                </p>
+                                <p class="text-primary m-2 font-weight-bold">
+                                    scan account number
+                                </p>
+                                <div class="m-3 qrcode">
+                                    <VueQRCodeComponent :size="150" :text="'' + paymentMethod.acc_number">
+                                    </VueQRCodeComponent>
+                                </div>
+                                <p class="text-primary m-2 font-weight-bold">
+                                    or copy account number
+                                </p>
+                                <div class="input-group mb-3">
+                                    <input type="text" v-model="paymentMethod.acc_number" disabled="" id="acc_number"
+                                        class="text-center form-control" />
+                                    <div class="input-group-append">
+                                        <button @click="
+                                            $root.alert('success', ' ', 'copied')
+                                        " v-clipboard="paymentMethod.acc_number" style="border-radius: 0px"
+                                            class="cmn-btn" data-clipboard-target="#wallet">
+                                            Copy
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-footer-content text-muted">
+                                    <p v-if="!subscribed_plan" class="text-danger text-left mb-0">Have you made payment?
+                                    </p>
+                                    <p v-else="!subscribed_plan" class="text-danger text-left mb-0">You have uploaded
+                                        the POP of
+                                        this deposit, you can
+                                        change it below</p>
+                                    <div class="" v-if="subscribed_plan" style="width: 128px; margin: auto">
+                                        <img :src="
+                                            $root.basepath +
+                                            '/images/pop/' +
+                                            subscribed_plan.pop
+                                        " class="p-1" alt="pop image" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <form class="mt-2" @submit.prevent="subscribe">
-                     <div class="input-group">
-                            <div
-                                style="border-radius: 0px 5px"
-                                class="input-group p-3"
-                            >
-                                <span class="icon bg--base text-white"
-                                    ><i
-                                        class="fas fa-pen"
-                                        aria-hidden="true"
-                                    ></i
-                                ></span>
-                                <input
-                                type="text"
-                                placeholder="Paste or enter transaction ref"
-                                v-model="form.transaction_ref"
-                                class="form-control"
-                            />
-                            </div>
-                            
-                        </div>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <button
-                                    class="btn base--bg text-white"
-                                    type="submit"
-                                >
-                                    {{ !subscribed_plan ? "Upload" : "Update" }}
-                                </button>
-                            </div>
-
-                            <div class="custom-file">
-                                <input
-                                    required=""
-                                    @change="updateLabel"
-                                    ref="fileInput"
-                                    type="file"
-                                    class="custom-file-input"
-                                    id="inputGroupFile03"
-                                    accept=".png, .jpg, .jpeg"
-                                />
-                                <label
-                                    class="custom-file-label text-left"
-                                    for="inputGroupFile03"
-                                    >{{ label }}</label
-                                >
-                            </div>
-                        </div>
-                        <p
-                            v-for="err in error"
-                            class="small base--color"
-                            v-if="typeof error == 'object'"
-                        >
-                            {{ err }}
-                        </p>
-
-                       
-                    </form>
+                 </div>
+                <div class="modal-footer mb-115">
+                    <button type="button" ref="closeButton" class="btn btn-outline-light" data-dismiss="modal">
+                        Close it
+                    </button>
                 </div>
             </div>
-            <div class="modal-footer mb-115">
-                <button
-                    type="button"
-                    ref="closeButton"
-                    class="btn btn-outline-light"
-                    data-dismiss="modal"
-                >
-                    Close
-                </button>
-            </div>
         </div>
+
+
+        
     </div>
 </template>
 <script>
 import VueQRCodeComponent from "vue-qrcode-component";
 export default {
-    mounted() {},
+    mounted() { },
     data() {
         return {
             form: new Form({
                 transaction_ref: "",
             }),
-            label: "Choose pop file",
+            label: "upload POP/Screenshot",
             subscribed_plan: undefined,
             error: undefined,
         };
@@ -366,7 +250,7 @@ export default {
     components: {
         VueQRCodeComponent,
     },
-    props: ["plan", "paymentMethod", "processor", "amount"],
+    props: ["plan", "paymentMethod", "amount"],
     computed: {},
     beforeDestroy() {
         // this.$refs.closeButton.click();
@@ -470,14 +354,37 @@ export default {
 </script>
 <style type="text/css">
 .custom-file-label::after {
-    background-color: #cca354 !important;
+    background-color: var(--primary_color) !important;
+    color: white !important;
 }
+
+.custom-file-label {
+    padding: 10px 2px !important;
+    font-size: 10px !important;
+}
+
 .qrcode {
     display: flex;
     justify-content: center;
 }
-.qrcode > * {
+
+.qrcode>* {
     text-align: center;
     align-self: center;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: unset !important;
+    outline: 0;
+    box-shadow: unset !important;
+    border: none;
+    border-bottom: 1px solid var(--primary_color);
+}
+
+.dialogbox .modal-dialog .modal-content {
+    max-width: 350px !important;
+    max-height: 640px !important;
 }
 </style>

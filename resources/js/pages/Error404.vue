@@ -160,11 +160,5 @@ export default {
 </template>
 
 <style scoped>
-/* @import "../assets/css/notfound.css";
-@import "../assets/ebuka.css";
-@import "../assets/css/style37913791.css";
-@import "../assets/css/skin/skin-25b275b27.css";
-@import "../assets/plugins/pace/pace.css";
-@import "../assets/plugins/revolution/revolution/css/settings.css";
-@import "../assets/plugins/revolution/revolution/css/navigation.css"; */
+
 </style>

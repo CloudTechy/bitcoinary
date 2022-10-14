@@ -9,12 +9,7 @@ export default {
         );
         document.body.appendChild(js);
 
-        js = document.createElement("script");
-        js.setAttribute(
-            "src",
-            this.$root.basepath + "/assets/js/home/jquery.isotope.min.js"
-        );
-        document.body.appendChild(js);
+      
 
         js = document.createElement("script");
         js.setAttribute(
