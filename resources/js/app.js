@@ -13,7 +13,7 @@ import $ from 'jquery'
 // import popper from 'popper.js'
 import moment from 'moment'
 import fontawesome from '@fortawesome/fontawesome-free'
-import Clipboard from 'v-clipboard'
+import Clipboard from "vue-clipboard2";
 import vueTelInput from "vue-tel-input";
 import VueHead from 'vue-head'
 import VueIziToast from "vue-izitoast";
@@ -26,6 +26,7 @@ Vue.use(VueIziToast);
 
 
 window.jQuery = jQuery
+Clipboard.config.autoSetContainer = true;
 Vue.use(Clipboard)
 Vue.use(fontawesome)
 

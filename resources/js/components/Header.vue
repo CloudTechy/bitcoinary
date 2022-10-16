@@ -364,8 +364,8 @@
                     <div class="listview-title mt-1">Session</div>
                     <ul class="listview flush transparent image-listview">
     
-                        <li>
-                            <a href="logout.php?url=https://west-exchange.com/account/" class="item">
+                        <li @click.prevent = "$auth.logout()">
+                            <a href ="" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fa fa-sign-out-alt"></i>
                                 </div>

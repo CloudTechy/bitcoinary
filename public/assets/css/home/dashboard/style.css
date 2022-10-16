@@ -1301,7 +1301,8 @@ blockquote.blockquote .blockquote-footer {
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
   background: #4e1dff !important;
-  border-color: #4e1dff !important
+  border-color: #4e1dff !important;
+  color : white !important;
 }
 .btn-primary.disabled, .btn-primary:disabled {
   background: var(--primary_color);
@@ -1343,7 +1344,8 @@ blockquote.blockquote .blockquote-footer {
 }
 .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active {
   background: #ff205c !important;
-  border-color: #ff205c !important
+  border-color: #ff205c !important;
+  color : black  !important;
 }
 .btn-danger.disabled, .btn-danger:disabled {
   background: #FF396F;
@@ -1358,7 +1360,8 @@ blockquote.blockquote .blockquote-footer {
 }
 .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active {
   background: #e6a200 !important;
-  border-color: #e6a200 !important
+  border-color: #e6a200 !important;
+  color : black  !important;
 }
 .btn-warning.disabled, .btn-warning:disabled {
   background: #FFB400;
