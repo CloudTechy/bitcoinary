@@ -6,7 +6,7 @@
             <div class="section">
                 <div class="row mt-2">
                     <div v-for="plan in $root.packages" class="col-lg-4 mb-2">
-                        <div class="stat-box">
+                        <div class="stat-box text-center">
                             <h4 class="text-primary font-weight-bold">
                                 {{ plan.name }} </h4>
                             <hr>
@@ -26,45 +26,44 @@
                                         }}</p>
                                     <p><strong>Duration: </strong>
                                         {{ plan.turnover }}</p>
+                                        <hr>
+                                        <form method="post" @submit.prevent="subscribePlan($event, plan)">
+                                            <div class="form-group basic">
+                                                <label class="label text-primary" for="account1">Capital</label>
+                                                <input type="number" @change="depositForm.key++" placeholder="Enter amount" name="amount" class="form-control" id="tf2"
+                                                    :min="plan.min_deposit" :max="plan.max_deposit" required="">
+                                                <small>Available Balance: <strong class="text-primary">{{$auth.user().balance}}</strong></small>
+                                            </div>
+                                            <div class="form-group basic">
+                                                <label class="label text-primary">Select method of payment</label>
+                                                <div class="input-group mb-2">
+                                                    <select @change="setInvestmentPaymentMethod($event)" required="" value="" class="form-control p-1">
+                                                        <option class="text-capitalize">
+                                                            Choose here
+                                                        </option>
+                                                        <option value="balance" v-if="$auth.user().balance >= plan.min_deposit" class="text-capitalize">
+                                                            Direct Invest Balance
+                                                        </option>
+                                        
+                                                        <option
+                                                            v-if="$root.getPaymentAccountDetails(paymentMethods, processor.payment_method, processor.currency_type)"
+                                                            class="text-capitalize" :value="processor.payment_method" v-for="processor in paymentMethods">
+                                                            {{'Direct Invest ' +
+                                                            processor.payment_method}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="form-group row">
+                                                <div class="col-sm-12 text-center">
+                                                    <button type="reset" class="btn btn-danger">Reset</button>
+                                                    <input type="submit" name="investment" value="Proceed" class="btn btn-primary">
+                                        
+                                                </div>
+                                            </div>
+                                        </form>
                                 </div>
-                                <hr>
-                                <form method="post" @submit.prevent="subscribePlan($event, plan)">
-                                    <div class="form-group basic">
-                                        <label class="label" for="account1">Amount</label>
-                                        <input type="number" @change="depositForm.key++" name="amount" class="form-control" id="tf2"
-                                            :min="plan.min_deposit" :max="plan.max_deposit" required="">
-                                        <small>Available Balance: <strong
-                                                class="text-primary">{{$auth.user().balance}}</strong></small>
-                                    </div>
-                                    <div class="form-group basic">
-                                        <label class="label">Select method of payment</label>
-                                        <div class="input-group mb-2">
-                                        <select @change = "setInvestmentPaymentMethod($event)" required="" value="" class="form-control p-1">
-                                            <option class="text-capitalize">
-                                                Choose here
-                                            </option>
-                                            <option value="balance" v-if="$auth.user().balance >= plan.min_deposit" 
-                                                class="text-capitalize">
-                                                Direct Invest Balance
-                                            </option>
-                                           
-                                            <option
-                                                v-if="$root.getPaymentAccountDetails(paymentMethods, processor.payment_method, processor.currency_type)"
-                                                class="text-capitalize" :value="processor.payment_method"
-                                                v-for="processor in paymentMethods">{{'Direct Invest ' +
-                                                processor.payment_method}}</option>
-                                        </select>
-                                    </div>
-                            </div>
-                            <br>
-                            <div class="form-group row">
-                                <div class="col-sm-10">
-                                    <button type="reset" class="btn btn-danger">Reset</button>
-                                    <input type="submit" name="investment" value="Proceed" class="btn btn-primary">
-
-                                </div>
-                            </div>
-                            </form>
+                               
                         </div>
                     </div>
                 </div>
