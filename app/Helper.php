@@ -99,7 +99,7 @@ class Helper {
 
 		} catch (Exception $bug) {
 			DB::rollback();
-			return $this->exception($bug, 'unknown error', 500);
+			return static::invalidRequest($bug, 'unknown error', 500);
 		}
 
 	}
@@ -349,7 +349,7 @@ public static function adminsUserActivityRequest($activity){
 					$user->notify(new UserActivity($activity));
 				}
 		} catch (Exception $bug) {
-			return $this->exception($bug, 'unknown error', 500);
+			return static::invalidRequest($bug, 'unknown error', 500);
 		}
 }
 

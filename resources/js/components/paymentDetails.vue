@@ -87,7 +87,7 @@
                                     </td>
                                     <td class="text-left">
                                         <i
-                                            class="fas fa-copy base--color"
+                                            class="fa fa-copy base--color"
                                             title="copy"
                                             data-toggle="tooltip"
                                             data-placement="right"

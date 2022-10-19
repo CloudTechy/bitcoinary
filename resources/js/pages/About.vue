@@ -110,12 +110,8 @@ export default {
         <div class="page-wraper">
             <HomeHeader :domain="domain"></HomeHeader>
             <div class="page-content">
-                <div
-                    class="wt-bnr-inr overlay-wraper"
-                    style="
-                        background-image: url('assets/images/banner/about-banner.jpg');
-                    "
-                >
+                <div class="wt-bnr-inr overlay-wraper" style="background-image: url('assets/images/banner/about-banner.jpg');
+                    ">
                     <div class="overlay-main bg-black opacity-07"></div>
                     <div class="container">
                         <div class="wt-bnr-inr-entry">
@@ -126,22 +122,15 @@ export default {
                 <div class="bg-white marquee">
                     <div class="TickerNews" id="T1">
                         <!-- TradingView Widget BEGIN -->
-                        <div
-                            class="tradingview-widget-container"
-                            style="width: 100%; height: 76px"
-                        >
-                            <iframe
-                                scrolling="no"
-                                allowtransparency="true"
-                                frameborder="0"
+                        <div class="tradingview-widget-container" style="width: 100%; height: 76px">
+                            <iframe scrolling="no" allowtransparency="true" frameborder="0"
                                 src="//s.tradingview.com/embed-widget/ticker-tape/?locale=en&amp;page-uri=https%3A%2F%2Feurogg.com%2Fabout#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22FOREXCOM%3ASPXUSD%22%2C%22title%22%3A%22S%26P%20500%22%7D%2C%7B%22proName%22%3A%22FOREXCOM%3ANSXUSD%22%2C%22title%22%3A%22Nasdaq%20100%22%7D%2C%7B%22proName%22%3A%22FX_IDC%3AEURUSD%22%2C%22title%22%3A%22EUR%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22BTC%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22ETH%2FUSD%22%7D%2C%7B%22description%22%3A%22DOGE%2FUSDT%22%2C%22proName%22%3A%22BINGBON%3ADOGEUSDT%22%7D%2C%7B%22description%22%3A%22XRP%2FUSDT%22%2C%22proName%22%3A%22BINANCE%3AXRPUSDT%22%7D%2C%7B%22description%22%3A%22BCH%2FUSDT%22%2C%22proName%22%3A%22KRAKEN%3ABCHUSDT%22%7D%2C%7B%22description%22%3A%22KISHU%2FUSDT%22%2C%22proName%22%3A%22OKEX%3AKISHUUSDT%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22light%22%2C%22isTransparent%22%3Atrue%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A76%2C%22utm_source%22%3A%22fxtradingmax.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%7D"
                                 style="
                                     box-sizing: border-box;
                                     height: 44px;
                                     width: 100%;
-                                "
-                            ></iframe>
-                          
+                                "></iframe>
+
                         </div>
                         <!-- TradingView Widget END -->
                     </div>
@@ -161,14 +150,10 @@ export default {
                         <div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <div class="section-head text-left">
-                                    <span
-                                        class="wt-title-subline text-gray-dark font-16 m-b15"
-                                    ></span>
+                                    <span class="wt-title-subline text-gray-dark font-16 m-b15"></span>
                                     <h2 class="text-uppercase">ABOUT US</h2>
                                     <div class="wt-separator-outer">
-                                        <div
-                                            class="wt-separator bg-primary"
-                                        ></div>
+                                        <div class="wt-separator bg-primary"></div>
                                     </div>
                                     <p>
                                         <!--<strong>-->
@@ -209,11 +194,7 @@ export default {
 
                             <div class="col-md-6 col-sm-6">
                                 <div class="wt-media">
-                                    <img
-                                        src="/assets/images/rocket.png"
-                                        alt=""
-                                        class="img-responsive"
-                                    />
+                                    <img src="/assets/images/rocket.png" alt="" class="img-responsive" />
                                 </div>
                             </div>
                         </div>
@@ -224,34 +205,30 @@ export default {
                         <div class="row">
                             <div class="col">
                                 <div class="section-head text-left p-3">
-                                    <span
-                                        class="wt-title-subline text-gray-dark font-16 m-b15"
-                                    ></span>
+                                    <span class="wt-title-subline text-gray-dark font-16 m-b15"></span>
                                     <h2 class="text-uppercase">Our Registration Certificate</h2>
                                     <div class="wt-separator-outer">
-                                        <div
-                                            class="wt-separator bg-primary"
-                                        ></div>
+                                        <div class="wt-separator bg-primary"></div>
                                     </div>
                                     <p>{{company}} is duly registered by the registrar of companies in Sweden.</p>
                                     <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe class = "embed-responsive-item" :src="$root.basepath + '/assets/cert%20of%20Allied%20european%20crypto%20company.pdf#toolbar=0'" >
-                                     </iframe>
+                                        <iframe class="embed-responsive-item"
+                                            :src="$root.basepath + '/assets/cert.pdf#toolbar=0'">
+                                        </iframe>
                                     </div>
-                                    
-                                    
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <WhyChooseUs :company="company"></WhyChooseUs>
-                
+
                 <HomeFooter :company="company" :domain="domain"></HomeFooter>
             </div>
             <button class="scroltop">
-                <span class="iconmoon-house relative" id="btn-vibrate"></span
-                >Top
+                <span class="iconmoon-house relative" id="btn-vibrate"></span>Top
             </button>
             <div class="mgm" style="display: none; opacity: 1"></div>
         </div>
@@ -259,8 +236,6 @@ export default {
 </template>
 
 <style scoped>
-
-
 @import "../assets/ebuka.css";
 @import "../assets/css/style37913791.css";
 @import "../assets/css/skin/skin-25b275b27.css";
