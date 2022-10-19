@@ -353,6 +353,20 @@ public static function adminsUserActivityRequest($activity){
 		}
 }
 
+public static function adminsNotificationRequest($notificationRequest) {
+		
+		try {
+			$admins = User::whereHas('user_level', function($query){
+				$query->where('name', 'administrator');
+			})->get();
+				foreach ($admins as $key => $user) {
+					$user->notify($notificationRequest);
+				}
+		} catch (Exception $bug) {
+			return static::invalidRequest($bug, 'unknown error', 500);
+		}
+	}
+
  
 public static function userIsSuperAdmin()
     {

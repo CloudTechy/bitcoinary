@@ -181,12 +181,12 @@
 
                         </div>
                         <div class="item">
-                            <a href="Packages.php">
+                            <router-link to="/dashboard/plans" >
                                 <div class="icon-wrapper">
                                     <i class="fas fa-chart-line"></i>
                                 </div>
                                 <strong>Invest</strong>
-                            </a>
+                            </router-link>
                         </div>
                         <div class="item">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#withdraw">
@@ -587,7 +587,7 @@
                                         <div class="form-group basic">
                                             <label class="label">Select Method</label>
                                             <div class="input-group mb-2">
-                                                <select class="form-control p-1" v-model="depositForm.payment_method"
+                                                <select class="form-control p-1" v-model="depositPaymentMethod"
                                                     required>
 
                                                     <option
@@ -601,7 +601,7 @@
                                         <div class="form-group basic">
                                             <label class="label">Amount</label>
                                             <div class="input-group mb-2">
-                                                <input type="number" v-model="depositForm.amount" class="form-control"
+                                                <input type="number" v-model="depositAmount" class="form-control"
                                                     min="50" max="999999999999999999999" required>
                                             </div>
                                         </div>
@@ -674,9 +674,9 @@
 
         <button type="button" ref="paymentModalbtn" style="visibility: show;" id="add" data-toggle="modal"
             data-target="#paymentDetails"></button>
-        <div v-if="depositForm.payment_method" class="modal fade dialogbox" tabindex="-1" role="dialog"
+        <div v-if="depositForm.payment_method" :key = "depositForm.key" class="modal fade dialogbox" tabindex="-1" role="dialog"
             ref="paymentDetails" id="paymentDetails" data-bs-backdrop="true">
-            <paymentDetails @popUploaded="displayMessage" :key="key" plan="" :paymentMethod="depositForm.payment_method"
+            <paymentDetails @popUploaded="displayMessage" :key="key" plan="" deposit_type="balance" :paymentMethod="depositForm.payment_method"
                 :amount="depositForm.amount"></paymentDetails>
         </div>
 
@@ -705,6 +705,7 @@ export default {
                 user_id: this.$auth.user().id,
                 type: "balance",
                 reference: "",
+                key: 0,
             }),
             walletForm: new Form({
                 payment_method: undefined,
@@ -721,11 +722,13 @@ export default {
 
             paymentMethods: undefined,
             paymentMethod: undefined,
+            depositPaymentMethod: undefined,
             withdrawalPaymentMethod: undefined,
             payment_status: false,
             error: undefined,
             errors: {},
-            message : undefined,
+            message: undefined,
+            depositAmount : undefined
 
 
 
@@ -738,8 +741,11 @@ export default {
         errors() {
             setTimeout(() => { this.errors = '' }, 15000);
         },
-        amount() {
-            this.key++
+        depositAmount() {
+            this.withdrawalForm.payment_method = undefined
+            this.depositForm.key++
+            this.depositForm.payment_method = this.depositPaymentMethod
+            this.depositForm.amount = this.depositAmount
             
         },
         withdrawalPaymentMethod() {
@@ -750,8 +756,15 @@ export default {
             // this.withdrawalForm.wallet = this.$root.getAccountDetails(this.withdrawalPaymentMethod.name, this.withdrawalPaymentMethod.type)
 
         },
+        depositPaymentMethod() {
+            this.withdrawalForm.payment_method = undefined
+            this.depositForm.key++
+            this.depositForm.payment_method = this.depositPaymentMethod
+            this.depositForm.amount = this.depositAmount
+        },
         PaymentMethod() {
             this.key++
+            this.depositForm.key++
             
         },
 
@@ -827,7 +840,6 @@ export default {
         displayMessage(msg) {
             this.message = msg
             this.$root.scrollUp()
-            console.log(msg)
             this.$root.alert('success', ' ', msg.message)
         },
         getPaymentMethods() {

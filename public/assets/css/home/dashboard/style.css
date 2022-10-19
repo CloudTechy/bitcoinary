@@ -2046,9 +2046,9 @@ blockquote.blockquote .blockquote-footer {
   text-align: left
 }
 .dialogbox .modal-dialog .modal-content {
-  max-width: 300px;
+  max-width: 360px;
   margin: auto;
-  max-height: 560px;
+  max-height: 750px;
   overflow: auto;
   border: 0;
   border-radius: 16px

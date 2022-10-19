@@ -301,12 +301,15 @@
                     <div class="listview-title mt-1">Investment</div>
                     <ul class="listview flush transparent image-listview">
                         <li>
-                            <a href="Packages.php" class="item">
+                            <router-link to = "/dashboard/plans" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-chart-line"></i>
                                 </div>
                                 <div class="in"> Investment Packages </div>
-                            </a>
+                            </router-link>
+                            <!-- <a href="Packages.php" >
+                                
+                            </a> -->
                         </li>
                         <li>
                             <a href="Promo.php" class="item">

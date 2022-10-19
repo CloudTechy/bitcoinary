@@ -214,7 +214,17 @@ const routes = [
         meta: {
             auth: true,
             adminAuth: false,
-            title: "User Deposit",
+            title: "Dashboard | Deposit",
+        },
+    },
+    {
+        path: "/dashboard/plans",
+        name: "userPlans",
+        component: () => import("./pages/user/Plans"),
+        meta: {
+            auth: true,
+            adminAuth: false,
+            title: "Dashboard | Plans",
         },
     },
     {

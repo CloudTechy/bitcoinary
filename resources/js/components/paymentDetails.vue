@@ -10,25 +10,28 @@
             </div>
 
             <div class="modal-body mb-1">
+                <div class="form-group">
+                    <div class="m-0 p-0" v-if="error">
+                        <div class = "alert alert-danger" v-if="typeof error == 'object'">
+                            <p v-for="err in error">
+                                {{ err }}
+                            </p>
+                        </div>
+                        <div v-else class="alert alert-danger">
+                        <p >
+                            {{ error }}
+                        </p>
+                        </div>
+                    </div>
+                </div>
                 <div v-if="paymentMethod.currency_type == 'crypto'" class="card">
                     <div class="card-header pb-0">
                         <small>Send ${{ $root.normalNumeral(amount) }} worth of <span class="text-uppercase ">{{
                         paymentMethod.payment_method }}</span> to the wallet address.<br>
-                            Your account will be funded automatically upon verification of payment.</small>
+                           <span class="small text-secondary">Your account will be funded automatically upon verification of payment.</span> </small>
                     </div>
                     <div class="card-body pt-0 pb-0">
-                        <div class="form-group">
-                            <div class="error-msg m-3" v-if="error">
-                                <div v-if="typeof error == 'object'">
-                                    <p v-for="err in error" class="small m-1">
-                                        {{ err }}
-                                    </p>
-                                </div>
-                                <p v-else class="text-center m-1 small">
-                                    {{ error }}
-                                </p>
-                            </div>
-                        </div>
+                        
                         <div class="mt-1">
                             <h4 class="mb-0 pb-0">
                                 Payment <span class="text-primary">Details</span>
@@ -94,22 +97,11 @@
                         paymentMethod.payment_method
                         }}</span>
                             Account.<br>
-                            <span class="small text-info">Your account will be funded automatically upon verification of
+                            <span class="small text-secondary">Your account will be funded automatically upon verification of
                                 payment.</span></small>
                     </div>
                     <div class="card-body pt-0 pb-0">
-                        <div class="form-group">
-                            <div class="error-msg m-3" v-if="error">
-                                <div v-if="typeof error == 'object'">
-                                    <p v-for="err in error" class="small m-1">
-                                        {{ err }}
-                                    </p>
-                                </div>
-                                <p v-else class="text-center m-1 small">
-                                    {{ error }}
-                                </p>
-                            </div>
-                        </div>
+                        
                         <div class="mt-1">
                             <h4>
                                 Payment <span class="text-primary">Details</span>
@@ -173,7 +165,7 @@
 
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
-                    <button class="btn bg-secondary" style="height:28px; font-size:10px; padding:3px 12px"
+                    <button class="btn btn-secondary" ref = "depositButton" style="height:28px; font-size:10px; padding:3px 12px"
                         type="submit">
                         {{ !subscribed_plan ? "Submit" : "Update" }}
                     </button>
@@ -218,7 +210,7 @@ export default {
     components: {
         VueQRCodeComponent,
     },
-    props: ["plan", "paymentMethod", "amount"],
+    props: ["plan", "paymentMethod", "amount", "deposit_type"],
     computed: {},
     beforeDestroy() {
         // this.$refs.closeButton.click();
@@ -247,7 +239,10 @@ export default {
             }
 
             if (!this.subscribed_plan) {
-                form.submit("post", "/auth/packageusers", {
+                var url = this.deposit_type == 'balance' ? "/auth/popdeposit" : "/auth/packageusers"
+                form.type = this.deposit_type
+                form.reference = "SELF DEPOSIT"
+                form.submit("post", url, {
                     transformRequest: [
                         function (data, headers) {
                             return objectToFormData(data);
@@ -256,13 +251,15 @@ export default {
                 })
                     .then((response) => {
                         this.$root.loader("hide");
-                        this.subscribed_plan = response.data.data;
-                        this.$emit("popUploaded", {
-                            subscription: this.subscribed_plan,
-                            message: response.data.message,
-                        });
-                        form.reset();
-                        this.label = "Change pop file";
+                            this.subscribed_plan = response.data.data;
+                            this.$emit("popUploaded", {
+                                subscription: this.subscribed_plan,
+                                message: response.data.message,
+                            });
+                            this.label = "Change pop file";
+                      
+                        
+                        this.$root.scrollUp()
                         this.$refs.closeButton.click();
                     })
                     .catch((error) => {
@@ -273,13 +270,20 @@ export default {
                             this.error = error.response.data.message;
                         }
                         console.log(error, error.response);
-                        form.reset();
                     });
             } else {
                 form._method = "PUT";
+                var url = this.deposit_type == 'balance' ? "/auth/popdeposit/" + this.subscribed_plan.id : "/auth/packageusers/" + this.subscribed_plan.id 
+                if (this.$refs.fileInput.files[0].name == this.subscribed_plan.pop) {
+                    return this.$root.alert(
+                        "warning",
+                        "Choose a different file ",
+                        "OOPS!!!"
+                    );
+                }
                 form.submit(
                     "post",
-                    "/auth/packageusers/" + this.subscribed_plan.id,
+                    url,
                     {
                         transformRequest: [
                             function (data, headers) {
@@ -296,8 +300,8 @@ export default {
                             subscription: this.subscribed_plan,
                             message: response.data.message,
                         });
-                        this.$root.alert("success", "", response.data.message);
-                        form.reset();
+                        this.$root.scrollUp()
+                        this.$refs.closeButton.click();
                     })
                     .catch((error) => {
                         this.$root.loader("hide");
@@ -305,9 +309,10 @@ export default {
                             this.error = error.response.data.error.pop;
                         } else {
                             this.error = error.response.data.message;
+                            this.$root.alert("error", " ", this.error);
                         }
+                        this.$root.scrollUp()
                         console.log(error, error.response);
-                        form.reset();
                     });
             }
         },

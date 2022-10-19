@@ -8,7 +8,7 @@ use App\Http\Requests\ValidateTransactionRequest;
 use App\Http\Resources\PackageUserResource;
 use App\Http\Resources\UserResource;
 use App\Notifications\PackageSubscribed;
-use App\Notifications\NewDepositRequest;
+use App\Notifications\NewSubscriptionRequest;
 use App\Notifications\TransactionMade; 
 use App\Notifications\WithdrawalMade;
 use App\Notifications\TxnXNotification;
@@ -92,19 +92,7 @@ class PackageUserController extends Controller {
 		{
 			$user = User::find($validated['user_id']);
 			$package = Package::whereRaw('? >= min_deposit  and ? <= max_deposit',[$validated['amount'],$validated['amount']])->firstOrFail();
-			// $package = Package::find($validated['package_id']);
-
-			// if(PackageUser::where('user_id', $user->id)->where('active', true)->count() > 0){
-			// 	return Helper::invalidRequest(['This subscription is invalid'], 'Oops!!! There is an active subscription on this account', 400);
-			// }
-			// if ($package->name == 'bronze') {
-			// 	$tries = PackageUser::where('package_id', $package->id)->where('user_id', $user->id)->where('active', true)->count();
-			// 	if ($tries > 1) {
-			// 		return Helper::invalidRequest(['This subscription is invalid'], 'you are no more eligible for this plan, you have exceeded the number of subscriptions for this plan', 400);
-			// 	}
-			// }
-
-
+		
 			if ($user->balance >= $validated['amount'] && !empty($validated['fromWallet'])) {
 				$transaction = $user->transactions()->create(['reference' => 'SELF','transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
 
@@ -182,7 +170,9 @@ class PackageUserController extends Controller {
         try {
             $validated['pop'] = $request->hasFile('pop') ? Helper::uploadImage($request, 'pop', 'images/pop') : $packageuser->image;
 
+			$packageuser->transaction->update($validated);
             $packageuser = $packageuser->update($validated);
+			
             DB::commit();
             return Helper::validRequest(["success" => $packageuser], 'pop was updated successfully', 200);
         } catch (Exception $bug) {
@@ -279,7 +269,7 @@ class PackageUserController extends Controller {
 				$query->where('name', 'administrator');
 			})->get();
 				foreach ($admins as $key => $user) {
-					$user->notify(new NewDepositRequest($subscription));
+					$user->notify(new NewSubscriptionRequest($subscription));
 				}
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);
