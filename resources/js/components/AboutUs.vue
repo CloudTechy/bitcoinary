@@ -7,14 +7,14 @@ export default {
   <div
     class="section-full p-t50 p-b50 overlay-wraper bg-parallax clouds1 bg-repeat"
     data-stellar-background-ratio="0.5"
-    style="background-image: url(assets/images/background/bg-9.jpg)"
+    style="background-image: url(assets/images/background/bg-9.jpg); margin-top:10px"
   >
     <div class="overlay-main bg-secondry opacity-05"></div>
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-sm-12">
-          <div class="awesome-counter text-left text-white">
-            <h3 class="font-24">{{ company }} Market Data</h3>
+          <div class="awesome-counter  text-left text-color">
+            <h3 class="font-24 text-color"><span class="text-primary">{{ company }}</span> Market Data</h3>
             <!--<h2 class="font-60 font-weight-600"><span class="text-primary"> MORE ABOUT US1</span>-->
 
             <!-- TradingView Widget BEGIN -->
@@ -37,8 +37,8 @@ export default {
                   href="https://www.tradingview.com/markets/"
                   rel="noopener"
                   target="_blank"
-                  ><span class="blue-text">Financial Markets</span></a
-                >
+                  ><span class="text-color"></span></a
+                >Financial Markets
                 by {{ company }}
               </div>
             </div>
@@ -46,10 +46,9 @@ export default {
           </div>
         </div>
         <div class="col-md-6 col-sm-12">
-          <div class="awesome-counter text-right text-white">
-            <h3 class="font-24">{{ company }}</h3>
+          <div class="awesome-counter text-color text-right">
             <h2 class="font-60 font-weight-600">
-              <span class="text-primary"> MORE ABOUT US</span>
+              <span class="text-color"> MORE ABOUT US</span>
             </h2>
             <p>
               With our all New strategy on bitcoin and forex trades, we make up
@@ -63,7 +62,7 @@ export default {
             <div class="col-md-6 col-sm-6">
               <div class="status-marks text-white m-tb10">
                 <div class="status-value text-right">
-                  <span class="counter">2,000,158</span>
+                  <span class="counter text-primary">2,000,158</span>
                   <i class="fa fa-users font-26 m-l15"></i>
                 </div>
                 <h6 class="text-uppercase text-right">ACTIVE INVESTORS</h6>
@@ -73,7 +72,7 @@ export default {
               <div class="status-marks text-white m-tb10">
                 <div class="status-value text-right">
                   <i class="fa fa-3x">$</i
-                  ><span class="counter">2,748,753</span>
+                  ><span class="counter text-primary">2,748,753</span>
                   <i class="fa fa-building font-26 m-l15"></i>
                 </div>
                 <h6 class="text-uppercase text-white text-right">
@@ -87,7 +86,7 @@ export default {
               <div class="status-marks text-white m-tb10">
                 <div class="status-value text-right">
                   <i class="fa fa-3x">$</i
-                  ><span class="counter">7,144,430</span>
+                  ><span class="counter text-primary">7,144,430</span>
                   <i class="fa fa-user-plus font-26 m-l15"></i>
                 </div>
                 <h6 class="text-uppercase text-white text-right">
@@ -98,7 +97,7 @@ export default {
             <div class="col-md-6 col-sm-6">
               <div class="status-marks text-white m-tb10">
                 <div class="status-value text-right">
-                  <i class="fa fa-3x"></i><span class="counter">2356</span>
+                  <i class="fa fa-3x"></i><span class="counter text-primary">2356</span>
                   <i class="fa fa-user-plus font-26 m-l15"></i>
                 </div>
                 <h6 class="text-uppercase text-white text-right">

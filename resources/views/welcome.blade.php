@@ -196,7 +196,7 @@ s0.parentNode.insertBefore(s1,s0);
     position: absolute;
     top: 0;
     left: 0;
-    background: #cca354;
+    background: var(--secondary-color);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -217,7 +217,7 @@ s0.parentNode.insertBefore(s1,s0);
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    background: #8f6d2b;
+    background: var(--primary-color);
     -webkit-animation: preloader-inside-white 1s ease-in-out infinite;
     -ms-animation: preloader-inside-white 1s ease-in-out infinite;
     animation: preloader-inside-white 1s ease-in-out infinite;
@@ -237,7 +237,7 @@ s0.parentNode.insertBefore(s1,s0);
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    background: #cca354;
+    background: var(--secondary-color);
     -webkit-animation: preloader-inside-red 1s ease-in-out infinite;
     -ms-animation: preloader-inside-red 1s ease-in-out infinite;
     animation: preloader-inside-red 1s ease-in-out infinite;
@@ -287,18 +287,47 @@ s0.parentNode.insertBefore(s1,s0);
    
   
   <script src="{{ asset('js/objectdata.js') }}" defer></script>
+    <script>
+    // if('serviceWorker' in navigator) {
+    //   navigator.serviceWorker
+    //     .register('/sw.js')
+    //     .then(function() { console.log("Service Worker Registered"); });
+    // }
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+    
+          jQuery(".goog-logo-link").empty();
+          jQuery(".goog-te-gadget").html(jQuery(".goog-te-gadget").children());
+   
+      }
+    $(window).load(function(){
+      // if (feather) {
+      //     feather.replace({ width: 14, height: 14 });
+      //   }
+      $(".preloader").delay(0).animate({
+       "opacity" : "0"
+       }, 100, function() {
+       $(".preloader").css("display","none");
+      });
+    })
+</script>
    <script
       type="text/javascript"
       src="//s3.tradingview.com/tv.js"
       async
     ></script>
-    <script src="//cdn.amcharts.com/lib/4/core.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/themes/dark.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+
     <script src="{{ asset('assets/js/jquery.bgscroll.js') }} " defer></script>
     <script src="{{ asset('assets/plugins/revolution/revolution/js/jquery.themepunch.tools.min.js') }} " defer></script>
     <script src="{{ asset('assets/plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js') }} " defer></script>
+        <script src="//cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="//cdn.amcharts.com/lib/4/themes/dark.js"></script>
+    <script src="//cdn.amcharts.com/lib/4/themes/animated.js"></script>
    
     <script>
       jQuery(window).load(() => {
@@ -737,33 +766,7 @@ s0.parentNode.insertBefore(s1,s0);
 }
       });
     </script>
-  <script>
-    // if('serviceWorker' in navigator) {
-    //   navigator.serviceWorker
-    //     .register('/sw.js')
-    //     .then(function() { console.log("Service Worker Registered"); });
-    // }
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          { pageLanguage: "en" },
-          "google_translate_element"
-        );
-    
-          jQuery(".goog-logo-link").empty();
-          jQuery(".goog-te-gadget").html(jQuery(".goog-te-gadget").children());
-   
-      }
-    $(window).load(function(){
-      // if (feather) {
-      //     feather.replace({ width: 14, height: 14 });
-      //   }
-      $(".preloader").delay(0).animate({
-       "opacity" : "0"
-       }, 100, function() {
-       $(".preloader").css("display","none");
-      });
-    })
-</script>
+
 
 <style>
    .goog-te-banner-frame.skiptranslate {
@@ -776,12 +779,12 @@ s0.parentNode.insertBefore(s1,s0);
       .mgm a {
         font-weight: 700;
         display: block;
-        color: #ff5722;
+        color: var(--primary-color);
       }
 
       .mgm a:active {
         transition: all 0.2s ease;
-        color: #ff5722;
+        color: var(--primary-color);
       }
 </style>
 </body>

@@ -464,15 +464,16 @@
 /* package section css start */
 .package-card {
   padding: 30px;
-  border: 3px solid #0095eb;
-  background-color: #000000;
+  border: unset;
+  margin: 10px;
+  /* background-color: #000000; */
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
   height: 100%;
-  box-shadow: 0 0 15px rgba(204, 163, 84, 0.5);
+  box-shadow: 0 0 15px rgba(24, 52, 2, 0.5);
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;

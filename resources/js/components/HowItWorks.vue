@@ -4,13 +4,13 @@ export default {
 }
 </script>
 <template>
-  <div class="section-full p-t10 p-b10 bg-gray">
+  <div class="section-full p-t10 p-b10 bg-gray" style="padding-bottom:30px">
             <div class="container">
               <div class="section-head text-center">
                 <span
-                  class="wt-title-subline font-16 text-gray-dark m-b15"
+                  class="wt-title-subline font-16 text-secondary m-b15"
                 ></span>
-                <h2 class="text-uppercase">How It Works</h2>
+                <h2 class="text-uppercase">How <span class ="text-primary">It Works</span></h2>
                 <div class="wt-separator-outer">
                   <div class="wt-separator bg-primary"></div>
                 </div>
@@ -36,9 +36,9 @@ export default {
                         </a>
                       </div>
                       <div class="icon-content">
-                        <div class="step-number">1</div>
+                        <div class="step-number text-color">1</div>
                         <h4
-                          class="wt-tilte text-uppercase font-weight-500 text-white"
+                          class="wt-tilte text-uppercase font-weight-500 text-white text-color"
                         >
                           SIGN-UP
                         </h4>
@@ -64,9 +64,9 @@ export default {
                         </a>
                       </div>
                       <div class="icon-content">
-                        <div class="step-number">2</div>
+                        <div class="step-number text-color">2</div>
                         <h4
-                          class="wt-tilte text-uppercase font-weight-500 text-white"
+                          class="wt-tilte text-uppercase font-weight-500 text-white text-color"
                         >
                           INVEST
                         </h4>
@@ -92,9 +92,9 @@ export default {
                         </a>
                       </div>
                       <div class="icon-content">
-                        <div class="step-number">3</div>
+                        <div class="step-number text-color">3</div>
                         <h4
-                          class="wt-tilte text-uppercase font-weight-500 text-white"
+                          class="wt-tilte text-uppercase font-weight-500 text-white text-color"
                         >
                           EARN
                         </h4>

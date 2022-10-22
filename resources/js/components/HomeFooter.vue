@@ -23,7 +23,7 @@ export default {
                         alt=""
                     /></a>
                   </div>
-                  <p>
+                  <p class="text-color">
                     Since its establishment, we have shown commendably
                     successful and consistent performance and trading history.
                     Currently, it is regarded as one of the best, most
