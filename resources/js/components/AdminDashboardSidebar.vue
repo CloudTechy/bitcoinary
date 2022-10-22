@@ -82,7 +82,7 @@
                                         "
                                         class="nav-link"
                                         data-toggle="tooltip"
-                                                        data-original-title="Link currently unavailable"
+                                                        data-original-title="manage investment plans"
                                     >
                                         <i
                                             class="menu-icon las la-dot-circle"
