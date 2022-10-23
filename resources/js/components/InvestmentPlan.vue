@@ -36,7 +36,7 @@
                 <div>
                     <ul class="package-card__features text-color mt-4" style="min-height : 180px; margin-top:10px; padding-top:15px">
                         <li>Return {{plan.roi}}%</li>
-                        <li>Matures in a {{plan.turnover}}</li>
+                        <li>Matures in {{plan.turnover}}</li>
                         <li>Total {{plan.roi}}% + <span class="badge bg-primary">Capital</span></li>
                         <li v-if="plan.name == 'Premium'">With loan Security</li>
                     </ul>

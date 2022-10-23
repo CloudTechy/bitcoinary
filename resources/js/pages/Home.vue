@@ -1562,7 +1562,7 @@ export default {
                     <div class="container">
                         <div class="row">
                             <h2 class="font-60 font-weight-600">
-                                <span class="text-color"> PRICE UPDATE</span>
+                                <span class="text-white"> PRICE UPDATE</span>
                             </h2>
                             <!-- TradingView Widget BEGIN -->
                             <div class="tradingview-widget-container">
@@ -1614,7 +1614,7 @@ export default {
                                 </div>
                                 <div class="col-md-6">
                                     <div class="wt-box graph-part-right text-white" style="margin-top:40px">
-                                        <strong class="text-uppercase text-color title-first">About <span class="text-primary">Forex</span></strong>
+                                        <strong class="text-uppercase title-first">About <span class="text-primary">Forex</span></strong>
                                         <span class="text-uppercase text-primary display-block title-second"></span>
                                         <p>
                                             <strong>What is Forex? Forex, also
