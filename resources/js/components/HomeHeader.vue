@@ -89,7 +89,7 @@ document.body.appendChild(js);
                   <i class="fa fa-envelope"></i>
                   <a
                     style="font-weight: 500; font-size: 16px"
-                    href="mailto:support@gmail.com"
+                    :href="'mailto:support@'+ domain"
                     ><span class="" data-cfemail=""
                       >support@{{domain}}</span
                     ></a
