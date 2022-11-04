@@ -56,6 +56,7 @@ class UserResource extends JsonResource {
 			'isEmailVerified' => empty($this->email_verified_at)  ? false : true,
 			'totalActiveTransaction' => $this->activeTransactions,
 			'totalEarned' => $this->totalEarned,
+			
 			'totalCommission' => $this->confirmedTransactions->where('reference', 'BM first tier commission')->sum('amount') + $this->confirmedTransactions->where('reference', 'BM second tier commission')->sum('amount'),
 			// 'totalDeposit' => $this->confirmedTransactions->sum('amount'),
 			'totalWithdraw' => $confirmedWithdrawals->sum('amount'),

@@ -195,7 +195,7 @@ class PackageUserController extends Controller {
 		DB::beginTransaction();
 		try {
 			if(auth()->user()->user_level->name == 'user'){
-				return Helper::inValidRequest('You are not unauthorized to peform this operation.', 'Unauthorized Access!', 400);
+				return Helper::inValidRequest('You are not unauthorized to perform this operation.', 'Unauthorized Access!', 400);
 			}
 
 			if($packageuser->active == true){

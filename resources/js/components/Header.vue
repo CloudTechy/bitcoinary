@@ -159,21 +159,28 @@
     </header> -->
 
 <header>
+    
     <div class="appHeader bg-primary text-light">
         <div class="left"> <a href="#" class="headerButton" data-bs-toggle="modal" data-bs-target="#sidebarPanel"
                 style="margin-right:10px"> <i class="fas fa-bars fa-2x"></i> </a>
             <div class="top-bar-item top-bar-item-full" id="id_100">
-                <div id="google_translate_element2"></div>
-    
+                <div id="google_translate_element"></div>
             </div>
         </div>
-        <div class="pageTitle"><a href="/"><img :src="$root.basepath + '/assets/images/home/logo.png'" alt="logo"
-                    class="logo"></a></div>
+        <div class="pageTitle">
+            <span v-if = "$root.dashboard_header_page_title">
+                {{$root.dashboard_header_page_title}}
+            </span>
+            <span v-else>
+                <a href="/"><img :src="$root.basepath + '/assets/images/home/logo.png'" alt="logo" class="logo"></a>
+            </span>
+          
+                </div>
         <div class="right">
-            <a href="Notifications.php" class="headerButton"> <i class="fas fa-bell"></i> <span
+            <a href="/dashboard/Notifications" class="headerButton"> <i class="fas fa-bell"></i> <span
                     class="badge badge-danger">0</span>
-            </a> <a href="Profile.php" class="headerButton"> <img
-                    src="https://west-exchange.com/account/upload/user-default.png" alt="img" class="imaged w32"
+            </a> <a href="/dashboard/Profile" class="headerButton"> <img :src="$root.basepath + '/assets/images/home/user-default.png'"
+                   alt="img" class="imaged w32"
                     style="width:32px;height:32px;border-radius:50%"> </a>
         </div>
     </div>

@@ -40,7 +40,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 		
 	}
 	public function getActiveTransactionsAttribute() {
-		// return $this->transactions->where('sent', true)->where('confirmed', true)->where('active', true)->sum('amount');
+		// return $this->transactions()->where('sent', true)->where('confirmed', true)->where('active', true)->sum('amount');
 		$total = 0;
 		foreach ($this->activePackages as $key => $package) {
 			$total += (float) $package->subscription->amount;
@@ -115,23 +115,23 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 		}
 	}
 	public function getConfirmedTransactionsAttribute() {
-		return $this->transactions->where('sent', true)->where('confirmed', true)->where('active', false);
+		return $this->transactions()->where('sent', true)->where('confirmed', true)->where('active', false);
 	}
 	public function getSentTransactionsAttribute() {
-		return $this->transactions->where('sent', true)->where('confirmed', false);
+		return $this->transactions()->where('sent', true)->where('confirmed', false);
 	}
 	public function getNullTransactionsAttribute() {
-		return $this->transactions->where('sent', false)->where('confirmed', false);
+		return $this->transactions()->where('sent', false)->where('confirmed', false);
 	}
 
 	public function getConfirmedWithdrawalsAttribute() {
-		return $this->withdrawals->where('processed', true)->where('confirmed', true);
+		return $this->withdrawals()->where('processed', true)->where('confirmed', true);
 	}
 	public function getNullWithdrawalsAttribute() {
-		return $this->withdrawals->where('processed', false)->where('confirmed', false);
+		return $this->withdrawals()->where('processed', false)->where('confirmed', false);
 	}
 	public function getProcessedWithdrawalsAttribute() {
-		return $this->withdrawals->where('processed', true)->where('confirmed', false);
+		return $this->withdrawals()->where('processed', true)->where('confirmed', false);
 	}
 
 	public function getBalanceAttribute() {

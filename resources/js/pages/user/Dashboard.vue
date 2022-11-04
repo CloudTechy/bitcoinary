@@ -636,30 +636,49 @@
                         <div class="action-sheet-content pt-0">
                             <div class="card">
                                 <div class="card-body">
-                                    <p>Send funds to another West Exchange investor. All you need is their email
-                                        address.
+                                    <p>Send funds to another West Exchange investor. All you need is their username.
                                         <br>
                                         Your Available Balance is
                                         <span class="fw-bold text-primary">
-                                            $0.00 </span>
+                                            {{$root.numeral($auth.user().balance)}} </span>
                                     </p>
-                                    <form method="post">
-                                        <div class="form-group basic">
-                                            <label class="label">Recepient's Email</label>
-                                            <div class="input-group mb-2">
-                                                <input type="email" name="email" class="form-control" required>
+                                    <form method="post"  @submit.prevent="transfer">
+                                        <div ref="messageTransferBox" v-if="error || transferForm.message" style="position:fixed;top:0px;left:0px"
+                                            class=" form-group p-2 ">
+                                            <div v-if="error">
+                                                <div class="alert alert-danger" v-if="typeof error == 'object'">
+                                                    <p v-for="err in error">{{err}}</p>
+                                                </div>
+                                                <div v-else class="alert alert-danger">
+                                                    <p>{{error}}</p>
+                                                </div>
                                             </div>
+                                            <div class="alert alert-success" v-if="transferForm.message">
+                                                <p>{{transferForm.message}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group basic">
+                                            <label class="label">Recepient's username</label>
+                                            <div class="input-group mb-2">
+                                                <input type="text" v-model = "transferForm.receiver_username" class="form-control" required>
+                                            </div>
+                                            <p v-if="errors.receiver_username" v-for="error in errors.receiver_username" class="text-danger m-0 p-1 pt-0 small">
+                                                {{ error }}
+                                            </p>
                                         </div>
                                         <div class="form-group basic">
                                             <label class="label">Amount</label>
                                             <div class="input-group mb-2">
-                                                <input type="number" name="amount" class="form-control" min="1"
-                                                    required>
+                                                <input type="number" v-model = "transferForm.amount" class="form-control" min="1"
+                                                    :max="$auth.user().balance" required>
                                             </div>
+                                            <p v-if="errors.amount" v-for="error in errors.amount" class="text-danger m-0 p-1 pt-0 small">
+                                                {{ error }}
+                                            </p>
                                         </div>
                                         <div class="form-group basic text-center">
-                                            <button type="submit"
-                                                class="btn btn-primary">Withdraw </button>
+                                            <button ref = "submitTransferForm" type="submit"
+                                                class="btn btn-primary">Transfer </button>
                                         </div>
                                     </form>
                                 </div>
@@ -706,6 +725,12 @@ export default {
                 type: "balance",
                 reference: "",
                 key: 0,
+            }),
+            transferForm: new Form({
+                receiver_username: undefined,
+                amount: undefined,
+                sender_id: this.$auth.user().id,
+                message:undefined
             }),
             walletForm: new Form({
                 payment_method: undefined,
@@ -925,6 +950,40 @@ export default {
           
             setTimeout(() => { this.withdrawalForm.message = ''; this.error = ''; this.errors = ''; this.$refs.closeWithdrawalForm.click() }, 5000);
             
+        },
+        transfer() {
+            this.$root.loader('show')
+            this.processing(true, 'submitTransferForm', 'Requesting...', '')
+            this.transferForm.message = ""
+            this.error = ''
+            if (this.transferForm.amount > this.$auth.user().balance) {
+                this.transferForm.amount = this.$auth.user().balance
+            }
+            this.transferForm.post("/auth/transfer")
+                .then(response => {
+                    this.$root.loader('hide')
+                    this.processing(false, 'submitTransferForm', 'Requesting...', 'Tranfer')
+                    this.$root.alert('success', ' ', response.data.message )
+                    // this.transferForm.message = response.data.message
+                    this.$root.scrollToTop(0, 250)
+                    this.transferForm.amount = ''
+                    this.$auth.fetch()
+                })
+                .catch(error => {
+                    this.$root.loader('hide')
+                    this.processing(false, 'submitTransferForm', 'Requesting...', 'Tranfer')
+                    this.$root.scrollToTop(0, 250)
+                    console.log(error.response.status, error.response.data.message)
+                    if (error.response.status == 422) {
+                        this.errors = error.response.data.error
+                    }
+                    this.$root.alert('error', ' ', error.response.data.message)
+                    // console.log(error, error.response)
+                })
+
+
+            setTimeout(() => { this.transferForm.message = ''; this.error = ''; this.errors = '' }, 5000);
+
         },
         processing(status, ref, text1, text2) {
             if (status) {

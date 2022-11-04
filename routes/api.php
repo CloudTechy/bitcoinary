@@ -97,6 +97,7 @@ Route::prefix('v1')->group(function () {
 			Route::post('showWlt', 'TransactionController@wlt');
 			Route::post('deposit', 'PackageUserController@deposit'); 
 			Route::post('popdeposit', 'DepositController@deposit');
+			Route::post('transfer', 'DepositController@transfer');
 			Route::put('popdeposit/{transaction}', 'DepositController@editpop');
 			Route::get('confirmPOPdeposit/{transaction}', 'DepositController@confirmDeposit');
 			//notifications route

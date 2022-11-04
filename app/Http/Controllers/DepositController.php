@@ -9,8 +9,10 @@ use App\Http\Requests\ValidateTransactionRequest;
 use App\Notifications\AdminNewDepositRequest;
 use App\Notifications\UserNewDepositRequest;
 use App\Notifications\TransactionMade; 
+use App\Notifications\WithdrawalMade;
 use \DB;
 use App\Transaction;
+use App\User;
 
 class DepositController extends Controller
 // controller for processing deposit and relaterd matters
@@ -73,6 +75,35 @@ class DepositController extends Controller
             $transaction = $transaction->update($validated);
             DB::commit();
             return Helper::validRequest($transaction, 'pop updated successfully', 200);
+        } catch (Exception $bug) {
+            DB::rollback();
+            return $this->exception($bug, 'unknown error', 500);
+        }
+
+
+	 }
+
+	  public function transfer(Request $request) {
+
+		$validated = $request->validate([
+            'receiver_username' => 'required|exists:users,username',
+			'amount' => 'required|numeric',
+			'sender_id' => 'required|exists:users,id',
+        ]);
+        DB::beginTransaction();
+        try {
+			
+            $receiver = User::where('username', $validated['receiver_username'])->firstorFail();
+			$sender = User::find($validated['sender_id']);
+			if ($sender->balance < $validated['amount']) {
+				return Helper::invalidRequest(['success' => false], 'Insufficient funds', 400);
+			}
+			$transaction = $receiver->transactions()->create(['reference' => 'P2P TRANSFER','transaction_ref' => '', 'payment_method' => 'Bitcoin', 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
+			$withdrawal = $sender->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $validated['amount'], 'reference' => 'SELF', 'processed' => true, 'confirmed' => true]);
+            DB::commit();
+			$sender->notify(new WithdrawalMade($withdrawal));
+			$transaction->user->notify(new TransactionMade($transaction));
+            return Helper::validRequest($transaction, 'Tranfer request successful', 200);
         } catch (Exception $bug) {
             DB::rollback();
             return $this->exception($bug, 'unknown error', 500);

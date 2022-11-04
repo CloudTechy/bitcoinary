@@ -99,6 +99,7 @@ const app = new Vue({
         mailUser: null,
         payments: [],
         packages: [],
+        dashboard_header_page_title : undefined,
     },
     el: "#app",
     router,
