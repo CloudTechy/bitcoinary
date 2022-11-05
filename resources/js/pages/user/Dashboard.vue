@@ -796,6 +796,7 @@ export default {
     },
     mounted() {
         window.scrollTo(0, 0);
+        this.$root.dashboard_header_page_title = undefined
     },
     created() {
         var js = document.createElement("script");

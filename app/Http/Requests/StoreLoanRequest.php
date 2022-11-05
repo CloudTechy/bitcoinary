@@ -33,7 +33,7 @@ class StoreLoanRequest extends FormRequest
             'monthly_repayment' => 'numeric|nullable', 
             'total_repayment' => 'numeric|nullable', 
             'tenor' => 'numeric|nullable',
-            'transaction_id' => 'numeric|exists:users,id|nullable',
+            'transaction_id' => 'numeric|exists:transactions,id|nullable',
         ];
     }
 }

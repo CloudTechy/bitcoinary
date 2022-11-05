@@ -238,6 +238,16 @@ const routes = [
         },
     },
     {
+        path: "/dashboard/support",
+        name: "userSupport",
+        component: () => import("./pages/user/Support"),
+        meta: {
+            auth: true,
+            adminAuth: false,
+            title: "Dashboard | Support",
+        },
+    },
+    {
         path: "/dashboard/withdraw",
         name: "withdraw",
         component: () => import("./pages/user/Withdraw"),

@@ -88,6 +88,7 @@ Route::prefix('v1')->group(function () {
 			Route::resource('packageusers', 'PackageUserController');
 			Route::resource('transactions', 'TransactionController');
 			Route::resource('loan', 'LoanController');
+			Route::resource('ticket', 'TicketController');
 			Route::resource('withdrawals', 'WithdrawalController');
 			Route::get('subscribe/{packageuser}', 'PackageUserController@confirmSubscription');
 			Route::post('confirm_withdrawal/{withdrawal}', 'WithdrawalController@confirmWithdrawal');

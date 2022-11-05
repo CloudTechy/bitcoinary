@@ -519,7 +519,6 @@ export default {
     mounted() {
         this.$root.dashboard_header_page_title = "Investor Packages"
         window.scrollTo(0, 0);
-        this.getTransactions();
         // setInterval(this.getTransactions, 100000)
     },
     created() {

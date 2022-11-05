@@ -8,6 +8,7 @@ use App\Notifications\WelcomeEmailSent;
 use App\Transaction;
 use App\UserLevel;
 use App\Loan;
+use App\Ticket;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -179,6 +180,10 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 	public function loans() {
 
 		return $this->hasMany(Loan::class);
+	}
+	public function tickets() {
+
+		return $this->hasMany(Ticket::class);
 	}
 
 	public function scopeFilter($query, $filter) {

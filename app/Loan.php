@@ -11,7 +11,7 @@ class Loan extends Model
     protected $fillable = [
         'occupation', 'purpose', 'reference', 'user_id', 'amount', 'interest_rate', 'monthly_repayment', 'total_repayment', 'tenor','transaction_id', 'approved','active','expiration'
     ];
-     public function user()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

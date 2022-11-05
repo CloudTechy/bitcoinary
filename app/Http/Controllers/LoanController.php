@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateLoanRequest;
 use App\User;
 use App\Helper;
 use \DB;
+use \Exception;
 
 class LoanController extends Controller
 {
@@ -37,8 +38,9 @@ class LoanController extends Controller
             // $user = User::find(validated['user_id']);
             $validated = $request->validated();
             Loan::create($validated);
-            return Helper::invalidRequest(['error' => 'Inelligible loan request'], 'You are not elligible for this offer at the moment, contact our support team for assistance', 400); 
             DB::commit();
+            return Helper::invalidRequest(['error' => 'Inelligible loan request'], 'You are not elligible for this offer at the moment, contact our support team for assistance', 400); 
+            
 
         } catch (Exception $bug) {
             DB::rollback();
