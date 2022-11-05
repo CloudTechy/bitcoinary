@@ -1859,9 +1859,7 @@ blockquote.blockquote .blockquote-footer {
   border-radius: 10px;
   border: 1px solid #DCDCE9
 }
-.modal.action-sheet {
-  /* z-index: 200000 */
-}
+
 .modal.action-sheet .modal-dialog {
   padding: 0;
   margin: 0;
@@ -5804,3 +5802,22 @@ body.dark-mode.rtl-mode .notification-dialog.android-style .notification-footer 
   border-left-color: #2d1f3b
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

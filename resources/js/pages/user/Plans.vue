@@ -27,19 +27,20 @@
                                     <p><strong>Duration: </strong>
                                         {{ plan.turnover }}</p>
                                         <hr>
-                                        <form method="post" @submit.prevent="subscribePlan($event, plan)">
+                                        <form style="width:50vw; margin:auto" method="post" @submit.prevent="subscribePlan($event, plan)" class = "mt-3">
+                                           
                                             <div class="form-group basic">
                                                 <label class="label text-primary" for="account1">Capital</label>
                                                 <input type="number" @change="depositForm.key++" placeholder="Enter amount" name="amount" class="form-control" id="tf2"
                                                     :min="plan.min_deposit" :max="plan.max_deposit" required="">
-                                                <small>Available Balance: <strong class="text-primary">{{$auth.user().balance}}</strong></small>
+                                                <p class="text-left small">Available Balance: <strong class="text-primary ">{{$auth.user().balance}}</strong></p>
                                             </div>
                                             <div class="form-group basic">
                                                 <label class="label text-primary">Select method of payment</label>
                                                 <div class="input-group mb-2">
                                                     <select @change="setInvestmentPaymentMethod($event)" required="" value="" class="form-control p-1">
                                                         <option class="text-capitalize">
-                                                            Choose here
+                                                            select
                                                         </option>
                                                         <option value="balance" v-if="$auth.user().balance >= plan.min_deposit" class="text-capitalize">
                                                             Direct Invest Balance

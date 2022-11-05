@@ -796,8 +796,6 @@ export default {
     },
     mounted() {
         window.scrollTo(0, 0);
-        this.getTransactions();
-        setInterval(this.getTransactions, 100000)
     },
     created() {
         var js = document.createElement("script");
@@ -845,16 +843,7 @@ export default {
     },
     methods: {
 
-        getTransactions() {
-            this.$auth.fetch()
-            this.$http.get("/auth/transactions?pageSize=6&sent=1&confirmed=1&user_id=" + this.$auth.user().id)
-                .then(response => {
-                    this.transactions = response.data.data.item
-                })
-                .catch(error => {
-                    console.log(error.response)
-                })
-        },
+      
         process() {
             this.$refs.closeDeposit.click()
             this.payment_status = true

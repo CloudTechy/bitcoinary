@@ -489,15 +489,16 @@ const routes = [
 const router = new VueRouter({
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
-            return savedPosition
+            return savedPosition;
         } else {
-            return { x: 0, y: 0 }
+            return { x: 0, y: 0 };
         }
     },
     history: true,
-    mode: 'history',
+    mode: "history",
     routes,
-})
+    linkActiveClass: "active",
+});
 
 router.beforeEach((to, from, next) => {
     const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
