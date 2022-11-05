@@ -226,12 +226,12 @@
 
                         </div>
                         <div class="item">
-                            <a href="Loan.php">
+                            <router-link to="/dashboard/loan">
                                 <div class="icon-wrapper">
                                     <i class="fas fa-credit-card"></i>
                                 </div>
                                 <strong>Loan <br> Apply</strong>
-                            </a>
+                            </router-link>
                         </div>
                         <div class="item">
                             <a href="ProfitHistory.php">

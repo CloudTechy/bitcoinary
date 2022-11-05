@@ -286,12 +286,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="Loan.php" class="item">
+                            <router-link to="/dashboard/loan" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-money-bill"></i>
                                 </div>
-                                <div class="in"> Credit Advance/Loan</div>
-                            </a>
+                            <div class="in"> Credit Advance/Loan</div>
+                            </router-link>
                         </li>
                         <li>
                             <a href="TransactionHistory.php" class="item">
@@ -314,9 +314,6 @@
                                 </div>
                                 <div class="in"> Investment Packages </div>
                             </router-link>
-                            <!-- <a href="Packages.php" >
-                                
-                            </a> -->
                         </li>
                         <li>
                             <a href="Promo.php" class="item">

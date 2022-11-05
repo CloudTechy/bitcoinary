@@ -228,6 +228,16 @@ const routes = [
         },
     },
     {
+        path: "/dashboard/loan",
+        name: "userLoan",
+        component: () => import("./pages/user/Loan"),
+        meta: {
+            auth: true,
+            adminAuth: false,
+            title: "Dashboard | Loan",
+        },
+    },
+    {
         path: "/dashboard/withdraw",
         name: "withdraw",
         component: () => import("./pages/user/Withdraw"),
