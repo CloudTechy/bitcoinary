@@ -84,6 +84,7 @@ Route::prefix('v1')->group(function () {
 			// Route::patch('bankdetails/{bankdetail}', 'BankDetailController@update');
 			Route::resource('bankdetails', 'BankDetailController');
 			Route::put('user/image/{user}', 'UserController@uploadImage');
+			Route::put('user/password_change/{user}', 'UserController@updatePassword');
 			Route::resource('paymentmethods', 'PaymentMethodController');
 			Route::resource('packageusers', 'PackageUserController');
 			Route::resource('transactions', 'TransactionController');

@@ -7,6 +7,7 @@ use App\Http\Requests\ValidateUserRequest;
 use App\Http\Resources\UserResource;
 use App\Http\Resources\ReferralResource;
 use App\User;
+use Auth;
 use App\UserLevel;
 use App\Package;
 use Illuminate\Http\Request;
@@ -116,6 +117,8 @@ class UserController extends Controller {
 			'last_name' => 'min:2|string|max:255',
 			'wallet' => 'nullable|string',
 			'country' => 'nullable|string',
+			'city' => 'nullable|string', 
+			'gender' => 'nullable|string',
 			'pm' => 'nullable|string',
 			'admin_wallet' => 'nullable|string',
 			'admin_pm' => 'nullable|string',
@@ -204,8 +207,51 @@ class UserController extends Controller {
         {
             $result = $user->update(['image' => $validated['image']]);
             DB::commit();
-            Helper::adminsUserActivityRequest(['type'=>'AvatarActivity', 'message' =>  auth()->user()->username . ' updated '. $user->username .'\'s profile avatar.']);
+			if(auth()->user()->user_level->name != 'user'){
+				 Helper::adminsUserActivityRequest(['type'=>'AccountActivity', 'message' =>  auth()->user()->username . ' updated '. $user->username .'\'s profile avatar.']);
+           }
             return Helper::validRequest($result, 'User avatar updated successfully', 200);
+        } catch (Exception $bug) {
+            DB::rollback();
+            return $this->exception($bug, 'unknown error', 500);
+        }
+    }
+
+	public function updatePassword(Request $request, User $user)
+    {
+        $validated = $request->validate([
+            "old_password" => 'required',
+			'password' => 'required|string|confirmed|min:5',
+        ]);
+        DB::beginTransaction();
+         
+        try
+        {
+		 	$credentials = [
+							"email" => $user->email,
+							"password" => $validated['old_password']
+							];
+			if ($attempt = Auth::guard()->attempt($credentials)) {
+				$user->password = bcrypt($validated['password']);
+				$user->save();
+
+				$result = $user->update(['password' => bcrypt($validated['password'])]);
+				DB::commit();
+				
+				
+            	if(auth()->user()->user_level->name != 'user'){
+					Helper::adminsUserActivityRequest(['type'=>'AccountActivity', 'message' =>  auth()->user()->username . ' updated '. $user->username .'\'s password.']);
+           		}
+				else Helper::UserActivityRequest(['type'=>'AccountActivity', 'message' =>  'You have updated your password successfully.']);
+           		if($request['logout']){
+					$logout = Auth::guard()->logout();
+				} 
+		   		return Helper::validRequest($result, 'Password updated successfully', 200);
+			}
+			else {
+				return Helper::invalidRequest(['error' => 'Invalid Credentials'], 'Your password is incorrect', 400);
+			}
+           
         } catch (Exception $bug) {
             DB::rollback();
             return $this->exception($bug, 'unknown error', 500);

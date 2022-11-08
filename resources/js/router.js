@@ -254,17 +254,17 @@ const routes = [
         meta: {
             auth: true,
             adminAuth: false,
-            title: "User Withdraw",
+            title: "Dashboard | Withdraw",
         },
     },
     {
-        path: "/dashboard/settings",
-        name: "Setting",
-        component: () => import("./pages/user/Setting"),
+        path: "/dashboard/profile",
+        name: "Profile",
+        component: () => import("./pages/user/Profile"),
         meta: {
             auth: true,
             adminAuth: false,
-            title: "User Setting",
+            title: "Dashboard | Profile Settings",
         },
     },
     {
@@ -274,7 +274,7 @@ const routes = [
         meta: {
             auth: true,
             adminAuth: false,
-            title: "User Security",
+            title: "Dashboard | Security",
         },
     },
     {

@@ -125,7 +125,7 @@ class AuthController extends Controller {
 			}
 
 		} catch (Exception $bug) {
-			return $this->exception($bug, 'unknown error', 401);
+			return $this->exception($bug, 'unknown error', 500);
 		}
 	}
 
@@ -161,7 +161,7 @@ class AuthController extends Controller {
 
 	}
 	function sendResetLinkFailedResponse(Request $request, $response) {
-		return Helper::invalidRequest(['error' => 'Email failed to send'], 'Email could not be sent to this email address.', 401);
+		return Helper::invalidRequest(['error' => 'Email failed to send'], 'Email could not be sent to this email address.', 400);
 	}
 	function callResetPassword(Request $request) {
 		return $this->reset($request);
@@ -169,13 +169,16 @@ class AuthController extends Controller {
 	function resetPassword($user, $password) {
 		$user->password = Hash::make($password);
 		$user->save();
-		Helper::adminsUserActivityRequest(['type'=>'PasswordResetActivity', 'message' => $user->username . '"s password is reset.']);
-		event(new PasswordReset($user));
+		if(auth()->user()->user_level->name != 'user'){
+			Helper::adminsUserActivityRequest(['type'=>'AccountActivity', 'message' =>  auth()->user()->username . ' updated '. $user->username .'\'s password.']);
+        }
+		else Helper::UserActivityRequest(['type'=>'AccountActivity', 'message' =>  'You have updated your password successfully.']);
+        event(new PasswordReset($user));
 	}
 	function sendResetResponse(Request $request, $response) {
 		return Helper::validRequest(['success' => 'password reset success'], 'Password updated successfully, ', 200);
 	}
 	function sendResetFailedResponse(Request $request, $response) {
-		return Helper::invalidRequest(['error' => 'Validation error'], $response == "passwords.user" ? "User validation error" : "Token validation error", 401);
+		return Helper::invalidRequest(['error' => 'Validation error'], $response == "passwords.user" ? "User validation error" : "Token validation error", 400);
 	}
 }

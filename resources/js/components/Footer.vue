@@ -25,12 +25,12 @@ export default {
  <footer>
     <!-- App Bottom Menu -->
     <div class="appBottomMenu">
-        <a href="/dashboard/Profile" class="item">
+        <router-link to="/dashboard/profile" class="item">
             <div class="col">
                 <i class="fas fa-user-cog fa-2x"></i>
                 <strong>Settings</strong>
             </div>
-        </a>
+        </router-link>
         <a href="#" data-bs-toggle="modal" data-bs-target="#deposit" class="item">
             <div class="col">
                 <i class="fas fa-credit-card fa-2x"></i>

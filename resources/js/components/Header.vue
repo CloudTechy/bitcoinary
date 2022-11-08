@@ -179,7 +179,7 @@
         <div class="right">
             <a href="/dashboard/Notifications" class="headerButton"> <i class="fas fa-bell"></i> <span
                     class="badge badge-danger">0</span>
-            </a> <a href="/dashboard/Profile" class="headerButton"> <img :src="$root.basepath + '/assets/images/home/user-default.png'"
+            </a> <a href="/dashboard/profile" class="headerButton"> <img :src="$root.basepath + '/assets/images/home/user-default.png'"
                    alt="img" class="imaged w32"
                     style="width:32px;height:32px;border-radius:50%"> </a>
         </div>
@@ -191,13 +191,13 @@
                 <div class="modal-body p-0">
                     <!-- profile box -->
                     <div class="profileBox pt-2 pb-2">
-                        <div class="image-wrapper"> <img src="https://west-exchange.com/account/upload/user-default.png"
+                        <div class="image-wrapper"> <img  :src="$root.basepath + '/assets/images/home/user-default.png'"
                                 alt="img" class="imaged  w36" style="width:36px;height:36px;border-radius:50%"> </div>
                         <div class="in">
                             <strong>
-                                David Robinson </strong>
+                                {{$auth.user().names}} </strong>
                             <div class="text-muted">
-                                Davidrobinson5616@yahoo.com </div>
+                                {{$auth.user().email}} </div>
                         </div>
                     </div>
                     <!-- * profile box -->
@@ -206,14 +206,14 @@
                         <div class="listview-title">Total Balance</div>
                         <div class="in">
                             <h2 class="amount">
-                                $0.00 </h2>
+                                ${{$root.normalNumeral($auth.user().balance)}} </h2>
                         </div>
                     </div>
                     <!-- * balance -->
     
                     <!-- action group -->
                     <div class="action-group">
-                        <a href="Profile.php" class="action-button">
+                        <a href="/dashboard/profile" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
                                     <i class="fas fa-user"></i>
@@ -221,7 +221,7 @@
                                 My Profile
                             </div>
                         </a>
-                        <a href="Downlines.php" class="action-button">
+                        <a href="/dashboard/downlines" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
                                     <i class="fas fa-users"></i>
@@ -229,7 +229,7 @@
                                 My Downlines
                             </div>
                         </a>
-                        <a href="Profile.php#Password" class="action-button">
+                        <a href="/dashboard/profile#Password" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
                                     <i class="fas fa-user-lock"></i>
@@ -238,7 +238,7 @@
                             </div>
                         </a>
     
-                        <a href="Status.php" class="action-button">
+                        <a href="/dashboard/status" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
                                     <i class="fas fa-certificate"></i>
@@ -286,12 +286,12 @@
                             </a>
                         </li>
                         <li>
-                            <router-link to="/dashboard/loan" class="item">
+                            <a href="/dashboard/loan" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-money-bill"></i>
                                 </div>
                             <div class="in"> Credit Advance/Loan</div>
-                            </router-link>
+                            </a>
                         </li>
                         <li>
                             <a href="TransactionHistory.php" class="item">
