@@ -194,7 +194,7 @@
                         <div class="image-wrapper"> <img  :src="$root.basepath + '/assets/images/home/user-default.png'"
                                 alt="img" class="imaged  w36" style="width:36px;height:36px;border-radius:50%"> </div>
                         <div class="in">
-                            <strong>
+                            <strong class="text-capitalize">
                                 {{$auth.user().names}} </strong>
                             <div class="text-muted">
                                 {{$auth.user().email}} </div>

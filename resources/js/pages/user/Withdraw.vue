@@ -197,7 +197,7 @@
 }
 
 </script>
-<style type="text/css">
+<style type="text/css" scoped>
 .img-size-50 {
     width: 50px;
     height: 50px;

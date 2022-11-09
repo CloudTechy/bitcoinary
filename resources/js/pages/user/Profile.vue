@@ -3,25 +3,26 @@
 
         <Header></Header>
         <div id="appCapsule">
-        
+
             <div class="section mt-3 text-center">
                 <div class="avatar-section">
                     <a :key="avatarKey" href="#" data-bs-toggle="modal" data-bs-target="#photo">
-                        <img v-if="$auth.user().image"  :src="$root.basepath + '/images/users/'+$auth.user().image" alt="avatar" class="imaged w100 rounded">
+                        <img v-if="$auth.user().image" :src="$root.basepath + '/images/users/'+$auth.user().image"
+                            alt="avatar" class="imaged w100 rounded">
                         <img v-else :src="$root.basepath + '/assets/images/home/user-default.png'" alt="avatar"
                             class="imaged w100 rounded">
                         <span class="button"><i class="fas fa-camera"></i></span>
                     </a>
                 </div>
             </div>
-        
+
             <div class="listview-title mt-1">&nbsp;</div>
             <ul class="listview image-listview text inset">
                 <li>
                     <a href="#" class="item" data-bs-toggle="modal" data-bs-target="#profile">
                         <div class="in">
-                            <div>
-                               {{$auth.user().names}} </div>
+                            <div class="text-capitalize">
+                                {{$auth.user().names}} </div>
                             <span class="text-primary">
                                 <i class="fas fa-edit"></i> EDIT PROFILE
                             </span>
@@ -45,7 +46,7 @@
                         <div class="in">
                             <div>Email</div>
                             <span class="text-primary">
-                               {{$auth.user().email}} </span>
+                                {{$auth.user().email}} </span>
                         </div>
                     </a>
                 </li>
@@ -113,9 +114,9 @@
                     </a>
                 </li>
             </ul>
-        
+
             <div class="listview-title mt-1">&nbsp;</div>
-        
+
         </div>
         <!-- * App Capsule -->
         <!-- Dialog Form -->
@@ -132,7 +133,7 @@
                             <button onclick="copyPhrase()" class="phrase_modal btn btn-text-primary"
                                 data-clipboard-text="davidrobinson01 red car earth camera cow biolumonesance bludgeon five dog rock tank"><span
                                     class="text-success" id="thePhrase">COPY</span></button>
-        
+
                             <button type="button" class="btn btn-text-danger" data-bs-dismiss="modal">CLOSE</button>
                         </div>
                     </div>
@@ -147,9 +148,10 @@
                     <div class="modal-header">
                         <h5 class="modal-title">Change Profile Photo</h5>
                     </div>
-                    <form method="post" @submit.prevent = "changeProfilePicture()" enctype="multipart/form-data">
+                    <form method="post" @submit.prevent="changeProfilePicture()" enctype="multipart/form-data">
                         <div class="modal-body text-start mb-2">
-                            <div v-if="avatar_error" v-for="err in avatar_error" class = "alert alert-danger small p-2 m-1">{{err}}</div>
+                            <div v-if="avatar_error" v-for="err in avatar_error"
+                                class="alert alert-danger small p-2 m-1">{{err}}</div>
                             <div class="form-group basic">
                                 <div class="input-wrapper">
                                     <input ref="fileInput" type="file" class="form-control" name="photo" required>
@@ -158,9 +160,11 @@
                         </div>
                         <div class="modal-footer">
                             <div class="btn-inline">
-                                <button type="button" ref = "profileModalCloseButton" class="btn btn-text-secondary" data-bs-dismiss="modal">CANCEL</button>
-        
-                                <button type="submit" ref = "profileModalUploadButton" class="btn btn-text-primary" value="UPLOAD" name="upload_photo">UPLOAD</button>
+                                <button type="button" ref="profileModalCloseButton" class="btn btn-text-secondary"
+                                    data-bs-dismiss="modal">CANCEL</button>
+
+                                <button type="submit" ref="profileModalUploadButton" class="btn btn-text-primary"
+                                    value="UPLOAD" name="upload_photo">UPLOAD</button>
                             </div>
                         </div>
                     </form>
@@ -175,61 +179,89 @@
                     <div class="modal-header">
                         <h5 class="modal-title">Profile</h5>
                     </div>
-                    <form method="POST">
+                    <form method="POST" @submit.prevent = "updateProfile()">
                         <div class="modal-body text-start mb-2">
-        
                             <div class="form-group basic">
-                                <div class="input-wrapper">
-                                    <label class="label" for="text1">Name</label>
-                                    <input type="text" class="form-control" name="name" value="David Robinson " required>
+                                <div class="input-wrapper disabled">
+                                    <label class="label">Names</label>
+                                    <input readonly type="text" class="form-control" v-model="profileForm.names" required>
+                                 
                                 </div>
                             </div>
                             <div class="form-group basic">
                                 <div class="input-wrapper">
-                                    <label class="label" for="text1">Phone</label>
-                                    <input type="phone" class="form-control" name="phone" value="">
+                                    <label class="label" for="password1">Phone number</label>
+                                    <vue-tel-input v-model="profileForm.number" mode="international" v-on:country-changed="countryChanged" :class="{
+                                        'form-control': false,
+                                        'wthree_input': false,
+                                        'error-input': errors.number != undefined,
+                                    }">>
+                                    </vue-tel-input>
+                                    <p v-if="errors.number" v-for="error in errors.number" class="text-danger p-1 small">
+                                        {{ error }}
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label">Email: </label>
+                                    <input type="email" class="form-control" v-model="profileForm.email"
+                                       >
+                                        <p v-if="errors.email" v-for="error in errors.email" class="text-danger p-1 small">
+                                            {{ error }}
+                                        </p>
+                                </div>
+                            </div>
+                            <div class="form-group basic disabled">
+                                <div class="input-wrapper">
+                                    <label class="label">Country: </label>
+                                    <input readonly type="text" class="form-control" v-model="profileForm.country">
                                 </div>
                             </div>
                             <div class="form-group basic">
                                 <div class="input-wrapper">
-                                    <label class="label" for="text1">Country: </label>
-                                    <select name="country" class="form-control" id="country" required>
-                                        <option value=""></option>
-                                    </select>
+                                    <label class="label">City: </label>
+                                    <input type="text" class="form-control" v-model="profileForm.city"
+                                       >
+                                        <p v-if="errors.city" v-for="error in errors.city" class="text-danger p-1 small">
+                                            {{ error }}
+                                        </p>
+
                                 </div>
                             </div>
                             <div class="form-group basic">
                                 <div class="input-wrapper">
-                                    <label class="label" for="text1">City: </label>
-                                    <select name="city" class="form-control" id="state">
-                                        <option value=""></option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group basic">
-                                <div class="input-wrapper">
-                                    <label class="label" for="text1">Gender: </label>
-                                    <select class="form-control" name="gender" required>
-                                        <option value="">-Select-</option>
+                                    <label class="label">Gender: </label>
+                                    <select class="form-control" v-model="profileForm.gender" required>
+                                        <option>-Select-</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                         <option value="Other">Other</option>
                                     </select>
+                                    <p v-if="errors.gender" v-for="error in errors.gender" class="text-danger p-1 small">
+                                        {{ error }}
+                                    </p>
                                 </div>
                             </div>
                             <div class="form-group basic">
                                 <div class="input-wrapper">
-                                    <label class="label" for="text1">Address</label>
-                                    <textarea class="form-control" rows="3" name="address"></textarea>
+                                    <label class="label">Address</label>
+                                    <textarea class="form-control" rows="2" v-model="profileForm.address"></textarea>
+                                    <p v-if="errors.address" v-for="error in errors.address" class="text-danger p-1 small">
+                                        {{ error }}
+                                    </p>
                                 </div>
                             </div>
-        
+
                         </div>
                         <div class="modal-footer">
                             <div class="btn-inline">
-                                <button type="button" class="btn btn-text-secondary" data-bs-dismiss="modal">CANCEL</button>
-        
-                                <input type="submit" class="btn btn-text-primary" value="PROCEED" name="edit_contact">
+                                <button ref = "profileModalCloseButton" type="button" class="btn btn-text-secondary"
+                                    data-bs-dismiss="modal">CANCEL</button>
+
+                                <button ref="profileModalResetButton" type="submit" class="btn btn-text-primary">UPDATE</button>
                             </div>
                         </div>
                     </form>
@@ -246,45 +278,53 @@
                     </div>
                     <form method="POST" @submit.prevent="changePassword()">
                         <div class="modal-body text-start mb-2">
-        
+
                             <div class="form-group basic">
                                 <div class="input-wrapper">
-                                    <label class="label" for="text1">Old Password</label>
-                                    <input type="password" class="form-control" v-model="passwordForm.old_password" required>
+                                    <label class="label">Old Password</label>
+                                    <input type="password" class="form-control" v-model="passwordForm.old_password"
+                                        required>
                                 </div>
-                                <p v-if="errors.old_password" v-for="error in errors.old_password" class="text-danger m-0 p-1 pt-0 small">
+                                <p v-if="errors.old_password" v-for="error in errors.old_password"
+                                    class="text-danger m-0 p-1 pt-0 small">
                                     {{ error }}
                                 </p>
                             </div>
                             <div class="form-group basic">
                                 <div class="input-wrapper">
-                                    <label class="label" for="text1">New Password</label>
-                                    <input type="password" class="form-control" v-model="passwordForm.password" required>
+                                    <label class="label">New Password</label>
+                                    <input type="password" class="form-control" v-model="passwordForm.password"
+                                        required>
                                 </div>
-                                <p v-if="errors.password" v-for="error in errors.password" class="text-danger m-0 p-1 pt-0 small">
+                                <p v-if="errors.password" v-for="error in errors.password"
+                                    class="text-danger m-0 p-1 pt-0 small">
                                     {{ error }}
                                 </p>
                             </div>
                             <div class="form-group basic">
                                 <div class="input-wrapper">
-                                    <label class="label" for="text1">Confirm New Password</label>
-                                    <input type="password" class="form-control" v-model="passwordForm.password_confirmation" required>
+                                    <label class="label">Confirm New Password</label>
+                                    <input type="password" class="form-control"
+                                        v-model="passwordForm.password_confirmation" required>
                                 </div>
                             </div>
                             <div class="form-group basic">
                                 <div class="input-wrapper">
-                                    
+
                                     <input type="checkbox" class="" v-model="passwordForm.logout">
-                                    <label style="display:inline" class="pl-1 label" for="">Log me out</label>
+                                    <label style="display:inline" class="pl-1 label" for="">Log me out on other
+                                        devices</label>
                                 </div>
                             </div>
-        
+
                         </div>
                         <div class="modal-footer">
                             <div class="btn-inline">
-                                <button ref="passwordModalCloseButton" type="button" class="btn btn-text-secondary" data-bs-dismiss="modal">CANCEL</button>
-        
-                                <button ref="passwordModalResetButton" type="submit" class="btn btn-text-primary">RESET</button>
+                                <button ref="passwordModalCloseButton" type="button" class="btn btn-text-secondary"
+                                    data-bs-dismiss="modal">CANCEL</button>
+
+                                <button ref="passwordModalResetButton" type="submit"
+                                    class="btn btn-text-primary">RESET</button>
                             </div>
                         </div>
                     </form>
@@ -701,6 +741,16 @@ export default {
                 message: undefined,
                 logout: false
             }),
+            profileForm: new Form({
+                names:undefined,
+                email: undefined,
+                number: undefined,
+                country: undefined,
+                city: undefined,
+                address: undefined,
+                postal_code: undefined,
+                gender: undefined,
+            }),
 
 
             paymentMethods: undefined,
@@ -715,7 +765,7 @@ export default {
             depositAmount: undefined,
             deposit_type: 'balance',
             avatarKey: 0,
-            avatar_error : undefined
+            avatar_error: undefined
 
 
 
@@ -763,8 +813,17 @@ export default {
     mounted() {
         this.$root.dashboard_header_page_title = "Profile"
         window.scrollTo(0, 0);
+        this.profileForm.fill(this.$auth.user())
     },
     created() {
+        var css = document.createElement("link");
+        css.setAttribute(
+            "href",
+            this.$root.basepath + "/assets/css/home/vue-input.css"
+        );
+        css.setAttribute("type", "text/css");
+        css.setAttribute("rel", "stylesheet");
+        document.head.appendChild(css);
         var js = document.createElement("script");
         js.setAttribute(
             "src",
@@ -798,7 +857,7 @@ export default {
         this.getPaymentMethods()
     },
     beforeDestroy() {
-        this.$refs.passwordModalCloseButton.click() 
+        this.$refs.passwordModalCloseButton.click()
         this.$refs.profileModalCloseButton.click()
     },
     computed: {
@@ -810,6 +869,38 @@ export default {
 
     },
     methods: {
+        updateProfile() {
+            this.processing(true, 'profileModalResetButton', 'Requesting...', '')
+            this.$root.loader('show')
+            this.message = ''
+            this.error = ''
+            this.errors = {}
+            this.profileForm.patch("/auth/users/" + this.$auth.user().id)
+                .then(response => {
+                    this.processing(false, 'profileModalResetButton', 'Requesting...', 'UPDATE')
+                    this.$auth.fetch()
+                    this.$root.loader('hide')
+                    this.$root.alert('success', ' ', response.data.message)
+                    this.$refs.profileModalCloseButton.click()
+                    
+                })
+                .catch(error => {
+                    this.$root.loader('hide')
+                    this.processing(false, 'profileModalResetButton', 'Requesting...', 'UPDATE')
+                    if (error.response.status == 422) {
+                        this.errors = {}
+                        this.errors = error.response.data.error
+                    }
+                    else {
+                        this.error = error.response.data.message
+                        this.$root.alert('error', ' ', this.error)
+                    }
+                    // this.$root.alert('error', ' ', 'Update was not successful, try again...')
+
+                })
+
+    
+        },
         changePassword() {
             if (this.passwordForm.old_password == this.passwordForm.password) {
                 return this.$root.alert('error', ' ', 'Old password and new password must be different')
@@ -885,7 +976,7 @@ export default {
             }
             this.avatarKey++
 
-        }, 
+        },
 
         subscribePlan(event, plan) {
             this.deposit_type = 'investment'
@@ -1007,6 +1098,9 @@ export default {
                 this.$refs[ref].innerHTML = text2;
                 this.$refs[ref].disabled = false;
             }
+        },
+        countryChanged(country) {
+            this.profileForm.country = country.name;
         },
 
     }
