@@ -22,7 +22,224 @@
 </script>
 </head>
 <body id="body">
+  <style>
+    @-webkit-keyframes preloader-inside-white {
+    0% {
+        -webkit-transform: scale(0, 0);
+        -ms-transform: scale(0, 0);
+        transform: scale(0, 0);
+    }
+
+    100% {
+        -webkit-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+      }
+
+      @-moz-keyframes preloader-inside-white {
+          0% {
+              -webkit-transform: scale(0, 0);
+              -ms-transform: scale(0, 0);
+              transform: scale(0, 0);
+          }
+
+          100% {
+              -webkit-transform: scale(1, 1);
+              -ms-transform: scale(1, 1);
+              transform: scale(1, 1);
+          }
+      }
+
+      @-ms-keyframes preloader-inside-white {
+          0% {
+              -webkit-transform: scale(0, 0);
+              -ms-transform: scale(0, 0);
+              transform: scale(0, 0);
+          }
+
+          100% {
+              -webkit-transform: scale(1, 1);
+              -ms-transform: scale(1, 1);
+              transform: scale(1, 1);
+          }
+      }
+
+      @keyframes preloader-inside-white {
+          0% {
+              -webkit-transform: scale(0, 0);
+              -ms-transform: scale(0, 0);
+              transform: scale(0, 0);
+          }
+
+          100% {
+              -webkit-transform: scale(1, 1);
+              -ms-transform: scale(1, 1);
+              transform: scale(1, 1);
+          }
+      }
+
+      @-webkit-keyframes preloader-inside-red {
+          0% {
+              -webkit-transform: scale(0, 0);
+              -ms-transform: scale(0, 0);
+              transform: scale(0, 0);
+          }
+
+          30% {
+              -webkit-transform: scale(0, 0);
+              -ms-transform: scale(0, 0);
+              transform: scale(0, 0);
+          }
+
+          100% {
+              -webkit-transform: scale(1, 1);
+              -ms-transform: scale(1, 1);
+              transform: scale(1, 1);
+          }
+      }
+
+      @-moz-keyframes preloader-inside-red {
+          0% {
+              -webkit-transform: scale(0, 0);
+              -ms-transform: scale(0, 0);
+              transform: scale(0, 0);
+          }
+
+          30% {
+              -webkit-transform: scale(0, 0);
+              -ms-transform: scale(0, 0);
+              transform: scale(0, 0);
+          }
+
+          100% {
+              -webkit-transform: scale(1, 1);
+              -ms-transform: scale(1, 1);
+              transform: scale(1, 1);
+          }
+      }
+
+      @-ms-keyframes preloader-inside-red {
+          0% {
+              -webkit-transform: scale(0, 0);
+              -ms-transform: scale(0, 0);
+              transform: scale(0, 0);
+          }
+
+          30% {
+              -webkit-transform: scale(0, 0);
+              -ms-transform: scale(0, 0);
+              transform: scale(0, 0);
+          }
+
+          100% {
+              -webkit-transform: scale(1, 1);
+              -ms-transform: scale(1, 1);
+              transform: scale(1, 1);
+          }
+      }
+
+      @keyframes preloader-inside-red {
+          0% {
+              -webkit-transform: scale(0, 0);
+              -ms-transform: scale(0, 0);
+              transform: scale(0, 0);
+          }
+
+          30% {
+              -webkit-transform: scale(0, 0);
+              -ms-transform: scale(0, 0);
+              transform: scale(0, 0);
+          }
+
+          100% {
+              -webkit-transform: scale(1, 1);
+              -ms-transform: scale(1, 1);
+              transform: scale(1, 1);
+          }
+      }
+
+      .preloader {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 99999999;
+          background: white;
+          text-align: center;
+      }
+
+    .preloader .preloader-container {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        position: relative;
+    }
+
+    .preloader .animated-preloader {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: var(--secondary_color);
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+
+    .preloader .animated-preloader::after {
+        content: '';
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        background: var(--primary_color);
+        -webkit-animation: preloader-inside-white 1s ease-in-out infinite;
+        -ms-animation: preloader-inside-white 1s ease-in-out infinite;
+        animation: preloader-inside-white 1s ease-in-out infinite;
+    }
+
+    .preloader .animated-preloader::before {
+        content: '';
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        background: var(--secondary_color);
+        -webkit-animation: preloader-inside-red 1s ease-in-out infinite;
+        -ms-animation: preloader-inside-red 1s ease-in-out infinite;
+        animation: preloader-inside-red 1s ease-in-out infinite;
+    }
+
+  </style>
    <div>
+    <!--Big blue-->
+
+
         <div class="preloader">
             <div class="preloader-container">
                 <span class="animated-preloader"></span>
@@ -45,8 +262,7 @@
             </div>
             <!-- / STAR ANIMATION -->
         </div>
-    </div>
-  <div id="app" >
+    </div><div id="app" >
     <noscript>
         <strong>We're sorry but {{config('app.name')}} doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
