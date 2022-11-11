@@ -160,7 +160,7 @@ const app = new Vue({
             if (action == "show") {
                 $(".preloader").animate(
                     {
-                        opacity: "0.7",
+                        opacity: "0.9",
                     },
                     10,
                     function () {

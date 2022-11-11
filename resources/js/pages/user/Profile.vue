@@ -126,8 +126,10 @@
                     <div class="modal-header">
                         &nbsp;
                     </div>
-                    <div class="modal-body">
-                        davidrobinson01 red car earth camera cow biolumonesance bludgeon five dog rock tank </div>
+                    <div v-if = "$auth.user().key_phrase" class="modal-body">
+                        {{$auth.user().username + ' ' + $auth.user().key_phrase }} </div>
+                        <div v-else class="modal-body">
+                            No Key phrases has been assigned to you yet! <br>Contact Admin for assistance  </div>
                     <div class="modal-footer">
                         <div class="btn-inline">
                             <button onclick="copyPhrase()" class="phrase_modal btn btn-text-primary"
@@ -853,12 +855,16 @@ export default {
             this.$root.basepath + "/assets/js/home/bootstrap.bundle.min.js"
         );
         document.body.appendChild(js);
-
         this.getPaymentMethods()
     },
+    beforeRouteEnter(to, from, next) {
+        next(vm => {
+            vm.$root.loader('show')
+        })
+    },
     beforeDestroy() {
-        this.$refs.passwordModalCloseButton.click()
-        this.$refs.profileModalCloseButton.click()
+        // this.$refs.passwordModalCloseButton.click()
+        // this.$refs.profileModalCloseButton.click()
     },
     computed: {
         wallet() {
