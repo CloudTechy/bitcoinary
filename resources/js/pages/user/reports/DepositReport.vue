@@ -1,88 +1,156 @@
 <template>
-    <div class="page-wrapper">
-        <DashboardHeader></DashboardHeader>
-        <section class="inner-hero bg_img" :style="'background:url('+ $root.basepath +'/images/bg/bg-1.jpg)'" :data-background="$root.basepath + '/images/bg/bg-1.jpg'">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h2 class="page-title">Deposit Statement</h2>
-                        <ul class="page-breadcrumb">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/dashboard">Dashboard</a></li>
-                            <li>Active Plans</li>
-                        </ul>
-                        <h2 class="page-title pt-4"><span class="base--color">Welcome, </span> {{$auth.user().username}}</h2>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="pb-60">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-12">
-                        <div class="row mt-50 ">
-                            <div class="col-lg-4 col-sm-12 mb-50">
-                                <div class="m-auto equal blog-card p-0 mb-30">
-                                    <div class="headeraccount base--bg">
-                                        <span class="font-weight-bold">Financial Statistics </span>
-                                    </div>
-                                    <div class="row p-4 pb-2">
-                                        <div class="col-9 col-md-10 ">
-                                            <h2 class="mb-1">{{$root.numeral($auth.user().balance)}}</h2>
-                                            <p class="mb-3">Account Balance</p>
-                                        </div>
-                                        <div class="col-3 col-md-2 p-0">
-                                            <div class="icon base--bg text-white">
-                                                <i class="las la-dollar-sign"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="divider pb-3"></div>
-                                    <div class="row p-4 pb-2">
-                                        <div class="col-9 col-md-10 ">
-                                            <h2 class="mb-1">{{$root.numeral($auth.user().totalActiveTransaction)}}</h2>
-                                            <p class="mb-3">Active Investment</p>
-                                        </div>
-                                        <div class="col-3 col-md-2 p-0">
-                                            <div class="icon base--bg text-white">
-                                                <i class="las la-dollar-sign"></i>
-                                            </div>
-                                        </div>
-                                    </div>
+    <div class="">
+
+        <Header></Header>
+        <div id="appCapsule">
+
+                <div class="section">
+                    <div class="row mt-2">
+                        <div class="card p-2">
+                            <table id="example" class="table table-striped table-bordered dt-responsive nowrap table-condensed">
+                                <thead class="text-primary">
+                                    <small class="text-center mobile">Click the <span class="text-white"
+                                            style="padding:2px 7px;border-radius:50%;background-color:#0d6efd">+</span> icon for
+                                        details</small>
+                                    <hr>
+                                    <tr>
+                                        <th class="text-primary">Date</th>
+                                        <th class="text-primary">Amount</th>
+                                        <th class="text-primary">Type</th>
+                                        <th class="text-primary">Reference</th>
+                                        <th class="text-primary"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                
+                                    <tr>
+                                        <td><span style="display:none">10/12/2022 23:04</span>12th October, 2022 11:04 PM</td>
+                                        <td>$100.00</td>
+                                        <td>DOGECOIN Deposit</td>
+                                        <td>wxref8095</td>
+                                        <td>
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
+                                                style="width: 100%">PENDING</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card p-2">
+                            <div class="card">
+                                <div class="card-body" align="center">
+                                    <svg class="svg-inline--fa fa-exclamation-triangle fa-w-18 text-primary fa-2x" aria-hidden="true"
+                                        focusable="false" data-prefix="fa" data-icon="exclamation-triangle" role="img"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="">
+                                        <path fill="currentColor"
+                                            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z">
+                                        </path>
+                                    </svg>
+                                    <!-- <i class="fa fa-exclamation-triangle text-primary fa-2x"></i> Font Awesome fontawesome.com --><br>
+                                    <strong>No Records Found!</strong>
                                 </div>
                             </div>
-                            <div class="col-lg-8 col-sm-12">
-                                <div class="m-auto equal blog-card p-0 mb-30">
-                                    <div class="headeraccount base--bg mb-4"><span class="text-capitalize font-weight-bold">Your active Investment plans </span> </div>
-                                    <div class="table-respon2sive table-responsive--md p-0">
-                                        <table class="table style--two white-space-nowrap">
-                                            <thead v-if="userPackages.length > 0" class="bg-transparent text-white">
-                                                <tr>
-                                                    <th>Plan</th>
-                                                    <th>Capital</th>
-                                                    <th>Interest</th>
-                                                    <th>Activation</th>
-                                                    <th>Countdown</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr v-if="userPackages.length > 0" v-for="packag in userPackages">
-                                                    <td data-label="Plan">{{packag.name}}</td>
-                                                    <td data-label="Capital">${{$root.numeral(packag.amount)}}</td>
-                                                    <td class="text-success" data-label="Interest">+ ${{$root.normalNumeral(packag.roi)}}</td>
-                                                    <td data-label="Activation">{{packag.date}}</td>
-                                                    <td data-label="Countdown" class="text-success">{{getDate(packag.expiration)}}</td>
-                                                </tr>
-                                                <tr v-if="userPackages.length == 0">
-                                                    <td class="text-center only" colspan="4">
-                                                        <div class="p-3 text-center">
-                                                            You do not have an active investment.<br> Click <a style="text-decoration: underline;" href="/dashboard/deposit" class="base--color font-weight-bold"> here </a> to invest.
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+
+        <br><br>
+
+        <Footer></Footer>
+
+        <!-- Withdraw -->
+        <div class="modal fade action-sheet" id="withdraw" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-primary">Withdraw Funds</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="action-sheet-content pt-0">
+                            <div class="card">
+                                <div class="card-body">
+                                    Enter your wallet address to process your withdrawal. Minimum Withdrawal:
+                                    <strong>
+                                        $1.00 </strong>
+                                    <p class="mb-0">Available Balance:
+                                        <strong class="text-primary ">
+                                            {{$root.numeral($auth.user().balance)}} </strong>
+                                    </p>
+                                    <p>Pending Balance:
+                                        <strong class="text-primary">
+                                            {{$root.numeral($auth.user().totalPendingWithdrawal)}} </strong>
+                                    </p>
+                                    <form method="post" @submit.prevent="withdraw">
+                                        <div ref="messageBox" v-if="error || withdrawalForm.message"
+                                            style="position:fixed;top:0px;left:0px" class=" form-group p-2 ">
+                                            <div v-if="error">
+                                                <div class="alert alert-danger" v-if="typeof error == 'object'">
+                                                    <p v-for="err in error">{{err}}</p>
+                                                </div>
+                                                <div v-else class="alert alert-danger">
+                                                    <p>{{error}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="alert alert-success" v-if="withdrawalForm.message">
+                                                <p>{{withdrawalForm.message}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group basic">
+                                            <label class="label">Select Method</label>
+                                            <div class="input-group mb-2">
+                                                <select class="form-control p-1" v-model="withdrawalPaymentMethod"
+                                                    required>
+
+                                                    <option class="text-capitalize" :value="py"
+                                                        v-for=" py in $root.payments">{{
+                                                        py.name}}</option>
+
+                                                </select>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group basic">
+                                            <label class="label">Account/Wallet Address</label>
+                                            <div class="input-wrapper mb-2">
+                                                <input type="text" readonly v-model="wallet" class="form-control"
+                                                    required>
+                                                <small
+                                                    v-if="withdrawalPaymentMethod && !$root.getAccountDetails(withdrawalPaymentMethod.name, withdrawalPaymentMethod.type) ">
+                                                    You don't have any stored address/account for this payment
+                                                    processor.
+                                                    <a href="#" data-bs-toggle="modal"
+                                                        data-bs-target="#addcryptowallet">click here to set one.</a>
+                                                </small>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group basic">
+                                            <label class="label">Amount</label>
+                                            <div class="input-group mb-2">
+                                                <input type="number" v-model="withdrawalForm.amount"
+                                                    class="form-control" min="1" :max="$auth.user().balance" required>
+
+                                            </div>
+                                            <p class="fontsize-normal text-dark mb-0"
+                                                v-if="withdrawalForm.amount > $auth.user().balance">
+                                                Insufficient fund!
+                                                <a data-v-5c5876d9="" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#deposit" class="text-primary">invest or make
+                                                    deposit.</a>
+                                            </p>
+                                        </div>
+
+                                        <div class="form-group basic text-center">
+                                            <button ref="submitWithdrawalForm" type="submit"
+                                                class="btn btn-info">Withdraw
+                                            </button>
+                                        </div>
+                                        <button type="button" ref="closeWithdrawalForm" style="visibility: hidden;"
+                                            class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -90,33 +158,407 @@
                 </div>
             </div>
         </div>
-        <Footer></Footer>
+        <!-- * Withdraw  -->
+        <!-- add wallet or account address -->
+
+        <div v-if="withdrawalPaymentMethod" :key="walletForm.key" style=" box-shadow: 1px 1px 20px;"
+            class="modal dialogbox fade" id="addcryptowallet" role="dialog" data-bs-keyboard="true"
+            data-bs-backdrop="static" tabindex="-1" aria-labelledby="vLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary">
+                        Add <span class="font-weight-bold">{{ withdrawalPaymentMethod.name}}</span>
+                        {{withdrawalPaymentMethod.type ==
+                        'crypto' ? 'Wallet':'Account'}}.
+                    </div>
+                    <form
+                        @submit.prevent="updatePaymentDetails(withdrawalPaymentMethod.name, withdrawalPaymentMethod.type)">
+                        <div v-if="withdrawalPaymentMethod.type == 'crypto'" class="modal-body m-1">
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label" for="">Payment Processor</label>
+                                    <input readonly type="text" v-model="walletForm.payment_method" :class="{
+                                        'form-control': true,
+                                        'fontsize-sub':true,
+                                        'error-input':
+                                            errors.payment_method !=
+                                            undefined,
+                                    }" required>
+                                    <p v-if="errors.payment_method" v-for="error in errors.payment_method"
+                                        class="text-danger m-0 p-1 pt-0 small">
+                                        {{ error }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label" for="">Wallet</label>
+                                    <input type="text" placeholder="Enter wallet address" v-model="walletForm.wallet"
+                                        :class="{
+                                            'form-control': true,
+                                            'fontsize-sub':true,
+                                            'fontsize-sub':true,
+                                            'error-input':
+                                                errors.wallet !=
+                                                undefined,
+                                        }" required>
+                                    <p v-if="errors.wallet" v-for="error in errors.wallet"
+                                        class="text-danger m-0 p-1 pt-0 small">
+                                        {{ error }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group basic">
+                                <div class=" row ">
+                                    <div class="col input-wrapper">
+                                        <label class="label" for="memo">Memo</label>
+                                        <input type="text" :class="{
+                                            'form-control': true,
+                                            'fontsize-sub':true,
+                                            'error-input': errors.memo != undefined,
+                                        }" placeholder="Enter MEMO" v-model="walletForm.memo" name="memo">
+                                        <p v-if="errors.memo" v-for="error in errors.memo"
+                                            class="text-danger m-0 p-1 pt-0 small">
+                                            {{ error }}
+                                        </p>
+                                    </div>
+                                    <div class="col input-wrapper">
+                                        <label class="label" for="standard">Standard</label>
+                                        <input type="text" v-model="walletForm.standard" :class="{
+                                            'form-control': true,
+                                            'fontsize-sub':true,
+                                            'error-input':
+                                                errors.standard !=
+                                                undefined,
+                                        }" placeholder="Enter standard" name="standard">
+                                        <p v-if="errors.standard" v-for="error in errors.standard"
+                                            class="text-danger m-0 p-1 pt-0 small">
+                                            {{ error }}
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div v-else class="modal-body m-1">
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label" for="">Payment Processor</label>
+                                    <input readonly type="text" v-model="walletForm.payment_method" :class="{
+                                        'form-control': true,
+                                        'fontsize-sub':true,
+                                        'error-input':
+                                            errors.payment_method !=
+                                            undefined,
+                                    }" required>
+                                    <p v-if="errors.payment_method" v-for="error in errors.payment_method"
+                                        class="text-danger m-0 p-1 pt-0 small">
+                                        {{ error }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label" for="">Account/Number/Address</label>
+                                    <input type="text" placeholder="Enter address" v-model="walletForm.acc_number"
+                                        :class="{
+                                            'form-control': true,
+                                            'fontsize-sub':true,
+                                            'fontsize-sub':true,
+                                            'error-input':
+                                                errors.acc_number !=
+                                                undefined,
+                                        }" required>
+                                    <p v-if="errors.acc_number" v-for="error in errors.acc_number"
+                                        class="text-danger m-0 p-1 pt-0 small">
+                                        {{ error }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="modal-footer">
+                            <div class="btn-inline">
+                                <button ref="submitWalletForm" type="submit" class="btn btn-text-primary">Save
+                                    Changes</button>
+                                <button ref="closeWalletForm" type="button" @click="$auth.fetch()"
+                                    class="btn btn-text-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Deposit -->
+
+
+        <div class="modal fade action-sheet" id="deposit" tabindex="-1" role="dialog" data-bs-backdrop="true"
+            data-bs-keyboard="false">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-primary">Deposit Funds</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="action-sheet-content pt-0">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p>Enter amount and select deposit method. Make payment to the wallet that will be
+                                        generated. Your account will be funded automatically upon verification of
+                                        payment.
+                                        Minimum Deposit is:
+                                        <strong class="text-primary">
+                                            $50.00 </strong>
+                                    </p>
+                                    <form method="post" @submit.prevent="process">
+                                        <div class="form-group basic">
+                                            <label class="label">Select Method</label>
+                                            <div class="input-group mb-2">
+                                                <select class="form-control p-1" v-model="depositPaymentMethod"
+                                                    required>
+
+                                                    <option
+                                                        v-if="$root.getPaymentAccountDetails(paymentMethods, processor.payment_method, processor.currency_type)"
+                                                        class="text-capitalize" :value="processor"
+                                                        v-for="processor in paymentMethods">{{
+                                                        processor.payment_method}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group basic">
+                                            <label class="label">Amount</label>
+                                            <div class="input-group mb-2">
+                                                <input type="number" v-model="depositAmount" class="form-control"
+                                                    min="50" max="999999999999999999999" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group basic text-center">
+
+                                            <input type="submit" name="user_deposit" value="Proceed"
+                                                class="btn btn-primary">
+                                            <!-- <button type="button" ref="paymentModalbtn" style="visibility: hidden;" id="add" data-toggle="modal"
+                                                        data-target="#paymentDetails"></button> -->
+                                        </div>
+                                        <button type="button" ref="closeDeposit" style="visibility: hidden;"
+                                            class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- * Deposit  -->
+        <!-- * Transfer -->
+        <div class="modal fade action-sheet" id="transfer" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-primary">Peer To Peer (P2P) Transfer</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="action-sheet-content pt-0">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p>Send funds to another West Exchange investor. All you need is their email
+                                        address.
+                                        <br>
+                                        Your Available Balance is
+                                        <span class="fw-bold text-primary">
+                                            $0.00 </span>
+                                    </p>
+                                    <form method="post">
+                                        <div class="form-group basic">
+                                            <label class="label">Recepient's Email</label>
+                                            <div class="input-group mb-2">
+                                                <input type="email" name="email" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group basic">
+                                            <label class="label">Amount</label>
+                                            <div class="input-group mb-2">
+                                                <input type="number" name="amount" class="form-control" min="1"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group basic text-center">
+                                            <button type="submit" class="btn btn-primary">Withdraw </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- * Transfer -->
+
+
+        <button type="button" ref="paymentModalbtn" style="visibility: show;" id="add" data-toggle="modal"
+            data-target="#paymentDetails"></button>
+        <div v-if="depositForm.payment_method" :key="depositForm.key" class="modal fade dialogbox" tabindex="-1"
+            role="dialog" ref="paymentDetails" id="paymentDetails" data-bs-backdrop="true">
+            <paymentDetails @popUploaded="displayMessage" :key="key" plan="" :deposit_type="deposit_type"
+                :paymentMethod="depositForm.payment_method" :amount="depositForm.amount"></paymentDetails>
+        </div>
+
     </div>
+
+
 </template>
 <script>
-    import moment from 'moment'
+import moment from 'moment'
 export default {
     data() {
         return {
+            key: 0,
+            withdrawalForm: new Form({
+                amount: undefined,
+                payment_method: undefined,
+                user_id: this.$auth.user().id,
+                type: "balance",
+                reference: 'SELF',
+                message: undefined,
+
+            }),
+            depositForm: new Form({
+                amount: undefined,
+                payment_method: undefined,
+                user_id: this.$auth.user().id,
+                type: "balance",
+                reference: "",
+                key: 0,
+            }),
+            walletForm: new Form({
+                payment_method: undefined,
+                wallet: undefined,
+                user_id: this.$auth.user().id,
+                memo: undefined,
+                standard: undefined,
+                acc_number: undefined,
+                acc_name: this.$auth.user().names,
+                key: 0,
+                // currency_type: type,
+            }),
+          
+
+
+            paymentMethods: undefined,
+            paymentMethod: undefined,
+            depositPaymentMethod: undefined,
+            planForm: undefined,
+            investmentPaymentMethod: undefined,
+            withdrawalPaymentMethod: undefined,
+            error: undefined,
+            errors: {},
+            message: undefined,
+            depositAmount: undefined,
+            deposit_type: 'balance',
+
             userPackages: [],
-            form: new Form({}),
             select: '',
-            error: '',
+
+
 
         }
     },
+    watch: {
+        error() {
+            setTimeout(() => { this.error = '' }, 15000);
+        },
+        errors() {
+            setTimeout(() => { this.errors = '' }, 15000);
+        },
+        depositAmount() {
+            this.withdrawalForm.payment_method = undefined
+            this.depositForm.key++
+            this.depositForm.payment_method = this.depositPaymentMethod
+            this.depositForm.amount = this.depositAmount
+
+        },
+        withdrawalPaymentMethod() {
+            this.depositForm.payment_method = undefined
+            this.key++
+            this.walletForm.payment_method = this.withdrawalPaymentMethod.name
+            this.withdrawalForm.payment_method = this.withdrawalPaymentMethod.name
+            // this.withdrawalForm.wallet = this.$root.getAccountDetails(this.withdrawalPaymentMethod.name, this.withdrawalPaymentMethod.type)
+
+        },
+        depositPaymentMethod() {
+            this.withdrawalForm.payment_method = undefined
+            this.depositForm.key++
+            this.depositForm.payment_method = this.depositPaymentMethod
+            this.depositForm.amount = this.depositAmount
+        },
+        investmentPaymentMethod() {
+            this.withdrawalForm.payment_method = undefined
+            this.depositForm.key++
+        },
+        PaymentMethod() {
+            this.key++
+            this.depositForm.key++
+
+        },
+
+    },
     mounted() {
-        this.$root.loader('show')
+        this.$root.dashboard_header_page_title = "Credit Advance/Loan"
+        window.scrollTo(0, 0);
         setInterval(this.getPackages, 100000)
         this.getPackages()
     },
+    created() {
+        var js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/jquery.min.js"
+        );
+        js.setAttribute("async", true);
+        document.body.appendChild(js);
+
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/dashboard/jquery-3.2.1.slim.min.js"
+        );
+        js.setAttribute("async", true);
+        document.body.appendChild(js);
+
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/bootstrap.min.js"
+        );
+        document.body.appendChild(js);
+
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/bootstrap.bundle.min.js"
+        );
+        document.body.appendChild(js);
+
+        this.getPaymentMethods()
+    },
     computed: {
+        wallet() {
+            if (this.withdrawalPaymentMethod) {
+                return this.$root.getAccountDetails(this.withdrawalPaymentMethod.name, this.withdrawalPaymentMethod.type)
+            }
+        }
 
     },
     methods: {
         getPackages() {
+            this.$root.loader('show')
             this.$auth.fetch()
-            this.form.get("auth/packageusers?active=1&user_id=" + this.$auth.user().id)
+            var form = Form()
+            form.get("auth/packageusers?user_id=" + this.$auth.user().id)
                 .then(response => {
                     this.$root.loader('hide')
                     this.userPackages = response.data.data.item
@@ -128,17 +570,141 @@ export default {
         },
         getDate(to) {
             return moment().to(moment(to))
-        }
+        },
+
+        subscribePlan(event, plan) {
+            this.deposit_type = 'investment'
+            this.planForm = event.target
+            this.depositForm.amount = event.target[0].value
+            this.$refs.paymentModalbtn.click()
+        },
+        setInvestmentPaymentMethod(event) {
+            this.depositForm.key++
+            var select = event.target;
+            var method = select.options[select.selectedIndex].value;
+            this.depositForm.payment_method = this.$root.cryptoFilter(this.paymentMethods, method)[0]
+
+        },
+
+        process() {
+            this.deposit_type = 'balance'
+            this.$refs.closeDeposit.click()
+            this.$refs.paymentModalbtn.click()
+            //  var myModal = new bootstrap.Modal(document.getElementById('paymentDetails'))
+            // myModal.show()
+        },
+        displayMessage(msg) {
+            this.message = msg
+            this.$root.scrollUp()
+            this.$root.alert('success', ' ', msg.message)
+            // this.planForm.reset()
+            // this.planForm = undefined
+        },
+        getPaymentMethods() {
+            this.$root.loader('show')
+            this.$error = ''
+            var form = new Form()
+            form.get("/auth/bankdetails/?user_id=1")
+                .then(response => {
+                    this.paymentMethods = response.data.data.item
+                    this.$root.loader('hide')
+                })
+                .catch(error => {
+                    this.error = error.response.data.message
+                    this.$root.loader('hide')
+                    console.log(error.response)
+                })
+        },
+        updatePaymentDetails(ref, type) {
+            this.processing(true, 'submitWalletForm', 'Requesting...', '')
+            this.message = ''
+            this.errors = ''
+            this.walletForm.currency_type = type
+            //add
+            this.walletForm.post("/auth/bankdetails")
+                .then(response => {
+                    this.processing(false, 'submitWalletForm', '', 'Save Changes')
+                    this.$auth.fetch()
+                    this.$root.alert('success', ' ', 'wallet added successfully')
+                    this.walletForm.key++
+                    this.$refs.closeWalletForm.click()
+                    this.walletForm.reset()
+                    this.$root.loader('hide')
+
+                })
+                .catch(error => {
+                    this.processing(false, 'submitWalletForm', '', 'Save Changes')
+                    this.$root.loader('hide')
+                    if (error.response.status == 422) {
+                        this.errors = {}
+                        this.errors = error.response.data.error
+                    }
+                    else {
+                        this.error = error.response.data.message
+                        this.$root.alert('error', ' ', this.error)
+                    }
+                    // this.$refs.closeWalletForm.click()
+                })
+
+            // console.log({form})    
+        },
+        withdraw() {
+            this.$root.loader('show')
+            this.processing(true, 'submitWithdrawalForm', 'Requesting...', '')
+            this.withdrawalForm.message = ""
+            this.error = ''
+            if (this.withdrawalForm.amount > this.$auth.user().balance) {
+                this.withdrawalForm.amount = this.$auth.user().balance
+            }
+            this.withdrawalForm.post("/auth/withdrawals")
+                .then(response => {
+                    this.$root.loader('hide')
+                    this.processing(false, 'submitWithdrawalForm', 'Requesting...', 'Withdraw')
+                    this.withdrawalForm.message = response.data.message
+                    this.$root.scrollToTop(0, 250)
+                    this.amount = ''
+                    this.$auth.fetch()
+                })
+                .catch(error => {
+                    this.$root.loader('hide')
+                    this.processing(false, 'submitWithdrawalForm', 'Requesting...', 'Withdraw')
+                    this.$root.scrollToTop(0, 250)
+                    if (error.response.status == 422) {
+                        this.errors = {}
+                        this.errors = error.response.data.error
+                    }
+                    else {
+                        this.error = error.response.data.message
+                        this.$root.alert('error', ' ', this.error)
+                    }
+                    console.log(error, error.response)
+                })
+
+
+            setTimeout(() => { this.withdrawalForm.message = ''; this.error = ''; this.errors = ''; this.$refs.closeWithdrawalForm.click() }, 5000);
+
+        },
+        processing(status, ref, text1, text2) {
+            if (status) {
+                this.$refs[ref].innerHTML = text1;
+                this.$refs[ref].disabled = true;
+            } else {
+                this.$refs[ref].innerHTML = text2;
+                this.$refs[ref].disabled = false;
+            }
+        },
+
     }
 }
 
 </script>
-<style type="text/css">
-.table-responsive--md tr td.only {
-    padding-left: 0% !important;
-    text-align: center !important;
-    white-space: normal !important;
-    padding-right: 0% !important;
+<style scoped>
+/* .modal-header {
+    display: block;
+
 }
 
+.modal-content {
+    box-shadow: 1px 1px 20px !important;
+} */
 </style>

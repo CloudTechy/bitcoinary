@@ -15,6 +15,7 @@ use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
 use App\Notifications\UserRegistered;
 use \DB;
+use App\Notifications\ReferralNotification;
 use \Exception;
 
 class AuthController extends Controller {
@@ -38,7 +39,8 @@ class AuthController extends Controller {
 			// $data->markEmailAsVerified();
 			$data->sendEmailVerificationNotification();
 			
-			// $data->notify(new UserRegistered());
+			$referral = User::where('referral',$validated['referral'])->first();
+			$referral->notify(new ReferralNotification($data));
 			Helper::adminsUserActivityRequest(['type'=>'SignUpActivity', 'message' => $data->username . ' has joined ' . config('app.name') ]);
 			DB::commit();
 			return response()->json(['status' => 'success'], 200);

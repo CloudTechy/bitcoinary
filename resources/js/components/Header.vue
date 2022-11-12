@@ -221,7 +221,7 @@
                                 My Profile
                             </div>
                         </a>
-                        <a href="/dashboard/downlines" class="action-button">
+                        <a href="/dashboard/referral" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
                                     <i class="fas fa-users"></i>
@@ -294,7 +294,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="TransactionHistory.php" class="item">
+                            <a href="/dashboard/report/transaction" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-history"></i>
                                 </div>
@@ -316,7 +316,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <a href="Promo.php" class="item">
+                            <a href="/dashboard/promo" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-smile"></i>
                                 </div>
@@ -324,7 +324,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="InvestmentHistory.php" class="item">
+                            <a href="/dashboard/report/deposit" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-history"></i>
                                 </div>
@@ -332,7 +332,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="ProfitHistory.php" class="item">
+                            <a href="/dashboard/report/earning" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-funnel-dollar"></i>
                                 </div>
@@ -345,7 +345,7 @@
                     <div class="listview-title mt-1">Support</div>
                     <ul class="listview flush transparent image-listview">
                         <li>
-                            <a href="Notifications.php" class="item">
+                            <a href="/dashboard/notifications" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-bell"></i>
                                 </div>
@@ -356,7 +356,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="Support.php" class="item">
+                            <a href="/dashboard/support" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-comment-dots"></i>
                                 </div>
@@ -382,7 +382,7 @@
                     </ul>
                     <!-- * menu -->
                     <div class="listview-title mt-1">&copy;
-                        West Exchange </div>
+                        {{$root.appName}} </div>
     
                 </div>
             </div>

@@ -346,7 +346,7 @@ public static function adminsUserActivityRequest($activity){
 				$query->where('name', 'administrator');
 			})->get();
 				foreach ($admins as $key => $user) {
-					auth()->user()->notify(new UserActivity($activity));
+					$user->notify(new UserActivity($activity));
 				}
 		} catch (Exception $bug) {
 			return static::invalidRequest($bug, 'unknown error', 500);

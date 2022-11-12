@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use \DB;
 use \Exception;
 use App\Http\Controllers\PackageUserController;
+use App\Notifications\ReferralNotification;
 
 class UserController extends Controller {
 	/**
@@ -68,9 +69,11 @@ class UserController extends Controller {
 		try
 		{
 			$validated['password'] = bcrypt($validated['password']);
-			$data = User::create($validated);
+			$data = User::create($validated); 
 			$data->sendEmailVerificationNotification();
+			
 			DB::commit();
+			
 			return Helper::validRequest(new UserResource($data), 'data was sent successfully', 200);
 		} catch (Exception $bug) {
 			DB::rollback();
