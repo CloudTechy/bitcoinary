@@ -4,18 +4,14 @@
         <AdminDashboardHeader></AdminDashboardHeader>
         <div class="body-wrapper">
             <div class="bodywrapper__inner">
-                <div
-                    class="row align-items-center mb-30 justify-content-between"
-                >
+                <div class="row align-items-center mb-30 justify-content-between">
                     <div class="col-lg-6 col-sm-6">
                         <h6 class="page-title">Manage Plan</h6>
                     </div>
                     <div class="col-lg-6 col-sm-6 text-sm-right mt-sm-0 mt-3">
-                        <a
-                            :href="$root.basepath + '/admin/packages/add'"
-                            class="btn btn--primary box--shadow1 text--small"
-                            ><i class="fa fa-fw fa-plus"></i>Add New</a
-                        >
+                        <a :href="$root.basepath + '/admin/packages/add'"
+                            class="btn btn--primary box--shadow1 text--small"><i class="fa fa-fw fa-plus"></i>Add
+                            New</a>
                     </div>
                 </div>
 
@@ -23,12 +19,8 @@
                     <div class="col-lg-12">
                         <div class="card b-radius--10">
                             <div class="card-body p-0">
-                                <div
-                                    class="table-responsive--md table-responsive"
-                                >
-                                    <table
-                                        class="table table--light style--two"
-                                    >
+                                <div class="table-responsive--md table-responsive">
+                                    <table class="table table--light style--two">
                                         <thead>
                                             <tr>
                                                 <th scope="col">Name</th>
@@ -45,27 +37,22 @@
                                                     {{item.name}}
                                                 </td>
                                                 <td data-label="Invest Limit">
-                                                    <span class="price text--dark d-block"
-                                                        >{{'$' + $root.normalNumeral(item.min_deposit) + ' - $' + (item.max_deposit >= 1000000 ? 'Unlimited' : $root.normalNumeral(item.max_deposit)) }}</span
-                                                    >
+                                                    <span class="price text--dark d-block">{{'$' +
+                                                    $root.normalNumeral(item.min_deposit) + ' - $' +
+                                                    (item.max_deposit >= 1000000 ? 'Unlimited' :
+                                                    $root.normalNumeral(item.max_deposit)) }}</span>
                                                 </td>
                                                 <td data-label="Status">
                                                     <span
-                                                        :class="{ badge: true, 'badge--success':item.status, 'badge--danger':!item.status}"
-                                                        >{{item.status ? 'Active' : 'Disabled'}}</span
-                                                    >
+                                                        :class="{ badge: true, 'badge--success':item.status, 'badge--danger':!item.status}">{{item.status
+                                                        ? 'Active' : 'Disabled'}}</span>
                                                 </td>
                                                 <td data-label="Action">
-                                                    <a
-                                                        :href=" $root.basepath + '/admin/packages/edit/' + item.id"
-                                                        class="icon-btn"
-                                                        ><i
-                                                            class="las la-pen"
-                                                        ></i
-                                                    ></a>
+                                                    <a :href=" $root.basepath + '/admin/packages/edit/' + item.id"
+                                                        class="icon-btn"><i class="las la-pen"></i></a>
                                                 </td>
                                             </tr>
-                                    
+
                                         </tbody>
                                     </table>
                                     <!-- table end -->
@@ -73,68 +60,39 @@
                             </div>
                             <div class="card-footer py-4">
                                 <nav aria-label="...">
-                                    <ul
-                                        class="pagination justify-content-end mb-0"
-                                    >
-                                       <ul
-                                        class="pagination justify-content-end mb-0"
-                                    >
-                                        <li
-                                            v-if="paging.current_page > 1"
-                                            class="page-item"
-                                        >
-                                            <a
-                                                class="page-link"
-                                                @click.prevent="
+                                    <ul class="pagination justify-content-end mb-0">
+                                        <ul class="pagination justify-content-end mb-0">
+                                            <li v-if="paging.current_page > 1" class="page-item">
+                                                <a class="page-link" @click.prevent="
                                                     getUsers(
                                                         --paging.current_page
                                                     )
-                                                "
-                                            >
-                                                <i class="fa fa-angle-left"></i>
-                                                <span class="sr-only"
-                                                    >Prev</span
-                                                >
-                                            </a>
-                                        </li>
-                                        <li v-if = "paging"
-                                            v-for="num in paging.total_pages"
-                                            :class="{
+                                                ">
+                                                    <i class="fa fa-angle-left"></i>
+                                                    <span class="sr-only">Prev</span>
+                                                </a>
+                                            </li>
+                                            <li v-if="paging" v-for="num in paging.total_pages" :class="{
                                                 'page-item': true,
                                                 active:
                                                     num == paging.current_page,
-                                            }"
-                                        >
-                                            <a
-                                                class="page-link"
-                                                @click.prevent="getUsers(num)"
-                                                >{{ num }}</a
-                                            >
-                                        </li>
-                                        <li
-                                            v-if="
+                                            }">
+                                                <a class="page-link" @click.prevent="getUsers(num)">{{ num }}</a>
+                                            </li>
+                                            <li v-if="
                                                 paging.total_pages !=
                                                 paging.current_page
-                                            "
-                                            class="page-item"
-                                        >
-                                            <a
-                                                class="page-link"
-                                                @click.prevent="
+                                            " class="page-item">
+                                                <a class="page-link" @click.prevent="
                                                     getUsers(
                                                         ++paging.current_page
                                                     )
-                                                "
-                                            >
-                                                <i
-                                                    class="fa fa-angle-right"
-                                                ></i>
-                                                <span class="sr-only"
-                                                    >Next</span
-                                                >
-                                            </a>
-                                        </li>
-                                    </ul>
+                                                ">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </ul>
                                 </nav>
                             </div>
@@ -156,7 +114,7 @@ export default {
             form: new Form({}),
             loading: false,
             packages: "",
-            paging : "",
+            paging: "",
         };
     },
     watch: {},

@@ -192,7 +192,6 @@ class UserController extends Controller {
 			$referrals = collect($referrals);
 			$data = ReferralResource::collection($referrals);
 			return Helper::validRequest($data, 'data was fetched successfully', 200);
-			$data = ReferralResource::collection($referrals);
 			
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);

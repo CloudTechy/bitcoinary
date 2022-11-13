@@ -99,7 +99,7 @@ const app = new Vue({
         mailUser: null,
         payments: [],
         packages: [],
-        dashboard_header_page_title : undefined,
+        dashboard_header_page_title: undefined,
     },
     el: "#app",
     router,
@@ -115,6 +115,13 @@ const app = new Vue({
         },
         fullYearTemplate() {
             return "2020 - " + moment().get("year");
+        },
+        referralLink() {
+            return (
+                this.$root.basepath +
+                "/register?ref=" +
+                this.$auth.user().username
+            );
         },
     },
 

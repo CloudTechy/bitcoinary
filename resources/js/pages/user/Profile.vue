@@ -92,11 +92,11 @@
                 </li>
             </ul>
             <div class="listview-title mt-1">Security</div>
-            <ul class="listview image-listview text inset" id="Password">
+            <ul class="listview image-listview text inset">
                 <li>
                     <a href="#" class="item" data-bs-toggle="modal" data-bs-target="#pass">
                         <div class="in">
-                            <div class="text-danger">Change Password</div>
+                            <div  id="Password" class="text-danger">Change Password</div>
                             <span class="text-primary">
                                 <i class="fas fa-user-shield"></i>
                             </span>
@@ -863,8 +863,6 @@ export default {
         })
     },
     beforeDestroy() {
-        // this.$refs.passwordModalCloseButton.click()
-        // this.$refs.profileModalCloseButton.click()
     },
     computed: {
         wallet() {

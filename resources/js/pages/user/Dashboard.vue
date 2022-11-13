@@ -162,7 +162,7 @@
                     <div class="balance">
                         <div class="left"> <span class="title">Available Balance</span>
                             <h1 class="total">
-                                $0.00 </h1>
+                                ${{$root.normalNumeral($auth.user().balance)}}</h1>
                         </div>
                         <div class="right text-primary font-weight-bold float-right"></div>
                     </div>
@@ -247,7 +247,7 @@
             </div>
             <!-- Wallet Card -->
             <!-- Balance Reminder -->
-            <div class="section">
+            <div class="section" v-if="$auth.user().balance < 50">
                 <div class="row mt-2">
                     <div class="col-12">
                         <div class="stat-box">
@@ -266,7 +266,7 @@
                     <div class="col-12">
                         <div class="stat-box">
                             <div class="title text-black">
-                                Account not verified! <a href="Status.php" class="text-info">VERIFY ACCOUNT</a>
+                                Account not verified! <a href="/dashboard/status" class="text-info">VERIFY ACCOUNT</a>
                             </div>
                         </div>
                     </div>
@@ -281,16 +281,16 @@
                 <div class="row mt-2">
                     <div class="col-6 mt-1">
                         <div class="stat-box">
-                            <div class="title">Total Deposits</div>
+                            <div class="title">Total Earned</div>
                             <div class="h6 text-primary">
-                                $0.00 </div>
+                                ${{$root.normalNumeral($auth.user().totalEarned)}} </div>
                         </div>
                     </div>
                     <div class="col-6 mt-1">
                         <div class="stat-box">
                             <div class="title">Total Withdrawals</div>
                             <div class="h6 text-primary">
-                                $0.00 </div>
+                            ${{$root.normalNumeral($auth.user().totalWithdraw)}}</div>
                         </div>
                     </div>
                 </div>
@@ -298,35 +298,34 @@
             <!-- ref link -->
             <div class="section">
                 <div class="row mt-2">
-                    <div class="col-12">
-                        <div class="stat-box">
-                            <h4 class="text-primary font-weight-bold">Referral Link</h4>
-                            <div class="title">
-                                Get Bonus when someone register on West Exchange with your referral link
-                                <hr>
-                                <small class="text-primary">
-                                    https://west-exchange.com?ref=davidrobinson01 </small>
-                                <div class="d-flex">
-                                    <button onclick="myCopys()" class="clip btn btn-sm btn-secondary shadowed"
-                                        data-clipboard-text="https://west-exchange.com?ref=davidrobinson01"><i
-                                            class="fas fa-copy"></i>&nbsp;Copy Link</button>
-                                    <span>&nbsp;</span>
-                                    <span class="text-success" id="showCopys" style="display: none">Copied!</span>
-                                </div>
-                                <hr>
-                                <a href="whatsapp://send?text=https://west-exchange.com?ref=davidrobinson01"><i
-                                        class="fab fa-whatsapp" style="color: #35a406; font-size: 30px"></i></a>&nbsp;
-                                <a
-                                    href="https://t.me/share/url?url=https://west-exchange.com?ref=davidrobinson01&text=David Robinson ">
-                                    <i class="fab fa-telegram" style="color: #0088CC; font-size: 27px"></i></a>&nbsp;
-                                <a
-                                    href="https://twitter.com/intent/tweet?url=https://west-exchange.com?ref=davidrobinson01"><i
-                                        class="fab fa-twitter" style="color: #1DA1F2; font-size: 30px"></i></a>&nbsp;
-                                <a
-                                    href="https://www.facebook.com/sharer/sharer.php?u=https://west-exchange.com?ref=davidrobinson01"><i
-                                        class="fab fa-facebook-square"
-                                        style="color: #3b5998; font-size: 30px"></i></a><br><span>Share Link</span>
+                    <div class="stat-box">
+                        <h4 class="text-primary font-weight-bold">Referral Link</h4>
+                        <div class="title">
+                            Get Bonus when someone register on West Exchange with your referral link
+                            <hr>
+                            <small class="text-primary">
+                                {{$root.referralLink}} </small>
+            
+                            <div class="d-flex pt-1">
+                                <button @click="
+                                $root.alert(
+                                    'success',
+                                    ' ',
+                                    'copied'
+                                )" class="clip btn btn-sm btn-secondary shadowed"
+                                    v-clipboard="$root.referralLink"><i class="fas fa-copy"></i>&nbsp;Copy Link</button>
+                                <span>&nbsp;</span>
                             </div>
+                            <hr>
+                            <a :href="'whatsapp://send?text=' + $root.referralLink "><i class="fab fa-whatsapp"
+                                    style="color: #35a406; font-size: 30px"></i></a>&nbsp;
+                            <a :href="'https://t.me/share/url?url='+ $root.referralLink + '&text=' + $auth.user().names">
+                                <i class="fab fa-telegram" style="color: #0088CC; font-size: 27px"></i></a>&nbsp;
+                            <a :href="'https://twitter.com/intent/tweet?url=' + $root.referralLink "><i class="fab fa-twitter"
+                                    style="color: #1DA1F2; font-size: 30px"></i></a>&nbsp;
+                            <a :href="'https://www.facebook.com/sharer/sharer.php?u='+ $root.referralLink"><i
+                                    class="fab fa-facebook-square" style="color: #3b5998; font-size: 30px"></i></a><br><span>Share
+                                Link</span>
                         </div>
                     </div>
                 </div>
@@ -832,9 +831,7 @@ export default {
         this.getPaymentMethods()
     },
     computed: {
-        Referral_link() {
-            return this.$root.basepath + '/register?ref=' + this.$auth.user().username
-        },
+       
         wallet() {
             if (this.withdrawalPaymentMethod) {
                 return this.$root.getAccountDetails(this.withdrawalPaymentMethod.name, this.withdrawalPaymentMethod.type)
