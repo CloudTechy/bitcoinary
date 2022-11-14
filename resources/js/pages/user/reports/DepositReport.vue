@@ -58,7 +58,7 @@
 
         <br><br>
 
-        <Footer></Footer>
+        <Footer  @popUploaded="displayMessage"></Footer>
 
         <!-- Withdraw -->
         <div class="modal fade action-sheet" id="withdraw" tabindex="-1" role="dialog">

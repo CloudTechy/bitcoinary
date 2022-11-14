@@ -22,7 +22,7 @@
                 <component @success = 'success' :success = "message" :plan = "selectedPlan" @changeComponent = "changeComponent"  class = "m-0 p-0" :is="componentName"></component>
             </div>
         </div>
-        <Footer></Footer>
+        <Footer  @popUploaded="displayMessage"></Footer>
     </div>
 </template>
 <script>

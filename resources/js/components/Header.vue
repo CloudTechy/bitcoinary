@@ -1,163 +1,4 @@
 <template>
-    <!-- <header class="header animated fadeInDown menu-fixed">
-        <div class="header__bottom">
-            <div class="container">
-                <nav class="navbar navbar-expand-xl p-0 align-items-center">
-                    <a class="site-logo site-title" href="/"
-                        ><img
-                            :src="$root.basepath + '/assets/images/logo2.png'"
-                            alt="site-logo"
-                    /></a>
-                    <div class="account-menu mobile-acc-menu dropdown">
-                        <a href="#" type="button" data-toggle="dropdown">
-                            <div class="icon">
-                                <i class="las la-user"></i>
-                            </div>
-                        </a>
-                        <ul v-if="$auth.check()" class="dropdown-menu">
-                            <div
-                                class="font-weight-bold text-center text-capitalize p-1"
-                            >
-                                Hi {{ $auth.user().username }}
-                            </div>
-                            <li class="dropdown-divider"></li>
-                            <li class="dropdown-item pt-2">
-                                <a tabindex="-1" href="/dashboard"
-                                    >Goto Dashboard</a
-                                >
-                            </li>
-                            <li class="dropdown-divider"></li>
-                            <li @click="$auth.logout()" class="dropdown-item">
-                                <a tabindex="-1" href="">Sign out</a>
-                            </li>
-                        </ul>
-                        <ul v-else class="dropdown-menu">
-                            <div class="text-center font-weight-bold p-1">
-                                Hello Guest
-                            </div>
-                            <li class="dropdown-divider"></li>
-                            <li class="dropdown-item pt-2">
-                                <a tabindex="-1" href="/login">Login</a>
-                            </li>
-                            <li class="dropdown-divider"></li>
-                            <li class="dropdown-item">
-                                <a tabindex="-1" href="/register">Register</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="menu-toggle"></span>
-                    </button>
-                    <div
-                        class="collapse navbar-collapse"
-                        id="navbarSupportedContent"
-                    >
-                        <ul class="navbar-nav main-menu m-auto">
-                            <li>
-                                <a href="/dashboard">Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="/dashboard/deposit">Make deposit</a>
-                            </li>
-                            <li>
-                                <a href="/dashboard/withdraw">Withdraw</a>
-                            </li>
-                            <li>
-                                <a href="/dashboard/plans">Active plans</a>
-                            </li>
-                            <li>
-                                <a href="/dashboard/withdrawal-report"
-                                    >Withdrawal history</a
-                                >
-                            </li>
-                            <li><a href="/dashboard/referral">Referrals</a></li>
-                            <li class="menu_has_children">
-                                <a href="/dashboard/settings"
-                                    >Account Setting</a
-                                >
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="/dashboard/settings/#profile"
-                                            >Profile setup</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a href="/dashboard/settings/#payment"
-                                            >Payment setup</a
-                                        >
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <div class="nav-right">
-                            <div class="account-menu ml-3 dropdown">
-                                <a
-                                    href="#"
-                                    type="button"
-                                    data-toggle="dropdown"
-                                >
-                                    <div class="icon">
-                                        <i class="las la-user"></i>
-                                    </div>
-                                </a>
-                                <ul v-if="$auth.check()" class="dropdown-menu">
-                                    <div
-                                        class="font-weight-bold text-center text-capitalize p-1"
-                                    >
-                                        Hi {{ $auth.user().username }}
-                                    </div>
-                                    <li class="dropdown-divider"></li>
-                                    <li class="dropdown-item pt-2">
-                                        <a tabindex="-1" href="/dashboard"
-                                            >Goto Dashboard</a
-                                        >
-                                    </li>
-                                    <li class="dropdown-divider"></li>
-                                    <li
-                                        @click="$auth.logout()"
-                                        class="dropdown-item"
-                                    >
-                                        <a tabindex="-1" href="">Sign out</a>
-                                    </li>
-                                </ul>
-                                <ul v-else class="dropdown-menu">
-                                    <div
-                                        class="text-center font-weight-bold p-1"
-                                    >
-                                        Hello Guest
-                                    </div>
-                                    <li class="dropdown-divider"></li>
-                                    <li class="dropdown-item pt-2">
-                                        <a tabindex="-1" href="/login">Login</a>
-                                    </li>
-                                    <li class="dropdown-divider"></li>
-                                    <li class="dropdown-item">
-                                        <a tabindex="-1" href="/register"
-                                            >Register</a
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
-                            <div
-                                id="google_translate_element"
-                                class="w-auto m-1"
-                            ></div>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-      
-    </header> -->
-
 <header>
     
     <div class="appHeader bg-primary text-light">
@@ -389,6 +230,76 @@
         </div>
     </div>
     <!-- * App Sidebar -->
+
+    <!-- transfer -->
+
+    <div class="modal fade action-sheet" id="transfer"  tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary">Peer To Peer (P2P) Transfer</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="action-sheet-content pt-0">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Send funds to another West Exchange investor. All you need is their username.
+                                    <br>
+                                    Your Available Balance is
+                                    <span class="fw-bold text-primary">
+                                        {{$root.numeral($auth.user().balance)}} </span>
+                                </p>
+                                <form method="post" @submit.prevent="transfer">
+                                    <div ref="messageTransferBox" v-if="error || transferForm.message"
+                                        style="position:fixed;top:0px;left:0px" class=" form-group p-2 ">
+                                        <div v-if="error">
+                                            <div class="alert alert-danger" v-if="typeof error == 'object'">
+                                                <p v-for="err in error">{{err}}</p>
+                                            </div>
+                                            <div v-else class="alert alert-danger">
+                                                <p>{{error}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-success" v-if="transferForm.message">
+                                            <p>{{transferForm.message}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group basic">
+                                        <label class="label">Recepient's username</label>
+                                        <div class="input-group mb-2">
+                                            <input type="text" v-model="transferForm.receiver_username" class="form-control"
+                                                required>
+                                        </div>
+                                        <p v-if="errors.receiver_username" v-for="error in errors.receiver_username"
+                                            class="text-danger m-0 p-1 pt-0 small">
+                                            {{ error }}
+                                        </p>
+                                    </div>
+                                    <div class="form-group basic">
+                                        <label class="label">Amount</label>
+                                        <div class="input-group mb-2">
+                                            <input type="number" v-model="transferForm.amount" class="form-control" min="1"
+                                                :max="$auth.user().balance" required>
+                                        </div>
+                                        <p v-if="errors.amount" v-for="error in errors.amount"
+                                            class="text-danger m-0 p-1 pt-0 small">
+                                            {{ error }}
+                                        </p>
+                                    </div>
+                                    <div class="form-group basic text-center">
+                                        <button ref="submitTransferForm" type="submit" class="btn btn-primary">Transfer
+                                        </button>
+                                        <button type="button" ref="closeTransferForm" style="visibility: hidden;" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 </template>
 <script>
@@ -396,7 +307,24 @@ import moment from "moment";
 
 export default {
     data() {
-        return {};
+        return {
+            transferForm: new Form({
+                receiver_username: undefined,
+                amount: undefined,
+                sender_id: this.$auth.user().id,
+                message: undefined
+            }),
+            error: undefined,
+            errors: {},
+};
+    },
+    watch: {
+        error() {
+            setTimeout(() => { this.error = '' }, 15000);
+        },
+        errors() {
+            setTimeout(() => { this.errors = '' }, 15000);
+        }
     },
     beforeCreate() {
         var css = document.createElement("link");
@@ -531,9 +459,59 @@ export default {
             return moment(this.$auth.user().created_at).format("MMM Do YYYY");
         },
     },
-    methods: {},
+    methods: {
+        transfer() {
+            this.$root.loader('show')
+            this.processing(true, 'submitTransferForm', 'Requesting...', '')
+            this.transferForm.message = ""
+            this.error = ''
+            if (this.transferForm.amount > this.$auth.user().balance) {
+                this.transferForm.amount = this.$auth.user().balance
+            }
+            this.transferForm.post("/auth/transfer")
+                .then(response => {
+                    this.$root.loader('hide')
+                    this.processing(false, 'submitTransferForm', 'Requesting...', 'Tranfer')
+                    this.$root.alert('success', ' ', response.data.message)
+                    // this.transferForm.message = response.data.message
+                    this.$root.scrollToTop(0, 250)
+                    this.transferForm.amount = ''
+                    this.$auth.fetch()
+                })
+                .catch(error => {
+                    this.$root.loader('hide')
+                    this.processing(false, 'submitTransferForm', 'Requesting...', 'Tranfer')
+                    this.$root.scrollToTop(0, 250)
+                    console.log(error.response.status, error.response.data.message)
+                    if (error.response.status == 422) {
+                        this.errors = error.response.data.error
+                    }
+                    this.$root.alert('error', ' ', error.response.data.message)
+                    // console.log(error, error.response)
+                })
+
+            setTimeout(() => { this.transferForm.message = ''; this.error = ''; this.errors = ''; this.$refs.closeTransferForm.click(); this.transferForm.reset();  }, 2000);
+
+        },
+        processing(status, ref, text1, text2) {
+            if (status) {
+                this.$refs[ref].innerHTML = text1;
+                this.$refs[ref].disabled = true;
+            } else {
+                this.$refs[ref].innerHTML = text2;
+                this.$refs[ref].disabled = false;
+            }
+        },
+},
 };
 </script>
-<style scoped="">
+<style scoped>
+.modal-header {
+    display: block;
 
+}
+
+.modal-content {
+    box-shadow: 1px 1px 20px !important;
+}
 </style>

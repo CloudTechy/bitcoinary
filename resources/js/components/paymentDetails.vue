@@ -275,11 +275,13 @@ export default {
                 form._method = "PUT";
                 var url = this.deposit_type == 'balance' ? "/auth/popdeposit/" + this.subscribed_plan.id : "/auth/packageusers/" + this.subscribed_plan.id 
                 if (this.$refs.fileInput.files[0].name == this.subscribed_plan.pop) {
+                    this.$root.loader("hide");
                     return this.$root.alert(
                         "warning",
                         "Choose a different file ",
                         "OOPS!!!"
                     );
+
                 }
                 form.submit(
                     "post",

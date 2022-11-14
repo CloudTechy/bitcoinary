@@ -181,7 +181,7 @@
 
                         </div>
                         <div class="item">
-                            <router-link to="/dashboard/plans" >
+                            <router-link to="/dashboard/plans">
                                 <div class="icon-wrapper">
                                     <i class="fas fa-chart-line"></i>
                                 </div>
@@ -290,7 +290,7 @@
                         <div class="stat-box">
                             <div class="title">Total Withdrawals</div>
                             <div class="h6 text-primary">
-                            ${{$root.normalNumeral($auth.user().totalWithdraw)}}</div>
+                                ${{$root.normalNumeral($auth.user().totalWithdraw)}}</div>
                         </div>
                     </div>
                 </div>
@@ -305,26 +305,28 @@
                             <hr>
                             <small class="text-primary">
                                 {{$root.referralLink}} </small>
-            
+
                             <div class="d-flex pt-1">
                                 <button @click="
                                 $root.alert(
                                     'success',
                                     ' ',
                                     'copied'
-                                )" class="clip btn btn-sm btn-secondary shadowed"
-                                    v-clipboard="$root.referralLink"><i class="fas fa-copy"></i>&nbsp;Copy Link</button>
+                                )" class="clip btn btn-sm btn-secondary shadowed" v-clipboard="$root.referralLink"><i
+                                        class="fas fa-copy"></i>&nbsp;Copy Link</button>
                                 <span>&nbsp;</span>
                             </div>
                             <hr>
                             <a :href="'whatsapp://send?text=' + $root.referralLink "><i class="fab fa-whatsapp"
                                     style="color: #35a406; font-size: 30px"></i></a>&nbsp;
-                            <a :href="'https://t.me/share/url?url='+ $root.referralLink + '&text=' + $auth.user().names">
+                            <a
+                                :href="'https://t.me/share/url?url='+ $root.referralLink + '&text=' + $auth.user().names">
                                 <i class="fab fa-telegram" style="color: #0088CC; font-size: 27px"></i></a>&nbsp;
-                            <a :href="'https://twitter.com/intent/tweet?url=' + $root.referralLink "><i class="fab fa-twitter"
-                                    style="color: #1DA1F2; font-size: 30px"></i></a>&nbsp;
+                            <a :href="'https://twitter.com/intent/tweet?url=' + $root.referralLink "><i
+                                    class="fab fa-twitter" style="color: #1DA1F2; font-size: 30px"></i></a>&nbsp;
                             <a :href="'https://www.facebook.com/sharer/sharer.php?u='+ $root.referralLink"><i
-                                    class="fab fa-facebook-square" style="color: #3b5998; font-size: 30px"></i></a><br><span>Share
+                                    class="fab fa-facebook-square"
+                                    style="color: #3b5998; font-size: 30px"></i></a><br><span>Share
                                 Link</span>
                         </div>
                     </div>
@@ -335,368 +337,8 @@
         </div>
         <br><br>
 
-        <Footer></Footer>
+        <Footer @popUploaded="displayMessage"></Footer>
 
-        <!-- Withdraw -->
-        <div class="modal fade action-sheet" id="withdraw" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-primary">Withdraw Funds</h5>
-                    </div>
-                    <div class="modal-body">
-                        <div class="action-sheet-content pt-0">
-                            <div class="card">
-                                <div class="card-body">
-                                    Enter your wallet address to process your withdrawal. Minimum Withdrawal:
-                                    <strong>
-                                        $1.00 </strong>
-                                    <p class = "mb-0">Available Balance:
-                                        <strong class="text-primary ">
-                                            {{$root.numeral($auth.user().balance)}} </strong>
-                                    </p>
-                                    <p>Pending Balance:
-                                        <strong class="text-primary">
-                                            {{$root.numeral($auth.user().totalPendingWithdrawal)}} </strong>
-                                    </p>
-                                    <form method="post" @submit.prevent="withdraw">
-                                        <div ref = "messageBox" v-if = "error || withdrawalForm.message" style="position:fixed;top:0px;left:0px" class=" form-group p-2 ">
-                                            <div v-if="error">
-                                                <div class="alert alert-danger" v-if="typeof error == 'object'">
-                                                    <p v-for="err in error">{{err}}</p>
-                                                </div>
-                                                <div v-else class="alert alert-danger">
-                                                    <p>{{error}}</p>
-                                                </div>
-                                            </div>
-                                            <div class="alert alert-success" v-if="withdrawalForm.message">
-                                                <p>{{withdrawalForm.message}}</p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group basic">
-                                            <label class="label">Select Method</label>
-                                            <div class="input-group mb-2">
-                                                <select class="form-control p-1" v-model="withdrawalPaymentMethod"
-                                                    required>
-
-                                                    <option class="text-capitalize" :value="py"
-                                                        v-for=" py in $root.payments">{{
-                                                        py.name}}</option>
-
-                                                </select>
-
-
-                                            </div>
-                                        </div>
-                                        <div class="form-group basic">
-                                            <label class="label">Account/Wallet Address</label>
-                                            <div class="input-wrapper mb-2">
-                                                <input type="text" readonly v-model="wallet" class="form-control"
-                                                    required>
-                                                <small
-                                                    v-if="withdrawalPaymentMethod && !$root.getAccountDetails(withdrawalPaymentMethod.name, withdrawalPaymentMethod.type) ">
-                                                    You don't have any stored address/account for this payment
-                                                    processor.
-                                                    <a href="#" data-bs-toggle="modal"
-                                                        data-bs-target="#addcryptowallet">click here to set one.</a>
-                                                </small>
-                                            </div>
-
-                                        </div>
-                                        <div class="form-group basic">
-                                            <label class="label">Amount</label>
-                                            <div class="input-group mb-2">
-                                                <input type="number" v-model="withdrawalForm.amount"
-                                                    class="form-control" min="1" :max="$auth.user().balance" required>
-                                                   
-                                            </div>
-                                            <p class="fontsize-normal text-dark mb-0" v-if="withdrawalForm.amount > $auth.user().balance">
-                                                Insufficient fund!
-                                                <a data-v-5c5876d9="" href="#" data-bs-toggle="modal" data-bs-target="#deposit" class="text-primary">invest or make deposit.</a>
-                                            </p>
-                                        </div>
-                                       
-                                        <div class="form-group basic text-center">
-                                                <button  ref="submitWithdrawalForm" type="submit" class="btn btn-info">Withdraw </button>
-                                        </div>
-                                        <button type="button" ref="closeWithdrawalForm" style="visibility: hidden;" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- * Withdraw  -->
-        <!-- add wallet or account address -->
-
-        <div v-if="withdrawalPaymentMethod" :key="walletForm.key" style=" box-shadow: 1px 1px 20px;"
-            class="modal dialogbox fade" id="addcryptowallet" role="dialog" data-bs-keyboard="true"
-            data-bs-backdrop="static" tabindex="-1" aria-labelledby="vLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header bg-primary">
-                        Add <span class="font-weight-bold">{{ withdrawalPaymentMethod.name}}</span>
-                        {{withdrawalPaymentMethod.type ==
-                        'crypto' ? 'Wallet':'Account'}}.
-                    </div>
-                    <form
-                        @submit.prevent="updatePaymentDetails(withdrawalPaymentMethod.name, withdrawalPaymentMethod.type)">
-                        <div v-if="withdrawalPaymentMethod.type == 'crypto'" class="modal-body m-1">
-                            <div class="form-group basic">
-                                <div class="input-wrapper">
-                                    <label class="label" for="">Payment Processor</label>
-                                    <input readonly type="text" v-model="walletForm.payment_method" :class="{
-                                        'form-control': true,
-                                        'fontsize-sub':true,
-                                        'error-input':
-                                            errors.payment_method !=
-                                            undefined,
-                                    }" required>
-                                    <p v-if="errors.payment_method" v-for="error in errors.payment_method"
-                                        class="text-danger m-0 p-1 pt-0 small">
-                                        {{ error }}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="form-group basic">
-                                <div class="input-wrapper">
-                                    <label class="label" for="">Wallet</label>
-                                    <input type="text" placeholder="Enter wallet address" v-model="walletForm.wallet"
-                                        :class="{
-                                            'form-control': true,
-                                            'fontsize-sub':true,
-                                            'fontsize-sub':true,
-                                            'error-input':
-                                                errors.wallet !=
-                                                undefined,
-                                        }" required>
-                                    <p v-if="errors.wallet" v-for="error in errors.wallet"
-                                        class="text-danger m-0 p-1 pt-0 small">
-                                        {{ error }}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="form-group basic">
-                                <div class=" row ">
-                                    <div class="col input-wrapper">
-                                        <label class="label" for="memo">Memo</label>
-                                        <input type="text" :class="{
-                                            'form-control': true,
-                                            'fontsize-sub':true,
-                                            'error-input': errors.memo != undefined,
-                                        }" placeholder="Enter MEMO" v-model="walletForm.memo" name="memo">
-                                        <p v-if="errors.memo" v-for="error in errors.memo"
-                                            class="text-danger m-0 p-1 pt-0 small">
-                                            {{ error }}
-                                        </p>
-                                    </div>
-                                    <div class="col input-wrapper">
-                                        <label class="label" for="standard">Standard</label>
-                                        <input type="text" v-model="walletForm.standard" :class="{
-                                            'form-control': true,
-                                            'fontsize-sub':true,
-                                            'error-input':
-                                                errors.standard !=
-                                                undefined,
-                                        }" placeholder="Enter standard" name="standard">
-                                        <p v-if="errors.standard" v-for="error in errors.standard"
-                                            class="text-danger m-0 p-1 pt-0 small">
-                                            {{ error }}
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div v-else class="modal-body m-1">
-                            <div class="form-group basic">
-                                <div class="input-wrapper">
-                                    <label class="label" for="">Payment Processor</label>
-                                    <input readonly type="text" v-model="walletForm.payment_method" :class="{
-                                        'form-control': true,
-                                        'fontsize-sub':true,
-                                        'error-input':
-                                            errors.payment_method !=
-                                            undefined,
-                                    }" required>
-                                    <p v-if="errors.payment_method" v-for="error in errors.payment_method"
-                                        class="text-danger m-0 p-1 pt-0 small">
-                                        {{ error }}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="form-group basic">
-                                <div class="input-wrapper">
-                                    <label class="label" for="">Account/Number/Address</label>
-                                    <input type="text" placeholder="Enter address" v-model="walletForm.acc_number"
-                                        :class="{
-                                            'form-control': true,
-                                            'fontsize-sub':true,
-                                            'fontsize-sub':true,
-                                            'error-input':
-                                                errors.acc_number !=
-                                                undefined,
-                                        }" required>
-                                    <p v-if="errors.acc_number" v-for="error in errors.acc_number"
-                                        class="text-danger m-0 p-1 pt-0 small">
-                                        {{ error }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="modal-footer">
-                            <div class="btn-inline">
-                                <button ref="submitWalletForm" type="submit" class="btn btn-text-primary">Save
-                                    Changes</button>
-                                <button ref="closeWalletForm" type="button" @click="$auth.fetch()"
-                                    class="btn btn-text-danger" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- Deposit -->
-
-
-        <div class="modal fade action-sheet" id="deposit" tabindex="-1" role="dialog" data-bs-backdrop="true"
-            data-bs-keyboard="false">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-primary">Deposit Funds</h5>
-                    </div>
-                    <div class="modal-body">
-                        <div class="action-sheet-content pt-0">
-                            <div class="card">
-                                <div class="card-body">
-                                    <p>Enter amount and select deposit method. Make payment to the wallet that will be
-                                        generated. Your account will be funded automatically upon verification of
-                                        payment.
-                                        Minimum Deposit is:
-                                        <strong class="text-primary">
-                                            $50.00 </strong>
-                                    </p>
-                                    <form method="post" @submit.prevent="process">
-                                        <div class="form-group basic">
-                                            <label class="label">Select Method</label>
-                                            <div class="input-group mb-2">
-                                                <select class="form-control p-1" v-model="depositPaymentMethod"
-                                                    required>
-
-                                                    <option
-                                                        v-if="$root.getPaymentAccountDetails(paymentMethods, processor.payment_method, processor.currency_type)"
-                                                        class="text-capitalize" :value="processor"
-                                                        v-for="processor in paymentMethods">{{
-                                                        processor.payment_method}}</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group basic">
-                                            <label class="label">Amount</label>
-                                            <div class="input-group mb-2">
-                                                <input type="number" v-model="depositAmount" class="form-control"
-                                                    min="50" max="999999999999999999999" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group basic text-center">
-
-                                            <input type="submit" name="user_deposit" value="Proceed"
-                                                class="btn btn-primary">
-                                            <!-- <button type="button" ref="paymentModalbtn" style="visibility: hidden;" id="add" data-toggle="modal"
-                                                        data-target="#paymentDetails"></button> -->
-                                        </div>
-                                        <button type="button" ref="closeDeposit" style="visibility: hidden;"
-                                            class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- * Deposit  -->
-        <!-- * Transfer -->
-        <div class="modal fade action-sheet" id="transfer" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-primary">Peer To Peer (P2P) Transfer</h5>
-                    </div>
-                    <div class="modal-body">
-                        <div class="action-sheet-content pt-0">
-                            <div class="card">
-                                <div class="card-body">
-                                    <p>Send funds to another West Exchange investor. All you need is their username.
-                                        <br>
-                                        Your Available Balance is
-                                        <span class="fw-bold text-primary">
-                                            {{$root.numeral($auth.user().balance)}} </span>
-                                    </p>
-                                    <form method="post"  @submit.prevent="transfer">
-                                        <div ref="messageTransferBox" v-if="error || transferForm.message" style="position:fixed;top:0px;left:0px"
-                                            class=" form-group p-2 ">
-                                            <div v-if="error">
-                                                <div class="alert alert-danger" v-if="typeof error == 'object'">
-                                                    <p v-for="err in error">{{err}}</p>
-                                                </div>
-                                                <div v-else class="alert alert-danger">
-                                                    <p>{{error}}</p>
-                                                </div>
-                                            </div>
-                                            <div class="alert alert-success" v-if="transferForm.message">
-                                                <p>{{transferForm.message}}</p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group basic">
-                                            <label class="label">Recepient's username</label>
-                                            <div class="input-group mb-2">
-                                                <input type="text" v-model = "transferForm.receiver_username" class="form-control" required>
-                                            </div>
-                                            <p v-if="errors.receiver_username" v-for="error in errors.receiver_username" class="text-danger m-0 p-1 pt-0 small">
-                                                {{ error }}
-                                            </p>
-                                        </div>
-                                        <div class="form-group basic">
-                                            <label class="label">Amount</label>
-                                            <div class="input-group mb-2">
-                                                <input type="number" v-model = "transferForm.amount" class="form-control" min="1"
-                                                    :max="$auth.user().balance" required>
-                                            </div>
-                                            <p v-if="errors.amount" v-for="error in errors.amount" class="text-danger m-0 p-1 pt-0 small">
-                                                {{ error }}
-                                            </p>
-                                        </div>
-                                        <div class="form-group basic text-center">
-                                            <button ref = "submitTransferForm" type="submit"
-                                                class="btn btn-primary">Transfer </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- * Transfer -->
-
-
-        <button type="button" ref="paymentModalbtn" style="visibility: show;" id="add" data-toggle="modal"
-            data-target="#paymentDetails"></button>
-        <div v-if="depositForm.payment_method" :key = "depositForm.key" class="modal fade dialogbox" tabindex="-1" role="dialog"
-            ref="paymentDetails" id="paymentDetails" data-bs-backdrop="true">
-            <paymentDetails @popUploaded="displayMessage" :key="key" plan="" deposit_type="balance" :paymentMethod="depositForm.payment_method"
-                :amount="depositForm.amount"></paymentDetails>
-        </div>
 
     </div>
 
@@ -707,95 +349,22 @@ export default {
     data() {
         return {
             key: 0,
-            transactions: [],
-            withdrawalForm: new Form({
-                amount: undefined,
-                payment_method: undefined,
-                user_id: this.$auth.user().id,
-                type: "balance",
-                reference: 'SELF',
-                message:undefined,
-
-            }),
-            depositForm: new Form({
-                amount: undefined,
-                payment_method: undefined,
-                user_id: this.$auth.user().id,
-                type: "balance",
-                reference: "",
-                key: 0,
-            }),
-            transferForm: new Form({
-                receiver_username: undefined,
-                amount: undefined,
-                sender_id: this.$auth.user().id,
-                message:undefined
-            }),
-            walletForm: new Form({
-                payment_method: undefined,
-                wallet: undefined,
-                user_id: this.$auth.user().id,
-                memo: undefined,
-                standard: undefined,
-                acc_number: undefined,
-                acc_name: this.$auth.user().names,
-                key: 0,
-                // currency_type: type,
-            }),
 
 
-            paymentMethods: undefined,
-            paymentMethod: undefined,
-            depositPaymentMethod: undefined,
-            withdrawalPaymentMethod: undefined,
-            payment_status: false,
-            error: undefined,
-            errors: {},
             message: undefined,
-            depositAmount : undefined
 
 
 
         }
     },
     watch: {
-        error() {
-            setTimeout(() => { this.error = '' }, 15000);
-        },
-        errors() {
-            setTimeout(() => { this.errors = '' }, 15000);
-        },
-        depositAmount() {
-            this.withdrawalForm.payment_method = undefined
-            this.depositForm.key++
-            this.depositForm.payment_method = this.depositPaymentMethod
-            this.depositForm.amount = this.depositAmount
-            
-        },
-        withdrawalPaymentMethod() {
-            this.depositForm.payment_method = undefined
-            this.key++
-            this.walletForm.payment_method = this.withdrawalPaymentMethod.name
-            this.withdrawalForm.payment_method = this.withdrawalPaymentMethod.name
-            // this.withdrawalForm.wallet = this.$root.getAccountDetails(this.withdrawalPaymentMethod.name, this.withdrawalPaymentMethod.type)
 
-        },
-        depositPaymentMethod() {
-            this.withdrawalForm.payment_method = undefined
-            this.depositForm.key++
-            this.depositForm.payment_method = this.depositPaymentMethod
-            this.depositForm.amount = this.depositAmount
-        },
-        PaymentMethod() {
-            this.key++
-            this.depositForm.key++
-            
-        },
 
     },
     mounted() {
         window.scrollTo(0, 0);
         this.$root.dashboard_header_page_title = undefined
+        setTimeout(() => { this.$root.loader('hide') }, 1000);
     },
     created() {
         var js = document.createElement("script");
@@ -828,158 +397,18 @@ export default {
         );
         document.body.appendChild(js);
 
-        this.getPaymentMethods()
+        // this.getPaymentMethods()
     },
-    computed: {
-       
-        wallet() {
-            if (this.withdrawalPaymentMethod) {
-                return this.$root.getAccountDetails(this.withdrawalPaymentMethod.name, this.withdrawalPaymentMethod.type)
-            }
-        }
-
+    beforeRouteEnter(to, from, next) {
+        next(vm => {
+            vm.$root.loader('show')
+        })
     },
     methods: {
 
-      
-        process() {
-            this.$refs.closeDeposit.click()
-            this.payment_status = true
-            this.$refs.paymentModalbtn.click()
-            //  var myModal = new bootstrap.Modal(document.getElementById('paymentDetails'))
-            // myModal.show()
-        },
         displayMessage(msg) {
-            this.message = msg
-            this.$root.scrollUp()
             this.$root.alert('success', ' ', msg.message)
-        },
-        getPaymentMethods() {
-            this.$root.loader('show')
-            this.$error = ''
-            var form = new Form()
-            form.get("/auth/bankdetails/?user_id=1")
-                .then(response => {
-                    this.paymentMethods = response.data.data.item
-                    this.$root.loader('hide')
-                })
-                .catch(error => {
-                    this.error = error.response.data.message
-                    this.$root.loader('hide')
-                    console.log(error.response)
-                })
-        },
-        updatePaymentDetails(ref, type) {
-            this.processing(true, 'submitWalletForm', 'Requesting...', '')
-            this.message = ''
-            this.errors = ''
-            this.walletForm.currency_type = type
-            //add
-            this.walletForm.post("/auth/bankdetails")
-                .then(response => {
-                    this.processing(false, 'submitWalletForm', '', 'Save Changes')
-                    this.$auth.fetch()
-                    this.$root.alert('success', ' ', 'wallet added successfully')
-                    this.walletForm.key++
-                    this.$refs.closeWalletForm.click()
-                    this.walletForm.reset()
-                    this.$root.loader('hide')
-
-                })
-                .catch(error => {
-                    this.processing(false, 'submitWalletForm', '', 'Save Changes')
-                    this.$root.loader('hide')
-                    if (error.response.status == 422) {
-                        this.errors = {}
-                        this.errors = error.response.data.error
-                    }
-                    else {
-                        this.error = error.response.data.message
-                        this.$root.alert('error', ' ', this.error)
-                    }
-                    // this.$refs.closeWalletForm.click()
-                })
-
-            // console.log({form})    
-        },
-        withdraw() {
-            this.$root.loader('show')
-            this.processing(true, 'submitWithdrawalForm', 'Requesting...', '')
-            this.withdrawalForm.message = ""
-            this.error = ''
-            if (this.withdrawalForm.amount > this.$auth.user().balance) {
-                this.withdrawalForm.amount = this.$auth.user().balance
-            }
-            this.withdrawalForm.post("/auth/withdrawals")
-                .then(response => {
-                    this.$root.loader('hide')
-                    this.processing(false, 'submitWithdrawalForm', 'Requesting...', 'Withdraw')
-                    this.withdrawalForm.message = response.data.message
-                    this.$root.scrollToTop(0, 250)
-                    this.amount = ''
-                    this.$auth.fetch()
-                })
-                .catch(error => {
-                    this.$root.loader('hide')
-                    this.processing(false, 'submitWithdrawalForm', 'Requesting...', 'Withdraw')
-                    this.$root.scrollToTop(0, 250)
-                    if (error.response.status == 422) {
-                        this.errors = {}
-                        this.errors = error.response.data.error
-                    }
-                    else {
-                        this.error = error.response.data.message
-                        this.$root.alert('error', ' ', this.error)
-                    }
-                    console.log(error, error.response)
-                })
-
-          
-            setTimeout(() => { this.withdrawalForm.message = ''; this.error = ''; this.errors = ''; this.$refs.closeWithdrawalForm.click() }, 5000);
-            
-        },
-        transfer() {
-            this.$root.loader('show')
-            this.processing(true, 'submitTransferForm', 'Requesting...', '')
-            this.transferForm.message = ""
-            this.error = ''
-            if (this.transferForm.amount > this.$auth.user().balance) {
-                this.transferForm.amount = this.$auth.user().balance
-            }
-            this.transferForm.post("/auth/transfer")
-                .then(response => {
-                    this.$root.loader('hide')
-                    this.processing(false, 'submitTransferForm', 'Requesting...', 'Tranfer')
-                    this.$root.alert('success', ' ', response.data.message )
-                    // this.transferForm.message = response.data.message
-                    this.$root.scrollToTop(0, 250)
-                    this.transferForm.amount = ''
-                    this.$auth.fetch()
-                })
-                .catch(error => {
-                    this.$root.loader('hide')
-                    this.processing(false, 'submitTransferForm', 'Requesting...', 'Tranfer')
-                    this.$root.scrollToTop(0, 250)
-                    console.log(error.response.status, error.response.data.message)
-                    if (error.response.status == 422) {
-                        this.errors = error.response.data.error
-                    }
-                    this.$root.alert('error', ' ', error.response.data.message)
-                    // console.log(error, error.response)
-                })
-
-
-            setTimeout(() => { this.transferForm.message = ''; this.error = ''; this.errors = '' }, 5000);
-
-        },
-        processing(status, ref, text1, text2) {
-            if (status) {
-                this.$refs[ref].innerHTML = text1;
-                this.$refs[ref].disabled = true;
-            } else {
-                this.$refs[ref].innerHTML = text2;
-                this.$refs[ref].disabled = false;
-            }
+            setTimeout(() => { this.$root.scrollUp() }, 1000);
         },
 
     }
@@ -987,12 +416,5 @@ export default {
 
 </script>
 <style scoped>
-.modal-header {
-    display: block;
 
-}
-
-.modal-content {
-    box-shadow: 1px 1px 20px !important;
-}
 </style>

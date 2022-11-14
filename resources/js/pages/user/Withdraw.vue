@@ -128,7 +128,7 @@
             </div>
         </div>
     </div>
-    <Footer></Footer>
+    <Footer  @popUploaded="displayMessage"></Footer>
     </div>
 </template>
 <script>
