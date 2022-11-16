@@ -1,170 +1,240 @@
 <template>
-    <div class="page-wrapper">
-        <DashboardHeader></DashboardHeader>
-
-        <section class="inner-hero bg_img" :style="'background:url('+ $root.basepath +'/images/bg/bg-1.jpg)'" :data-background="$root.basepath + '/images/bg/bg-1.jpg'">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h2 class="page-title">Withdrawal Statement</h2>
-                        <ul class="page-breadcrumb">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/dashboard">Dashboard</a></li>
-                            <li>Withdrawal</li>
-                        </ul>
-                        <h2 class="page-title pt-4"><span class="base--color">Welcome, </span> {{$auth.user().username}}</h2>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="pb-60">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-12">
-                        <div class="row mt-50 ">
-                            <div class="col-lg-4 col-sm-12 mb-50">
-                                <div class="m-auto equal blog-card p-0 mb-30">
-                                    <div class="headeraccount base--bg">
-                                        <span class="font-weight-bold">Financial Statistics </span>
-                                    </div>
-                                    <div class="row p-4 pb-2">
-                                        <div class="col-9 col-md-10 ">
-                                            <h2 class="mb-1">{{$root.numeral($auth.user().totalEarned)}}</h2>
-                                            <p class="mb-3">Total Earned</p>
-                                        </div>
-                                        <div class="col-3 col-md-2 p-0">
-                                            <div class="icon base--bg text-white">
-                                                <i class="las la-dollar-sign"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="divider pb-3"></div>
-                                    <div class="row p-4 pb-2">
-                                        <div class="col-9 col-md-10 ">
-                                            <h2 class="mb-1">{{$root.numeral($auth.user().totalWithdrawBySelf)}}</h2>
-                                            <p class="mb-3">Total Withdrawals</p>
-                                        </div>
-                                        <div class="col-3 col-md-2 p-0">
-                                            <div class="icon base--bg text-white">
-                                                <i class="las la-dollar-sign"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="divider pb-3"></div>
-                                    <div class="row p-4 pb-2">
-                                        <div class="col-9 col-md-10 ">
-                                            <h2 class="mb-1">{{$root.numeral($auth.user().balance)}}</h2>
-                                            <p class="mb-3">Account Balance</p>
-                                        </div>
-                                        <div class="col-3 col-md-2 p-0">
-                                            <div class="icon base--bg text-white">
-                                                <i class="las la-dollar-sign"></i>
-                                            </div>
-                                        </div>
-                                    </div>
+    <div>
+        <Header></Header>
+        <div id="appCapsule">
+            <div class="section">
+                <div class="row mt-2">
+                    <div v-if="withdrawals.length > 0" class="card p-2">
+                        <small class="text-center mobile">Click the <span class="text-white"
+                                style="padding:2px 7px;border-radius:50%;background-color:#0d6efd">+</span> icon for
+                            details</small>
+                        <hr>
+                        <div id="example_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="dataTables_length" id="example_length"><label>Show <select
+                                                v-model="entries" @change="getWithdrawals(1)" name="example_length"
+                                                aria-controls="example" class="form-select form-select-sm">
+                                                <option value="10">8</option>
+                                                <option value="25">20</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select> Entries</label></div>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <div id="example_filter" class="dataTables_filter"><label>Search:<input
+                                                type="search" v-model="search" class="form-control form-control-sm"
+                                                placeholder="" @change="getWithdrawals(1)"
+                                                aria-controls="example"></label></div>
                                 </div>
                             </div>
-                            <div class="col-lg-8 col-sm-12">
-                                <div class="m-auto equal blog-card p-0 mb-30">
-                                    <div class="headeraccount base--bg mb-4"><span class="text-capitalize font-weight-bold">Your Approved Withdrawal Report </span> </div>
-                                    <div v-if="withdrawals.length > 0">
-                                        <form @submit.prevent="getWithdrawals" class="date-from" method="post" name="opts">
-                                            <div class="form-list m-3 form-group">
-                                                <div class="row text-center">
-                                                    <div class="col-md-6 col-sm-12">
-                                                        <label for="from_date" class="form-label">From</label>
-                                                        <div class="input-group">
-                                                            <div style="border-radius: 0px 5px" class="input-group-prepend">
-                                                                <span class="icon"><i class="fas fa-calendar" aria-hidden="true"></i></span>
-                                                            </div>
-                                                            <input type="date" id="from_date" placeholder="select from date" v-model="from" class="form-control">
-                                                        </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+
+                                    <table id="example"
+                                        class="table table-striped table-bordered dt-responsive nowrap table-condensed">
+                                        <thead class="text-primary">
+                                            <small class="text-center mobile">Click the <span class="text-white"
+                                                    style="padding:2px 7px;border-radius:50%;background-color:#0d6efd">+</span>
+                                                icon for details</small>
+                                            <hr>
+                                            <tr>
+                                                <th class="text-primary">Date</th>
+                                                <th class="text-primary">Amount</th>
+                                                <th class="text-primary">Method</th>
+                                                <th class="text-primary">TrxRef</th>
+                                                <th class="text-primary">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody v-if="loading == false">
+
+                                            <tr v-for="data in withdrawals">
+                                                <td>{{data.date}}</td>
+                                                <td>${{data.amount}}</td>
+                                                <td class="text-capitalize">{{data.payment_method}}</td>
+                                                <td class="text-capitalize">{{data.reference == 'BM' ? 'Commission' :
+                                                data.reference }}</td>
+                                                <td class="pb-0">
+                                                    <div :class="{'progress-bar' : true, 'progress-bar-striped' : true, 'progress-bar-animated' : true, 
+                                                    'bg-primary' : !data.confirmed, 'bg-success' : data.confirmed}"
+                                                        style="width: 100%">
+                                                        {{data.confirmed ? 'APPROVED' : 'PENDING'}}
                                                     </div>
-                                                    <div class="col-md-6 col-sm-12">
-                                                        <label for="to_date" class="form-label">To</label>
-                                                        <div class="input-group">
-                                                            <div style="border-radius: 0px 5px" class="input-group-prepend">
-                                                                <span class="icon"><i class="fas fa-calendar" aria-hidden="true"></i></span>
-                                                            </div>
-                                                            <input type="date" id="to_date" placeholder="select to date" v-model="to" required class="form-control">
-                                                        </div>
+                                                    <div class="text-center text-danger">
+                                                        <router-link style="height:unset" :to="'/dashboard/withdrawal/details/' +
+                                                            data.id
+                                                        " class="btn text-secondary" title="Detail">
+                                                            <i class="fas fa-desktop"></i>
+                                                        </router-link>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="table-respon2sive table-responsive--md p-0">
-                                        <table class="table style--two white-space-nowrap">
-                                            <thead v-if="withdrawals.length > 0" class="bg-transparent text-white">
-                                                <tr>
-                                                    <th>Amount</th>
-                                                    <th>Payment Processor</th>
-                                                    <th>Reference</th>
-                                                    <th>Date</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr v-if="withdrawals.length > 0 && data.reference == 'SELF'" v-for="data in myFilter(withdrawals,from,to).slice(0,20)">
-                                                    <td :class="{'text-danger' : data.reference == 'BM', 'text-success' : data.reference == 'SELF' }" data-label="Amount">-{{$root.numeral(data.amount)}}</td>
-                                                    <td data-label="Processor"><span class="badge text-dark bg--base">{{data.payment_method}}</span></td>
-                                                    <td class="text-success" data-label="By">{{data.reference}}</td>
-                                                    <td class="" data-label="Date">{{data.date}}</td>
-                                                </tr>
-                                                <tr v-if="withdrawals.length == 0">
-                                                    <td class="text-center only" colspan="4">
-                                                        <div class="p-3 text-center">
-                                                            You do not have any approved withdrawal yet.<br> Click <a style="text-decoration: underline;" href="/dashboard/withdraw" class="base--color font-weight-bold"> here </a> to request for withdrawal.
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <list-loader v-else></list-loader>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-5">
+                                    <div class="dataTables_info" id="example_info" role="status" aria-live="polite">
+                                        {{'Showing ' + ((paging.current_page-1) + paging.current_page) + ' to ' +
+                                        paging.count * paging.current_page + ' of ' + paging.total +
+                                        ' entries'}}</div>
+                                </div>
+                                <div class="col-sm-12 col-md-7" v-if="entries < paging.total">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
+                                        <ul class="pagination">
+                                            <li v-if="paging.current_page > 1" @click.prevent="
+                                            getWithdrawals(
+                                            --paging.current_page
+                                            )
+                                            " class="paginate_button page-item previous" id="example_previous"><a
+                                                    href="#" aria-controls="example" data-dt-idx="0" tabindex="0"
+                                                    class="page-link">Previous</a></li>
+                                            <li v-if="paging" v-for="num in paging.total_pages" :class="{
+                                                'page-item': true,
+                                                'paginate_button': true,
+                                                active:
+                                                    num == paging.current_page,
+                                            }">
+                                                <a href="#" @click.prevent="getWithdrawals(num)"
+                                                    aria-controls="example" data-dt-idx="1" tabindex="0"
+                                                    class="page-link">{{ num }}</a>
+                                            </li>
+                                            <li v-if="
+                                            paging.total_pages !=
+                                            paging.current_page " class="paginate_button page-item next"
+                                                id="example_next"><a href="#" @click.prevent="
+                                                    getWithdrawals(
+                                                        ++paging.current_page
+                                                    )
+                                                " aria-controls="example" data-dt-idx="2" tabindex="0"
+                                                    class="page-link">Next</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div v-else-if="withdrawals.length == 0 && loading == false" class="card p-2">
+                        <div id="example_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card-body" align="center">
+                                        <i class="fa fa-exclamation-triangle text-primary fa-2x"></i> <br>
+                                        <strong>No Records Found!</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <list-loader v-else></list-loader>
                 </div>
             </div>
         </div>
-    <Footer></Footer>
+
+
+        <br><br>
+
+        <Footer @popUploaded="displayMessage"></Footer>
+
+
     </div>
+
+
 </template>
 <script>
-import moment from 'moment'
+import { ContentLoader, ListLoader } from "vue-content-loader";
 export default {
     data() {
         return {
-            from: '',
-            to: '',
+            key: 0, error: undefined,
             withdrawals: [],
-            error: '',
-            totalWithdraw: 0,
+            entries: 8,
+            search: undefined,
+            loading: false,
+            paging: undefined,
+            current_page: 1,
+        }
+    },
+    watch: {
+        error() {
+            setTimeout(() => { this.error = '' }, 15000);
         }
     },
     mounted() {
-        this.$root.loader('show')
-        setInterval(this.getWithdrawals, 61000)
-        this.getWithdrawals()
+        this.$root.dashboard_header_page_title = "Withdrawal History"
+        setTimeout(() => { window.scrollTo(0, 0); }, 1000);
+        this.getWithdrawals(this.current_page)
     },
-    computed: {
+    created() {
+        var js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/jquery.min.js"
+        );
+        js.setAttribute("async", true);
+        document.body.appendChild(js);
 
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/dashboard/jquery-3.2.1.slim.min.js"
+        );
+        js.setAttribute("async", true);
+        document.body.appendChild(js);
+
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/bootstrap.min.js"
+        );
+        document.body.appendChild(js);
+
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            this.$root.basepath + "/assets/js/home/bootstrap.bundle.min.js"
+        );
+        document.body.appendChild(js);
+    },
+    beforeRouteEnter(to, from, next) {
+        next(vm => {
+            vm.$root.loader('show')
+
+            setTimeout(() => { vm.$root.loader('hide') }, 2000);
+        })
+    },
+    components: {
+        ContentLoader,
+        ListLoader,
     },
     methods: {
-        getWithdrawals() {
-            // this.$root.loader('show')
+        getWithdrawals(page) {
+            this.$root.loader('show')
+            this.loading = true
+            this.current_page = page;
+            var searchQuery = this.search ? "&email=" + this.search : "";
             let form = new Form()
-            form.get("auth/withdrawals?confirmed=1&processed=1&user_id=" + this.$auth.user().id)
+            form.get("auth/withdrawals?user_id=" + this.$auth.user().id + '&page=' + page + searchQuery + "&pageSize=" +
+                this.entries)
                 .then(response => {
                     this.$root.loader('hide')
                     this.withdrawals = response.data.data.item
-                    this.totalWithdraw = this.withdrawals.sum('amount')
+                    this.loading = false
+                    this.paging = response.data.data.pagination
+
                 })
                 .catch(error => {
+                    this.loading = false
                     this.$root.loader('hide')
                     this.error = error.response
                     console.log(error.response)
                 })
+        },
+        displayMessage(msg) {
+            this.$root.alert('success', ' ', msg.message)
+            setTimeout(() => { this.$root.scrollUp() }, 1000);
         },
         createDate(createDate) {
             return moment(createDate).format("MMM Do YYYY")
@@ -197,13 +267,11 @@ export default {
             }
             return data;
         },
-        loadViewPOP(item) {
-            this.$root.viewItem = { title: `Viewing $${item.amount}  POP for ${this.createDate(item.created_at) }`, imgUrl: item.pop }
-        },
-        resetViewModal() {
-            this.$root.viewItem = null
-        }
+
     }
 }
 
 </script>
+<style scoped>
+
+</style>

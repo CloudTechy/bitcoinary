@@ -278,7 +278,7 @@ const routes = [
         },
     },
     {
-        path: "/dashboard/withdrawal-report",
+        path: "/dashboard/report/withdrawal",
         name: "WithdrawReport",
         component: () => import("./pages/user/reports/WithdrawalReport"),
         meta: {
@@ -325,6 +325,16 @@ const routes = [
             auth: true,
             adminAuth: false,
             title: "User Transaction Details",
+        },
+    },
+    {
+        path: "/dashboard/withdrawal/details/:id",
+        name: "user-withdrawal-details",
+        component: () => import("./pages/user/WithdrawalDetails"),
+        meta: {
+            auth: true,
+            adminAuth: false,
+            title: "User Withdrawal Details",
         },
     },
     {

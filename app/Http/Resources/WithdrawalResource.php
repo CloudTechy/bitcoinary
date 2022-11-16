@@ -30,7 +30,7 @@ class WithdrawalResource extends JsonResource {
 			'reference' => $this->reference,
 			'currency_code' => $this->currency_code,
 			'date_bad' => Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans(),
-			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->toFormattedDateString(),
+			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->isoFormat('MMM Do YY, h:mm a'),
 			'created_at' => $this->created_at->format('Y-m-d H:i:s'),
 			'updated_at' => $this->updated_at->format('Y-m-d H:i:s'),
 		];
