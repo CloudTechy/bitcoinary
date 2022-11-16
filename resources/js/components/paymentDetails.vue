@@ -242,6 +242,7 @@ export default {
                 var url = this.deposit_type == 'balance' ? "/auth/popdeposit" : "/auth/packageusers"
                 form.type = this.deposit_type
                 form.reference = "SELF DEPOSIT"
+                form.type = "deposit"
                 form.submit("post", url, {
                     transformRequest: [
                         function (data, headers) {

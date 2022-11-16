@@ -94,7 +94,7 @@ class PackageUserController extends Controller {
 			$package = Package::whereRaw('? >= min_deposit  and ? <= max_deposit',[$validated['amount'],$validated['amount']])->firstOrFail();
 		
 			if ($user->balance >= $validated['amount'] && !empty($validated['fromWallet'])) {
-				$transaction = $user->transactions()->create(['reference' => 'SELF DEPOSIT','transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
+				$transaction = $user->transactions()->create(['reference' => 'SELF DEPOSIT','type' => 'deposit','transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
 
 				$withdrawal = $user->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $validated['amount'], 'reference' => 'BM', 'processed' => true, 'confirmed' => true]);
 
@@ -114,7 +114,7 @@ class PackageUserController extends Controller {
 				return Helper::validRequest($subscription, 'Congratulations!!! your investment is now active', 200);
 			} else {
 		        $pop = Helper::uploadImage($request, 'pop', 'images/pop');
-		        $transaction = $user->transactions()->create(['reference' => 'SELF DEPOSIT','transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'pop' => $pop]);
+		        $transaction = $user->transactions()->create(['reference' => 'SELF DEPOSIT','type' => 'deposit','transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'pop' => $pop]);
 				$subscription = PackageUser::create(['transaction_id' => $transaction->id, 'user_id' => $user->id, 'package_id' => $package->id, 'roi' => $package->roi, 'pop' => $pop, 'amount' => $validated['amount'],  'active' => false]);
 			
 				$this->adminsNotificationRequest($subscription);
@@ -242,13 +242,13 @@ class PackageUserController extends Controller {
 
 			if ($referrer && $user->userLevel->name == "user") {
 				if ($commission_first_level > 0) {
-					$transaction = $referrer->transactions()->create(['reference' => 'first tier commission', 'amount' => $commission_first_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
+					$transaction = $referrer->transactions()->create(['reference' => 'first tier commission', 'type' => 'profit', 'amount' => $commission_first_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
 					$subscription->update(['referral' => $referrer->id]);	
 					$transaction->user->notify(new TransactionMade($transaction));
 					Helper::adminsUserActivityRequest(['type'=>'CommissionActivity', 'message' => $referrer->username . ' received $' .$commission_first_level.' as first level commission.']);
 				}
 				if ($upline && $commission_second_level > 0) {
-					$transaction = $upline->transactions()->create(['reference' => 'second tier commission', 'amount' => $commission_second_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
+					$transaction = $upline->transactions()->create(['reference' => 'second tier commission', 'type' => 'profit', 'amount' => $commission_second_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
 					$transaction->user->notify(new TransactionMade($transaction));
 					Helper::adminsUserActivityRequest(['type'=>'CommissionActivity', 'message' => $upline->username . ' received $' .$commission_second_level.' as second level commission.']);
 				}
@@ -301,7 +301,7 @@ class PackageUserController extends Controller {
 				if(empty($package)){
 					return Helper::invalidRequest(['This subscription is invalid'], 'No package matched the amount', 400);
 				}
-				$transaction = $user->transactions()->create(['reference' =>'SELF', 'transaction_ref' => $validated['transaction_ref'],'payment_method' => $validated['payment_method'],'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
+				$transaction = $user->transactions()->create(['reference' =>'SELF', 'type' => 'deposit', 'transaction_ref' => $validated['transaction_ref'],'payment_method' => $validated['payment_method'],'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
 				$transaction->user->notify(new TransactionMade($transaction));
 				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
 				DB::commit();
@@ -315,7 +315,7 @@ class PackageUserController extends Controller {
 				return Helper::validRequest($user, 'subscription activated', 200);
 			}
 			elseif($validated['type'] == 'balance'){
-				$transaction = $user->transactions()->create(['reference' =>'SELF' ,'transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'sent' => true, 'active' => false, 'confirmed' => true]);
+				$transaction = $user->transactions()->create(['reference' =>'SELF' ,'type' => 'deposit', 'transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'sent' => true, 'active' => false, 'confirmed' => true]);
 				DB::commit();
 				$transaction->user->notify(new TransactionMade($transaction));
 				Helper::adminsUserActivityRequest(['type'=>'TransactionActivity', 'message' =>  $user->username .'\'s account balance was credited $'. $validated['amount']]);

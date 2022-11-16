@@ -318,6 +318,16 @@ const routes = [
         },
     },
     {
+        path: "/dashboard/report/profit",
+        name: "profitReport",
+        component: () => import("./pages/user/reports/ProfitReport"),
+        meta: {
+            auth: true,
+            adminAuth: false,
+            title: "User Profit Report",
+        },
+    },
+    {
         path: "/dashboard/transaction/details/:id",
         name: "user-transaction-details",
         component: () => import("./pages/user/TransactionDetails"),

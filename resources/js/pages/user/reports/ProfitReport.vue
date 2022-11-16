@@ -2,6 +2,25 @@
     <div>
         <Header></Header>
         <div id="appCapsule">
+            <div class="section" id="dashboard" style="display: block">
+                <div class="row mt-2">
+                    <div class="col-6 mt-1">
+                        <div class="stat-box">
+                            <div class="title">Total Earnings</div>
+                            <div class="h6 text-primary">
+                                ${{$root.normalNumeral($auth.user().totalEarned)}} </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mt-1">
+                        <div class="stat-box " v-if="transactions.length > 0 && loading == false">
+                            <div class="title">Total Profit</div>
+                            <div class="h6 text-primary">
+                                ${{$root.normalNumeral(totalProfit)}} </div>
+                        </div>
+                        <list-loader v-else></list-loader>
+                    </div>
+                </div>
+            </div>
             <div class="section">
                 <div class="row mt-2">
                     <div v-if="transactions.length > 0" class="card p-2">
@@ -41,8 +60,7 @@
                                             <tr>
                                                 <th class="text-primary">Date</th>
                                                 <th class="text-primary">Amount</th>
-                                                <th class="text-primary">Type</th>
-                                                <th class="text-primary">TrxRef</th>
+                                                <th class="text-primary">Reference</th>
                                                 <th class="text-primary">Status</th>
                                             </tr>
                                         </thead>
@@ -51,21 +69,12 @@
                                             <tr v-for="data in transactions">
                                                 <td>{{data.date}}</td>
                                                 <td>${{data.amount}}</td>
-                                                <td class="text-capitalize">{{data.payment_method + ' Deposit'}}</td>
-                                                <td class="text-capitalize">{{data.reference}}</td>
+                                                <td class="text-capitalize">{{data.reference == 'BM' ? 'ROI' : data.reference}}</td>
                                                 <td class="pb-0">
                                                     <div :class="{'progress-bar' : true, 'progress-bar-striped' : true, 'progress-bar-animated' : true, 
                                                     'bg-primary' : !data.confirmed, 'bg-success' : data.confirmed}"
                                                         style="width: 100%">
                                                         {{data.confirmed ? 'APPROVED' : 'PENDING'}}
-                                                    </div>
-                                                    <div class="text-center text-danger">
-                                                        <router-link style="height:unset" :to="'/dashboard/transaction/details/' +
-                                                            data.id
-                                                        "
-                                                            class="btn text-secondary" title="Detail">
-                                                            <i class="fas fa-desktop"></i>
-                                                    </router-link>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -155,6 +164,7 @@ export default {
             loading: false,
             paging: undefined,
             current_page: 1,
+            totalProfit:0
         }
     },
     watch: {
@@ -163,7 +173,7 @@ export default {
         }
     },
     mounted() {
-        this.$root.dashboard_header_page_title = "Transaction History"
+        this.$root.dashboard_header_page_title = "Profit History"
         setTimeout(() => { window.scrollTo(0, 0); }, 1000);
         this.getTransactions(this.current_page)
     },
@@ -217,10 +227,11 @@ export default {
             var searchQuery = this.search ? "&email=" + this.search : "";
             let form = new Form()
             form.get("auth/transactions?user_id=" + this.$auth.user().id + '&page=' + page + searchQuery + "&pageSize=" +
-                this.entries + "&type=deposit")
+                this.entries + "&type=profit")
                 .then(response => {
                     this.$root.loader('hide')
                     this.transactions = response.data.data.item
+                    this.totalProfit = this.transactions.sum('amount')
                     this.loading = false
                     this.paging = response.data.data.pagination
 

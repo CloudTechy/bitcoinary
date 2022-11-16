@@ -26,6 +26,7 @@ class TransactionResource extends JsonResource {
 			'pop' => $this->pop,
 			'confirmed' => $this->confirmed,
 			'transaction_ref' =>  $this->transaction_ref ,
+			'type' =>  $this->type,
 			'payment_method' => $this->payment_method,
 			'reference' => $this->reference,
 			'currency_code' => $this->currency_code,

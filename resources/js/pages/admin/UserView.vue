@@ -895,6 +895,7 @@ export default {
 				user_id: "",
                 reference: "SELF",
                 transaction_ref: "",
+                type:'deposit',
                 payment_method : "",
 			}),
             user:"",

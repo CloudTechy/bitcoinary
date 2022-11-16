@@ -26,7 +26,7 @@ class DepositController extends Controller
 		try
 		{DB::beginTransaction();
              $pop = Helper::uploadImage($request, 'pop', 'images/pop');
-				$transaction = Transaction::create(['user_id' => $validated['user_id'], 'reference' =>'SELF DEPOSIT' ,'transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'sent' => true, 'active' => false , 'pop' => $pop]);
+				$transaction = Transaction::create(['user_id' => $validated['user_id'], 'reference' =>'SELF DEPOSIT', 'type' => 'deposit', 'transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'sent' => true, 'active' => false , 'pop' => $pop]);
 				DB::commit();
 				$transaction->user->notify(new UserNewDepositRequest($transaction));
                 Helper::adminsNotificationRequest(new AdminNewDepositRequest($transaction));
@@ -104,8 +104,8 @@ class DepositController extends Controller
 			if ($sender->balance < $validated['amount']) {
 				return Helper::invalidRequest(['success' => false], 'Insufficient funds', 400);
 			}
-			$transaction = $receiver->transactions()->create(['reference' => 'P2P TRANSFER','transaction_ref' => '', 'payment_method' => 'Bitcoin', 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
-			$withdrawal = $sender->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $validated['amount'], 'reference' => 'SELF', 'processed' => true, 'confirmed' => true]);
+			$transaction = $receiver->transactions()->create(['reference' => 'P2P TRANSFER', 'transaction_ref' => '', 'type' => 'deposit', 'payment_method' => 'Bitcoin', 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
+			$withdrawal = $sender->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $validated['amount'], 'reference' => 'P2P TRANSFER', 'processed' => true, 'confirmed' => true]);
             DB::commit();
 			$sender->notify(new WithdrawalMade($withdrawal));
 			$transaction->user->notify(new TransactionMade($transaction));

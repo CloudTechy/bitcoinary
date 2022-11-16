@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model {
-	protected $fillable = ['user_id', 'amount', 'pop','transaction_ref','payment_method', 'reference', 'active', 'sent', 'confirmed', 'reference', 'currency_code'];
+	protected $fillable = ['user_id', 'amount','type', 'pop','transaction_ref','payment_method', 'reference', 'active', 'sent', 'confirmed', 'reference', 'currency_code'];
 	protected $appends = array('confirmedTransaction', 'nullTransaction', 'sentTransaction');
 
 	public function getConfirmedTransactionAttribute() {
@@ -25,7 +25,7 @@ class Transaction extends Model {
 
 		try {
 
-			$fields = ['user_id', 'amount', 'active', 'sent', 'confirmed', 'reference', 'currency_code'];
+			$fields = ['user_id', 'amount','type', 'active', 'sent', 'confirmed', 'reference', 'currency_code'];
 
 			return $query->where(
 				function ($query) use ($filter, $fields) {

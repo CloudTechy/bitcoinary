@@ -84,6 +84,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 				$transaction->active = false;
 				$transaction->payment_method = "Bitcoin";
 				$transaction->reference = 'BM';
+				$transaction->type = 'profit';
 				if ($transaction->save()) {
 					//check number of times to restart active trade
 					// global $loop;

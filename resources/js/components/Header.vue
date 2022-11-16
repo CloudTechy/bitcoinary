@@ -117,7 +117,7 @@
                                 <div class="in"> Withdraw </div>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="https://wallet.west-exchange.com/account/login.php?email=Davidrobinson5616@yahoo.com"
                                 target="_blank" class="item">
                                 <div class="icon-box bg-primary">
@@ -125,13 +125,21 @@
                                 </div>
                                 <div class="in"> Wallet Connect </div>
                             </a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="/dashboard/loan" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-money-bill"></i>
                                 </div>
                             <div class="in"> Credit Advance/Loan</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/dashboard/report/withdrawal" class="item">
+                                <div class="icon-box bg-primary">
+                                    <i class="fas fa-history"></i>
+                                </div>
+                                <div class="in"> Withdrawal History </div>
                             </a>
                         </li>
                         <li>
@@ -173,7 +181,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/dashboard/report/earning" class="item">
+                            <a href="/dashboard/report/profit" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-funnel-dollar"></i>
                                 </div>
