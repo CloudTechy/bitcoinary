@@ -22,13 +22,11 @@
                        
                     </div>
                      <content-loader v-else></content-loader> 
-                    <div
-                        class="col-lg-6 col-sm-6 text-sm-right mt-sm-0 mt-3"
-                    ></div>
+                  
                 </div>
 
                 <div class="row mb-none-30">
-                    <div class="col-lg-5 col-md-5 mb-30">
+                    <div class="col-lg-5 col-md-6 col-sm-12 mb-30">
                         <div v-if = "deposit"
                             class="card b-radius--10 overflow-hidden box--shadow1"
                         >
@@ -173,7 +171,7 @@
                         </div>
                         <list-loader v-else></list-loader> 
                     </div>
-                    <div class="col-lg-7 col-md-7 mb-30">
+                    <div class="col-lg-7 col-md-6 col-sm-12 mb-30">
                         <div v-if = "deposit"
                             class="card b-radius--10 overflow-hidden box--shadow1"
                         >
@@ -194,7 +192,7 @@
                                 <div class="row mt-4">
                                     <div class="col-md-12">
                                         <h6>Screenshot POP</h6>
-                                        <p v-if = "deposit.pop"><img 
+                                        <p v-if = "deposit.pop"><img style="width:100%" 
                                         :src="
                                                                     $root.basepath +
                                                                     '/images/pop/' +

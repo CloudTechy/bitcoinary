@@ -29,7 +29,7 @@
                 </div>
                 <div class="modal-footer">
                     <button @click = "closeModal" style="color: white; background-color: darkred;" type="button" ref = "closeButton" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button style="color: white; background-color: dodgerblue;" type="submit":disabled="form.busy" class="btn btn-primary">Save changes</button>
+                    <button style="color: white; background-color: dodgerblue;" type="submit" :disabled="form.busy" class="btn btn-primary">Save changes</button>
                 </div>
             </form>
             </div>

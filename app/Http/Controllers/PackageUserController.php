@@ -94,7 +94,7 @@ class PackageUserController extends Controller {
 			$package = Package::whereRaw('? >= min_deposit  and ? <= max_deposit',[$validated['amount'],$validated['amount']])->firstOrFail();
 		
 			if ($user->balance >= $validated['amount'] && !empty($validated['fromWallet'])) {
-				$transaction = $user->transactions()->create(['reference' => 'SELF','transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
+				$transaction = $user->transactions()->create(['reference' => 'SELF DEPOSIT','transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
 
 				$withdrawal = $user->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $validated['amount'], 'reference' => 'BM', 'processed' => true, 'confirmed' => true]);
 
@@ -114,7 +114,7 @@ class PackageUserController extends Controller {
 				return Helper::validRequest($subscription, 'Congratulations!!! your investment is now active', 200);
 			} else {
 		        $pop = Helper::uploadImage($request, 'pop', 'images/pop');
-		        $transaction = $user->transactions()->create(['reference' => 'SELF','transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'pop' => $pop]);
+		        $transaction = $user->transactions()->create(['reference' => 'SELF DEPOSIT','transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'pop' => $pop]);
 				$subscription = PackageUser::create(['transaction_id' => $transaction->id, 'user_id' => $user->id, 'package_id' => $package->id, 'roi' => $package->roi, 'pop' => $pop, 'amount' => $validated['amount'],  'active' => false]);
 			
 				$this->adminsNotificationRequest($subscription);

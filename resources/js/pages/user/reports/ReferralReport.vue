@@ -15,8 +15,8 @@
                                     <div class="dataTables_length" id="example_length"><label>Show <select
                                                 v-model="entries" @change="getReferrals(1)" name="example_length"
                                                 aria-controls="example" class="form-select form-select-sm">
-                                                <option value="10">10</option>
-                                                <option value="25">25</option>
+                                                <option value="10">8</option>
+                                                <option value="25">20</option>
                                                 <option value="50">50</option>
                                                 <option value="100">100</option>
                                             </select> Entries</label></div>
@@ -69,9 +69,9 @@
                                             getReferrals(
                                             --paging.current_page
                                             )
-                                            " class="paginate_button page-item previous disabled"
+                                            " class="paginate_button page-item previous"
                                                 id="example_previous"><a href="#" aria-controls="example"
-                                                    data-dt-idx="0" tabindex="0 && loading == false"
+                                                    data-dt-idx="0" tabindex="0"
                                                     class="page-link">Previous</a></li>
                                             <li v-if="paging" v-for="num in paging.total_pages" :class="{
                                                 'page-item': true,
@@ -166,7 +166,7 @@ export default {
         return {
             key: 0, error: undefined,
             referrals: [],
-            entries: 10,
+            entries: 8,
             search: undefined,
             loading: false,
             paging: undefined,
@@ -228,7 +228,7 @@ export default {
     methods: {
         getReferrals(page) {
             this.loading = true
-            this.currentPage = page;
+            this.current_page = page;
             var searchQuery = this.search ? "&email=" + this.search : "";
             var form = new Form()
             form.get("auth/users?referral=" + this.$auth.user().username + '&page=' + page + searchQuery + "&pageSize=" +

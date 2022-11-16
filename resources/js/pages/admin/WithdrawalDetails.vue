@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="row mb-none-30">
-                    <div class="col-lg-5 col-md-5 mb-30">
+                    <div class="col-lg-5 col-md-6 col-sm-12 mb-30">
                         <div
                             v-if="withdrawal"
                             class="card b-radius--10 overflow-hidden box--shadow1"
@@ -179,7 +179,7 @@
                         </div>
                         <list-loader v-else></list-loader>
                     </div>
-                    <div class="col-lg-7 col-md-7 mb-30">
+                    <div class="col-lg-7 col-md-6 col-sm-12 mb-30">
                         <div
                             v-if="account"
                             class="card b-radius--10 overflow-hidden box--shadow1"
@@ -362,7 +362,7 @@
                                     <div class="col-md-12">
                                         <h6>Screenshot POP</h6>
                                         <p v-if="withdrawal.pop">
-                                            <img
+                                            <img style="width:100%"
                                                 :src="
                                                     $root.basepath +
                                                     '/images/pop/' +
@@ -855,7 +855,7 @@ export default {
                 });
         },
         updatePic() {
-            form.pop = this.$refs.fileInput.files[0];
+            this.form.pop = this.$refs.fileInput.files[0];
         },
         updateLabel() {
             this.label = this.$refs.fileInput.files[0].name;

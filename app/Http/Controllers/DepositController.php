@@ -13,6 +13,7 @@ use App\Notifications\WithdrawalMade;
 use \DB;
 use App\Transaction;
 use App\User;
+use App\PackageUser;
 
 class DepositController extends Controller
 // controller for processing deposit and relaterd matters
@@ -71,10 +72,15 @@ class DepositController extends Controller
         DB::beginTransaction();
         try {
             $validated['pop'] = $request->hasFile('pop') ? Helper::uploadImage($request, 'pop', 'images/pop') : $transaction->pop;
-
-            $transaction = $transaction->update($validated);
+			$packageuser = PackageUser::where('transaction_id', $transaction->id)->first();
+            $trans = $transaction->update($validated);
+			Helper::adminsUserActivityRequest(['type'=>'TransactionActivity', 'message' =>  $transaction->user->username .' has updated his pop, with transaction id: '. $transaction->id .' method: '. $transaction->payment_method]);
+			Helper::UserActivityRequest(['type'=>'TransactionActivity', 'message' =>  'You updated your POP with transaction id: ' . $transaction->id .' method :' . $transaction->payment_method]);	
+			if(!empty($packageuser)){
+				$packageuser = $packageuser->update($validated);
+			}
             DB::commit();
-            return Helper::validRequest($transaction, 'pop updated successfully', 200);
+            return Helper::validRequest($trans, 'POP updated successfully', 200);
         } catch (Exception $bug) {
             DB::rollback();
             return $this->exception($bug, 'unknown error', 500);

@@ -72,7 +72,7 @@ class UserResource extends JsonResource {
 			// 'transactions' => $this->confirmedTransactions->all(),
 			// 'withdrawals' => $this->confirmedWithdrawals->all(),
 			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans(),
-			'created_at' => Carbon::createFromTimeStamp(strtotime($this->created_at))->toFormattedDateString(),
+			'created_at' => Carbon::createFromTimeStamp(strtotime($this->created_at))->isoFormat('MMM Do YY, h:mm a'),
 			'updated_at' => $this->updated_at->format('Y-m-d H:i:s'),
 		];
 	}

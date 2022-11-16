@@ -314,7 +314,17 @@ const routes = [
         meta: {
             auth: true,
             adminAuth: false,
-            title: "User TransactionReport",
+            title: "User Transaction Report",
+        },
+    },
+    {
+        path: "/dashboard/transaction/details/:id",
+        name: "user-transaction-details",
+        component: () => import("./pages/user/TransactionDetails"),
+        meta: {
+            auth: true,
+            adminAuth: false,
+            title: "User Transaction Details",
         },
     },
     {

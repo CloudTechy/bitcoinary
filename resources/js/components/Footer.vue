@@ -323,7 +323,7 @@
             </div>
         </div>
         <!-- payment details -->
-        <button type="button" ref="paymentModalbtn" style="visibility: show;" id="add" data-toggle="modal"
+        <button type="button" ref="paymentModalbtn" style="visibility: hide;" id="add" data-toggle="modal"
             data-target="#paymentDetails"></button>
         <div v-if="depositForm.payment_method"  class="modal fade dialogbox" tabindex="-1" role="dialog"
             ref="paymentDetails" id="paymentDetails" data-bs-backdrop="true">
