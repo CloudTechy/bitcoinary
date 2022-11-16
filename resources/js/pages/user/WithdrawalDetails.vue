@@ -25,12 +25,12 @@
                         <div v-if="withdrawal" class="card b-radius--10 overflow-hidden box--shadow1">
                             <div class="card-body">
                                 <h5 class="mb-20 text-muted">
-                                    {{'withdrawal Via ' + withdrawal.payment_method}}
+                                    {{'Withdrawal Via ' + withdrawal.payment_method}}
                                 </h5>
 
                                 <div class="p-3 bg--white">
                                     <div class="text-center">
-                                        <img :src="
+                                        <img style="width:100%" :src="
                                             $root.basepath +
                                             '/images/uploads/' +
                                             cryptoFilter($root.payments, withdrawal.payment_method)[0].image

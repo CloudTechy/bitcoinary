@@ -31,7 +31,7 @@
                     
                                 <div class="p-3 bg--white">
                                     <div class="text-center">
-                                        <img :src="
+                                        <img style="width:100%" :src="
                                             $root.basepath +
                                             '/images/uploads/' +
                                             cryptoFilter($root.payments, transaction.payment_method)[0].image
