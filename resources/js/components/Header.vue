@@ -173,7 +173,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/dashboard/report/deposit" class="item">
+                            <a href="/dashboard/report/investments" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-history"></i>
                                 </div>

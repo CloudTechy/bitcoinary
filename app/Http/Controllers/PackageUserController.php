@@ -98,7 +98,7 @@ class PackageUserController extends Controller {
 
 				$withdrawal = $user->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $validated['amount'], 'reference' => 'BM', 'processed' => true, 'confirmed' => true]);
 
-				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
+				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'loop' => 1, 'expiration' => Carbon::now()->addDays($package->turnover)]);
 
 				// $user->notify(new WithdrawalMade($withdrawal));
 				
@@ -211,7 +211,7 @@ class PackageUserController extends Controller {
 
 			if (!$packageuser->active && empty($packageuser->expiration)) {
 				$duration = $packageuser->package->turnover;
-				$packageuser->update(['expiration' => Carbon::now()->addDays($duration), 'active' => true]);
+				$packageuser->update(['expiration' => Carbon::now()->addDays($duration), 'active' => true, 'loop' => 1]);
 				$packageuser->transaction->update(['confirmed' => true, 'sent' => true]);
 				$packageuser->user->notify(new PackageSubscribed($packageuser));
 				DB::commit();
@@ -303,7 +303,7 @@ class PackageUserController extends Controller {
 				}
 				$transaction = $user->transactions()->create(['reference' =>'SELF', 'type' => 'deposit', 'transaction_ref' => $validated['transaction_ref'],'payment_method' => $validated['payment_method'],'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
 				$transaction->user->notify(new TransactionMade($transaction));
-				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'expiration' => Carbon::now()->addDays($package->turnover)]);
+				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'loop' => 1, 'expiration' => Carbon::now()->addDays($package->turnover)]);
 				DB::commit();
 				// $user->notify(new WithdrawalMade($withdrawal));
 				$user->notify(new PackageSubscribed($subscription));

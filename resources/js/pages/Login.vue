@@ -202,6 +202,13 @@ export default {
         );
         document.body.appendChild(js);
     },
+    beforeRouteEnter(to, from, next) {
+        next(vm => {
+            vm.$root.loader('show')
+
+            setTimeout(() => { vm.$root.loader('hide') }, 1000);
+        })
+    },
     methods: {
         login() {
             this.$root.loader("show");

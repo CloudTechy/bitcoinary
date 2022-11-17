@@ -62,8 +62,8 @@ class UserResource extends JsonResource {
 			'totalActiveTransaction' => $this->activeTransactions,
 			'totalEarned' => $this->totalEarned,
 			
-			'totalCommission' => $this->confirmedTransactions->where('reference', 'BM first tier commission')->sum('amount') + $this->confirmedTransactions->where('reference', 'BM second tier commission')->sum('amount'),
-			// 'totalDeposit' => $this->confirmedTransactions->sum('amount'),
+			'totalCommission' => $this->confirmedTransactions->where('type', 'profit')->sum('amount'),
+			// 'totalDeposit' => $this->confirmedTransactions->sum('amount'), + $this->confirmedTransactions->where('reference', 'BM second tier commission')->sum('amount')
 			'totalWithdraw' => $confirmedWithdrawals->sum('amount'),
 			'totalWithdrawBySelf' => $confirmedWithdrawals->where('reference', 'SELF')->sum('amount'),
 			// 'lastDeposit' => empty($this->confirmedTransactions->all()) ? 0 : (int) $this->confirmedTransactions->last()->amount,

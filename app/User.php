@@ -94,7 +94,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 					$loop_termination = $maturePackage->loop_termination;
 
 
-					if ($loop < $loop_termination) {
+					if ($loop == $loop_termination) {
 						$loop = $loop + 1;
 
 						$maturePackage->subscription->update(['expiration' => Carbon::now()->addDays($maturePackage->turnover), 'loop' => $loop, 'active' => true]);

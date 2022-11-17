@@ -288,25 +288,25 @@ const routes = [
         },
     },
     {
-        path: "/dashboard/report/deposit",
-        name: "depositReport",
-        component: () => import("./pages/user/reports/DepositReport"),
+        path: "/dashboard/report/investments",
+        name: "investmentReport",
+        component: () => import("./pages/user/reports/InvestmentReport"),
         meta: {
             auth: true,
             adminAuth: false,
-            title: "User Plans",
+            title: "User Investments Report",
         },
     },
-    {
-        path: "/dashboard/plans",
-        name: "UserPlans",
-        component: () => import("./pages/user/reports/DepositReport"),
-        meta: {
-            auth: true,
-            adminAuth: false,
-            title: "User Plans",
-        },
-    },
+    // {
+    //     path: "/dashboard/plans",
+    //     name: "UserPlans",
+    //     component: () => import("./pages/user/reports/DepositReport"),
+    //     meta: {
+    //         auth: true,
+    //         adminAuth: false,
+    //         title: "User Plans",
+    //     },
+    // },
     {
         path: "/dashboard/report/transaction",
         name: "transactionReport",
