@@ -4,6 +4,41 @@
         <div id="appCapsule">
             <div class="section">
                 <div class="row mt-2">
+                    <div class="stat-box">
+                        <h4 class="text-primary font-weight-bold">Referral Link</h4>
+                        <div class="title">
+                            Get Bonus when someone register on West Exchange with your referral link
+                            <hr>
+                            <small class="text-primary">
+                                {{$root.referralLink}} </small>
+            
+                            <div class="d-flex pt-1">
+                                <button @click="
+                                            $root.alert(
+                                                'success',
+                                                ' ',
+                                                'copied'
+                                            )" class="clip btn btn-sm btn-secondary shadowed" v-clipboard="$root.referralLink"><i
+                                        class="fas fa-copy"></i>&nbsp;Copy Link</button>
+                                <span>&nbsp;</span>
+                            </div>
+                            <hr>
+                            <a :href="'whatsapp://send?text=' + $root.referralLink "><i class="fab fa-whatsapp"
+                                    style="color: #35a406; font-size: 30px"></i></a>&nbsp;
+                            <a :href="'https://t.me/share/url?url='+ $root.referralLink + '&text=' + $auth.user().names">
+                                <i class="fab fa-telegram" style="color: #0088CC; font-size: 27px"></i></a>&nbsp;
+                            <a :href="'https://twitter.com/intent/tweet?url=' + $root.referralLink "><i class="fab fa-twitter"
+                                    style="color: #1DA1F2; font-size: 30px"></i></a>&nbsp;
+                            <a :href="'https://www.facebook.com/sharer/sharer.php?u='+ $root.referralLink"><i
+                                    class="fab fa-facebook-square" style="color: #3b5998; font-size: 30px"></i></a><br><span>Share
+                                Link</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="row mt-2">
                     <div v-if="referrals.length > 0" class="card p-2">
                         <small class="text-center mobile">Click the <span class="text-white"
                                 style="padding:2px 7px;border-radius:50%;background-color:#0d6efd">+</span> icon for
@@ -112,41 +147,7 @@
                     <list-loader v-else></list-loader>
                 </div>
             </div>
-            <div class="section">
-                <div class="row mt-2">
-                    <div class="stat-box">
-                        <h4 class="text-primary font-weight-bold">Referral Link</h4>
-                        <div class="title">
-                            Get Bonus when someone register on West Exchange with your referral link
-                            <hr>
-                            <small class="text-primary">
-                                {{$root.referralLink}} </small>
-
-                            <div class="d-flex pt-1">
-                                <button @click="
-                                $root.alert(
-                                    'success',
-                                    ' ',
-                                    'copied'
-                                )" class="clip btn btn-sm btn-secondary shadowed"
-                                    v-clipboard="$root.referralLink"><i class="fas fa-copy"></i>&nbsp;Copy Link</button>
-                                <span>&nbsp;</span>
-                            </div>
-                            <hr>
-                            <a :href="'whatsapp://send?text=' + $root.referralLink "><i class="fab fa-whatsapp"
-                                    style="color: #35a406; font-size: 30px"></i></a>&nbsp;
-                            <a
-                                :href="'https://t.me/share/url?url='+ $root.referralLink + '&text=' + $auth.user().names">
-                                <i class="fab fa-telegram" style="color: #0088CC; font-size: 27px"></i></a>&nbsp;
-                            <a :href="'https://twitter.com/intent/tweet?url=' + $root.referralLink "><i
-                                    class="fab fa-twitter" style="color: #1DA1F2; font-size: 30px"></i></a>&nbsp;
-                            <a :href="'https://www.facebook.com/sharer/sharer.php?u='+ $root.referralLink"><i
-                                    class="fab fa-facebook-square"
-                                    style="color: #3b5998; font-size: 30px"></i></a><br><span>Share Link</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
         </div>
 
 

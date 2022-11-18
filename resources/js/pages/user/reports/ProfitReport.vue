@@ -12,7 +12,7 @@
                         </div>
                     </div>
                     <div class="col-6 mt-1">
-                        <div class="stat-box " v-if="transactions.length > 0 && loading == false">
+                        <div class="stat-box " v-if="loading == false">
                             <div class="title">Total Profit</div>
                             <div class="h6 text-primary">
                                 ${{$root.normalNumeral(totalProfit)}} </div>
