@@ -58,7 +58,7 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-12 text-center">
                                                     <button type="reset" class="btn btn-danger mb-md-2">Reset</button>
-                                                    <input type="submit" name="investment" value="Proceed" class="btn btn-primary">
+                                                    <input type="submit" name="investment" value="Proceed" class="btn btn-primary mb-md-2">
                                         
                                                 </div>
                                             </div>
