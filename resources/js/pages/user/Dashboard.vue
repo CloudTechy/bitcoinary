@@ -214,7 +214,7 @@ export default {
     mounted() {
         window.scrollTo(0, 0);
         this.$root.dashboard_header_page_title = undefined
-        setTimeout(() => { this.$root.loader('hide') }, 1000);
+        setTimeout(() => { this.$root.loader('hide') }, 2000);
     },
     created() {
         var js = document.createElement("script");

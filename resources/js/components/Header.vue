@@ -18,9 +18,10 @@
           
                 </div>
         <div class="right">
-            <a href="/dashboard/Notifications" class="headerButton"> <i class="fas fa-bell"></i> <span
+            <!-- <a href="/dashboard/Notifications" class="headerButton"> <i class="fas fa-bell"></i> <span
                     class="badge badge-danger">0</span>
-            </a> <a href="/dashboard/profile" class="headerButton"> <img :src="$root.basepath + '/assets/images/home/user-default.png'"
+            </a> -->
+             <a href="/dashboard/profile" class="headerButton"> <img :src="$root.basepath + '/assets/images/home/user-default.png'"
                    alt="img" class="imaged w32"
                     style="width:32px;height:32px;border-radius:50%"> </a>
         </div>
@@ -157,21 +158,21 @@
                     <div class="listview-title mt-1">Investment</div>
                     <ul class="listview flush transparent image-listview">
                         <li>
-                            <router-link to = "/dashboard/plans" class="item">
+                            <a href = "/dashboard/plans" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-chart-line"></i>
                                 </div>
                                 <div class="in"> Investment Packages </div>
-                            </router-link>
+                            </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="/dashboard/promo" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-smile"></i>
                                 </div>
                                 <div class="in"> Bonus Packages</div>
                             </a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="/dashboard/report/investments" class="item">
                                 <div class="icon-box bg-primary">
@@ -193,7 +194,7 @@
                     <!-- menu -->
                     <div class="listview-title mt-1">Support</div>
                     <ul class="listview flush transparent image-listview">
-                        <li>
+                        <!-- <li>
                             <a href="/dashboard/notifications" class="item">
                                 <div class="icon-box bg-primary">
                                     <i class="fas fa-bell"></i>
@@ -203,7 +204,7 @@
                                         0 </span>
                                 </div>
                             </a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="/dashboard/support" class="item">
                                 <div class="icon-box bg-primary">

@@ -206,11 +206,11 @@ export default {
             form.get("/auth/bankdetails/?user_id=1")
                 .then(response => {
                     this.paymentMethods = response.data.data.item
-                    this.$root.loader('hide')
+                    // this.$root.loader('hide')
                 })
                 .catch(error => {
                     this.error = error.response.data.message
-                    this.$root.loader('hide')
+                    // this.$root.loader('hide')
                     console.log(error.response)
                 })
         },
