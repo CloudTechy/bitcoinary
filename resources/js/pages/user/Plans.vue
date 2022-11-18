@@ -5,7 +5,7 @@
         <div id="appCapsule">
             <div class="section">
                 <div class="row mt-2">
-                    <div v-for="plan in $root.packages" class="col-lg-4 mb-2">
+                    <div v-for="plan in $root.packages" class="col-lg-4 col-md-4 col-sm-12 mb-2">
                         <div class="stat-box text-center">
                             <h4 class="text-primary font-weight-bold">
                                 {{ plan.name }} </h4>
@@ -27,7 +27,7 @@
                                     <p><strong>Duration: </strong>
                                         {{ plan.turnover }}</p>
                                         <hr>
-                                        <form style="width:50vw; margin:auto" method="post" @submit.prevent="subscribePlan($event, plan)" class = "mt-3">
+                                        <form style="width:100%; margin:auto" method="post" @submit.prevent="subscribePlan($event, plan)" class = "mt-3">
                                            
                                             <div class="form-group basic">
                                                 <label class="label text-primary" for="account1">Capital</label>
@@ -57,7 +57,7 @@
                                             <br>
                                             <div class="form-group row">
                                                 <div class="col-sm-12 text-center">
-                                                    <button type="reset" class="btn btn-danger">Reset</button>
+                                                    <button type="reset" class="btn btn-danger mb-md-2">Reset</button>
                                                     <input type="submit" name="investment" value="Proceed" class="btn btn-primary">
                                         
                                                 </div>
