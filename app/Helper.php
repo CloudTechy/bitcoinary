@@ -352,9 +352,10 @@ public static function adminsUserActivityRequest($activity){
 			return static::invalidRequest($bug, 'unknown error', 500);
 		}
 }
-public static function UserActivityRequest($activity){
+public static function UserActivityRequest($activity, User $user = null){
 		try {
-			auth()->user()->notify(new UserActivity($activity));
+			$user = $user ? $user : auth()->user();
+			$user->notify(new UserActivity($activity));
 		} catch (Exception $bug) {
 			return static::invalidRequest($bug, 'unknown error', 500);
 		}

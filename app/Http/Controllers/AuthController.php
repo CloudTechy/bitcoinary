@@ -171,10 +171,10 @@ class AuthController extends Controller {
 	function resetPassword($user, $password) {
 		$user->password = Hash::make($password);
 		$user->save();
-		if(auth()->user()->user_level->name != 'user'){
-			Helper::adminsUserActivityRequest(['type'=>'AccountActivity', 'message' =>  auth()->user()->username . ' updated '. $user->username .'\'s password.']);
+		if($user->user_level->name != 'user'){
+			Helper::adminsUserActivityRequest(['type'=>'AccountActivity', 'message' =>  $user->username . ' updated '. $user->username .'\'s password.']);
         }
-		else Helper::UserActivityRequest(['type'=>'AccountActivity', 'message' =>  'You have updated your password successfully.']);
+		else Helper::UserActivityRequest(['type'=>'AccountActivity', 'message' =>  'You have updated your password successfully.'], $user);
         event(new PasswordReset($user));
 	}
 	function sendResetResponse(Request $request, $response) {

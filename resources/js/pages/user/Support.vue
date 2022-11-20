@@ -153,7 +153,7 @@ export default {
                 .catch(error => {
                     this.$root.loader('hide')
                     this.processing(false, 'submitSupportForm', 'Requesting...', 'Send')
-                    this.$root.scrollToTop(0, 250)
+                    this.$root.scrollToTop()
                     if (error.response.status == 422) {
                         this.errors = {}
                         this.errors = error.response.data.error
