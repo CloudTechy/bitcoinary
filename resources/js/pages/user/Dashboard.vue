@@ -57,7 +57,7 @@
                     </div>
                     <div class="wallet-footer">
                         <div class="item">
-                            <a href="https://wallet.west-exchange.com/account/login.php?email=Davidrobinson5616@yahoo.com"
+                            <a href="#"
                                 target="_blank">
                                 <div class="icon-wrapper">
                                     <i class="fas fa-sign-in-alt"></i>
@@ -67,7 +67,7 @@
 
                         </div>
                         <div class="item">
-                            <a href="WalletConnect.php">
+                            <a href="#">
                                 <div class="icon-wrapper">
                                     <i class="fas fa-wallet"></i>
                                 </div>
