@@ -37,10 +37,6 @@ export default {
 
 </script>
 <style type="text/css">
-.btn-warning {
-    color: #4f4f4f;
-    background-color: #cca354;
-    border-color: #facd8a;
-}
+
 
 </style>

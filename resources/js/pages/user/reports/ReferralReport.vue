@@ -7,7 +7,7 @@
                     <div class="stat-box">
                         <h4 class="text-primary font-weight-bold">Referral Link</h4>
                         <div class="title">
-                            Get Bonus when someone register on West Exchange with your referral link
+                            Get Bonus when someone register on{{' ' + $root.appName+ ' '}} with your referral link
                             <hr>
                             <small class="text-primary">
                                 {{$root.referralLink}} </small>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="section">
                 <div class="row mt-2">
                     <div v-if="referrals.length > 0" class="card p-2">

@@ -127,7 +127,7 @@ class AuthController extends Controller {
 			}
 
 		} catch (Exception $bug) {
-			return $this->exception($bug, 'unknown error', 500);
+			return $this->exception($bug, 'unknown error', 401);
 		}
 	}
 

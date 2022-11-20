@@ -252,7 +252,7 @@ export default {
                                     style="color: #fff"
                                     target="_blank"
                                 >
-                                    West Exchange Wallet</a
+                                   {{' ' + $root.appName+ ' '}} Wallet</a
                                 >
                             </li>
                             <li>
@@ -321,7 +321,7 @@ export default {
                     <div class="col-md-12">
                         <div class="de-flex">
                             <div class="de-flex-col">
-                                &copy; Copyright 2022 - West Exchange
+                                &copy; Copyright 2022 -{{' ' + $root.appName+ ' '}}
                             </div>
                             <!--<div class="de-flex-col">
                               <div class="social-icons">

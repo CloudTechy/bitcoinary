@@ -62,7 +62,7 @@ export default {
                         <div class="col-md-12">
                             <div class="theme-row-zero">
                                 <h2 style="text-align: center; color: #377dff">
-                                    At West Exchange, we believe technology can,
+                                    At{{' ' + $root.appName+ ' '}}, we believe technology can,
                                     and will, change the world.
                                 </h2>
                                 <p style="text-align: center">
@@ -85,7 +85,7 @@ export default {
                                     leave behind.
                                 </p>
                                 <p style="text-align: center">
-                                    At West Exchange, we’re committed to getting
+                                    At{{' ' + $root.appName+ ' '}}, we’re committed to getting
                                     it right. Starting with sustainably-mined
                                     bitcoin.
                                 </p>

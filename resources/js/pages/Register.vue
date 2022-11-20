@@ -234,7 +234,7 @@ export default {
         document.body.classList.add("authbody")
         this.$root.scrollUp();
         window.addEventListener("beforeunload", () => {
-            if (!this.$auth.user().isEmailVerified) {
+            if (this.$auth.check() && !this.$auth.user().isEmailVerified) {
                 this.$auth.logout();
             }
         });

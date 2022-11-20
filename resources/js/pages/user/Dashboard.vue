@@ -151,7 +151,7 @@
                     <div class="stat-box">
                         <h4 class="text-primary font-weight-bold">Referral Link</h4>
                         <div class="title">
-                            Get Bonus when someone register on West Exchange with your referral link
+                            Get Bonus when someone register on{{' ' + $root.appName+ ' '}} with your referral link
                             <hr>
                             <small class="text-primary">
                                 {{$root.referralLink}} </small>
@@ -251,7 +251,7 @@ export default {
     },
     beforeRouteEnter(to, from, next) {
         next(vm => {
-            vm.$root.loader('show')
+            vm.$root.loader('show', true)
         })
     },
     methods: {

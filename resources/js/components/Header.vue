@@ -252,7 +252,7 @@
                     <div class="action-sheet-content pt-0">
                         <div class="card">
                             <div class="card-body">
-                                <p>Send funds to another West Exchange investor. All you need is their username.
+                                <p>Send funds to another{{' ' + $root.appName+ ' '}} investor. All you need is their username.
                                     <br>
                                     Your Available Balance is
                                     <span class="fw-bold text-primary">

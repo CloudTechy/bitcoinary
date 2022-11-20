@@ -5,11 +5,13 @@ import router from '@websanova/vue-auth/drivers/router/vue-router.2.x'
 /**
  * Authentication configuration, some of the options can be override in method calls
  */
+
+window.tokenName = process.env.MIX_APP_NAME.replace(/ /g, "");
 const config = {
     auth: bearer,
     http: axios,
     router: router,
-    tokenDefaultName: "BitcoinaryMints",
+    tokenDefaultName: window.tokenName,
     tokenStore: ["localStorage"],
 
     // API endpoints used in Vue Auth.
@@ -27,8 +29,8 @@ const config = {
     logoutData: {
         url: "auth/logout",
         method: "POST",
-        redirect: 'login',
-        makeRequest: true,
+        redirect: "/login",
+        makeRequest: false,
     },
     fetchData: {
         url: "auth/user",

@@ -100,6 +100,7 @@ const app = new Vue({
         payments: [],
         packages: [],
         dashboard_header_page_title: undefined,
+        axios: undefined,
     },
     el: "#app",
     router,
@@ -109,6 +110,9 @@ const app = new Vue({
         },
         appName() {
             return process.env.MIX_APP_NAME;
+        },
+        email() {
+            return process.env.MIX_MAIL_FROM_ADDRESS;
         },
         appDomain() {
             return process.env.MIX_APP_DOMAIN;
@@ -163,11 +167,11 @@ const app = new Vue({
                     console.log(error.response);
                 });
         },
-        loader(action) {
+        loader(action, deep=false) {
             if (action == "show") {
                 $(".preloader").animate(
                     {
-                        opacity: "0.9",
+                        opacity: deep ? 1 : "0.9",
                     },
                     10,
                     function () {

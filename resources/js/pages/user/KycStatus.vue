@@ -11,10 +11,10 @@
                     <div class="card">
                         <div class="card-body">
                             <p>In order for us to know the authenticity of your
-                                West Exchange account, the law requires us to collect identifying information on our clients and
+                               {{' ' + $root.appName+ ' '}} account, the law requires us to collect identifying information on our clients and
                                 keep it up to date.</p>
                             <p>
-                                West Exchange follows the regulations as required for KYC Verification. All data uploaded by
+                               {{' ' + $root.appName+ ' '}} follows the regulations as required for KYC Verification. All data uploaded by
                                 customers are fully ecrypted and will never be shared with third-parties.</p>
                         </div>
                         <div class="card-footer" align="center">
@@ -46,7 +46,7 @@
                     <div class="card">
                         <div class="card-body">
                             <p>In order to combat fraud and follow required rules and regulations,
-                                West Exchange partners up with JUMIO, a U.S company that provides REAL-TIME end-to-end identity
+                               {{' ' + $root.appName+ ' '}} partners up with JUMIO, a U.S company that provides REAL-TIME end-to-end identity
                                 verification in over 200 countries.</p>
         
                             <p>The verification process may take a few days. During this process and once verification is

@@ -455,28 +455,33 @@
      /* --------------------------------------------------
       * plugin | isotope
       * --------------------------------------------------*/
-     function filter_gallery() {
-         var $container = jQuery('#gallery');
-         $container.isotope({
-             itemSelector: '.item',
-             filter: '*'
-         });
-         jQuery('#filters a').on("click", function() {
-             var $this = jQuery(this);
-             if ($this.hasClass('selected')) {
-                 return false;
-             }
-             var $optionSet = $this.parents();
-             $optionSet.find('.selected').removeClass('selected');
-             $this.addClass('selected');
-             var selector = jQuery(this).attr('data-filter');
-             $container.isotope({
-                 filter: selector
-             });
-             return false;
-         });
-     }
+    function filter_gallery() {
+        if ($("#gallery").length > 0) {
 
+            var $container = jQuery('#gallery');
+            $container.isotope({
+                itemSelector: '.item',
+                filter: '*'
+            })
+        
+        
+
+            jQuery('#filters a').on("click", function () {
+                var $this = jQuery(this);
+                if ($this.hasClass('selected')) {
+                    return false;
+                }
+                var $optionSet = $this.parents();
+                $optionSet.find('.selected').removeClass('selected');
+                $this.addClass('selected');
+                var selector = jQuery(this).attr('data-filter');
+                $container.isotope({
+                    filter: selector
+                });
+                return false;
+            });
+        }
+    }
      function masonry() {
          var $container = jQuery('.row-masonry');
          $container.isotope({

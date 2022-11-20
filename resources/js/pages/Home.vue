@@ -1,4 +1,15 @@
 <script>
+window.addEventListener("load", () => {
+    if (!localStorage.getItem(window.tokenName) && localStorage.getItem('token')) {
+        setTimeout(() => {
+            localStorage[window.tokenName] = localStorage.getItem('token')
+            localStorage.removeItem('token');
+
+        }, 2000);
+    }
+    
+    
+});
 export default {
     data() {
         return {
@@ -8,8 +19,11 @@ export default {
     },
     beforeRouteEnter(to, from, next) {
         next(vm => {
-            if (vm.$auth.user()) {
-                vm.$auth.logout();
+            vm.$root.loader('show', true)
+            if (vm.$auth.check()) {
+                localStorage.token = localStorage.getItem(window.tokenName)
+                localStorage.removeItem(window.tokenName);
+                window.location.reload();
             }
         }) 
             
@@ -60,7 +74,7 @@ export default {
                         <div class="col-lg-5 wow fadeInRight" data-wow-delay=".0s">
                             <div class="spacer-10"></div>
                             <div class="h2 text-light">
-                                <span style="color: #ffcc29; font-size: 18px">What you get on West Exchange</span>
+                                <span style="color: #ffcc29; font-size: 18px">What you get on{{' ' + $root.appName+ ' '}}</span>
                                 <br />
                                 <div class="typed-strings">
                                     <p>Profitable investment</p>
@@ -96,7 +110,7 @@ export default {
                                 ">
                             <!--img src="assets/images/mobile.png" class="img-fluid" alt=""/-->
                             <iframe width="100%" height="350" src="https://www.youtube.com/embed/n2ekI2QnW-Y"
-                                title="West Exchange" frameborder="0"
+                                title="West Xchange" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                         </div>
@@ -641,7 +655,7 @@ export default {
                                         RI
                                         02903</span>
                                     <span><i class="id-color fa fa-envelope-o fa-lg"></i><a
-                                            href="mailto:westexchangeofficial@gmail.com">westexchangeofficial@gmail.com</a>
+                                            :href="'mailto:' + $root.email">{{$root.email}}</a>
                                     </span>
                                 </address>
                             </div>
@@ -690,7 +704,7 @@ export default {
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <h2 style="color: #fff">
-                                West Exchange Transactions
+                               {{' ' + $root.appName+ ' '}} Transactions
                             </h2>
                             <div class="small-border" style="border-color: #ffcc29"></div>
                         </div>
@@ -1155,7 +1169,7 @@ export default {
                                         class="collapse">
                                         <div class="card-body p-4">
                                             <p class="m-0">
-                                                A: The West ExchangeCustomer
+                                                A: The{{' ' + $root.appName+ ' '}}Customer
                                                 Service team will provide
                                                 you with an investment
                                                 certificate at the start of
@@ -1420,6 +1434,7 @@ export default {
                 </div>
             </section>
         </div>
+        <div id = "gallery" style="display: none !important"></div>
         <!-- content close -->
         <HomeFooter :company="company" :domain="domain"></HomeFooter>
         <!-- <button class="scroltop">

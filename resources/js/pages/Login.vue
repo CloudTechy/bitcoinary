@@ -104,11 +104,6 @@ export default {
     mounted() {
         document.body.classList.add("authbody")
         this.$root.scrollUp();
-        window.addEventListener("beforeunload", () => {
-            if (!this.$auth.user().isEmailVerified) {
-                this.$auth.logout();
-            }
-        });
 
         var js = document.createElement("script");
         js.setAttribute(
@@ -204,9 +199,9 @@ export default {
     },
     beforeRouteEnter(to, from, next) {
         next(vm => {
-            vm.$root.loader('show')
-
-            setTimeout(() => { vm.$root.loader('hide') }, 1000);
+            if (vm.$auth.check() && vm.$auth.user().isEmailVerified == false && to.path != '/login') {
+                vm.$auth.logout();
+            }
         })
     },
     methods: {
@@ -227,9 +222,8 @@ export default {
                         JSON.stringify(app.$auth.user())
                     );
                     app.success = true;
-                    app.$root.loader("hide");
                     app.processing(false);
-                   
+                    this.$root.loader("hide");
                     // if (redirect && !app.$auth.user().isEmailVerified) {
                     // if (redirect.from.path == "/confirm-registration") {
                     // app.$router.push(redirect.from.fullPath)
@@ -242,6 +236,7 @@ export default {
                             " ",
                             "Login successful, redirecting..."
                         );
+                        
                         if (redirect) {
                             app.redirectTo = redirect.from.name;
                             app.redirectPath = redirect.from.path;
@@ -252,8 +247,9 @@ export default {
                             app.redirectTo = "dashboard";
                             app.redirectPath = "/dashboard";
                         }
-                        console.log(app.redirectPath);
+                        // console.log(app.redirectPath);
                         // app.$router.push({ name: 'adminDashboard' })
+                        
                         window.location.assign(basepath + app.redirectPath);
                         // app.processing(false)
                         // app.$root.loader('hide')

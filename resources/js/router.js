@@ -574,19 +574,41 @@ router.beforeEach((to, from, next) => {
     //     }
     // }
     $("div").remove(".modal-backdrop");
-
+    var timeout = 2000;
     if (to.meta.adminAuth == true) {
         if (authUser && authUser.isAdmin == true) {
-            next()
+            next((vm) => {
+                vm.$root.loader(show, true);
+                setTimeout(() => {
+                    vm.$root.loader("hide");
+                }, timeout);
+            });
         } else {
-            next({ name: 'dashboard' })
+             next((vm) => {
+                 vm.$root.loader(show, true);
+                 setTimeout(() => {
+                     vm.$root.loader("hide");
+                 }, timeout);
+                 return { name: "dashboard" };
+             });
         }
     } else if (to.meta.adminAuth == false) {
         if (authUser && authUser.isAdmin == true) {
-            next({ name: 'adminDashboard' })
+            next(vm => {
+                vm.$root.loader(show, true)
+                setTimeout(() => {
+                    vm.$root.loader("hide");
+                }, timeout);
+                return { name: "adminDashboard" };
+            })
 
         } else {
-            next()
+             next((vm) => {
+                 vm.$root.loader(show, true);
+                 setTimeout(() => {
+                     vm.$root.loader("hide");
+                 }, timeout);
+             });
         }
     }
     // next({ name: 'dashboard' })
