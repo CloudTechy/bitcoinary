@@ -268,6 +268,16 @@ const routes = [
         },
     },
     {
+        path: "/dashboard/status",
+        name: "KYC",
+        component: () => import("./pages/user/KycStatus"),
+        meta: {
+            auth: true,
+            adminAuth: false,
+            title: "Dashboard | KYC Status",
+        },
+    },
+    {
         path: "/dashboard/security",
         name: "security",
         component: () => import("./pages/user/Security"),
@@ -541,6 +551,10 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
+        // router.app.loader("show");
+        // setTimeout(() => {
+        //     router.app.loader("hide");
+        // }, 10000);
     const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
 
     if (nearestWithTitle) document.title = nearestWithTitle.meta.title;
@@ -559,6 +573,7 @@ router.beforeEach((to, from, next) => {
     //         next()
     //     }
     // }
+    $("div").remove(".modal-backdrop");
 
     if (to.meta.adminAuth == true) {
         if (authUser && authUser.isAdmin == true) {

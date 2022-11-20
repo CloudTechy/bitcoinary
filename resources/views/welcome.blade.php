@@ -14,14 +14,21 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link rel="shortcut icon" href="{{asset('images/home/favicon.png')}}" type="image/x-icon">
-
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-
-</script>
+  <link rel="shortcut icon" href="{{asset('assets/images/home/favicon.png')}}" type="image/x-icon">
+    <!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = 'e36066fa01bda2533846f12c97478d9027ef8086';
+        window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+        })(document);
+    </script>
 </head>
 <body id="body">
+    
   <style>
     @-webkit-keyframes preloader-inside-white {
     0% {
@@ -292,6 +299,7 @@
       jQuery(window).load(() => {
       
     });
+  
     </script>
       <!-- <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
                     {
@@ -335,6 +343,21 @@
        $(".preloader").css("display","none");
       });
     })
+</script>
+<script>
+    window.addEventListener('CookiebotOnAccept', function (e) {
+if (Cookiebot.consent.marketing) {
+smartsupp('marketingConsent', true);
+}
+if (Cookiebot.consent.statistics) {
+smartsupp('analyticsConsent', true);
+}
+})
+
+window.addEventListener('CookiebotOnDecline', function (e) {
+smartsupp('marketingConsent', false);
+smartsupp('analyticsConsent', false);
+})
 </script>
 
 <style>
