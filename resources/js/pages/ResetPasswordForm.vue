@@ -249,7 +249,7 @@ export default {
             this.processing(true)
             this.$root.loader('show')
             this.formDefault()
-            this.form.post("/auth/reset/password/")
+            this.form.post("/auth/reset/password")
                 .then(response => {
                     this.$root.loader('hide')
                     this.$root.scrollUp()
