@@ -5,6 +5,7 @@ use Illuminate\Auth\Events\Verified;
 use App\Notifications\UserRegistered;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Http\Request;
+use App\Helper;
 
 class VerificationController extends Controller {
 	/*
@@ -42,8 +43,12 @@ class VerificationController extends Controller {
 	public function verify(Request $request) {
 		// ->route('id') gets route user id and getKey() gets current user id()
 		// do not forget that you must send Authorization header to get the user from the request
-		if ($request->route('id') == $request->user()->getKey() && $request->user()->markEmailAsVerified() ) {
+		if ($request->route('id') == $request->user()->getKey()) {
+			$request->user()->markEmailAsVerified();
 			$request->user()->notify(new UserRegistered()) ;
+			Helper::adminsUserActivityRequest(['type'=>'SignUpActivity', 'message' => $request->user()->username . '\'s email has been verified.']);
+			Helper::UserActivityRequest(['type'=>'SignUpActivity', 'message' =>  'You have successfully verified your email.']);	
+			
 			event(new Verified($request->user()));
 		return Helper::validRequest(["verified" => true], 'Email has been verified successfully', 200);
 		}

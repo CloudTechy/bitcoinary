@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class UserRegistered extends Notification {
+class UserRegistered extends Notification implements ShouldQueue {
 	use Queueable;
 
 	/**
@@ -38,12 +38,12 @@ class UserRegistered extends Notification {
 		$dashboardPath = $notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/';
 		return (new MailMessage)
 			->greeting('Dear ' . $notifiable->username . ',')
-			->subject('Account Created')
+			->subject('Successful Registration')
 			->line('Congratulations on your successful registration.')
 			->line('You are welcome to one of the leading financial network with investment guarantee.')
 			->line('we await to see you earn your first wages with us soon.')
 			->action('Goto Dashboard', url($dashboardPath))
-			->line('Thanks for joining this platform');
+			->line('Thanks for joining us');
 	}
 
 	/**
@@ -62,7 +62,7 @@ class UserRegistered extends Notification {
         return [
         	'model' => 'user',
             'message' => 'Congratulations!!! welcome to '. config('app.name').'.',
-            'path' => $notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/',
+            'path' => $notifiable->isAdmin == true  ? config('frontend.url') . '/admin/dashboard' : config('frontend.url') . '/dashboard/',
             'type' => 'notification',
         ];
     }

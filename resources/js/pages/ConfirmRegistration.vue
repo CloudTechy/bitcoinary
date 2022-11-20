@@ -84,25 +84,7 @@
                         </div>
                     </div>
                 </div>
-                <div v-if="message" class="modal fade dialogbox show" id="myModal" data-bs-backdrop="true" tabindex="-1" role="dialog"
-                    aria-modal="true" style="display:block">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                
-                            </div>
-                            <div class="modal-body">
-                                <span class="danger"></span> <br>{{message}}
-                                
-                            </div>
-                            <div class="modal-footer">
-                                <div class="text-center">
-                                   
-                            <a href="/login" class="text-primary">Login</a> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
         </div>
 
