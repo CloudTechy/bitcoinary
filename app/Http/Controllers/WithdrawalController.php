@@ -8,6 +8,7 @@ use App\Http\Resources\WithdrawalResource;
 use App\Notifications\WithdrawalMade;
 use App\Notifications\NewWithdrawalRequest;
 use App\Withdrawal;
+use App\BankDetail;
 use Illuminate\Http\Request;
 use \DB;
 use App\User;
@@ -59,10 +60,11 @@ class WithdrawalController extends Controller {
 	 */
 	public function store(ValidateWithdrawalRequest $request) {
 		$validated = $request->validated();
-		$user = User::findOrFail($validated['user_id']);
 		DB::beginTransaction();
-		// try
-		// {
+		try
+		{
+			$user = User::findOrFail($validated['user_id']);
+			$bankDetail = BankDetail::where('payment_method', $validated['payment_method'])->where('user_id',$validated['user_id'] )->firstOrFail();
 			if($user->canWithdraw){
 				if ($user->balance >= $validated['amount']) {
 					$validated['processed'] = true;
@@ -81,10 +83,10 @@ class WithdrawalController extends Controller {
 			}
 			
 			
-		// } catch (Exception $bug) {
-		// 	DB::rollback();
-		// 	return $this->exception($bug, 'unknown error', 500);
-		// }
+		} catch (Exception $bug) {
+			DB::rollback();
+			return $this->exception($bug, 'unknown error', 500);
+		}
 	}
 
 	/**

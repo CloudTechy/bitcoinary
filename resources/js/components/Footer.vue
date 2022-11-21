@@ -433,6 +433,10 @@ export default {
             // this.$refs.collapsibleNavbar.classList.add('in')
         },
         withdraw() {
+            if (!this.wallet) {
+                this.$root.alert("error", ' ', "You will need to add a wallet or account to proceed")
+                return
+            }
             this.$root.loader('show')
             this.processing(true, 'submitWithdrawalForm', 'Requesting...', '')
             this.withdrawalForm.message = ""
@@ -445,8 +449,9 @@ export default {
                     this.$root.loader('hide')
                     this.processing(false, 'submitWithdrawalForm', 'Requesting...', 'Withdraw')
                     this.withdrawalForm.message = response.data.message
-                    this.amount = ''
+                    this.withdrawalForm.amount = undefined;
                     this.$auth.fetch()
+                    setTimeout(() => {this.$refs.closeWithdrawalForm.click() }, 3500);
                 })
                 .catch(error => {
                     this.$root.loader('hide')
@@ -461,9 +466,9 @@ export default {
                     }
                     console.log(error, error.response)
                 })
+            setTimeout(() => { this.withdrawalForm.message = ''; this.error = ''; this.errors = '' }, 3000);
 
-
-            setTimeout(() => { this.withdrawalForm.message = ''; this.error = ''; this.errors = ''; this.$refs.closeWithdrawalForm.click(); this.withdrawalForm.reset(); this.withdrawFormKey++; }, 2000);
+           
 
         },
         getPaymentMethods() {
@@ -496,11 +501,11 @@ export default {
             this.walletForm.post("/auth/bankdetails")
                 .then(response => {
                     this.processing(false, 'submitWalletForm', '', 'Save Changes')
+                    this.withdrawalForm.wallet = this.walletForm.wallet
                     this.$auth.fetch()
                     this.$root.alert('success', ' ', 'wallet added successfully')
                     this.walletFormKey++
                     this.$refs.closeWalletForm.click()
-                    this.walletForm.reset()
                     this.$root.loader('hide')
 
                 })

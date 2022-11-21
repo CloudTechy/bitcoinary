@@ -232,7 +232,7 @@
                     </ul>
                     <!-- * menu -->
                     <div class="listview-title mt-1">&copy;
-                        {{$root.appName}} </div>
+                        {{ $root.fullYearTemplate + '&nbsp;' + $root.appName}} </div>
     
                 </div>
             </div>

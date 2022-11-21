@@ -227,7 +227,7 @@
                                                 <td
                                                     class="text-center"
                                                     data-label="deposits"
-                                                    colspan="5"
+                                                    colspan="8"
                                                 >
                                                     <div class="icon">
                                                         <i

@@ -44,6 +44,15 @@
                 <li>
                     <a href="#" class="item">
                         <div class="in">
+                            <div>Username</div>
+                            <span class="text-primary">
+                                {{$auth.user().username}} </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item">
+                        <div class="in">
                             <div>Email</div>
                             <span class="text-primary">
                                 {{$auth.user().email}} </span>

@@ -12,7 +12,7 @@
                     :href="$root.basepath + '/admin/dashboard'"
                     class="sidebar__main-logo"
                     ><img
-                        :src="$root.basepath + '/assets/images/logo2.png'"
+                        :src="$root.basepath + '/assets/images/home/logo.png'"
                         alt="image"
                 /></a>
                 <a

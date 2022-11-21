@@ -321,7 +321,7 @@ export default {
                     <div class="col-md-12">
                         <div class="de-flex">
                             <div class="de-flex-col">
-                                &copy; Copyright 2022 -{{' ' + $root.appName+ ' '}}
+                                &copy; {{ $root.fullYearTemplate + '&nbsp;' + $root.appName}}
                             </div>
                             <!--<div class="de-flex-col">
                               <div class="social-icons">

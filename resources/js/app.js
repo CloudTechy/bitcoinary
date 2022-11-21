@@ -118,7 +118,7 @@ const app = new Vue({
             return process.env.MIX_APP_DOMAIN;
         },
         fullYearTemplate() {
-            return "2020 - " + moment().get("year");
+            return "2021 - " + moment().get("year");
         },
         referralLink() {
             return (

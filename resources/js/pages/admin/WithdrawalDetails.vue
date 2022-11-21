@@ -180,12 +180,10 @@
                         <list-loader v-else></list-loader>
                     </div>
                     <div class="col-lg-7 col-md-6 col-sm-12 mb-30">
-                        <div
-                            v-if="account"
+                        <div v-if="account"
                             class="card b-radius--10 overflow-hidden box--shadow1"
                         >
-                            <div
-                                v-if="account.currency_type == 'fiat'"
+                            <div v-if="account.currency_type == 'fiat'"
                                 class="card-body"
                             >
                                 <h5 class="card-title mb-50 border-bottom pb-2">

@@ -51,7 +51,7 @@
                             
                                 <div class="form-group basic mb-1">
                                     <label class="label" for="">Email</label>
-                                    <input type="text" v-model="form.email" :class="{
+                                    <input type="email" v-model="form.email" :class="{
                                         'form-control': true,
                                         'error-input':
                                             errors.email != undefined,
