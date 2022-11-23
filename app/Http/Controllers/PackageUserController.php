@@ -34,6 +34,7 @@ class PackageUserController extends Controller {
 			$pageSize = request()->query('pageSize', 10000000);
 			$data = PackageUser::filter(request()->all())
 				->orderBy('expiration', 'asc')
+				->orderBy('created_at', 'desc')
 				->paginate($pageSize);
 				$pagination = [
 					'total' => $data->total(),
@@ -96,7 +97,7 @@ class PackageUserController extends Controller {
 			if ($user->balance >= $validated['amount'] && !empty($validated['fromWallet'])) {
 				$transaction = $user->transactions()->create(['reference' => 'SELF DEPOSIT','type' => 'deposit','transaction_ref' => $validated['transaction_ref'], 'payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
 
-				$withdrawal = $user->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $validated['amount'], 'reference' => 'BM', 'processed' => true, 'confirmed' => true]);
+				$withdrawal = $user->withdrawals()->create(['payment_method' => $validated['payment_method'], 'amount' => $validated['amount'], 'reference' => 'Balance Investment Deposit', 'processed' => true, 'confirmed' => true]);
 
 				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'roi' => $package->roi, 'amount' => $validated['amount'], 'active' => true, 'loop' => 1, 'expiration' => Carbon::now()->addDays($package->turnover)]);
 

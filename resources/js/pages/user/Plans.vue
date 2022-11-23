@@ -183,16 +183,53 @@ export default {
    
     methods: {
         subscribePlan(event, plan) {
-            this.deposit_type = 'investment'
-            this.planForm = event.target
-            this.depositForm.amount = event.target[0].value
-            this.$refs.paymentModalbtn.click()
+            if (this.paymentMethod == 'balance') {
+                this.$root.loader('show')
+                let form = new Form()
+                form.fromWallet = true
+                this.error = undefined
+                this.message = undefined
+                form.deposit_type = 'balance'
+                form.transaction_ref = 'Balance Deposit'
+                form.amount = event.target[0].value
+                form.user_id = this.$auth.user().id
+                form.payment_method = this.paymentMethods[0].payment_method
+                form.submit('post', "/auth/packageusers")
+                    .then(response => {
+                        this.$root.loader('hide')
+                        this.$auth.fetch()
+                        this.displayMessage({ message: response.data.message })
+                    })
+                    .catch(error => {
+                        this.$root.loader('hide')
+                        if (error.response.status == 422) {
+                            this.error = error.response.data.error.pop
+                        }
+                        else {
+                            this.error = error.response.data.message
+                            this.$root.alert("error" , " ", this.error)
+                        }
+                        console.log(error, error.response)
+
+                    })
+
+            } else {
+                this.deposit_type = 'investment'
+                this.planForm = event.target
+                this.depositForm.amount = event.target[0].value
+                this.$refs.paymentModalbtn.click()
+            }
+            
         },
         setInvestmentPaymentMethod(event) {
             this.depositForm.key++
+            this.key++
+            this.depositForm.payment_method = undefined
             var select = event.target;
             var method = select.options[select.selectedIndex].value;
-            this.depositForm.payment_method = this.$root.cryptoFilter(this.paymentMethods, method)[0]
+            var paymentMethod = this.$root.cryptoFilter(this.paymentMethods, method)[0] 
+            this.paymentMethod = paymentMethod ? undefined : "balance"
+            this.depositForm.payment_method = paymentMethod
             
         },
         displayMessage(msg) {

@@ -18,7 +18,7 @@ class NewSubscriptionRequest extends Notification implements ShouldQueue {
      */
     public function __construct($subscription) {
         $this->subscription = $subscription;
-        $this->dashboardPath = config('frontend.url').'/admin/deposit/details/'.$subscription->id;
+        $this->dashboardPath = config('frontend.url').'/admin/subscription/details/'.$subscription->id;
     }
 
     /**
@@ -45,7 +45,9 @@ class NewSubscriptionRequest extends Notification implements ShouldQueue {
             ->greeting('Dear ' . $notifiable->username . ',')
             ->subject('Subscription Request')
             ->line('A subscription request just occured ')
-            ->line('This is to notify you that the user '.$subscription->user->username.' has indicated interest in '. $subscription->package->name . ' Plan and has claimed deposit of $' . $subscription->amount) 
+            ->line(new \Illuminate\Support\HtmlString('<br> User: <b>' . $subscription->user->names . '</b>'))
+            ->line(new \Illuminate\Support\HtmlString('Plan: <b>' . $subscription->package->name . ' </b>'))
+            ->line(new \Illuminate\Support\HtmlString('Amount: <b>$' . $subscription->amount . '</b><br> '))
             ->line('kindly review this occurence as soon as possible')
             ->action('Review', url($this->dashboardPath));
 

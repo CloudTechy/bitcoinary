@@ -4,45 +4,24 @@
         <AdminDashboardHeader></AdminDashboardHeader>
         <div class="body-wrapper">
             <div class="bodywrapper__inner">
-                <div
-                    class="row align-items-center mb-30 justify-content-between"
-                >
+                <div class="row align-items-center mb-30 justify-content-between">
                     <div class="col-lg-6 col-sm-6">
                         <h6 class="page-title">Deposit History</h6>
-                        <i
-                            data-toggle="tooltip"
-                            data-original-title="refresh"
-                            @click="getDeposits(1)"
-                            style="cursor: pointer"
-                            :class="{
+                        <i data-toggle="tooltip" data-original-title="refresh" @click="getDeposits(1)"
+                            style="cursor: pointer" :class="{
                                 'text--primary': true,
                                 fa: true,
                                 'fa-circle-notch': true,
                                 'fa-spin': loading,
-                            }"
-                        ></i>
+                            }"></i>
                     </div>
 
-                    <div
-                        class="col-lg-6 col-sm-6 offset-6 text-sm-right mt-sm-0 mt-3"
-                    >
-                        <form
-                            action=""
-                            method="GET"
-                            class="form-inline float-sm-right bg--white"
-                        >
+                    <div class="col-lg-6 col-sm-6 offset-6 text-sm-right mt-sm-0 mt-3">
+                        <form action="" method="GET" class="form-inline float-sm-right bg--white">
                             <div class="input-group has_append">
-                                <input
-                                    type="text"
-                                    v-model="search"
-                                    class="form-control"
-                                    placeholder="username"
-                                />
+                                <input type="text" v-model="search" class="form-control" placeholder="username" />
                                 <div class="input-group-append">
-                                    <button
-                                        class="btn btn--primary"
-                                        @click.prevent="searchTransactions"
-                                    >
+                                    <button class="btn btn--primary" @click.prevent="searchTransactions">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </div>
@@ -55,160 +34,100 @@
                     <div class="col-lg-12">
                         <div class="card b-radius--10">
                             <div class="card-body p-0">
-                                <div
-                                    class="table-responsive--md table-responsive"
-                                >
-                                    <table
-                                        class="table table--light style--two"
-                                    >
+                                <div class="table-responsive--md table-responsive">
+                                    <table class="table table--light style--two">
                                         <thead>
                                             <tr>
+
                                                 <th>Gateway | Trx</th>
                                                 <th>Initiated</th>
                                                 <th>User</th>
                                                 <th>Amount</th>
-                                                <th>Turnover</th>
-                                                <th>package</th>
+                                                <th>TrxRef</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr
-                                                v-if="deposits && !loading"
-                                                v-for="dp in deposits"
-                                            >
+                                            <tr v-if="deposits && !loading" v-for="tr in deposits">
                                                 <td data-label="Gateway | Trx">
-                                                    <span
-                                                        class="font-weight-bold"
-                                                    >
+                                                    <span class="font-weight-bold">
                                                         {{
-                                                            dp.transaction
-                                                                .payment_method
+                                                                tr.payment_method
                                                         }}
                                                     </span>
                                                     <br />
                                                     <small>
                                                         {{
-                                                            dp.transaction
-                                                                .transaction_ref
-                                                                ? dp.transaction
-                                                                      .id
-                                                                : dp.transaction
-                                                                      .transaction_ref
+                                                                tr.transaction_ref ? tr.id : tr.transaction_ref
                                                         }}
                                                     </small>
                                                 </td>
 
                                                 <td data-label="Date">
-                                                    {{ dp.date }}<br />{{
-                                                        dp.date_bad
+                                                    {{ tr.date }}<br />{{
+                                                            tr.date_bad
                                                     }}
                                                 </td>
 
                                                 <td data-label="User">
-                                                    <span
-                                                        class="font-weight-bold"
-                                                        >{{ dp.owner }}</span
-                                                    >
+                                                    <span class="font-weight-bold">{{ tr.owner }}</span>
                                                     <br />
                                                     <span class="small">
-                                                        <a
-                                                            :href="
-                                                                $root.basepath +
-                                                                '/admin/users/' +
-                                                                dp.user_id
-                                                            "
-                                                            ><span>@</span
-                                                            >{{
-                                                                dp.username
-                                                            }}</a
-                                                        >
+                                                        <a :href="
+                                                            $root.basepath +
+                                                            '/admin/users/' +
+                                                            tr.user_id
+                                                        "><span>@</span>{{
+        tr.username
+}}</a>
                                                     </span>
                                                 </td>
 
                                                 <td data-label="Amount">
                                                     ${{
-                                                        $root.normalNumeral(
-                                                            dp.amount
-                                                        )
+                                                            $root.normalNumeral(
+                                                                tr.amount
+                                                            )
                                                     }}
                                                     +
-                                                    <span
-                                                        class="text-danger"
-                                                        data-toggle="tooltip"
-                                                        data-original-title="charge"
-                                                        >0
+                                                    <span class="text-danger" data-toggle="tooltip"
+                                                        data-original-title="charge">0
                                                     </span>
                                                     <br />
-                                                    <strong
-                                                        data-toggle="tooltip"
-                                                        data-original-title="Amount with charge"
-                                                    >
+                                                    <strong data-toggle="tooltip"
+                                                        data-original-title="Amount with charge">
                                                         {{
-                                                            $root.normalNumeral(
-                                                                dp.amount
-                                                            )
+                                                                $root.normalNumeral(
+                                                                    tr.amount
+                                                                )
                                                         }}
                                                         USD
                                                     </strong>
                                                 </td>
-
-                                                <td data-label="Turnover">
-                                                    <span
-                                                        v-if="
-                                                            dp.expiration
-                                                        "
-                                                        class="font-weight-bold badge badge--success"
-                                                        >{{
-                                                            getDate(
-                                                                dp.expiration
-                                                            )
-                                                        }}</span
-                                                    >
-                                                    <span
-                                                        v-else
-                                                        class="font-weight-bold badge badge--warning"
-                                                        >Pending</span
-                                                    >
-                                                </td>
-                                                <td data-label="Package">
-                                                    <span
-                                                        class="badge badge--primary"
-                                                        >{{ dp.name }}</span
-                                                    >
+                                                <td data-label="Reference">
+                                                    <span class="">{{ tr.reference }}</span>
                                                 </td>
                                                 <td data-label="Status">
-                                                    <span
-                                                        :class="{
-                                                            badge: true,
-                                                            'badge--warning':
-                                                                !dp.active,
-                                                            'badge--success':
-                                                                dp.active,
-                                                        }"
-                                                        >{{
-                                                            dp.active
-                                                                ? "Active"
-                                                                : "Pending"
-                                                        }}</span
-                                                    >
+                                                    <span :class="{
+                                                        badge: true,
+                                                        'badge--warning':
+                                                            !tr.confirmed,
+                                                        'badge--success':
+                                                            tr.confirmed,
+                                                    }">{{
+        tr.confirmed ? "APPROVED" : "PENDING"
+}}</span>
+                                                   
                                                 </td>
                                                 <td data-label="Action">
-                                                    <a
-                                                        :href="
-                                                            $root.basepath +
-                                                            '/admin/deposit/details/' +
-                                                            dp.id
-                                                        "
-                                                        class="icon-btn ml-1"
-                                                        data-toggle="tooltip"
-                                                        title=""
-                                                        data-original-title="Detail"
-                                                    >
-                                                        <i
-                                                            class="la la-desktop"
-                                                        ></i>
+                                                    <a :href="
+                                                        $root.basepath +
+                                                        '/admin/deposit/details/' +
+                                                        tr.id
+                                                    " class="icon-btn ml-1" data-toggle="tooltip" title=""
+                                                        data-original-title="Detail">
+                                                        <i class="la la-desktop"></i>
                                                     </a>
                                                 </td>
                                             </tr>
@@ -218,28 +137,18 @@
                                                     <list-loader></list-loader>
                                                 </td>
                                             </tr>
-                                            <tr
-                                                v-if="
-                                                    deposits.length === 0 &&
-                                                    !loading
-                                                "
-                                            >
-                                                <td
-                                                    class="text-center"
-                                                    data-label="deposits"
-                                                    colspan="8"
-                                                >
+                                            <tr v-if="
+                                                deposits.length === 0 &&
+                                                !loading
+                                            ">
+                                                <td class="text-center" data-label="deposits" colspan="8">
                                                     <div class="icon">
-                                                        <i
-                                                            class="fa fa-search"
-                                                        ></i>
+                                                        <i class="fa fa-search"></i>
                                                     </div>
                                                     <div class="details">
                                                         <div class="desciption">
-                                                            <span class=""
-                                                                >Nothing found
-                                                                here</span
-                                                            >
+                                                            <span class="">Nothing found
+                                                                here</span>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -249,47 +158,27 @@
                                     <!-- table end -->
                                 </div>
                             </div>
-                            <div
-                                v-if="paging.total_pages > 1"
-                                class="card-footer py-4"
-                            >
+                            <div v-if="paging.total_pages > 1" class="card-footer py-4">
                                 <nav aria-label="...">
-                                    <ul
-                                        class="pagination justify-content-end mb-0"
-                                    >
-                                        <li
-                                            v-if="paging.current_page > 1"
-                                            class="page-item"
-                                        >
-                                            <a
-                                                class="page-link"
-                                                @click.prevent="
-                                                    getDeposits(
-                                                        --paging.current_page
-                                                    )
-                                                "
-                                            >
+                                    <ul class="pagination justify-content-end mb-0">
+                                        <li v-if="paging.current_page > 1" class="page-item">
+                                            <a class="page-link" @click.prevent="
+                                                getDeposits(
+                                                    --paging.current_page
+                                                )
+                                            ">
                                                 <i class="fa fa-angle-left"></i>
-                                                <span class="sr-only"
-                                                    >Prev</span
-                                                >
+                                                <span class="sr-only">Prev</span>
                                             </a>
                                         </li>
-                                        <li
-                                            v-for="num in paging.total_pages"
-                                            :class="{
-                                                'page-item': true,
-                                                active:
-                                                    num == paging.current_page,
-                                            }"
-                                        >
-                                            <a
-                                                class="page-link"
-                                                @click.prevent="
-                                                    getDeposits(num)
-                                                "
-                                                >{{ num }}</a
-                                            >
+                                        <li v-for="num in paging.total_pages" :class="{
+                                            'page-item': true,
+                                            active:
+                                                num == paging.current_page,
+                                        }">
+                                            <a class="page-link" @click.prevent="
+                                                getDeposits(num)
+                                            ">{{ num }}</a>
                                         </li>
                                         <!-- <li class="page-item disabled">
                                             <a
@@ -306,27 +195,17 @@
                                                 >251</a
                                             >
                                         </li> -->
-                                        <li
-                                            v-if="
-                                                paging.total_pages !=
-                                                paging.current_page
-                                            "
-                                            class="page-item"
-                                        >
-                                            <a
-                                                class="page-link"
-                                                @click.prevent="
-                                                    getDeposits(
-                                                        ++paging.current_page
-                                                    )
-                                                "
-                                            >
-                                                <i
-                                                    class="fa fa-angle-right"
-                                                ></i>
-                                                <span class="sr-only"
-                                                    >Next</span
-                                                >
+                                        <li v-if="
+                                            paging.total_pages !=
+                                            paging.current_page
+                                        " class="page-item">
+                                            <a class="page-link" @click.prevent="
+    getDeposits(
+        ++paging.current_page
+    )
+                                            ">
+                                                <i class="fa fa-angle-right"></i>
+                                                <span class="sr-only">Next</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -527,7 +406,7 @@ export default {
             this.loading = true;
             this.currentPage = page;
             var searchQuery = this.search ? "&username=" + this.search : "";
-            url = url ? url : "/auth/packageusers?page=" + page;
+            url = url ? url : "/auth/transactions?page=" + page;
             this.deposit_form
                 .get(url + "&pageSize=" + this.pageLimit + searchQuery)
                 .then((response) => {

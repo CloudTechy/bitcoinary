@@ -501,7 +501,7 @@ const routes = [
         meta: {
             auth: true,
             adminAuth: true,
-            title: "Admin user preview",
+            title: "Admin | Deposit Details",
         },
     },
 
@@ -515,16 +515,26 @@ const routes = [
             title: "Admin user preview",
         },
     },
-    // {
-    //     path: "/admin/dashboard/subscriptions",
-    //     name: "subscriptions",
-    //     component: Subscriptions,
-    //     meta: {
-    //         auth: true,
-    //         adminAuth: true,
-    //         title: "Admin Subscriptions",
-    //     },
-    // },
+    {
+        path: "/admin/subscriptions",
+        name: "subscriptions",
+        component: () => import("./pages/admin/Subscriptions"),
+        meta: {
+            auth: true,
+            adminAuth: true,
+            title: "Admin | Subscriptions",
+        },
+    },
+    {
+        path: "/admin/subscription/details/:id",
+        name: "subscription-details",
+        component: () => import("./pages/admin/SubscriptionsDetails"),
+        meta: {
+            auth: true,
+            adminAuth: true,
+            title: "Admin | Subscription details",
+        },
+    },
     {
         path: "/admin/withdrawals",
         name: "withdrawals",
@@ -559,59 +569,30 @@ router.beforeEach((to, from, next) => {
 
     if (nearestWithTitle) document.title = nearestWithTitle.meta.title;
     const authUser = JSON.parse(window.localStorage.getItem('lbUser'))
-    // if (to.meta.auth === true && to.meta.adminAuth && to.meta.adminAuth == true) {
-    //     if (authUser && authUser.isAdmin == true) {
-    //         next()
-    //     } else {
-    //         next({ name: 'dashboard' })
-    //     }
-    // } else if (to.meta.auth === true && to.meta.adminAuth && to.meta.adminAuth == false) {
-    //     if (authUser && authUser.isAdmin == true) {
-    //         next({ name: 'adminDashboard' })
-
-    //     } else {
-    //         next()
-    //     }
-    // }
+  
     $("div").remove(".modal-backdrop");
     var timeout = 2000;
+    // this.$root.loader(show, true);
+    // setTimeout(() => {
+    //     this.$root.loader("hide");
+    // }, timeout);
     if (to.meta.adminAuth == true) {
         if (authUser && authUser.isAdmin == true) {
-            next((vm) => {
-                vm.$root.loader(show, true);
-                setTimeout(() => {
-                    vm.$root.loader("hide");
-                }, timeout);
-            });
+            next();
         } else {
-             next((vm) => {
-                 vm.$root.loader(show, true);
-                 setTimeout(() => {
-                     vm.$root.loader("hide");
-                 }, timeout);
-                 return { name: "dashboard" };
-             });
+            next({ name: "dashboard" }); 
         }
     } else if (to.meta.adminAuth == false) {
         if (authUser && authUser.isAdmin == true) {
-            next(vm => {
-                vm.$root.loader(show, true)
-                setTimeout(() => {
-                    vm.$root.loader("hide");
-                }, timeout);
-                return { name: "adminDashboard" };
-            })
-
+            next({ name: "adminDashboard" });
         } else {
-             next((vm) => {
-                 vm.$root.loader(show, true);
-                 setTimeout(() => {
-                     vm.$root.loader("hide");
-                 }, timeout);
-             });
+            next();
         }
     }
     // next({ name: 'dashboard' })
-    else next()
+    else {
+        // console.log("");
+        next();
+    }
 });
 export default router

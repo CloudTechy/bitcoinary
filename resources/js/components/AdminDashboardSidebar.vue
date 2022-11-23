@@ -82,7 +82,7 @@
                                         "
                                         class="nav-link"
                                         data-toggle="tooltip"
-                                                        data-original-title="Link currently unavailable"
+                                                        data-original-title="manage investment plans"
                                     >
                                         <i
                                             class="menu-icon las la-dot-circle"
@@ -381,7 +381,13 @@
                                         >
                                     </a>
                                 </li>
-
+                                <li class="sidebar-menu-item">
+                                    <a :href="$root.basepath + '/admin/subscriptions'
+                                                                        " class="nav-link">
+                                        <i class="menu-icon las la-dot-circle"></i>
+                                        <span class="menu-title">Subscription requests</span>
+                                    </a>
+                                </li>
                                 <li class="sidebar-menu-item">
                                     <a
                                         :href="

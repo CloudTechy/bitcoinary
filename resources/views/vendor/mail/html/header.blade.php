@@ -1,10 +1,3 @@
-<!-- <tr>
-    <td class="header">
-        <a href="{{ $url }}">
-            {{ $slot }}
-        </a>
-    </td>
-</tr> -->
 
 <tr>
     <td class="" align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
