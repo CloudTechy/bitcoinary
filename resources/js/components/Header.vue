@@ -85,7 +85,7 @@
                             </div>
                         </a>
     
-                        <a href="/dashboard/status" class="action-button">
+                        <a v-if="$auth.user().enabledKYC"  href="/dashboard/status" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
                                     <i class="fas fa-certificate"></i>

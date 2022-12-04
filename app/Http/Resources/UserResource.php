@@ -60,6 +60,7 @@ class UserResource extends JsonResource {
 			'isAdmin' => $this->userLevel->name == "administrator",
 			'isEmailVerified' => $this->hasVerifiedEmail(),
 			'isIdVerified' => $this->hasVerifiedId(),
+			'enabledKYC' => (bool) $this->enabledKYC(),
 			'totalActiveTransaction' => $this->activeTransactions,
 			'totalEarned' => $this->totalEarned,
 			

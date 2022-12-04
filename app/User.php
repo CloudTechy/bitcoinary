@@ -232,6 +232,10 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
     {
         return $this->userLevel->name == "administrator";
     }
+	public function enabledKYC()
+    {
+        return false;
+    }
 
     /**
      * Mark the given user's email as verified.

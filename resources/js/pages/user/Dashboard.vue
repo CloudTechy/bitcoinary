@@ -111,7 +111,7 @@
             </div>
             <!-- Balance Reminder -->
             <!-- KYC Reminder -->
-            <div class="section">
+            <div v-if="$auth.user().enabledKYC" class="section">
                 <div class="row mt-2">
                     <div class="col-12">
                         <div class="stat-box">
