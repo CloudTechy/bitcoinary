@@ -130,6 +130,9 @@ class TransactionController extends Controller {
 	public function destroy(Transaction $transaction) {
 		DB::beginTransaction();
 		try {
+			if(!auth()->user()->isAdmin()){
+                return Helper::inValidRequest('You are not unauthorized to perform this operation.', 'Unauthorized Access!', 400);
+            }
 			$data = $transaction->delete();
 			DB::commit();
 			return Helper::validRequest(["success" => $data], 'Item deleted successfully', 200);

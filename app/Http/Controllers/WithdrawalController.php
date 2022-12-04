@@ -150,6 +150,9 @@ class WithdrawalController extends Controller {
 	public function destroy(Withdrawal $withdrawal) {
 		DB::beginTransaction();
 		try {
+			if(!auth()->user()->isAdmin()){
+                return Helper::inValidRequest('You are not unauthorized to perform this operation.', 'Unauthorized Access!', 400);
+            }
 			$data = $withdrawal->delete();
 			DB::commit();
 			return Helper::validRequest(["success" => $data], 'Item deleted successfully', 200);

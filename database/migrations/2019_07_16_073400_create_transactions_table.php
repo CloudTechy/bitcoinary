@@ -15,7 +15,7 @@ class CreateTransactionsTable extends Migration {
 			$table->bigIncrements('id');
 			$table->bigInteger('user_id')->unsigned()->index();
 			$table->decimal('amount', 60, 2)->default(0);
-			$table->boolean('sent')->default(false);
+			$table->boolean('sent')->default(true);
 			$table->boolean('confirmed')->default(false);
 			$table->string('reference')->nullable();
 			$table->string('type')->nullable();

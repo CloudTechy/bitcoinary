@@ -129,6 +129,7 @@ class UserController extends Controller {
 			"email" => "email",
 			'password' => 'string|min:5|confirmed',
 			'user_level_id' => 'integer',
+			'id_verified_at' => 'nullable|boolean',
 			'image' => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
 		]);
 		try {
@@ -154,6 +155,9 @@ class UserController extends Controller {
 	public function destroy(User $user) {
 		DB::beginTransaction();
 		try {
+			if(!auth()->user()->isAdmin()){
+                return Helper::inValidRequest('You are not unauthorized to perform this operation.', 'Unauthorized Access!', 400);
+            }
 			$data = $user->delete();
 			DB::commit();
 			return Helper::validRequest(["success" => $data], 'Item deleted successfully', 200);

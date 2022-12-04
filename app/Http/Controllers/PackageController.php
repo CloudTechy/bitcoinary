@@ -135,6 +135,9 @@ class PackageController extends Controller {
 	public function destroy(Package $package) {
 		DB::beginTransaction();
 		try {
+			if(!auth()->user()->isAdmin()){
+                return Helper::inValidRequest('You are not unauthorized to perform this operation.', 'Unauthorized Access!', 400);
+            }
 			$data = $package->delete();
 			DB::commit();
 			return Helper::validRequest(["success" => $data], 'Item deleted successfully', 200);

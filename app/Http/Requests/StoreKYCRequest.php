@@ -13,7 +13,7 @@ class StoreKYCRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class StoreKYCRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+           'user_id' => 'required|numeric|exists:users,id', 
+           'type' => 'string|required|in:passport,driving license,identity card', 
+           'file' => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff,pdf|max:2048|required',
         ];
     }
 }

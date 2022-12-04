@@ -5,9 +5,13 @@
         <div class="section">
         
             <div class="row mt-2">
-                <div class="alert alert-outline-danger mb-1" role="alert" align="center"><strong>Account not verified!</strong>
+                <div v-if="$auth.user().isIdVerified" class="alert alert-outline-success mb-1" role="alert" align="center">
+                    <strong>Account verified!</strong>
                 </div>
-                <div class="col-lg-5">
+                <div v-else class="alert alert-outline-danger mb-1" role="alert" align="center"><strong>Account not verified!</strong>
+                </div>
+               
+                <div v-if="!$auth.user().isIdVerified"  class="col-lg-5">
                     <div class="card">
                         <div class="card-body">
                             <p>In order for us to know the authenticity of your
@@ -18,22 +22,33 @@
                                 customers are fully ecrypted and will never be shared with third-parties.</p>
                         </div>
                         <div class="card-footer" align="center">
-                            <div class="card-footer-content text-muted">
-                                <form method="post" @submit.prevent = "" enctype="multipart/form-data">
+                            <div  class="card-footer-content text-muted">
+                                <div v-if = "kyc && !kyc.approved" class = "alert alert-info m-1">
+                                    <p class = "mb-0 p-1" v-if = "kyc.issue == null">Your request has been submitted and it is under review. <br> Sit back and relax, there is no need for resubmission</p>
+                                    <p class = "mb-0 p-1" v-else >There is an issue in your submission <br>  {{kyc.issue}}</p>
+                                 </div>
+                                <form  method="post" @submit.prevent = "kycRequest" enctype="multipart/form-data">
                                     <div class="">
                                         <div class="col-sm-4 mb-3">
-                                            <select class="form-control text-success" name="document" required>
+                                            <select class="form-control text-success" v-model = "kycForm.type" required>
                                                 <option value="">Choose Document Type</option>
-                                                <option value="Passport">Passport</option>
-                                                <option value="Driving License">Driving License</option>
-                                                <option value="Identity Card">Identity Card</option>
+                                                <option value="passport">Passport</option>
+                                                <option value="driving license">Driving License</option>
+                                                <option value="identity card">Identity Card</option>
                                             </select>
+                                            <ul v-if="errors.type" class="text-danger small">
+                                                <li v-for="error in errors.type">{{ error }}</li>
+                                            </ul>
                                         </div>
                                         <div class="col-sm-5 mb-3">
-                                            <input type="file" class="" id="name" name="file">
+                                        <input required="" @change="" ref="fileInput" type="file"  accept=".png, .jpg, .jpeg, .pdf" />
+                                            <ul v-if="errors.file" class="text-danger small">
+                                                <li v-for="error in errors.file">{{ error }}</li>
+                                            </ul>
                                         </div>
                                         <div class="col-sm-3 mb-3">
-                                            <input type="submit" name="upload_document" value="Upload" class="btn btn-success">
+
+                                            <button type="submit" ref="submitKycForm" class="btn btn-success">Upload</button>
                                         </div>
                                         <small>Files Allowed: Jpg, png, gif, pdf, jpeg</small>
                                     </div>
@@ -82,21 +97,22 @@
 
 </template>
 <script>
+import { ContentLoader, ListLoader } from "vue-content-loader";
 export default {
     data() {
         return {
             key: 0,
-            loanForm: new Form({
-                occupation: undefined,
-                reference: undefined,
-                amount: undefined,
-                tenor: undefined,
-                purpose: undefined,
+            kycForm: new Form({
+                type: "",
+                file: undefined,
                 user_id: this.$auth.user().id,
             }),
             error: undefined,
             errors: {},
             message: undefined,
+            loading: false,
+            kycStatus: undefined,
+            kyc:undefined
 
 
 
@@ -110,8 +126,13 @@ export default {
             setTimeout(() => { this.errors = '' }, 15000);
         },
     },
+    components: {
+        ContentLoader,
+        ListLoader,
+    },
     mounted() {
         this.$root.dashboard_header_page_title = "Account KYC status"
+        this.getKycStatus()
         setTimeout(() => { window.scrollTo(0, 0) }, 1000)
     },
     beforeRouteEnter(to, from, next) {
@@ -154,22 +175,51 @@ export default {
     computed: {
     },
     methods: {
-        loanRequest() {
+        getKycStatus() {
+            this.loading = true
+            this.kycForm.get("/auth/kyc")
+                .then(response => {
+                    var msg = response.data.data.item
+                    this.kyc = msg[0]
+                    this.kycStatus = msg.length > 0 ? msg[0].approved == true ? 'approved' : 'pending' : undefined
+                    this.loading = false
+                })
+                .catch(error => {
+                    this.loading = false
+                    console.log(error.response)
+            })
+        },
+        kycRequest() {
             this.$root.loader('show')
-            this.processing(true, 'submitLoanForm', 'Requesting...', '')
+            this.processing(true, 'submitKycForm', 'Requesting...', '')
+            if (this.$refs.fileInput.files[0].size > 4000000) {
+                this.$root.loader("hide");
+                return this.$root.alert(
+                    "error",
+                    " ",
+                    " File size is too large."
+                );
+            }
+            
             this.message = ""
             this.error = ''
             this.errors = {}
-            this.loanForm.post("/auth/loan")
-                .then(response => {
+            this.kycForm.file = this.$refs.fileInput.files[0];
+            this.kycForm.submit("post", "/auth/kyc", {
+                transformRequest: [
+                    function (data, headers) {
+                        return objectToFormData(data);
+                    },
+                ],
+            }).then(response => {
                     this.$root.loader('hide')
-                    this.processing(false, 'submitLoanForm', 'Requesting...', 'Request')
+                    this.processing(false, 'submitKycForm', 'Requesting...', 'Upload')
                     this.message = response.data.message
-                    this.loanForm.reset()
+                    this.kycForm.reset()
                 })
                 .catch(error => {
                     this.$root.loader('hide')
-                    this.processing(false, 'submitLoanForm', 'Requesting...', 'Request')
+                    this.processing(false, 'submitKycForm', 'Requesting...', 'Upload')
                     this.$root.scrollToTop(0, 250)
                     if (error.response.status == 422) {
                         this.errors = {}
@@ -179,7 +229,7 @@ export default {
                         this.error = error.response.data.message
                         // this.$root.alert('error', ' ', this.error)
                     }
-                    console.log(error, error.response)
+                    console.log(error.response)
                 })
         },
 

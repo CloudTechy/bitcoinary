@@ -78,10 +78,6 @@ Route::prefix('v1')->group(function () {
 			Route::resource('investors', 'InvestorController');
 			Route::resource('testimonials', 'TestimonialController');
 			Route::resource('news', 'NewsController');
-
-			// Route::delete('bankdetails/{bankdetail}', 'BankDetailController@destroy');
-			// Route::get('bankdetails/{bankdetail}', 'BankDetailController@show');
-			// Route::patch('bankdetails/{bankdetail}', 'BankDetailController@update');
 			Route::resource('bankdetails', 'BankDetailController');
 			Route::put('user/image/{user}', 'UserController@uploadImage');
 			Route::put('user/password_change/{user}', 'UserController@updatePassword');
@@ -91,6 +87,7 @@ Route::prefix('v1')->group(function () {
 			Route::resource('loan', 'LoanController');
 			Route::resource('ticket', 'TicketController');
 			Route::resource('withdrawals', 'WithdrawalController');
+			Route::resource('kyc', 'KYCController');
 			Route::get('subscribe/{packageuser}', 'PackageUserController@confirmSubscription');
 			Route::post('confirm_withdrawal/{withdrawal}', 'WithdrawalController@confirmWithdrawal');
 			Route::get('confirmWithdrawalRequest/{user}', 'WithdrawalController@ConfirmWithdrawalRequest');

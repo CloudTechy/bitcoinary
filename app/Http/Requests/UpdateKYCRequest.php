@@ -13,7 +13,7 @@ class UpdateKYCRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class UpdateKYCRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+           'type' => 'string|in:passport,driving license,identity card', 
+           'file' => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff,pdf|max:2048', 
+           'issue' => 'string|required_unless:approved,true', 
+           'approved' => 'boolean|nullable', 
+           'admin_username' => 'string|nullable|exists:users,username', 
         ];
     }
 }

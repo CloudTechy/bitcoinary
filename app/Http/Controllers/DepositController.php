@@ -49,7 +49,7 @@ class DepositController extends Controller
 				$transaction->update(['confirmed' => true]);
 				DB::commit();
                 $transaction->user->notify(new TransactionMade($transaction));
-				Helper::adminsUserActivityRequest(['type'=>'TransactionActivity', 'message' =>  $transaction->user->username .'\'s account balance was credited $'. $validated['amount']]);
+				Helper::adminsUserActivityRequest(['type'=>'TransactionActivity', 'message' =>  $transaction->user->username .'\'s account balance was credited $'. $transaction->amount]);
 				
 				return Helper::validRequest(['success' => true], 'Account balance credited', 200);
 			}

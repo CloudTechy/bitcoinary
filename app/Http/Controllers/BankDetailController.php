@@ -162,6 +162,9 @@ class BankDetailController extends Controller {
 	public function destroy(BankDetail $bankdetail) {
 		DB::beginTransaction();
 		try {
+			if(!auth()->user()->isAdmin()){
+                return Helper::inValidRequest('You are not unauthorized to perform this operation.', 'Unauthorized Access!', 400);
+            }
 			$bankdetail = $bankdetail->delete();
 			DB::commit();
 			return Helper::validRequest(["success" => $bankdetail], 'BankDetail was deleted successfully', 200);

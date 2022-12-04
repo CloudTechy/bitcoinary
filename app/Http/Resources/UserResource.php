@@ -57,8 +57,9 @@ class UserResource extends JsonResource {
 			'bank_details' => $this->bankDetails,
 			'user_level' => $this->userLevel->name,
 			// 'processPackageStatus' => $this->processMaturePackages,
-			'isAdmin' => $this->userLevel->name == "administrator" ? true : false,
-			'isEmailVerified' => empty($this->email_verified_at)  ? false : true,
+			'isAdmin' => $this->userLevel->name == "administrator",
+			'isEmailVerified' => $this->hasVerifiedEmail(),
+			'isIdVerified' => $this->hasVerifiedId(),
 			'totalActiveTransaction' => $this->activeTransactions,
 			'totalEarned' => $this->totalEarned,
 			

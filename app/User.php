@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 	use Notifiable;
 	use HasFactory;
-	protected $fillable = ['first_name','image', 'email_verified_at',  'city', 'gender','country','withdraw_request', 'address', 'postal_code','key_phrase', 'secret_question', 'created_at', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
+	protected $fillable = ['first_name','image', 'email_verified_at',  'id_verified_at', 'city', 'gender','country','withdraw_request', 'address', 'postal_code','key_phrase', 'secret_question', 'created_at', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
 	protected $hidden = ['password', 'remember_token'];
 	protected $casts = ['email_verified_at' => 'datetime'];
 	protected $appends = array('processedWithdrawals', 'confirmedWithdrawals', 'nullWithdrawals', 'names', 'balance', 'confirmedTransactions', 'nullTransactions', 'sentTransactions', 'totalEarned', 'activeTransactions', 'activePackages', 'maturePackages', 'processMaturePackages', 'canWithdraw');
@@ -186,11 +186,14 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 
 		return $this->hasMany(Ticket::class);
 	}
+	public function kyc() {
+		return $this->hasMany(KYC::class);
+	}
 
 	public function scopeFilter($query, $filter) {
 
 		try {
-			$fields = ['id','first_name','city', 'gender','withdraw_request', 'address', 'postal_code','key_phrase', 'secret_question', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
+			$fields = ['id','first_name','city', 'id_verified_at', 'gender','withdraw_request', 'address', 'postal_code','key_phrase', 'secret_question', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
 
 			return $query->where(
 				function ($query) use ($filter, $fields) {
@@ -220,6 +223,16 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
         return $this->email_verified_at != null;
     }
 
+	public function hasVerifiedId()
+    {
+        return $this->id_verified_at != null;
+    }
+
+	public function isAdmin()
+    {
+        return $this->userLevel->name == "administrator";
+    }
+
     /**
      * Mark the given user's email as verified.
      *
@@ -229,6 +242,12 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
     {
         $this->update([
             'email_verified_at' => now(),
+        ]);
+    }
+	public function markIdAsVerified()
+    {
+        $this->update([
+            'id_verified_at' => now(),
         ]);
     }
 

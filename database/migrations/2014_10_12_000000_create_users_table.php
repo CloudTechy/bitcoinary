@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration {
 			$table->string('password');
 			$table->string('image')->nullable();
 			$table->timestamp('email_verified_at')->nullable();
+			$table->timestamp('id_verified_at')->nullable();
 			$table->bigInteger('user_level_id')->unsigned()->index();
 			$table->string('referral')->nullable();
 			$table->integer('referral_count')->default(0);

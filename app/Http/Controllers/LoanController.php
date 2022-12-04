@@ -34,8 +34,6 @@ class LoanController extends Controller
         try
         {
             // Implement loan request logic here...\
-
-            // $user = User::find(validated['user_id']);
             $validated = $request->validated();
             Loan::create($validated);
             DB::commit();
@@ -80,6 +78,8 @@ class LoanController extends Controller
      */
     public function destroy(Loan $loan)
     {
-        //
+        if(!auth()->user()->isAdmin()){
+                return Helper::inValidRequest('You are not unauthorized to perform this operation.', 'Unauthorized Access!', 400);
+        }
     }
 }

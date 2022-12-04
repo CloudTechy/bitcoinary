@@ -334,9 +334,9 @@ class Helper {
                 $imagePath = $file->getClientOriginalName();
                   return $imagePath;
             }
-            else return 'undefined.jpg';
+            else return null;
         }
-        else return 'undefined.jpg';
+        else return null;
 
 	}
 public static function adminsUserActivityRequest($activity){
@@ -379,11 +379,7 @@ public static function adminsNotificationRequest($notificationRequest) {
 public static function userIsSuperAdmin()
     {
 
-        if (!auth()->user()->activated || !auth()->user()->isSuperAdmin) {
-            return false;
-        } else {
-            return true;
-        }
+        return !auth()->user()->activated || !auth()->user()->isSuperAdmin;
 
     }
 

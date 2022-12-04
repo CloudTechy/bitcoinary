@@ -115,9 +115,10 @@
                 <div class="row mt-2">
                     <div class="col-12">
                         <div class="stat-box">
-                            <div class="title text-black">
+                            <div v-if = "!$auth.user().isIdVerified" class="title text-black">
                                 Account not verified! <a href="/dashboard/status" class="text-info">VERIFY ACCOUNT</a>
                             </div>
+                         
                         </div>
                     </div>
                 </div>

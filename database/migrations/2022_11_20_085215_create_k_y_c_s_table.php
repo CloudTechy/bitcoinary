@@ -15,7 +15,14 @@ class CreateKYCSTable extends Migration
     {
         Schema::create('k_y_c_s', function (Blueprint $table) {
             $table->id();
+            $table->string('type');
+            $table->string('issue')->nullable();
+            $table->string('file');
+            $table->bigInteger('user_id')->unsigned()->index();
+            $table->boolean('approved')->default(false);
+            $table->bigInteger('admin_username')->index()->nullable();
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

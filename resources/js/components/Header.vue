@@ -37,9 +37,14 @@
                                 alt="img" class="imaged  w36" style="width:36px;height:36px;border-radius:50%"> </div>
                         <div class="in">
                             <strong class="text-capitalize">
-                                {{$auth.user().names}} </strong>
+                                {{$auth.user().names}}
+                                 <!-- <span title="Account is KYC compliant" class="text-info"><i class="fas fa-check-circle"></i></span> -->
+                                </strong> 
                             <div class="text-muted">
                                 {{$auth.user().email}} </div>
+                                <div v-if="$auth.user().isIdVerified" title="Account is KYC compliant" class="badge badge-info">
+                                    VERIFIED
+                                </div>
                         </div>
                     </div>
                     <!-- * profile box -->
