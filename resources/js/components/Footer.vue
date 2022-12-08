@@ -323,9 +323,9 @@
         <!-- payment details -->
         <button type="button" ref="paymentModalbtn" style="visibility: hidden;" id="add" data-toggle="modal"
             data-target="#paymentDetails"></button>
-        <div v-if="depositForm.payment_method"  class="modal fade dialogbox" tabindex="-1" role="dialog"
+        <div v-if="depositForm.payment_method" :key="key" class="modal fade dialogbox" tabindex="-1" role="dialog"
             ref="paymentDetails" id="paymentDetails" data-bs-backdrop="true">
-            <paymentDetails @popUploaded="displayMessage" :key="key" plan="" deposit_type="balance"
+            <paymentDetails @popUploaded="displayMessage" :key="depositFormKey"  plan="" deposit_type="balance"
                 :paymentMethod="depositForm.payment_method" :amount="depositForm.amount"></paymentDetails>
         </div>
     </footer>
@@ -405,6 +405,7 @@ export default {
         depositPaymentMethod() {
             this.withdrawalForm.payment_method = undefined
             this.depositFormKey++
+            this.key++
             this.depositForm.payment_method = this.depositPaymentMethod
             this.depositForm.amount = this.depositAmount
         },

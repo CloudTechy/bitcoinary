@@ -100,6 +100,25 @@
                     </a>
                 </li>
             </ul>
+            <div class="listview-title mt-1">Payment Details</div>
+            <ul class="listview image-listview text inset">
+                <li  v-for="py in $root.payments">
+                    <span class="item">
+                        <div class="in">
+                            <div>{{py.name}}</div>
+                            <div>
+                                {{$root.getPaymentAccountDetails($auth.user().bank_details, py.name, py.type)}}
+                            </div>
+                            <!-- <span class="text-primary">
+                                <input @change="updatePaymentDetails(py.name, py.type)" :ref="py.name"
+                                :value="$root.getPaymentAccountDetails($auth.user().bank_details, py.name, py.type) " type="text" required
+                                :placeholder="py.type == 'fiat' ? 'Enter Account No' :'Enter Wallet Address'"
+                                :class="{'form-control' : true, editbox:true}"> 
+                            </span> -->
+                        </div>
+                    </span>
+                </li>
+            </ul>
             <div class="listview-title mt-1">Security</div>
             <ul class="listview image-listview text inset">
                 <li>
@@ -393,6 +412,9 @@ export default {
         errors() {
             setTimeout(() => { this.errors = '' }, 15000);
         },
+        errors() {
+            setTimeout(() => { this.message = '' }, 15000);
+        },
         
     },
     mounted() {
@@ -457,6 +479,75 @@ export default {
 
     },
     methods: {
+        updatePaymentDetails(ref, type) {
+            this.$root.loader('show')
+            this.message = ''
+            this.errors = ''
+            var value = this.$refs[ref][0].value
+            var payment_method = this.pyValidate(ref, value)
+            var payment_method_acc_number = value && type == 'fiat' ? value : 0
+            var payment_method_wallet = value && type == 'crypto' ? value : "Not Set"
+            let form = new Form({
+                acc_number: payment_method_acc_number,
+                acc_name: this.$auth.user().names,
+                currency_type: type,
+                wallet: payment_method_wallet,
+                user_id: this.$auth.user().id,
+                payment_method,
+            })
+            let paymentDetails = this.$root.cryptoFilter(this.$auth.user().bank_details, payment_method)[0]
+
+            if (paymentDetails) {
+                //update
+                form.patch("/auth/bankdetails/" + paymentDetails.id)
+                    .then(response => {
+                        this.$auth.fetch()
+                        this.message = {}
+                        this.message[ref] = "Updated Successfully"
+                        this.$root.loader('hide')
+                        this.$root.alert('success', ' ', 'updated')
+                    })
+                    .catch(error => {
+                        console.log(error)
+                        this.$root.loader('hide')
+                        if (error.response.status == 422) {
+                            var address = type == 'fiat' ? 'acc_number' : 'wallet'
+                            this.errors = {}
+                            this.errors[ref] = error.response.data.error[address]
+                        }
+                        else {
+                            this.error = error.response.data.message
+                            this.$root.alert('error', ' ', this.error)
+                        }
+                        // this.errors = error.response.data.error || {}
+                        // this.$root.alert('error', ' ', 'Update was not successful, try again...')
+
+                    })
+            }
+            else {
+                //add
+                form.post("/auth/bankdetails")
+                    .then(response => {
+                        this.$auth.fetch()
+                        this.message = {}
+                        this.message[ref] = "updated successfully"
+                        this.$root.loader('hide')
+                        this.$root.alert('success', ' ', 'updated')
+                    })
+                    .catch(error => {
+                        this.$root.loader('hide')
+                        if (error.response.status == 422) {
+                            this.errors = {}
+                            this.errors[ref] = error.response.data.error
+                        }
+                        else {
+                            this.error = error.response.data.message
+                            this.$root.alert('error', ' ', this.error)
+                        }
+                    })
+            }
+            // console.log({form})    
+        }, 
         updateProfile() {
             this.processing(true, 'profileModalResetButton', 'Requesting...', '')
             this.$root.loader('show')
@@ -586,6 +677,10 @@ export default {
         countryChanged(country) {
             this.profileForm.country = country.name;
         },
+        pyValidate(paymentMethod, address) {
+            //serve validation here
+            return paymentMethod
+        } 
 
     }
 }

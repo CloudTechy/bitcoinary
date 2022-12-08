@@ -45,9 +45,11 @@ class AdminNewDepositRequest extends Notification implements ShouldQueue {
             ->greeting('Dear ' . $notifiable->username . ',')
             ->subject('Deposit Request from '. $transaction->user->username)
             ->line('A deposit request just occured ')
-            ->line(new \Illuminate\Support\HtmlString('<br> User: <b>' . $transaction->user->names . '</b>'))
+            ->line(new \Illuminate\Support\HtmlString('<br> Name: <b>' . $transaction->user->names . '</b>'))
+            ->line(new \Illuminate\Support\HtmlString('Username: <b>' . $transaction->user->username . '</b>'))
+            ->line(new \Illuminate\Support\HtmlString('Email: <b>' . $transaction->user->email . '</b>'))
             ->line(new \Illuminate\Support\HtmlString('Payment Method: <b>' . $transaction->payment_method . '</b>'))
-            ->line(new \Illuminate\Support\HtmlString('Amount: <b>$' . $transaction->amount . '</b><br>'))
+            ->line(new \Illuminate\Support\HtmlString('Amount: <b>$' . $transaction->amount . '</b><br><br>'))
             ->line('kindly review this occurence as soon as possible')
             ->action('Review', url($this->dashboardPath));
 

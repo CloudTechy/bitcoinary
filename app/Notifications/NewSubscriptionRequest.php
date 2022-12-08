@@ -47,7 +47,7 @@ class NewSubscriptionRequest extends Notification implements ShouldQueue {
             ->line('A subscription request just occured ')
             ->line(new \Illuminate\Support\HtmlString('<br> User: <b>' . $subscription->user->names . '</b>'))
             ->line(new \Illuminate\Support\HtmlString('Plan: <b>' . $subscription->package->name . ' </b>'))
-            ->line(new \Illuminate\Support\HtmlString('Amount: <b>$' . $subscription->amount . '</b><br> '))
+            ->line(new \Illuminate\Support\HtmlString('Amount: <b>$' . $subscription->amount . '</b><br><br>'))
             ->line('kindly review this occurence as soon as possible')
             ->action('Review', url($this->dashboardPath));
 

@@ -7,12 +7,15 @@ use App\Helper;
 // use App\Http\Requests\ValidatePackageUserRequest;
 use App\Http\Requests\ValidateTransactionRequest;
 use App\Notifications\AdminNewDepositRequest;
+use App\Notifications\AdminNewP2PTransferRequest;
 use App\Notifications\UserNewDepositRequest;
 use App\Notifications\TransactionMade; 
+use App\Notifications\ReferralCommissionNotification; 
 use App\Notifications\WithdrawalMade;
 use \DB;
 use App\Transaction;
 use App\User;
+use App\Package;
 use App\PackageUser;
 
 class DepositController extends Controller
@@ -23,6 +26,10 @@ class DepositController extends Controller
         if($validated['type'] != 'balance'){
             return Helper::invalidRequest(['Invalid transaction'], 'You can only credit user balance through this medium', 400);
         }
+		$package_min_deposit = Package::min('min_deposit');
+		if($validated['amount'] < $package_min_deposit ){
+            return Helper::invalidRequest(['Invalid transaction'], 'The minimum amount to deposit is $' . $package_min_deposit, 400);
+		}
 		try
 		{DB::beginTransaction();
              $pop = Helper::uploadImage($request, 'pop', 'images/pop');
@@ -47,11 +54,18 @@ class DepositController extends Controller
 
 			if($transaction->confirmed == false && $transaction->sent == true && $transaction->active == false ){
 				$transaction->update(['confirmed' => true]);
-				DB::commit();
-                $transaction->user->notify(new TransactionMade($transaction));
-				Helper::adminsUserActivityRequest(['type'=>'TransactionActivity', 'message' =>  $transaction->user->username .'\'s account balance was credited $'. $transaction->amount]);
+				$referrer = User::where('username', $transaction->user->referral)->first();
+				if($referrer->loopReferralCommission() == false && $transaction->user->referral_commission_loop > 0){}
+				else{
+					$this->referralPayment($transaction);
+				}
 				
-				return Helper::validRequest(['success' => true], 'Account balance credited', 200);
+                $transaction->user->notify(new TransactionMade($transaction));
+				
+				Helper::adminsUserActivityRequest(['type'=>'TransactionActivity', 'message' =>  $transaction->user->username .'\'s account balance was credited $'. $transaction->amount]);
+		
+				DB::commit();
+				return Helper::validRequest(['success' => true], 'User wallet has been credited successfully', 200);
 			}
             else {
                 return Helper::invalidRequest(['Invalid Deposit transaction'], 'The transaction has already been confirmed or it is active', 400);
@@ -104,12 +118,29 @@ class DepositController extends Controller
 			if ($sender->balance < $validated['amount']) {
 				return Helper::invalidRequest(['success' => false], 'Insufficient funds', 400);
 			}
-			$transaction = $receiver->transactions()->create(['reference' => 'P2P TRANSFER', 'transaction_ref' => '', 'type' => 'deposit', 'payment_method' => 'Bitcoin', 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
-			$withdrawal = $sender->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $validated['amount'], 'reference' => 'P2P TRANSFER', 'processed' => true, 'confirmed' => true]);
-            DB::commit();
-			$sender->notify(new WithdrawalMade($withdrawal));
-			$transaction->user->notify(new TransactionMade($transaction));
-            return Helper::validRequest($transaction, 'Tranfer request successful', 200);
+			if($sender->p2pTransferConfirmation()){
+				$transaction = $receiver->transactions()->create(['reference' => 'P2P TRANSFER', 'transaction_ref' => 'Transfer from ' . $sender->username  , 'type' => 'deposit', 'payment_method' => 'Bitcoin', 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => false]);
+				$withdrawal = $sender->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $validated['amount'], 'reference' => 'P2P TRANSFER TO '. $receiver->username, 'processed' => true, 'confirmed' => true]);
+          		
+				$sender->notify(new WithdrawalMade($withdrawal, "P2P transfer to " . $receiver->names));
+                Helper::adminsNotificationRequest( new AdminNewP2PTransferRequest($transaction, $sender, $receiver));
+			    Helper::adminsUserActivityRequest(['type'=>'TransactionActivity', 'message' =>  $sender->username .' has requested to transfer $'. $validated['amount'] .' to '.  $receiver->username]);
+			
+				DB::commit();
+				return Helper::validRequest($transaction, 'Your transfer request has been sent and your peer will be credited after review.', 200);
+			}
+			else{
+				$transaction = $receiver->transactions()->create(['reference' => 'P2P TRANSFER', 'transaction_ref' => 'Transfer from ' . $sender->username  , 'type' => 'deposit', 'payment_method' => 'Bitcoin', 'amount' => $validated['amount'], 'sent' => true, 'confirmed' => true]);
+				$withdrawal = $sender->withdrawals()->create(['payment_method' => 'Bitcoin','amount' => $validated['amount'], 'reference' => 'P2P TRANSFER TO '. $receiver->username, 'processed' => true, 'confirmed' => true]);
+          		
+				$sender->notify(new WithdrawalMade($withdrawal, "P2P transfer to " . $receiver->names));
+				$transaction->user->notify(new TransactionMade($transaction));
+				Helper::adminsUserActivityRequest(['type'=>'TransactionActivity', 'message' =>  $sender->username .' has requested to transfer $'. $validated['amount'] .' to '.  $receiver->username]);
+			
+				DB::commit();
+				return Helper::validRequest($transaction, 'Tranfer request successful', 200);
+			}
+			  
         } catch (Exception $bug) {
             DB::rollback();
             return $this->exception($bug, 'unknown error', 500);
@@ -117,4 +148,42 @@ class DepositController extends Controller
 
 
 	 }
+	 public function referralPayment(Transaction $transaction) {
+		DB::beginTransaction();
+		try {
+			$user = User::find($transaction->user_id);
+			$referrer = User::where('username', $user->referral)->first();
+			if($referrer){
+				$upline = User::where('username', $referrer->referral)->first();
+				$referrer_count = PackageUser::where('user_id', $user->id)->where('referral', $referrer->id)->count();
+			}else $upline = null;
+			
+			$package = Package::where('min_deposit', '<=' , $transaction->amount)->where('max_deposit', '>=',$transaction->amount)->first(); 
+			$commission_first_level = $package->first_level_ref_commission / 100 * $transaction->amount;
+			$commission_second_level = $package->second_level_ref_commission / 100 * $transaction->amount;
+			$paymentMethod = User::first()->bankDetails->first()->payment_method;
+			
+			if ($referrer && $user->userLevel->name == "user") {
+				if ($commission_first_level > 0) {
+					$transaction = $referrer->transactions()->create(['reference' => 'first tier commission', 'payment_method' => $paymentMethod ? $paymentMethod :'Bitcoin', 'type' => 'profit', 'amount' => $commission_first_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
+					$user->update(['referral_commission_loop' => ++$user->referral_commission_loop]);	
+					$transaction->user->notify(new ReferralCommissionNotification($transaction, $user));
+					Helper::adminsUserActivityRequest(['type'=>'CommissionActivity', 'message' => $referrer->username . ' received $' .$commission_first_level.' as first level commission.']);
+				}
+				if ($upline && $commission_second_level > 0) {
+					$transaction = $upline->transactions()->create(['reference' => 'second tier commission', 'payment_method' => $paymentMethod ? $paymentMethod :'Bitcoin', 'type' => 'profit', 'amount' => $commission_second_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
+					$transaction->user->notify(new ReferralCommissionNotification($transaction, $user));
+					Helper::adminsUserActivityRequest(['type'=>'CommissionActivity', 'message' => $upline->username . ' received $' .$commission_second_level.' as second level commission.']);
+				}
+				DB::commit();
+				return true;
+			}
+			return true;
+		} catch (Exception $bug) {
+			DB::rollback();
+			return false;
+		}
+
+	}
+
 }

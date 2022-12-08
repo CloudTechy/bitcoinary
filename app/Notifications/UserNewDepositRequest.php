@@ -69,8 +69,8 @@ class UserNewDepositRequest extends Notification implements ShouldQueue {
     {
         return [
             'model' => 'transaction',
-            // 'message' => $this->transaction->user->names . ' claimed deposit of $' .$this->transaction->amount .' through ' . $this->transaction->payment_method . ', kindly review.',
-            // 'path' => $this->dashboardPath,
+            'message' => $this->transaction->user->names . ' claimed deposit of $' .$this->transaction->amount .' through ' . $this->transaction->payment_method . ', kindly review.',
+            'path' => $this->dashboardPath,
             'type' => 'notification',
         ];
     }

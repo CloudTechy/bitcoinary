@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration {
 			$table->timestamp('id_verified_at')->nullable();
 			$table->bigInteger('user_level_id')->unsigned()->index();
 			$table->string('referral')->nullable();
+			$table->bigInteger('referral_commission_loop')->default(0);
 			$table->integer('referral_count')->default(0);
 			$table->string('api_token', 60)->unique()->nullable();
 			$table->string('wallet')->nullable();

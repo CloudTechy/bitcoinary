@@ -7,9 +7,9 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class TransactionMade extends Notification implements ShouldQueue {
+class TransactionMade extends Notification implements ShouldQueue{
 	use Queueable;
-	protected $transaction;
+	protected $transaction, $dashboardPath;
 
 	/**
 	 * Create a new notification instance.
@@ -38,14 +38,13 @@ class TransactionMade extends Notification implements ShouldQueue {
 	 */
 	public function toMail($notifiable) {
 		$transaction = $this->transaction;
-		// $dashboardPath = $notifiable->isAdmin ? '/admin/dashboard' : '/user/dashboard/';
-		$dashboardPath = $notifiable->isAdmin == true ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/';
+		$dashboardPath = $notifiable->isAdmin() == true ? config('frontend.url').'/admin/deposit/details/'. $transaction->id : config('frontend.url').'/dashboard/transaction/details/'. $transaction->id;
 		return (new MailMessage)
 			->greeting('Dear ' . $notifiable->username . ',')
 			->subject('Account Credited')
 			->line('A credit transaction has occured in your account')
 			->line('This is to notify you that a sum of $' . $transaction->amount . ' has been credited into your account')
-			->action('Goto Dashboard', url($dashboardPath))
+			->action('View Transaction', url($dashboardPath))
 			->line('Thank you for investing with us');
 	}
 
@@ -65,7 +64,7 @@ class TransactionMade extends Notification implements ShouldQueue {
         return [
             'model' => 'transaction',
             'message' => 'Your account has been credited with the sum of $' . $this->transaction->amount . '.',
-            'path' => $notifiable->isAdmin == true ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/',
+            'path' =>  $notifiable->isAdmin() == true ? config('frontend.url').'/admin/deposit/details/'.$this->transaction->id : config('frontend.url').'/dashboard/transaction/details/'.$this->transaction->id,
             'type' => 'notification',
         ];
     }

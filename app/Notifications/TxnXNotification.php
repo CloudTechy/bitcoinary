@@ -42,7 +42,7 @@ class TxnXNotification extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        $dashboardPath =$notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/';
+        $dashboardPath =$notifiable->isAdmin() == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/';
 
         return (new MailMessage)
             ->greeting('Dear ' . $notifiable->username . ',')

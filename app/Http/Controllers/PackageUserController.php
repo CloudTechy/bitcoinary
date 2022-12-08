@@ -12,6 +12,7 @@ use App\Notifications\NewSubscriptionRequest;
 use App\Notifications\TransactionMade; 
 use App\Notifications\WithdrawalMade;
 use App\Notifications\TxnXNotification;
+use App\Notifications\ReferralCommissionNotification; 
 use App\Package;
 use App\PackageUser;
 use App\Transaction;
@@ -108,8 +109,8 @@ class PackageUserController extends Controller {
 
 
 				DB::commit();
-
-				$this->referralPayment($subscription);
+				// $referrer_count = PackageUser::where('user_id', $user->id)->where('referral', $referrer->id)->count();
+				// $this->referralPayment($subscription);
 
 				$subscription = new PackageUserResource($subscription);
 				return Helper::validRequest($subscription, 'Congratulations!!! your investment is now active', 200);
@@ -216,7 +217,10 @@ class PackageUserController extends Controller {
 				$packageuser->transaction->update(['confirmed' => true, 'sent' => true]);
 				$packageuser->user->notify(new PackageSubscribed($packageuser));
 				DB::commit();
-				$r = $this->referralPayment($packageuser);
+				if($referrer->loopReferralCommission() == false && $transaction->user->referral_commission_loop > 0){}
+				else{
+					$this->referralPayment($packageuser);
+				}
 				
 				$data = new PackageUserResource($packageuser);
 				
@@ -236,21 +240,23 @@ class PackageUserController extends Controller {
 		try {
 			$user = User::find($subscription->user_id);
 			$referrer = User::where('username', $user->referral)->first();
-			$upline = User::where('username', $referrer->referral)->first();
-			$referrer_count = PackageUser::where('user_id', $user->id)->where('referral', $referrer->id)->count();
+			if($referrer){
+				$upline = User::where('username', $referrer->referral)->first();
+				$referrer_count = PackageUser::where('user_id', $user->id)->where('referral', $referrer->id)->count();
+			}else $upline = null;
 			$commission_first_level = $subscription->package->first_level_ref_commission / 100 * $subscription->amount;
 			$commission_second_level = $subscription->package->second_level_ref_commission / 100 * $subscription->amount;
-
+			$paymentMethod = User::first()->bankDetails->first()->payment_method;
 			if ($referrer && $user->userLevel->name == "user") {
 				if ($commission_first_level > 0) {
-					$transaction = $referrer->transactions()->create(['reference' => 'first tier commission', 'type' => 'profit', 'amount' => $commission_first_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
+					$transaction = $referrer->transactions()->create(['reference' => 'first tier commission', 'payment_method' => $paymentMethod ? $paymentMethod :'Bitcoin', 'type' => 'profit', 'amount' => $commission_first_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
 					$subscription->update(['referral' => $referrer->id]);	
-					$transaction->user->notify(new TransactionMade($transaction));
+					$transaction->user->notify(new ReferralCommissionNotification($transaction, $user));
 					Helper::adminsUserActivityRequest(['type'=>'CommissionActivity', 'message' => $referrer->username . ' received $' .$commission_first_level.' as first level commission.']);
 				}
 				if ($upline && $commission_second_level > 0) {
-					$transaction = $upline->transactions()->create(['reference' => 'second tier commission', 'type' => 'profit', 'amount' => $commission_second_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
-					$transaction->user->notify(new TransactionMade($transaction));
+					$transaction = $upline->transactions()->create(['reference' => 'second tier commission', 'payment_method' => $paymentMethod ? $paymentMethod :'Bitcoin', 'type' => 'profit', 'amount' => $commission_second_level, 'confirmed' => true, 'active' => false, 'sent' => true]);
+					$transaction->user->notify(new ReferralCommissionNotification($transaction, $user));
 					Helper::adminsUserActivityRequest(['type'=>'CommissionActivity', 'message' => $upline->username . ' received $' .$commission_second_level.' as second level commission.']);
 				}
 				DB::commit();

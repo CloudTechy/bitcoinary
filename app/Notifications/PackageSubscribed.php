@@ -39,11 +39,11 @@ class PackageSubscribed extends Notification implements ShouldQueue {
 	 */
 	public function toMail($notifiable) {
 		$subscription = $this->subscription;
-		$dashboardPath = $notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/';
+		$dashboardPath = $notifiable->isAdmin() == true  ? config('frontend.url').'/admin/subscriptions' : config('frontend.url').'/dashboard/report/investments';
 		return (new MailMessage)
 			->greeting('Dear ' . $notifiable->username . ',')
 			->subject('Successful Package Subscription')
-			->line('Your subscription was successful and your active account has been credited with $' . $subscription->amount)
+			->line('Your subscription was successful and your active investment has been credited with $' . $subscription->amount)
 			->action('Goto Dashboard', url($dashboardPath))
 			->line('Thank you for investing with us');
 	}
@@ -64,7 +64,7 @@ class PackageSubscribed extends Notification implements ShouldQueue {
         return [
             'model' => 'subscription',
             'message' => 'Your $' . $this->subscription->amount . ' investment is now active',
-            'path' => $notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/',
+            'path' => $notifiable->isAdmin() == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/',
             'type' => 'notification',
         ];
     }

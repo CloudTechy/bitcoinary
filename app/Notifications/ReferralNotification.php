@@ -47,9 +47,13 @@ class ReferralNotification extends Notification implements ShouldQueue
         return (new MailMessage)
                     ->greeting('Dear ' . $notifiable->username . ',')
 			        ->subject('Referral Notification')
-                    ->line('You have a new downline on your '. config('app.name', 'Laravel' ) .'.' )
+                    ->line('Congrats!! You have a new downline with '. config('app.name', 'Laravel' ) .'.' )
                     ->line(new HtmlString('<p>Name: <b>' . $this->downline->last_name . ' ' . $this->downline->first_name. '</b></p>'))
-                    ->line(new HtmlString('<p>Registered on: <b>' . Carbon::createFromTimeStamp(strtotime($this->downline->created_at))->toFormattedDateString()  . '</b></p>'));
+                    ->line(new HtmlString('<p>Username: <b>' . $this->downline->username . '</b></p>'))
+                    ->line(new HtmlString('<p>Email: <b>' . $this->downline->email . '</b></p>'))
+                    ->line(new HtmlString('<p>Registered on: <b>' . Carbon::createFromTimeStamp(strtotime($this->downline->created_at))->toFormattedDateString()  . '</b></p>'))
+                    ->line('You earn commissions when your downlines invest with us.' )
+                    ->line('Do enjoy the rest of your day.' );
     }
 
     /**
@@ -62,7 +66,7 @@ class ReferralNotification extends Notification implements ShouldQueue
     {
         return [
             'model' => 'user',
-            'message' => 'You have a new this->downline.',
+            'message' => 'You have a new downline by name' . $this->downline->last_name . ' ' . $this->downline->first_name,
             'type' => 'notification',
         ];
     }

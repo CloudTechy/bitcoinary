@@ -210,6 +210,11 @@ export default {
     components: {
         VueQRCodeComponent,
     },
+    watch: {
+        error() {
+            setTimeout(() => { this.error = '' }, 3000);
+        },
+    },
     props: ["plan", "paymentMethod", "amount", "deposit_type"],
     computed: {},
     beforeDestroy() {

@@ -35,7 +35,7 @@ class UserRegistered extends Notification implements ShouldQueue {
 	 * @return \Illuminate\Notifications\Messages\MailMessage
 	 */
 	public function toMail($notifiable) {
-		$dashboardPath = $notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/';
+		$dashboardPath = $notifiable->isAdmin() == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/dashboard/';
 		return (new MailMessage)
 			->greeting('Dear ' . $notifiable->username . ',')
 			->subject('Successful Registration')
@@ -62,7 +62,7 @@ class UserRegistered extends Notification implements ShouldQueue {
         return [
         	'model' => 'user',
             'message' => 'Congratulations!!! welcome to '. config('app.name').'.',
-            'path' => $notifiable->isAdmin == true  ? config('frontend.url') . '/admin/dashboard' : config('frontend.url') . '/dashboard/',
+            'path' => $notifiable->isAdmin() == true  ? config('frontend.url') . '/admin/dashboard' : config('frontend.url') . '/dashboard/',
             'type' => 'notification',
         ];
     }

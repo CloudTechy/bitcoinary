@@ -39,7 +39,7 @@ class AuthController extends Controller {
 			// $data->markEmailAsVerified();
 			$data->sendEmailVerificationNotification();
 			
-			$referral = User::where('referral',$validated['referral'])->first();
+			$referral = User::where('username',$validated['referral'])->first();
 			$referral->notify(new ReferralNotification($data));
 			Helper::adminsUserActivityRequest(['type'=>'SignUpActivity', 'message' => $data->username . ' has joined ' . config('app.name') ]);
 			DB::commit();
