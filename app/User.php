@@ -102,7 +102,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 					else {
 							$maturePackage->subscription->update(['expiration' => null, 'active' => false]);
 							if($maturePackage->capital_back){
-								PackageUser::find($maturePackage->subscription->id)->transaction->update(['active'=>false]);
+								PackageUser::find($maturePackage->subscription->id)->transaction->update(['active'=>false, 'reference' => 'CAPIAL INVESTMENT']);
 							}
 							
 						}
