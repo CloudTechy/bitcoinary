@@ -217,7 +217,7 @@ class PackageUserController extends Controller {
 				$packageuser->transaction->update(['confirmed' => true, 'sent' => true]);
 				$packageuser->user->notify(new PackageSubscribed($packageuser));
 				DB::commit();
-				if($referrer->loopReferralCommission() == false && $transaction->user->referral_commission_loop > 0){}
+				if($packageuser->user->loopReferralCommission() == false && $packageuser->user->referral_commission_loop > 0){}
 				else{
 					$this->referralPayment($packageuser);
 				}

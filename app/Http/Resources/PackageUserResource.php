@@ -34,7 +34,7 @@ class PackageUserResource extends JsonResource {
 			'pop' => empty($this->pop) ? 'undefined.jpg' : $this->pop, 
 			'transaction' => $this->transaction,
 			'transaction_id' => $this->transaction_id,
-			'expired' => !empty($this->expiration) && $this->active == false ? true : false,
+			'expired' => empty($this->expiration) && !$this->active && !empty($this->loop) ? true : false,
 			'active' => (bool) $this->active,
 			'unsubscribed' => empty($this->expiration) && $this->active == false ? true : false,
 			'date_bad' => Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans(),

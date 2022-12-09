@@ -85,6 +85,8 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 				$transaction->payment_method = "Bitcoin";
 				$transaction->reference = 'BM';
 				$transaction->type = 'profit';
+				
+
 				if ($transaction->save()) {
 					//check number of times to restart active trade
 					// global $loop;
@@ -92,9 +94,9 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 
 					$loop = $maturePackage->subscription->loop;
 					$loop_termination = $maturePackage->loop_termination;
+					
 
-
-					if ($loop == $loop_termination) {
+					if ($loop < $loop_termination) {
 						$loop = $loop + 1;
 
 						$maturePackage->subscription->update(['expiration' => Carbon::now()->addDays($maturePackage->turnover), 'loop' => $loop, 'active' => true]);
@@ -104,8 +106,11 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 							$maturePackage->subscription->update(['expiration' => null, 'active' => false]);
 							// $maturePackage->transaction->update(['active'=>false]);
 						}
-					$transaction->user->notify(new TransactionMade($transaction));
 					
+					$transaction->user->notify(new TransactionMade($transaction));
+					Helper::adminsUserActivityRequest(['type'=>'ProfitActivity', 'message' => $transaction->user->username . ' received $' .$transaction->amount.' as investment profit from '. $maturePackage->subscription->amount]);
+					Helper::UserActivityRequest(['type'=>'ProfitActivity', 'message' =>  'You made a profit of $ ' . $transaction->amount .' from your investment of $' . $maturePackage->subscription->amount]);	
+			
 				}
 
 			}

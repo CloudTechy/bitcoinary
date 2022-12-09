@@ -49,10 +49,10 @@ class ReferralCommissionNotification extends Notification
 			->subject('Referral Commission')
 			->line('A credit transaction has occured in your account')
 
-            ->line(new \Illuminate\Support\HtmlString('Downline name: <b>' . $downline->names . '</b>'))
-            ->line(new \Illuminate\Support\HtmlString('Downline username: <b>' . $downline->username . '</b>'))
-            ->line(new \Illuminate\Support\HtmlString('Downline email: <b>' . $downline->email . '</b>'))
-            ->line(new \Illuminate\Support\HtmlString('Commission amount: <b>$' . $transaction->amount . '</b><br><br>'))
+            ->line(new \Illuminate\Support\HtmlString('<b> Downline name: </b>' . $downline->names))
+            ->line(new \Illuminate\Support\HtmlString('<b> Downline username: </b>' . $downline->username))
+            ->line(new \Illuminate\Support\HtmlString('<b> Downline email: </b>' . $downline->email))
+            ->line(new \Illuminate\Support\HtmlString('<b> Commission amount: </b>$' . $transaction->amount . '<br><br>'))
 
 			->action('Goto Dashboard', url($dashboardPath))
 			->line('Thank you for investing with us');

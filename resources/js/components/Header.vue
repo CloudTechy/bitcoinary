@@ -476,6 +476,11 @@ export default {
     methods: {
         transfer() {
             this.$root.loader('show')
+            if (this.transferForm.receiver_username == this.$auth.user().username){
+                this.$root.loader('hide')
+                this.$root.alert('error', 'You cannot transfer funds to yourself', 'Action not allowed!',)
+                return
+            }
             this.processing(true, 'submitTransferForm', 'Requesting...', '')
             this.transferForm.message = ""
             this.error = ''
