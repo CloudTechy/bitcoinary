@@ -63,9 +63,9 @@
                                                         class="progress-bar progress-bar-striped progress-bar-animated bg-success"
                                                         style="width: 100%">ACTIVE
                                                     </div>
-                                                    <div v-else-if="!data.active && !data.expiration && data.loop"
+                                                    <div title="This plan has ended" v-else-if="!data.active && !data.expiration && data.loop"
                                                         class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
-                                                        style="width: 100%">ENDED
+                                                        style="width: 100%">EXPIRED
                                                     </div>
                                                     <div v-else
                                                         class="progress-bar progress-bar-striped progress-bar-animated bg-primary"

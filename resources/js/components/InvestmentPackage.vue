@@ -6,14 +6,14 @@
                 <div v-if="plan.name == 'Starter'">
                     <ul class="package-card__features mt-4">
                         <li>Return {{plan.roi}}%</li>
-                        <li>Matures in a {{plan.turnover}}</li>
+                        <li>Matures in  {{plan.turnover}}</li>
                         <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span></li>
                     </ul>
                 </div>
                 <div v-if="plan.name == 'Basic'">
                     <ul class="package-card__features mt-4">
                         <li>Return {{plan.roi}}%</li>
-                        <li>Matures in a {{plan.turnover}}</li>
+                        <li>Matures in  {{plan.turnover}}</li>
                         <li>Total {{plan.roi}}% + <span class="badge base--bg">Capital</span></li>
                         <li>With loan Security</li>
                     </ul>

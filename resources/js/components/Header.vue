@@ -292,7 +292,7 @@
                                     <div class="form-group basic">
                                         <label class="label">Amount</label>
                                         <div class="input-group mb-2">
-                                            <input type="number" v-model="transferForm.amount" class="form-control" min="1"
+                                            <input type="number" step="0.01"  v-model="transferForm.amount" class="form-control" min="1"
                                                 :max="$auth.user().balance" required>
                                         </div>
                                         <p v-if="errors.amount" v-for="error in errors.amount"

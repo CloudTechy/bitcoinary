@@ -106,7 +106,7 @@
                                         <div class="form-group basic">
                                             <label class="label">Amount</label>
                                             <div class="input-group mb-2">
-                                                <input type="number" v-model="withdrawalForm.amount"
+                                                <input type="number" step="0.01"  v-model="withdrawalForm.amount"
                                                     class="form-control" min="1" :max="$auth.user().balance" required>
 
                                             </div>
@@ -302,7 +302,7 @@
                                         <div class="form-group basic">
                                             <label class="label">Amount</label>
                                             <div class="input-group mb-2">
-                                                <input type="number" v-model="depositAmount" class="form-control" min="50"
+                                                <input type="number" step="0.01"  v-model="depositAmount" class="form-control" min="50"
                                                     max="999999999999999999999" required>
                                             </div>
                                         </div>

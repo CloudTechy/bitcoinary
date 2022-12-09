@@ -5,7 +5,7 @@
         <div id="appCapsule">
             <div class="section">
                 <div class="row mt-2">
-                    <div v-for="plan in $root.packages" class="col-lg-4 col-md-4 col-sm-12 mb-2">
+                    <div v-for="plan in $root.packages" v-if = "plan.status" class="col-lg-4 col-md-4 col-sm-12 mb-2">
                         <div class="stat-box text-center">
                             <h4 class="text-primary font-weight-bold">
                                 {{ plan.name }} </h4>
@@ -25,7 +25,19 @@
                                         )
                                         }}</p>
                                     <p><strong>Duration: </strong>
-                                        {{ plan.turnover }}</p>
+                                        {{ plan.duration }}
+                                        <span v-if = "plan.turnover <= 3">
+                                            {{ plan.return_for == 'period' ? ' for ' +
+                                            plan.loop_termination * plan.turnover + ' Day(s) ' : 'Unlimited'
+                                            }}
+                                        </span>
+                                        </p>
+                                        <p><strong>Referral Commission: </strong>
+                                            {{ plan.first_level_ref_commission }}%</p>
+                                        <p><strong>Total:</strong>
+                                        {{plan.roi}}% + <span class="badge badge-primary">Capital</span> </p>
+                                        <p v-if = "plan.min_deposit >= 5000"><strong>With loan Security </strong>
+                                            </p>
                                         <hr>
                                         <form style="width:100%; margin:auto" method="post" @submit.prevent="subscribePlan($event, plan)" class = "mt-3">
                                            
@@ -197,6 +209,7 @@ export default {
                 form.submit('post', "/auth/packageusers")
                     .then(response => {
                         this.$root.loader('hide')
+                        this.paymentMethod = undefined
                         this.$auth.fetch()
                         this.displayMessage({ message: response.data.message })
                     })
