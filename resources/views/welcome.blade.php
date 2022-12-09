@@ -378,6 +378,9 @@ smartsupp('analyticsConsent', false);
         transition: all 0.2s ease;
         color: #ff5722;
       }
+      .vue-loading-button {
+        font-size: revert !important;
+}
 </style>
 </body>
 </html>

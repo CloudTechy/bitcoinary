@@ -150,12 +150,12 @@ class WithdrawalController extends Controller {
 	public function destroy(Withdrawal $withdrawal) {
 		DB::beginTransaction();
 		try {
-			if(!auth()->user()->isAdmin()){
-                return Helper::inValidRequest('You are not unauthorized to perform this operation.', 'Unauthorized Access!', 400);
+			if($withdrawal->approved()){
+                return Helper::inValidRequest('You cannot cancel a confirmed withdrawal transaction.', 'Invalid Request!', 400);
             }
 			$data = $withdrawal->delete();
 			DB::commit();
-			return Helper::validRequest(["success" => $data], 'Item deleted successfully', 200);
+			return Helper::validRequest(["success" => $data], 'Your withdrawal request has been cancelled successfully', 200);
 		} catch (Exception $bug) {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);

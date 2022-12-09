@@ -28,9 +28,9 @@
                                     {{'Withdrawal Via ' + withdrawal.payment_method}}
                                 </h5>
 
-                                <div class="p-3 bg--white">
+                                <div class="p-3 bg-white">
                                     <div class="text-center">
-                                        <img style="width:100%" :src="
+                                        <img :src="
                                             $root.basepath +
                                             '/images/uploads/' +
                                             cryptoFilter($root.payments, withdrawal.payment_method)[0].image
@@ -132,6 +132,52 @@
                             </div>
                         </div>
                         <list-loader v-else-if="!withdrawal && loading"></list-loader>
+                    </div>
+                    <div class="section" v-if="withdrawal && withdrawal.confirmed == false">
+                        <div class="row mt-2">
+                            <div class="col-lg-5 col-sm-12 col-md-6">
+                                <div class="stat-box">
+                                    <div class="title text-black">
+                                        This withdraw request is still under review but you can choose to <a href="#" data-original-title="Cancel withdrawal request" data-bs-toggle="modal" data-bs-target="#rejectWithdrawalModal"
+                                            class="text-danger">Cancel this request.</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-if = "withdrawal" id="rejectWithdrawalModal" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">
+                                Cancel Withdrawal Request
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form method="POST" @submit.prevent="deleteWithdrawal(withdrawal.id)">
+                            <input type="hidden" name="id" />
+                            <div class="modal-body">
+                                <p>
+                                    Are you sure to
+                                    <span class="font-weight-bold">cancel</span>
+                                    <span class="font-weight-bold withdraw-amount text-success"></span>
+                                    this withdrawal request of
+                                    <span  class="font-weight-bold withdraw-user">{{ $root.normalNumeral(withdrawal.amount) }}
+                                        USD</span>?
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button ref="close_modal_button" type="button" class="btn btn-dark" data-dismiss="modal">
+                                    Close
+                                </button>
+                                <VueLoadingButton class="btn btn-danger" type="submit" :loading="form.busy" aria-label="Reject">
+                                    Cancel</VueLoadingButton>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -251,6 +297,35 @@ export default {
                     this.withdrawal = response.data.data;
                 })
                 .catch((error) => {
+                    this.loading = false;
+                    this.$root.alert(
+                        "error",
+                        " ",
+                        error.response.data.message
+                    );
+                    console.log(error);
+                });
+        },
+        deleteWithdrawal(id) {
+            this.$root.loader('show')
+            this.loading = true;
+            var form = new Form({})
+            form
+                .delete("/auth/withdrawals/" + id)
+                .then((response) => {
+                    this.$root.loader('hide')
+                    this.loading = false;
+                    this.$root.alert(
+                        "success",
+                        " ",
+                        response.data.message
+                    );
+                    this.$refs.close_modal_button.click()
+                    this.$auth.fetch()
+                    this.$router.push({ name: 'WithdrawReport' })
+                })
+                .catch((error) => {
+                    this.$root.loader('hide')
                     this.loading = false;
                     this.$root.alert(
                         "error",

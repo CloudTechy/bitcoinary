@@ -80,4 +80,8 @@ class Withdrawal extends Model
         }
 
     }
+    public function approved()
+    {
+        return $this->confirmed && $this->processed;
+    }
 }

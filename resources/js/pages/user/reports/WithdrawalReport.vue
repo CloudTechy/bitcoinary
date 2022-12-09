@@ -5,6 +5,14 @@
             <div class="section">
                 <div class="row mt-2">
                     <div v-if="withdrawals.length > 0" class="card p-2">
+                        <div class = "card-header">
+                           <button @click="getWithdrawals(current_page)" class = "btn btn-primary ">Refresh &nbsp;<i data-toggle="tooltip" data-original-title="refresh"  style="cursor: pointer" :class="{
+                               'text--primary': true,
+                               fa: true,
+                               'fa-circle-notch': true,
+                               'fa-spin': loading,
+                           }"></i> </button>
+                        </div>
                         <small class="text-center mobile">Click the <span class="text-white"
                                 style="padding:2px 7px;border-radius:50%;background-color:#0d6efd">+</span> icon for
                             details</small>
