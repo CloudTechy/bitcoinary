@@ -1,4 +1,6 @@
 <script>
+import Testimonial from '../components/testimonial.vue';
+
 window.addEventListener("load", () => {
     if (!localStorage.getItem(window.tokenName) && localStorage.getItem('token')) {
         setTimeout(() => {
@@ -15,47 +17,45 @@ export default {
         return {
             company: this.$root.appName,
             domain: this.$root.appDomain,
+            testimonials : undefined
         };
     },
     beforeRouteEnter(to, from, next) {
         next(vm => {
-            vm.$root.loader('show', true)
+            vm.$root.loader("show", true);
             if (vm.$auth.check()) {
-                localStorage.token = localStorage.getItem(window.tokenName)
+                localStorage.token = localStorage.getItem(window.tokenName);
                 localStorage.removeItem(window.tokenName);
                 window.location.reload();
             }
-        }) 
-            
-        
-        
+        });
     },
     created() {
-       
         var js = document.createElement("script");
-        js.setAttribute(
-            "src",
-            this.$root.basepath + "/assets/js/home/jquery.min.js"
-        );
+        js.setAttribute("src", this.$root.basepath + "/assets/js/home/jquery.min.js");
         js.setAttribute("async", true);
         document.body.appendChild(js);
-
         js = document.createElement("script");
-        js.setAttribute(
-            "src",
-            this.$root.basepath + "/assets/js/home/bootstrap.min.js"
-        );
+        js.setAttribute("src", this.$root.basepath + "/assets/js/home/bootstrap.min.js");
         document.body.appendChild(js);
-
         js = document.createElement("script");
-        js.setAttribute(
-            "src",
-            this.$root.basepath + "/assets/js/home/jquery.isotope.min.js"
-        );
+        js.setAttribute("src", this.$root.basepath + "/assets/js/home/jquery.isotope.min.js");
         document.body.appendChild(js);
-
+        this.getTestimonials()
     },
-
+    components: { Testimonial },
+    methods: {
+        getTestimonials() {
+            this.$http
+                .get("/auth/testimonialss")
+                .then((response) => {
+                    this.testimonials = response.data.data.item;
+                })
+                .catch((error) => {
+                    console.log(error.response);
+                });
+        },
+    }
 };
 </script>
 <template>
@@ -507,133 +507,7 @@ export default {
                 </div>
             </section>
 
-            <section id="section-highlight" data-bgcolor="var(--secondary_color)">
-                <div class="container" id="testimonials">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="text-center">
-                                <span class="p-title" style="color: #fff">Testimonials</span><br />
-                                <h2 style="color: #fff">
-                                    What Our Investors Say
-                                </h2>
-                                <div class="small-border" style="border-color: #ffcc29"></div>
-                            </div>
-                            <div class="owl-carousel owl-theme wow fadeInUp" id="testimonial-carousel">
-                                <div class="item">
-                                    <div class="de_testi opt-2 review">
-                                        <blockquote>
-                                            <div class="p-rating">
-                                                <i class="fa fa-star checked"></i>
-                                                <i class="fa fa-star checked"></i>
-                                                <i class="fa fa-star checked"></i>
-                                                <i class="fa fa-star checked"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <h3>Unbelievable!</h3>
-                                            <p>
-                                                “My questions/issues are
-                                                resolved as soon as I make
-                                                them known to them. Indeed,
-                                                they provide customer
-                                                service with a delightful
-                                                difference”
-                                            </p>
-                                            <div class="de_testi_by">
-                                                <span><b>Dehli</b>,
-                                                    India</span>
-                                            </div>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="de_testi opt-2 review">
-                                        <blockquote>
-                                            <div class="p-rating">
-                                                <i class="fa fa-star checked"></i>
-                                                <i class="fa fa-star checked"></i>
-                                                <i class="fa fa-star checked"></i>
-                                                <i class="fa fa-star checked"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <h3>Thank you</h3>
-                                            <p>
-                                                “What an excellent service.
-                                                Thank you very much, I
-                                                really recommend this
-                                                company”
-                                            </p>
-                                            <div class="de_testi_by">
-                                                <span><b>Sarah</b>, USA</span>
-                                            </div>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="de_testi opt-2 review">
-                                        <blockquote>
-                                            <div class="p-rating">
-                                                <i class="fa fa-star checked"></i>
-                                                <i class="fa fa-star checked"></i>
-                                                <i class="fa fa-star checked"></i>
-                                                <i class="fa fa-star checked"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <h3>Pretty Awesome!</h3>
-                                            <p>
-                                                “Thank you for your support
-                                                and concern during this
-                                                difficult times. Accessing
-                                                my money is very easy.
-                                                Opening an investment
-                                                account was a good
-                                                decision.”
-                                            </p>
-                                            <div class="de_testi_by">
-                                                <span><b>Alexi</b>,
-                                                    Brazil</span>
-                                            </div>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr style="border-color: #ffcc29; height: 2px" />
-                            <div class="row wow fadeInUp">
-                                <div class="col-lg-4">
-                                    <video height="200" controls>
-                                        <source :src="$root.basepath + '/assets/video/home/vid3.mp4'"
-                                            type="video/mp4" />
-                                        Your browser does not support HTML
-                                        video.
-                                    </video>
-                                </div>
-                                <div class="col-lg-4">
-                                    <video height="200" controls>
-                                        <source :src="$root.basepath + '/assets/video/home/vid2.mp4'"
-                                            type="video/mp4" />
-                                        Your browser does not support HTML
-                                        video.
-                                    </video>
-                                </div>
-                                <div class="col-lg-4">
-                                    <video height="200" controls>
-                                        <source :src="$root.basepath + '/assets/video/home/vid1.mp4'"
-                                            type="video/mp4" />
-                                        Your browser does not support HTML
-                                        video.
-                                    </video>
-                                </div>
-                            </div>
-                            <hr style="border-color: #ffcc29; height: 2px" />
-                            <div class="text-center">
-                                <a class="btn-custom" href="/#testimonies" style="
-                                            background-color: #ffcc29;
-                                            color: #000;
-                                        ">VIEW ALL</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <testimonial v-if = "testimonials" :data = "testimonials"></testimonial>
 
             <section aria-label="section" data-bgimage="url(assets/images/home/Layer-4.jpg) top" class="text-light"
                 id="contact">

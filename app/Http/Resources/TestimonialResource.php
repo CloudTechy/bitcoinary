@@ -16,9 +16,12 @@ class TestimonialResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'image' => $this->image,
+            'image' => empty($this->image) ? 'anonymous.jpg' : $this->image,
             'company' => $this->company,
             'content' => $this->content,
+            'heading' => $this->heading,
+            'request' => $this->request,
+            'country' => $this->country,
             'designation' => $this->designation,
             'name' => $this->name,
             'rank' => (int) $this->rank,

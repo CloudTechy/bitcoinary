@@ -26,9 +26,11 @@ class ValidateTestimonialRequest extends FormRequest
         return [
             'name' => 'required|min:2|string|max:255',
             'content' =>  'required|min:2|string',
+            'heading' =>  'required|min:2|string',
             'image' =>  'required|mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
             'designation' => 'string|max:255',
             'company' =>  'string|max:255',
+            'country' =>  'string|max:255',
             'rating' =>  'required|numeric|min:1|max:5',
             'rank' => 'numeric',
         ];

@@ -167,6 +167,7 @@ const app = new Vue({
                     console.log(error.response);
                 });
         },
+        
         loader(action, deep=false) {
             if (action == "show") {
                 $(".preloader").animate(

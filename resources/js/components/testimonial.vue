@@ -1,45 +1,80 @@
 <template>
-    <section  :style="'background:url('+  $root.basepath + '/images/bg/bg-7.jpg )'"  class="pt-120 pb-120 bg_img overlay--radial" >
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 text-center">
-                    <div class="section-header">
-                        <h2 class="section-title"><span class="font-weight-normal">What Users Say</span> <b class="base--color">About Us</b></h2>
-                        <p><span>{{$root.appName}}</span> is a well performing company with many good reviews from our investors.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- row end -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div v-if = "data" id="testimonial-slider" class="testimonial-slider">
-                        <VueSlickCarousel :key="key"   v-bind="settings">
-                              <div :key = "testimonial.id" v-for="testimonial in data" class="single-slide">
-                            <div class="testimonial-card m-2">
-                                <div class="testimonial-card__content">
-                                    <p>{{testimonial.content}}</p>
-                                </div>
-                                <div class="testimonial-card__client">
-                                    <div class="thumb">
-                                        <img :src="$root.basepath + '/images/testimonial/' + testimonial.image" alt="image">
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="name">{{testimonial.name}}</h6>
-                                        <span class="designation">{{testimonial.designation + ' of ' + testimonial.company}}</span>
-                                        <div class="ratings">
-                                            <i v-for="n in testimonial.rating" class="las la-star"></i>
-                                        </div>
+    <section id="section-highlight" data-bgcolor="var(--secondary_color)">
+                <div class="container" id="testimonials">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <span class="p-title" style="color: #fff">Testimonials</span><br />
+                                <h2 style="color: #fff">
+                                    What Our Investors Say
+                                </h2>
+                                <div class="small-border" style="border-color: #ffcc29"></div>
+                            </div>
+                            <div class="owl-carousel owl-theme wow fadeInUp" id="testimonial-carousel">
+                                <div :key="testimonial.id" v-for="testimonial in data" class="item">
+                                    <div class="de_testi opt-2 review">
+                                        <blockquote>
+                                            <div class="testimonial-card__client">
+                                                <div class="thumb">
+                                                    <img :src="$root.basepath + '/images/testimonial/' + testimonial.image" alt="img">
+                                                </div>
+                                            </div>
+                                            <div class="p-rating">
+                                                <i v-for= "n in testimonial.rating" class="fa fa-star checked"></i>
+                                            </div>
+                                            
+                                            <h3>{{testimonial.heading}}</h3>
+                                            <p>
+                                                {{ testimonial.content}}
+                                            </p>
+                                            
+                                            <div class="de_testi_by">
+                                                <span><b>{{testimonial.name}}</b>,
+                                                    {{ testimonial.country || testimonial.company}}</span>
+                                            </div>
+                                        </blockquote>
                                     </div>
                                 </div>
                             </div>
+                            <hr style="border-color: #ffcc29; height: 2px" />
+                            <div class="row wow fadeInUp">
+                                <div class="col-lg-4">
+                                    <video height="200" controls>
+                                        <source :src="$root.basepath + '/assets/video/home/vid3.mp4'"
+                                            type="video/mp4" />
+                                        Your browser does not support HTML
+                                        video.
+                                    </video>
+                                </div>
+                                <div class="col-lg-4">
+                                    <video height="200" controls>
+                                        <source :src="$root.basepath + '/assets/video/home/vid2.mp4'"
+                                            type="video/mp4" />
+                                        Your browser does not support HTML
+                                        video.
+                                    </video>
+                                </div>
+                                <div class="col-lg-4">
+                                    <video height="200" controls>
+                                        <source :src="$root.basepath + '/assets/video/home/vid1.mp4'"
+                                            type="video/mp4" />
+                                        Your browser does not support HTML
+                                        video.
+                                    </video>
+                                </div>
+                            </div>
+                            <hr style="border-color: #ffcc29; height: 2px" />
+                            <div class="text-center">
+                                <a class="btn-custom" href="/#testimonies" style="
+                                            background-color: #ffcc29;
+                                            color: #000;
+                                        ">Join us today</a>
+                            </div>
                         </div>
-                        </VueSlickCarousel>
                     </div>
                 </div>
-            </div>
-            <!-- row end -->
-        </div>
-    </section>
+            </section>
+
 </template>
 <script>
     import VueSlickCarousel from 'vue-slick-carousel'
@@ -109,13 +144,25 @@ export default {
 
 </script>
 <style type="text/css">
-/*#testimonial-slider{
-    min-height: 40px; 
+.testimonial-card__client .thumb {
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    border: 3px solid #cca354;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    float : right;
 }
-.slick-slide .slick-active .slick-current{
-    margin : 15px;
+
+.testimonial-card__client .thumb img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    -o-object-fit: cover;
+    object-position: center;
+    -o-object-position: center;
 }
-.slick-slide .slick-active {
-    margin : 15px;
-}*/
 </style>

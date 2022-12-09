@@ -32,10 +32,10 @@
                                             }}
                                         </span>
                                         </p>
-                                        <p><strong>Referral Commission: </strong>
+                                        <p v-if = "plan.first_level_ref_commission"><strong>Referral Commission: </strong>
                                             {{ plan.first_level_ref_commission }}%</p>
-                                        <p><strong>Total:</strong>
-                                        {{plan.roi}}% + <span class="badge badge-primary">Capital</span> </p>
+                                        <p  v-if = "plan.capital_back"><strong>Total:</strong>
+                                        {{plan.roi}}% <span class="badge badge-primary"> + Capital</span> </p>
                                         <p v-if = "plan.min_deposit >= 5000"><strong>With loan Security </strong>
                                             </p>
                                         <hr>

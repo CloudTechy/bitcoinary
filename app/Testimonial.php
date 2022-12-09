@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Testimonial extends Model
 {
-    protected $fillable = ['name', 'rank',  'content', 'company', 'rating', 'designation', 'image'];
+    protected $fillable = ['name', 'rank', 'heading','country',  'content', 'company', 'rating', 'designation', 'image'];
 
     public function scopeFilter($query, $filter) {
 
 		try {
 
-			$fields = ['name', 'rank',  'content', 'company', 'rating', 'designation', 'image'];
+			$fields = ['name', 'rank', 'heading','country',  'content', 'company', 'rating', 'designation', 'image'];
 
 			return $query->where(
 				function ($query) use ($filter, $fields) {

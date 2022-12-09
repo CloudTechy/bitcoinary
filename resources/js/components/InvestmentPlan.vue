@@ -8,7 +8,7 @@
                 <div class="small-border pb-5" style="border-color: #ffcc29"></div>
                 <div class="row sequence">
                     <div v-for="plan in $root.packages" v-if="plan.status"
-                        class="col-lg-3 col-md-6 col-sm-12 sq-item wow">
+                        class="col-lg-4 col-md-6 col-sm-12 sq-item wow">
                         <div class="pricing-s1 mb30" style="border: 2px white solid">
                             <div class="top">
                                 <p class="plan-tagline">
@@ -40,6 +40,27 @@
                 plan.max_deposit
             )
                                             }}</b>
+                                    </li>
+                                    
+                                    <li v-if = "plan.capital_back">
+                                        <i class="fa fa-check"></i>
+                                    
+                                        <b>Total: {{plan.roi}}% + <span  class="badge badge-primary">Capital</span></b>
+                                    </li>
+                                    <li v-if="plan.first_level_ref_commission">
+                                        <i class="fa fa-check"></i>
+                                    
+                                        <b>Referrals: {{ plan.first_level_ref_commission }}% </b>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-check"></i>
+                                    
+                                        <b>24/7 Customer Support</b>
+                                    </li>
+                                    <li v-if = "plan.min_deposit >= 5000">
+                                        <i class="fa fa-check"></i>
+                                    
+                                        <b>With loan Security</b>
                                     </li>
                                 </ul>
                             </div>

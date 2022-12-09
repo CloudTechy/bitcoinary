@@ -110,9 +110,11 @@ class TestimonialController extends Controller {
         $validated = $request->validate([
             'name' => 'min:2|string|max:255',
             'content' =>  'min:2|string',
+            'heading' =>  'string',
             'image' =>  'mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
             'designation' => 'string|max:255',
             'company' =>  'string|max:255',
+            'country' =>  'string|max:255',
             'rating' =>  'numeric|min:1|max:5',
             'rank' => 'numeric',
         ]);
