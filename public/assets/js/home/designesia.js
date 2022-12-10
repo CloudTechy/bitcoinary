@@ -1347,7 +1347,7 @@
         }); 
 
          video_autosize();
-         filter_gallery();
+        //  filter_gallery();
          masonry();
          custom_bg();
          menu_arrow();
@@ -1468,7 +1468,7 @@
          })
 		 
 		$(window).load(function() {
-        filter_gallery();
+        // filter_gallery();
         load_owl();
 		new WOW().init();
 		window.dispatchEvent(new Event('resize'));

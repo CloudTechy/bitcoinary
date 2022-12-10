@@ -30,8 +30,8 @@ class TransactionResource extends JsonResource {
 			'payment_method' => $this->payment_method,
 			'reference' => $this->reference,
 			'currency_code' => $this->currency_code,
-			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->isoFormat('MMM Do YY, h:mm a'),
-			'date_bad' => Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans(),
+			'date' => Carbon::createFromTimeStamp(strtotime($this->updated_at))->isoFormat('MMM Do YY, h:mm a'),
+			'date_bad' => Carbon::createFromTimeStamp(strtotime($this->updated_at))->diffForHumans(),
 			'created_at' => $this->created_at->format('Y-m-d'),
 			'updated_at' => $this->updated_at->format('Y-m-d H:i:s'),
 		];

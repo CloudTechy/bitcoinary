@@ -22,7 +22,7 @@ class TransactionController extends Controller {
 			$page = request()->query('page', 1);
 			$pageSize = request()->query('pageSize', 10000000);
 			$data = Transaction::filter(request()->all())
-				->latest()
+				->orderBy('updated_at', 'desc')
 				->paginate($pageSize);
 				$pagination = [
 					'total' => $data->total(),

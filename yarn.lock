@@ -2987,6 +2987,11 @@
     "utils-merge" "1.0.1"
     "vary" "~1.1.2"
 
+"faker@^5.0.0":
+  "integrity" "sha512-wLTv2a28wjUyWkbnX7u/ABZBkUkIF2fCd73V6P2oFqEGEktDfzWx4UxrSqtPRw0xPRAcjeAOIiJWqZm3pP4u3g=="
+  "resolved" "https://registry.npmjs.org/faker/-/faker-5.5.3.tgz"
+  "version" "5.5.3"
+
 "fast-deep-equal@^3.1.1", "fast-deep-equal@^3.1.3":
   "integrity" "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q=="
   "resolved" "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz"
@@ -5758,6 +5763,11 @@
   "resolved" "https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-1.0.2.tgz"
   "version" "1.0.2"
 
+"underscore@^1.8.3":
+  "integrity" "sha512-+A5Sja4HP1M08MaXya7p5LvjuM7K6q/2EaC0+iovj/wOcMsTzMvDFbasi/oSapiwOlt252IqsKqPjCl7huKS0A=="
+  "resolved" "https://registry.npmjs.org/underscore/-/underscore-1.13.6.tgz"
+  "version" "1.13.6"
+
 "unicode-canonical-property-names-ecmascript@^2.0.0":
   "integrity" "sha512-yY5PpDlfVIU5+y/BSCxAJRBIS1Zc2dDG3Ujq+sR0U+JjUevW2JhocOF+soROYDSaAezOzOKuyyixhD6mBknSmQ=="
   "resolved" "https://registry.npmjs.org/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-2.0.0.tgz"
@@ -5891,6 +5901,14 @@
   "integrity" "sha512-8pjpXnvbNWx1Lft0t3MJnW+ylv0Wa2Tb6Ch617u/pQah3+SfXUZZdkh3EL3bSpe/Sw2Wdw3+DhycgQsKANSxXg=="
   "resolved" "https://registry.npmjs.org/vue-cookies/-/vue-cookies-1.5.13.tgz"
   "version" "1.5.13"
+
+"vue-faker@^3.0.0":
+  "integrity" "sha512-rMPjMdrq6P9bDYm/fGb7ZJHZhRv2YW3iDkuCHYts7Nx/uVVPBxh0cHE7umpFIQsteiiCs0wPP2xwvkzeLPWLRA=="
+  "resolved" "https://registry.npmjs.org/vue-faker/-/vue-faker-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "faker" "^5.0.0"
+    "underscore" "^1.8.3"
 
 "vue-head@^2.2.0":
   "integrity" "sha512-Oss1gakOSPQ4e/XZ0yM7yolnhSDvfDYZbM6CDD3xkCpAyPfTR+Bv3tabgtKE41gHr5GzC/NJh1EwQSu7o05XRw=="

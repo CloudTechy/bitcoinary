@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use Carbon\Carbon;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,7 +26,7 @@ class Transaction extends Model {
 
 		try {
 
-			$fields = ['user_id', 'amount','type', 'active', 'sent', 'confirmed', 'reference', 'currency_code'];
+			$fields = ['user_id', 'amount','type', 'dateAfter', 'dateBefore', 'active', 'sent', 'confirmed', 'reference', 'currency_code'];
 
 			return $query->where(
 				function ($query) use ($filter, $fields) {
@@ -35,12 +36,16 @@ class Transaction extends Model {
 						if (in_array($key, $fields)) {
 
 							if ($key == 'dateBefore') {
-								$val = Carbon::parse($val);
-								$query->where("created_at", "<=", $val);
+								if(!empty($val)){
+									$val = Carbon::parse($val);
+									$query->where("updated_at", "<=", $val);
+								}
 								continue;
 							} elseif ($key == 'dateAfter') {
-								$val = Carbon::parse($val);
-								$query->where("created_at", ">=", $val);
+								if(!empty($val)){
+									$val = Carbon::parse($val);
+									$query->where("updated_at", ">=", $val);
+								}
 								continue;
 							}
 

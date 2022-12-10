@@ -17,12 +17,14 @@ import Clipboard from "vue-clipboard2";
 import vueTelInput from "vue-tel-input";
 import VueHead from 'vue-head'
 import VueIziToast from "vue-izitoast";
+import vueFaker from "vue-faker"
 
 import "izitoast/dist/css/iziToast.min.css";
 
 
 Vue.use(VueHead)
 Vue.use(VueIziToast);
+Vue.use(vueFaker);
 
 
 window.jQuery = jQuery
@@ -167,7 +169,7 @@ const app = new Vue({
                     console.log(error.response);
                 });
         },
-        
+
         loader(action, deep=false) {
             if (action == "show") {
                 $(".preloader").animate(

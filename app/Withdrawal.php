@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use Carbon\Carbon;
 
 class Withdrawal extends Model
 {
@@ -36,7 +37,7 @@ class Withdrawal extends Model
 
         try {
 
-            $fields = ['user_id', 'payment_method', 'amount', 'processed', 'confirmed', 'currency_code'];
+            $fields = ['user_id', 'payment_method', 'amount', 'dateAfter', 'dateBefore', 'processed', 'reference', 'confirmed', 'currency_code'];
 
             return $query->where(
                 function ($query) use ($filter, $fields) {
@@ -45,15 +46,26 @@ class Withdrawal extends Model
 
                         if (in_array($key, $fields)) {
 
-                            if ($key == 'dateBefore') {
-                                $val = Carbon::parse($val);
-                                $query->where("created_at", "<=", $val);
+                           if ($key == 'dateBefore') {
+								if(!empty($val)){
+									$val = Carbon::parse($val);
+									$query->where("updated_at", "<=", $val);
+								}
+								continue;
+							} elseif ($key == 'dateAfter') {
+								if(!empty($val)){
+									$val = Carbon::parse($val);
+									$query->where("updated_at", ">=", $val);
+								}
+								continue;
+							}
+
+                             if ($key == 'reference' && $val == 'not_bm') {
+                                $query->where("reference", "!=", 'BM');
                                 continue;
-                            } elseif ($key == 'dateAfter') {
-                                $val = Carbon::parse($val);
-                                $query->where("created_at", ">=", $val);
-                                continue;
+                                
                             }
+                            
                             if ($key == 'username') {
 								$users = User::where('username','LIKE', '%'.$val. '%')->get();
 								$userID = [];
