@@ -475,18 +475,18 @@
                 $optionSet.find('.selected').removeClass('selected');
                 $this.addClass('selected');
                 var selector = jQuery(this).attr('data-filter');
-                $container.isotope({
-                    filter: selector
-                });
+                // $container.isotope({
+                //     filter: selector
+                // });
                 return false;
             });
         }
     }
      function masonry() {
          var $container = jQuery('.row-masonry');
-         $container.isotope({
-             itemSelector: '.item',
-         });
+        //  $container.isotope({
+        //      itemSelector: '.item',
+        //  });
          jQuery('#filters a').on("click", function() {
              var $this = jQuery(this);
              if ($this.hasClass('selected')) {
@@ -496,9 +496,9 @@
              $optionSet.find('.selected').removeClass('selected');
              $this.addClass('selected');
              var selector = jQuery(this).attr('data-filter');
-             $container.isotope({
-                 filter: selector
-             });
+            //  $container.isotope({
+            //      filter: selector
+            //  });
              return false;
          });
      }
@@ -1473,9 +1473,9 @@
 		new WOW().init();
 		window.dispatchEvent(new Event('resize'));
 		
-		$('.grid').isotope({
-			itemSelector: '.grid-item'
-        });
+		// $('.grid').isotope({
+		// 	itemSelector: '.grid-item'
+        // });
 		grid_gallery();
 		
         });

@@ -23,7 +23,8 @@
                                         Date
                                     </td>
                                     <td class="text-warning" style="font-weight: bold">
-                                        <span class="currencies">$</span><span class="amount">Amount</span>
+                                        <span class="amount">Amount</span>
+                                        <span class="currencies">($)</span>
                                     </td>
                                 </tr>
                                 <tr v-for="trx in buildTransactions" class="iq-shipping">
@@ -59,7 +60,8 @@
                                         Date
                                     </td>
                                     <td class="text-warning" style="font-weight: bold">
-                                        <span class="currencies">$</span><span class="amount">Amount</span>
+                                        <span class="amount">Amount </span>
+                                        <span class="currencies">($)</span>
                                     </td>
                                 </tr>
                                 <tr v-for="wlt in buildWithdrawals" class="iq-shipping">
@@ -100,37 +102,75 @@ export default {
                     item.date = moment(item.updated_at).format(this.date_format)
                 });           
             var size = data.length
-
+            var builtTransactions  = []
             if (data.length == 1) {
                 // No transaction
-                var first_item = data.shift()
-                return this.generateTransaction(10, first_item)
+                if (localStorage.getItem(builtTransactions)) {
+                    builtTransactions =  JSON.parse(localStorage.getItem(builtTransactions))
+                }
+                else {
+                    var first_item = data.shift()
+                    builtTransactions =  this.generateTransactions(10, first_item)
+                }
+                
             }
             else {
-                return this.generateTransactions(10 - size, data[0]).concat(data);
+                builtTransactions = this.generateTransactions(10 - size, data[0]).concat(data);
             }
+            localStorage.removeItem(builtTransactions);
+            localStorage.setItem(
+                        "builtTransactions",
+                        JSON.stringify(builtTransactions)
+            );
+                    
+            return builtTransactions
         },
         buildWithdrawals() {
             var data = this.withdrawals 
             data.forEach((item) => {
                     item.date = moment(item.updated_at).format(this.date_format)
-                });
+                });           
             var size = data.length
-
+            var builtWithdrawals  = []
             if (data.length == 1) {
                 // No transaction
-                var first_item = data.shift()
-                return this.generateTransactions(10, first_item)
+                if (localStorage.getItem(builtWithdrawals)) {
+                    builtWithdrawals =  JSON.parse(localStorage.getItem(builtWithdrawals))
+                }
+                else {
+                    var first_item = data.shift()
+                    builtWithdrawals =  this.generateTransactions(10, first_item)
+                }
+                
             }
             else {
-                return this.generateTransactions(10 - size, data[0]).concat(data);
+                builtWithdrawals = this.generateTransactions(10 - size, data[0]).concat(data);
             }
+            localStorage.removeItem(builtWithdrawals);
+            localStorage.setItem(
+                        "builtWithdrawals",
+                        JSON.stringify(builtWithdrawals)
+            );
+                    
+            return builtWithdrawals
         }
     },
     created() {
         setInterval(() => {
-            this.$emit('refresh')
-        }, 2218000)
+            if (this.transactions.length == 10) {
+                var last_transaction = this.transactions[0]
+                if (moment().diff(moment(last_transaction.updated_at), 'minutes') > 720) {
+                   this.$emit('refreshTransactions') 
+                }
+            }
+            if (this.withdrawals.length == 10) {
+                var last_withdrawals = this.withdrawals[0]
+                if (moment().diff(moment(last_withdrawals.updated_at), 'minutes') > 720) {
+                   this.$emit('refreshWithdrawals') 
+                }
+            }
+            // this.$emit('refresh')
+        }, 5000)
 
     },
     props: ['withdrawals', 'transactions'],
@@ -148,7 +188,7 @@ export default {
             
             for (let i = size - 1; i >= 0; i--) {
                 var last_date = data.length > 0 ? data[i + 1].correct_date : first_item.updated_at
-                var difference = moment().diff(last_date, 'minutes') - 100
+                var difference = moment().diff(last_date, 'minutes') - i * 2
                 var RandomTens = Math.floor(Math.random() * difference);
                 var correct_date = moment(last_date).add(RandomTens, 'm')
                 var item = {}

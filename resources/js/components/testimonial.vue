@@ -11,7 +11,7 @@
                                 <div class="small-border" style="border-color: #ffcc29"></div>
                             </div>
                             <div class="owl-carousel owl-theme wow fadeInUp" id="testimonial-carousel">
-                                <div :key="testimonial.id" v-for="testimonial in data" class="item">
+                                <div :key="testimonial.id" v-for="testimonial in data" class="item" style = "min-height: ;">
                                     <div class="de_testi opt-2 review">
                                         <blockquote>
                                             <div class="testimonial-card__client">

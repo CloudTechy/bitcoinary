@@ -32,7 +32,7 @@ export default {
             }
         });
     },
-    beforeCreate() {
+    created() {
         var js = document.createElement("script");
         js.setAttribute(
             "src",
@@ -52,12 +52,10 @@ export default {
             this.$root.basepath + "/assets/js/home/jquery.isotope.min.js"
         );
         document.body.appendChild(js);
-    
-    },
-    created() {
-            this.getTestimonials();
+        this.getTestimonials();
         this.getAllTransactions();
     },
+    
     components: { Testimonial },
     methods: {
         getTestimonials() {
@@ -73,7 +71,7 @@ export default {
         getTransactions(dateAfter = "") {
             this.$http
                 .get(
-                    "/auth/transactionss?pageSize=10&type=deposit&dateAfter=" +
+                    "/auth/transactionss?pageSize=10&type=deposit&confirmed=1&dateAfter=" +
                         dateAfter
                 )
                 .then((response) => {
@@ -86,7 +84,7 @@ export default {
         getWithdrawals(dateAfter = "") {
             this.$http
                 .get(
-                    "/auth/withdrawalss?pageSize=10&reference=not_bm&dateAfter=" +
+                    "/auth/withdrawalss?pageSize=10&reference=not_bm&confirmed=1&dateAfter=" +
                         dateAfter
                 )
                 .then((response) => {
@@ -96,16 +94,21 @@ export default {
                     console.log(error.response);
                 });
         },
-        getAllTransactions() {
+        getAllTransactions(type = "") {
             console.log("fetching all transactions");
-            if (this.transactions) {
+            if (type == "transactions" && this.transactions) {
                 var lastTransaction = this.transactions[0];
                 this.getTransactions(lastTransaction.updated_at);
-            } else this.getTransactions();
-            if (this.withdrawals) {
+            }
+            else if (type == "withdrawals" && this.withdrawals) {
                 var lastWithdrawal = this.withdrawals[0];
                 this.getWithdrawals(lastWithdrawal.updated_at);
-            } else this.getWithdrawals();
+            } 
+            else {
+                this.getTransactions();
+                this.getWithdrawals();
+            }
+            
         },
     },
 };
@@ -797,7 +800,8 @@ export default {
             </section>
             <Transaction
                 v-if="transactions && withdrawals"
-                @refresh="getAllTransactions"
+                @refreshTransactions = "getAllTransactions('transactions')"
+                @refreshWithdrawals = "getAllTransactions('withdrawals')"
                 :transactions="transactions"
                 :withdrawals="withdrawals"
             ></Transaction>
