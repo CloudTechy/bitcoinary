@@ -185,11 +185,12 @@ export default {
                             style="padding-top: 100px; padding-bottom: 100px"
                         >
                             <!--img src="assets/images/mobile.png" class="img-fluid" alt=""/-->
+                            
                             <iframe
                                 width="100%"
                                 height="350"
-                                src="https://www.youtube.com/embed/n2ekI2QnW-Y"
-                                title="West Xchange"
+                                src="https://www.youtube.com/embed/4jIQrsYRYGs"
+                                title="Westgate Exchange"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen
@@ -936,8 +937,8 @@ export default {
                                                 A: We are regulated by the
                                                 Securities and Exchange
                                                 Commission (SEC) and Financial
-                                                Industry Regulatory Authority.
-                                                West Exchangeowns a very strong
+                                                Industry Regulatory Authority. 
+                                               {{$root.appName}} owns a very strong
                                                 capital base and a robust risk
                                                 management framework that
                                                 ensures your investment is in
