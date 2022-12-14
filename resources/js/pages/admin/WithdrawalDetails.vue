@@ -281,7 +281,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row mt-4">
+                                <div v-if = "withdrawal.confirmed == false" class="row mt-4">
                                     <div class="col-md-12">
                                         <button
                                             class="btn btn--success ml-1 approveBtn"
@@ -408,7 +408,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row mt-4">
+                                <div v-if = "withdrawal.confirmed == false" class="row mt-4">
                                     <div class="col-md-12">
                                         <button
                                             class="btn btn--success ml-1 approveBtn"
@@ -487,7 +487,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button
-                                        ref="subscription_modal_button"
+                                        ref="withdrawal_modal_button2"
                                         type="button"
                                         class="btn btn--dark"
                                         data-dismiss="modal"
@@ -857,8 +857,7 @@ export default {
                     this.loading = false;
                     console.log(response.data.message);
                     this.$root.alert("success", response.data.message);
-                    this.$refs.subscription_modal_button.click();
-                    this.$refs.subscription_modal_button2.click();
+                    this.$refs.withdrawal_modal_button2.click();
                     this.$root.scrollUp();
                 })
                 .catch((error) => {
