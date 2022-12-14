@@ -1,4 +1,4 @@
-/*** Pricing Tables ***/
+** Pricing Tables **
 #csprice > li {
   background: #ff5722;
   border-radius: 20px;
@@ -462,57 +462,9 @@
 
 /* about section css end */
 /* package section css start */
-.package-card {
-  padding: 30px;
-  border: 3px solid #0095eb;
-  background-color: #000000;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  height: 100%;
-  box-shadow: 0 0 15px rgba(204, 163, 84, 0.5);
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
 
-.package-card:hover {
-  box-shadow: 0 5px 15px rgba(204, 163, 84, 0.5);
-  -webkit-transform: translateY(-5px);
-  -ms-transform: translateY(-5px);
-  transform: translateY(-5px);
-}
-
-.package-card__title {
-  font-size: 32px;
-}
-
-.package-card__percantage {
-  font-size: 24px;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 600;
-}
-
-.package-card__features li {
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(204, 163, 84, 0.35);
-}
-
-.package-card__range {
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 600;
-  font-size: 24px;
-}
-
-/* package section css end */
 /* choose us section css start */
-.choose-card {
-  padding: 30px;
-  background-color: #0095eb;
-  background-color: rgba(0, 0, 0, 0.5);
-}
+
 
 .choose-card__header {
   display: -ms-flexbox;

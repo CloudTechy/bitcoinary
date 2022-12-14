@@ -291,6 +291,15 @@
                                         >
                                             <i class="fas fa-check"></i> Approve
                                         </button>
+                                        &nbsp;
+                                        <button
+                                            class="btn btn--danger ml-1"
+                                            data-original-title="Cancel withdrawal"
+                                            data-toggle="modal"
+                                            data-target="#rejectModal"
+                                        >
+                                            <i class="fas fa-ban"></i> Reject
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -409,6 +418,15 @@
                                         >
                                             <i class="fas fa-check"></i> Approve
                                         </button>
+                                            &nbsp;
+                                       <button
+                                            class="btn btn--danger ml-1"
+                                            data-original-title="Cancel withdrawal"
+                                            data-toggle="modal"
+                                            data-target="#rejectModal"
+                                        >
+                                            <i class="fas fa-ban"></i> Reject
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -500,7 +518,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">
-                                    Stop Subscription Confirmation
+                                    Reject withdrawal request
                                 </h5>
                                 <button
                                     type="button"
@@ -514,7 +532,7 @@
                             <form
                                 method="POST"
                                 @submit.prevent="
-                                    approveWithdrawal(withdrawal.id)
+                                    cancelWithdrawal(withdrawal.id)
                                 "
                             >
                                 <input type="hidden" name="id" />
@@ -522,12 +540,12 @@
                                     <p>
                                         Are you sure to
                                         <span class="font-weight-bold"
-                                            >terminate</span
+                                            >reject</span
                                         >
                                         <span
                                             class="font-weight-bold withdraw-amount text-success"
                                         ></span>
-                                        this subscription plan of
+                                        the withdrawal request of
                                         <span
                                             class="font-weight-bold withdraw-user"
                                             >{{
@@ -553,7 +571,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button
-                                        ref="subscription_modal_button2"
+                                        ref="withdrawal_modal_button"
                                         type="button"
                                         class="btn btn--dark"
                                         data-dismiss="modal"
@@ -566,7 +584,7 @@
                                         :loading="form.busy"
                                         aria-label="Reject"
                                     >
-                                        Terminate</VueLoadingButton
+                                        Reject</VueLoadingButton
                                     >
                                 </div>
                             </form>
@@ -773,7 +791,7 @@ export default {
                 .then((response) => {
                     this.loading = false;
                     this.withdrawal = response.data.data;
-                    this.fetchAcoountDetails(this.withdrawal.user_id);
+                    this.fetchAcountDetails(this.withdrawal.user_id);
                     this.key++;
                 })
                 .catch((error) => {
@@ -786,7 +804,7 @@ export default {
                     console.log(error);
                 });
         },
-        fetchAcoountDetails(id) {
+        fetchAcountDetails(id) {
             this.loading = true;
             this.form
                 .get(
@@ -816,6 +834,7 @@ export default {
             }
             return data;
         },
+        
         approveWithdrawal(id) {
             this.loading = true;
             if (this.form.image && this.form.image.size > 400000) {
@@ -850,6 +869,31 @@ export default {
                     } else {
                         this.error = error.response.data.message;
                     }
+                    console.log(error, error.response);
+                    this.form.reset();
+                });
+        },
+        cancelWithdrawal(id) {
+            this.loading = true;
+            this.form
+                .delete("/auth/withdrawals/" + id)
+                .then((response) => {
+                    this.loading = false;
+                    console.log(response.data.message);
+                    this.$root.alert("success", response.data.message);
+                    this.$refs.withdrawal_modal_button.click();
+                    this.$router.push({name:'withdrawals'})
+                })
+                .catch((error) => {
+                    this.loading = false;
+                    
+                    if (error.response.status == 422) {
+                        this.error = error.response.data.error.pop;
+                        this.$root.alert("error", error.response.data.message);
+                    } else {
+                        this.error = error.response.data.message;
+                    }
+                    
                     console.log(error, error.response);
                     this.form.reset();
                 });
