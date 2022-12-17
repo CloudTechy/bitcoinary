@@ -187,7 +187,7 @@ export default {
             
             
             for (let i = size - 1; i >= 0; i--) {
-                var last_date = data.length > 0 ? data[i + 1].correct_date : first_item.updated_at
+                var last_date = data.length > 0 ? data[i + 1].correct_date : first_item?first_item.updated_at:moment().add(48, 'h')
                 var difference = moment().diff(last_date, 'minutes') - i * 2
                 var RandomTens = Math.floor(Math.random() * difference);
                 var correct_date = moment(last_date).add(RandomTens, 'm')

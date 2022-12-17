@@ -107,6 +107,7 @@ class TeamController extends Controller {
         $validated = $request->validate([
              'name' => 'min:2|string|max:255',
             'designation' => 'string|max:255',
+            'intro' => 'nullable|string',
             'image' => 'mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
             'rank' => 'numeric',
         ]);

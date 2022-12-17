@@ -95,7 +95,6 @@ export default {
                 });
         },
         getAllTransactions(type = "") {
-            console.log("fetching all transactions");
             if (type == "transactions" && this.transactions) {
                 var lastTransaction = this.transactions[0];
                 this.getTransactions(lastTransaction.updated_at);

@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
-     protected $fillable = ['name', 'rank', 'designation', 'image'];
+     protected $fillable = ['name', 'rank', 'intro', 'designation', 'image'];
 
     public function scopeFilter($query, $filter) {
 
 		try {
 
-			$fields = ['name', 'rank', 'designation', 'image'];
+			$fields = ['name', 'rank', 'intro', 'designation', 'image'];
 
 			return $query->where(
 				function ($query) use ($filter, $fields) {

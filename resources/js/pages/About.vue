@@ -27,18 +27,17 @@ export default {
     <div class="page-wraper">
         <HomeHeader :domain="domain"></HomeHeader>
         <div class="no-bottom no-top" id="content">
-
             <!-- section begin -->
 
             <section
                 aria-label="section"
                 class="text-light"
                 id="subheader"
-                 :style="
-                        'background:url(' +
-                        $root.basepath +
-                        '/assets/images/home/bg2.jpg) center top;'
-                    "
+                :style="
+                    'background:url(' +
+                    $root.basepath +
+                    '/assets/images/home/bg2.jpg) center top;'
+                "
             >
                 <div class="center-y relative text-center">
                     <div class="container">
@@ -62,8 +61,8 @@ export default {
                         <div class="col-md-12">
                             <div class="theme-row-zero">
                                 <h2 style="text-align: center; color: #377dff">
-                                    At{{' ' + $root.appName+ ' '}}, we believe technology can,
-                                    and will, change the world.
+                                    At{{ " " + $root.appName }}, we believe
+                                    technology can, and will, change the world.
                                 </h2>
                                 <p style="text-align: center">
                                     We believe The Fourth Industrial Revolution
@@ -85,9 +84,9 @@ export default {
                                     leave behind.
                                 </p>
                                 <p style="text-align: center">
-                                    At{{' ' + $root.appName+ ' '}}, we’re committed to getting
-                                    it right. Starting with sustainably-mined
-                                    bitcoin.
+                                    At{{ " " + $root.appName + " " }}, we’re
+                                    committed to getting it right. Starting with
+                                    sustainably-mined bitcoin.
                                 </p>
                             </div>
                         </div>
@@ -298,7 +297,10 @@ export default {
                                         <div class="row">
                                             <div class="col-md-4 col-sm-4">
                                                 <img
-                                                    :src="$root.basepath + '/assets/images/home/STATS_1.svg'"
+                                                    :src="
+                                                        $root.basepath +
+                                                        '/assets/images/home/STATS_1.svg'
+                                                    "
                                                     width="100%"
                                                 />
                                             </div>
@@ -315,7 +317,10 @@ export default {
                                         <div class="row">
                                             <div class="col-md-4 col-sm-4">
                                                 <img
-                                                    :src="$root.basepath + '/assets/images/home/STATS_2.svg'"
+                                                    :src="
+                                                        $root.basepath +
+                                                        '/assets/images/home/STATS_2.svg'
+                                                    "
                                                     width="100%"
                                                 />
                                             </div>
@@ -333,7 +338,10 @@ export default {
                                         <div class="row">
                                             <div class="col-md-4 col-sm-4">
                                                 <img
-                                                    :src="$root.basepath + '/assets/images/home/STATS_2.svg'"
+                                                    :src="
+                                                        $root.basepath +
+                                                        '/assets/images/home/STATS_2.svg'
+                                                    "
                                                     width="100%"
                                                 />
                                             </div>
@@ -351,7 +359,10 @@ export default {
                                         <div class="row">
                                             <div class="col-md-4 col-sm-4">
                                                 <img
-                                                    :src="$root.basepath + '/assets/images/home/STATS_4.svg'"
+                                                    :src="
+                                                        $root.basepath +
+                                                        '/assets/images/home/STATS_4.svg'
+                                                    "
                                                     width="100%"
                                                 />
                                             </div>
@@ -391,7 +402,7 @@ export default {
                                 <div class="spacer-20"></div>
                                 <a
                                     class="btn-custom"
-                                    href="our-team.php"
+                                    href="/team"
                                     style="
                                         background-color: #ffcc29;
                                         color: #000;

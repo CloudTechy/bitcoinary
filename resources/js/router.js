@@ -62,10 +62,28 @@ const routes = [
     {
         path: "/terms",
         name: "Terms",
-        component: () => import("./pages/Error404"),
+        component: () => import("./pages/terms"),
         meta: {
             auth: undefined,
             title: "Terms",
+        },
+    },
+    {
+        path: "/privacy-policy",
+        name: "PrivacyPolicy",
+        component: () => import("./pages/PrivacyPolicy"),
+        meta: {
+            auth: undefined,
+            title: "Privacy Policy",
+        },
+    },
+    {
+        path: "/team",
+        name: "Team",
+        component: () => import("./pages/Team"),
+        meta: {
+            auth: undefined,
+            title: "Our Team",
         },
     },
     {

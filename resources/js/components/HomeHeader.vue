@@ -193,9 +193,9 @@ export default {
             <div class="container">
                 <div class="topbar-left sm-hide">
                     <span class="topbar-widget tb-social">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://westxchange.net"><i
+                        <a :href="'https://www.facebook.com/sharer/sharer.php?u=https://' +domain"><i
                                 class="fa fa-facebook"></i></a>
-                        <a href="https://twitter.com/intent/tweet?url=https://westxchange.net"><i
+                        <a :href="'https://twitter.com/intent/tweet?url=https://' +domain"><i
                                 class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-instagram"></i></a>
                     </span>

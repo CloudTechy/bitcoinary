@@ -26,6 +26,7 @@ class ValidateTeamRequest extends FormRequest
         return [
             'name' => 'required|min:2|string|max:255',
             'designation' => 'required|string|max:255',
+            'intro' => 'nullable|string',
             'image' => 'required|mimes:jpeg,jpg,png,bmp,gif,svg,tiff|max:2048',
             'rank' => 'numeric',
         ];

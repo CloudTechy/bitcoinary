@@ -1665,7 +1665,7 @@ input[type="checkbox"] {
     -webkit-border-radius: 10px;
 }
 
-#form_subscribe input[type="text"] {
+#form_subscribe input[type="email"] {
     padding: 9px 12px 9px 12px;
     width: 80%;
     float: left;
@@ -1681,7 +1681,7 @@ input[type="checkbox"] {
     box-shadow: 2px 2px 20px 0px rgba(20, 20, 20, 0.05);
 }
 
-#form_subscribe input[type="text"]:focus {
+#form_subscribe input[type="email"]:focus {
     background: #ffffff;
 }
 
@@ -6094,7 +6094,7 @@ a.btn-border,
 .feature-box-type-1:hover i,
 .feature-box-type-2 i,
 #contact_form input,
-#form_subscribe input[type="text"],
+#form_subscribe input[type="email"],
 .table-pricing tbody tr,
 #selector .dark-mode,
 #selector .dark-mode:hover,

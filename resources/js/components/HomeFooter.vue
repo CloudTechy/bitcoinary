@@ -1,6 +1,42 @@
 <script>
 export default {
+    data() {
+        return {
+            form: new Form({
+                email: undefined,
+            }),
+        };
+    },
     props: ["company", "domain"],
+    methods: {
+        subscribeNewsletter(email) {
+            if (email) {
+                this.form
+                    .post("/auth/newsletterss")
+                    .then((response) => {
+                        this.$root.alert(
+                            "success",
+                            " ",
+                            "Thank you for subscribing to our newsletter."
+                        );
+                    })
+                    .catch((error) => {
+                        this.errors = error.response.data.error || {};
+                        console.log(error.response);
+                        this.$root.alert(
+                            "error",
+                            "please try again with a valid email...",
+                            "subscription not successful"
+                        );
+                    });
+            } else  this.$root.alert(
+                            "error",
+                            " ",
+                            "Please input a valid email to subscribe"
+                        );;
+            return false;
+        },
+    },
 };
 </script>
 <template>
@@ -245,20 +281,20 @@ export default {
                     <div class="widget">
                         <h5 style="color: #fff">More Links</h5>
                         <ul>
-                            <li>
+                            <!-- <li>
                                 <a
                                     class="a-underline"
-                                    href="http://wallet.west-exchange.com/"
+                                    href="#"
                                     style="color: #fff"
                                     target="_blank"
                                 >
                                    {{' ' + $root.appName+ ' '}} Wallet</a
                                 >
-                            </li>
+                            </li> -->
                             <li>
                                 <a
                                     class="a-underline"
-                                    href="terms"
+                                    href="/terms"
                                     style="color: #fff"
                                     >Terms of Service</a
                                 >
@@ -266,7 +302,7 @@ export default {
                             <li>
                                 <a
                                     class="a-underline"
-                                    href="privacy-policy"
+                                    href="/privacy-policy"
                                     style="color: #fff"
                                     >Privacy policy</a
                                 >
@@ -286,6 +322,7 @@ export default {
                     <div class="widget">
                         <h5 style="color: #fff">Newsletter</h5>
                         <form
+                            @submit.prevent="subscribeNewsletter(form.email)"
                             action=""
                             class="row"
                             id="form_subscribe"
@@ -295,13 +332,12 @@ export default {
                             <div class="col text-center">
                                 <input
                                     class="form-control"
-                                    id="name_1"
-                                    name="name_1"
                                     placeholder="enter your email"
-                                    type="text"
+                                    type="email"
+                                    v-model="form.email"
                                 />
-                                <a href="#" id="btn-submit"
-                                    ><i class="arrow_right"></i
+                                <a type = "submit" @click.prevent="subscribeNewsletter(form.email)" href="#" class = "" id="btn-submit"
+                                    ><i class="arrow_right fa fa-arrow-circle-o-right"></i
                                 ></a>
                                 <div class="clearfix"></div>
                             </div>
@@ -321,7 +357,12 @@ export default {
                     <div class="col-md-12">
                         <div class="de-flex">
                             <div class="de-flex-col">
-                                &copy; {{ $root.fullYearTemplate + '&nbsp;' + $root.appName}}
+                                &copy;
+                                {{
+                                    $root.fullYearTemplate +
+                                    "&nbsp;" +
+                                    $root.appName
+                                }}
                             </div>
                             <!--<div class="de-flex-col">
                               <div class="social-icons">
@@ -337,4 +378,9 @@ export default {
     </footer>
     <!-- footer close -->
 </template>
-<style scoped></style>
+<style scoped>
+#btn-submit{
+      margin-left: -10px;
+    background-color: var(--primary_color);
+}
+</style>
