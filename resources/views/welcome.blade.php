@@ -281,6 +281,11 @@
   <script src="{{ asset('js/app.js') }}" defer></script>
   <script src="{{ asset('js/objectdata.js') }}" defer></script>
   <script src="{{ asset('assets/js/home/jquery.isotope.min.js') }}"></script>
+      <!-- <script src="{{ asset('assets/js/home/jquery.stellar.min.js') }}"></script>
+        <script src="{{ asset('assets/js/home/jquery.plugin.js') }}"></script>
+          <script src="{{ asset('assets/js/home/jquery.countTo.js') }}"></script>
+            <script src="{{ asset('assets/js/home/jquery.countdown.js') }}"></script> -->
+
    <!-- <script
       type="text/javascript"
       src="//s3.tradingview.com/tv.js"

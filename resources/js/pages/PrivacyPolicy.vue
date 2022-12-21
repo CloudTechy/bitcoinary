@@ -6,7 +6,7 @@ export default {
             domain: this.$root.appDomain,
         };
     },
-    beforeMount() {
+    created() {
         var js = document.createElement("script");
         js.setAttribute(
             "src",

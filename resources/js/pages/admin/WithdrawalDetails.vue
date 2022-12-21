@@ -397,6 +397,12 @@
                                                     >{{ label }}</label
                                                 >
                                             </div>
+                                            <p
+                                            v-for="err in error.pop"
+                                            class="small text-danger"
+                                        >
+                                            {{ err }}
+                                        </p>
                                         </div>
                                         <p
                                             v-for="err in error"
@@ -473,7 +479,7 @@
                                         <span
                                             class="font-weight-bold withdraw-amount text-success"
                                         ></span>
-                                        the withdrawl request of
+                                        the withdrawal request of
                                         <span
                                             class="font-weight-bold withdraw-user"
                                             >{{
@@ -855,7 +861,6 @@ export default {
                 .then((response) => {
                     this.fetchWithdrawal(this.$route.params.id);
                     this.loading = false;
-                    console.log(response.data.message);
                     this.$root.alert("success", response.data.message);
                     this.$refs.withdrawal_modal_button2.click();
                     this.$root.scrollUp();

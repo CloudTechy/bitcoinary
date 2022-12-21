@@ -83,6 +83,10 @@ export default {
             "src",
             this.$root.basepath + "/assets/js/home/designesia.js"
         );
+         js.setAttribute(
+            "defer",
+            true
+        );
         document.body.appendChild(js);
 
         js = document.createElement("script");
