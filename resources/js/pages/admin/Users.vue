@@ -112,7 +112,7 @@
                                                         
                                                     >
                                                         <i
-                                                            class="las la-desktop text--shadow"
+                                                            class="fas fa-desktop text--shadow"
                                                         ></i>
                                                     </a>
                                                 </td>

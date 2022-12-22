@@ -117,7 +117,7 @@
                                                         disabled
                                                     >
                                                         <i
-                                                            class="la la-pencil"
+                                                            class="fa fa-pencil-alt"
                                                         ></i>
                                                     </a>
 
@@ -135,7 +135,7 @@
                                                         disabled
                                                     >
                                                         <i
-                                                            class="la la-eye-slash"
+                                                            class="fa fa-eye-slash"
                                                         ></i>
                                                     </a>
                                                 </td>

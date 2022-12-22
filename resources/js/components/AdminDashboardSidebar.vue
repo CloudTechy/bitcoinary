@@ -4,7 +4,7 @@
         :data-background="$root.basepath + '/assets/admin/images/sidebar/2.jpg'"
     >
         <button class="res-sidebar-close-btn">
-            <i class="las la-times"></i>
+            <i class="fas fa-times"></i>
         </button>
         <div class="sidebar__inner">
             <div class="sidebar__logo">
@@ -30,7 +30,7 @@
                             :href="$root.basepath + '/admin/dashboard'"
                             class="nav-link"
                         >
-                            <i class="menu-icon las la-home"></i>
+                            <i class="menu-icon fas fa-home"></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
@@ -43,14 +43,14 @@
                             data-toggle="tooltip"
                             data-original-title="Link currently unavailable"
                         >
-                            <i class="menu-icon las la-tree"></i>
+                            <i class="menu-icon fas fa-tree"></i>
                             <span class="menu-title">Manage Referral</span>
                         </a>
                     </li>
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon las la-clipboard-check"></i>
+                            <i class="menu-icon fas fa-clipboard-check"></i>
                             <span class="menu-title">Plan Manage</span>
                         </a>
                         <div class="sidebar-submenu">
@@ -67,7 +67,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Time Manage</span
@@ -85,7 +85,7 @@
                                                         data-original-title="manage investment plans"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Plan Manage</span
@@ -98,7 +98,7 @@
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon las la-users"></i>
+                            <i class="menu-icon fas fa-users"></i>
                             <span class="menu-title">Manage Users</span>
 
                             <span class="menu-badge pill bg--primary ml-auto">
@@ -113,7 +113,7 @@
                                         class="nav-link"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >All Users</span
@@ -133,7 +133,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Active Users</span
@@ -152,7 +152,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Banned Users</span
@@ -172,7 +172,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Email Unverified</span
@@ -197,7 +197,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >SMS Unverified</span
@@ -221,7 +221,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Login History</span
@@ -241,7 +241,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Send Email</span
@@ -254,7 +254,7 @@
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon las la-credit-card"></i>
+                            <i class="menu-icon fas fa-credit-card"></i>
                             <span class="menu-title">Deposit System</span>
                             <span class="menu-badge pill bg--primary ml-auto">
                                 <i class="fa fa-exclamation"></i>
@@ -274,7 +274,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Automatic Gateways</span
@@ -290,7 +290,7 @@
                                         class="nav-link"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Manual Gateways</span
@@ -310,7 +310,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Pending Deposits</span
@@ -334,7 +334,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Approved Deposits</span
@@ -354,7 +354,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Successful Deposits</span
@@ -374,7 +374,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Rejected Deposits</span
@@ -384,7 +384,7 @@
                                 <li class="sidebar-menu-item">
                                     <a :href="$root.basepath + '/admin/subscriptions'
                                                                         " class="nav-link">
-                                        <i class="menu-icon las la-dot-circle"></i>
+                                        <i class="menu-icon fas fa-dot-circle"></i>
                                         <span class="menu-title">Subscription requests</span>
                                     </a>
                                 </li>
@@ -396,7 +396,7 @@
                                         class="nav-link"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >All Deposits</span
@@ -409,7 +409,7 @@
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon la la-bank"></i>
+                            <i class="menu-icon fa fa-money-bill-alt"></i>
                             <span class="menu-title">Withdrawals </span>
                             <span class="menu-badge pill bg--primary ml-auto">
                                 <i class="fa fa-exclamation"></i>
@@ -429,7 +429,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Withdraw Methods</span
@@ -449,7 +449,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Pending Log</span
@@ -474,7 +474,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Approved Log</span
@@ -494,7 +494,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Rejected Log</span
@@ -511,7 +511,7 @@
                                         class="nav-link"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Withdrawals</span
@@ -524,7 +524,7 @@
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon la la-ticket"></i>
+                            <i class="menu-icon fa fa-ticket-alt"></i>
                             <span class="menu-title">Support Ticket </span>
                             <span class="menu-badge pill bg--primary ml-auto">
                                 <i class="fa fa-exclamation"></i>
@@ -543,7 +543,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >All Ticket</span
@@ -562,7 +562,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Pending Ticket</span
@@ -585,7 +585,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Closed Ticket</span
@@ -604,7 +604,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Answered Ticket</span
@@ -617,7 +617,7 @@
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon la la-list"></i>
+                            <i class="menu-icon fa fa-list"></i>
                             <span class="menu-title">Report </span>
                         </a>
                         <div class="sidebar-submenu">
@@ -634,7 +634,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Transaction Log</span
@@ -653,7 +653,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Invest Plan Log</span
@@ -673,7 +673,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Commission Log</span
@@ -692,7 +692,7 @@
                             data-toggle="tooltip"
                                                         data-original-title="Link currently unavailable"
                         >
-                            <i class="menu-icon las la-ad"></i>
+                            <i class="menu-icon fas fa-ad"></i>
                             <span class="menu-title">Promotional Tool</span>
                         </a>
                     </li>
@@ -706,7 +706,7 @@
                                                         data-original-title="Link currently unavailable"
                             data-default-url="/admin/subscriber"
                         >
-                            <i class="menu-icon las la-thumbs-up"></i>
+                            <i class="menu-icon fas fa-thumbs-up"></i>
                             <span class="menu-title">Subscribers </span>
                         </a>
                     </li>
@@ -720,7 +720,7 @@
                                                         data-original-title="Link currently unavailable"
                             data-default-url="/admin/language"
                         >
-                            <i class="menu-icon las la-language"></i>
+                            <i class="menu-icon fas fa-language"></i>
                             <span class="menu-title">Language </span>
                         </a>
                     </li>
@@ -735,7 +735,7 @@
                             data-toggle="tooltip"
                                                         data-original-title="Link currently unavailable"
                         >
-                            <i class="menu-icon las la-life-ring"></i>
+                            <i class="menu-icon fas fa-life-ring"></i>
                             <span class="menu-title">Settings</span>
                         </a>
                     </li>
@@ -748,7 +748,7 @@
                             data-toggle="tooltip"
                                                         data-original-title="Link currently unavailable"
                         >
-                            <i class="menu-icon las la-images"></i>
+                            <i class="menu-icon fas fa-images"></i>
                             <span class="menu-title">Logo Icon Setting</span>
                         </a>
                     </li>
@@ -761,7 +761,7 @@
                             data-toggle="tooltip"
                                                         data-original-title="Link currently unavailable"
                         >
-                            <i class="menu-icon las la-cogs"></i>
+                            <i class="menu-icon fas fa-cogs"></i>
                             <span class="menu-title">Plugins</span>
                         </a>
                     </li>
@@ -774,14 +774,14 @@
                             data-toggle="tooltip"
                                                         data-original-title="Link currently unavailable"
                         >
-                            <i class="menu-icon las la-globe"></i>
+                            <i class="menu-icon fas fa-globe"></i>
                             <span class="menu-title">SEO</span>
                         </a>
                     </li>
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon la la-envelope-o"></i>
+                            <i class="menu-icon fa fa-envelope"></i>
                             <span class="menu-title">Email Manager</span>
                         </a>
                         <div class="sidebar-submenu">
@@ -798,7 +798,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Global Template</span
@@ -817,7 +817,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Email Templates</span
@@ -837,7 +837,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Email Configure</span
@@ -850,7 +850,7 @@
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon la la-mobile"></i>
+                            <i class="menu-icon fa fa-mobile"></i>
                             <span class="menu-title">SMS Manager</span>
                         </a>
                         <div class="sidebar-submenu">
@@ -867,7 +867,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Global Setting</span
@@ -886,7 +886,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >SMS Gateways</span
@@ -905,7 +905,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >SMS Templates</span
@@ -924,7 +924,7 @@
                             data-toggle="tooltip"
                                                         data-original-title="Link currently unavailable"
                         >
-                            <i class="menu-icon la la-toggle-off"></i>
+                            <i class="menu-icon fa fa-toggle-off"></i>
                             <span class="menu-title">Holiday Setting</span>
                         </a>
                     </li>
@@ -937,7 +937,7 @@
                             data-toggle="tooltip"
                                                         data-original-title="Link currently unavailable"
                         >
-                            <i class="menu-icon las la-cookie-bite"></i>
+                            <i class="menu-icon fas fa-cookie-bite"></i>
                             <span class="menu-title">GDPR Cookie</span>
                         </a>
                     </li>
@@ -952,7 +952,7 @@
                             data-toggle="tooltip"
                                                         data-original-title="Link currently unavailable"
                         >
-                            <i class="menu-icon la la-html5"></i>
+                            <i class="menu-icon fa fa-file-code"></i>
                             <span class="menu-title">Active Template</span>
                         </a>
                     </li>
@@ -969,7 +969,7 @@
                             data-toggle="tooltip"
                                                         data-original-title="Link currently unavailable"
                         >
-                            <i class="menu-icon la la-list"></i>
+                            <i class="menu-icon fa fa-list"></i>
                             <span class="menu-title">Manage Pages</span>
                         </a>
                     </li>
@@ -978,7 +978,7 @@
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon la la-html5"></i>
+                            <i class="menu-icon fa fa-file-code"></i>
                             <span class="menu-title">Section Manage</span>
                         </a>
                         <div class="sidebar-submenu">
@@ -995,7 +995,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title">About</span>
                                     </a>
@@ -1012,7 +1012,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Banner Content</span
@@ -1031,7 +1031,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Blog Section</span
@@ -1050,7 +1050,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Breadcrumb</span
@@ -1069,7 +1069,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Profit Calculator</span
@@ -1088,7 +1088,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title">Contact</span>
                                     </a>
@@ -1105,7 +1105,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Call To Action</span
@@ -1124,7 +1124,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title">FAQ</span>
                                     </a>
@@ -1141,7 +1141,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title">Footer</span>
                                     </a>
@@ -1158,7 +1158,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title">How Work</span>
                                     </a>
@@ -1175,7 +1175,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title">Links</span>
                                     </a>
@@ -1192,7 +1192,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title">Login</span>
                                     </a>
@@ -1209,7 +1209,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title">Plan</span>
                                     </a>
@@ -1226,7 +1226,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title">Register</span>
                                     </a>
@@ -1243,7 +1243,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Social Icon</span
@@ -1262,7 +1262,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Subscribe Section</span
@@ -1281,7 +1281,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Team Member</span
@@ -1300,7 +1300,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Testimonial</span
@@ -1319,7 +1319,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Top Investor</span
@@ -1338,7 +1338,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Transaction Section</span
@@ -1357,7 +1357,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >We Accept Section</span
@@ -1376,7 +1376,7 @@
                                                         data-original-title="Link currently unavailable"
                                     >
                                         <i
-                                            class="menu-icon las la-dot-circle"
+                                            class="menu-icon fas fa-dot-circle"
                                         ></i>
                                         <span class="menu-title"
                                             >Why Choose Us</span
@@ -1398,7 +1398,7 @@
                                                         data-original-title="Link currently unavailable"
                             data-default-url="/admin/system-info"
                         >
-                            <i class="menu-icon las la-server"></i>
+                            <i class="menu-icon fas fa-server"></i>
                             <span class="menu-title">System Information </span>
                         </a>
                     </li>
@@ -1424,7 +1424,7 @@
                             data-toggle="tooltip"
                                                         data-original-title="Link currently unavailable"
                         >
-                            <i class="menu-icon las la-broom"></i>
+                            <i class="menu-icon fas fa-broom"></i>
                             <span class="menu-title">Clear Cache</span>
                         </a>
                     </li>
@@ -1438,7 +1438,7 @@
                                                         data-original-title="Link currently unavailable"
                             data-default-url="/admin/request-report"
                         >
-                            <i class="menu-icon las la-bug"></i>
+                            <i class="menu-icon fas fa-bug"></i>
                             <span class="menu-title">Report & Request </span>
                         </a>
                     </li>

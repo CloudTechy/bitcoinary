@@ -170,7 +170,7 @@
                                                 </td>
                                                 <td data-label="Action">
                                         <a  :href="$root.basepath + '/admin/withdrawals/details/' + wt.id" class="icon-btn ml-1 " data-toggle="tooltip" title="" data-original-title="Detail">
-                                            <i class="la la-desktop"></i>
+                                            <i class="fa fa-desktop"></i>
                                         </a>
                                     </td>
                                                 

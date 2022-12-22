@@ -15,7 +15,7 @@
                         <a
                             :href="$root.basepath + '/admin/payment/manual'"
                             class="btn btn-sm btn--primary box--shadow1 text--small"
-                            ><i class="la la-fw la-backward"></i> Go Back
+                            ><i class="fa fa-fw la-backward"></i> Go Back
                         </a>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                                                         for="image"
                                                         class="bg-primary"
                                                         ><i
-                                                            class="la la-pencil"
+                                                            class="fa fa-pencil-alt"
                                                         ></i
                                                     ></label>
                                                 </div>
@@ -462,7 +462,7 @@
                                                                 class="disabled btn btn-sm btn-outline-light float-right addUserData"
                                                             >
                                                                 <i
-                                                                    class="la la-fw la-plus"
+                                                                    class="fa fa-fw la-plus"
                                                                 ></i
                                                                 >Add New
                                                             </button>

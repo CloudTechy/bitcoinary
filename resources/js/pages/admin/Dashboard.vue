@@ -62,7 +62,7 @@
                             class="dashboard-w1 bg--red b-radius--10 box-shadow"
                         >
                             <div class="icon">
-                                <i class="la la-ban"></i>
+                                <i class="fa fa-ban"></i>
                             </div>
                             <div class="details">
                                 <div class="numbers">
@@ -86,7 +86,7 @@
                     <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
                         <div class="dashboard-w1 bg--9 b-radius--10 box-shadow">
                             <div class="icon">
-                                <i class="la la-ban"></i>
+                                <i class="fa fa-ban"></i>
                             </div>
                             <div class="details">
                                 <div class="numbers">
@@ -137,7 +137,7 @@
                     <div class="col-xl-3 col-lg-4 col-sm-6 mb-30">
                         <div class="dashboard-w1 bg--3 b-radius--10 box-shadow">
                             <div class="icon">
-                                <i class="las la-dollar-sign"></i>
+                                <i class="fas fa-dollar-sign"></i>
                             </div>
                             <div class="details">
                                 <div class="numbers">
@@ -165,7 +165,7 @@
                             class="dashboard-w1 bg--17 b-radius--10 box-shadow"
                         >
                             <div class="icon">
-                                <i class="las la-clipboard-check"></i>
+                                <i class="fas fa-clipboard-check"></i>
                             </div>
                             <div class="details">
                                 <div class="numbers">
@@ -188,7 +188,7 @@
                             class="dashboard-w1 bg--11 b-radius--10 box-shadow"
                         >
                             <div class="icon">
-                                <i class="las la-hand-holding-usd"></i>
+                                <i class="fas fa-hand-holding-usd"></i>
                             </div>
                             <div class="details">
                                 <div class="numbers">
@@ -232,7 +232,7 @@
                                     <div
                                         class="widget-three__icon b-radius--rounded bg--primary box--shadow2"
                                     >
-                                        <i class="las la-wallet"></i>
+                                        <i class="fas fa-wallet"></i>
                                     </div>
                                     <div class="widget-three__content">
                                         <h2 class="numbers">{{totalDeposit.length}}</h2>
@@ -248,7 +248,7 @@
                                     <div
                                         class="widget-three__icon b-radius--rounded bg--pink box--shadow2"
                                     >
-                                        <i class="las la-money-bill"></i>
+                                        <i class="fas fa-money-bill"></i>
                                     </div>
                                     <div class="widget-three__content">
                                         <h2 class="numbers">{{$root.normalNumeral(totalDeposit.sum('amount'))}} USD</h2>
@@ -266,7 +266,7 @@
                                     <div
                                         class="widget-three__icon b-radius--rounded bg--teal box--shadow2"
                                     >
-                                        <i class="las la-money-check"></i>
+                                        <i class="fas fa-money-check"></i>
                                     </div>
                                     <div class="widget-three__content">
                                         <h2 class="numbers">0.00 USD</h2>
@@ -284,7 +284,7 @@
                                     <div
                                         class="widget-three__icon b-radius--rounded bg--green box--shadow2"
                                     >
-                                        <i class="las la-money-bill-wave"></i>
+                                        <i class="fas fa-money-bill-wave"></i>
                                     </div>
                                     <div class="widget-three__content">
                                         <h2 class="numbers">{{totalPendingDeposit}}</h2>

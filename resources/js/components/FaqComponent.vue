@@ -17,7 +17,7 @@
                                 <div class="card-header" id="headingOne">
                                     <h2 class="mb-0">
                                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            <i class="las la-question-circle"></i>
+                                            <i class="fas fa-question-circle"></i>
                                             <span>When can I deposit/withdraw from my Investment account?</span>
                                         </button>
                                     </h2>
@@ -32,7 +32,7 @@
                                 <div class="card-header" id="headingTwo">
                                     <h2 class="mb-0">
                                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            <i class="las la-question-circle"></i>
+                                            <i class="fas fa-question-circle"></i>
                                             <span>How do I check my account balance?</span>
                                         </button>
                                     </h2>
@@ -47,7 +47,7 @@
                                 <div class="card-header" id="headingThree">
                                     <h2 class="mb-0">
                                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            <i class="las la-question-circle"></i>
+                                            <i class="fas fa-question-circle"></i>
                                             <span>I forgot my password, what should I do?</span>
                                         </button>
                                     </h2>
@@ -62,7 +62,7 @@
                                 <div class="card-header" id="headingFour">
                                     <h2 class="mb-0">
                                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                            <i class="las la-question-circle"></i>
+                                            <i class="fas fa-question-circle"></i>
                                             <span>How will I know that the withdrawal has been successful?</span>
                                         </button>
                                     </h2>
@@ -77,7 +77,7 @@
                                 <div class="card-header" id="headingFive">
                                     <h2 class="mb-0">
                                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                            <i class="las la-question-circle"></i>
+                                            <i class="fas fa-question-circle"></i>
                                             <span>How much can I withdraw?</span>
                                         </button>
                                     </h2>

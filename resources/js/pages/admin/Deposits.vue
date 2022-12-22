@@ -127,7 +127,7 @@
                                                         tr.id
                                                     " class="icon-btn ml-1" data-toggle="tooltip" title=""
                                                         data-original-title="Detail">
-                                                        <i class="la la-desktop"></i>
+                                                        <i class="fa fa-desktop"></i>
                                                     </a>
                                                 </td>
                                             </tr>

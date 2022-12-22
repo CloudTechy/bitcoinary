@@ -2,7 +2,7 @@
     <nav class="navbar-wrapper">
             <form class="navbar-search" onsubmit="return false;">
                 <button type="submit" class="navbar-search__btn">
-                    <i class="las la-search"></i>
+                    <i class="fas fa-search"></i>
                 </button>
                 <input
                     type="search"
@@ -14,7 +14,7 @@
                             data-original-title="Not currently unavailable"
                 />
                 <button type="button" class="navbar-search__close">
-                    <i class="las la-times"></i>
+                    <i class="fas fa-times"></i>
                 </button>
 
                 <div id="navbar_search_result_area">
@@ -24,15 +24,15 @@
 
             <div class="navbar__left">
                 <button class="res-sidebar-open-btn">
-                    <i class="las la-bars"></i>
+                    <i class="fas fa-bars"></i>
                 </button>
                 <button type="button" class="fullscreen-btn">
                     <i
-                        class="fullscreen-open las la-compress"
+                        class="fullscreen-open fas fa-compress"
                         onclick="openFullscreen();"
                     ></i>
                     <i
-                        class="fullscreen-close las la-compress-arrows-alt"
+                        class="fullscreen-close fas fa-compress-arrows-alt"
                         onclick="closeFullscreen();"
                     ></i>
                 </button>
@@ -43,7 +43,7 @@
                     <li>
                         <button type="button" class="disabled navbar-search__btn-open" data-toggle="tooltip"
                             data-original-title="currently unavailable">
-                            <i class="las la-search"></i>
+                            <i class="fas fa-search"></i>
                         </button>
                     </li>
 
@@ -56,7 +56,7 @@
                             aria-haspopup="true"
                             aria-expanded="false"
                         >
-                            <i class="las la-bell text--primary"></i>
+                            <i class="fas fa-bell text--primary"></i>
                             <span class="pulse--primary"></span>
                         </button>
                         <div
@@ -173,7 +173,7 @@
                                     <span class="navbar-user__name">admin</span>
                                 </span>
                                 <span class="icon"
-                                    ><i class="las la-chevron-circle-down"></i
+                                    ><i class="fas fa-chevron-circle-down"></i
                                 ></span>
                             </span>
                         </button>
@@ -186,7 +186,7 @@
                                 class="dropdown-menu__item d-flex align-items-center px-3 py-2"
                             >
                                 <i
-                                    class="dropdown-menu__icon las la-user-circle"
+                                    class="dropdown-menu__icon fas fa-user-circle"
                                 ></i>
                                 <span class="dropdown-menu__caption"
                                     >Profile</span
@@ -198,7 +198,7 @@
                                 onclick = "return false"
                                 class="dropdown-menu__item d-flex align-items-center px-3 py-2"
                             >
-                                <i class="dropdown-menu__icon las la-key"></i>
+                                <i class="dropdown-menu__icon fas fa-key"></i>
                                 <span class="dropdown-menu__caption"
                                     >Password</span
                                 >
@@ -210,7 +210,7 @@
                                 class="dropdown-menu__item d-flex align-items-center px-3 py-2"
                             >
                                 <i
-                                    class="dropdown-menu__icon las la-sign-out-alt"
+                                    class="dropdown-menu__icon fas fa-sign-out-alt"
                                 ></i>
                                 <span class="dropdown-menu__caption"
                                     >Logout</span

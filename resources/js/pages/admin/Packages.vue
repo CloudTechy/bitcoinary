@@ -49,7 +49,7 @@
                                                 </td>
                                                 <td data-label="Action">
                                                     <a :href=" $root.basepath + '/admin/packages/edit/' + item.id"
-                                                        class="icon-btn"><i class="las la-pen"></i></a>
+                                                        class="icon-btn"><i class="fas fa-pen"></i></a>
                                                 </td>
                                             </tr>
 

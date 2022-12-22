@@ -226,7 +226,7 @@
                                         onclick = "return false"
                                     ></a>
                                     <div class="icon">
-                                        <i class="la la-exchange-alt"></i>
+                                        <i class="fa fa-exchange-alt"></i>
                                     </div>
                                     <div class="details">
                                         <div class="numbers">
@@ -257,7 +257,7 @@
                                         onclick = "return false"
                                     ></a>
                                     <div class="icon">
-                                        <i class="la la-money-bill"></i>
+                                        <i class="fa fa-money-bill"></i>
                                     </div>
                                     <div class="details">
                                         <div class="numbers">
@@ -290,7 +290,7 @@
                                         onclick = "return false"
                                     ></a>
                                     <div class="icon">
-                                        <i class="la la-users"></i>
+                                        <i class="fa fa-users"></i>
                                     </div>
                                     <div class="details">
                                         <div class="numbers">
@@ -316,7 +316,7 @@
                                         onclick = "return false"
                                     ></a>
                                     <div class="icon">
-                                        <i class="la la-money"></i>
+                                        <i class="fa fa-money"></i>
                                     </div>
                                     <div class="details">
                                         <div class="numbers">
@@ -526,7 +526,7 @@
                                                 <small
                                                     class="form-text text-muted"
                                                     ><i
-                                                        class="las la-info-circle"
+                                                        class="fas fa-info-circle"
                                                     ></i>
                                                     House number, street address
                                                 </small>
