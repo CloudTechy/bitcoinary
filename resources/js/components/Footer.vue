@@ -31,7 +31,7 @@ company: this.$root.appName,
                         <a style="max-height: 200px;" href="#" class="footer-logo"><img :src="$root.basepath + '/assets/images/logo2.png'" alt="image"></a>
                         <ul class="footer-short-menu d-flex flex-wrap justify-content-center mt-4">
                             <li><a href="/">Home</a></li>
-                            <li><a href="/terms#privacy">Privacy & Policy</a></li>
+                            <li><a href="/terms#privacy-policy">Privacy & Policy</a></li>
                             <li><a href="/terms">Terms & Conditions</a></li>
                         </ul>
                     </div>

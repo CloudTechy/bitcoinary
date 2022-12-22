@@ -62,7 +62,7 @@ const routes = [
     {
         path: "/terms",
         name: "Terms",
-        component: () => import("./pages/Error404"),
+        component: () => import("./pages/terms"),
         meta: {
             auth: undefined,
             title: "Terms",

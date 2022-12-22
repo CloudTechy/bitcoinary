@@ -185,7 +185,7 @@
                                   <tbody>
                                     <tr>
                                       <td style="width:150px;">
-                                        <img height="auto" src="{{asset('images/logo.png')}}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="150" />
+                                        <img height="auto" src="{{asset('images/email-logo.png')}}" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="150" />
                                       </td>
                                     </tr>
                                   </tbody>

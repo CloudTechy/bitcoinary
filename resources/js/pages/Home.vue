@@ -1691,13 +1691,13 @@ export default {
                                                     Send an email to our support
                                                     team via
                                                 </p>
-                                                <h4 class="text-secondry">
+                                                <h4 class="text-secondary">
                                                     <a style="
                                                             font-weight: 500;
                                                             font-size: 16px;
-                                                        " class="text-white" href="mailto:support@FxTradingMax.com">
-                                                        <span class="text-white">support@{{
-                                                        domain
+                                                        " class="text-white" :href="'mailto:' + 'support@'+domain">
+                                                        <span class="text-white">{{
+                                                        'support@'+domain
                                                         }}</span>
                                                     </a>
                                                 </h4>

@@ -108,8 +108,23 @@ const app = new Vue({
         appName() {
             return process.env.MIX_APP_NAME;
         },
+        appEmail() {
+            return process.env.MIX_MAIL_FROM_ADDRESS;
+        },
         appDomain() {
             return process.env.MIX_APP_DOMAIN;
+        },
+        appCompanyNumber() {
+            return "4567.7855.45";
+        },
+        appCompanyAddress() {
+            return "Rte de la Piscine 14, 1950 Sion, Switzerland";
+        },
+        appCompanyLocation() {
+            return "Switzerland";
+        },
+        appCompanyTelephone() {
+            return "+447425491035";
         },
         fullYearTemplate() {
             return "2020 - " + moment().get("year");

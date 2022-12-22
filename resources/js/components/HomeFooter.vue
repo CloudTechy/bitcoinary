@@ -63,7 +63,7 @@ export default {
                           <a
                             style="font-weight: 500; font-size: 16px"
                             class="text-white"
-                            :href="'mailto:support@' + domain + '.com'"
+                            :href="'mailto:' + 'support@'+domain"
                           >
                             <span class="text-white"
                               >{{'support@'+domain}}</span
@@ -84,7 +84,7 @@ export default {
                           <a target="_blank"
                             href="https://api.whatsapp.com/send?phone=447425491035&text=Hello%2C%20I%20want%20to%20learn%20about%20your%20offer"
                             class="text-white"
-                            >+447425491035</a
+                            >{{ $root.appCompanyTelephone }}</a
                           >
                         </h5>
                       </div>
@@ -98,8 +98,8 @@ export default {
                       </div>
                       <div class="icon-content text-white">
                         <h5 class="wt-tilte text-uppercase m-b0">Address</h5>
-                        <p class="m-b0">Drottninggatan 7, 252 21 Helsingborg</p>
-                        <p>Sweden</p>
+                        <p class="m-b0">{{$root.appCompanyAddress}}</p>
+                        <p>{{$root.appCompanyLocation}}</p>
                       </div>
                     </div>
                   </ul>
@@ -161,7 +161,7 @@ export default {
           <div class="constrot-strip"></div>
           <div class="container p-t30">
             <div class="row">
-              <div class="wt-footer-bot-left">
+              <div class="text-center">
                 <span class="copyrights-text"
                   >&copy;{{$root.fullYearTemplate}}
                   <a href="/" class="base--color">{{company}}</a>. All rights

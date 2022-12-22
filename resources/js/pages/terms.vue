@@ -1,20 +1,150 @@
+<script>
+export default {
+    data() {
+        return {
+            company: this.$root.appName,
+            domain: this.$root.appDomain,
+        };
+    },
+    beforeMount() {
+        var js = document.createElement("script");
+        js.setAttribute("src", "assets/js/jquery-1.12.4.min.js");
+        js.setAttribute("async", true);
+        document.body.appendChild(js);
+        var js = document.createElement("script");
+        js.setAttribute("src", "assets/js/bootstrap.min.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/bootstrap-select.min.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/jquery.bootstrap-touchspin.min.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/jquery.bgscroll.js");
+        document.body.appendChild(js);
+    },
+    mounted() {
+        var js = document.createElement("script");
+        js.setAttribute("src", "assets/js/magnific-popup.min.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/waypoints.min.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/counterup.min.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/owl.carousel.min.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/waypoints-sticky.min.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/isotope.pkgd.min.js");
+        document.body.appendChild(js);
+
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/stellar.min.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/scrolla.min.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/custom.js");
+        js.setAttribute("defer", "");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/shortcode.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/jquery.bgscroll.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/tickerNews.min.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/ebuka.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            "assets/plugins/revolution/revolution/js/jquery.themepunch.tools.min.js"
+        );
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            "assets/plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js"
+        );
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute(
+            "src",
+            "assets/plugins/revolution/revolution/js/extensions/revolution-plugin.js"
+        );
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/rev-script-1.js");
+        document.body.appendChild(js);
+        js = document.createElement("script");
+        js.setAttribute("src", "assets/js/iziToast.min.js");
+        document.body.appendChild(js);
+    },
+
+    beforeCreate() { },
+};
+</script>
 <template>
-    <div class="page-wrapper">
-        <Header></Header>
-        <section class="bg_img pt-120 pb-120 border-top-1">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 text-center">
-                        <div class="section-header">
-                            <h2 class="section-title"><span class="font-weight-normal">Our </span> <b class="base--color">Terms and Condition </b></h2>
+   <div class="page-wraper">
+            <HomeHeader :domain="domain"></HomeHeader>
+            <div class="page-content">
+                <div class="wt-bnr-inr overlay-wraper" style="background-image: url('assets/images/banner/banner2.jpg');
+                    ">
+                    <div class="overlay-main bg-black opacity-07"></div>
+                    <div class="container">
+                        <div class="wt-bnr-inr-entry">
+                            <h1 class="text-white"><span class="font-weight-normal">Our </span>Terms and Condition </h1>
                         </div>
                     </div>
                 </div>
-                <div id="terms" class="col-lg-12">
-                    <div class="blog-details-wrapper">
-                        <div class="blog-details__content">
-                            <h4 class="blog-details__title">Terms of <span class="base--color"> Use </span></h4>
-                            <p class="text-justify">This user agreement (the Agreement) describes the terms and conditions of using the services provided by <span>{{$root.appName}}</span> to the registered user (Client), including the access to the personal account and payment operations performed through the <span>{{$root.appName}}</span> website located at <span>{{$root.appName}}</span>.
+                <div class="bg-white marquee">
+                    <div class="TickerNews" id="T1">
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container" style="width: 100%; height: 76px">
+                            <iframe scrolling="no" allowtransparency="true" frameborder="0"
+                                src="//s.tradingview.com/embed-widget/ticker-tape/?locale=en&amp;page-uri=https%3A%2F%2Feurogg.com%2Fabout#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22FOREXCOM%3ASPXUSD%22%2C%22title%22%3A%22S%26P%20500%22%7D%2C%7B%22proName%22%3A%22FOREXCOM%3ANSXUSD%22%2C%22title%22%3A%22Nasdaq%20100%22%7D%2C%7B%22proName%22%3A%22FX_IDC%3AEURUSD%22%2C%22title%22%3A%22EUR%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22BTC%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22ETH%2FUSD%22%7D%2C%7B%22description%22%3A%22DOGE%2FUSDT%22%2C%22proName%22%3A%22BINGBON%3ADOGEUSDT%22%7D%2C%7B%22description%22%3A%22XRP%2FUSDT%22%2C%22proName%22%3A%22BINANCE%3AXRPUSDT%22%7D%2C%7B%22description%22%3A%22BCH%2FUSDT%22%2C%22proName%22%3A%22KRAKEN%3ABCHUSDT%22%7D%2C%7B%22description%22%3A%22KISHU%2FUSDT%22%2C%22proName%22%3A%22OKEX%3AKISHUUSDT%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22light%22%2C%22isTransparent%22%3Atrue%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A76%2C%22utm_source%22%3A%22fxtradingmax.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%7D"
+                                style="
+                                    box-sizing: border-box;
+                                    height: 44px;
+                                    width: 100%;
+                                "></iframe>
+
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </div>
+                </div>
+                <div class="bg-gray-light p-tb10">
+                    <div class="container">
+                        <ul class="wt-breadcrumb breadcrumb-style-2">
+                            <li>
+                                <a href="/"> <i class="fa fa-home"></i> Home</a>
+                            </li>
+                            <li>Terms</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="section-full p-tb10">
+                    <div class="container">
+                        <div class="row" id = "terms">
+                            <div class="col-md-10 col-sm-12" style = "float:none; margin:auto">
+                                <div class="section-head text-left">
+                                    <span class="wt-title-subline text-gray-dark font-16 m-b15"></span>
+                                    <h2 class="blog-details__title">Terms of Use</h2>
+                                    <div class="wt-separator-outer">
+                                        <div class="wt-separator bg-primary"></div>
+                                    </div>
+                                    <p class="text-justify">This user agreement (the Agreement) describes the terms and conditions of using the services provided by <span>{{$root.appName}}</span> to the registered user (Client), including the access to the personal account and payment operations performed through the <span>{{$root.appName}}</span> website located at <span>{{$root.appName}}</span>.
                                 <br>Using <span>{{$root.appName}}</span> services, you confirm that you have read this Agreement, understood its meaning in full and accept this Agreement.
                                 <br>All interested parties are required to read all that is written and stated on this page without skipping even a single word. This acts as the official and binding terms and conditions between You the registrant and our company <span>{{$root.appName}}</span>.
                                 <br>Prior to registration, all interested registrants understand that upon registration, you shall be bound by these terms and conditions without negotiations. If you are not ready to accept the terms written herewith, please do not register for an account.
@@ -25,55 +155,124 @@
                                 <br><span>{{$root.appName}}</span> services are not available to the general public and are opened only to the qualified members of <span>{{$root.appName}}</span>, the use of this site is restricted to our members and to individuals personally invited by them. Every deposit is considered to be a private transaction between the <span>{{$root.appName}}</span> and its Member.
                                 <br>We reserve the rights to decline, reject and reverse deposits back to the depositor for reasons we may either disclose publicly or not, and for whatever reason we deem necessary for the better performance of our company.
                                 <br>All transactions are final and no refunding possible once a deposit has been made. On special situations where applicable, we will issue refunds.</p>
+                                </div>
+                            </div>
+
+                            <!-- <div class="col-md-6 col-sm-6">
+                                <div class="wt-media">
+                                    <img src="/assets/images/rocket.png" alt="" class="img-responsive" />
+                                </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
-                <div id="restrictions" class="col-lg-12">
-                    <div class="blog-details-wrapper">
-                        <div class="blog-details__content">
-                            <h4 class="blog-details__title base--color">Restrictions</h4>
-                            <p class="text-justify">You may not use the Services if you are located in, or a citizen or resident of any state, country, territory or other jurisdiction that is embargoed by the UNSC or where your use of the Services would be illegal or otherwise violate any applicable law. You represent and warrant that you are not a citizen or resident of any such jurisdiction and that you will not use any Services while located in any such jurisdiction. You also may not use the Services if you are located in, or a citizen or resident of, any other jurisdiction where <span>{{$root.appName}}</span> has determined, at its discretion, to prohibit use of the Services (USA etc.). <span>{{$root.appName}}</span> may implement controls to restrict access to the Services from any jurisdiction prohibited pursuant to this Section. You will comply with this Section, even if <span>{{$root.appName}}</span> methods to prevent use of the Services are not effective or can be bypassed.
+                <div class="section-full p-tb10">
+                    <div class="container">
+                        <div class="row" id = "Restrictions">
+                            <div class="col-md-10 col-sm-12" style = "float:none; margin:auto">
+                                <div class="section-head text-left">
+                                    <span class="wt-title-subline text-gray-dark font-16 m-b15"></span>
+                                    <h2 class="blog-details__title">Restrictions</h2>
+                                    <div class="wt-separator-outer">
+                                        <div class="wt-separator bg-primary"></div>
+                                    </div>
+                                    <p class="text-justify">You may not use the Services if you are located in, or a citizen or resident of any state, country, territory or other jurisdiction that is embargoed by the UNSC or where your use of the Services would be illegal or otherwise violate any applicable law. You represent and warrant that you are not a citizen or resident of any such jurisdiction and that you will not use any Services while located in any such jurisdiction. You also may not use the Services if you are located in, or a citizen or resident of, any other jurisdiction where <span>{{$root.appName}}</span> has determined, at its discretion, to prohibit use of the Services (USA etc.). <span>{{$root.appName}}</span> may implement controls to restrict access to the Services from any jurisdiction prohibited pursuant to this Section. You will comply with this Section, even if <span>{{$root.appName}}</span> methods to prevent use of the Services are not effective or can be bypassed.
                                 <br>We reserve the right to use “geo-blocking”, that is, we may block by IP-address the visitors that arrive from the US. Any resident or citizen of the United States of America is prohibited from using the website, making any operations at dashboard. We reserve the right to immediately close any of your accounts and liquidate any operation if it is determined that you have provided false information about your location or place of residence. We also reserve the right to block by IP address the visitors that arrive from countries included in the sanction lists.
                                 <br>The Company may at any time institute daily, weekly and/or monthly transactional limits on a Customer's use of the Service. These limits may be changed at any time for any reason by the Company. Each Customer may have different transactional limits for different reasons.
                                 <br>If a Customer is suspected of using multiple accounts to override the daily or weekly transactional limits, that shall be reason by the Company to suspend all of implicated accounts from the Service.
                                 <br>You are not allowed to use more than one account per IP address. You are not allowed to create multiple accounts. You are not allowed to login more than one account on the same computer. This includes family, friends and using your account on public computers. You may not permit any other person to use your Account. Unless we otherwise permit from time to time, you may not open more than one Account and we may, without notice, close any or all of the Accounts of a Member who has, or whom we reasonably suspect has, unauthorised multiple Accounts.
                                 <br>Our company assumes no responsibility for lost, late, incomplete, incorrect, or misdirected registrations. We are not responsible for technical, hardware or software malfunctions, misdirected entries, lost or unavailable network connections, or other communications or other technical problems related to the registration.
                                 <br>We do not accept any responsibility to you for:
-                                <br>- malfunctions in communications facilities which cannot reasonably be considered to be under our control and that may affect the accuracy or timeliness of messages you send to us;
-                                <br>- any losses or delays in transmission of messages arising out of the use of any Internet access service provider or caused by any browser or other software which is not under our control;
-                                <br>- the services provided to you by your e-payment issuer or provider (Payeer, PerfectMoney, Blockhain.info, Cryptonator, Coinomi etc), as well as transaction delays due to their fault;
-                                <br>- viruses caused by third parties;
-                                <br>- errors on the Site or with the <span>{{$root.appName}}</span> Online Service caused by incomplete or incorrect information provided to us by you or a third party;
-                                <br>- any unauthorised use or interception of any message or information before it reaches the Site;
-                                <br>- any unauthorised use of or access to data relating to you or your transactions which is held by us (unless such use or access is caused by our negligence, fraud or failure to comply with laws relating to the protection of your data); We have no obligation to you to initiate or perform a money transfer or other transaction as part of the <span>{{$root.appName}}</span> Online Service if:
-                                <br>- we are unable to obtain satisfactory evidence of your identity;
-                                <br>- we have reason to believe that the transaction message is incorrect, unauthorized or forged;
-                                <br>- you provide us with incorrect or incomplete information or if your transaction message is not given to us sufficiently in advance to allow for timely provision of the requested transaction;
-                                <br>- your e-payment issuer or provider does not authorise your use of your e-payment account for payment of the transaction and our related charges,
+                                <br>&nbsp; - malfunctions in communications facilities which cannot reasonably be considered to be under our control and that may affect the accuracy or timeliness of messages you send to us;
+                                <br>&nbsp; - any losses or delays in transmission of messages arising out of the use of any Internet access service provider or caused by any browser or other software which is not under our control;
+                                <br>&nbsp; - the services provided to you by your e-payment issuer or provider (Payeer, PerfectMoney, Blockhain.info, Cryptonator, Coinomi etc), as well as transaction delays due to their fault;
+                                <br>&nbsp; - viruses caused by third parties;
+                                <br>&nbsp; - errors on the Site or with the <span>{{$root.appName}}</span> Online Service caused by incomplete or incorrect information provided to us by you or a third party;
+                                <br>&nbsp; - any unauthorised use or interception of any message or information before it reaches the Site;
+                                <br>&nbsp; - any unauthorised use of or access to data relating to you or your transactions which is held by us (unless such use or access is caused by our negligence, fraud or failure to comply with laws relating to the protection of your data); We have no obligation to you to initiate or perform a money transfer or other transaction as part of the <span>{{$root.appName}}</span> Online Service if:
+                                <br>&nbsp; - we are unable to obtain satisfactory evidence of your identity;
+                                <br>&nbsp; - we have reason to believe that the transaction message is incorrect, unauthorized or forged;
+                                <br>&nbsp; - you provide us with incorrect or incomplete information or if your transaction message is not given to us sufficiently in advance to allow for timely provision of the requested transaction;
+                                <br>&nbsp; - your e-payment issuer or provider does not authorise your use of your e-payment account for payment of the transaction and our related charges,
                                 <br>and we do not accept any liability for damages resulting from 3rd party non-payment or delay in payment of a money transfer to our internal accounts or failure to perform a transaction under the <span>{{$root.appName}}</span> Online Service by reason of any of these matters. If you received payment for advertising / listing from our official wallet, which provides for a certain amount of reinvest in the project, it means that you do not can close the deposit and withdraw all funds including deposit, you can only withdraw daily income 5% from the deposit, otherwise we are entitled to suspend payments to you. We may refuse to provide the <span>{{$root.appName}}</span> Online Service (in whole or in part) to you if to do so may breach any <span>{{$root.appName}}</span> policy (including policies intended to prevent fraud, money laundering or terrorist financing) and/or any applicable law, order of a court or requirement of any regulatory or governmental authority, body or agency having jurisdiction over us, or if we otherwise consider such action necessary to protect our interests.
                                 <br>We may suspend the operation of the <span>{{$root.appName}}</span> Online Service in whole or in part if, in our absolute discretion, we consider it appropriate to do so by reason of any circumstances beyond our control. We shall not be liable to you for any loss or liability which may be suffered or incurred by you as a result of any such interruption, even if caused by our negligence or Force Majeure.</p>
+                  </div>
+                            </div>
+
+                            <!-- <div class="col-md-6 col-sm-6">
+                                <div class="wt-media">
+                                    <img src="/assets/images/rocket.png" alt="" class="img-responsive" />
+                                </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
-                <div id="privacy" class="col-lg-12">
-                    <div class="blog-details-wrapper">
-                        <div class="blog-details__content">
-                            <h4 class="blog-details__title">Privacy <span class="base--color"> Policy </span> </h4>
-                            <p class="">Since we conduct business in the UK we have to follow the AML &amp; KYC requirements strictly. As part of our AML policy, we ensure that any client agreeing to use our services, is also agreeing - if it is requested by <span>{{$root.appName}}</span> - to provide us with identification documentation, including but not limited to the high resolution (300 DPI) color scan of all sides of the following Personal Identity Documents and/or Proof of Address Documents:
+
+                <div class="section-full p-tb10">
+                    <div class="container">
+                        <div class="row" id = "privacy-policy">
+                            <div class="col-md-10 col-sm-12" style = "float:none; margin:auto">
+                                <div class="section-head text-left">
+                                    <span class="wt-title-subline text-gray-dark font-16 m-b15"></span>
+                                    <h2 class="blog-details__title">Privacy Policy</h2>
+                                    <div class="wt-separator-outer">
+                                        <div class="wt-separator bg-primary"></div>
+                                    </div>
+                                    <p class="">Since we conduct business in the UK we have to follow the AML &amp; KYC requirements strictly. As part of our AML policy, we ensure that any client agreeing to use our services, is also agreeing - if it is requested by <span>{{$root.appName}}</span> - to provide us with identification documentation, including but not limited to the high resolution (300 DPI) color scan of all sides of the following Personal Identity Documents and/or Proof of Address Documents:
                                 <br>1. Personal Identity Documents:
-                                <br>- Current valid full EU or non EU Passport;
-                                <br>- Current valid National ID card;
-                                <br>- Current valid Driving License;
+                                <br>&nbsp;- Current valid full EU or non EU Passport;
+                                <br>&nbsp;- Current valid National ID card;
+                                <br>&nbsp;- Current valid Driving License;
                                 <br>2. Proof of Address Documents:
-                                <br>- Recent (not more 3 months) Utility Bill — Gas, Electricity, Water, Telephone (Not mobile phones)
-                                <br>- Bank Statement
+                                <br>&nbsp; - Recent (not more 3 months) Utility Bill — Gas, Electricity, Water, Telephone (Not mobile phones)
+                                <br>&nbsp; - Bank Statement
                                 <br>We require the documents to be sent to us in high quality (300 DPI) colour format. If the documents have more than one side then we require all sides to be sent to us. We reserve the right to reject any documents, which do not comply with the above.
                                 <br>We reserve the right to require additional information at any time to verify the client's identification and any further information that may be required to satisfy the Money Laundering Regulations.</p>
+                         </div>
+                            </div>
+
+                            <!-- <div class="col-md-6 col-sm-6">
+                                <div class="wt-media">
+                                    <img src="/assets/images/rocket.png" alt="" class="img-responsive" />
+                                </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
+
+                <HomeFooter :company="company" :domain="domain"></HomeFooter>
             </div>
-        </section>
-        <Footer></Footer>
-    </div>
+            <button class="scroltop">
+                <span class="iconmoon-house relative" id="btn-vibrate"></span>Top
+            </button>
+            <div class="mgm" style="display: none; opacity: 1"></div>
+        </div>
 </template>
+
+<style scoped>
+@import "../assets/ebuka.css";
+/* @import "../assets/css/bootstrap.min.css";
+@import "../assets/css/owl.carousel.min.css";
+@import "../assets/css/fontawesome/css/font-awesome.min.css";
+@import "../assets/css/flaticon.min.css";
+@import "../assets/css/bootstrap-select.min.css";
+@import "../assets/css/magnific-popup.min.css"; */
+/* @import "../assets/css/loader.min.css"; */
+/* @import "../assets/css/style37913791.css"; */
+@import "../assets/css/skin/skin-25b275b27.css";
+@import "../assets/plugins/pace/pace.css";
+@import "../assets/plugins/revolution/revolution/css/settings.css";
+@import "../assets/plugins/revolution/revolution/css/navigation.css";
+/* @import "../assets/css/iziToast.min.css"; */
+
+.mgm {
+    border-radius: 7px;
+    position: fixed;
+    z-index: 90;
+    bottom: 45%;
+    right: 10px;
+    background: #fff;
+    padding: 10px 27px;
+    box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.3);
+}
+</style>
