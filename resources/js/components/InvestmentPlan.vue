@@ -31,13 +31,14 @@
                                     >
                                      
         <div v-for="plan in $root.packages" :class="{'col-lg-4' : $root.packages.length % 3 ==0, 'col-md-3':$root.packages.length % 3 !=0, 'mb-30':true}" style=" margin-top:10px;">
-            <div class="package-card text-center bg_img" :style="{backgroundImage : 'url(' + $root.basepath + '/images/bg/bg-4.png )'}">
+            <div class="package-card text-center bg_img" :style="{ backgroundImage: 'url(' + $root.basepath + '/images/bg/bg-4.png )', 'min-height': '440px'}">
                 <h4 class="package-card__title text-color text-capitalize mb-2">{{plan.name}}</h4>
                 <div>
                     <ul class="package-card__features text-color mt-4" style="min-height : 180px; margin-top:10px; padding-top:15px">
                         <li>Return {{plan.roi}}%</li>
                         <li>Matures in {{plan.turnover}}</li>
                         <li>Total {{plan.roi}}% + <span class="badge bg-primary">Capital</span></li>
+                        <li> {{plan.first_level_ref_commission}}% Referral commission</li>
                         <li v-if="plan.name == 'Premium'">With loan Security</li>
                     </ul>
                 </div>
