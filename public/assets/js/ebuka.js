@@ -34,7 +34,7 @@ var listCountries = [
   "South Africa",
   "Venezuela",
   "South Africa",
-  "Sweden",
+  "Switzerland",
   "South Africa",
   "South Africa",
   "Italy",

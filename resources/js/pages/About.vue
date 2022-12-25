@@ -210,7 +210,7 @@ export default {
                                     <div class="wt-separator-outer">
                                         <div class="wt-separator bg-primary"></div>
                                     </div>
-                                    <p>{{company}} is duly registered by the registrar of companies in Sweden.</p>
+                                    <p>{{company}} is duly registered by the registrar of companies in Switzerland.</p>
                                     <div class="embed-responsive embed-responsive-16by9">
                                         <iframe class="embed-responsive-item"
                                             :src="$root.basepath + '/assets/cert.pdf#toolbar=0'">
