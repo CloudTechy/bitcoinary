@@ -302,7 +302,7 @@ export default {
                             <li>
                                 <a
                                     class="a-underline"
-                                    href="/privacy-policy"
+                                    href="/terms#privacy-policy"
                                     style="color: #fff"
                                     >Privacy policy</a
                                 >

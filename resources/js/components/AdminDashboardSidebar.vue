@@ -409,7 +409,7 @@
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon fa fa-money-bill-alt"></i>
+                            <i class="menu-icon la la-bank"></i>
                             <span class="menu-title">Withdrawals </span>
                             <span class="menu-badge pill bg--primary ml-auto">
                                 <i class="fa fa-exclamation"></i>
@@ -524,7 +524,7 @@
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon fa fa-ticket-alt"></i>
+                            <i class="menu-icon la la-ticket"></i>
                             <span class="menu-title">Support Ticket </span>
                             <span class="menu-badge pill bg--primary ml-auto">
                                 <i class="fa fa-exclamation"></i>
@@ -617,7 +617,7 @@
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon fa fa-list"></i>
+                            <i class="menu-icon la la-list"></i>
                             <span class="menu-title">Report </span>
                         </a>
                         <div class="sidebar-submenu">
@@ -781,7 +781,7 @@
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon fa fa-envelope"></i>
+                            <i class="menu-icon la la-envelope-o"></i>
                             <span class="menu-title">Email Manager</span>
                         </a>
                         <div class="sidebar-submenu">
@@ -850,7 +850,7 @@
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon fa fa-mobile"></i>
+                            <i class="menu-icon la la-mobile"></i>
                             <span class="menu-title">SMS Manager</span>
                         </a>
                         <div class="sidebar-submenu">
@@ -924,7 +924,7 @@
                             data-toggle="tooltip"
                                                         data-original-title="Link currently unavailable"
                         >
-                            <i class="menu-icon fa fa-toggle-off"></i>
+                            <i class="menu-icon la la-toggle-off"></i>
                             <span class="menu-title">Holiday Setting</span>
                         </a>
                     </li>
@@ -952,7 +952,7 @@
                             data-toggle="tooltip"
                                                         data-original-title="Link currently unavailable"
                         >
-                            <i class="menu-icon fa fa-file-code"></i>
+                            <i class="menu-icon la la-html5"></i>
                             <span class="menu-title">Active Template</span>
                         </a>
                     </li>
@@ -969,7 +969,7 @@
                             data-toggle="tooltip"
                                                         data-original-title="Link currently unavailable"
                         >
-                            <i class="menu-icon fa fa-list"></i>
+                            <i class="menu-icon la la-list"></i>
                             <span class="menu-title">Manage Pages</span>
                         </a>
                     </li>
@@ -978,7 +978,7 @@
 
                     <li class="sidebar-menu-item sidebar-dropdown">
                         <a href="javascript:void(0)" class="">
-                            <i class="menu-icon fa fa-file-code"></i>
+                            <i class="menu-icon la la-html5"></i>
                             <span class="menu-title">Section Manage</span>
                         </a>
                         <div class="sidebar-submenu">
