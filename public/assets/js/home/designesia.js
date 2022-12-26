@@ -1198,10 +1198,12 @@
      /* --------------------------------------------------
       * document ready
       * --------------------------------------------------*/
+   
      jQuery(document).ready(function() {
          'use strict';
          $("body").show();
-         load_magnificPopup();
+         
+        load_magnificPopup(); 
          center_xy();
          init_de();
 		 grid_gallery();
@@ -1339,12 +1341,12 @@
           after window load
           * --------------------------------------------------*/
 		 
-        setTimeout(function () {
-        $("#cookieConsent").fadeIn(400);
-         }, 2000);
-        $("#closeCookieConsent, .cookieConsentOK").click(function() {
-            $("#cookieConsent").fadeOut(400);
-        }); 
+        // setTimeout(function () {
+        // $("#cookieConsent").fadeIn(400);
+        //  }, 2000);
+        // $("#closeCookieConsent, .cookieConsentOK").click(function() {
+        //     $("#cookieConsent").fadeOut(400);
+        // }); 
 
          video_autosize();
         //  filter_gallery();

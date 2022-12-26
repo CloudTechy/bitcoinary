@@ -5,7 +5,7 @@
         <div id="appCapsule">
             <div class="section">
                 <div class="row mt-2">
-                    <div v-for="plan in $root.packages" v-if = "plan.status" class="col-lg-4 col-md-4 col-sm-12 mb-2">
+                    <div v-for="plan in $root.packages" v-if = "plan.status" class="col-xl-3 col-lg-6 col-sm-12 mb-2">
                         <div class="stat-box text-center">
                             <h4 class="text-primary font-weight-bold">
                                 {{ plan.name }} </h4>

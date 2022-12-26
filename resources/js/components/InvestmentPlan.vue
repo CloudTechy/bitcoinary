@@ -8,8 +8,8 @@
                 <div class="small-border pb-5" style="border-color: #ffcc29"></div>
                 <div class="row sequence">
                     <div v-for="plan in $root.packages" v-if="plan.status"
-                        class="col-lg-4 col-md-6 col-sm-12 sq-item wow">
-                        <div class="pricing-s1 mb30" style="border: 2px white solid">
+                        class="col-xl-3 col-lg-6 col-sm-12 sq-item wow">
+                        <div class="pricing-s1 mb30" style="border: 2px white solid; min-height: 622px;">
                             <div class="top">
                                 <p class="plan-tagline">
                                     <b> {{ plan.name }} </b>
@@ -52,11 +52,11 @@
                                     
                                         <b>Referrals: {{ plan.first_level_ref_commission }}% </b>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <i class="fa fa-check"></i>
                                     
                                         <b>24/7 Customer Support</b>
-                                    </li>
+                                    </li> -->
                                     <li v-if = "plan.min_deposit >= 5000">
                                         <i class="fa fa-check"></i>
                                     
