@@ -12,7 +12,7 @@ self.addEventListener('install', event => {
 
                 '/css/all.min.css',
                 '/css/main.css',
-                '/css/line-awesome.min.css',
+                '//css/line-awesome.min.css',
                 '/js/contact.js.download',
                 '/js/wow.min.js.download',
                 '/images/logo.png',

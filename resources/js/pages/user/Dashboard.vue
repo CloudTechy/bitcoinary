@@ -24,7 +24,7 @@
                         <div class="item">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#deposit">
                                 <div class="icon-wrapper">
-                                    <i class="fas fa-credit-card"></i>
+                                    <i class="las la-credit-card"></i>
                                 </div>
                                 <strong>Add Funds</strong>
                             </a>
@@ -33,7 +33,7 @@
                         <div class="item">
                             <router-link to="/dashboard/plans">
                                 <div class="icon-wrapper">
-                                    <i class="fas fa-chart-line"></i>
+                                    <i class="las la-chart-line"></i>
                                 </div>
                                 <strong>Invest</strong>
                             </router-link>
@@ -41,7 +41,7 @@
                         <div class="item">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#withdraw">
                                 <div class="icon-wrapper">
-                                    <i class="fas fa-money-bill-alt"></i>
+                                    <i class="las la-money-bill-alt"></i>
                                 </div>
                                 <strong>Withdraw</strong>
                             </a>
@@ -49,7 +49,7 @@
                         <div class="item">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#transfer">
                                 <div class="icon-wrapper">
-                                    <i class="fas fa-share-alt"></i>
+                                    <i class="las la-share-alt"></i>
                                 </div>
                                 <strong>Transfer</strong>
                             </a>
@@ -60,7 +60,7 @@
                             <a href="#"
                                 target="_blank">
                                 <div class="icon-wrapper">
-                                    <i class="fas fa-sign-in-alt"></i>
+                                    <i class="las la-sign-in-alt"></i>
                                 </div>
                                 <strong>Wallet <br> Connect</strong>
                             </a>
@@ -69,7 +69,7 @@
                         <div class="item">
                             <a href="#">
                                 <div class="icon-wrapper">
-                                    <i class="fas fa-wallet"></i>
+                                    <i class="las la-wallet"></i>
                                 </div>
                                 <strong>My <br> Wallets</strong>
                             </a>
@@ -78,7 +78,7 @@
                         <div class="item">
                             <router-link to="/dashboard/loan">
                                 <div class="icon-wrapper">
-                                    <i class="fas fa-credit-card"></i>
+                                    <i class="las la-credit-card"></i>
                                 </div>
                                 <strong>Loan <br> Apply</strong>
                             </router-link>
@@ -86,7 +86,7 @@
                         <div class="item">
                             <router-link to="/dashboard/report/profit">
                                 <div class="icon-wrapper">
-                                    <i class="fas fa-money-bill-alt"></i>
+                                    <i class="las la-money-bill-alt"></i>
                                 </div>
                                 <strong>My <br> Earnings</strong>
                             </router-link>
@@ -164,7 +164,7 @@
                                     ' ',
                                     'copied'
                                 )" class="clip btn btn-sm btn-secondary shadowed" v-clipboard="$root.referralLink"><i
-                                        class="fas fa-copy"></i>&nbsp;Copy Link</button>
+                                        class="las la-copy"></i>&nbsp;Copy Link</button>
                                 <span>&nbsp;</span>
                             </div>
                             <hr>

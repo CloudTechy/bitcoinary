@@ -109,7 +109,7 @@
                                             <div v-if=" $auth.user().balance> 1" class="form-group">
                                                 <div class="input-group">
                                                     <div style="border-radius: 0px 5px" class="input-group-prepend">
-                                                        <span class="icon bg--base text-white"><i class="fas fa-dollar-sign" aria-hidden="true"></i></span>
+                                                        <span class="icon bg--base text-white"><i class="las la-dollar-sign" aria-hidden="true"></i></span>
                                                     </div>
                                                     <input :max='$auth.user().balance' min="1" type="number" placeholder="Enter amount" v-model="amount" required class="form-control">
                                                     <div class="input-group-prepend">
