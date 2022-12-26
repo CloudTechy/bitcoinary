@@ -188,7 +188,7 @@ export default {
                             <iframe
                                 width="100%"
                                 height="350"
-                                src="https://www.youtube.com/embed/4jIQrsYRYGs"
+                                src="https://www.youtube.com/embed/0MF7CXwUsv8"
                                 title="Westgate Exchange"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
