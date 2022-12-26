@@ -20,11 +20,11 @@
                                 <h4 class="blog-card__title mb-3"><a href="#0">Laboriosam distinctio nisi debitis deleniti voluptatum corporis.</a></h4>
                                 <ul class="blog-card__meta d-flex flex-wrap mb-4">
                                     <li>
-                                        <i class="fas fa-user"></i>
+                                        <i class="las la-user"></i>
                                         <a href="#0">fahaddevs</a>
                                     </li>
                                     <li>
-                                        <i class="fas fa-calendar"></i>
+                                        <i class="las la-calendar"></i>
                                         <a href="#0">20 Nov, 2020</a>
                                     </li>
                                 </ul>
@@ -42,11 +42,11 @@
                                 <h4 class="blog-card__title mb-3"><a href="#0">Laboriosam distinctio nisi debitis deleniti voluptatum corporis.</a></h4>
                                 <ul class="blog-card__meta d-flex flex-wrap mb-4">
                                     <li>
-                                        <i class="fas fa-user"></i>
+                                        <i class="las la-user"></i>
                                         <a href="#0">fahaddevs</a>
                                     </li>
                                     <li>
-                                        <i class="fas fa-calendar"></i>
+                                        <i class="las la-calendar"></i>
                                         <a href="#0">20 Nov, 2020</a>
                                     </li>
                                 </ul>
@@ -64,11 +64,11 @@
                                 <h4 class="blog-card__title mb-3"><a href="#0">Laboriosam distinctio nisi debitis deleniti voluptatum corporis.</a></h4>
                                 <ul class="blog-card__meta d-flex flex-wrap mb-4">
                                     <li>
-                                        <i class="fas fa-user"></i>
+                                        <i class="las la-user"></i>
                                         <a href="#0">fahaddevs</a>
                                     </li>
                                     <li>
-                                        <i class="fas fa-calendar"></i>
+                                        <i class="las la-calendar"></i>
                                         <a href="#0">20 Nov, 2020</a>
                                     </li>
                                 </ul>

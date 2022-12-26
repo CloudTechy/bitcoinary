@@ -526,7 +526,7 @@
                                                 <small
                                                     class="form-text text-muted"
                                                     ><i
-                                                        class="fas fa-info-circle"
+                                                        class="las la-info-circle"
                                                     ></i>
                                                     House number, street address
                                                 </small>

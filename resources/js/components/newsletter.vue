@@ -11,7 +11,7 @@
                             <div class="col-lg-7 mt-lg-0 mt-4">
                                 <form action ="" method="post" class="subscribe-form">
                                     <input type="email" required="" v-model="form.email" class="form-control" placeholder="Email Address ">
-                                    <button @click.prevent = "subscribe" type="submit" @submit.prevent="subscribe" class="subscribe-btn"><i class="fas fa-envelope"></i></button>
+                                    <button @click.prevent = "subscribe" type="submit" @submit.prevent="subscribe" class="subscribe-btn"><i class="las la-envelope"></i></button>
                                 </form>
                             </div>
                         </div>

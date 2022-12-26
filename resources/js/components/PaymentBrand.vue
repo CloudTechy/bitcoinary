@@ -45,8 +45,8 @@ export default {
                 slidesToScroll: 1,
                 arrows: false,
                 autoplay: false,
-                prevArrow: '<div class="prev"><i class="fas fa-angle-left"></i></div>',
-                nextArrow: '<div class="next"><i class="fas fa-angle-right"></i></div>',
+                prevArrow: '<div class="prev"><i class="las la-angle-left"></i></div>',
+                nextArrow: '<div class="next"><i class="las la-angle-right"></i></div>',
                 responsive: [{
                         breakpoint: 1200,
                         settings: {

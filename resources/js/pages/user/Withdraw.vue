@@ -42,7 +42,7 @@
                                         </div>
                                         <div class="col-3 col-md-2 p-0">
                                             <div class="icon base--bg text-white">
-                                                <i class="fas fa-dollar-sign"></i>
+                                                <i class="las la-dollar-sign"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -54,7 +54,7 @@
                                         </div>
                                         <div class="col-3 col-md-2 p-0">
                                             <div class="icon base--bg text-white">
-                                                <i class="fas fa-dollar-sign"></i>
+                                                <i class="las la-dollar-sign"></i>
                                             </div>
                                         </div>
                                     </div>
