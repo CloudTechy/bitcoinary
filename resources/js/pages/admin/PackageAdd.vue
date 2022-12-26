@@ -555,7 +555,7 @@ export default {
         style.type = "text/css";
         document.head.appendChild(style);
         style = document.createElement("link");
-        style.href = this.$root.basepath + "/css/line-awesome.min.css";
+        style.href = this.$root.basepath + "assets/admin/css/line-awesome.min.css";
         style.rel = "stylesheet";
         style.type = "text/css";
         document.head.appendChild(style);
