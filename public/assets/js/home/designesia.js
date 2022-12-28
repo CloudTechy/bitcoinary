@@ -907,7 +907,7 @@
 
          function scrolling() {
              var mq = window.matchMedia("(min-width: 993px)");
-             var ms = window.matchMedia("(min-width: 300px)");
+             var ms = window.matchMedia("(min-width: 100px)");
              if (mq.matches) {
                  var distanceY = window.pageYOffset || document.documentElement.scrollTop,
                      shrinkOn = 0,
