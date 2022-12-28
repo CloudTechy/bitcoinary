@@ -14,20 +14,12 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/line-awesome.min.css') }}" rel="stylesheet">
   <link rel="shortcut icon" href="{{asset('assets/images/home/favicon.png')}}" type="image/x-icon">
-    <!-- Smartsupp Live Chat script -->
-    <script type="text/javascript">
-        var _smartsupp = _smartsupp || {};
-        _smartsupp.key = 'e36066fa01bda2533846f12c97478d9027ef8086';
-        window.smartsupp||(function(d) {
-        var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-        c.type='text/javascript';c.charset='utf-8';c.async=true;
-        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-        })(document);
-    </script>
+
 </head>
 <body id="body">
+   
     
   <style>
     @-webkit-keyframes preloader-inside-white {
@@ -275,28 +267,33 @@
     </noscript>
     <index></index>
   </div>
+  
+     <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div style = "display:none" class="elfsight-app-e60b7d46-97bc-46b1-a3e3-7c5c033e5780"></div>
 
     
   <script src="{{ asset('assets/js/jquery-1.12.4.min.js') }}"></script>
   <script src="{{ asset('js/app.js') }}" defer></script>
   <script src="{{ asset('js/objectdata.js') }}" defer></script>
   <!-- <script src="{{ asset('assets/js/home/jquery.isotope.min.js') }}"></script> -->
-        <script src="{{ asset('assets/js/home/jquery.min.js') }}"></script>
-      <script src="{{ asset('assets/js/home/bootstrap.min.js') }}"></script>
-      <script src="{{ asset('assets/js/home/wow.min.js') }}"></script>
-      <script src="{{ asset('assets/js/home/jquery.isotope.min.js') }}"></script>
-      <script src="{{ asset('assets/js/home/easing.js') }}"></script>
+        <script async src="{{ asset('assets/js/home/jquery.min.js') }}"></script>
+      <script  async src="{{ asset('assets/js/home/bootstrap.min.js') }}"></script>
+      <script  async src="{{ asset('assets/js/home/wow.min.js') }}"></script>
+      <script  async src="{{ asset('assets/js/home/jquery.isotope.min.js') }}"></script>
+      <!--<script  src="{{ asset('assets/js/home/easing.js') }}"></script>-->
       <script src="{{ asset('assets/js/home/owl.carousel.js') }}"></script>
       <script src="{{ asset('assets/js/home/validation.js') }}"></script>
       <script src="{{ asset('assets/js/home/jquery.magnific-popup.min.js') }}"></script>
-      <script src="{{ asset('assets/js/home/enquire.min.js') }}"></script>
-      <script src="{{ asset('assets/js/home/jquery.stellar.min.js') }}"></script>
-      <script src="{{ asset('assets/js/home/jquery.plugin.js') }}"></script>
+      <script  async src="{{ asset('assets/js/home/enquire.min.js') }}"></script>
+      <script  async src="{{ asset('assets/js/home/jquery.stellar.min.js') }}"></script>
+      <script  async src="{{ asset('assets/js/home/jquery.plugin.js') }}"></script>
       <script src="{{ asset('assets/js/home/typed.js') }}"></script>
+
+      
       <!-- <script src="{{ asset('assets/js/home/jquery.countTo.js') }}"></script>
       <script src="{{ asset('assets/js/home/jquery.countdown.js') }}"></script> -->
       <script src="{{ asset('assets/js/home/typed.js') }}"></script>
-      <script src="{{ asset('assets/js/home/designesia.js') }}"></script>
+      <!--<script src="{{ asset('assets/js/home/designesia.js') }}"></script>-->
       <!-- <script src="{{ asset('assets/js/home/jquery.stellar.min.js') }}"></script>
         <script src="{{ asset('assets/js/home/jquery.plugin.js') }}"></script>
           <script src="{{ asset('assets/js/home/jquery.countTo.js') }}"></script>
@@ -402,5 +399,8 @@ smartsupp('analyticsConsent', false);
         font-size: revert !important;
 }
 </style>
+ <script src="//code.tidio.co/nq87i7bid1gk0n6uqa2dpbhos2ivh4nd.js" async></script>
+ 
+
 </body>
 </html>

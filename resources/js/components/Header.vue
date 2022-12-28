@@ -21,7 +21,7 @@
             <!-- <a href="/dashboard/Notifications" class="headerButton"> <i class="fas fa-bell"></i> <span
                     class="badge badge-danger">0</span>
             </a> -->
-             <a href="/dashboard/profile" class="headerButton"> <img :src="$root.basepath + '/assets/images/home/user-default.png'"
+             <a href="/dashboard/profile" class="headerButton"> <img :src= " $auth.user().image ? $root.basepath +'/images/users/'+$auth.user().image : $root.basepath + '/assets/images/home/user-default.png'"
                    alt="img" class="imaged w32"
                     style="width:32px;height:32px;border-radius:50%"> </a>
         </div>

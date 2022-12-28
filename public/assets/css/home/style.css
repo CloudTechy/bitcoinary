@@ -260,7 +260,7 @@ header.smaller #mainmenu ul ul {
 }
 header.smaller {
     background: rgba(0, 0, 0, 0.8);
-    position: fixed;
+    position: fixed !important;
     top: 0px;
     padding: 0;
     -webkit-box-shadow: 0 4px 6px 0 rgba(10, 10, 10, 0.05);

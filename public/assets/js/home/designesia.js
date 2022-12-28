@@ -907,7 +907,7 @@
 
          function scrolling() {
              var mq = window.matchMedia("(min-width: 993px)");
-             var ms = window.matchMedia("(min-width: 768px)");
+             var ms = window.matchMedia("(min-width: 300px)");
              if (mq.matches) {
                  var distanceY = window.pageYOffset || document.documentElement.scrollTop,
                      shrinkOn = 0,
@@ -943,6 +943,43 @@
                      }
                  }
 
+             }
+             if (ms.matches) {
+                 var distanceY =
+                         window.pageYOffset ||
+                         document.documentElement.scrollTop,
+                     shrinkOn = 0,
+                     header = jQuery("header");
+                 if (distanceY > shrinkOn) {
+                     header.addClass("smaller");
+                 } else {
+                     if (header.hasClass("smaller")) {
+                         header.removeClass("smaller");
+                     }
+                 }
+             }
+             if (ms.matches) {
+                 if (jQuery("header").hasClass("side-header")) {
+                     if (jQuery(document).scrollTop() >= h) {
+                         jQuery("#de-sidebar").css("position", "fixed");
+                         if (parseInt(sh) > parseInt(dh)) {
+                             jQuery("#de-sidebar").css("top", -h);
+                         }
+                         jQuery("#main").addClass("col-md-offset-3");
+                         jQuery("h1#logo img").css("padding-left", "7px");
+                         jQuery("header .h-content").css("padding-left", "7px");
+                         jQuery("#mainmenu li").css("width", "103%");
+                     } else {
+                         jQuery("#de-sidebar").css("position", "relative");
+                         if (parseInt(sh) > parseInt(dh)) {
+                             jQuery("#de-sidebar").css("top", 0);
+                         }
+                         jQuery("#main").removeClass("col-md-offset-3");
+                         jQuery("h1#logo img").css("padding-left", "0px");
+                         jQuery("header .h-content").css("padding-left", "0px");
+                         jQuery("#mainmenu li").css("width", "100%");
+                     }
+                 }
              }
          }
 

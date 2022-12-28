@@ -33,7 +33,7 @@ a.gflag:hover {
 }
 @media only screen and (max-width: 600px) {
 .goog-te-gadget .goog-te-combo {
-    width: 50% !important;
+    width: 30% !important;
 }
 }
 body {

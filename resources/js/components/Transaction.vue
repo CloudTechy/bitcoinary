@@ -24,7 +24,6 @@
                                     </td>
                                     <td class="text-warning" style="font-weight: bold">
                                         <span class="amount">Amount</span>
-                                        <span class="currencies">($)</span>
                                     </td>
                                 </tr>
                                 <tr v-for="trx in buildTransactions" class="iq-shipping">
@@ -37,7 +36,7 @@
                                     </td>
                                     <td style="color: #30c731">
                                         <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                        ${{ $root.normalNumeral(trx.amount) }}
+                                        ${{ $root.normalNumeralNoUnit(trx.amount) }}
                                     </td>
                                 </tr>
                             </tbody>
@@ -61,7 +60,6 @@
                                     </td>
                                     <td class="text-warning" style="font-weight: bold">
                                         <span class="amount">Amount </span>
-                                        <span class="currencies">($)</span>
                                     </td>
                                 </tr>
                                 <tr v-for="wlt in buildWithdrawals" class="iq-shipping">
@@ -74,7 +72,7 @@
                                     </td>
                                     <td style="color: #30c731">
                                         <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                                        ${{ $root.normalNumeral(wlt.amount) }}
+                                        ${{ $root.normalNumeralNoUnit(wlt.amount) }}
                                     </td>
                                 </tr>
                             </tbody>

@@ -239,7 +239,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
     }
 	public function enabledKYC()
     {
-        return false;
+        return true;
     }
 	public function p2pTransferConfirmation()
     {

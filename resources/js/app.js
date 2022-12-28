@@ -170,7 +170,7 @@ const app = new Vue({
                 });
         },
 
-        loader(action, deep=false) {
+        loader(action, deep = false) {
             if (action == "show") {
                 $(".preloader").animate(
                     {
@@ -207,6 +207,9 @@ const app = new Vue({
         },
         normalNumeral(value) {
             return numeral(value).format("0,0.00");
+        },
+        normalNumeralNoUnit(value) {
+            return numeral(value).format("0,0");
         },
         myFilter(list, search) {
             var data = [];

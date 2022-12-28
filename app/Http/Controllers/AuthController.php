@@ -39,15 +39,14 @@ class AuthController extends Controller {
 			// $data->markEmailAsVerified();
 			$data->sendEmailVerificationNotification();
 			
-			$referral = User::where('username',$validated['referral'])->first();
-			$referral->notify(new ReferralNotification($data));
+			$referral = User::where('username', $validated['referral'])->first();
+			if(!empty($referral)){
+				$referral->notify(new ReferralNotification($data));
+			}
 			Helper::adminsUserActivityRequest(['type'=>'SignUpActivity', 'message' => $data->username . ' has joined ' . config('app.name') ]);
 			DB::commit();
 			return response()->json(['status' => 'success'], 200);
-
-			// 
-			// DB::commit();
-			// return Helper::validRequest(new UserResource($data), 'data was sent successfully', 200);
+			
 		} catch (Exception $bug) {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);
