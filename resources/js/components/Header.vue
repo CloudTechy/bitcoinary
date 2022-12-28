@@ -33,7 +33,7 @@
                 <div class="modal-body p-0">
                     <!-- profile box -->
                     <div class="profileBox pt-2 pb-2">
-                        <div class="image-wrapper"> <img  :src="$root.basepath + '/assets/images/home/user-default.png'"
+                        <div class="image-wrapper"> <img :src= " $auth.user().image ? $root.basepath +'/images/users/'+$auth.user().image : $root.basepath + '/assets/images/home/user-default.png'"
                                 alt="img" class="imaged  w36" style="width:36px;height:36px;border-radius:50%"> </div>
                         <div class="in">
                             <strong class="text-capitalize">

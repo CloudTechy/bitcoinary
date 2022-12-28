@@ -18,20 +18,20 @@ class PackageResource extends JsonResource {
 		return [
 			'id' => $this->id,
 			'name' => $this->name,
-			'min_deposit' => $this->min_deposit,
-			'max_deposit' => $this->max_deposit,
-			'roi' => $this->roi,
+			'min_deposit' => (int) $this->min_deposit,
+			'max_deposit' => (int) $this->max_deposit,
+			'roi' => (float) $this->roi,
 			'turnover' => (int) $this->turnover,
 			'status' => (bool) $this->status,
 			'capital_back' => (bool) $this->capital_back,
 			'return_for' => $this->return_for,
 			'amount_type' => $this->amount_type,
-			'amount' => $this->amount,
+			'amount' => (float)  $this->amount,
 			'rank' => $this->rank,
 			'duration' => $duration->description,
 			'loop_termination' => (int)  $this->loop_termination,
-			'first_level_ref_commission' => $this->first_level_ref_commission,
-			'second_level_ref_commission' => $this->second_level_ref_commission,
+			'first_level_ref_commission' =>(float)  $this->first_level_ref_commission,
+			'second_level_ref_commission' =>(float)  $this->second_level_ref_commission,
 		];
 	}
 }

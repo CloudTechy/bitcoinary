@@ -106,8 +106,7 @@
                                 <a
                                     href="/dashboard/plans"
                                     class="btn-custom"
-                                    style="
-                                        background-color: #ffcc29;
+                                    style=" background-color: #ffcc29;
                                         color: #000;
                                     "
                                     >Invest</a
