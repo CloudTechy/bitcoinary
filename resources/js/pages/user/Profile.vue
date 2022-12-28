@@ -100,21 +100,27 @@
                     </a>
                 </li>
             </ul>
-            <div class="listview-title mt-1">Payment Details</div>
+            <div class="listview-title mt-1">Payment Details <span class = "text-primary">Click on respective address to edit</span></div>
             <ul class="listview image-listview text inset">
                 <li  v-for="py in $root.payments">
                     <span class="item">
                         <div class="in">
-                            <div>{{py.name}}</div>
+                            <div class = "smaller font-weight-bold" style="flex-basis: max-content;
+">{{py.name}}</div>
+                            <!-- <span class="text-primary">
+                                {{$auth.user().gender}}
+                            </span>
                             <div>
                                 {{$root.getPaymentAccountDetails($auth.user().bank_details, py.name, py.type)}}
-                            </div>
-                            <!-- <span class="text-primary">
-                                <input @change="updatePaymentDetails(py.name, py.type)" :ref="py.name"
+                            </div> -->
+                            <div class="text-primary " style="flex-basis: 80%;">
+                                <input  @change="updatePaymentDetails(py.name, py.type)" :ref="py.name"
                                 :value="$root.getPaymentAccountDetails($auth.user().bank_details, py.name, py.type) " type="text" required
                                 :placeholder="py.type == 'fiat' ? 'Enter Account No' :'Enter Wallet Address'"
-                                :class="{'form-control' : true, editbox:true}"> 
-                            </span> -->
+                                :class="{'form-control' : true, editbox:true , small:true, 'text-center':true}"> 
+                                <p v-if="errors && errors[py.name]" v-for="err in errors[py.name]" class="small text-center p-1 text-danger">{{err}}</p>
+                                                            <p v-if="message && message[py.name]" class="text-success small text-center p-1">{{message[py.name]}}</p>
+                            </div>
                         </div>
                     </span>
                 </li>
@@ -415,6 +421,9 @@ export default {
         errors() {
             setTimeout(() => { this.message = '' }, 15000);
         },
+        message() {
+            setTimeout(() => { this.message = {}}, 5000);
+        }
         
     },
     mounted() {
@@ -465,7 +474,7 @@ export default {
         next(vm => {
             vm.$root.loader('show')
 
-            setTimeout(() => { vm.$root.loader('hide') }, 2000);
+            setTimeout(() => { vm.$root.loader('hide') }, 3000);
         })
     },
     beforeDestroy() {
@@ -505,7 +514,7 @@ export default {
                         this.message = {}
                         this.message[ref] = "Updated Successfully"
                         this.$root.loader('hide')
-                        this.$root.alert('success', ' ', 'updated')
+                        this.$root.alert('success', ' ', 'Your payment details has been updated')
                     })
                     .catch(error => {
                         console.log(error)
@@ -532,7 +541,7 @@ export default {
                         this.message = {}
                         this.message[ref] = "updated successfully"
                         this.$root.loader('hide')
-                        this.$root.alert('success', ' ', 'updated')
+                        this.$root.alert('success', ' ', 'Your payment details has been updated')
                     })
                     .catch(error => {
                         this.$root.loader('hide')
@@ -694,5 +703,29 @@ export default {
 
 .modal-content {
     box-shadow: 1px 1px 20px !important;
+}
+
+.form-control {
+    /* display: block; */
+    border:none;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--primary_color);
+    background-color: #fff;
+    background-clip: padding-box;
+    border-bottom: 1px solid var(--secondary_color);
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.form-control:focus {
+    color: var(--secondary_color);
+    background-color: #fff;
+    border-color: none;
+    outline: 0;
+    box-shadow: 0 0.2rem rgb(0 123 255 / 25%);
 }
 </style>
