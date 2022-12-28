@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <title id="title">{{config('app.name')}}</title>
-    <!-- <meta name="theme-color" content="#cca354"/> -->
+    <meta name="theme-color" content="#377dff"/>
     <meta name="description" content="{{config('app.name')}} has shown commendably successful and consistent performance and trading history. Currently, it is regarded as one of the best, most beneficial, brilliantly successful companies in the industry of forex trading and investing.">
     <meta name="keywords" content=" {{config('app.name')}}, Shares, Finance, Bitcoin, Investment">
     <meta name="author" content=" {{config('app.name')}} ICT Team">
@@ -272,27 +272,26 @@
 <div style = "display:none" class="elfsight-app-e60b7d46-97bc-46b1-a3e3-7c5c033e5780"></div>
 
     
-  <script src="{{ asset('assets/js/jquery-1.12.4.min.js') }}"></script>
+  <script  src="{{ asset('assets/js/jquery-1.12.4.min.js') }}"></script>
   <script src="{{ asset('js/app.js') }}" defer></script>
   <script src="{{ asset('js/objectdata.js') }}" defer></script>
-  <!-- <script src="{{ asset('assets/js/home/jquery.isotope.min.js') }}"></script> -->
-        <script async src="{{ asset('assets/js/home/jquery.min.js') }}"></script>
-      <script  async src="{{ asset('assets/js/home/bootstrap.min.js') }}"></script>
+        <script  src="{{ asset('assets/js/home/jquery.min.js') }}"></script>
+      <script   src="{{ asset('assets/js/home/bootstrap.min.js') }}"></script>
       <script  async src="{{ asset('assets/js/home/wow.min.js') }}"></script>
       <script  async src="{{ asset('assets/js/home/jquery.isotope.min.js') }}"></script>
       <!--<script  src="{{ asset('assets/js/home/easing.js') }}"></script>-->
       <script src="{{ asset('assets/js/home/owl.carousel.js') }}"></script>
       <script src="{{ asset('assets/js/home/validation.js') }}"></script>
-      <script src="{{ asset('assets/js/home/jquery.magnific-popup.min.js') }}"></script>
+      <script async src="{{ asset('assets/js/home/jquery.magnific-popup.min.js') }}"></script>
       <script  async src="{{ asset('assets/js/home/enquire.min.js') }}"></script>
       <script  async src="{{ asset('assets/js/home/jquery.stellar.min.js') }}"></script>
       <script  async src="{{ asset('assets/js/home/jquery.plugin.js') }}"></script>
-      <script src="{{ asset('assets/js/home/typed.js') }}"></script>
+      <script  src="{{ asset('assets/js/home/typed.js') }}"></script>
 
       
       <!-- <script src="{{ asset('assets/js/home/jquery.countTo.js') }}"></script>
       <script src="{{ asset('assets/js/home/jquery.countdown.js') }}"></script> -->
-      <script src="{{ asset('assets/js/home/typed.js') }}"></script>
+      <!-- <script src="{{ asset('assets/js/home/typed.js') }}"></script> -->
       <!--<script src="{{ asset('assets/js/home/designesia.js') }}"></script>-->
       <!-- <script src="{{ asset('assets/js/home/jquery.stellar.min.js') }}"></script>
         <script src="{{ asset('assets/js/home/jquery.plugin.js') }}"></script>
@@ -313,33 +312,14 @@
     <script src="{{ asset('assets/plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js') }} " defer></script>
     -->
     <script>
-      jQuery(window).load(() => {
-      
-    });
+     
   
-    </script>
-      <!-- <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-                    {
-                      "symbol": "COINBASE:BTCUSD",
-                      "width": "100%",
-                      "height": 400,
-                      "locale": "en",
-                      "dateRange": "1D",
-                      "colorTheme": "dark",
-                      "trendLineColor": "rgba(255, 255, 0, 1)",
-                      "underLineColor": "rgba(255, 0, 0, 0.1)",
-                      "underLineBottomColor": "rgba(255, 0, 0, 0)",
-                      "isTransparent": true,
-                      "autosize": false,
-                      "largeChartUrl": ""
-                    }
-                  </script> -->
-  <script>
-    // if('serviceWorker' in navigator) {
-    //   navigator.serviceWorker
-    //     .register('/sw.js')
-    //     .then(function() { console.log("Service Worker Registered"); });
-    // }
+   
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then(function() { console.log("Service Worker Registered"); });
+    }
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
           { pageLanguage: "en" },
@@ -361,21 +341,7 @@
       });
     })
 </script>
-<script>
-    window.addEventListener('CookiebotOnAccept', function (e) {
-if (Cookiebot.consent.marketing) {
-smartsupp('marketingConsent', true);
-}
-if (Cookiebot.consent.statistics) {
-smartsupp('analyticsConsent', true);
-}
-})
 
-window.addEventListener('CookiebotOnDecline', function (e) {
-smartsupp('marketingConsent', false);
-smartsupp('analyticsConsent', false);
-})
-</script>
 
 <style>
    .goog-te-banner-frame.skiptranslate {

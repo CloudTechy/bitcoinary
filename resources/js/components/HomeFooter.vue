@@ -355,7 +355,7 @@ export default {
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="de-flex">
+                        <div class="de-flex justify-content-center">
                             <div class="de-flex-col">
                                 &copy;
                                 {{

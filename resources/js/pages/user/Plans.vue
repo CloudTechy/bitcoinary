@@ -32,7 +32,7 @@
                                             }}
                                         </span>
                                         </p>
-                                        <p v-if = "plan.first_level_ref_commission"><strong>Referral Commission: </strong>
+                                        <p v-if = "plan.first_level_ref_commission && plan.first_level_ref_commission > 0"><strong>Referral Commission: </strong>
                                             {{ plan.first_level_ref_commission }}%</p>
                                         <p  v-if = "plan.capital_back"><strong>Total:</strong>
                                         {{plan.roi}}% <span class="badge badge-primary"> + Capital</span> </p>
