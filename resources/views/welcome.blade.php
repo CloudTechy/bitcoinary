@@ -273,19 +273,19 @@
 
     
   <script  src="{{ asset('assets/js/jquery-1.12.4.min.js') }}"></script>
-  <script src="{{ asset('js/app.js') }}" defer></script>
-  <script src="{{ asset('js/objectdata.js') }}" defer></script>
+  <script src="{{ asset('js/app.js') }}" ></script>
+  <script src="{{ asset('js/objectdata.js') }}" ></script>
         <script  src="{{ asset('assets/js/home/jquery.min.js') }}"></script>
       <script   src="{{ asset('assets/js/home/bootstrap.min.js') }}"></script>
-      <script  async src="{{ asset('assets/js/home/wow.min.js') }}"></script>
-      <script  async src="{{ asset('assets/js/home/jquery.isotope.min.js') }}"></script>
+      <script   src="{{ asset('assets/js/home/wow.min.js') }}"></script>
+      <script   src="{{ asset('assets/js/home/jquery.isotope.min.js') }}"></script>
       <!--<script  src="{{ asset('assets/js/home/easing.js') }}"></script>-->
       <script src="{{ asset('assets/js/home/owl.carousel.js') }}"></script>
       <script src="{{ asset('assets/js/home/validation.js') }}"></script>
-      <script async src="{{ asset('assets/js/home/jquery.magnific-popup.min.js') }}"></script>
-      <script  async src="{{ asset('assets/js/home/enquire.min.js') }}"></script>
-      <script  async src="{{ asset('assets/js/home/jquery.stellar.min.js') }}"></script>
-      <script  async src="{{ asset('assets/js/home/jquery.plugin.js') }}"></script>
+      <script src="{{ asset('assets/js/home/jquery.magnific-popup.min.js') }}"></script>
+      <script  src="{{ asset('assets/js/home/enquire.min.js') }}"></script>
+      <script  src="{{ asset('assets/js/home/jquery.stellar.min.js') }}"></script>
+      <script  src="{{ asset('assets/js/home/jquery.plugin.js') }}"></script>
       <script  src="{{ asset('assets/js/home/typed.js') }}"></script>
 
       
@@ -365,7 +365,7 @@
         font-size: revert !important;
 }
 </style>
- <script src="//code.tidio.co/nq87i7bid1gk0n6uqa2dpbhos2ivh4nd.js" async></script>
+ <script src="//code.tidio.co/nq87i7bid1gk0n6uqa2dpbhos2ivh4nd.js" defer></script>
  
 
 </body>

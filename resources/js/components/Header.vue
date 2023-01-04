@@ -360,14 +360,14 @@ export default {
         document.head.appendChild(css);
 
 
-        css = document.createElement("link");
-        css.setAttribute(
-            "href",
-            this.$root.basepath + "/assets/css/home/datatables.min.css"
-        );
-        css.setAttribute("type", "text/css");
-        css.setAttribute("rel", "stylesheet");
-        document.head.appendChild(css);
+        // css = document.createElement("link");
+        // css.setAttribute(
+        //     "href",
+        //     this.$root.basepath + "/assets/css/home/datatables.min.css"
+        // );
+        // css.setAttribute("type", "text/css");
+        // css.setAttribute("rel", "stylesheet");
+        // document.head.appendChild(css);
 
         css = document.createElement("link");
         css.setAttribute(
@@ -415,13 +415,6 @@ export default {
         js.setAttribute("async", true);
         document.body.appendChild(js);
 
-        js = document.createElement("script");
-        js.setAttribute(
-            "src",
-            "https://www.google.com/recaptcha/api.js?render=6LfVOFIcAAAAAJNh1Oa3oAU3PDrLxwNJhWonFUtA"
-        );
-        js.setAttribute("async", true);
-        document.body.appendChild(js);
 
 
     },
@@ -433,12 +426,12 @@ export default {
         );
         document.body.appendChild(js);
 
-        js = document.createElement("script");
-        js.setAttribute(
-            "src",
-            this.$root.basepath + "/assets/js/home/dashboard/datatables.min.js"
-        );
-        document.body.appendChild(js);
+        // js = document.createElement("script");
+        // js.setAttribute(
+        //     "src",
+        //     this.$root.basepath + "/assets/js/home/dashboard/datatables.min.js"
+        // );
+        // document.body.appendChild(js);
 
 
 

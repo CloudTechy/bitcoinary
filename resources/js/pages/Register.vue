@@ -22,8 +22,7 @@
             <div class="section mb-5 p-2">
 
                 <form method="post" autocomplete="off" @submit.prevent="register" v-if="!success">
-                    <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
-                    <input type="hidden" name="action" value="validate_captcha">
+                  
                     <div class="card">
                         <div class="card-body pb-1">
                             <div class="form-group basic">
@@ -333,13 +332,7 @@ export default {
         js.setAttribute("async", true);
         document.body.appendChild(js);
 
-        js = document.createElement("script");
-        js.setAttribute(
-            "src",
-            "https://www.google.com/recaptcha/api.js?render=6LfVOFIcAAAAAJNh1Oa3oAU3PDrLxwNJhWonFUtA"
-        );
-        js.setAttribute("async", true);
-        document.body.appendChild(js);
+       
 
      
     },

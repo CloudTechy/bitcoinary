@@ -268,7 +268,7 @@ export default {
                                 </ul>
                             </div>
                             <div class="de-flex-col">
-                                <a class="btn-custom" href="/login" style="
+                                <a class="btn-custom" href="/dashboard" style="
                                         background-color: #ffcc29;
                                         color: #000;
                                     ">INVESTORS</a>

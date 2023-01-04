@@ -38,21 +38,7 @@ function multiply() {
 
 
 
-jQuery(window).load(function () {
-  if (typeof grecaptcha != "undefined") {
-      grecaptcha.ready(() => {
-          grecaptcha
-              .execute("6LfVOFIcAAAAAJNh1Oa3oAU3PDrLxwNJhWonFUtA", {
-                  action: "validate_captcha",
-              })
-              .then((token) => {
-                  document.querySelector("#recaptchaResponse").value = token;
-              });
-      });
-  }
 
- 
-});
 
   // (function () {
   //     var options = {

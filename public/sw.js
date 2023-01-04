@@ -1,4 +1,4 @@
-const version = "v1:1:6" //Change if you want to regenerate cache
+const version = "v1:1:8" //Change if you want to regenerate cache
 const staticCacheName = `${version}static-resources`;
 
 self.addEventListener('install', event => {
@@ -20,6 +20,9 @@ self.addEventListener('install', event => {
                 "/assets/js/home/jquery.stellar.min.js",
                 "/assets/js/home/jquery.plugin.js",
                 "/assets/js/home/typed.js",
+                "/assets/video/home/vid1.mp4",
+                "/assets/video/home/vid2.mp4",
+                "/assets/video/home/vid3.mp4",
                 // '/images/faviconb.png',
                 // '/css/vendor/animate.min.css',
 
@@ -78,9 +81,9 @@ self.addEventListener('install', event => {
                 "/assets/images/home/STATS_2.svg",
                 "/assets/images/home/STATS_4.svg",
 
-                "https://fonts.googleapis.com/css?family=Nunito",
-                "https://fonts.googleapis.com/css?family=Raleway:300,400,600",
-                "https://fonts.gstatic.com/s/nunito/v10/XRXV3I6Li01BKofINeaB.woff2",
+                // "https://fonts.googleapis.com/css?family=Nunito",
+                // "https://fonts.googleapis.com/css?family=Raleway:300,400,600",
+                // "https://fonts.gstatic.com/s/nunito/v10/XRXV3I6Li01BKofINeaB.woff2",
             ])
         )
     );
