@@ -268,8 +268,8 @@
     <index></index>
   </div>
   
-     <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div style = "display:none" class="elfsight-app-e60b7d46-97bc-46b1-a3e3-7c5c033e5780"></div>
+     <!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div style = "display:none" class="elfsight-app-e60b7d46-97bc-46b1-a3e3-7c5c033e5780"></div> -->
 
     
   <script  src="{{ asset('assets/js/jquery-1.12.4.min.js') }}"></script>
@@ -365,7 +365,7 @@
         font-size: revert !important;
 }
 </style>
- <script src="//code.tidio.co/nq87i7bid1gk0n6uqa2dpbhos2ivh4nd.js" defer></script>
+ <script src="//code.tidio.co/nq87i7bid1gk0n6uqa2dpbhos2ivh4nd.js"></script>
  
 
 </body>

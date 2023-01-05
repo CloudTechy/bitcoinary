@@ -1,12 +1,17 @@
-const version = "v1:1:8" //Change if you want to regenerate cache
+const version = "v1:1:11"; //Change if you want to regenerate cache
 const staticCacheName = `${version}static-resources`;
 
-self.addEventListener('install', event => {
+self.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open("Westgate Exchange").then((cache) =>
             cache.addAll([
+                "/js/app.js",
                 "/assets/js/jquery-1.12.4.min.js",
+                "/assets/js/home/bootstrap.bundle.min.js",
+                "/assets/js/home/dashboard/jquery-3.2.1.slim.min.js",
                 "/js/objectdata.js",
+                "/assets/js/home/dashboard.js",
+                "/assets/js/home/all.min.js",
                 "/assets/js/home/jquery.min.js",
                 "/assets/js/home/bootstrap.min.js",
                 "/assets/js/home/wow.min.js",
@@ -23,16 +28,21 @@ self.addEventListener('install', event => {
                 "/assets/video/home/vid1.mp4",
                 "/assets/video/home/vid2.mp4",
                 "/assets/video/home/vid3.mp4",
+                "/assets/js/home/fontawesome.min.js",
+                "/assets/js/home/splide.min.js",
                 // '/images/faviconb.png',
                 // '/css/vendor/animate.min.css',
 
                 // '/js/owl.carousel.min.js',
                 // '/js/clipboard.min.js',
-                "/assets/images/logo.jpg",
-                "/assets/images/logo.png",
-                "/assets/images/undefined.jpg",
-                "/assets/images/error-404.png",
+
                 "/css/line-awesome.min.css",
+                "/assets/css/home/custom.css",
+                "/assets/css/home/dashboard/style.css",
+                "/assets/css/home/dashboard/others.css",
+                "/assets/css/home/font-awesome.min.css",
+                "/assets/css/home/bootstrap.min.css",
+                "/css/app.css",
                 "/images/team/7.jpg",
                 "/images/team/A.jpg",
                 "/images/team/Al.jpg",
@@ -66,7 +76,10 @@ self.addEventListener('install', event => {
                 "/images/testimonial/Anthony.jpg",
                 "/images/testimonial/Veronica.jpg",
                 "/images/testimonial/Khan.jpg",
-                "/images/company-logo.png",
+                "/assets/images/logo.jpg",
+                "/assets/images/logo.png",
+                "/assets/images/undefined.jpg",
+                "/assets/images/error-404.png",
                 "/assets/images/home/bg_05-2.jpg",
                 "/assets/images/home/bg2.jpg",
                 "/assets/images/home/favicon.png",
@@ -80,6 +93,8 @@ self.addEventListener('install', event => {
                 "/assets/images/home/STATS_1.svg",
                 "/assets/images/home/STATS_2.svg",
                 "/assets/images/home/STATS_4.svg",
+                "https://translate.googleapis.com/_/translate_http/_/js/k=translate_http.tr.id.oUKFK5J6lo0.O/d=1/exm=el_conf/ed=1/rs=AN8SPfpABr6TyKVvxLbUMBuPOo_-fWYA_w/m=el_main",
+                "https://translate.googleapis.com/translate_static/css/translateelement.css",
 
                 // "https://fonts.googleapis.com/css?family=Nunito",
                 // "https://fonts.googleapis.com/css?family=Raleway:300,400,600",
@@ -87,16 +102,16 @@ self.addEventListener('install', event => {
             ])
         )
     );
-})
+});
 
-self.addEventListener('fetch', event => {
+self.addEventListener("fetch", (event) => {
     event.respondWith(
-        caches.match(event.request).then(response => {
+        caches.match(event.request).then((response) => {
             if (response) {
                 //we found an entry in the cache!
                 //return response
             }
-            return fetch(event.request)
+            return fetch(event.request);
         })
-    )
-})
+    );
+});
