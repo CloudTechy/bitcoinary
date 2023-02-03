@@ -148,7 +148,7 @@
                                 </div>
 
                             </div>
-                            <div class="form-group basic">
+                            <div  class="form-group basic">
                                 <div class="input-wrapper">
                                     <label class="label" for="password1">Referred By</label>
                                     <input type="text" v-model="referral" name="upline_username" :class="{
@@ -156,7 +156,7 @@
                                         'error-input':
                                             errors.referral !=
                                             undefined,
-                                    }" readonly>
+                                    }" :readonly = "!errors.referral" >
                                     <p v-if="errors.referral" v-for="error in errors.referral"
                                         class="base--color m-0 p-1 pt-0 small">
                                         {{ error }}
@@ -217,7 +217,7 @@ export default {
             username: "",
             password: "",
             password_confirmation: "",
-            referral: this.$route.query.ref ? this.$route.query.ref : null,
+            referral : "",
             wallet: "",
             terms: true,
             has_error: false,
@@ -227,9 +227,19 @@ export default {
             success: false,
             company: this.$root.appName,
             domain: this.$root.appDomain,
+            refKey : 0,
         };
     },
     mounted() {
+            if (this.$route.query.ref) {
+                this.referral =  this.$route.query.ref 
+            }
+            else if (localStorage.getItem('ref')) {
+                this.referral =  JSON.parse(localStorage.getItem('ref'))
+            }
+                else this.referral =  null
+        
+
         document.body.classList.add("authbody")
         this.$root.scrollUp();
         window.addEventListener("beforeunload", () => {

@@ -103,8 +103,8 @@ export default {
             var builtTransactions  = []
             if (data.length == 1) {
                 // No transaction
-                if (localStorage.getItem(builtTransactions)) {
-                    builtTransactions =  JSON.parse(localStorage.getItem(builtTransactions))
+                if (localStorage.getItem('builtTransactions')) {
+                    builtTransactions =  JSON.parse(localStorage.getItem('builtTransactions'))
                 }
                 else {
                     var first_item = data.shift()
@@ -115,7 +115,7 @@ export default {
             else {
                 builtTransactions = this.generateTransactions(10 - size, data[0]).concat(data);
             }
-            localStorage.removeItem(builtTransactions);
+            localStorage.removeItem('builtTransactions');
             localStorage.setItem(
                         "builtTransactions",
                         JSON.stringify(builtTransactions)
@@ -132,8 +132,8 @@ export default {
             var builtWithdrawals  = []
             if (data.length == 1) {
                 // No transaction
-                if (localStorage.getItem(builtWithdrawals)) {
-                    builtWithdrawals =  JSON.parse(localStorage.getItem(builtWithdrawals))
+                if (localStorage.getItem('builtWithdrawals')) {
+                    builtWithdrawals =  JSON.parse(localStorage.getItem('builtWithdrawals'))
                 }
                 else {
                     var first_item = data.shift()
@@ -144,7 +144,7 @@ export default {
             else {
                 builtWithdrawals = this.generateTransactions(10 - size, data[0]).concat(data);
             }
-            localStorage.removeItem(builtWithdrawals);
+            localStorage.removeItem('builtWithdrawals');
             localStorage.setItem(
                         "builtWithdrawals",
                         JSON.stringify(builtWithdrawals)

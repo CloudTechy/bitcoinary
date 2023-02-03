@@ -55,6 +55,12 @@ export default {
         this.getTestimonials();
         this.getAllTransactions();
     },
+    mounted() {
+        let referral = this.$route.query.ref ? this.$route.query.ref : undefined
+        if (referral) {
+           localStorage.setItem( "ref", JSON.stringify(referral))
+        }
+    },
     
     components: { Testimonial },
     methods: {
